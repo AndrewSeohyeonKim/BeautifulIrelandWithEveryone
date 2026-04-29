@@ -21,7 +21,7 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "서현 Andrew — Dublin Korean Driver & Tour Guide",
-  "description": "더블린 한인 차량 동행 서비스. 공항 픽업, IKEA·이사 운송, 12개 코스 1일 여행 동행. 한국어 카톡 안내, 7인승 MPV. Korean-speaking driver and tour guide in Dublin operating airport pickup, IKEA delivery, 12 tour destinations across Ireland, and moving assistance. Operator of free Dublin walking tour, pilgrimage guide for Diocese of Daejeon, and Korean press corps guide. Currently funding Classical Music for Everyone social project.",
+  "description": "더블린 한인 차량 동행 서비스. 공항 픽업, IKEA·이사 운송, 16개 지역 1일 여행 동행. 한국어 카톡 안내, 7인승 MPV. Korean-speaking driver and tour guide in Dublin operating airport pickup, IKEA delivery, 16 tour destinations across Ireland, and moving assistance. Operator of free Dublin walking tour, pilgrimage guide for Diocese of Daejeon, and Korean press corps guide. Currently funding Classical Music for Everyone social project.",
   "image": "photo1.jpg",
   "address": {"@type": "PostalAddress", "addressLocality": "Dublin", "addressCountry": "IE"},
   "telephone": "[removed]",
@@ -715,6 +715,172 @@
   .modal .price-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; font-size: 13px; }
   .modal .price-grid .ppl { color: var(--muted); }
   .modal .price-grid .pp { font-weight: 700; color: var(--primary); text-align: right; }
+
+  /* Places gallery (대표 장소 슬라이드 캐러셀) */
+  .places-gallery-wrap {
+    position: relative;
+    margin-bottom: 14px;
+  }
+  .places-gallery {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px 2px 12px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) var(--bg);
+  }
+  .places-gallery::-webkit-scrollbar {
+    height: 6px;
+  }
+  .places-gallery::-webkit-scrollbar-track {
+    background: var(--bg);
+    border-radius: 3px;
+  }
+  .places-gallery::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 3px;
+  }
+  .place-card {
+    flex: 0 0 165px;
+    scroll-snap-align: start;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  @media (min-width: 600px) {
+    .place-card { flex: 0 0 180px; }
+  }
+  .gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 5;
+    color: var(--primary);
+    font-size: 16px;
+    line-height: 1;
+    user-select: none;
+  }
+  .gallery-nav.prev { left: -10px; }
+  .gallery-nav.next { right: -10px; }
+  .gallery-nav:hover { background: var(--accent-soft); }
+  .gallery-nav:disabled { opacity: 0.3; cursor: not-allowed; }
+  @media (max-width: 480px) {
+    .gallery-nav { display: none; }
+  }
+  .place-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
+  .place-thumb {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: linear-gradient(135deg, #e8eef5 0%, #d4dde8 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .place-thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .place-thumb .needs-photo {
+    text-align: center;
+    padding: 8px;
+    font-size: 10.5px;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+  .place-thumb .needs-photo .filename {
+    display: inline-block;
+    margin-top: 4px;
+    background: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 9.5px;
+    color: var(--accent);
+    border: 1px dashed var(--accent);
+  }
+  .place-info {
+    padding: 8px 10px 10px;
+  }
+  .place-name-ko {
+    font-weight: 700;
+    font-size: 12.5px;
+    color: var(--primary);
+    line-height: 1.3;
+  }
+  .place-name-en {
+    font-size: 10.5px;
+    color: var(--muted);
+    margin-top: 2px;
+    line-height: 1.3;
+  }
+  .place-desc {
+    font-size: 11px;
+    color: var(--text);
+    margin-top: 6px;
+    line-height: 1.45;
+  }
+  .seasonal-badge {
+    display: inline-block;
+    background: #fff3d4;
+    color: #b8851a;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 10px;
+    margin-top: 6px;
+    border: 1px solid #f0d77a;
+  }
+  .seasonal-tips {
+    background: #fff8e6;
+    border: 1px dashed var(--accent);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+  }
+  .seasonal-tips .tip-row {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: var(--text);
+  }
+  .seasonal-tips .tip-row strong {
+    color: var(--primary);
+  }
+  .gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+  }
+  .gallery-header h5 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary);
+  }
+  .gallery-header .gallery-note {
+    font-size: 11px;
+    color: var(--muted);
+  }
 </style>
 </head>
 <body>
@@ -876,13 +1042,13 @@
         <div class="icon">🌿</div>
         <h4>당일치기 로드트립</h4>
         <div class="price">€45/인부터 (5인)</div>
-        <p>아일랜드 12개 지역 30+ 코스. 친구처럼 함께. 톨비·주차 포함 (시내권).</p>
+        <p>아일랜드 16개 지역 30+ 코스 예시. 친구처럼 함께. 톨비·주차 포함 (시내권).</p>
       </div>
       <div class="service-card" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
         <div class="icon">✏️</div>
-        <h4>커스텀 · 장기 · 성지순례</h4>
+        <h4>커스텀 아일랜드 여행 가이드 / 아일랜드 성지순례 가이드</h4>
         <div class="price">문의</div>
-        <p>셋팅 안 된 코스, 2박 3일 이상 장기 아일랜드 여행 플랜, <strong>성지순례 동행</strong>(대전교구 가이드 경력) 모두 가능. 카톡으로 함께 구성.</p>
+        <p>맞춤 코스, 2박 3일 이상 장기 여행 플랜, <strong>성지순례 동행</strong>(대전교구 가이드 경력) 모두 가능. 카톡으로 함께 구성.</p>
       </div>
     </div>
   </div>
@@ -922,32 +1088,34 @@
                   <option value="swords" data-km="6">Swords · 스워즈</option>
                   <option value="malahide" data-km="9">Malahide · 말라하이드</option>
                 </optgroup>
-                <optgroup label="🟢 Zone 1 · 공항 10–17km (€45)">
+                <optgroup label="🟢 Zone 1 · 공항 10–13km (€40)">
                   <option value="1" data-km="12">Dublin 1 / O'Connell, IFSC · 시티 센터</option>
                   <option value="2" data-km="13">Dublin 2 / Grafton, St Stephen's · 그래프턴</option>
+                  <option value="7" data-km="11">Dublin 7 / Phibsboro, Stoneybatter · 피브스보로</option>
+                  <option value="howth" data-km="12">Howth · 호스</option>
+                </optgroup>
+                <optgroup label="🟢 Zone 2 · 공항 13–17km (€45)">
                   <option value="4" data-km="14">Dublin 4 / Ballsbridge, Sandymount · 발스브리지</option>
                   <option value="6" data-km="15">Dublin 6 / Rathmines, Ranelagh · 라스마인스</option>
                   <option value="6w" data-km="16">Dublin 6W / Terenure · 테레뉴어</option>
-                  <option value="7" data-km="11">Dublin 7 / Phibsboro, Stoneybatter · 피브스보로</option>
                   <option value="8" data-km="14">Dublin 8 / Liberties, Kilmainham · 리버티스</option>
                   <option value="14" data-km="17">Dublin 14 / Dundrum · 던드럼</option>
-                  <option value="howth" data-km="15">Howth · 호스</option>
-                  <option value="lucan" data-km="17">Lucan · 루칸</option>
+                  <option value="lucan" data-km="17">Lucan · 루칸 (지점 따라 17km+)</option>
                 </optgroup>
-                <optgroup label="🟡 Zone 2 · 공항 17–25km (€55)">
+                <optgroup label="🟡 Zone 3 · 공항 17–25km (€55)">
                   <option value="16" data-km="19">Dublin 16 / Knocklyon · 노클리언</option>
                   <option value="18" data-km="20">Dublin 18 / Sandyford · 샌디포드</option>
                   <option value="24" data-km="20">Dublin 24 / Tallaght · 탤러트</option>
                   <option value="maynooth" data-km="25">Maynooth · 메이누스</option>
                 </optgroup>
-                <optgroup label="🟠 Zone 3 · 그레이터 더블린">
+                <optgroup label="🟠 Zone 4 · 그레이터 더블린 (25–50km)">
                   <option value="bray" data-km="28">Bray · 브레이 (~€70)</option>
                   <option value="greystones" data-km="32">Greystones · 그레이스톤스 (~€78)</option>
                   <option value="naas" data-km="35">Naas · 나스 (~€80)</option>
                   <option value="drogheda" data-km="40">Drogheda · 드로헤다 (~€85)</option>
                   <option value="wicklow" data-km="45">Wicklow Town · 위클로 타운 (~€95)</option>
                 </optgroup>
-                <optgroup label="🔴 Zone 4 · 지방 — 별도 견적">
+                <optgroup label="🔴 Zone 5 · 지방 50km+ — 별도 견적">
                   <option value="belfast" data-km="170">Belfast · 벨파스트</option>
                   <option value="galway" data-km="215">Galway · 골웨이</option>
                   <option value="cork" data-km="260">Cork · 코크</option>
@@ -1053,18 +1221,22 @@
               <label>여행 코스</label>
               <select id="tr-dest" onchange="calcTour()">
                 <option value="weather">🌦️ 일기예보 랜덤 / Weather Random (당일 결정)</option>
-                <option value="wicklow">위클로 / Wicklow (150km · 8h)</option>
+                <option value="newgrange">뉴그레인지 / Newgrange (120km · 7h)</option>
+                <option value="wicklow">위클로 국립공원 / Wicklow (150km · 8h)</option>
                 <option value="mullingar">멀링거 / Mullingar (180km · 7h)</option>
+                <option value="kilkenny">킬케니 / Kilkenny (230km · 8h)</option>
+                <option value="belfast">벨파스트 / Belfast (340km · 9h)</option>
                 <option value="waterford">워터포드 / Waterford (340km · 10h)</option>
-                <option value="limerick">리머릭·번래티 / Limerick·Bunratty (380km · 10h)</option>
-                <option value="galway">골웨이 / Galway (420km · 11h)</option>
+                <option value="limerick">리머릭 + 카셸 / Limerick + Cashel (380km · 10h)</option>
+                <option value="galway">골웨이 시티 / Galway (420km · 11h)</option>
                 <option value="sligo">슬라이고 / Sligo (460km · 11h)</option>
-                <option value="cork">코크 / Cork (480km · 12h)</option>
-                <option value="causeway">자이언트 코즈웨이·북아일랜드 / Giant's Causeway·NI (500km · 12h)</option>
-                <option value="mayo">메이요 / Mayo (530km · 13h)</option>
-                <option value="moher">모허 절벽 / Cliffs of Moher (540km · 13h)</option>
-                <option value="donegal">도니골 / Donegal (600km · 14h)</option>
-                <option value="kerry">케리·딩글 / Kerry·Dingle (750km · 16h)</option>
+                <option value="cork">코크 (시내·코브·킨세일·웨스트코크) / Cork (480km · 12h)</option>
+                <option value="connemara">코네마라 + 카일모어 / Connemara (480km · 12h)</option>
+                <option value="causeway">자이언트 코즈웨이 / Causeway (500km · 12h)</option>
+                <option value="mayo">메이요 (아킬·다운패트릭·녹) / Mayo (530km · 13h)</option>
+                <option value="moher">모허 + 버렌 / Cliffs of Moher + Burren (540km · 13h)</option>
+                <option value="donegal">도니골 (남부·북부·데리) / Donegal (600km · 14h)</option>
+                <option value="kerry">케리 (킬러니+딩글) / Kerry (750km · 16h)</option>
               </select>
             </div>
             <div class="field">
@@ -1131,7 +1303,7 @@
   <div class="container">
     <div class="section-title">
       <h2 style="word-break:keep-all;">🌿 Irish Nature for Everyone · 당일치기 로드트립</h2>
-      <p class="lead">Andrew와 함께, 친구처럼 떠나는 아일랜드 로드트립 · 12개 지역 30+ 코스</p>
+      <p class="lead">Andrew와 함께, 친구처럼 떠나는 아일랜드 로드트립 · 16개 지역 + 코스 예시</p>
     </div>
 
     <!-- 출발 확정 / 모집 등록 / 커스텀 안내 배너 -->
@@ -1176,17 +1348,21 @@
         <!-- 마커들 (% 기반 절대 위치) -->
         <button class="ireland-marker" data-tour="donegal" style="top:21%; left:48%;" title="도니골 / Donegal"><span>도니골</span></button>
         <button class="ireland-marker" data-tour="causeway" style="top:7%; left:74%;" title="자이언트 코즈웨이 / Causeway"><span>코즈웨이</span></button>
+        <button class="ireland-marker" data-tour="belfast" style="top:14%; left:80%;" title="벨파스트 / Belfast"><span>벨파스트</span></button>
         <button class="ireland-marker" data-tour="sligo" style="top:30%; left:42%;" title="슬라이고 / Sligo"><span>슬라이고</span></button>
         <button class="ireland-marker" data-tour="mayo" style="top:40%; left:25%;" title="메이요 / Mayo"><span>메이요</span></button>
+        <button class="ireland-marker" data-tour="newgrange" style="top:44%; left:74%;" title="뉴그레인지 / Newgrange"><span>뉴그레인지</span></button>
         <button class="ireland-marker" data-tour="mullingar" style="top:47%; left:61%;" title="멀링거 / Mullingar"><span>멀링거</span></button>
-        <button class="ireland-marker" data-tour="galway" style="top:53%; left:32%;" title="골웨이 / Galway"><span>골웨이</span></button>
-        <button class="ireland-marker" data-tour="moher" style="top:60%; left:26%;" title="모허 절벽 / Cliffs of Moher"><span>모허</span></button>
+        <button class="ireland-marker" data-tour="connemara" style="top:50%; left:22%;" title="코네마라 + 카일모어 / Connemara"><span>코네마라</span></button>
+        <button class="ireland-marker" data-tour="galway" style="top:53%; left:32%;" title="골웨이 시티 / Galway"><span>골웨이</span></button>
+        <button class="ireland-marker" data-tour="moher" style="top:60%; left:26%;" title="모허 + 버렌 / Cliffs of Moher + Burren"><span>모허</span></button>
         <button class="ireland-marker dublin-pin" style="top:51%; left:78%;" title="Dublin (출발지)"><span>Dublin</span></button>
-        <button class="ireland-marker" data-tour="limerick" style="top:67%; left:40%;" title="리머릭 / Limerick"><span>리머릭</span></button>
-        <button class="ireland-marker" data-tour="wicklow" style="top:59%; left:82%;" title="위클로 / Wicklow"><span>위클로</span></button>
+        <button class="ireland-marker" data-tour="limerick" style="top:67%; left:40%;" title="리머릭 + 카셸 / Limerick + Cashel"><span>리머릭</span></button>
+        <button class="ireland-marker" data-tour="wicklow" style="top:59%; left:82%;" title="위클로 국립공원 / Wicklow"><span>위클로</span></button>
+        <button class="ireland-marker" data-tour="kilkenny" style="top:69%; left:65%;" title="킬케니 / Kilkenny"><span>킬케니</span></button>
         <button class="ireland-marker" data-tour="waterford" style="top:76%; left:64%;" title="워터포드 / Waterford"><span>워터포드</span></button>
         <button class="ireland-marker" data-tour="cork" style="top:84%; left:42%;" title="코크 / Cork"><span>코크</span></button>
-        <button class="ireland-marker" data-tour="kerry" style="top:80%; left:25%;" title="케리 / Kerry"><span>케리</span></button>
+        <button class="ireland-marker" data-tour="kerry" style="top:80%; left:25%;" title="케리 (킬러니+딩글) / Kerry"><span>케리</span></button>
       </div>
       <p style="text-align:center; font-size:11.5px; color:var(--muted); margin-top:12px; font-style:italic;">
         ⚓ Dublin = 출발지 (모든 코스 더블린 공항 또는 시내 미팅포인트에서 시작)
@@ -1264,41 +1440,48 @@
   <div class="container">
     <div class="section-title">
       <h2>📍 운영 가능 지역</h2>
-      <p class="lead">Zone은 <strong>더블린 공항 기준 거리</strong>로 설정 (M50 안/밖 경계가 모호하기 때문)</p>
+      <p class="lead">Zone은 <strong>더블린 공항 기준 거리</strong>로 설정</p>
     </div>
     <div class="coverage-grid">
       <div class="zone-card">
         <div class="zone-name">Zone 0 · 공항 0–10km</div>
-        <h4>저의 동네 + 공항 근처</h4>
-        <p>D15 · Castleknock · D11 · D9 · D17 · Swords · Malahide · Sutton</p>
+        <h4>공항 인근</h4>
+        <p>D15 · Castleknock · D11 · D9 · D17 · D3 · D5 · Swords · Malahide · Sutton</p>
         <div class="zone-price">픽업 €35</div>
       </div>
       <div class="zone-card">
-        <div class="zone-name">Zone 1 · 공항 10–17km</div>
-        <h4>더블린 시내 + 외곽</h4>
-        <p>D1 · D2 · D3 · D4 · D5 · D6 · D6W · D7 · D8 · D14 · Howth · Lucan</p>
+        <div class="zone-name">Zone 1 · 공항 10–13km</div>
+        <h4>시내 중심부</h4>
+        <p>D1 · D2 · D7 · Howth</p>
+        <div class="zone-price">픽업 €40</div>
+      </div>
+      <div class="zone-card">
+        <div class="zone-name">Zone 2 · 공항 13–17km</div>
+        <h4>시내 + 외곽</h4>
+        <p>D4 · D6 · D6W · D8 · D14 · Lucan</p>
         <div class="zone-price">픽업 €45</div>
       </div>
       <div class="zone-card">
-        <div class="zone-name">Zone 2 · 공항 17–25km</div>
+        <div class="zone-name">Zone 3 · 공항 17–25km</div>
         <h4>외곽 주거</h4>
         <p>D16 · D18 · D24 · Tallaght · Maynooth · Sandyford</p>
         <div class="zone-price">픽업 €55</div>
       </div>
       <div class="zone-card">
-        <div class="zone-name">Zone 3 · 공항 25–50km</div>
+        <div class="zone-name">Zone 4 · 공항 25–50km</div>
         <h4>그레이터 더블린</h4>
         <p>Bray · Greystones · Drogheda · Naas · Wicklow Town</p>
         <div class="zone-price">€70–€100</div>
       </div>
       <div class="zone-card">
-        <div class="zone-name">Zone 4 · 공항 50km+</div>
+        <div class="zone-name">Zone 5 · 공항 50km+</div>
         <h4>아일랜드 전역</h4>
         <p>Belfast · Galway · Cork · Kerry · Donegal · Mayo · Sligo</p>
         <div class="zone-price">별도 견적</div>
       </div>
     </div>
     <p style="font-size:12.5px; color:var(--muted); text-align:center; margin-top:18px; font-style:italic;">
+      ※ <strong>실제 공항 ↔ 주소 거리</strong>가 zone 기준보다 짧으면 <strong>더 저렴한 zone 가격이 자동 적용</strong>됩니다 (위 분류는 안내용).<br>
       ※ 일반 운송·이사 시 가격은 출발지·도착지 사이 거리 기반으로 별도 산정.
     </p>
   </div>
@@ -1339,11 +1522,12 @@
       <div class="price-table-wrap"><table class="price-table">
         <thead><tr><th>구간 (공항 ↔ 목적지/출발지)</th><th>대표 지역</th><th style="text-align:right">가격</th></tr></thead>
         <tbody>
-          <tr><td>Zone 0 · 0–10 km</td><td>D15 · D11 · 공항 인근</td><td class="price">€35</td></tr>
-          <tr><td>Zone 1 · 10–15 km</td><td>D1–D8 · D9 · 시내 (M50 안쪽)</td><td class="price">€45</td></tr>
-          <tr><td>Zone 2 · 15–25 km</td><td>D24 · Tallaght · Lucan · Maynooth</td><td class="price">€55</td></tr>
-          <tr><td>Zone 3 · 25–50 km</td><td>Bray · Drogheda · Naas · Wicklow Town</td><td class="price">€75–€100</td></tr>
-          <tr><td>지방 (Belfast / Galway / Cork)</td><td>50 km+</td><td class="price">별도 견적</td></tr>
+          <tr><td>Zone 0 · 0–10 km</td><td>D15 · D11 · D9 · D3 · D5 · 공항 인근</td><td class="price">€35</td></tr>
+          <tr><td>Zone 1 · 10–13 km</td><td>D1 · D2 · D7 · 시내 중심부</td><td class="price">€40</td></tr>
+          <tr><td>Zone 2 · 13–17 km</td><td>D4 · D6 · D6W · D8 · D14 · Howth · Lucan</td><td class="price">€45</td></tr>
+          <tr><td>Zone 3 · 17–25 km</td><td>D16 · D18 · D24 · Tallaght · Maynooth</td><td class="price">€55</td></tr>
+          <tr><td>Zone 4 · 25–50 km</td><td>Bray · Drogheda · Naas · Wicklow Town</td><td class="price">€70–€100</td></tr>
+          <tr><td>Zone 5 · 50 km+</td><td>Belfast · Galway · Cork · 지방</td><td class="price">별도 견적</td></tr>
           <tr><td>야간/새벽 (22–06시) · 공휴일</td><td>모든 구간</td><td class="price">+€10</td></tr>
         </tbody>
       </table></div>
@@ -1374,27 +1558,34 @@
     </div>
 
     <div class="price-section">
-      <h3>🌿 당일치기 로드트립 (12개 지역)</h3>
+      <h3>🌿 당일치기 로드트립 (16개 지역 · 거리 기반 가격)</h3>
+      <p style="font-size:12.5px; color:var(--muted); margin-bottom:10px; line-height:1.6;">
+        <strong>실제 예상 주행거리 기준 정찰가</strong>입니다 (직선거리 X). 인기 지역은 클릭 시 코스별(A·B·C) 거리·시간·가격이 명시되어 있어요. 각 코스 안에서 가고 싶은 곳을 추가/수정할 수 있고, 셋팅 안 된 코스는 카톡으로 함께 짜드립니다.
+      </p>
       <div class="price-table-wrap"><table class="price-table">
-        <thead><tr><th>코스</th><th>거리</th><th style="text-align:right">3인/인당</th><th style="text-align:right">4인/인당</th><th style="text-align:right">5인/인당</th><th style="text-align:right">5인 총액</th></tr></thead>
+        <thead><tr><th>코스</th><th>기준 거리</th><th style="text-align:right">3인/인당</th><th style="text-align:right">4인/인당</th><th style="text-align:right">5인/인당</th><th style="text-align:right">5인 총액</th></tr></thead>
         <tbody>
-          <tr><td>🌦️ 일기예보 랜덤 (Weather Random)</td><td>당일 결정</td><td class="price" colspan="4" style="text-align:center;">선택된 코스의 가격 적용 (아래 표 참조)</td></tr>
-          <tr><td>위클로 (Wicklow)</td><td>150 km</td><td class="price">€55</td><td class="price">€50</td><td class="price">€45</td><td class="price">€225</td></tr>
+          <tr><td>🌦️ 일기예보 랜덤 (Weather Random)</td><td>당일 결정</td><td class="price" colspan="4" style="text-align:center;">선택된 코스의 가격 적용</td></tr>
+          <tr><td>뉴그레인지 + 드록헤다 (Newgrange)</td><td>120 km</td><td class="price">€55</td><td class="price">€50</td><td class="price">€45</td><td class="price">€225</td></tr>
+          <tr><td>위클로 국립공원 (Wicklow)</td><td>150 km</td><td class="price">€55</td><td class="price">€50</td><td class="price">€45</td><td class="price">€225</td></tr>
           <tr><td>멀링거 (Mullingar)</td><td>180 km</td><td class="price">€60</td><td class="price">€55</td><td class="price">€50</td><td class="price">€250</td></tr>
+          <tr><td>킬케니 (Kilkenny)</td><td>230 km</td><td class="price">€62</td><td class="price">€57</td><td class="price">€52</td><td class="price">€260</td></tr>
+          <tr><td>벨파스트 (Belfast)</td><td>340 km</td><td class="price">€70</td><td class="price">€65</td><td class="price">€60</td><td class="price">€300</td></tr>
           <tr><td>워터포드 (Waterford)</td><td>340 km</td><td class="price">€70</td><td class="price">€65</td><td class="price">€60</td><td class="price">€300</td></tr>
-          <tr><td>리머릭 / 번래티 (Limerick / Bunratty)</td><td>380 km</td><td class="price">€70</td><td class="price">€65</td><td class="price">€60</td><td class="price">€300</td></tr>
-          <tr><td>골웨이 (Galway)</td><td>420 km</td><td class="price">€79</td><td class="price">€74</td><td class="price">€69</td><td class="price">€345</td></tr>
+          <tr><td>리머릭 + 카셸 (Limerick + Cashel)</td><td>380 km</td><td class="price">€70</td><td class="price">€65</td><td class="price">€60</td><td class="price">€300</td></tr>
+          <tr><td>골웨이 시티 (Galway)</td><td>420 km</td><td class="price">€75</td><td class="price">€70</td><td class="price">€65</td><td class="price">€325</td></tr>
           <tr><td>슬라이고 (Sligo)</td><td>460 km</td><td class="price">€75</td><td class="price">€70</td><td class="price">€65</td><td class="price">€325</td></tr>
-          <tr><td>코크 (Cork)</td><td>480 km</td><td class="price">€79</td><td class="price">€74</td><td class="price">€69</td><td class="price">€345</td></tr>
-          <tr><td>자이언트 코즈웨이 / 북아일랜드 (Giant's Causeway / NI)</td><td>500 km</td><td class="price">€75</td><td class="price">€70</td><td class="price">€65</td><td class="price">€325</td></tr>
-          <tr><td>메이요 (Mayo)</td><td>530 km</td><td class="price">€80</td><td class="price">€75</td><td class="price">€70</td><td class="price">€350</td></tr>
-          <tr><td>모허 절벽 (Cliffs of Moher)</td><td>540 km</td><td class="price">€90</td><td class="price">€85</td><td class="price">€80</td><td class="price">€400</td></tr>
-          <tr><td>도니골 (Donegal)</td><td>600 km</td><td class="price">€90</td><td class="price">€80</td><td class="price">€75</td><td class="price">€375</td></tr>
-          <tr><td>케리 / 딩글 (Kerry / Dingle)</td><td>750 km</td><td class="price">€115</td><td class="price">€105</td><td class="price">€100</td><td class="price">€500</td></tr>
+          <tr><td>코크 (시내·코브·킨세일·웨스트코크)</td><td>480 km</td><td class="price">€75</td><td class="price">€70</td><td class="price">€65</td><td class="price">€325</td></tr>
+          <tr><td>코네마라 + 카일모어 (Connemara)</td><td>480 km</td><td class="price">€78</td><td class="price">€72</td><td class="price">€67</td><td class="price">€335</td></tr>
+          <tr><td>자이언트 코즈웨이 (Causeway)</td><td>500 km</td><td class="price">€78</td><td class="price">€72</td><td class="price">€67</td><td class="price">€335</td></tr>
+          <tr><td>메이요 (아킬·다운패트릭·녹)</td><td>530 km</td><td class="price">€78</td><td class="price">€72</td><td class="price">€67</td><td class="price">€335</td></tr>
+          <tr><td>모허 + 버렌 (Cliffs of Moher)</td><td>540 km</td><td class="price">€80</td><td class="price">€75</td><td class="price">€70</td><td class="price">€350</td></tr>
+          <tr><td>도니골 (남부·북부·데리)</td><td>600 km</td><td class="price">€85</td><td class="price">€78</td><td class="price">€72</td><td class="price">€360</td></tr>
+          <tr><td>케리 (킬러니 + 딩글)</td><td>750 km</td><td class="price">€95</td><td class="price">€88</td><td class="price">€82</td><td class="price">€410</td></tr>
         </tbody>
       </table></div>
       <p style="font-size:12.5px; color:var(--muted); margin-top:8px">
-        주차·톨비(시내)·운전·가이딩·한국어 안내 모두 포함. <strong>식비·입장료·페리비·시외 톨비는 별도 (각자)</strong>.<br>
+        ※ 거리는 <strong>실제 예상 주행거리 (직선거리 X)</strong>. 코스 변경·추가에 따라 ±5–10% 변동 가능. 주차·톨비(시내)·운전·가이딩·한국어 안내 모두 포함. <strong>식비·입장료·페리비·시외 톨비는 별도 (각자)</strong>.<br>
         <strong>미팅 포인트 = Blanchardstown Shopping Centre</strong> (D15, 시내 접근 양호).<br>
         <strong>인원 늘면 인당 ↓</strong> (3인 → 4인 −€5 → 5인 −€5/인) · 3인 모이면 자동 출발 · 최대 5인 (7인승, 캐리어 공간 고려).<br>
         <strong>도어투도어 옵션 (선택)</strong>: Blanchardstown SC 기준 15km 이내 +€5/인/편도 · 15km 초과 +€10/인/편도. — <a href="#calculator" style="color:var(--accent); font-weight:700; text-decoration:underline;">🧮 계산기에서 인원·옵션별 가격 확인하기</a>
@@ -1746,7 +1937,8 @@
     <button class="close-btn" onclick="closeTourModal()">×</button>
     <h3 id="modal-name">코스명</h3>
     <div class="modal-meta" id="modal-meta">거리·시간</div>
-    <div class="modal-photos" id="modal-photos">사진/영상 placeholder · 추후 추가 예정</div>
+    <div id="modal-places-section"></div>
+    <div id="modal-seasonal-section"></div>
     <div class="modal-prices">
       <h5>💰 인원별 가격</h5>
       <div class="price-grid" id="modal-prices"></div>
@@ -1765,131 +1957,205 @@
 const TOURS = {
   weather: {
     name:'🌦️ 일기예보 랜덤 여행', nameEn:'Weather-Based Random Tour',
-    km:'150–750', time:'8–16',
-    perPerson:{3:'55–115', 4:'50–105', 5:'45–100'},
+    km:'120–750', time:'7–16',
+    perPerson:{3:'55–95', 4:'50–88', 5:'45–82'},
     desc:'출발 당일 결정된 코스의 가격이 적용됩니다',
     special: true,
     isRange: true,
     variations: [
-      {name:'당일 즉석 추천 (Day-of Recommendation)', spots:'Andrew가 출발 당일 아일랜드 일기예보를 분석 → 그날 가장 맑고 아름다운 후보 2-3곳 제시 → 함께 결정 후 출발. 가격은 결정된 코스의 가격이 그대로 적용됩니다 (위 12개 코스 가격표 참조).'},
+      {name:'당일 즉석 추천 (Day-of Recommendation)', spots:'Andrew가 출발 당일 아일랜드 일기예보를 분석 → 그날 가장 맑고 아름다운 후보 2-3곳 제시 → 함께 결정 후 출발. 가격은 결정된 코스의 가격이 그대로 적용됩니다.'},
     ]
   },
   wicklow: {
     name:'위클로 (Wicklow)', nameEn:'Wicklow',
     km:150, time:8, perPerson:{3:55, 4:50, 5:45},
     desc:'아일랜드 정원, 더블린 근교 / The Garden of Ireland',
+    folder:'wicklow',
+    places: [
+      {key:'brittas-bay', name:'브리타스 베이', nameEn:'Brittas Bay', desc:'끝없이 펼쳐진 황금빛 모래사장 · 일몰 명소'},
+      {key:'rapeseed', name:'유채꽃 들판', nameEn:'Rapeseed Fields', desc:'4~5월 한정, 위클로 언덕을 노랗게 물들이는 풍경', seasonal:'4~5월'},
+      {key:'kilmacurragh', name:'킬마커러 국립식물원', nameEn:'National Botanic Gardens, Kilmacurragh', desc:'19세기 조성 식물원 · 봄철 진달래·동백이 절정'},
+      {key:'sally-gap', name:'샐리 갭', nameEn:'Sally Gap', desc:'위클로 산맥을 가로지르는 환상적인 산악 드라이브 코스'},
+      {key:'avoca-mills', name:'에이보카 밀', nameEn:'Avoca Mills', desc:'220년 전통 트위드 직조 공장 · BBC \'Ballykissangel\' 촬영지'},
+      {key:'lough-tay', name:'러프 테이 전망대', nameEn:'Lough Tay Viewpoint', desc:'\'기네스 호수\'로 불리는 명소 · Vikings 드라마 촬영지'},
+      {key:'powerscourt-waterfall', name:'파워스코트 폭포', nameEn:'Powerscourt Waterfall', desc:'아일랜드에서 가장 높은 폭포 (121m)'},
+      {key:'powerscourt-estate', name:'파워스코트 정원', nameEn:'Powerscourt Estate & Garden', desc:'세계 3대 정원 중 하나로 꼽히는 18세기 대저택'},
+      {key:'glendalough', name:'글렌달록 호수', nameEn:'Glendalough Lakes', desc:'산 사이에 깊게 자리 잡은 두 개의 빙하 호수'},
+      {key:'glendalough-monastic', name:'글렌달록 수도원 유적', nameEn:'Glendalough Monastic Site', desc:'6세기에 세워진 수도원과 30m 라운드 타워'},
+      {key:'johnnie-fox', name:'조니 폭스 펍', nameEn:"Johnnie Fox's Pub", desc:'1798년 창업, 아일랜드에서 가장 높은 곳의 전통 펍'},
+    ],
     variations: [
-      {name:'위클로 바다 (Wicklow Coast)', spots:'Bray · Greystones · Wicklow Town · Brittas Bay 해변'},
-      {name:'위클로 산 정복 (Wicklow Mountains)', spots:'Sugar Loaf · Glendalough · Powerscourt · Wicklow Mountains National Park'},
-      {name:'위클로 + 킬케니 (Wicklow + Kilkenny)', spots:'Glendalough · Kilkenny Castle · 중세 도시 거리 · Smithwick\'s 양조장'},
+      {name:'A코스 — 위클로 산 집중', spots:'샐리 갭 → 러프 테이 → 글렌달록 → 파워스코트 폭포·정원', km:140, time:8, perPerson:{3:55,4:50,5:45}},
+      {name:'B코스 — 바다 + 산', spots:'브리타스 베이 → 글렌달록 → 파워스코트 → 조니 폭스 펍', km:160, time:8, perPerson:{3:58,4:53,5:48}},
+      {name:'C코스 — 위클로 + 킬케니', spots:'글렌달록 → 킬케니 캐슬·중세 거리 → Smithwick\'s 양조장', km:250, time:9, perPerson:{3:62,4:57,5:52}},
+    ]
+  },
+  newgrange: {
+    name:'뉴그레인지 + 드록헤다', nameEn:'Newgrange + Drogheda',
+    km:120, time:7, perPerson:{3:55, 4:50, 5:45},
+    desc:'5,200년 신석기 유적 (유네스코) · 더블린 북부',
+    folder:'newgrange',
+    places: [],
+    variations: [
+      {name:'A코스 — 뉴그레인지 + 모나스터보이스', spots:'Newgrange → Knowth → Monasterboice 켈트 십자가', km:120, time:7, perPerson:{3:55,4:50,5:45}},
+      {name:'B코스 — 뉴그레인지 + 타라 + 드록헤다', spots:'Newgrange → Hill of Tara → Drogheda 시내', km:140, time:7, perPerson:{3:58,4:53,5:48}},
     ]
   },
   mullingar: {
     name:'멀링거 (Mullingar)', nameEn:'Mullingar',
     km:180, time:7, perPerson:{3:60, 4:55, 5:50},
-    desc:'호수와 평원의 미들랜즈 / Lakes & Midlands',
+    desc:'호수와 평원의 미들랜즈',
+    folder:'mullingar',
+    places: [],
     variations: [
-      {name:'멀링거 + 호수 (Mullingar + Lakes)', spots:'Lough Owel · Lough Ennell · Mullingar Cathedral'},
-      {name:'멀링거 + Belvedere (Mullingar + Belvedere)', spots:'Belvedere House · Tullynally Castle · 정원'},
+      {name:'A코스 — 멀링거 + 호수', spots:'Lough Owel · Lough Ennell · Mullingar Cathedral', km:180, time:7, perPerson:{3:60,4:55,5:50}},
+      {name:'B코스 — 멀링거 + Belvedere', spots:'Belvedere House → Tullynally Castle + 정원', km:200, time:7, perPerson:{3:62,4:57,5:52}},
+    ]
+  },
+  kilkenny: {
+    name:'킬케니 (Kilkenny)', nameEn:'Kilkenny',
+    km:230, time:8, perPerson:{3:62, 4:57, 5:52},
+    desc:'중세 도시 · 성과 양조장',
+    folder:'kilkenny',
+    places: [],
+    variations: [
+      {name:'A코스 — 킬케니 시내', spots:'Kilkenny Castle → 중세 거리 → Smithwick\'s 양조장 → 성 카니스 캐넨드럴', km:230, time:8, perPerson:{3:62,4:57,5:52}},
+      {name:'B코스 — 킬케니 + 위클로 (위클로 C코스와 동일)', spots:'글렌달록 → 킬케니 캐슬', km:250, time:9, perPerson:{3:62,4:57,5:52}},
     ]
   },
   waterford: {
     name:'워터포드 (Waterford)', nameEn:'Waterford',
     km:340, time:10, perPerson:{3:70, 4:65, 5:60},
-    desc:'바이킹의 도시, 크리스탈 / Viking City',
+    desc:'바이킹의 도시, 크리스탈, 코퍼 코스트',
+    folder:'waterford',
+    places: [],
     variations: [
-      {name:'워터포드 시내 (Waterford City)', spots:'Waterford Crystal Factory · Reginald\'s Tower · Viking Triangle'},
-      {name:'워터포드 + 트라모어 (Waterford + Tramore)', spots:'Tramore 해변 · 5 km 모래사장'},
-      {name:'후크 등대 코스 (Hook Lighthouse)', spots:'Hook Lighthouse · Loftus Hall · 해안 절벽'},
+      {name:'A코스 — 카셸 + 리스모어 + 코퍼 코스트', spots:'Rock of Cashel → The Vee → Lismore → Dungarvan → Copper Coast', km:450, time:11, perPerson:{3:75,4:70,5:65}},
+      {name:'B코스 — 코퍼 코스트 + 후크 등대', spots:'Copper Coast → Mahon Falls → Waterford Greenway → Hook Lighthouse', km:430, time:11, perPerson:{3:75,4:70,5:65}},
     ]
   },
   limerick: {
-    name:'리머릭 / 번래티 (Limerick / Bunratty)', nameEn:'Limerick / Bunratty',
+    name:'리머릭 / 번래티 + 카셸', nameEn:'Limerick / Bunratty + Cashel',
     km:380, time:10, perPerson:{3:70, 4:65, 5:60},
-    desc:'중세 성과 작은 마을 / Medieval Castles',
+    desc:'중세 성과 작은 마을 + 카셸 바위',
+    folder:'limerick',
+    places: [],
     variations: [
-      {name:'번래티 캐슬 코스 (Bunratty Castle)', spots:'Bunratty Castle & Folk Park · 중세 마을 재현'},
-      {name:'리머릭 + 아데어 (Limerick + Adare)', spots:'King John\'s Castle · Hunt Museum · Adare 마을 (가장 예쁜 마을 중 하나)'},
+      {name:'A코스 — 번래티 + 아데어', spots:'Bunratty Castle & Folk Park → Adare Village → 리머릭 시내', km:420, time:10, perPerson:{3:72,4:67,5:62}},
+      {name:'B코스 — 리머릭 + 카셸', spots:'King John\'s Castle → Hunt Museum → Rock of Cashel', km:460, time:11, perPerson:{3:78,4:72,5:67}},
     ]
   },
   galway: {
-    name:'골웨이 (Galway)', nameEn:'Galway',
-    km:420, time:11, perPerson:{3:79, 4:74, 5:69},
-    desc:'아일랜드 서부의 보석 / Jewel of the West',
+    name:'골웨이 시티 (Galway City)', nameEn:'Galway City',
+    km:420, time:11, perPerson:{3:75, 4:70, 5:65},
+    desc:'아일랜드 서부의 보석 · 음악과 거리 공연',
+    folder:'galway',
+    places: [],
     variations: [
-      {name:'골웨이 + 코네마라 (Galway + Connemara)', spots:'Galway 시내 · Kylemore Abbey · Connemara 호수와 산'},
-      {name:'골웨이 + 아란 페리 (Galway + Aran Ferry)', spots:'Doolin 페리 · Inishmore 섬 자전거 (페리비 별도)'},
-      {name:'골웨이 + 모허 통합 (Galway + Cliffs)', spots:'Galway · Cliffs of Moher · Doolin (1일 풀코스)'},
+      {name:'A코스 — 골웨이 시티 집중', spots:'Eyre Square → Spanish Arch → Latin Quarter → Salthill 산책로', km:420, time:10, perPerson:{3:75,4:70,5:65}},
+      {name:'B코스 — 골웨이 + 모허', spots:'골웨이 → Doolin → Cliffs of Moher (모허 A코스와 동일)', km:560, time:13, perPerson:{3:80,4:75,5:70}},
+      {name:'C코스 — 골웨이 + 아란 페리', spots:'Doolin 페리 → Inishmore 자전거 (페리비 별도)', km:530, time:12, perPerson:{3:78,4:72,5:67}},
+    ]
+  },
+  connemara: {
+    name:'코네마라 + 카일모어', nameEn:'Connemara + Kylemore',
+    km:480, time:12, perPerson:{3:78, 4:72, 5:67},
+    desc:'카일모어 수도원 · 코네마라 호수와 산',
+    folder:'connemara',
+    places: [],
+    variations: [
+      {name:'A코스 — 코네마라 + 골웨이', spots:'Galway → Bog Road → Kylemore Abbey → Connemara 국립공원', km:550, time:12, perPerson:{3:80,4:75,5:70}},
+      {name:'B코스 — 카일모어 + 녹 + 발린터버', spots:'Kylemore → Knock Shrine → Ballintubber Abbey → Galway', km:540, time:12, perPerson:{3:80,4:75,5:70}},
     ]
   },
   sligo: {
     name:'슬라이고 (Sligo)', nameEn:'Sligo',
     km:460, time:11, perPerson:{3:75, 4:70, 5:65},
-    desc:'예이츠 컨트리, 거대한 산 / Yeats Country',
+    desc:'예이츠 컨트리 · Benbulben 산',
+    folder:'sligo',
+    places: [],
     variations: [
-      {name:'예이츠 컨트리 (Yeats Country)', spots:'Drumcliffe (예이츠 무덤) · Glencar Waterfall · Lough Gill'},
-      {name:'벤불벤 + 멀라모어 (Benbulben + Mullaghmore)', spots:'Benbulben 산 · Mullaghmore Head · Classiebawn Castle'},
-      {name:'스트랜드힐 해변 (Strandhill Beach)', spots:'Strandhill 서핑 해변 · Knocknarea 산'},
+      {name:'A코스 — 예이츠 + 벤불벤', spots:'Drumcliffe (예이츠 무덤) → Glencar Waterfall → Benbulben → Mullaghmore', km:460, time:11, perPerson:{3:75,4:70,5:65}},
+      {name:'B코스 — 슬라이고 + 다운패트릭', spots:'Sligo → Downpatrick Head (메이요 C코스와 연결)', km:620, time:13, perPerson:{3:85,4:78,5:72}},
     ]
   },
   cork: {
-    name:'코크 (Cork)', nameEn:'Cork',
-    km:480, time:12, perPerson:{3:79, 4:74, 5:69},
-    desc:'아일랜드 제2 도시 / Rebel City',
+    name:'코크 (시내·코브·킨세일·웨스트코크)', nameEn:'Cork (City · Cobh · Kinsale · West Cork)',
+    km:480, time:12, perPerson:{3:75, 4:70, 5:65},
+    desc:'제2의 도시 + 항구 마을 + 서코크 야생',
+    folder:'cork',
+    places: [],
     variations: [
-      {name:'코크 + 블라니 (Cork + Blarney)', spots:'Blarney Castle · Stone of Eloquence · Cork 시내'},
-      {name:'코크 + 코브 (Cork + Cobh)', spots:'Cobh (타이타닉 마지막 항구) · 이민자 박물관 · Spike Island'},
-      {name:'코크 + 킨세일 (Cork + Kinsale)', spots:'Kinsale 항구마을 · Old Head · 음식의 도시'},
+      {name:'A코스 — 코크 + 코브 + 킨세일', spots:'Cork 시내 → Cobh (타이타닉 항구) → Kinsale 항구 마을', km:540, time:11, perPerson:{3:78,4:72,5:67}},
+      {name:'B코스 — 코크 + 카셸', spots:'Cork → Cobh → Kinsale → Rock of Cashel (귀가길)', km:600, time:12, perPerson:{3:82,4:76,5:71}},
+      {name:'C코스 — 웨스트 코크 (서코크)', spots:'Gougane Barra → Mizen Head → Baltimore Beacon → Cork 시내', km:680, time:13, perPerson:{3:88,4:80,5:75}},
+    ]
+  },
+  belfast: {
+    name:'벨파스트 (Belfast)', nameEn:'Belfast',
+    km:340, time:9, perPerson:{3:70, 4:65, 5:60},
+    desc:'타이타닉의 도시 · 북아일랜드 수도',
+    folder:'belfast',
+    places: [],
+    variations: [
+      {name:'A코스 — 벨파스트 + 타이타닉', spots:'Titanic Belfast → Belfast Castle → St George\'s Market', km:340, time:9, perPerson:{3:70,4:65,5:60}},
+      {name:'B코스 — 벨파스트 + 코즈웨이 (코즈웨이 A코스와 동일)', spots:'Belfast → Glenoe Falls → Causeway → Dark Hedges', km:540, time:12, perPerson:{3:80,4:75,5:70}},
     ]
   },
   causeway: {
-    name:'자이언트 코즈웨이 / 북아일랜드 (Giant\'s Causeway / Northern Ireland)', nameEn:"Giant's Causeway / Northern Ireland",
-    km:500, time:12, perPerson:{3:75, 4:70, 5:65},
-    desc:'세계 자연유산 / UNESCO World Heritage',
+    name:'자이언트 코즈웨이', nameEn:"Giant's Causeway",
+    km:500, time:12, perPerson:{3:78, 4:72, 5:67},
+    desc:'세계 자연유산 · 4만 개 육각 현무암',
+    folder:'causeway',
+    places: [],
     variations: [
-      {name:'코즈웨이 + 캐릭어리드 (Causeway + Carrick-a-Rede)', spots:"Giant's Causeway · Carrick-a-Rede 출렁다리 · Dunluce Castle"},
-      {name:'벨파스트 + 타이타닉 (Belfast + Titanic)', spots:'Belfast 시내 · Titanic Quarter · St George\'s Market'},
-      {name:'왕좌의 게임 로케이션 (Game of Thrones Locations)', spots:'Dark Hedges · Cushendun Caves · Ballintoy Harbour'},
+      {name:'A코스 — 코즈웨이 + 다크 헤지스 + 벨파스트', spots:"Giant's Causeway → Dark Hedges → Glenoe Falls → Belfast Castle", km:540, time:12, perPerson:{3:80,4:75,5:70}},
+      {name:'B코스 — 코즈웨이 + 데리(런던데리)', spots:"Causeway → Dark Hedges → Derry/Londonderry 시내", km:570, time:13, perPerson:{3:82,4:76,5:71}},
     ]
   },
   mayo: {
-    name:'메이요 (Mayo)', nameEn:'Mayo',
-    km:530, time:13, perPerson:{3:80, 4:75, 5:70},
-    desc:'아일랜드 서부 끝 / Wild West',
+    name:'메이요 (아킬·다운패트릭·녹)', nameEn:'Mayo (Achill · Downpatrick · Knock)',
+    km:530, time:13, perPerson:{3:78, 4:72, 5:67},
+    desc:'아일랜드 서부 끝 야생 풍경',
+    folder:'mayo',
+    places: [],
     variations: [
-      {name:'웨스트포트 + 크록 패트릭 (Westport + Croagh Patrick)', spots:'Westport 마을 · Croagh Patrick 산 · 등산 가능'},
-      {name:'아킬 섬 (Achill Island)', spots:'Achill 섬 · Keem Bay (해변) · Slievemore'},
-      {name:'킬러리 피오르드 (Killary Fjord)', spots:'아일랜드 유일 피오르드 · Connemara 일부'},
+      {name:'A코스 — 아킬 + 다운패트릭 헤드', spots:'Achill Island (Keem Bay) → Downpatrick Head', km:600, time:13, perPerson:{3:85,4:78,5:72}},
+      {name:'B코스 — 아킬 + 웨스트포트 + 발린터버 + 녹', spots:'Achill → Westport → Ballintubber Abbey → Knock Shrine', km:600, time:13, perPerson:{3:85,4:78,5:72}},
+      {name:'C코스 — 다운패트릭 + 포트클로이 + 슬라이고', spots:'Downpatrick Head → Portacloy → Sligo', km:580, time:13, perPerson:{3:82,4:76,5:71}},
     ]
   },
   moher: {
-    name:'모허 절벽 (Cliffs of Moher)', nameEn:'Cliffs of Moher',
-    km:540, time:13, perPerson:{3:90, 4:85, 5:80},
-    desc:'아일랜드 대표 명소 / Iconic Atlantic Cliffs',
+    name:'모허 + 버렌', nameEn:'Cliffs of Moher + The Burren',
+    km:540, time:13, perPerson:{3:80, 4:75, 5:70},
+    desc:'아일랜드 대표 명소 + 유네스코 지질공원',
+    folder:'moher',
+    places: [],
     variations: [
-      {name:'모허 + 둘린 (Moher + Doolin)', spots:'Cliffs of Moher · Doolin 항구 · 전통 음악'},
-      {name:'모허 + 버렌 (Moher + Burren)', spots:'Cliffs · The Burren 석회암 지대 · Poulnabrone Dolmen'},
-      {name:'모허 + 아란 섬 (Moher + Aran Islands)', spots:'Doolin 페리 → Inishmore 또는 Inisheer (페리비 별도)'},
+      {name:'A코스 — 모허 + 골웨이', spots:'Cliffs of Moher → Burren → Doolin → Galway 시내', km:540, time:13, perPerson:{3:80,4:75,5:70}},
+      {name:'B코스 — 모허 + 번래티/리머릭', spots:'Cliffs of Moher → Burren → Bunratty Castle → 리머릭', km:500, time:11, perPerson:{3:78,4:72,5:67}},
     ]
   },
   donegal: {
-    name:'도니골 (Donegal)', nameEn:'Donegal',
-    km:600, time:14, perPerson:{3:90, 4:80, 5:75},
-    desc:'숨은 보석 / Hidden Gem of the North',
+    name:'도니골 (남부·북부·데리)', nameEn:'Donegal (South + North + Derry)',
+    km:600, time:14, perPerson:{3:85, 4:78, 5:72},
+    desc:'슬리브 리그 · 와일드 애틀랜틱 야생',
+    folder:'donegal',
+    places: [],
     variations: [
-      {name:'슬리브 리그 절벽 (Slieve League Cliffs)', spots:'유럽 최고 해안 절벽 중 하나 · Bunglass'},
-      {name:'글렌비 국립공원 (Glenveagh National Park)', spots:'Glenveagh Castle · 호수 · 산악 풍경'},
-      {name:'도니골 와일드 애틀랜틱 (Donegal Wild Atlantic Way)', spots:'Mizen Head · Atlantic Drive 해안 도로'},
+      {name:'A코스 — 슬리브 리그 (남부)', spots:'Slieve League Cliffs (601m) → Glenveagh National Park', km:600, time:13, perPerson:{3:85,4:78,5:72}},
+      {name:'B코스 — 도니골 북부 + 데리', spots:'Fanad Head → Malin Head → Derry/Londonderry 시내', km:700, time:14, perPerson:{3:92,4:85,5:80}},
     ]
   },
   kerry: {
-    name:'케리 / 딩글 (Kerry / Dingle)', nameEn:'Kerry / Dingle',
-    km:750, time:16, perPerson:{3:115, 4:105, 5:100},
-    desc:'아일랜드 풍경의 정점 / Pinnacle of Irish Scenery',
+    name:'케리 (킬러니 + 딩글)', nameEn:'Kerry (Killarney + Dingle)',
+    km:750, time:16, perPerson:{3:95, 4:88, 5:82},
+    desc:'아일랜드 풍경의 정점 · 링 오브 케리',
+    folder:'kerry',
+    places: [],
     variations: [
-      {name:'링 오브 케리 (Ring of Kerry)', spots:'Killarney · Ladies View · Moll\'s Gap · Kenmare · 원형 도로'},
-      {name:'딩글 반도 (Dingle Peninsula)', spots:'Dingle 마을 · Slea Head Drive · Inch Beach'},
-      {name:'킬라니 국립공원 (Killarney National Park)', spots:'Muckross House · Torc Waterfall · Gap of Dunloe'},
+      {name:'A코스 — 킬러니 + 딩글', spots:'Killarney N.P. → Gap of Dunloe → Dingle → Slea Head → Inch Beach', km:750, time:16, perPerson:{3:95,4:88,5:82}},
+      {name:'B코스 — 킬러니 + 구게인바라 + 벤트리', spots:'Killarney → Gougane Barra → Ventry Beach', km:720, time:15, perPerson:{3:92,4:85,5:80}},
     ]
   },
 };
@@ -1905,6 +2171,18 @@ function tourTotal(tour, n) {
   return pp(tour, n) * n;
 }
 
+// 코스/인원에 따른 인당 가격 범위 산출
+function tourPriceRange(tour) {
+  if (tour.isRange) return null;
+  const prices = [];
+  if (tour.perPerson) [3,4,5].forEach(n => { if (typeof tour.perPerson[n] === 'number') prices.push(tour.perPerson[n]); });
+  if (tour.variations) tour.variations.forEach(v => {
+    if (v.perPerson) [3,4,5].forEach(n => { if (typeof v.perPerson[n] === 'number') prices.push(v.perPerson[n]); });
+  });
+  if (prices.length === 0) return null;
+  return { min: Math.min(...prices), max: Math.max(...prices) };
+}
+
 // Render tour cards
 const container = document.getElementById('tour-cards');
 Object.entries(TOURS).forEach(([key, tour]) => {
@@ -1915,9 +2193,15 @@ Object.entries(TOURS).forEach(([key, tour]) => {
   const cardBg = tour.special
     ? 'background: linear-gradient(135deg, #6dd5ed 0%, #2193b0 100%);'
     : '';
-  const priceLine = tour.isRange
-    ? `<span class="pf">€${tour.perPerson[5]}–€${tour.perPerson[3]}/인</span> <span style="font-size:11.5px; color:var(--muted);">코스별</span>`
-    : `<span class="pf">5인 €${pp(tour,5)}/인</span> · 4인 €${pp(tour,4)}/인 · 3인 €${pp(tour,3)}/인`;
+  let priceLine;
+  if (tour.isRange) {
+    priceLine = `<span class="pf">인당 €${tour.perPerson[5]}~€${tour.perPerson[3]}</span> <span style="font-size:11.5px; color:var(--muted);">코스별</span>`;
+  } else {
+    const range = tourPriceRange(tour);
+    priceLine = (range && range.min !== range.max)
+      ? `<span class="pf">인당 €${range.min}~€${range.max}</span>`
+      : `<span class="pf">인당 €${range ? range.min : pp(tour,5)}</span>`;
+  }
   card.innerHTML = `
     <div class="tour-img" style="${cardBg}">
       <span class="placeholder">📷 ${tour.name}</span>
@@ -1972,30 +2256,109 @@ function openTourModal(key) {
     `).join('');
   }
 
-  // Populate variations
+  // Populate places gallery (대표 장소 슬라이드)
+  const placesSection = document.getElementById('modal-places-section');
+  if (t.places && t.places.length > 0) {
+    placesSection.style.display = 'block';
+    const folder = t.folder || key;
+    const galleryId = `gallery-${key}`;
+    placesSection.innerHTML = `
+      <div class="gallery-header">
+        <h5>📍 대표 장소 (${t.places.length}곳)</h5>
+        <span class="gallery-note">← 좌우로 스와이프 / 화살표 →</span>
+      </div>
+      <div class="places-gallery-wrap">
+        <button class="gallery-nav prev" onclick="scrollGallery('${galleryId}', -1)" aria-label="이전">‹</button>
+        <div class="places-gallery" id="${galleryId}">
+          ${t.places.map(p => `
+            <div class="place-card">
+              <div class="place-thumb">
+                <img src="images/${folder}/${p.key}.jpg"
+                     alt="${p.nameEn}"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                     onload="this.style.display='block'; this.nextElementSibling.style.display='none';">
+                <div class="needs-photo" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; height:100%;">
+                  📷 사진 준비 중<span class="filename">${folder}/${p.key}.jpg</span>
+                </div>
+              </div>
+              <div class="place-info">
+                <div class="place-name-ko">${p.name}</div>
+                <div class="place-name-en">${p.nameEn}</div>
+                <div class="place-desc">${p.desc}</div>
+                ${p.seasonal ? `<div class="seasonal-badge">🌼 ${p.seasonal} 한정</div>` : ''}
+              </div>
+            </div>
+          `).join('')}
+        </div>
+        <button class="gallery-nav next" onclick="scrollGallery('${galleryId}', 1)" aria-label="다음">›</button>
+      </div>
+    `;
+  } else {
+    placesSection.style.display = 'none';
+    placesSection.innerHTML = '';
+  }
+
+  // Populate seasonal tips (계절별 추천)
+  const seasonalSection = document.getElementById('modal-seasonal-section');
+  if (t.seasonalTips && t.seasonalTips.length > 0) {
+    seasonalSection.style.display = 'block';
+    seasonalSection.innerHTML = `
+      <div class="seasonal-tips">
+        ${t.seasonalTips.map(s => `
+          <div class="tip-row">${s.icon || '🗓️'} <strong>${s.months}</strong> · ${s.text}</div>
+        `).join('')}
+      </div>
+    `;
+  } else {
+    seasonalSection.style.display = 'none';
+    seasonalSection.innerHTML = '';
+  }
+
+  // Populate variations (코스 예시 — 가격 명시)
   const varDiv = document.getElementById('modal-variations');
   if (t.variations && t.variations.length > 0) {
     varDiv.style.display = 'block';
     varDiv.innerHTML = `
-      <h5 style="font-size:13px; font-weight:700; color:var(--primary); margin-bottom:10px;">🗺️ 가능한 코스 옵션 (${t.variations.length}개)</h5>
+      <h5 style="font-size:13px; font-weight:700; color:var(--primary); margin-bottom:10px; margin-top:14px;">🗺️ 코스 예시 (${t.variations.length}개)</h5>
       ${t.variations.map(v => `
-        <div style="background:white; border-left:3px solid var(--accent); padding:12px 14px; margin-bottom:8px; border-radius:6px;">
-          <div style="font-weight:700; color:var(--primary); font-size:13.5px; margin-bottom:4px;">${v.name}</div>
-          <div style="font-size:12.5px; color:var(--muted); line-height:1.5;">${v.spots}</div>
+        <div style="background:white; border:1px solid var(--border); border-left:3px solid var(--accent); padding:12px 14px; margin-bottom:8px; border-radius:8px;">
+          <div style="font-weight:700; color:var(--primary); font-size:13px; margin-bottom:4px;">${v.name}</div>
+          <div style="font-size:12px; color:var(--muted); line-height:1.5; margin-bottom:8px;">${v.spots}</div>
+          ${v.km ? `
+            <div style="display:flex; gap:8px; flex-wrap:wrap; padding-top:8px; border-top:1px dashed var(--border); font-size:11.5px;">
+              <span style="background:var(--bg); padding:3px 8px; border-radius:6px; color:var(--text);" title="실제 예상 주행거리">🚗 ${v.km}km · ⏱️ ${v.time}h</span>
+              ${v.perPerson ? `<span style="background:var(--accent-soft); padding:3px 8px; border-radius:6px; color:var(--primary); font-weight:700;">💰 €${v.perPerson[3]}/€${v.perPerson[4]}/€${v.perPerson[5]} (3·4·5인)</span>` : ''}
+            </div>
+          ` : ''}
         </div>
       `).join('')}
-      <p style="font-size:11.5px; color:var(--muted); font-style:italic; margin-top:8px;">
-        선택한 옵션·날씨·시간에 맞춰 세부 코스 조정. 카톡으로 자세히 상의 가능.
-      </p>
+      <div style="background:#fff8e6; border:1px dashed var(--accent); border-radius:8px; padding:11px 14px; margin-top:10px; font-size:12px; line-height:1.6; color:var(--text);">
+        💛 위 코스는 Andrew가 직접 다녀본 추천 루트예요. <strong>꼭 가고 싶은 곳이 빠졌거나, 다른 조합·맞춤 코스</strong>를 원하시면 카톡 주세요. 함께 짜드립니다.
+      </div>
     `;
   } else {
-    varDiv.style.display = 'none';
+    varDiv.style.display = 'block';
+    varDiv.innerHTML = `
+      <div style="background:#fff8e6; border:1px dashed var(--accent); border-radius:8px; padding:14px 16px; margin-top:14px; font-size:12.5px; line-height:1.6; color:var(--text);">
+        💛 이 지역은 코스 예시 셋팅 중이에요. <strong>가고 싶은 스팟·일정·인원</strong>을 카톡으로 알려주시면 함께 코스를 짜드립니다.
+      </div>
+    `;
   }
 
   document.getElementById('tour-modal').classList.add('open');
 }
 function closeTourModal() {
   document.getElementById('tour-modal').classList.remove('open');
+}
+
+// 슬라이드 캐러셀 좌우 이동 (한 번에 카드 2개씩)
+function scrollGallery(id, direction) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const card = el.querySelector('.place-card');
+  if (!card) return;
+  const cardWidth = card.offsetWidth + 10; // gap 포함
+  el.scrollBy({ left: cardWidth * 2 * direction, behavior: 'smooth' });
 }
 
 // PICKUP CALCULATOR (주소 기반 + 짐 제한)
@@ -2035,10 +2398,11 @@ function calcPickup() {
   let price, zoneLabel;
   if (km === 0 && isOther) { price = 0; zoneLabel = '거리 입력 필요'; }
   else if (km <= 10) { price = 35; zoneLabel = `Zone 0 · ${km}km`; }
-  else if (km <= 15) { price = 45; zoneLabel = `Zone 1 · ${km}km`; }
-  else if (km <= 25) { price = 55; zoneLabel = `Zone 2 · ${km}km`; }
-  else if (km <= 50) { price = 70 + (km - 25); zoneLabel = `Zone 3 · ${km}km`; }
-  else { price = 100 + Math.round((km - 50) * 1.5); zoneLabel = `Zone 4 · ${km}km (별도 협의)`; }
+  else if (km <= 13) { price = 40; zoneLabel = `Zone 1 · ${km}km`; }
+  else if (km <= 17) { price = 45; zoneLabel = `Zone 2 · ${km}km`; }
+  else if (km <= 25) { price = 55; zoneLabel = `Zone 3 · ${km}km`; }
+  else if (km <= 50) { price = 70 + (km - 25); zoneLabel = `Zone 4 · ${km}km`; }
+  else { price = 100 + Math.round((km - 50) * 1.5); zoneLabel = `Zone 5 · ${km}km (별도 협의)`; }
 
   const breakdown = [`<li><span>${zoneLabel}</span><span>€${Math.round(price)}</span></li>`];
   if (pkNight) {
