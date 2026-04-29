@@ -26,7 +26,7 @@
   "address": {"@type": "PostalAddress", "addressLocality": "Dublin", "addressCountry": "IE"},
   "telephone": "[removed]",
   "email": "sby05034@gmail.com",
-  "priceRange": "€35–€840",
+  "priceRange": "€35–€600",
   "areaServed": [
     {"@type": "City", "name": "Dublin"},
     {"@type": "AdministrativeArea", "name": "Greater Dublin Area"},
@@ -727,6 +727,7 @@
       <a href="#vehicle">차량</a>
       <a href="#prices">가격표</a>
       <a href="#faq">FAQ</a>
+      <a href="#music-project" style="color:var(--accent); font-weight:700;">🎵 프로젝트</a>
       <a href="#contact">문의</a>
     </div>
   </div>
@@ -744,12 +745,17 @@
     <div class="hero-titles">
       <span>🌟 단톡방의 서현 Andrew</span>
       <span>🚶 무료 워킹투어 운영자</span>
-      <span>📰 한국 기자단 안내</span>
+      <span>🎵 수익 100% Classical Music for Everyone 봉사 펀드</span>
     </div>
     <h1>🇮🇪 Beautiful Ireland<br>with Everyone</h1>
     <p class="tagline" style="font-size:17px; margin-bottom:6px;">아름다운 아일랜드를 모두와 함께</p>
     <p class="tagline" style="opacity:0.85;">Andrew의 아일랜드 동행 — 친구처럼 함께</p>
     <p class="sub">✈️ 공항 픽업 · 🏠 이사·운송 · 🌿 Irish Nature 로드트립 · ✏️ 커스텀 여행</p>
+    <div style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); border-radius:10px; padding:12px 16px; margin:18px auto 0; max-width:680px; font-size:13.5px; line-height:1.6;">
+      🎵 Paddywagon과 비슷한 가격으로 함께하는 아일랜드 여행. <br>
+      받은 금액은 <strong>차량 유지비를 제외하고 100% 음악이 필요한 곳을 찾아가는 봉사 예산</strong>으로.
+      <a href="#music-project" style="color:var(--accent); font-weight:700; text-decoration:underline; white-space:nowrap;">프로젝트 보기 →</a>
+    </div>
     <div class="cta">
       <a href="#calculator">🧮 가격 계산</a>
       <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" class="outline">💬 카톡 채팅 시작</a>
@@ -857,7 +863,7 @@
       <div class="service-card" onclick="document.getElementById('tours').scrollIntoView({behavior:'smooth'});">
         <div class="icon">🌿</div>
         <h4>당일치기 로드트립</h4>
-        <div class="price">3인 €180부터</div>
+        <div class="price">€45/인부터 (5인)</div>
         <p>아일랜드 12개 지역 30+ 코스. 친구처럼 함께. 톨비·주차 포함 (시내권).</p>
       </div>
       <div class="service-card" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
@@ -1051,8 +1057,8 @@
             </div>
             <div class="field">
               <label>인원</label>
-              <input type="number" id="tr-people" value="3" min="3" max="6" step="1" oninput="calcTour()">
-              <div class="hint">최소 3인 (그룹 기준)</div>
+              <input type="number" id="tr-people" value="3" min="3" max="5" step="1" oninput="calcTour()">
+              <div class="hint">최소 3인 · 최대 5인 (7인승, 캐리어 공간 고려)</div>
             </div>
           </div>
           <div class="row">
@@ -1082,10 +1088,10 @@
             </div>
           </div>
           <div class="result-panel">
-            <div class="result-label">예상 그룹 합계</div>
-            <div class="result-price" id="tr-total">€180</div>
+            <div class="result-label">1인당 가격</div>
+            <div class="result-price" id="tr-perperson">€55</div>
             <div style="margin-top:-10px; margin-bottom:14px; font-size:14px; color:var(--muted)">
-              1인당 <strong id="tr-perperson" style="color:var(--primary)">€60</strong>
+              그룹 합계 <strong id="tr-total" style="color:var(--primary)">€165</strong>
             </div>
             <div class="breakdown">
               <h5>📋 가격 구성</h5>
@@ -1094,7 +1100,7 @@
             <p style="margin-top:14px; font-size:12px; color:var(--muted); font-style:italic;">
               ✓ 포함: 차량·운전·가이딩·한국어 안내·주차·톨비 (시내 + 더블린 근교)<br>
               ✗ 별도: 식비·입장료·페리비·더블린 외 지역 톨비 (각자 부담)<br>
-              인원 늘면 인당 ↓ (4명 이상 자동 할인)
+              인당 가격 고정 · 3인부터 출발 가능 · 5인까지 동일 인당가
             </p>
           </div>
         </div>
@@ -1123,7 +1129,7 @@
           <div style="font-size:12px; color:var(--accent); font-weight:700; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:6px;">✅ 출발 확정 조건</div>
           <div style="font-size:13.5px; color:var(--text); line-height:1.5;">
             <strong>3인 모이면 자동 확정</strong> 또는<br>
-            <strong>차량 전체 금액 부담</strong>이면 즉시 확정
+            <strong>5인 총액 부담</strong>이면 1·2인이라도 즉시 확정
           </div>
         </div>
         <div>
@@ -1292,6 +1298,28 @@
       <p class="lead">정찰가. 친구·지인 분담은 별도 카톡 1:1 안내</p>
     </div>
 
+    <!-- 음악 프로젝트 펀드 안내 (가격 섹션 핵심 메시지) -->
+    <div style="background:linear-gradient(135deg, var(--accent-soft) 0%, #fff5e6 100%); border:2px solid var(--accent); border-radius:14px; padding:22px 26px; margin-bottom:24px;">
+      <div style="display:flex; align-items:flex-start; gap:14px;">
+        <div style="font-size:32px; flex-shrink:0;">🎵</div>
+        <div style="flex:1;">
+          <h3 style="margin:0 0 8px; font-size:17px; color:var(--primary);">Paddywagon과 비슷한 가격으로 함께하는 아일랜드 여행</h3>
+          <p style="margin:0 0 8px; font-size:14px; line-height:1.7; color:var(--text);">
+            이 차량은 제가 운영하는 음악 봉사 프로젝트
+            <strong style="color:var(--primary);">Classical Music for Everyone</strong>의 펀딩으로 마련되었습니다.
+            차량의 본래 목적은 <strong>음악이 필요한 곳, 음악을 원하는 곳에 음악을 전하는 봉사활동</strong>이에요.
+          </p>
+          <p style="margin:0; font-size:14px; line-height:1.7; color:var(--text);">
+            여러분이 픽업·여행·이사 서비스에 내신 모든 금액은
+            <strong style="background:var(--green-soft); padding:2px 6px; border-radius:4px; color:var(--green);">차량 유지·관리비를 제외하고 100%</strong>
+            <strong>음악 프로젝트 봉사활동 예산</strong>으로 사용됩니다.
+            여러분의 여행 한 번이 누군가에게 닿는 음악 한 곡이 됩니다.
+            <a href="#music-project" style="color:var(--accent); font-weight:700; text-decoration:underline;">프로젝트 자세히 보기 ↓</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
     <div class="price-section">
       <h3>✈️ 공항 픽업 / 샌딩 (공항 기준 거리)</h3>
       <table class="price-table">
@@ -1334,28 +1362,28 @@
     <div class="price-section">
       <h3>🌿 당일치기 로드트립 (12개 지역)</h3>
       <table class="price-table">
-        <thead><tr><th>코스</th><th>거리</th><th style="text-align:right">3인 총액</th><th style="text-align:right">3인/인당</th><th style="text-align:right">6인/인당</th></tr></thead>
+        <thead><tr><th>코스</th><th>거리</th><th style="text-align:right">3인/인당</th><th style="text-align:right">4인/인당</th><th style="text-align:right">5인/인당</th><th style="text-align:right">5인 총액</th></tr></thead>
         <tbody>
-          <tr><td>🌦️ 일기예보 랜덤 (Weather Random)</td><td>당일 결정</td><td class="price" colspan="3" style="text-align:center;">선택된 코스의 가격 적용 (아래 표 참조)</td></tr>
-          <tr><td>위클로 (Wicklow)</td><td>150 km</td><td class="price">€180</td><td class="price">€60</td><td class="price">€48</td></tr>
-          <tr><td>멀링거 (Mullingar)</td><td>180 km</td><td class="price">€200</td><td class="price">€67</td><td class="price">€52</td></tr>
-          <tr><td>워터포드 (Waterford)</td><td>340 km</td><td class="price">€290</td><td class="price">€97</td><td class="price">€73</td></tr>
-          <tr><td>리머릭 / 번래티 (Limerick / Bunratty)</td><td>380 km</td><td class="price">€310</td><td class="price">€103</td><td class="price">€78</td></tr>
-          <tr><td>골웨이 (Galway)</td><td>420 km</td><td class="price">€340</td><td class="price">€113</td><td class="price">€85</td></tr>
-          <tr><td>슬라이고 (Sligo)</td><td>460 km</td><td class="price">€360</td><td class="price">€120</td><td class="price">€91</td></tr>
-          <tr><td>코크 (Cork)</td><td>480 km</td><td class="price">€380</td><td class="price">€127</td><td class="price">€95</td></tr>
-          <tr><td>자이언트 코즈웨이 / 북아일랜드 (Giant's Causeway / NI)</td><td>500 km</td><td class="price">€390</td><td class="price">€130</td><td class="price">€98</td></tr>
-          <tr><td>메이요 (Mayo)</td><td>530 km</td><td class="price">€410</td><td class="price">€137</td><td class="price">€103</td></tr>
-          <tr><td>모허 절벽 (Cliffs of Moher)</td><td>540 km</td><td class="price">€420</td><td class="price">€140</td><td class="price">€106</td></tr>
-          <tr><td>도니골 (Donegal)</td><td>600 km</td><td class="price">€460</td><td class="price">€153</td><td class="price">€116</td></tr>
-          <tr><td>케리 / 딩글 (Kerry / Dingle)</td><td>750 km</td><td class="price">€560</td><td class="price">€187</td><td class="price">€140</td></tr>
+          <tr><td>🌦️ 일기예보 랜덤 (Weather Random)</td><td>당일 결정</td><td class="price" colspan="4" style="text-align:center;">선택된 코스의 가격 적용 (아래 표 참조)</td></tr>
+          <tr><td>위클로 (Wicklow)</td><td>150 km</td><td class="price">€55</td><td class="price">€50</td><td class="price">€45</td><td class="price">€225</td></tr>
+          <tr><td>멀링거 (Mullingar)</td><td>180 km</td><td class="price">€60</td><td class="price">€55</td><td class="price">€50</td><td class="price">€250</td></tr>
+          <tr><td>워터포드 (Waterford)</td><td>340 km</td><td class="price">€70</td><td class="price">€65</td><td class="price">€60</td><td class="price">€300</td></tr>
+          <tr><td>리머릭 / 번래티 (Limerick / Bunratty)</td><td>380 km</td><td class="price">€70</td><td class="price">€65</td><td class="price">€60</td><td class="price">€300</td></tr>
+          <tr><td>골웨이 (Galway)</td><td>420 km</td><td class="price">€79</td><td class="price">€74</td><td class="price">€69</td><td class="price">€345</td></tr>
+          <tr><td>슬라이고 (Sligo)</td><td>460 km</td><td class="price">€75</td><td class="price">€70</td><td class="price">€65</td><td class="price">€325</td></tr>
+          <tr><td>코크 (Cork)</td><td>480 km</td><td class="price">€79</td><td class="price">€74</td><td class="price">€69</td><td class="price">€345</td></tr>
+          <tr><td>자이언트 코즈웨이 / 북아일랜드 (Giant's Causeway / NI)</td><td>500 km</td><td class="price">€75</td><td class="price">€70</td><td class="price">€65</td><td class="price">€325</td></tr>
+          <tr><td>메이요 (Mayo)</td><td>530 km</td><td class="price">€80</td><td class="price">€75</td><td class="price">€70</td><td class="price">€350</td></tr>
+          <tr><td>모허 절벽 (Cliffs of Moher)</td><td>540 km</td><td class="price">€90</td><td class="price">€85</td><td class="price">€80</td><td class="price">€400</td></tr>
+          <tr><td>도니골 (Donegal)</td><td>600 km</td><td class="price">€90</td><td class="price">€80</td><td class="price">€75</td><td class="price">€375</td></tr>
+          <tr><td>케리 / 딩글 (Kerry / Dingle)</td><td>750 km</td><td class="price">€115</td><td class="price">€105</td><td class="price">€100</td><td class="price">€500</td></tr>
         </tbody>
       </table>
       <p style="font-size:12.5px; color:var(--muted); margin-top:8px">
         주차·톨비(시내)·운전·가이딩·한국어 안내 모두 포함. <strong>식비·입장료·페리비·시외 톨비는 별도 (각자)</strong>.<br>
         <strong>미팅 포인트 = Blanchardstown Shopping Centre</strong> (D15, 시내 접근 양호).<br>
-        <strong>도어투도어 옵션</strong>: Blanchardstown SC 기준 15km 이내 +€5/인/편도 · 15km 초과 +€10/인/편도.<br>
-        4인부터는 인당 단계적으로 ↓ — <a href="#calculator" style="color:var(--accent); font-weight:700; text-decoration:underline;">🧮 계산기에서 인원·옵션별 가격 확인하기</a>
+        <strong>인원 늘면 인당 ↓</strong> (3인 → 4인 −€5 → 5인 −€5/인) · 3인 모이면 자동 출발 · 최대 5인 (7인승, 캐리어 공간 고려).<br>
+        <strong>도어투도어 옵션 (선택)</strong>: Blanchardstown SC 기준 15km 이내 +€5/인/편도 · 15km 초과 +€10/인/편도. — <a href="#calculator" style="color:var(--accent); font-weight:700; text-decoration:underline;">🧮 계산기에서 인원·옵션별 가격 확인하기</a>
       </p>
     </div>
   </div>
@@ -1374,55 +1402,55 @@
         <thead>
           <tr>
             <th style="white-space:nowrap;">코스</th>
-            <th style="text-align:right; white-space:nowrap;">투어 버스</th>
-            <th style="text-align:right; white-space:nowrap;">친구 여행 (4인)</th>
-            <th style="text-align:right; white-space:nowrap;">차이</th>
+            <th style="text-align:right; white-space:nowrap;">대형 코치 투어</th>
+            <th style="text-align:right; white-space:nowrap;">소그룹 영어 투어</th>
+            <th style="text-align:right; white-space:nowrap;">친구 여행 (5인 기준)</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>위클로 (Wicklow)</td>
             <td class="price">€33–€45/인</td>
-            <td class="price">€55/인</td>
-            <td class="price" style="color:var(--green)">+€10–€20</td>
+            <td class="price">€60–€75/인</td>
+            <td class="price" style="color:var(--green)">€45/인 = Paddy 동급</td>
           </tr>
           <tr>
-            <td>모허 절벽 (Cliffs of Moher)</td>
-            <td class="price">€60–€80/인 (코치) / €129/인 (소그룹)</td>
-            <td class="price">€125/인</td>
-            <td class="price" style="color:var(--green)">소그룹과 동급</td>
+            <td>골웨이 (Galway)</td>
+            <td class="price">€55–€69/인</td>
+            <td class="price">€100–€120/인</td>
+            <td class="price" style="color:var(--green)">€69/인 = Paddy 동급</td>
           </tr>
           <tr>
             <td>코즈웨이 (Giant's Causeway)</td>
             <td class="price">€55–€65/인</td>
-            <td class="price">€116/인</td>
-            <td class="price" style="color:var(--green)">+€51 (긴 거리)</td>
+            <td class="price">€100–€115/인</td>
+            <td class="price" style="color:var(--green)">€65/인 = Paddy 동급</td>
           </tr>
           <tr>
-            <td>골웨이 (Galway)</td>
-            <td class="price">€55–€75/인</td>
-            <td class="price">€101/인</td>
-            <td class="price" style="color:var(--green)">+€26</td>
+            <td>모허 절벽 (Cliffs of Moher)</td>
+            <td class="price">€60–€80/인</td>
+            <td class="price">€100–€129/인</td>
+            <td class="price" style="color:var(--green)">€80/인 = Paddy 동급</td>
           </tr>
           <tr>
             <td>케리·딩글 (Kerry / Dingle, 1일)</td>
-            <td class="price">€85–€100/인 (잦은 1박 권장)</td>
-            <td class="price">€168/인</td>
-            <td class="price" style="color:var(--green)">+€68 (당일치기 가능)</td>
+            <td class="price">€85–€100/인 (1박 권장)</td>
+            <td class="price">€120–€150/인</td>
+            <td class="price" style="color:var(--green)">€100/인 (당일치기) = Paddy 동급</td>
           </tr>
         </tbody>
       </table>
     </div>
 
     <div style="background:var(--accent-soft); border-radius:14px; padding:22px 26px;">
-      <h3 style="margin-bottom:12px; font-size:17px;">왜 €10–€80 더 받는 게 합리적인가</h3>
+      <h3 style="margin-bottom:12px; font-size:17px;">Paddywagon과 비슷한 가격으로 함께 떠나는 아일랜드 여행 — 받은 금액은 음악이 필요한 곳으로</h3>
       <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:14px; font-size:13.5px; color:var(--text);">
         <div>
           <div style="font-weight:700; color:var(--primary); margin-bottom:4px;">🇰🇷 한국어 가이딩</div>
           영어 투어버스에서 못 듣고 지나치는 디테일을 한국어로 풀어드림
         </div>
         <div>
-          <div style="font-weight:700; color:var(--primary); margin-bottom:4px;">🚐 작은 그룹 (3–6인)</div>
+          <div style="font-weight:700; color:var(--primary); margin-bottom:4px;">🚐 작은 그룹 (3–5인)</div>
           50인 코치가 못 가는 작은 길·숨은 스팟·즉흥 정차
         </div>
         <div>
@@ -1544,8 +1572,11 @@
     <div class="faq-item" onclick="toggleFaq(this)">
       <div class="faq-q">"Classical Music for Everyone"이 무엇인가요?</div>
       <div class="faq-a">
-        제가 운영하는 사회봉사 프로젝트입니다. 클래식 음악을 더 많은 사람들이 부담 없이 즐길 수 있도록 만들어가는 활동이에요.
-        이 차량 동행 서비스에서 받은 금액의 일부가 이 프로젝트의 운영 예산으로 사용됩니다.
+        제가 운영하는 음악 봉사 프로젝트입니다.
+        <strong>음악이 필요한 곳, 음악을 원하는 곳에 음악을 전하는</strong> 활동이에요.
+        이 차량은 그 프로젝트를 위한 펀딩으로 마련되었고, 차량 동행 서비스에서 받은 모든 금액은
+        <strong>차량 유지·관리비를 제외하고 100% 음악 프로젝트 봉사활동 예산</strong>으로 사용됩니다.
+        프로젝트가 궁금하시면 <a href="#music-project" style="color:var(--accent); font-weight:700;">하단 안내 섹션</a>을 참고해주세요.
       </div>
     </div>
 
@@ -1562,6 +1593,86 @@
         소형견(케이지 사용)은 가능합니다. 사전 카톡으로 알려주시고, 차량 청결 유지를 위해 케이지 또는 별도 매트 권장.
         알레르기 손님 보호를 위해 사전 협의 필수.
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLASSICAL MUSIC FOR EVERYONE — 프로젝트 랜딩 -->
+<section id="music-project" style="background:linear-gradient(135deg, #1a2942 0%, #2c4060 100%); color:white; padding:64px 0;">
+  <div class="container" style="max-width:920px;">
+    <div style="text-align:center; margin-bottom:36px;">
+      <div style="font-size:13px; letter-spacing:2px; text-transform:uppercase; opacity:0.7; margin-bottom:10px;">🎵 The Mission</div>
+      <h2 style="font-size:32px; font-weight:900; margin:0 0 14px; line-height:1.2;">
+        Classical Music<br><span style="color:var(--accent);">for Everyone</span>
+      </h2>
+      <p style="font-size:17px; line-height:1.6; margin:0; opacity:0.92; max-width:640px; margin-left:auto; margin-right:auto;">
+        음악이 필요한 곳, 음악을 원하는 곳에<br>
+        <strong style="color:var(--accent);">음악을 전하는 봉사 프로젝트</strong>입니다.
+      </p>
+    </div>
+
+    <!-- 프로젝트 소개 카드 3개 -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:18px; margin-bottom:36px;">
+      <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:14px; padding:22px 24px;">
+        <div style="font-size:28px; margin-bottom:10px;">🎼</div>
+        <h4 style="margin:0 0 8px; font-size:15px; color:var(--accent);">왜 시작했나요</h4>
+        <p style="margin:0; font-size:13.5px; line-height:1.65; opacity:0.88;">
+          클래식 음악이 콘서트홀 안에만 머물지 않도록.
+          음악을 듣고 싶은 분들이 계신 곳이라면 어디든 — 공연장 밖에서, 일상 가까이에서 함께하는 음악을 만듭니다.
+        </p>
+      </div>
+      <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:14px; padding:22px 24px;">
+        <div style="font-size:28px; margin-bottom:10px;">🚐</div>
+        <h4 style="margin:0 0 8px; font-size:15px; color:var(--accent);">왜 이 차량인가요</h4>
+        <p style="margin:0; font-size:13.5px; line-height:1.65; opacity:0.88;">
+          이 7인승 MPV는 <strong>여러분과 응원해주신 분들의 펀딩</strong>으로 마련된 차량입니다.
+          연주자·악기·장비를 싣고 음악이 필요한 곳으로 직접 찾아가기 위한 차량이에요.
+        </p>
+      </div>
+      <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:14px; padding:22px 24px;">
+        <div style="font-size:28px; margin-bottom:10px;">💝</div>
+        <h4 style="margin:0 0 8px; font-size:15px; color:var(--accent);">여러분의 여행이 곧 후원</h4>
+        <p style="margin:0; font-size:13.5px; line-height:1.65; opacity:0.88;">
+          픽업·여행·이사 서비스로 받은 금액은
+          <strong>차량 유지·관리비를 제외하고 100%</strong>
+          이 프로젝트의 봉사활동 예산으로 쓰입니다.
+        </p>
+      </div>
+    </div>
+
+    <!-- 임팩트 강조 박스 -->
+    <div style="background:rgba(201,169,110,0.12); border:1px solid var(--accent); border-radius:14px; padding:24px 28px; margin-bottom:36px;">
+      <div style="display:flex; align-items:flex-start; gap:16px; flex-wrap:wrap;">
+        <div style="font-size:32px; flex-shrink:0;">✨</div>
+        <div style="flex:1; min-width:240px;">
+          <h4 style="margin:0 0 10px; font-size:16px; color:var(--accent);">여러분의 여행 1회 = 음악 한 곡이 닿습니다</h4>
+          <p style="margin:0; font-size:14px; line-height:1.7; opacity:0.92;">
+            모허 5인 여행 1회로 약 <strong style="color:var(--accent);">€210</strong>의 음악 프로젝트 예산이 적립됩니다.
+            케리/딩글 5인 1회면 약 <strong style="color:var(--accent);">€245</strong>.
+            이 예산은 음악이 필요한 곳을 찾아가는 연주, 악기, 음향, 이동 비용으로 사용됩니다.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align:center;">
+      <p style="margin:0 0 18px; font-size:14.5px; opacity:0.88; line-height:1.7;">
+        프로젝트가 궁금하거나, 음악이 필요한 곳을 알려주고 싶으시거나,<br>
+        후원·연주자 참여·협업을 원하시면 언제든 연락 주세요.
+      </p>
+      <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" style="background:#fee500; color:#3c1e1e; padding:13px 24px; border-radius:10px; text-decoration:none; font-weight:800; font-size:14.5px;">
+          💬 카톡으로 프로젝트 문의
+        </a>
+        <a href="mailto:sby05034@gmail.com?subject=Classical%20Music%20for%20Everyone%20%EB%AC%B8%EC%9D%98" style="background:transparent; color:var(--accent); padding:13px 24px; border:2px solid var(--accent); border-radius:10px; text-decoration:none; font-weight:800; font-size:14.5px;">
+          ✉️ 이메일 문의
+        </a>
+      </div>
+      <p style="margin:18px 0 0; font-size:12px; opacity:0.6; line-height:1.6;">
+        프로젝트 별도 안내 페이지·인스타그램·후원 채널은 곧 오픈 예정입니다.<br>
+        지금은 카톡·이메일로 자세한 내용을 안내드려요.
+      </p>
     </div>
   </div>
 </section>
@@ -1623,7 +1734,7 @@ const TOURS = {
   weather: {
     name:'🌦️ 일기예보 랜덤 여행', nameEn:'Weather-Based Random Tour',
     km:'150–750', time:'8–16',
-    totals:{3:'180–560', 4:'220–670', 5:'255–755', 6:'285–840'},
+    perPerson:{3:'55–115', 4:'50–105', 5:'45–100'},
     desc:'출발 당일 결정된 코스의 가격이 적용됩니다',
     special: true,
     isRange: true,
@@ -1633,7 +1744,7 @@ const TOURS = {
   },
   wicklow: {
     name:'위클로 (Wicklow)', nameEn:'Wicklow',
-    km:150, time:8, totals:{3:180, 4:220, 5:255, 6:285},
+    km:150, time:8, perPerson:{3:55, 4:50, 5:45},
     desc:'아일랜드 정원, 더블린 근교 / The Garden of Ireland',
     variations: [
       {name:'위클로 바다 (Wicklow Coast)', spots:'Bray · Greystones · Wicklow Town · Brittas Bay 해변'},
@@ -1643,7 +1754,7 @@ const TOURS = {
   },
   mullingar: {
     name:'멀링거 (Mullingar)', nameEn:'Mullingar',
-    km:180, time:7, totals:{3:200, 4:245, 5:280, 6:310},
+    km:180, time:7, perPerson:{3:60, 4:55, 5:50},
     desc:'호수와 평원의 미들랜즈 / Lakes & Midlands',
     variations: [
       {name:'멀링거 + 호수 (Mullingar + Lakes)', spots:'Lough Owel · Lough Ennell · Mullingar Cathedral'},
@@ -1652,7 +1763,7 @@ const TOURS = {
   },
   waterford: {
     name:'워터포드 (Waterford)', nameEn:'Waterford',
-    km:340, time:10, totals:{3:290, 4:345, 5:395, 6:440},
+    km:340, time:10, perPerson:{3:70, 4:65, 5:60},
     desc:'바이킹의 도시, 크리스탈 / Viking City',
     variations: [
       {name:'워터포드 시내 (Waterford City)', spots:'Waterford Crystal Factory · Reginald\'s Tower · Viking Triangle'},
@@ -1662,7 +1773,7 @@ const TOURS = {
   },
   limerick: {
     name:'리머릭 / 번래티 (Limerick / Bunratty)', nameEn:'Limerick / Bunratty',
-    km:380, time:10, totals:{3:310, 4:370, 5:420, 6:465},
+    km:380, time:10, perPerson:{3:70, 4:65, 5:60},
     desc:'중세 성과 작은 마을 / Medieval Castles',
     variations: [
       {name:'번래티 캐슬 코스 (Bunratty Castle)', spots:'Bunratty Castle & Folk Park · 중세 마을 재현'},
@@ -1671,7 +1782,7 @@ const TOURS = {
   },
   galway: {
     name:'골웨이 (Galway)', nameEn:'Galway',
-    km:420, time:11, totals:{3:340, 4:405, 5:460, 6:510},
+    km:420, time:11, perPerson:{3:79, 4:74, 5:69},
     desc:'아일랜드 서부의 보석 / Jewel of the West',
     variations: [
       {name:'골웨이 + 코네마라 (Galway + Connemara)', spots:'Galway 시내 · Kylemore Abbey · Connemara 호수와 산'},
@@ -1681,7 +1792,7 @@ const TOURS = {
   },
   sligo: {
     name:'슬라이고 (Sligo)', nameEn:'Sligo',
-    km:460, time:11, totals:{3:360, 4:430, 5:490, 6:545},
+    km:460, time:11, perPerson:{3:75, 4:70, 5:65},
     desc:'예이츠 컨트리, 거대한 산 / Yeats Country',
     variations: [
       {name:'예이츠 컨트리 (Yeats Country)', spots:'Drumcliffe (예이츠 무덤) · Glencar Waterfall · Lough Gill'},
@@ -1691,7 +1802,7 @@ const TOURS = {
   },
   cork: {
     name:'코크 (Cork)', nameEn:'Cork',
-    km:480, time:12, totals:{3:380, 4:450, 5:515, 6:570},
+    km:480, time:12, perPerson:{3:79, 4:74, 5:69},
     desc:'아일랜드 제2 도시 / Rebel City',
     variations: [
       {name:'코크 + 블라니 (Cork + Blarney)', spots:'Blarney Castle · Stone of Eloquence · Cork 시내'},
@@ -1701,7 +1812,7 @@ const TOURS = {
   },
   causeway: {
     name:'자이언트 코즈웨이 / 북아일랜드 (Giant\'s Causeway / Northern Ireland)', nameEn:"Giant's Causeway / Northern Ireland",
-    km:500, time:12, totals:{3:390, 4:465, 5:530, 6:590},
+    km:500, time:12, perPerson:{3:75, 4:70, 5:65},
     desc:'세계 자연유산 / UNESCO World Heritage',
     variations: [
       {name:'코즈웨이 + 캐릭어리드 (Causeway + Carrick-a-Rede)', spots:"Giant's Causeway · Carrick-a-Rede 출렁다리 · Dunluce Castle"},
@@ -1711,7 +1822,7 @@ const TOURS = {
   },
   mayo: {
     name:'메이요 (Mayo)', nameEn:'Mayo',
-    km:530, time:13, totals:{3:410, 4:490, 5:560, 6:620},
+    km:530, time:13, perPerson:{3:80, 4:75, 5:70},
     desc:'아일랜드 서부 끝 / Wild West',
     variations: [
       {name:'웨스트포트 + 크록 패트릭 (Westport + Croagh Patrick)', spots:'Westport 마을 · Croagh Patrick 산 · 등산 가능'},
@@ -1721,7 +1832,7 @@ const TOURS = {
   },
   moher: {
     name:'모허 절벽 (Cliffs of Moher)', nameEn:'Cliffs of Moher',
-    km:540, time:13, totals:{3:420, 4:500, 5:570, 6:635},
+    km:540, time:13, perPerson:{3:90, 4:85, 5:80},
     desc:'아일랜드 대표 명소 / Iconic Atlantic Cliffs',
     variations: [
       {name:'모허 + 둘린 (Moher + Doolin)', spots:'Cliffs of Moher · Doolin 항구 · 전통 음악'},
@@ -1731,7 +1842,7 @@ const TOURS = {
   },
   donegal: {
     name:'도니골 (Donegal)', nameEn:'Donegal',
-    km:600, time:14, totals:{3:460, 4:550, 5:625, 6:695},
+    km:600, time:14, perPerson:{3:90, 4:80, 5:75},
     desc:'숨은 보석 / Hidden Gem of the North',
     variations: [
       {name:'슬리브 리그 절벽 (Slieve League Cliffs)', spots:'유럽 최고 해안 절벽 중 하나 · Bunglass'},
@@ -1741,7 +1852,7 @@ const TOURS = {
   },
   kerry: {
     name:'케리 / 딩글 (Kerry / Dingle)', nameEn:'Kerry / Dingle',
-    km:750, time:16, totals:{3:560, 4:670, 5:755, 6:840},
+    km:750, time:16, perPerson:{3:115, 4:105, 5:100},
     desc:'아일랜드 풍경의 정점 / Pinnacle of Irish Scenery',
     variations: [
       {name:'링 오브 케리 (Ring of Kerry)', spots:'Killarney · Ladies View · Moll\'s Gap · Kenmare · 원형 도로'},
@@ -1751,7 +1862,16 @@ const TOURS = {
   },
 };
 
-const MAX_BAGS_BY_PEOPLE = { 1: 6, 2: 6, 3: 6, 4: 6, 5: 4, 6: 3 };
+const MAX_BAGS_BY_PEOPLE = { 1: 6, 2: 6, 3: 6, 4: 5, 5: 4 };
+
+// Helper: get per-person price for n people (3, 4, 5)
+function pp(tour, n) {
+  return tour.perPerson[Math.max(3, Math.min(5, n))];
+}
+function tourTotal(tour, n) {
+  if (tour.isRange) return tour.perPerson[n] || tour.perPerson[5];
+  return pp(tour, n) * n;
+}
 
 // Render tour cards
 const container = document.getElementById('tour-cards');
@@ -1759,10 +1879,13 @@ Object.entries(TOURS).forEach(([key, tour]) => {
   const card = document.createElement('div');
   card.className = 'tour-card';
   card.onclick = () => openTourModal(key);
-  const subBadge = '';  // 메인 카드에는 변형 개수 노출 X (모달에서만 표시)
+  const subBadge = '';
   const cardBg = tour.special
     ? 'background: linear-gradient(135deg, #6dd5ed 0%, #2193b0 100%);'
     : '';
+  const priceLine = tour.isRange
+    ? `<span class="pf">€${tour.perPerson[5]}–€${tour.perPerson[3]}/인</span> <span style="font-size:11.5px; color:var(--muted);">코스별</span>`
+    : `<span class="pf">5인 €${pp(tour,5)}/인</span> · 4인 €${pp(tour,4)}/인 · 3인 €${pp(tour,3)}/인`;
   card.innerHTML = `
     <div class="tour-img" style="${cardBg}">
       <span class="placeholder">📷 ${tour.name}</span>
@@ -1771,7 +1894,7 @@ Object.entries(TOURS).forEach(([key, tour]) => {
       <div class="tour-name">${tour.name}</div>
       <div class="tour-meta">${tour.km} km · ${tour.time}h</div>
       <div class="tour-prices">
-        <span class="pf">3인 €${tour.totals[3]}</span> · 1인당 €${Math.round(tour.totals[3]/3)}
+        ${priceLine}
       </div>
       ${subBadge}
     </div>
@@ -1805,10 +1928,17 @@ function openTourModal(key) {
   document.getElementById('modal-name').textContent = t.name;
   document.getElementById('modal-meta').textContent = `${t.km} km · 약 ${t.time}시간 · ${t.desc}`;
   const grid = document.getElementById('modal-prices');
-  grid.innerHTML = [3,4,5,6].map(n => `
-    <span class="ppl">${n}인 그룹</span>
-    <span class="pp">€${t.totals[n]} (1인당 €${Math.round(t.totals[n]/n)})</span>
-  `).join('');
+  if (t.isRange) {
+    grid.innerHTML = [3,4,5].map(n => `
+      <span class="ppl">${n}인 / 인당</span>
+      <span class="pp">€${t.perPerson[n]}</span>
+    `).join('');
+  } else {
+    grid.innerHTML = [3,4,5].map(n => `
+      <span class="ppl">${n}인 그룹</span>
+      <span class="pp">€${pp(t,n)}/인 · 합계 €${pp(t,n)*n}</span>
+    `).join('');
+  }
 
   // Populate variations
   const varDiv = document.getElementById('modal-variations');
@@ -1966,29 +2096,36 @@ function updateDoorzoneVisibility() {
 }
 function calcTour() {
   const dest = document.getElementById('tr-dest').value;
-  const people = parseInt(document.getElementById('tr-people').value) || 3;
+  let people = parseInt(document.getElementById('tr-people').value) || 3;
+  if (people < 3) people = 3;
+  if (people > 5) people = 5;
   const t = TOURS[dest];
 
   // 일기예보 랜덤은 가격 범위로 표시
   if (t.isRange) {
-    document.getElementById('tr-total').textContent = '당일 결정';
-    document.getElementById('tr-perperson').textContent = '코스별';
-    document.getElementById('tr-mine').textContent = '코스별';
+    document.getElementById('tr-total').textContent = '코스별';
+    document.getElementById('tr-perperson').textContent = `€${t.perPerson[people]}`;
     document.getElementById('tr-breakdown').innerHTML = `
-      <li><span>${t.name}</span><span>당일 결정</span></li>
+      <li><span>${t.name} · ${people}인 기준</span><span>€${t.perPerson[people]}/인</span></li>
       <li style="display:block; margin-top:6px; padding-top:6px; border-top:1px solid var(--border);">
         <span style="display:block; color:var(--text); line-height:1.6;">
           출발 당일 날씨 분석 → 후보 2-3곳 제시 → 함께 결정.<br>
-          <strong>결정된 코스의 가격</strong>이 그대로 적용됩니다 (€180–€840 범위).
+          <strong>결정된 코스의 인당 가격</strong>이 그대로 적용됩니다.
         </span>
       </li>
     `;
     return;
   }
 
-  let total = t.totals[Math.min(6, Math.max(3, people))];
-  const breakdown = [`<li><span>${t.name} (${t.km}km, ${t.time}h)</span><span>€${total}</span></li>`];
-  // 도어투도어 거리 기반 가격: 15km 이내 €5, 초과 €10
+  // 인원별 슬라이딩 인당가 × 인원 = 그룹 합계
+  const basePerPerson = pp(t, people);
+  const baseTotal = basePerPerson * people;
+  const breakdown = [
+    `<li><span>${t.name} (${t.km}km, ${t.time}h)</span><span>€${basePerPerson}/인</span></li>`,
+    `<li><span>${people}인 그룹 기본 합계</span><span>€${baseTotal}</span></li>`
+  ];
+
+  // 도어투도어 거리 기반 가격: 15km 이내 €5, 초과 €10 (편도/인)
   const ratePerDir = trDoorzone === 'far' ? 10 : 5;
   let extras = 0;
   if (trPickup === 'door') {
@@ -2001,11 +2138,11 @@ function calcTour() {
     extras += dropExtra;
     breakdown.push(`<li><span>도어투도어 드랍 (€${ratePerDir} × ${people}인)</span><span>+€${dropExtra}</span></li>`);
   }
-  total += extras;
-  const perPerson = total / people;
+
+  const total = baseTotal + extras;
+  const perPersonFinal = total / people;
   document.getElementById('tr-total').textContent = `€${Math.round(total)}`;
-  document.getElementById('tr-perperson').textContent = `€${Math.round(perPerson)}`;
-  document.getElementById('tr-mine').textContent = `€${Math.round(perPerson)}`;
+  document.getElementById('tr-perperson').textContent = `€${Math.round(perPersonFinal)}`;
   document.getElementById('tr-breakdown').innerHTML = breakdown.join('');
 }
 
