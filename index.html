@@ -62,8 +62,10 @@
     line-height: 1.6;
     font-weight: 400;
     padding-top: 60px; /* sticky nav offset */
+    overflow-x: hidden; /* 모바일 가로 스크롤 빈공간 버그 방지 */
   }
-  .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  html { overflow-x: hidden; max-width: 100vw; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; box-sizing: border-box; }
 
   /* STICKY NAV */
   nav.topnav {
@@ -602,7 +604,9 @@
   .zone-card .zone-price { color: var(--primary); font-weight: 700; font-size: 14px; }
 
   /* Pricing tables */
+  .price-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; border-radius: 10px; }
   .price-table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); }
+  .price-table-wrap .price-table { min-width: 560px; }
   .price-table th { background: var(--primary); color: white; padding: 13px 14px; text-align: left; font-size: 12.5px; font-weight: 700; }
   .price-table td { padding: 11px 14px; border-bottom: 1px solid var(--border); font-size: 13.5px; }
   .price-table td.price { font-weight: 700; color: var(--primary); text-align: right; white-space: nowrap; }
@@ -750,16 +754,17 @@
     <h1>🇮🇪 Beautiful Ireland<br>with Everyone</h1>
     <p class="tagline" style="font-size:17px; margin-bottom:6px;">아름다운 아일랜드를 모두와 함께</p>
     <p class="tagline" style="opacity:0.85;">Andrew의 아일랜드 동행 — 친구처럼 함께</p>
-    <p class="sub">✈️ 공항 픽업 · 🏠 이사·운송 · 🌿 Irish Nature 로드트립 · ✏️ 커스텀 여행</p>
-    <div style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); border-radius:10px; padding:12px 16px; margin:18px auto 0; max-width:680px; font-size:13.5px; line-height:1.6;">
-      🎵 Paddywagon과 비슷한 가격으로 함께하는 아일랜드 여행. <br>
-      받은 금액은 <strong>차량 유지비를 제외하고 100% 음악이 필요한 곳을 찾아가는 봉사 예산</strong>으로.
+    <p class="sub">✈️ 공항 픽업/드랍 · 🏠 이사·운송 · 🌿 Irish Nature 로드트립 · ✏️ 커스텀·장기·성지순례</p>
+    <div style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); border-radius:10px; padding:14px 18px; margin:18px auto 0; max-width:720px; font-size:13.5px; line-height:1.65;">
+      🎵 여행은 <strong>Paddywagon</strong>(아일랜드 대표 투어 회사)과 비슷한 가격, 픽업·이사도 합리적 가격으로 함께합니다.<br>
+      <strong>픽업·여행·이사·운송 모든 서비스</strong>의 수익은 <strong>차량 유지비를 제외하고 100% 음악이 필요한 곳을 찾아가는 봉사 예산</strong>으로.
       <a href="#music-project" style="color:var(--accent); font-weight:700; text-decoration:underline; white-space:nowrap;">프로젝트 보기 →</a>
     </div>
-    <div class="cta">
+    <div class="cta" style="margin-top:22px;">
       <a href="#calculator">🧮 가격 계산</a>
       <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" class="outline">💬 카톡 채팅 시작</a>
     </div>
+    <div style="height:64px;" aria-hidden="true"><!-- floating CTA와 겹침 방지 spacer --></div>
   </div>
 </header>
 
@@ -782,7 +787,8 @@
       <div class="greeting">About</div>
       <h2>안녕하세요, 서현 Andrew입니다 👋</h2>
       <p class="intro-para">
-        더블린 <strong>4년차 거주</strong>, <strong>졸업을 앞둔 학생</strong>이에요.
+        더블린 <strong>4년차 거주</strong>, 음악 봉사 프로젝트
+        <strong style="color:var(--primary); background:var(--accent-soft); padding:2px 6px; border-radius:4px;">🎵 Classical Music for Everyone</strong>을 운영하고 있어요.
         유럽에서 <strong>6년 이상의 운전 경력</strong>이 있고, 그동안 다양한 가이드 경험을 쌓아왔습니다.
       </p>
       <p class="intro-para">
@@ -833,8 +839,14 @@
           <li><span class="em">🌱</span><span><strong>사회복지·공헌 활동의 선순환 구조</strong>를 위한 기획입니다.</span></li>
           <li><span class="em">🤝</span><span><strong>친구처럼 함께</strong> — 4년간 가족·친구처럼 도와온 방식 그대로, 더 넓은 한인 커뮤니티로 확장.</span></li>
           <li><span class="em">🔧</span><span>받은 금액으로 <strong>차량 유지·정비 + Classical Music for Everyone 운영</strong>에 사용.</span></li>
-          <li><span class="em">🆘</span><span><strong>급한 도움이 필요하시면 연락주세요!</strong></span></li>
+          <li><span class="em">🆘</span><span><strong>긴급 요청은 언제든 카톡으로 연락주세요</strong> — 예산이 부족하시거나 갑작스러운 픽업·이동·도움이 필요한 상황이라면 사정에 맞춰 함께 방법을 찾아드릴게요.</span></li>
         </ul>
+
+        <div style="background:white; border-left:4px solid var(--accent); border-radius:8px; padding:16px 20px; margin-top:18px; font-size:14px; line-height:1.7; color:var(--text);">
+          💛 본업이 있어 모든 날짜·시간을 다 맞춰드리진 못하지만,
+          <strong>최대한 모든 분들이 아일랜드의 아름다운 자연을 부담 없이 경험하실 수 있도록</strong>
+          일정·예산·코스 모두 함께 맞춰드릴게요. 망설이지 마시고 카톡 한 번 주세요 :)
+        </div>
       </div>
     </div>
   </div>
@@ -850,9 +862,9 @@
     <div class="services-grid">
       <div class="service-card" onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth'}); selectTab('pickup');">
         <div class="icon">✈️</div>
-        <h4>공항 픽업/샌딩</h4>
+        <h4>공항 픽업 · 드랍</h4>
         <div class="price">€35부터 (Zone 0)</div>
-        <p>주소만 선택하면 자동 계산. 톨비 포함 (시내). 7인승 + 캐리어 4–6개.</p>
+        <p>공항 ↔ 목적지/출발지 양방향 동일 가격. 주소만 선택하면 자동 계산. 톨비 포함 (시내). 7인승 + 캐리어 4–6개.</p>
       </div>
       <div class="service-card" onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth'}); selectTab('moving');">
         <div class="icon">🏠</div>
@@ -868,9 +880,9 @@
       </div>
       <div class="service-card" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
         <div class="icon">✏️</div>
-        <h4>커스텀 + 장기 여행</h4>
+        <h4>커스텀 · 장기 · 성지순례</h4>
         <div class="price">문의</div>
-        <p>셋팅 안 된 코스, 2박 3일 이상 장기 여행 모두 가능. 카톡으로 함께 구성.</p>
+        <p>셋팅 안 된 코스, 2박 3일 이상 장기 아일랜드 여행 플랜, <strong>성지순례 동행</strong>(대전교구 가이드 경력) 모두 가능. 카톡으로 함께 구성.</p>
       </div>
     </div>
   </div>
@@ -886,7 +898,7 @@
 
     <div class="calc-wrap">
       <div class="calc-tabs">
-        <button class="calc-tab active" data-tab="pickup" onclick="selectTab('pickup')">✈️ 공항 픽업</button>
+        <button class="calc-tab active" data-tab="pickup" onclick="selectTab('pickup')">✈️ 공항 픽업·드랍</button>
         <button class="calc-tab" data-tab="moving" onclick="selectTab('moving')">🏠 이사·운송</button>
         <button class="calc-tab" data-tab="tour" onclick="selectTab('tour')">🌿 당일치기 로드트립</button>
       </div>
@@ -897,7 +909,7 @@
         <div class="calc-content" data-content="pickup">
           <div class="row single">
             <div class="field">
-              <label>📍 목적지 (Dublin Airport → 어디?)</label>
+              <label>📍 목적지 / 출발지 (Dublin Airport ↔ 어디?)</label>
               <select id="pk-area" onchange="calcPickup()">
                 <optgroup label="🟢 Zone 0 · 가장 가까움 (€35)">
                   <option value="3" data-km="8">Dublin 3 / Clontarf · 클론타프</option>
@@ -1118,7 +1130,7 @@
 <section id="tours">
   <div class="container">
     <div class="section-title">
-      <h2>🌿 Irish Nature for Everyone — 당일치기 로드트립</h2>
+      <h2 style="word-break:keep-all;">🌿 Irish Nature for Everyone · 당일치기 로드트립</h2>
       <p class="lead">Andrew와 함께, 친구처럼 떠나는 아일랜드 로드트립 · 12개 지역 30+ 코스</p>
     </div>
 
@@ -1140,12 +1152,18 @@
           </div>
         </div>
         <div>
-          <div style="font-size:12px; color:var(--accent); font-weight:700; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:6px;">✏️ 커스텀 + 장기 여행</div>
+          <div style="font-size:12px; color:var(--accent); font-weight:700; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:6px;">✏️ 커스텀 · 장기 · 성지순례</div>
           <div style="font-size:13.5px; color:var(--text); line-height:1.5;">
-            아래 외 코스도 OK · <strong>2박 이상 장기 여행</strong>도 가능<br>
+            아래 외 코스 OK · <strong>2박 이상 장기 여행</strong>·<strong>성지순례</strong> 모두 가능<br>
             카톡으로 함께 코스 구성·견적 안내
           </div>
         </div>
+      </div>
+
+      <div style="margin-top:18px; padding-top:16px; border-top:1px dashed var(--border); font-size:13.5px; color:var(--text); line-height:1.7;">
+        💛 본업이 있어 모든 일정을 다 맞춰드리진 못하지만,
+        <strong>최대한 모든 분들이 아일랜드의 아름다운 자연을 부담 없이 경험하실 수 있도록</strong>
+        가능한 일정 안에서 최선을 다해 함께해드릴게요. 망설이지 마시고 카톡 한 번 주세요.
       </div>
     </div>
 
@@ -1201,19 +1219,15 @@
       <div class="vs-text">
         <h3>Citroen Grand C4 Picasso 2012</h3>
         <p style="color:var(--muted); font-size:13.5px; margin-bottom:14px">
-          7인승 MPV — 다인 가족·그룹 픽업과 충분한 적재 공간이 한 번에. 디젤 16 km/L 우수한 연비.
+          7인승 MPV — 다인 가족·그룹 픽업과 충분한 적재 공간이 한 번에.
         </p>
         <ul>
           <li>좌석 7인승 (운전자 + 최대 6인)</li>
           <li>차량 길이 4.6 m × 폭 1.8 m</li>
-          <li>실연비 16 km/L (디젤)</li>
           <li>슬라이딩 + 분리식 2열 — 짐과 사람 유연 배치</li>
           <li>완전 평평한 바닥 — 가구·매트리스 안정 운송</li>
           <li>낮은 로딩 높이 — 무거운 가구 운반 편함</li>
         </ul>
-        <p style="font-size:12px; color:var(--muted); margin-top:14px; font-style:italic">
-          ⓘ 일반 가족용 MPV입니다. 럭셔리 프리미엄 밴이 아니므로 합리적 가격으로 운영합니다.
-        </p>
       </div>
     </div>
 
@@ -1303,7 +1317,7 @@
       <div style="display:flex; align-items:flex-start; gap:14px;">
         <div style="font-size:32px; flex-shrink:0;">🎵</div>
         <div style="flex:1;">
-          <h3 style="margin:0 0 8px; font-size:17px; color:var(--primary);">Paddywagon과 비슷한 가격으로 함께하는 아일랜드 여행</h3>
+          <h3 style="margin:0 0 8px; font-size:17px; color:var(--primary);">Paddywagon(아일랜드 대표 투어 회사)과 비슷한 가격으로 함께하는 아일랜드 여행</h3>
           <p style="margin:0 0 8px; font-size:14px; line-height:1.7; color:var(--text);">
             이 차량은 제가 운영하는 음악 봉사 프로젝트
             <strong style="color:var(--primary);">Classical Music for Everyone</strong>의 펀딩으로 마련되었습니다.
@@ -1321,9 +1335,9 @@
     </div>
 
     <div class="price-section">
-      <h3>✈️ 공항 픽업 / 샌딩 (공항 기준 거리)</h3>
-      <table class="price-table">
-        <thead><tr><th>구간 (공항 → 목적지)</th><th>대표 지역</th><th style="text-align:right">가격</th></tr></thead>
+      <h3>✈️ 공항 픽업 · 드랍 (공항 ↔ 목적지/출발지 거리 기준)</h3>
+      <div class="price-table-wrap"><table class="price-table">
+        <thead><tr><th>구간 (공항 ↔ 목적지/출발지)</th><th>대표 지역</th><th style="text-align:right">가격</th></tr></thead>
         <tbody>
           <tr><td>Zone 0 · 0–10 km</td><td>D15 · D11 · 공항 인근</td><td class="price">€35</td></tr>
           <tr><td>Zone 1 · 10–15 km</td><td>D1–D8 · D9 · 시내 (M50 안쪽)</td><td class="price">€45</td></tr>
@@ -1332,7 +1346,7 @@
           <tr><td>지방 (Belfast / Galway / Cork)</td><td>50 km+</td><td class="price">별도 견적</td></tr>
           <tr><td>야간/새벽 (22–06시) · 공휴일</td><td>모든 구간</td><td class="price">+€10</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <p style="font-size:12.5px; color:var(--muted); margin-top:8px">
         ✓ 포함: 톨·1시간 무료 대기 (시내 + 더블린 근교)<br>
         ✗ 별도: 더블린 외 지역 톨비 (벨파스트·갈웨이 등은 별도 정산)<br>
@@ -1342,7 +1356,7 @@
 
     <div class="price-section">
       <h3>🚛 운송 · 이사 (장소간 거리 기반)</h3>
-      <table class="price-table">
+      <div class="price-table-wrap"><table class="price-table">
         <thead><tr><th>서비스</th><th style="text-align:right">기본가</th></tr></thead>
         <tbody>
           <tr><td>📦 시내 짐 운송 (캐리어·박스, 1h)</td><td class="price">€40</td></tr>
@@ -1356,12 +1370,12 @@
           <tr><td>시간 초과</td><td class="price">+€20/h</td></tr>
           <tr><td>이사 거리 30km 초과 (장소간)</td><td class="price">+€0.50/km</td></tr>
         </tbody>
-      </table>
+      </table></div>
     </div>
 
     <div class="price-section">
       <h3>🌿 당일치기 로드트립 (12개 지역)</h3>
-      <table class="price-table">
+      <div class="price-table-wrap"><table class="price-table">
         <thead><tr><th>코스</th><th>거리</th><th style="text-align:right">3인/인당</th><th style="text-align:right">4인/인당</th><th style="text-align:right">5인/인당</th><th style="text-align:right">5인 총액</th></tr></thead>
         <tbody>
           <tr><td>🌦️ 일기예보 랜덤 (Weather Random)</td><td>당일 결정</td><td class="price" colspan="4" style="text-align:center;">선택된 코스의 가격 적용 (아래 표 참조)</td></tr>
@@ -1378,7 +1392,7 @@
           <tr><td>도니골 (Donegal)</td><td>600 km</td><td class="price">€90</td><td class="price">€80</td><td class="price">€75</td><td class="price">€375</td></tr>
           <tr><td>케리 / 딩글 (Kerry / Dingle)</td><td>750 km</td><td class="price">€115</td><td class="price">€105</td><td class="price">€100</td><td class="price">€500</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <p style="font-size:12.5px; color:var(--muted); margin-top:8px">
         주차·톨비(시내)·운전·가이딩·한국어 안내 모두 포함. <strong>식비·입장료·페리비·시외 톨비는 별도 (각자)</strong>.<br>
         <strong>미팅 포인트 = Blanchardstown Shopping Centre</strong> (D15, 시내 접근 양호).<br>
@@ -1394,11 +1408,15 @@
   <div class="container">
     <div class="section-title">
       <h2>🚌 투어버스 vs 친구 여행</h2>
-      <p class="lead">조금 더 비싸지만, 받는 것은 훨씬 더 — 합리적인 차이</p>
+      <p class="lead">5인이면 Paddywagon과 같은 가격, 한국어 가이딩과 음악 프로젝트 후원은 보너스</p>
+    </div>
+
+    <div style="background:var(--accent-soft); border-left:4px solid var(--accent); border-radius:8px; padding:12px 16px; margin-bottom:14px; font-size:13px; color:var(--text); line-height:1.6;">
+      ℹ️ <strong>Paddywagon</strong>은 아일랜드를 대표하는 대형 코치 투어 회사예요. 위클로·모허·골웨이 등 주요 명소를 50인승 버스로 운영하는 가장 잘 알려진 영어권 투어 브랜드입니다.
     </div>
 
     <div style="background:white; border-radius:14px; padding:22px 24px; box-shadow:var(--shadow); margin-bottom:18px;">
-      <table class="price-table">
+      <div class="price-table-wrap"><table class="price-table">
         <thead>
           <tr>
             <th style="white-space:nowrap;">코스</th>
@@ -1439,7 +1457,7 @@
             <td class="price" style="color:var(--green)">€100/인 (당일치기) = Paddy 동급</td>
           </tr>
         </tbody>
-      </table>
+      </table></div>
     </div>
 
     <div style="background:var(--accent-soft); border-radius:14px; padding:22px 26px;">
@@ -1598,58 +1616,69 @@
 </section>
 
 <!-- CLASSICAL MUSIC FOR EVERYONE — 프로젝트 랜딩 -->
-<section id="music-project" style="background:linear-gradient(135deg, #1a2942 0%, #2c4060 100%); color:white; padding:64px 0;">
+<section id="music-project" style="background:linear-gradient(135deg, #fdf8ee 0%, #f4ead4 100%); color:var(--text); padding:64px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
   <div class="container" style="max-width:920px;">
     <div style="text-align:center; margin-bottom:36px;">
-      <div style="font-size:13px; letter-spacing:2px; text-transform:uppercase; opacity:0.7; margin-bottom:10px;">🎵 The Mission</div>
-      <h2 style="font-size:32px; font-weight:900; margin:0 0 14px; line-height:1.2;">
+      <div style="font-size:13px; letter-spacing:2px; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:10px;">🎵 The Mission</div>
+      <h2 style="font-size:34px; font-weight:900; margin:0 0 14px; line-height:1.15; color:var(--primary);">
         Classical Music<br><span style="color:var(--accent);">for Everyone</span>
       </h2>
-      <p style="font-size:17px; line-height:1.6; margin:0; opacity:0.92; max-width:640px; margin-left:auto; margin-right:auto;">
+      <p style="font-size:17px; line-height:1.6; margin:0; color:var(--text); max-width:640px; margin-left:auto; margin-right:auto;">
         음악이 필요한 곳, 음악을 원하는 곳에<br>
-        <strong style="color:var(--accent);">음악을 전하는 봉사 프로젝트</strong>입니다.
+        <strong style="color:var(--primary);">음악을 전하는 봉사 프로젝트</strong>입니다.
       </p>
     </div>
 
     <!-- 프로젝트 소개 카드 3개 -->
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:18px; margin-bottom:36px;">
-      <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:14px; padding:22px 24px;">
+      <div style="background:white; border:1px solid var(--border); border-radius:14px; padding:24px 26px; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
         <div style="font-size:28px; margin-bottom:10px;">🎼</div>
-        <h4 style="margin:0 0 8px; font-size:15px; color:var(--accent);">왜 시작했나요</h4>
-        <p style="margin:0; font-size:13.5px; line-height:1.65; opacity:0.88;">
+        <h4 style="margin:0 0 10px; font-size:16px; color:var(--primary); font-weight:800;">왜 시작했나요</h4>
+        <p style="margin:0; font-size:14px; line-height:1.7; color:var(--text);">
           클래식 음악이 콘서트홀 안에만 머물지 않도록.
           음악을 듣고 싶은 분들이 계신 곳이라면 어디든 — 공연장 밖에서, 일상 가까이에서 함께하는 음악을 만듭니다.
         </p>
       </div>
-      <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:14px; padding:22px 24px;">
+      <div style="background:white; border:1px solid var(--border); border-radius:14px; padding:24px 26px; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
         <div style="font-size:28px; margin-bottom:10px;">🚐</div>
-        <h4 style="margin:0 0 8px; font-size:15px; color:var(--accent);">왜 이 차량인가요</h4>
-        <p style="margin:0; font-size:13.5px; line-height:1.65; opacity:0.88;">
+        <h4 style="margin:0 0 10px; font-size:16px; color:var(--primary); font-weight:800;">왜 이 차량인가요</h4>
+        <p style="margin:0 0 10px; font-size:14px; line-height:1.7; color:var(--text);">
           이 7인승 MPV는 <strong>여러분과 응원해주신 분들의 펀딩</strong>으로 마련된 차량입니다.
           연주자·악기·장비를 싣고 음악이 필요한 곳으로 직접 찾아가기 위한 차량이에요.
         </p>
+        <a href="https://gofund.me/d0abe9090" target="_blank" rel="noopener" style="font-size:12.5px; color:var(--accent); font-weight:700; text-decoration:none; border-bottom:1px solid var(--accent);">펀딩 페이지 보기 →</a>
       </div>
-      <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:14px; padding:22px 24px;">
+      <div style="background:white; border:1px solid var(--border); border-radius:14px; padding:24px 26px; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
         <div style="font-size:28px; margin-bottom:10px;">💝</div>
-        <h4 style="margin:0 0 8px; font-size:15px; color:var(--accent);">여러분의 여행이 곧 후원</h4>
-        <p style="margin:0; font-size:13.5px; line-height:1.65; opacity:0.88;">
+        <h4 style="margin:0 0 10px; font-size:16px; color:var(--primary); font-weight:800;">여러분의 여행이 곧 후원</h4>
+        <p style="margin:0; font-size:14px; line-height:1.7; color:var(--text);">
           픽업·여행·이사 서비스로 받은 금액은
           <strong>차량 유지·관리비를 제외하고 100%</strong>
           이 프로젝트의 봉사활동 예산으로 쓰입니다.
         </p>
       </div>
+      <div style="background:white; border:1px solid var(--border); border-radius:14px; padding:24px 26px; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+        <div style="font-size:28px; margin-bottom:10px;">📍</div>
+        <h4 style="margin:0 0 10px; font-size:16px; color:var(--primary); font-weight:800;">어디로 찾아가나요</h4>
+        <p style="margin:0 0 10px; font-size:14px; line-height:1.7; color:var(--text);">
+          요양원·병원·학교·지역 커뮤니티 등
+          <strong>음악이 일상에 닿기 어려웠던 곳</strong>으로 직접 찾아가
+          작은 음악회를 엽니다. 함께할 연주자와 장소를 늘려가는 중이에요.
+        </p>
+        <a href="https://gofund.me/d0abe9090" target="_blank" rel="noopener" style="font-size:12.5px; color:var(--accent); font-weight:700; text-decoration:none; border-bottom:1px solid var(--accent);">활동 자세히 보기 →</a>
+      </div>
     </div>
 
     <!-- 임팩트 강조 박스 -->
-    <div style="background:rgba(201,169,110,0.12); border:1px solid var(--accent); border-radius:14px; padding:24px 28px; margin-bottom:36px;">
+    <div style="background:white; border:2px solid var(--accent); border-radius:14px; padding:26px 30px; margin-bottom:36px; box-shadow:0 4px 14px rgba(201,169,110,0.18);">
       <div style="display:flex; align-items:flex-start; gap:16px; flex-wrap:wrap;">
-        <div style="font-size:32px; flex-shrink:0;">✨</div>
+        <div style="font-size:34px; flex-shrink:0;">✨</div>
         <div style="flex:1; min-width:240px;">
-          <h4 style="margin:0 0 10px; font-size:16px; color:var(--accent);">여러분의 여행 1회 = 음악 한 곡이 닿습니다</h4>
-          <p style="margin:0; font-size:14px; line-height:1.7; opacity:0.92;">
-            모허 5인 여행 1회로 약 <strong style="color:var(--accent);">€210</strong>의 음악 프로젝트 예산이 적립됩니다.
-            케리/딩글 5인 1회면 약 <strong style="color:var(--accent);">€245</strong>.
-            이 예산은 음악이 필요한 곳을 찾아가는 연주, 악기, 음향, 이동 비용으로 사용됩니다.
+          <h4 style="margin:0 0 10px; font-size:17px; color:var(--primary); font-weight:800;">여러분의 여행 1회 = 한 번의 찾아가는 음악회를 가능하게 합니다</h4>
+          <p style="margin:0; font-size:14px; line-height:1.75; color:var(--text);">
+            모허 5인 여행 1회로 약 <strong style="background:var(--accent-soft); padding:1px 6px; border-radius:4px; color:var(--primary);">€210</strong>의 음악 프로젝트 예산이 적립됩니다.
+            케리/딩글 5인 1회면 약 <strong style="background:var(--accent-soft); padding:1px 6px; border-radius:4px; color:var(--primary);">€245</strong>.
+            이 예산은 음악이 필요한 곳을 찾아가는 <strong>연주자 사례비, 악기·음향, 이동·운영 비용</strong>으로 사용되어, 한 번의 작은 음악회가 누군가의 일상에 닿게 됩니다.
           </p>
         </div>
       </div>
@@ -1657,21 +1686,24 @@
 
     <!-- CTA -->
     <div style="text-align:center;">
-      <p style="margin:0 0 18px; font-size:14.5px; opacity:0.88; line-height:1.7;">
+      <p style="margin:0 0 18px; font-size:14.5px; color:var(--text); line-height:1.7;">
         프로젝트가 궁금하거나, 음악이 필요한 곳을 알려주고 싶으시거나,<br>
         후원·연주자 참여·협업을 원하시면 언제든 연락 주세요.
       </p>
       <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" style="background:#fee500; color:#3c1e1e; padding:13px 24px; border-radius:10px; text-decoration:none; font-weight:800; font-size:14.5px;">
+        <a href="https://gofund.me/d0abe9090" target="_blank" rel="noopener" style="background:var(--primary); color:white; padding:14px 26px; border-radius:10px; text-decoration:none; font-weight:800; font-size:14.5px;">
+          🎯 펀딩 페이지에서 더 보기
+        </a>
+        <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" style="background:#fee500; color:#3c1e1e; padding:14px 26px; border-radius:10px; text-decoration:none; font-weight:800; font-size:14.5px;">
           💬 카톡으로 프로젝트 문의
         </a>
-        <a href="mailto:sby05034@gmail.com?subject=Classical%20Music%20for%20Everyone%20%EB%AC%B8%EC%9D%98" style="background:transparent; color:var(--accent); padding:13px 24px; border:2px solid var(--accent); border-radius:10px; text-decoration:none; font-weight:800; font-size:14.5px;">
+        <a href="mailto:sby05034@gmail.com?subject=Classical%20Music%20for%20Everyone%20%EB%AC%B8%EC%9D%98" style="background:transparent; color:var(--primary); padding:14px 26px; border:2px solid var(--primary); border-radius:10px; text-decoration:none; font-weight:800; font-size:14.5px;">
           ✉️ 이메일 문의
         </a>
       </div>
-      <p style="margin:18px 0 0; font-size:12px; opacity:0.6; line-height:1.6;">
-        프로젝트 별도 안내 페이지·인스타그램·후원 채널은 곧 오픈 예정입니다.<br>
-        지금은 카톡·이메일로 자세한 내용을 안내드려요.
+      <p style="margin:20px 0 0; font-size:12.5px; color:var(--muted); line-height:1.6;">
+        🎯 GoFundMe 펀딩 페이지에서 프로젝트 비전과 진행 상황을 확인하실 수 있어요.<br>
+        별도 인스타그램·후원 채널은 추후 오픈 예정.
       </p>
     </div>
   </div>
