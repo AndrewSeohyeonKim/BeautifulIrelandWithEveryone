@@ -1,0 +1,953 @@
+/* ============================================================
+   🇮🇪 Beautiful Ireland with Everyone — Shared Stylesheet
+   Andrew Seohyeon Kim · Dublin, Ireland
+   ============================================================ */
+
+:root {
+  --primary: #1a2942;
+  --primary-light: #2c4060;
+  --accent: #c9a96e;
+  --accent-soft: #f4ead4;
+  --green: #2e7d4f;
+  --green-soft: #d5f4e6;
+  --red-soft: #fadbd8;
+  --bg: #fafbfc;
+  --card: #ffffff;
+  --text: #2c3e50;
+  --muted: #7f8c8d;
+  --border: #e1e8ed;
+  --shadow: 0 4px 12px rgba(26, 41, 66, 0.08);
+  --shadow-hover: 0 8px 24px rgba(26, 41, 66, 0.15);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100vw; }
+body {
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-weight: 400;
+  padding-top: 60px;
+  overflow-x: hidden;
+}
+
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; box-sizing: border-box; }
+
+/* ============================================================
+   STICKY NAV
+   ============================================================ */
+nav.topnav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 60px;
+  background: rgba(26, 41, 66, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+}
+nav.topnav .nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav.topnav .logo {
+  color: white;
+  font-weight: 800;
+  font-size: 16px;
+  text-decoration: none;
+  letter-spacing: -0.3px;
+}
+nav.topnav .logo .accent { color: var(--accent); }
+nav.topnav .menu {
+  display: flex;
+  gap: 22px;
+}
+nav.topnav .menu a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+nav.topnav .menu a:hover,
+nav.topnav .menu a.current { color: var(--accent); }
+nav.topnav .menu a.cta-nav {
+  background: var(--accent);
+  color: var(--primary);
+  padding: 7px 14px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+nav.topnav .menu a.cta-nav:hover { background: white; color: var(--primary); }
+nav.topnav .ham {
+  display: none;
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,0.4);
+  color: white;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+@media (max-width: 820px) {
+  nav.topnav .menu { display: none; position: fixed; top: 60px; left: 0; right: 0; background: rgba(26,41,66,0.98); flex-direction: column; padding: 16px 20px; gap: 14px; }
+  nav.topnav .menu.open { display: flex; }
+  nav.topnav .ham { display: block; }
+}
+
+/* ============================================================
+   FLOATING CTA — 모든 페이지 공통
+   ============================================================ */
+.float-cta {
+  position: fixed;
+  bottom: 20px; right: 20px;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.float-cta a {
+  background: var(--primary);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.float-cta a:hover { background: var(--accent); color: var(--primary); transform: translateY(-2px); }
+.float-cta a.kakao { background: #fee500; color: #3c1e1e; }
+.float-cta a.kakao:hover { background: #fae100; }
+
+/* ============================================================
+   HERO — 페이지별 변형 가능
+   ============================================================ */
+header.hero {
+  position: relative;
+  min-height: 600px;
+  color: white;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+header.hero.compact { min-height: 360px; }
+header.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('photo1.jpg') center/cover no-repeat;
+  z-index: 1;
+}
+header.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(26,41,66,0.82) 0%, rgba(44,64,96,0.7) 100%);
+  z-index: 2;
+}
+header.hero.subpage::before {
+  background:
+    linear-gradient(135deg, rgba(26,41,66,0.55) 0%, rgba(44,64,96,0.45) 100%),
+    url('photo1.jpg') center/cover no-repeat;
+}
+header.hero.subpage::after {
+  background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(26,41,66,0.45) 100%);
+}
+header.hero.subpage h1,
+header.hero.subpage .tagline,
+header.hero.subpage .sub {
+  color: white;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.4);
+}
+/* services 폴더 안에서 photo1 경로 보정 */
+.subpage-bg-fix header.hero.subpage::before {
+  background:
+    linear-gradient(135deg, rgba(26,41,66,0.55) 0%, rgba(44,64,96,0.45) 100%),
+    url('../photo1.jpg') center/cover no-repeat;
+}
+header.hero .hero-content {
+  position: relative;
+  z-index: 3;
+  padding: 80px 20px 60px;
+  max-width: 820px;
+}
+header.hero.compact .hero-content { padding: 50px 20px 40px; }
+
+.hero-titles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+.hero-titles span {
+  background: rgba(201, 169, 110, 0.20);
+  color: var(--accent);
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  border: 1px solid rgba(201, 169, 110, 0.4);
+}
+header.hero h1 {
+  font-size: 42px;
+  font-weight: 900;
+  margin-bottom: 16px;
+  letter-spacing: -1.5px;
+  line-height: 1.15;
+  color: white;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.65), 0 2px 6px rgba(0,0,0,0.5);
+}
+header.hero .tagline,
+header.hero .sub {
+  color: white;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.55);
+}
+header.hero.subpage h1 { font-size: 34px; }
+header.hero .tagline {
+  font-size: 18px;
+  opacity: 0.95;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+header.hero .sub {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 32px;
+}
+header.hero .cta {
+  display: inline-flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+header.hero .cta a {
+  background: var(--accent);
+  color: var(--primary);
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.2s;
+}
+header.hero .cta a:hover { background: white; transform: translateY(-2px); }
+header.hero .cta a.outline {
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.5);
+  color: white;
+}
+header.hero .cta a.outline:hover { background: rgba(255,255,255,0.15); border-color: white; }
+
+@media (max-width: 600px) {
+  body { padding-top: 56px; }
+  nav.topnav { height: 56px; }
+  header.hero { min-height: 540px; }
+  header.hero.compact { min-height: 300px; }
+  header.hero .hero-content { padding: 50px 16px 40px; }
+  header.hero h1 { font-size: 28px; line-height: 1.2; }
+  header.hero.subpage h1 { font-size: 24px; }
+  header.hero .tagline { font-size: 14.5px; }
+  header.hero .sub { font-size: 12.5px; }
+  .hero-titles span { font-size: 11.5px; padding: 5px 11px; }
+  .container { padding: 0 16px; }
+  section { padding: 50px 0; }
+  h2 { font-size: 24px; }
+  .float-cta a { padding: 11px 14px; font-size: 12px; }
+}
+@media (max-width: 380px) {
+  header.hero h1 { font-size: 24px; }
+  .hero-titles span { font-size: 11px; }
+}
+
+/* ============================================================
+   BREADCRUMB
+   ============================================================ */
+.breadcrumb {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0;
+  font-size: 13px;
+}
+.breadcrumb .container { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.breadcrumb a { color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb .sep { color: var(--border); }
+.breadcrumb .current { color: var(--primary); font-weight: 600; }
+
+/* ============================================================
+   SECTIONS / TYPOGRAPHY
+   ============================================================ */
+section { padding: 60px 0; }
+section.alt { background: white; }
+section .section-title { margin-bottom: 32px; text-align: center; }
+h1 { color: var(--primary); }
+h2 { font-size: 28px; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
+h2 + .lead { color: var(--muted); margin-top: 6px; font-size: 15px; }
+h3 { font-size: 19px; font-weight: 700; color: var(--primary); margin-bottom: 12px; }
+h4 { font-size: 17px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+
+/* ============================================================
+   SERVICE CARDS — 메인 페이지의 핵심 UI
+   ============================================================ */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+@media (max-width: 700px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
+.service-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 28px;
+  transition: all 0.25s;
+  text-decoration: none;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+.service-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); border-color: var(--accent); }
+.service-card:hover::before { transform: scaleX(1); }
+.service-card .icon { font-size: 40px; margin-bottom: 14px; }
+.service-card h4 { font-size: 19px; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
+.service-card .price { font-size: 14px; color: var(--accent); font-weight: 700; margin-bottom: 12px; }
+.service-card p { font-size: 14px; color: var(--muted); line-height: 1.65; flex-grow: 1; margin-bottom: 18px; }
+.service-card .more {
+  font-size: 13.5px;
+  color: var(--primary);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap 0.2s;
+}
+.service-card:hover .more { gap: 8px; color: var(--accent); }
+.service-card .more::after { content: '→'; }
+
+/* ============================================================
+   QUICK LINKS
+   ============================================================ */
+section.quick {
+  background: white;
+  padding: 24px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.quick-grid {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+@media (max-width: 700px) {
+  .quick-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.quick-grid a {
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 12px;
+  text-decoration: none;
+  color: var(--primary);
+  text-align: center;
+  transition: all 0.2s;
+}
+.quick-grid a:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  transform: translateY(-2px);
+}
+.quick-grid a .qicon { font-size: 22px; display: block; margin-bottom: 4px; }
+.quick-grid a .qlabel { font-size: 12.5px; font-weight: 700; }
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-family: inherit;
+}
+.btn-primary { background: var(--primary); color: white; }
+.btn-primary:hover { background: var(--primary-light); transform: translateY(-2px); }
+.btn-accent { background: var(--accent); color: var(--primary); }
+.btn-accent:hover { background: white; transform: translateY(-2px); box-shadow: var(--shadow); }
+.btn-kakao { background: #fee500; color: #3c1e1e; }
+.btn-kakao:hover { background: #fae100; transform: translateY(-2px); }
+.btn-outline { background: transparent; border-color: var(--primary); color: var(--primary); }
+.btn-outline:hover { background: var(--primary); color: white; }
+
+/* ============================================================
+   PILL / CRED / TAG
+   ============================================================ */
+.cred-pill {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 8px 16px;
+  font-size: 13px;
+  color: var(--primary);
+  font-weight: 600;
+  white-space: nowrap;
+  line-height: 1.4;
+  display: inline-block;
+}
+
+/* ============================================================
+   STORY / ABOUT BLOCK
+   ============================================================ */
+.about-block { max-width: 780px; margin: 0 auto; text-align: center; }
+.about-block .greeting { font-size: 14px; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
+.about-block h2 { font-size: 30px; color: var(--primary); margin-bottom: 24px; font-weight: 900; letter-spacing: -0.8px; }
+.about-block .intro-para {
+  font-size: 15.5px;
+  color: var(--text);
+  margin-bottom: 16px;
+  line-height: 1.85;
+  text-align: left;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about-block .intro-para strong { color: var(--primary); background: var(--accent-soft); padding: 2px 6px; border-radius: 4px; }
+.credentials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 28px 0;
+}
+
+/* ============================================================
+   DIFF / WHY-ANDREW CARDS
+   ============================================================ */
+.diff-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+@media (max-width: 900px) { .diff-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .diff-grid { grid-template-columns: 1fr; } }
+.diff-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 20px;
+  text-align: center;
+  transition: all 0.2s;
+}
+.diff-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+.diff-card .diff-icon { font-size: 38px; margin-bottom: 10px; }
+.diff-card h4 { font-size: 16px; margin-bottom: 8px; color: var(--primary); }
+.diff-card p { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq-item {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.faq-item:hover { border-color: var(--accent); }
+.faq-q {
+  padding: 16px 20px;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--primary);
+  position: relative;
+  padding-right: 50px;
+}
+.faq-q::after {
+  content: '+';
+  position: absolute;
+  right: 20px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  color: var(--accent);
+  font-weight: 400;
+  transition: transform 0.2s;
+}
+.faq-item.open .faq-q::after { transform: translateY(-50%) rotate(45deg); }
+.faq-a {
+  display: none;
+  padding: 0 20px 18px;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.7;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+.faq-item.open .faq-a { display: block; }
+
+/* ============================================================
+   FOOTER (Contact)
+   ============================================================ */
+footer.contact {
+  background: var(--primary);
+  color: white;
+  padding: 60px 0 50px;
+  text-align: center;
+}
+footer.contact h2 { color: white; }
+footer.contact p { opacity: 0.85; margin-bottom: 20px; }
+footer.contact .channels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin: 24px 0;
+}
+footer.contact .channels a {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.2s;
+}
+footer.contact .channels a:hover { background: rgba(255,255,255,0.2); border-color: var(--accent); }
+footer.contact .small {
+  margin-top: 30px;
+  font-size: 12px;
+  opacity: 0.6;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   PAGE LINK STRIP — 다른 서비스 빠른 이동
+   ============================================================ */
+.other-services {
+  background: var(--accent-soft);
+  padding: 50px 20px;
+  border-top: 1px solid var(--border);
+}
+.other-services h3 { text-align: center; margin-bottom: 24px; }
+.other-services .links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+@media (max-width: 700px) { .other-services .links { grid-template-columns: repeat(2, 1fr); } }
+.other-services .links a {
+  background: white;
+  border-radius: 10px;
+  padding: 18px 14px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--primary);
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+  font-size: 13.5px;
+  font-weight: 700;
+}
+.other-services .links a:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow); }
+.other-services .links a .icon { display: block; font-size: 26px; margin-bottom: 6px; }
+
+/* ============================================================
+   CONTACT / CTA SECTION (mid-page)
+   ============================================================ */
+.cta-band {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: white;
+  padding: 56px 24px;
+  border-radius: 16px;
+  text-align: center;
+  margin: 40px auto;
+  max-width: 920px;
+}
+.cta-band h3 { color: white; font-size: 24px; margin-bottom: 12px; }
+.cta-band p { opacity: 0.9; margin-bottom: 24px; font-size: 15px; }
+.cta-band .buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* ============================================================
+   PAGE TRANSITIONS — 부드러운 진입·이동
+   ============================================================ */
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroRise {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes sectionReveal {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pageOut {
+  to { opacity: 0; transform: translateY(-8px); }
+}
+
+body {
+  animation: pageFadeIn 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+body.is-leaving {
+  animation: pageOut 0.25s ease forwards;
+}
+header.hero .hero-content { animation: heroRise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+header.hero .hero-titles { animation: heroRise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 0.05s; }
+header.hero h1 { animation: heroRise 0.65s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 0.12s; }
+header.hero .tagline, header.hero .sub { animation: heroRise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 0.22s; }
+header.hero .cta { animation: heroRise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 0.32s; }
+
+/* 섹션이 화면에 들어올 때 부드럽게 reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 카드들에 staggered fade */
+.stagger-fade > * {
+  opacity: 0;
+  animation: heroRise 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.stagger-fade > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger-fade > *:nth-child(2) { animation-delay: 0.12s; }
+.stagger-fade > *:nth-child(3) { animation-delay: 0.19s; }
+.stagger-fade > *:nth-child(4) { animation-delay: 0.26s; }
+.stagger-fade > *:nth-child(5) { animation-delay: 0.33s; }
+.stagger-fade > *:nth-child(6) { animation-delay: 0.4s; }
+
+/* prefers-reduced-motion 대응 */
+@media (prefers-reduced-motion: reduce) {
+  body, .hero-content, .reveal, .stagger-fade > * {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ============================================================
+   BACK-TO-HOME BUTTON — 모든 서브페이지 좌상단
+   ============================================================ */
+.back-home {
+  position: fixed;
+  top: 75px;
+  left: 18px;
+  z-index: 80;
+  background: white;
+  color: var(--primary);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 8px 16px 8px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: all 0.2s;
+}
+.back-home:hover {
+  background: var(--accent);
+  color: var(--primary);
+  transform: translateX(-3px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+.back-home::before {
+  content: '←';
+  font-size: 16px;
+  font-weight: 700;
+}
+@media (max-width: 600px) {
+  .back-home {
+    top: 70px;
+    left: 12px;
+    padding: 7px 14px 7px 11px;
+    font-size: 12px;
+  }
+}
+
+/* ============================================================
+   IRELAND MAP — 지도 + 마커
+   ============================================================ */
+.ireland-map-container {
+  position: relative;
+  max-width: 520px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #e0f2fe 0%, #bae6fd 100%);
+  border-radius: 14px;
+  padding: 12px;
+  aspect-ratio: 1449 / 1807;
+  box-shadow: var(--shadow);
+}
+.ireland-bg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+.ireland-marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: var(--accent);
+  color: var(--primary);
+  border: 2px solid white;
+  border-radius: 16px;
+  padding: 4px 10px;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  transition: all 0.2s;
+  white-space: nowrap;
+  z-index: 2;
+}
+.ireland-marker:hover, .ireland-marker:focus {
+  background: var(--primary);
+  color: white;
+  transform: translate(-50%, -50%) scale(1.18);
+  z-index: 3;
+  outline: none;
+}
+.ireland-marker.active {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 4px 14px rgba(26,41,66,0.5);
+}
+.ireland-marker.dublin-pin {
+  background: var(--primary);
+  color: white;
+  cursor: default;
+}
+.ireland-marker.dublin-pin:hover { transform: translate(-50%, -50%); background: var(--primary); }
+@media (max-width: 600px) {
+  .ireland-marker { font-size: 10px; padding: 3px 8px; }
+}
+@media (max-width: 420px) {
+  .ireland-marker { font-size: 9px; padding: 2px 6px; }
+}
+
+/* ============================================================
+   TOUR CARDS — 사진 카드 (원본 스타일 복원)
+   ============================================================ */
+.tour-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.tour-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.25s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+.tour-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+.tour-card .tour-img {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  background-size: cover;
+  background-position: center;
+  height: 160px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.tour-card .tour-img.has-cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(26,41,66,0.05) 35%, rgba(26,41,66,0.55) 100%);
+  pointer-events: none;
+}
+.tour-card .tour-img .placeholder {
+  position: relative;
+  z-index: 2;
+  margin: 12px;
+  font-size: 13px;
+  background: rgba(26,41,66,0.6);
+  padding: 6px 12px;
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+}
+.tour-card .tour-body { padding: 18px 20px; flex-grow: 1; display: flex; flex-direction: column; }
+.tour-card .tour-name { font-size: 17px; font-weight: 800; color: var(--primary); margin-bottom: 6px; line-height: 1.3; }
+.tour-card .tour-meta { font-size: 12.5px; color: var(--muted); margin-bottom: 10px; }
+.tour-card .tour-prices { font-size: 14px; font-weight: 700; color: var(--accent); margin-top: auto; padding-top: 10px; border-top: 1px dashed var(--border); }
+.tour-card .tour-prices .lbl { color: var(--muted); font-weight: 500; font-size: 12px; }
+.tour-card.is-active { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(201,169,110,0.25), var(--shadow-hover); }
+
+/* 빠른 가격 비교 테이블 */
+.tour-pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  font-size: 13.5px;
+}
+.tour-pricing-table th {
+  background: var(--primary);
+  color: white;
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 13px;
+}
+.tour-pricing-table td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--border);
+}
+.tour-pricing-table tr:last-child td { border-bottom: none; }
+.tour-pricing-table tr:hover td { background: var(--accent-soft); }
+.tour-pricing-table .num { font-weight: 700; color: var(--primary); text-align: center; }
+.tour-pricing-table .name { font-weight: 600; color: var(--primary); }
+.tour-pricing-table-wrap { max-width: 820px; margin: 0 auto; overflow-x: auto; }
+
+/* ============================================================
+   ANDREW INTRO STRIP — 서비스 페이지에서 소개 페이지로 가는 미니 배너
+   ============================================================ */
+.andrew-strip {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 22px;
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  transition: all 0.2s;
+}
+.andrew-strip:hover { border-color: var(--accent); box-shadow: var(--shadow); }
+.andrew-strip .avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-soft) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  flex-shrink: 0;
+  border: 2px solid white;
+  box-shadow: 0 2px 8px rgba(201,169,110,0.3);
+}
+.andrew-strip .info { flex-grow: 1; min-width: 0; }
+.andrew-strip .info .label {
+  font-size: 11.5px;
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 2px;
+}
+.andrew-strip .info strong {
+  display: block;
+  color: var(--primary);
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+.andrew-strip .info p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+.andrew-strip .more-btn {
+  background: var(--bg);
+  color: var(--primary);
+  border: 1px solid var(--border);
+  padding: 9px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.andrew-strip:hover .more-btn,
+.andrew-strip .more-btn:hover {
+  background: var(--accent);
+  color: var(--primary);
+  border-color: var(--accent);
+}
+@media (max-width: 600px) {
+  .andrew-strip {
+    flex-direction: column;
+    text-align: center;
+    padding: 22px 20px;
+    gap: 12px;
+  }
+  .andrew-strip .info p { font-size: 12.5px; }
+}

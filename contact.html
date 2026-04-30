@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💬 문의 & 예약 | Andrew의 아일랜드 동행</title>
+<meta name="description" content="더블린 한국어 차량 동행 서비스 문의. 카톡 오픈채팅·WhatsApp·전화·이메일 모든 채널 안내.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script defer src="scripts.js"></script>
+<style>
+  .channel-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; max-width:760px; margin:0 auto; }
+  @media (max-width:700px){ .channel-grid { grid-template-columns:1fr; } }
+  .channel-card {
+    background:white;
+    border:2px solid var(--border);
+    border-radius:16px;
+    padding:30px 26px;
+    text-align:center;
+    text-decoration:none;
+    color:var(--text);
+    transition:all 0.2s;
+    display:block;
+  }
+  .channel-card:hover { border-color:var(--accent); transform:translateY(-3px); box-shadow:var(--shadow); }
+  .channel-card.kakao { background:#fee500; border-color:#fee500; }
+  .channel-card.kakao:hover { background:#fae100; }
+  .channel-card .ic { font-size:42px; margin-bottom:12px; }
+  .channel-card h3 { color:var(--primary); margin-bottom:8px; }
+  .channel-card p { font-size:13.5px; color:var(--muted); margin-bottom:14px; line-height:1.6; }
+  .channel-card .value { font-size:15px; font-weight:700; color:var(--primary); }
+  .channel-card .badge {
+    display:inline-block;
+    background:var(--green-soft);
+    color:var(--green);
+    padding:3px 10px;
+    border-radius:20px;
+    font-size:11.5px;
+    font-weight:700;
+    margin-bottom:12px;
+  }
+  .info-block { max-width:760px; margin:0 auto; background:white; border:1px solid var(--border); border-radius:14px; padding:30px; }
+  .info-block h4 { color:var(--primary); margin-bottom:12px; }
+  .info-block p { font-size:14px; line-height:1.8; color:var(--text); margin-bottom:14px; }
+  .info-block .label { font-size:12px; color:var(--accent); font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-top:18px; margin-bottom:6px; }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">🇮🇪 <span class="accent">Beautiful Ireland</span> with Everyone</a>
+    <button class="ham" onclick="document.querySelector('.menu').classList.toggle('open')">≡</button>
+    <div class="menu">
+      <a href="about.html">👤 소개</a>
+      <a href="services/airport.html">✈️ 공항 픽업</a>
+      <a href="services/tours.html">🌿 로드트립</a>
+      <a href="services/moving.html">🏠 이사·IKEA</a>
+      <a href="services/custom.html">✏️ 커스텀</a>
+      <a href="contact.html" class="cta-nav current">💬 문의</a>
+    </div>
+  </div>
+</nav>
+
+<div class="float-cta">
+  <a class="kakao" href="https://open.kakao.com/o/suSTEFsi" target="_blank">💬 카톡 채팅 시작</a>
+  <a href="tel:+[removed]">📞 전화</a>
+</div>
+
+<a href="index.html" class="back-home">홈으로</a>
+
+<header class="hero subpage compact">
+  <div class="hero-content">
+    <div class="hero-titles">
+      <span>💬 Contact & Booking</span>
+    </div>
+    <h1>문의 & 예약</h1>
+    <p class="tagline">상시 연락 가능 · 빠른 시간 내 답장</p>
+    <p class="sub">아래 채널 중 편하신 방법으로 연락 주세요</p>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <div class="container">
+    <a href="index.html">홈</a>
+    <span class="sep">/</span>
+    <span class="current">문의 & 예약</span>
+  </div>
+</div>
+
+<!-- CHANNEL CARDS -->
+<section style="background:var(--bg);">
+  <div class="container">
+    <div class="section-title">
+      <h2>📞 연락 채널</h2>
+      <p class="lead">카카오톡 오픈채팅이 가장 빠릅니다</p>
+    </div>
+
+    <div class="channel-grid">
+
+      <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" class="channel-card kakao">
+        <div class="ic">💬</div>
+        <span class="badge" style="background:rgba(255,255,255,0.5); color:#3c1e1e;">⭐ 가장 추천</span>
+        <h3 style="color:#3c1e1e;">카톡 오픈채팅</h3>
+        <p style="color:#5c3c2e;">익명 가능 · 사진·위치 공유 편함<br>아일랜드 시간대 즉시 응답</p>
+        <div class="value" style="color:#3c1e1e;">▶ 채팅 바로 시작</div>
+      </a>
+
+      <a href="https://wa.me/[removed]" target="_blank" class="channel-card">
+        <div class="ic">📱</div>
+        <span class="badge">해외 친화</span>
+        <h3>WhatsApp</h3>
+        <p>아일랜드·유럽에서 익숙한 방식<br>국제 SMS 대신 무료 채팅</p>
+        <div class="value">[removed]</div>
+      </a>
+
+      <a href="tel:+[removed]" class="channel-card">
+        <div class="ic">📞</div>
+        <span class="badge">긴급 시</span>
+        <h3>전화 통화</h3>
+        <p>운전 중에는 못 받을 수 있어요<br>긴급 픽업·실시간 문의 권장</p>
+        <div class="value">[removed]</div>
+      </a>
+
+      <a href="mailto:sby05034@gmail.com" class="channel-card">
+        <div class="ic">✉️</div>
+        <span class="badge">공식 문의</span>
+        <h3>Email</h3>
+        <p>긴 문의·기자단 취재·기관 문의<br>견적서·세금계산서 요청</p>
+        <div class="value">sby05034@gmail.com</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- KAKAO HIGHLIGHT -->
+<section style="background:white;">
+  <div class="container">
+    <div class="cta-band" style="background:#fee500; color:#3c1e1e;">
+      <h3 style="color:#3c1e1e;">💬 카카오톡 오픈채팅</h3>
+      <p style="color:#5c3c2e;">🇮🇪 Andrew의 아일랜드 동행<br>익명 가능 · 빠른 답장 · 사진·위치 공유 편함</p>
+      <div class="buttons">
+        <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" class="btn btn-primary">▶ 채팅 바로 시작</a>
+      </div>
+      <p style="font-size:12.5px; color:#5c3c2e; margin-top:14px; opacity:0.85;">클릭 시 카카오톡 앱이 열리며 채팅이 시작됩니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING INFO -->
+<section style="background:var(--bg);">
+  <div class="container">
+    <div class="section-title">
+      <h2>📋 예약 안내</h2>
+      <p class="lead">결제·취소·일정 변경 정책</p>
+    </div>
+
+    <div class="info-block">
+      <h4>💳 결제 방법</h4>
+      <p>
+        <strong>유로:</strong> Revolut 송금<br>
+        <strong>원화:</strong> 한국 계좌이체<br>
+        ※ 카드 결제는 받지 않습니다.
+      </p>
+
+      <div class="label">결제 시점</div>
+      <p>
+        <strong>당일 일괄 결제</strong> 또는 <strong>50% 선결제 + 50% 당일</strong>. 편하신 방식으로.
+      </p>
+
+      <div class="label">취소·일정 변경</div>
+      <p>
+        ✓ <strong>3일 이전 취소</strong>: 무료<br>
+        ✓ <strong>24시간 ~ 3일 이전</strong>: 50% 환불<br>
+        ✗ <strong>당일 취소</strong>: 환불 불가<br>
+        ⚠️ <strong>비행 지연·취소·날씨 등 불가피한 상황은 무료 변경/취소</strong> 가능합니다.
+      </p>
+
+      <div class="label">기상 특보 시</div>
+      <p>
+        Yellow Warning 이상의 기상특보 시 무료 취소·변경 가능. 특보 없는 단순 강수는 정상 운행 (안전운행 원칙).
+      </p>
+
+      <div class="label">긴급 요청</div>
+      <p>
+        예산이 부족하시거나 갑작스러운 픽업·이동·도움이 필요한 상황이라면
+        <strong>사정에 맞춰 함께 방법을 찾아드릴게요</strong>. 망설이지 마시고 카톡 한 번 주세요.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT TO TELL -->
+<section style="background:white;">
+  <div class="container">
+    <div class="section-title">
+      <h2>🗒️ 문의할 때 알려주시면 빠릅니다</h2>
+    </div>
+    <div style="max-width:680px; margin:0 auto; background:var(--accent-soft); border-radius:14px; padding:28px 30px;">
+      <ul style="list-style:none; padding:0;">
+        <li style="padding:8px 0; font-size:14.5px;">📅 <strong>날짜·시간</strong> — 도착 항공편 시간, 또는 희망 일자</li>
+        <li style="padding:8px 0; font-size:14.5px;">👥 <strong>인원·구성</strong> — 어른 / 아이 / 어르신</li>
+        <li style="padding:8px 0; font-size:14.5px;">📍 <strong>출발지·목적지</strong> — 공항·숙소 주소 또는 가고 싶은 코스</li>
+        <li style="padding:8px 0; font-size:14.5px;">🧳 <strong>짐 정보</strong> — 캐리어 개수·큰 가구 여부 (이사 시)</li>
+        <li style="padding:8px 0; font-size:14.5px;">💰 <strong>대략적인 예산</strong> — 솔직하게 알려주시면 코스 조정 가능</li>
+        <li style="padding:8px 0; font-size:14.5px;">💡 <strong>특별 요청</strong> — 카시트, 한국어 가이드 깊이, 사진 촬영 등</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- OTHER SERVICES -->
+<section class="other-services">
+  <div class="container">
+    <h3>서비스 둘러보기</h3>
+    <div class="links">
+      <a href="services/airport.html"><span class="icon">✈️</span>공항 픽업·드랍</a>
+      <a href="services/tours.html"><span class="icon">🌿</span>당일 로드트립</a>
+      <a href="services/moving.html"><span class="icon">🏠</span>이사·IKEA·장보기</a>
+      <a href="services/custom.html"><span class="icon">✏️</span>커스텀 여행</a>
+    </div>
+  </div>
+</section>
+
+<footer class="contact">
+  <div class="container">
+    <h2>지금 바로 문의해보세요</h2>
+    <p>🇮🇪 Andrew의 아일랜드 동행</p>
+    <div class="channels">
+      <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" style="background:#fee500; color:#3c1e1e; border-color:#fee500; font-weight:800;">💬 카톡 오픈채팅</a>
+      <a href="https://wa.me/[removed]" target="_blank">💬 WhatsApp</a>
+      <a href="tel:+[removed]">📞 [removed]</a>
+      <a href="mailto:sby05034@gmail.com">✉️ Email</a>
+    </div>
+    <p class="small">© 2026 🇮🇪 Beautiful Ireland with Everyone · Andrew Seohyeon Kim · Dublin, Ireland</p>
+  </div>
+</footer>
+
+</body>
+</html>

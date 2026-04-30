@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏠 이사 · IKEA·장보기 동행 | Andrew의 아일랜드 동행</title>
+<meta name="description" content="더블린 이사·IKEA·가구 픽업·장보기 동행. 7인승 MPV 좌석 접으면 1,800L 적재. 짐 운송 €40부터, 이사 €130부터.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<script defer src="../scripts.js"></script>
+<style>
+  .calc-wrap { background: white; border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; max-width:760px; margin:0 auto; }
+  .calc-tabs { display: flex; background: var(--bg); border-bottom: 1px solid var(--border); }
+  .calc-tab {
+    flex: 1; padding: 16px 12px;
+    border: none; background: transparent; cursor: pointer;
+    font-family: inherit; font-size: 14px; font-weight: 600;
+    color: var(--muted); transition: all 0.2s;
+    border-bottom: 3px solid transparent;
+  }
+  .calc-tab:hover { color: var(--primary); background: rgba(0,0,0,0.02); }
+  .calc-tab.active { color: var(--primary); border-bottom-color: var(--accent); background: white; }
+  .calc-body { padding: 28px 24px; }
+  .calc-content { display: none; }
+  .calc-content.active { display: block; }
+  .calc-body .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+  .calc-body .row.single { grid-template-columns: 1fr; }
+  @media (max-width: 600px) { .calc-body .row { grid-template-columns: 1fr; } }
+  .field label { display: block; font-size: 13px; font-weight: 600; color: var(--primary); margin-bottom: 6px; }
+  .field input, .field select {
+    width: 100%; padding: 11px 13px;
+    border: 1.5px solid var(--border); border-radius: 8px;
+    font-size: 14.5px; font-family: inherit; background: white;
+  }
+  .field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
+  .field .hint { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .result-panel {
+    margin-top: 22px;
+    background: var(--accent-soft);
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    padding: 22px;
+  }
+  .result-panel .result-label { font-size: 13px; color: var(--primary); font-weight: 600; margin-bottom: 4px; }
+  .result-panel .result-price { font-size: 42px; font-weight: 900; color: var(--primary); letter-spacing: -2px; line-height: 1.1; margin-bottom: 14px; }
+  .result-panel .breakdown { background: white; border-radius: 8px; padding: 14px; }
+  .result-panel .breakdown ul { list-style: none; font-size: 13.5px; }
+  .result-panel .breakdown ul li { padding: 4px 0; display: flex; justify-content: space-between; }
+
+  .use-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; max-width:920px; margin:0 auto; }
+  @media (max-width:760px){ .use-grid { grid-template-columns:1fr; } }
+  .use-card {
+    background:white;
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:32px 28px;
+    transition:all 0.2s;
+    position:relative;
+    overflow:hidden;
+  }
+  .use-card::before {
+    content:'';
+    position:absolute;
+    top:0; left:0; right:0;
+    height:5px;
+    background:var(--accent);
+  }
+  .use-card:hover { border-color:var(--accent); box-shadow:var(--shadow-hover); transform:translateY(-3px); }
+  .use-card .ic { font-size:42px; margin-bottom:14px; }
+  .use-card h4 { color:var(--primary); margin-bottom:10px; font-size:20px; }
+  .use-card p { font-size:14px; color:var(--muted); line-height:1.7; margin-bottom:14px; }
+  .use-card ul { list-style:none; padding:0; margin-bottom:18px; }
+  .use-card ul li { font-size:13.5px; color:var(--text); padding:5px 0; padding-left:20px; position:relative; line-height:1.6; }
+  .use-card ul li::before { content:'✓'; position:absolute; left:0; top:5px; color:var(--accent); font-weight:700; }
+  .use-card .price-tag {
+    display:inline-block;
+    background:var(--accent-soft);
+    color:var(--primary);
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:700;
+  }
+
+  .vehicle-photo { max-width:520px; margin:0 auto; border-radius:14px; overflow:hidden; box-shadow:var(--shadow); }
+  .vehicle-specs { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:24px; max-width:760px; margin-left:auto; margin-right:auto; }
+  @media (max-width:600px){ .vehicle-specs { grid-template-columns:repeat(2,1fr); } }
+  .spec { background:white; border:1px solid var(--border); border-radius:10px; padding:14px; text-align:center; }
+  .spec .num { font-size:22px; font-weight:900; color:var(--accent); }
+  .spec .lbl { font-size:12px; color:var(--muted); }
+
+  .price-table { width:100%; border-collapse:collapse; background:white; border-radius:10px; overflow:hidden; box-shadow:var(--shadow); }
+  .price-table th, .price-table td { padding:12px 14px; text-align:left; border-bottom:1px solid var(--border); font-size:13.5px; }
+  .price-table th { background:var(--primary); color:white; font-weight:700; }
+  .price-table tr:last-child td { border-bottom:none; }
+  .price-table .price { color: var(--accent); font-weight:700; text-align:right; }
+</style>
+</head>
+<body class="subpage-bg-fix">
+
+<nav class="topnav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">🇮🇪 <span class="accent">Beautiful Ireland</span> with Everyone</a>
+    <button class="ham" onclick="document.querySelector('.menu').classList.toggle('open')">≡</button>
+    <div class="menu">
+      <a href="../about.html">👤 소개</a>
+      <a href="airport.html">✈️ 공항 픽업</a>
+      <a href="tours.html">🌿 로드트립</a>
+      <a href="moving.html" class="current">🏠 이사·IKEA</a>
+      <a href="custom.html">✏️ 커스텀</a>
+      <a href="../contact.html" class="cta-nav">💬 문의</a>
+    </div>
+  </div>
+</nav>
+
+<a href="../index.html" class="back-home">홈으로</a>
+
+<div class="float-cta">
+  <a class="kakao" href="https://open.kakao.com/o/suSTEFsi" target="_blank">💬 카톡 채팅 시작</a>
+  <a href="tel:+[removed]">📞 전화</a>
+</div>
+
+<header class="hero subpage compact">
+  <div class="hero-content">
+    <div class="hero-titles">
+      <span>🏠 Moving · IKEA · Shopping</span>
+    </div>
+    <h1>이사 · IKEA·장보기 동행</h1>
+    <p class="tagline">한국에서 알던 그 "용달"의 편안함 그대로</p>
+    <p class="sub">7인승 MPV 좌석 접으면 1,800L 적재 · 한국어로 편하게</p>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <div class="container">
+    <a href="../index.html">홈</a>
+    <span class="sep">/</span>
+    <a href="../index.html#services">서비스</a>
+    <span class="sep">/</span>
+    <span class="current">이사 · IKEA·장보기 동행</span>
+  </div>
+</div>
+
+<!-- ANDREW STRIP -->
+<section style="background:var(--bg); padding:24px 20px;">
+  <a href="../about.html" class="andrew-strip">
+    <div class="avatar">👤</div>
+    <div class="info">
+      <div class="label">이 서비스를 운영하는 사람</div>
+      <strong>서현 Andrew</strong>
+      <p>더블린 4년차 · 유럽 운전 6년+ · 무료 워킹투어 운영자 · 🎵 Classical Music for Everyone</p>
+    </div>
+    <span class="more-btn">소개 더 보기 →</span>
+  </a>
+</section>
+
+<!-- TWO CATEGORIES -->
+<section style="background:white;">
+  <div class="container">
+    <div class="section-title">
+      <h2>🛎️ 두 가지 운송 동행</h2>
+      <p class="lead">크게 두 영역으로 나누어 운영합니다</p>
+    </div>
+    <div class="use-grid stagger-fade">
+
+      <div class="use-card" id="cat-moving">
+        <div class="ic">🏠</div>
+        <h4>이사</h4>
+        <p>방·자취집 이사부터 박스·짐 운송까지. 짐 양에 따라 1–2회 왕복 또는 한 번에 적재. 좌석 접으면 매트리스·소파도 가능합니다.</p>
+        <ul>
+          <li>방 이사 (1bed · 자취집)</li>
+          <li>짐·박스 단발 운송 (캐리어 포함)</li>
+          <li>큰 가구 이동 (소파·매트리스·책상)</li>
+          <li>시외 장거리 이사 (Cork·Galway 등)</li>
+        </ul>
+        <span class="price-tag">€40–€220</span>
+        <p style="font-size:12px; color:var(--muted); margin-top:10px;">* 짐 양·거리·인력 도움 여부에 따라 결정</p>
+      </div>
+
+      <div class="use-card" id="cat-ikea">
+        <div class="ic">🪑</div>
+        <h4>IKEA · 가구 · 장보기 동행</h4>
+        <p>차 없으면 가기 힘든 곳을 함께 다녀와요. IKEA에서 가구 픽업해 댁까지 운반, 대형마트·아시아마트 장보기 동행 모두 가능합니다.</p>
+        <ul>
+          <li>IKEA Ballymun 가구 픽업·운송</li>
+          <li>아시아마트 한국·중국·일본 식료품 장보기</li>
+          <li>Lidl·Aldi·Tesco Extra 대형마트</li>
+          <li>가구점 (Harvey Norman·DID 등) 픽업</li>
+        </ul>
+        <span class="price-tag">€40–€100</span>
+        <p style="font-size:12px; color:var(--muted); margin-top:10px;">* 거리·시간(1–1.5h 단위)으로 산정</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VEHICLE INFO -->
+<section style="background:var(--bg);">
+  <div class="container">
+    <div class="section-title">
+      <h2>🚐 차량 정보</h2>
+      <p class="lead">7인승 MPV — 좌석 접으면 진짜 많이 들어갑니다</p>
+    </div>
+    <div class="vehicle-photo">
+      <img src="../photo2.jpg" alt="차량 적재공간">
+    </div>
+    <div class="vehicle-specs">
+      <div class="spec"><div class="num">7</div><div class="lbl">탑승 좌석</div></div>
+      <div class="spec"><div class="num">1,800L</div><div class="lbl">최대 적재 (좌석 접음)</div></div>
+      <div class="spec"><div class="num">5–6</div><div class="lbl">30인치 캐리어</div></div>
+      <div class="spec"><div class="num">220cm</div><div class="lbl">최대 길이</div></div>
+      <div class="spec"><div class="num">120cm</div><div class="lbl">적재 폭</div></div>
+      <div class="spec"><div class="num">90cm</div><div class="lbl">적재 높이</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR (탭 2개로 단순화) -->
+<section id="calculator" style="background:white;">
+  <div class="container">
+    <div class="section-title">
+      <h2>🧮 가격 계산</h2>
+      <p class="lead">유형별로 빠르게 견적 확인</p>
+    </div>
+
+    <div class="calc-wrap">
+      <div class="calc-tabs">
+        <button class="calc-tab active" data-tab="moving" onclick="selectMvTab('moving')">🏠 이사 (짐 운송)</button>
+        <button class="calc-tab" data-tab="ikea" onclick="selectMvTab('ikea')">🪑 IKEA·장보기 동행</button>
+      </div>
+
+      <div class="calc-body">
+
+        <!-- 이사 탭 -->
+        <div class="calc-content active" data-content="moving">
+          <div class="row">
+            <div class="field">
+              <label>📦 운송 규모</label>
+              <select id="mv-type" onchange="calcMoving()">
+                <option value="luggage">시내 짐 운송 (캐리어/박스, 1h)</option>
+                <option value="moving-help">방 이사 (4h, 고객이 옆에서 도움)</option>
+                <option value="moving-solo">방 이사 (4h, Andrew 단독 운반)</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>📍 거리 (편도, km)</label>
+              <input type="number" id="mv-km" value="15" min="0" max="200" step="1" oninput="calcMoving()">
+              <div class="hint" id="mv-hint">A ↔ B 사이 거리</div>
+            </div>
+          </div>
+
+          <div class="result-panel">
+            <div class="result-label">예상 요금 (편도 · 톨비 포함)</div>
+            <div class="result-price" id="mv-price">€40</div>
+            <div class="breakdown">
+              <ul id="mv-breakdown"></ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- IKEA·장보기 탭 -->
+        <div class="calc-content" data-content="ikea">
+          <div class="row">
+            <div class="field">
+              <label>🛒 동행 유형</label>
+              <select id="ik-type" onchange="calcIkea()">
+                <option value="ikea">🪑 IKEA Ballymun 가구 픽업</option>
+                <option value="grocery">🛒 대형마트·아시아마트 장보기</option>
+              </select>
+            </div>
+            <div class="field" id="ik-zone-field">
+              <label>📍 IKEA → 집까지 거리</label>
+              <select id="ik-zone" onchange="calcIkea()">
+                <option value="1">Zone 1 (0–10km)</option>
+                <option value="2" selected>Zone 2 (10–20km)</option>
+                <option value="3">Zone 3 (20–30km)</option>
+                <option value="4">Zone 4 (30–50km)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="result-panel">
+            <div class="result-label">예상 요금 (편도 · 톨비 포함)</div>
+            <div class="result-price" id="ik-price">€60</div>
+            <div class="breakdown">
+              <ul id="ik-breakdown"></ul>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align:center; margin-top:24px;">
+          <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" class="btn btn-kakao">💬 짐 사진 한 장 보내고 확정 견적</a>
+        </div>
+
+        <p style="font-size:12.5px; color:var(--muted); margin-top:18px; text-align:center; line-height:1.7;">
+          ※ 정확한 견적은 짐 사이즈/개수에 따라 달라집니다. 카톡으로 사진 한 장 보내주시면 확정 견적 드립니다.<br>
+          ※ "고객 도움"은 큰 가구 들 때 옆에서 한쪽을 잡아주시는 정도. "본인 단독"은 모든 운반을 Andrew가 단독으로.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 전체 가격표 (원본 가격 동일하게) -->
+<section style="background:var(--bg);">
+  <div class="container" style="max-width:780px;">
+    <div class="section-title">
+      <h2>💰 전체 가격 가이드</h2>
+      <p class="lead">원본 운영 단가 그대로</p>
+    </div>
+    <div style="overflow-x:auto;">
+      <table class="price-table">
+        <thead>
+          <tr><th>항목</th><th style="text-align:right;">가격</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>📦 시내 짐 운송 (캐리어·박스, 1h)</td><td class="price">€40</td></tr>
+          <tr><td>🛒 장보기 동행 (Lidl·Aldi·아시아마트, 1.5h)</td><td class="price">€40</td></tr>
+          <tr><td>🪑 IKEA Zone 1 (0–10km)</td><td class="price">€50</td></tr>
+          <tr><td>🪑 IKEA Zone 2 (10–20km)</td><td class="price">€60</td></tr>
+          <tr><td>🪑 IKEA Zone 3 (20–30km)</td><td class="price">€75</td></tr>
+          <tr><td>🪑 IKEA Zone 4 (30–50km)</td><td class="price">€100</td></tr>
+          <tr><td>🏠 방 이사 (4h, 고객 도움)</td><td class="price">€130–€150</td></tr>
+          <tr><td>🏠 방 이사 (4h, Andrew 단독)</td><td class="price">€180–€220</td></tr>
+          <tr><td>장거리 이사 추가 (30km 초과)</td><td class="price">+€0.50/km</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:white;">
+  <div class="container" style="max-width:800px;">
+    <div class="section-title"><h2>이사·운송 자주 묻는 질문</h2></div>
+
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">짐 운반은 도와주시나요?</div>
+      <div class="faq-a">
+        가벼운 박스·캐리어는 함께 들어드립니다. 무거운 가구·매트리스는 두 가지 옵션이 있어요:<br>
+        <strong>① 고객 도움 (€130–150)</strong> — 큰 가구 들 때 옆에서 한쪽을 잡아주세요.<br>
+        <strong>② Andrew 단독 (€180–220)</strong> — 도와주실 분이 없거나 무리이실 때.
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">큰 가구가 차에 들어갈지 모르겠어요</div>
+      <div class="faq-a">
+        가구 박스 사이즈(가로×세로×높이)를 카톡으로 알려주시거나 사진을 보내주세요. IKEA 모델명만 알려주셔도 됩니다.
+        대표적으로 <strong>BILLY 책장(80×202cm) + 박스 5–6개</strong>까지는 한 번에 적재 가능합니다.
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">엘리베이터 없는 건물도 가능한가요?</div>
+      <div class="faq-a">
+        가능하지만 무거운 짐은 동승자분의 도움이 필요할 수 있어요. 사전에 건물 구조(층수, 엘리베이터 유무)를 알려주시면 미리 준비합니다.
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">멀리(시외) 이사도 가능한가요?</div>
+      <div class="faq-a">
+        네. 더블린 ↔ Cork·Galway·Belfast 같은 장거리 이사도 가능합니다. 30km 초과부터 km당 €0.50 추가됩니다.
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">아시아마트는 어디로 가나요?</div>
+      <div class="faq-a">
+        더블린 시내·근교의 한국식품·중국·일본·동남아 식료품점 모두 가능합니다 (Asia Market, Oriental Foods 등). 원하는 매장을 카톡으로 알려주세요.
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">결제는 어떻게 하나요?</div>
+      <div class="faq-a">
+        유로(Revolut) 또는 원화(한국 계좌이체). 작업 완료 후 일괄 결제하시면 됩니다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OTHER SERVICES -->
+<section class="other-services">
+  <div class="container">
+    <h3>다른 서비스도 보세요</h3>
+    <div class="links">
+      <a href="airport.html"><span class="icon">✈️</span>공항 픽업·드랍</a>
+      <a href="tours.html"><span class="icon">🌿</span>당일 로드트립</a>
+      <a href="custom.html"><span class="icon">✏️</span>커스텀 여행</a>
+      <a href="../about.html"><span class="icon">🎵</span>음악 프로젝트</a>
+    </div>
+  </div>
+</section>
+
+<footer class="contact">
+  <div class="container">
+    <h2>이사·운송 문의</h2>
+    <p>짐 사진 한 장이면 바로 견적 드려요</p>
+    <div class="channels">
+      <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" style="background:#fee500; color:#3c1e1e; border-color:#fee500; font-weight:800;">💬 카톡 오픈채팅</a>
+      <a href="https://wa.me/[removed]" target="_blank">💬 WhatsApp</a>
+      <a href="tel:+[removed]">📞 [removed]</a>
+      <a href="mailto:sby05034@gmail.com">✉️ Email</a>
+    </div>
+    <p class="small">© 2026 🇮🇪 Beautiful Ireland with Everyone · Andrew Seohyeon Kim · Dublin, Ireland</p>
+  </div>
+</footer>
+
+<script>
+// 원본과 동일한 이사 가격 체계
+const MV_TYPES = {
+  'luggage': { base: 40, name: '시내 짐 운송 (1h)', perKm: 0, threshold: 0 },
+  'moving-help': { base: 140, name: '방 이사 (4h, 고객 도움)', perKm: 0.5, threshold: 30 },
+  'moving-solo': { base: 200, name: '방 이사 (4h, Andrew 단독)', perKm: 0.5, threshold: 30 }
+};
+
+function selectMvTab(tab) {
+  document.querySelectorAll('.calc-tab').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+  document.querySelectorAll('.calc-content').forEach(c => c.classList.toggle('active', c.dataset.content === tab));
+}
+
+function calcMoving() {
+  const type = document.getElementById('mv-type').value;
+  const km = parseInt(document.getElementById('mv-km').value, 10) || 0;
+  const cfg = MV_TYPES[type];
+
+  let base = cfg.base;
+  let extras = 0;
+  const breakdown = [];
+  breakdown.push(`<li><span>${cfg.name}</span><span>€${base}</span></li>`);
+
+  if (cfg.perKm && km > cfg.threshold) {
+    const over = km - cfg.threshold;
+    const sur = Math.round(over * cfg.perKm);
+    if (sur > 0) {
+      extras += sur;
+      breakdown.push(`<li><span>장거리 추가 (${over}km × €${cfg.perKm})</span><span>+€${sur}</span></li>`);
+    }
+  }
+
+  const total = base + extras;
+  document.getElementById('mv-price').textContent = `€${total}`;
+  document.getElementById('mv-breakdown').innerHTML = breakdown.join('');
+}
+
+// IKEA·장보기 가격
+const IKEA_ZONES = { '1': 50, '2': 60, '3': 75, '4': 100 };
+
+function calcIkea() {
+  const type = document.getElementById('ik-type').value;
+  const zoneField = document.getElementById('ik-zone-field');
+  const breakdown = [];
+  let total = 0;
+
+  if (type === 'ikea') {
+    zoneField.style.display = '';
+    const zone = document.getElementById('ik-zone').value;
+    total = IKEA_ZONES[zone];
+    const zoneLabel = ['', '0–10km', '10–20km', '20–30km', '30–50km'][parseInt(zone)];
+    breakdown.push(`<li><span>IKEA Zone ${zone} (${zoneLabel})</span><span>€${total}</span></li>`);
+  } else {
+    zoneField.style.display = 'none';
+    total = 40;
+    breakdown.push(`<li><span>장보기 동행 (1.5h)</span><span>€${total}</span></li>`);
+  }
+
+  document.getElementById('ik-price').textContent = `€${total}`;
+  document.getElementById('ik-breakdown').innerHTML = breakdown.join('');
+}
+
+calcMoving();
+calcIkea();
+</script>
+
+</body>
+</html>
