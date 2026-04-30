@@ -2335,11 +2335,11 @@ Object.entries(TOURS).forEach(([key, tour]) => {
   let imgLabel = `<span class="placeholder">📷 ${tour.name}</span>`;
   if (key === 'weather') {
     // 일기예보 랜덤 여행 — 위클로 샐리 갭 (변화무쌍한 산악 날씨)
-    cardBg = `background-image: url('images/_weather-cover.jpg');`;
+    cardBg = `background-image: url('images/weather-cover.jpg');`;
     imgClass = 'tour-img has-cover';
     imgLabel = '';
   } else if (hasCover) {
-    cardBg = `background-image: url('images/${folder}/_cover.jpg');`;
+    cardBg = `background-image: url('images/${folder}/cover.jpg');`;
     imgClass = 'tour-img has-cover';
     imgLabel = '';
   } else if (tour.special) {
@@ -2379,7 +2379,7 @@ customCard.style.borderColor = 'var(--accent)';
 customCard.style.background = 'var(--accent-soft)';
 customCard.onclick = () => document.getElementById('contact').scrollIntoView({behavior:'smooth'});
 customCard.innerHTML = `
-  <div class="tour-img has-cover" style="background-image: url('images/_custom-cover.jpg');">
+  <div class="tour-img has-cover" style="background-image: url('images/custom-cover.jpg');">
   </div>
   <div class="tour-body">
     <div class="tour-name">셋팅 안 된 곳도 OK</div>
