@@ -515,6 +515,8 @@
   .tour-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3px); border-color: var(--accent); }
   .tour-card .tour-img {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    background-size: cover;
+    background-position: center;
     height: 130px;
     display: flex;
     align-items: center;
@@ -522,8 +524,26 @@
     color: white;
     font-size: 14px;
     font-weight: 600;
-    opacity: 0.85;
     position: relative;
+    overflow: hidden;
+  }
+  .tour-card .tour-img.has-cover::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(26,41,66,0.05) 40%, rgba(26,41,66,0.55) 100%);
+    pointer-events: none;
+  }
+  .tour-card .tour-img .tour-img-label {
+    position: relative;
+    z-index: 2;
+    background: rgba(26,41,66,0.62);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12.5px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
   }
   .tour-card .tour-img .placeholder { font-size: 12px; opacity: 0.7; }
   .tour-card .tour-body { padding: 16px 18px; }
@@ -1348,7 +1368,7 @@
         <!-- 마커들 (% 기반 절대 위치) -->
         <button class="ireland-marker" data-tour="donegal" style="top:21%; left:48%;" title="도니골 / Donegal"><span>도니골</span></button>
         <button class="ireland-marker" data-tour="causeway" style="top:7%; left:74%;" title="자이언트 코즈웨이 / Causeway"><span>코즈웨이</span></button>
-        <button class="ireland-marker" data-tour="belfast" style="top:14%; left:80%;" title="벨파스트 / Belfast"><span>벨파스트</span></button>
+        <button class="ireland-marker" data-tour="belfast" style="top:22%; left:82%;" title="벨파스트 / Belfast"><span>벨파스트</span></button>
         <button class="ireland-marker" data-tour="sligo" style="top:30%; left:42%;" title="슬라이고 / Sligo"><span>슬라이고</span></button>
         <button class="ireland-marker" data-tour="mayo" style="top:40%; left:25%;" title="메이요 / Mayo"><span>메이요</span></button>
         <button class="ireland-marker" data-tour="newgrange" style="top:44%; left:74%;" title="뉴그레인지 / Newgrange"><span>뉴그레인지</span></button>
@@ -2306,9 +2326,26 @@ Object.entries(TOURS).forEach(([key, tour]) => {
   card.className = 'tour-card';
   card.onclick = () => openTourModal(key);
   const subBadge = '';
-  const cardBg = tour.special
-    ? 'background: linear-gradient(135deg, #6dd5ed 0%, #2193b0 100%);'
-    : '';
+
+  // 대표 사진(_cover.jpg)을 카드 배경으로 사용 (라벨 없음 — 이름은 카드 아래에 표시)
+  const folder = tour.folder || (tour.special ? null : key);
+  const hasCover = folder && tour.places && tour.places.length > 0;
+  let cardBg = '';
+  let imgClass = 'tour-img';
+  let imgLabel = `<span class="placeholder">📷 ${tour.name}</span>`;
+  if (key === 'weather') {
+    // 일기예보 랜덤 여행 — 위클로 샐리 갭 (변화무쌍한 산악 날씨)
+    cardBg = `background-image: url('images/_weather-cover.jpg');`;
+    imgClass = 'tour-img has-cover';
+    imgLabel = '';
+  } else if (hasCover) {
+    cardBg = `background-image: url('images/${folder}/_cover.jpg');`;
+    imgClass = 'tour-img has-cover';
+    imgLabel = '';
+  } else if (tour.special) {
+    cardBg = 'background: linear-gradient(135deg, #6dd5ed 0%, #2193b0 100%);';
+  }
+
   let priceLine;
   if (tour.isRange) {
     priceLine = `<span class="pf">인당 €${tour.perPerson[5]}~€${tour.perPerson[3]}</span> <span style="font-size:11.5px; color:var(--muted);">코스별</span>`;
@@ -2319,8 +2356,8 @@ Object.entries(TOURS).forEach(([key, tour]) => {
       : `<span class="pf">인당 €${range ? range.min : pp(tour,5)}</span>`;
   }
   card.innerHTML = `
-    <div class="tour-img" style="${cardBg}">
-      <span class="placeholder">📷 ${tour.name}</span>
+    <div class="${imgClass}" style="${cardBg}">
+      ${imgLabel}
     </div>
     <div class="tour-body">
       <div class="tour-name">${tour.name}</div>
@@ -2342,8 +2379,7 @@ customCard.style.borderColor = 'var(--accent)';
 customCard.style.background = 'var(--accent-soft)';
 customCard.onclick = () => document.getElementById('contact').scrollIntoView({behavior:'smooth'});
 customCard.innerHTML = `
-  <div class="tour-img" style="background:linear-gradient(135deg, var(--accent) 0%, #b8965a 100%);">
-    <span class="placeholder">✏️ 커스텀 코스</span>
+  <div class="tour-img has-cover" style="background-image: url('images/_custom-cover.jpg');">
   </div>
   <div class="tour-body">
     <div class="tour-name">셋팅 안 된 곳도 OK</div>
@@ -2391,6 +2427,8 @@ function openTourModal(key) {
               <div class="place-thumb">
                 <img src="images/${folder}/${p.key}.jpg"
                      alt="${p.nameEn}"
+                     loading="lazy"
+                     decoding="async"
                      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                      onload="this.style.display='block'; this.nextElementSibling.style.display='none';">
                 <div class="needs-photo" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; height:100%;">
