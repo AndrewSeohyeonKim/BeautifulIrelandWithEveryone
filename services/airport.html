@@ -330,7 +330,7 @@
         </div>
 
         <div style="text-align:center; margin-top:24px;">
-          <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" class="btn btn-kakao" id="pk-cta">💬 이 가격으로 카톡 문의</a>
+          <a href="javascript:void(0)" onclick="inquirePickup()" class="btn btn-kakao" id="pk-cta">💬 이 가격으로 카톡 문의</a>
         </div>
       </div>
     </div>
@@ -638,9 +638,55 @@ function calcPickup() {
     warn.style.display = 'none';
   }
 
-  // CTA URL update
-  const cta = document.getElementById('pk-cta');
-  cta.href = `https://open.kakao.com/o/suSTEFsi`;
+}
+
+// 카톡 문의 메시지 자동 생성 + 클립보드 복사 + 카톡 열기
+function copyAndOpenKakao(message) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(message).then(() => {
+      alert(`📋 문의 메시지가 클립보드에 복사되었어요!\n\n카톡 채팅창에 붙여넣기(Ctrl+V / 길게 누르기) 해주세요.\n\n"${message}"`);
+      window.open('https://open.kakao.com/o/suSTEFsi', '_blank');
+    }).catch(() => {
+      window.open('https://open.kakao.com/o/suSTEFsi', '_blank');
+    });
+  } else {
+    window.open('https://open.kakao.com/o/suSTEFsi', '_blank');
+  }
+}
+
+function inquirePickup() {
+  const sel = document.getElementById('pk-area');
+  const areaSel = sel.value;
+  let destText = sel.options[sel.selectedIndex].text;
+  // Eircode 입력의 경우 실제 입력값 표시
+  if (areaSel === 'eircode') {
+    const ec = (document.getElementById('pk-eircode-input').value || '').trim().toUpperCase();
+    destText = ec ? `Eircode ${ec}` : 'Eircode (미입력)';
+  } else if (areaSel === 'other') {
+    const km = document.getElementById('pk-km-manual').value;
+    destText = `다른 지역 (약 ${km}km)`;
+  }
+  const direction = document.getElementById('pk-direction').value;
+  const dirEmoji = direction === 'arrival' ? '🛬 도착 픽업' : '🛫 출발 드랍';
+  const dirLabel = direction === 'arrival' ? '목적지' : '출발지';
+  const people = document.getElementById('pk-people').value;
+  const bags = document.getElementById('pk-bags').value;
+  const price = document.getElementById('pk-price').textContent;
+  const gate = document.getElementById('pk-addon-gate').checked;
+  const checkin = document.getElementById('pk-addon-checkin').checked;
+
+  const lines = [
+    '안녕하세요! 공항 픽업·드랍 문의드립니다.',
+    `${dirEmoji}`,
+    `📍 ${dirLabel}: ${destText}`,
+    `👥 인원: ${people}명 · 🧳 캐리어: ${bags}개`
+  ];
+  if (gate) lines.push('🛬 게이트 앞 마중·에스코트 포함');
+  if (checkin) lines.push('🛫 체크인·보안검색 안내 포함');
+  lines.push(`💰 예상 가격: ${price}`);
+  lines.push('가능한지 확인 부탁드립니다 🙏');
+
+  copyAndOpenKakao(lines.join('\n'));
 }
 
 calcPickup();
