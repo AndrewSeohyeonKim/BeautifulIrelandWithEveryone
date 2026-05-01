@@ -651,7 +651,7 @@
         </div>
 
         <div class="result-panel">
-          <div class="result-label">예상 1인 가격</div>
+          <div class="result-label">예상 1인 가격 <span style="font-weight:500; color:var(--muted); font-size:12px;">(코스 옵션별 최저 ~ 최고)</span></div>
           <div class="result-price" id="tr-perperson">€45</div>
           <div class="result-sub">
             그룹 합계 <strong id="tr-total" style="color:var(--primary)">€225</strong>
@@ -662,11 +662,11 @@
         </div>
 
         <div style="text-align:center; margin-top:24px;">
-          <a href="javascript:void(0)" onclick="inquireTour()" class="btn btn-kakao">💬 이 코스로 카톡 문의</a>
+          <a href="javascript:void(0)" onclick="inquireTour()" class="btn btn-kakao">💬 이 가격대로 카톡 문의</a>
         </div>
 
         <p style="font-size:12.5px; color:var(--muted); margin-top:18px; text-align:center; line-height:1.7;">
-          ※ 변형 코스(B/C 등)는 카드 클릭하면 자세히 확인할 수 있어요.<br>
+          ※ 코스 옵션별 상세 가격·일정은 위 카드 또는 가격 비교표 클릭으로 확인할 수 있어요.<br>
           ※ 가격은 코스+가이딩 비용. 식비·입장료는 별도 (FAQ 참고).
         </p>
       </div>
@@ -839,11 +839,11 @@
 
     <div id="modal-places-section"></div>
 
-    <h5>💰 인원별 1인 가격 (기본 코스)</h5>
+    <h5>💰 인원별 1인 가격 범위</h5>
     <div class="price-grid" id="modal-prices"></div>
 
     <div id="modal-variations-section">
-      <h5>🛣️ 변형 코스</h5>
+      <h5>🛣️ 코스 옵션</h5>
       <div id="modal-variations"></div>
     </div>
 
@@ -1121,7 +1121,7 @@ const TOURS = {
     ],
     variations:[{name:'A코스 — 코크+코브+킨세일',spots:'Cork → Cobh → Kinsale',perPerson:{3:78,4:72,5:67}},{name:'B코스 — 코크+카셸',spots:'Cork → Cobh → Kinsale → Rock of Cashel',perPerson:{3:82,4:76,5:71}},{name:'C코스 — 웨스트코크',spots:'Gougane Barra → Mizen Head → Baltimore Beacon',perPerson:{3:88,4:80,5:75}}] },
 
-  mayo: { name:'메이요 (Mayo · Achill)', km:670, time:13, perPerson:{3:80,4:74,5:69}, desc:'아킬·다운패트릭·녹 — 아일랜드 서부 끝 야생', folder:'mayo',
+  mayo: { name:'메이요 (Mayo · Achill)', km:670, time:13, perPerson:{3:80,4:75,5:70}, desc:'아킬·다운패트릭·녹 — 아일랜드 서부 끝 야생', folder:'mayo',
     places:[
       {key:'achill-island', name:'아킬 아일랜드', desc:'아일랜드 최대의 섬 · 킴 베이의 청록 바다'},
       {key:'downpatrick-head', name:'다운패트릭 헤드', desc:"바다에 솟은 거석 '둔 브리스테' 절벽"},
@@ -1130,7 +1130,7 @@ const TOURS = {
       {key:'portacloy', name:'포타클로이', desc:'북마요 절벽 사이의 외딴 어촌'},
       {key:'knock-shrine', name:'녹 성지', desc:'1879년 성모 발현지 · 4대 가톨릭 성지'}
     ],
-    variations:[{name:'A코스 — 아킬+다운패트릭',spots:'Achill (Keem Bay) → Downpatrick Head',perPerson:{3:85,4:78,5:72}},{name:'B코스 — 아킬+웨스트포트+녹',spots:'Achill → Westport → Ballintubber Abbey → Knock',perPerson:{3:85,4:78,5:72}}] },
+    variations:[{name:'A코스 — 아킬+다운패트릭',spots:'Achill (Keem Bay) → Downpatrick Head',perPerson:{3:80,4:75,5:70}},{name:'B코스 — 아킬+웨스트포트+녹',spots:'Achill → Westport → Ballintubber Abbey → Knock',perPerson:{3:80,4:75,5:70}}] },
 
   belfast: { name:'벨파스트 (Belfast)', km:390, time:9, perPerson:{3:70,4:65,5:60}, desc:'타이타닉의 도시 · 북아일랜드 수도', folder:'belfast',
     places:[
@@ -1154,7 +1154,7 @@ const TOURS = {
       {key:'waterford-greenway', name:'워터포드 그린웨이', desc:'46km 자전거 트레일 · 비아덕트 풍경'},
       {key:'house-of-waterford', name:'하우스 오브 워터포드 크리스탈', desc:'세계적 크리스탈 공장 투어'}
     ],
-    variations:[{name:'A코스 — 카셸+리스모어+코퍼',spots:'Rock of Cashel → Lismore → Dungarvan → Copper Coast',perPerson:{3:75,4:70,5:65}},{name:'B코스 — 코퍼+후크 등대',spots:'Copper Coast → Mahon Falls → Hook Lighthouse',perPerson:{3:75,4:70,5:65}}] },
+    variations:[{name:'A코스 — 카셸+리스모어+코퍼',spots:'Rock of Cashel → Lismore → Dungarvan → Copper Coast',perPerson:{3:70,4:65,5:60}},{name:'B코스 — 코퍼+후크 등대',spots:'Copper Coast → Mahon Falls → Hook Lighthouse',perPerson:{3:70,4:65,5:60}}] },
 
   limerick: { name:'리머릭 (Limerick · Bunratty)', km:480, time:10, perPerson:{3:70,4:65,5:60}, desc:'번래티+아데어+카셸 — 중세 성과 작은 마을', folder:'limerick',
     places:[
@@ -1177,7 +1177,7 @@ const TOURS = {
       {key:'dunmore-cave', name:'던모어 동굴', desc:'바이킹 시대 유물이 발견된 카르스트 동굴'},
       {key:'ducketts-grove', name:'더켓츠 그로브', desc:'유령 저택으로 알려진 19세기 폐허 + 정원'}
     ],
-    variations:[{name:'A코스 — 킬케니 시내',spots:'Kilkenny Castle → 중세 거리 → Smithwick\'s → 성 카니스',perPerson:{3:62,4:57,5:52}},{name:'B코스 — 킬케니+위클로',spots:'글렌달록 → 킬케니 캐슬',perPerson:{3:62,4:57,5:52}}] },
+    variations:[{name:'A코스 — 킬케니 시내',spots:'Kilkenny Castle → 중세 거리 → Smithwick\'s → 성 카니스',perPerson:{3:60,4:55,5:50}},{name:'B코스 — 킬케니+위클로',spots:'글렌달록 → 킬케니 캐슬',perPerson:{3:60,4:55,5:50}}] },
 
   sligo: { name:'슬라이고 (Sligo)', km:580, time:11, perPerson:{3:75,4:70,5:65}, desc:'예이츠 컨트리 · Benbulben 산', folder:'sligo',
     places:[
@@ -1220,6 +1220,21 @@ const TOURS = {
 // 카드 표시 순서 (인기 순)
 const TOUR_ORDER = ['wicklow','moher','causeway','kerry','donegal','connemara','galway','cork','mayo','belfast','waterford','limerick','kilkenny','sligo','mullingar','newgrange'];
 
+// 가격 범위 헬퍼 — 모든 코스 옵션을 포함한 실제 1인 가격 범위 산출
+// 5인일 때 가장 저렴, 3인일 때 가장 비싼 1/n 분담 원리
+function getPriceRange(t) {
+  const list = (t.variations && t.variations.length) ? t.variations : [{ perPerson: t.perPerson }];
+  const all5 = list.map(v => v.perPerson[5]).filter(x => typeof x === 'number');
+  const all3 = list.map(v => v.perPerson[3]).filter(x => typeof x === 'number');
+  return { lo: Math.min(...all5), hi: Math.max(...all3) };
+}
+// 인원별(3/4/5인) 가격 범위
+function getPriceRangeBySize(t, n) {
+  const list = (t.variations && t.variations.length) ? t.variations : [{ perPerson: t.perPerson }];
+  const arr = list.map(v => v.perPerson[n]).filter(x => typeof x === 'number');
+  return { lo: Math.min(...arr), hi: Math.max(...arr) };
+}
+
 // 1) 카드 렌더
 const grid = document.getElementById('tour-cards');
 TOUR_ORDER.forEach(key => {
@@ -1230,6 +1245,8 @@ TOUR_ORDER.forEach(key => {
   card.dataset.key = key;
   card.onclick = () => openTour(key);
   const folder = t.folder || key;
+  const r = getPriceRange(t);
+  const priceTxt = (r.lo === r.hi) ? `€${r.lo}` : `€${r.lo}~€${r.hi}`;
   card.innerHTML = `
     <div class="tour-img has-cover" style="background-image: url('../images/${folder}/cover.jpg');">
       <span class="placeholder">📷 ${t.name}</span>
@@ -1238,7 +1255,7 @@ TOUR_ORDER.forEach(key => {
       <div class="tour-name">${t.name}</div>
       <div class="tour-meta">📏 ${t.km}km · ⏱️ ${t.time}h</div>
       <div class="tour-prices" style="display:flex; align-items:baseline; justify-content:space-between; gap:8px;">
-        <span><span class="lbl">1인</span> €${t.perPerson[5]}~€${t.perPerson[3]}</span>
+        <span><span class="lbl">1인</span> ${priceTxt}</span>
         <span style="color:var(--muted); font-weight:500; font-size:11.5px;">상세는 클릭 →</span>
       </div>
     </div>
@@ -1254,11 +1271,13 @@ TOUR_ORDER.forEach(key => {
   const tr = document.createElement('tr');
   tr.style.cursor = 'pointer';
   tr.onclick = () => openTour(key);
+  const r = getPriceRange(t);
+  const priceTxt = (r.lo === r.hi) ? `€${r.lo}` : `€${r.lo}~€${r.hi}`;
   tr.innerHTML = `
     <td class="name">${t.name}</td>
     <td class="num">${t.km}km</td>
     <td class="num">${t.time}h</td>
-    <td class="num">€${t.perPerson[5]}~€${t.perPerson[3]}</td>
+    <td class="num">${priceTxt}</td>
   `;
   tbody.appendChild(tr);
 });
@@ -1273,7 +1292,7 @@ TOUR_ORDER.forEach(key => {
   trDest.appendChild(opt);
 });
 
-// 4) 계산
+// 4) 계산 — 코스 옵션 전체의 최저~최고 범위로 표시
 function calcTour() {
   const key = document.getElementById('tr-dest').value;
   const t = TOURS[key];
@@ -1281,21 +1300,31 @@ function calcTour() {
   if (isNaN(n) || n < 3) n = 3;
   if (n > 5) n = 5;
 
-  const basePp = t.perPerson[n] || t.perPerson[5];
+  // 인원수 기준 코스 옵션 가격 범위 (variations에서 자동 산출)
+  const r = getPriceRangeBySize(t, n);
+
   const pickupEl = document.getElementById('tr-d2d-pickup');
   const dropEl = document.getElementById('tr-d2d-drop');
   const pickup = pickupEl && pickupEl.checked;
   const drop = dropEl && dropEl.checked;
   const pickupFee = pickup ? 5 : 0;
   const dropFee = drop ? 5 : 0;
-  const pp = basePp + pickupFee + dropFee;
-  const total = pp * n;
 
-  document.getElementById('tr-perperson').textContent = `€${pp}`;
-  document.getElementById('tr-total').textContent = `€${total}`;
+  // 픽업·드랍 옵션은 인원당 고정 가산 → 범위에도 동일하게 더함
+  const ppLo = r.lo + pickupFee + dropFee;
+  const ppHi = r.hi + pickupFee + dropFee;
+  const totalLo = ppLo * n;
+  const totalHi = ppHi * n;
+
+  const ppText    = (ppLo === ppHi)       ? `€${ppLo}`    : `€${ppLo}~€${ppHi}`;
+  const totalText = (totalLo === totalHi) ? `€${totalLo}` : `€${totalLo}~€${totalHi}`;
+  const baseText  = (r.lo === r.hi)       ? `€${r.lo}/인` : `€${r.lo}~€${r.hi}/인`;
+
+  document.getElementById('tr-perperson').textContent = ppText;
+  document.getElementById('tr-total').textContent = totalText;
 
   const lines = [
-    `<li><span>${t.name}</span><span>€${basePp}/인</span></li>`,
+    `<li><span>${t.name}</span><span>${baseText}</span></li>`,
     `<li><span>📏 ${t.km}km · ⏱️ ${t.time}h</span><span></span></li>`
   ];
   if (pickup) {
@@ -1304,7 +1333,7 @@ function calcTour() {
   if (drop) {
     lines.push(`<li><span>🏠 도어투도어 드랍 (귀가 시)</span><span>+€5/인</span></li>`);
   }
-  lines.push(`<li><span>👥 ${n}인 그룹 합계</span><span><strong>€${total}</strong></span></li>`);
+  lines.push(`<li><span>👥 ${n}인 그룹 합계</span><span><strong>${totalText}</strong></span></li>`);
   document.getElementById('tr-breakdown').innerHTML = lines.join('');
 }
 calcTour();
@@ -1365,30 +1394,41 @@ function openTour(key) {
     placesSection.innerHTML = '';
   }
 
-  // Prices
+  // Prices — 인원별 1인 가격 범위 (모든 코스 옵션 종합)
   const pricesDiv = document.getElementById('modal-prices');
-  pricesDiv.innerHTML = [3,4,5].map(n => `
+  pricesDiv.innerHTML = [3,4,5].map(n => {
+    const r = getPriceRangeBySize(t, n);
+    const txt = (r.lo === r.hi) ? `€${r.lo}` : `€${r.lo}~€${r.hi}`;
+    return `
     <div class="pricing-cell">
-      <div class="num">€${t.perPerson[n]}</div>
+      <div class="num">${txt}</div>
       <div class="lbl">${n}인 1인당</div>
     </div>
-  `).join('');
+    `;
+  }).join('');
 
-  // Variations
+  // 코스 옵션 — variations 데이터 + "맞춤형 코스" 마지막 추가
   const varSection = document.getElementById('modal-variations-section');
   const varDiv = document.getElementById('modal-variations');
-  if (t.variations && t.variations.length) {
-    varSection.style.display = '';
-    varDiv.innerHTML = t.variations.map(v => `
+  varSection.style.display = '';
+  const optionItems = (t.variations && t.variations.length)
+    ? t.variations.map(v => `
       <div class="var-card">
         <strong>${v.name}</strong><br>
         <span style="color:var(--muted); font-size:12.5px;">${v.spots}</span><br>
         <span style="color:var(--accent); font-weight:700; font-size:13px; margin-top:4px; display:inline-block;">5인 €${v.perPerson[5]} · 4인 €${v.perPerson[4]} · 3인 €${v.perPerson[3]} (1인당)</span>
       </div>
-    `).join('');
-  } else {
-    varSection.style.display = 'none';
-  }
+    `)
+    : [];
+  // 맞춤형 코스 — 모든 지역 공통, 마지막 옵션
+  optionItems.push(`
+    <div class="var-card" style="border:1.5px dashed var(--accent); background:var(--accent-soft);">
+      <strong>✏️ 맞춤형 코스</strong><br>
+      <span style="color:var(--muted); font-size:12.5px;">관심사·체력·동행 인원·시간에 맞춰 함께 만드는 코스</span><br>
+      <span style="color:var(--primary); font-weight:700; font-size:13px; margin-top:4px; display:inline-block;">💬 가격 문의 (카톡 상담)</span>
+    </div>
+  `);
+  varDiv.innerHTML = optionItems.join('');
 
   document.getElementById('tour-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
