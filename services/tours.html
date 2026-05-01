@@ -233,6 +233,30 @@
     font-weight: 800;
   }
 
+  /* 투어버스 vs Andrew 비교 표 */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    font-size: 13.5px;
+  }
+  .compare-table thead tr { background: var(--primary); color: white; }
+  .compare-table th { padding: 14px; font-weight: 700; font-size: 13.5px; text-align: center; }
+  .compare-table th:first-child { text-align: left; }
+  .compare-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); text-align: center; }
+  .compare-table td:first-child { text-align: left; font-weight: 600; color: var(--primary); }
+  .compare-table .andrew-cell { background: var(--accent-soft); }
+  .compare-table tr:last-child td { border-bottom: none; }
+  @media (max-width: 600px) {
+    .compare-table .andrew-cell { background: transparent !important; color: var(--primary); }
+    .compare-table tr td:last-child::before {
+      color: var(--accent) !important;
+    }
+  }
+
   /* ============= 모집 중인 일정 섹션 (컴팩트) ============= */
   .open-trips-section {
     background: linear-gradient(135deg, #fff7e6 0%, #fef3c7 100%);
@@ -271,10 +295,15 @@
 
   .trip-card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 14px;
     max-width: 980px;
     margin: 0 auto;
+  }
+  @media (max-width: 600px) {
+    .trip-card-grid { grid-template-columns: 1fr; }
+    .trip-head-row { padding-right: 70px; }
+    .trip-name { font-size: 14.5px; }
   }
   .trip-card {
     background: white;
@@ -565,7 +594,7 @@
       <p class="lead">지역별 1인 가격 범위 · 행 클릭 시 인원별 상세 가격·코스 확인</p>
     </div>
     <div class="tour-pricing-table-wrap">
-      <table class="tour-pricing-table" id="pricing-table">
+      <table class="tour-pricing-table stack-on-mobile" id="pricing-table">
         <thead>
           <tr>
             <th>지역</th>
@@ -647,20 +676,20 @@
     <div class="section-title">
       <h2>🚌 투어버스와 뭐가 달라요?</h2>
     </div>
-    <table style="width:100%; border-collapse:collapse; background:white; border-radius:12px; overflow:hidden; box-shadow:var(--shadow);">
+    <table class="compare-table stack-on-mobile">
       <thead>
-        <tr style="background:var(--primary); color:white;">
-          <th style="padding:14px; text-align:left; font-size:13.5px;">항목</th>
-          <th style="padding:14px; text-align:center; font-size:13.5px;">투어버스 (Paddywagon 등)</th>
-          <th style="padding:14px; text-align:center; font-size:13.5px;">Andrew 동행</th>
+        <tr>
+          <th>항목</th>
+          <th>투어버스 (Paddywagon 등)</th>
+          <th>Andrew 동행</th>
         </tr>
       </thead>
-      <tbody style="font-size:13.5px;">
-        <tr><td style="padding:12px 14px; border-bottom:1px solid var(--border);">언어</td><td style="text-align:center; padding:12px; border-bottom:1px solid var(--border);">영어</td><td style="text-align:center; padding:12px; border-bottom:1px solid var(--border); background:var(--accent-soft);"><strong>한국어</strong></td></tr>
-        <tr><td style="padding:12px 14px; border-bottom:1px solid var(--border);">탑승 인원</td><td style="text-align:center; padding:12px; border-bottom:1px solid var(--border);">40+ 명</td><td style="text-align:center; padding:12px; border-bottom:1px solid var(--border); background:var(--accent-soft);"><strong>최대 5–6명 (단독)</strong></td></tr>
-        <tr><td style="padding:12px 14px; border-bottom:1px solid var(--border);">코스 자유도</td><td style="text-align:center; padding:12px; border-bottom:1px solid var(--border);">고정</td><td style="text-align:center; padding:12px; border-bottom:1px solid var(--border); background:var(--accent-soft);"><strong>유연 조정</strong></td></tr>
-        <tr><td style="padding:12px 14px; border-bottom:1px solid var(--border);">픽업</td><td style="text-align:center; padding:12px; border-bottom:1px solid var(--border);">시내 1–2곳 집결</td><td style="text-align:center; padding:12px; border-bottom:1px solid var(--border); background:var(--accent-soft);"><strong>도어투도어 +€5/인</strong></td></tr>
-        <tr><td style="padding:12px 14px;">5인 1인당 가격</td><td style="text-align:center; padding:12px;">€55–80</td><td style="text-align:center; padding:12px; background:var(--accent-soft);"><strong>€45–95</strong></td></tr>
+      <tbody>
+        <tr><td data-label="항목">언어</td><td data-label="🚌 투어버스">영어</td><td data-label="🌟 Andrew" class="andrew-cell"><strong>한국어</strong></td></tr>
+        <tr><td data-label="항목">탑승 인원</td><td data-label="🚌 투어버스">40+ 명</td><td data-label="🌟 Andrew" class="andrew-cell"><strong>최대 5–6명 (단독)</strong></td></tr>
+        <tr><td data-label="항목">코스 자유도</td><td data-label="🚌 투어버스">고정</td><td data-label="🌟 Andrew" class="andrew-cell"><strong>유연 조정</strong></td></tr>
+        <tr><td data-label="항목">픽업</td><td data-label="🚌 투어버스">시내 1–2곳 집결</td><td data-label="🌟 Andrew" class="andrew-cell"><strong>도어투도어 +€5/인</strong></td></tr>
+        <tr><td data-label="항목">5인 1인당 가격</td><td data-label="🚌 투어버스">€55–80</td><td data-label="🌟 Andrew" class="andrew-cell"><strong>€45–95</strong></td></tr>
       </tbody>
     </table>
   </div>
@@ -1223,10 +1252,10 @@ TOUR_ORDER.forEach(key => {
   tr.style.cursor = 'pointer';
   tr.onclick = () => openTour(key);
   tr.innerHTML = `
-    <td class="name">${t.name}</td>
-    <td class="num">${t.km}km</td>
-    <td class="num">${t.time}h</td>
-    <td class="num">€${t.perPerson[5]}~€${t.perPerson[3]}</td>
+    <td class="name" data-label="지역">${t.name}</td>
+    <td class="num" data-label="📏 거리">${t.km}km</td>
+    <td class="num" data-label="⏱️ 시간">${t.time}h</td>
+    <td class="num" data-label="💰 1인 (5→3인)">€${t.perPerson[5]}~€${t.perPerson[3]}</td>
   `;
   tbody.appendChild(tr);
 });

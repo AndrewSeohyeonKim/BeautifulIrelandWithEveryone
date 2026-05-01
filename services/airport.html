@@ -344,18 +344,18 @@
       <h2>💰 공항 픽업 가격표</h2>
       <p class="lead">기본 가격 + 추가 옵션. 야간(23시–06시)은 €10 할증.</p>
     </div>
-    <div style="max-width:700px; margin:0 auto; overflow-x:auto;">
-      <table class="price-table">
+    <div class="price-table-wrap" style="max-width:700px; margin:0 auto;">
+      <table class="price-table stack-on-mobile">
         <thead>
           <tr><th>Zone (공항 거리)</th><th>대표 지역</th><th>기본 가격</th></tr>
         </thead>
         <tbody>
-          <tr><td>🟢 Zone 0 · 0–10 km</td><td>D15·D11·D9·D3·D5·D17·D13·Swords·Malahide·공항 인근</td><td>€35</td></tr>
-          <tr><td>🟢 Zone 1 · 10–13 km</td><td>D1·D2·D7·Howth·시내 중심부</td><td>€40</td></tr>
-          <tr><td>🟢 Zone 2 · 13–17 km</td><td>D4·D6·D6W·D8·D10·D12·D14·D20·Lucan</td><td>€45</td></tr>
-          <tr><td>🟡 Zone 3 · 17–25 km</td><td>D16·D18·D22·D24·Tallaght·Maynooth·Dun Laoghaire</td><td>€55</td></tr>
-          <tr><td>🟠 Zone 4 · 25–50 km</td><td>Bray·Greystones·Naas·Drogheda·Wicklow Town</td><td>€70 + (km−25)</td></tr>
-          <tr><td>🔴 Zone 5 · 50 km+</td><td>Belfast·Limerick·Galway·Cork·Killarney</td><td>€100 + (km−50)×1.5 (별도 견적)</td></tr>
+          <tr><td data-label="Zone">🟢 Zone 0 · 0–10 km</td><td data-label="대표 지역">D15·D11·D9·D3·D5·D17·D13·Swords·Malahide·공항 인근</td><td data-label="기본 가격" class="price">€35</td></tr>
+          <tr><td data-label="Zone">🟢 Zone 1 · 10–13 km</td><td data-label="대표 지역">D1·D2·D7·Howth·시내 중심부</td><td data-label="기본 가격" class="price">€40</td></tr>
+          <tr><td data-label="Zone">🟢 Zone 2 · 13–17 km</td><td data-label="대표 지역">D4·D6·D6W·D8·D10·D12·D14·D20·Lucan</td><td data-label="기본 가격" class="price">€45</td></tr>
+          <tr><td data-label="Zone">🟡 Zone 3 · 17–25 km</td><td data-label="대표 지역">D16·D18·D22·D24·Tallaght·Maynooth·Dun Laoghaire</td><td data-label="기본 가격" class="price">€55</td></tr>
+          <tr><td data-label="Zone">🟠 Zone 4 · 25–50 km</td><td data-label="대표 지역">Bray·Greystones·Naas·Drogheda·Wicklow Town</td><td data-label="기본 가격" class="price">€70 + (km−25)</td></tr>
+          <tr><td data-label="Zone">🔴 Zone 5 · 50 km+</td><td data-label="대표 지역">Belfast·Limerick·Galway·Cork·Killarney</td><td data-label="기본 가격" class="price">€100 + (km−50)×1.5 (별도 견적)</td></tr>
         </tbody>
       </table>
       <p style="font-size:12px; color:var(--muted); margin-top:14px; text-align:center;">
