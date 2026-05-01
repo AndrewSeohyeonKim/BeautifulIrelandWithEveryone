@@ -964,7 +964,7 @@ renderOpenTrips();
 
 // 전체 투어 데이터 — places의 key는 images/{folder}/{key}.jpg 와 매칭됨
 const TOURS = {
-  wicklow: { name:'위클로 (Wicklow)', km:150, time:8, perPerson:{3:55,4:50,5:45}, desc:'아일랜드 정원, 더블린 근교 / The Garden of Ireland', folder:'wicklow',
+  wicklow: { name:'위클로 (Wicklow)', km:230, time:8, perPerson:{3:55,4:50,5:45}, desc:'아일랜드 정원, 더블린 근교 / The Garden of Ireland', folder:'wicklow',
     places:[
       {key:'brittas-bay', name:'브리타스 베이', desc:'끝없이 펼쳐진 황금빛 모래사장 · 일몰 명소'},
       {key:'rapeseed', name:'유채꽃 들판', desc:'4~5월 한정, 위클로 언덕을 노랗게 물들이는 풍경'},
@@ -980,7 +980,7 @@ const TOURS = {
     ],
     variations:[{name:'A코스 — 위클로 산 집중',spots:'샐리 갭 → 러프 테이 → 글렌달록 → 파워스코트',perPerson:{3:55,4:50,5:45}},{name:'B코스 — 바다+산',spots:'브리타스 베이 → 글렌달록 → 조니 폭스 펍',perPerson:{3:58,4:53,5:48}},{name:'C코스 — 위클로+킬케니',spots:'글렌달록 → 킬케니 캐슬·중세 거리',perPerson:{3:62,4:57,5:52}}] },
 
-  moher: { name:'모허의 절벽 (Cliffs of Moher)', km:540, time:13, perPerson:{3:80,4:75,5:70}, desc:'버렌 카르스트 + 모허 절벽 — 아일랜드 대표 명소', folder:'moher',
+  moher: { name:'모허의 절벽 (Cliffs of Moher)', km:600, time:13, perPerson:{3:80,4:75,5:70}, desc:'버렌 카르스트 + 모허 절벽 — 아일랜드 대표 명소', folder:'moher',
     places:[
       {key:'cliffs-of-moher', name:'모허 절벽', desc:'214m 높이 8km 이어지는 아일랜드 대표 명소'},
       {key:'burren', name:'버렌', desc:'유네스코 지질공원 · 카르스트 회색 암석 평원'},
@@ -991,7 +991,7 @@ const TOURS = {
     ],
     variations:[{name:'A코스 — 모허+골웨이',spots:'Cliffs of Moher → Burren → Doolin → Galway',perPerson:{3:80,4:75,5:70}},{name:'B코스 — 모허+번래티/리머릭',spots:'Cliffs of Moher → Burren → Bunratty Castle → 리머릭',perPerson:{3:78,4:72,5:67}}] },
 
-  causeway: { name:"자이언트 코즈웨이 (Giant's Causeway)", km:500, time:12, perPerson:{3:78,4:72,5:67}, desc:'세계 자연유산 · 4만 개 육각 현무암', folder:'causeway',
+  causeway: { name:"자이언트 코즈웨이 (Giant's Causeway)", km:590, time:12, perPerson:{3:78,4:72,5:67}, desc:'세계 자연유산 · 4만 개 육각 현무암', folder:'causeway',
     places:[
       {key:'giants-causeway', name:'자이언트 코즈웨이', desc:'4만 개 육각 현무암 기둥 · 유네스코 세계자연유산'},
       {key:'dark-hedges', name:'다크 헤지스', desc:"왕좌의 게임 '킹스로드' 촬영지 · 너도밤나무 터널"},
@@ -1002,7 +1002,7 @@ const TOURS = {
     ],
     variations:[{name:'A코스 — 코즈웨이+다크헤지스+벨파스트',spots:"Giant's Causeway → Dark Hedges → Glenoe Falls → Belfast",perPerson:{3:80,4:75,5:70}},{name:'B코스 — 코즈웨이+데리',spots:'Causeway → Dark Hedges → Derry/Londonderry',perPerson:{3:82,4:76,5:71}}] },
 
-  kerry: { name:'케리 (Kerry · Killarney+Dingle)', km:750, time:16, perPerson:{3:95,4:88,5:82}, desc:'아일랜드 풍경의 정점 · 링 오브 케리', folder:'kerry',
+  kerry: { name:'케리 (Kerry · Killarney+Dingle)', km:920, time:16, perPerson:{3:95,4:88,5:82}, desc:'아일랜드 풍경의 정점 · 링 오브 케리', folder:'kerry',
     places:[
       {key:'gap-of-dunloe', name:'갭 오브 던로', desc:'빙하가 깎아낸 11km 산악 협곡 · 마차 투어'},
       {key:'ross-castle', name:'로스 캐슬', desc:'러프 리네 호숫가의 15세기 탑 가옥'},
@@ -1015,7 +1015,7 @@ const TOURS = {
     ],
     variations:[{name:'A코스 — 킬러니+딩글',spots:'Killarney N.P. → Gap of Dunloe → Dingle → Slea Head',perPerson:{3:95,4:88,5:82}},{name:'B코스 — 킬러니+구게인바라',spots:'Killarney → Gougane Barra → Ventry Beach',perPerson:{3:92,4:85,5:80}}] },
 
-  donegal: { name:'도니골 (Donegal)', km:600, time:14, perPerson:{3:85,4:78,5:72}, desc:'슬리브 리그 · 와일드 애틀랜틱 야생', folder:'donegal',
+  donegal: { name:'도니골 (Donegal)', km:650, time:14, perPerson:{3:90,4:83,5:77}, desc:'슬리브 리그 · 와일드 애틀랜틱 야생', folder:'donegal',
     places:[
       {key:'slieve-league', name:'슬리브 리그', desc:'유럽에서 가장 높은 해상 절벽 (601m)'},
       {key:'glenveagh', name:'글렌비 국립공원', desc:'호수와 빅토리아 캐슬을 품은 야생 공원'},
@@ -1024,7 +1024,7 @@ const TOURS = {
     ],
     variations:[{name:'A코스 — 슬리브 리그(남부)',spots:'Slieve League → Glenveagh National Park',perPerson:{3:85,4:78,5:72}},{name:'B코스 — 도니골 북부+데리',spots:'Fanad Head → Malin Head → Derry',perPerson:{3:92,4:85,5:80}}] },
 
-  connemara: { name:'코네마라 (Connemara)', km:480, time:12, perPerson:{3:78,4:72,5:67}, desc:'카일모어 수도원 · 호수와 산', folder:'connemara',
+  connemara: { name:'코네마라 (Connemara)', km:650, time:12, perPerson:{3:80,4:74,5:69}, desc:'카일모어 수도원 · 호수와 산', folder:'connemara',
     places:[
       {key:'kylemore-abbey', name:'카일모어 수도원', desc:'호숫가에 자리한 19세기 베네딕트회 수도원'},
       {key:'connemara-np', name:'코네마라 국립공원', desc:'다이아몬드 힐 트레일 · 트웰브 벤스 산맥 풍경'},
@@ -1034,7 +1034,7 @@ const TOURS = {
     ],
     variations:[{name:'A코스 — 코네마라+골웨이',spots:'Galway → Bog Road → Kylemore Abbey → 코네마라 국립공원',perPerson:{3:80,4:75,5:70}},{name:'B코스 — 카일모어+녹+발린터버',spots:'Kylemore → Knock Shrine → Ballintubber Abbey',perPerson:{3:80,4:75,5:70}}] },
 
-  galway: { name:'골웨이 (Galway)', km:420, time:11, perPerson:{3:75,4:70,5:65}, desc:'아일랜드 서부의 보석 · 음악과 거리 공연', folder:'galway',
+  galway: { name:'골웨이 (Galway)', km:460, time:11, perPerson:{3:75,4:70,5:65}, desc:'아일랜드 서부의 보석 · 음악과 거리 공연', folder:'galway',
     places:[
       {key:'eyre-square', name:'아이어 스퀘어', desc:'골웨이의 중심 광장 · 케네디 기념 공원'},
       {key:'spanish-arch', name:'스패니시 아치', desc:'1584년 옛 성벽의 일부 · 코리브강 어귀'},
@@ -1044,7 +1044,7 @@ const TOURS = {
     ],
     variations:[{name:'A코스 — 골웨이 시티',spots:'Eyre Square → Spanish Arch → Latin Quarter → Salthill',perPerson:{3:75,4:70,5:65}},{name:'B코스 — 골웨이+모허',spots:'골웨이 → Doolin → Cliffs of Moher',perPerson:{3:80,4:75,5:70}},{name:'C코스 — 골웨이+아란 페리',spots:'Doolin 페리 → Inishmore 자전거 (페리비 별도)',perPerson:{3:78,4:72,5:67}}] },
 
-  cork: { name:'코크 (Cork · Cobh · Kinsale)', km:480, time:12, perPerson:{3:75,4:70,5:65}, desc:'제2의 도시 · 항구 마을 · 웨스트코크 야생', folder:'cork',
+  cork: { name:'코크 (Cork · Cobh · Kinsale)', km:640, time:12, perPerson:{3:80,4:75,5:70}, desc:'제2의 도시 · 항구 마을 · 웨스트코크 야생', folder:'cork',
     places:[
       {key:'cobh', name:'코브', desc:'타이타닉 마지막 기항지 · 컬러풀한 데크 오브 카드'},
       {key:'kinsale', name:'킨세일', desc:'미식과 색색의 집들이 어우러진 항구 마을'},
@@ -1054,7 +1054,7 @@ const TOURS = {
     ],
     variations:[{name:'A코스 — 코크+코브+킨세일',spots:'Cork → Cobh → Kinsale',perPerson:{3:78,4:72,5:67}},{name:'B코스 — 코크+카셸',spots:'Cork → Cobh → Kinsale → Rock of Cashel',perPerson:{3:82,4:76,5:71}},{name:'C코스 — 웨스트코크',spots:'Gougane Barra → Mizen Head → Baltimore Beacon',perPerson:{3:88,4:80,5:75}}] },
 
-  mayo: { name:'메이요 (Mayo · Achill)', km:530, time:13, perPerson:{3:78,4:72,5:67}, desc:'아킬·다운패트릭·녹 — 아일랜드 서부 끝 야생', folder:'mayo',
+  mayo: { name:'메이요 (Mayo · Achill)', km:670, time:13, perPerson:{3:80,4:74,5:69}, desc:'아킬·다운패트릭·녹 — 아일랜드 서부 끝 야생', folder:'mayo',
     places:[
       {key:'achill-island', name:'아킬 아일랜드', desc:'아일랜드 최대의 섬 · 킴 베이의 청록 바다'},
       {key:'downpatrick-head', name:'다운패트릭 헤드', desc:"바다에 솟은 거석 '둔 브리스테' 절벽"},
@@ -1065,7 +1065,7 @@ const TOURS = {
     ],
     variations:[{name:'A코스 — 아킬+다운패트릭',spots:'Achill (Keem Bay) → Downpatrick Head',perPerson:{3:85,4:78,5:72}},{name:'B코스 — 아킬+웨스트포트+녹',spots:'Achill → Westport → Ballintubber Abbey → Knock',perPerson:{3:85,4:78,5:72}}] },
 
-  belfast: { name:'벨파스트 (Belfast)', km:340, time:9, perPerson:{3:70,4:65,5:60}, desc:'타이타닉의 도시 · 북아일랜드 수도', folder:'belfast',
+  belfast: { name:'벨파스트 (Belfast)', km:390, time:9, perPerson:{3:70,4:65,5:60}, desc:'타이타닉의 도시 · 북아일랜드 수도', folder:'belfast',
     places:[
       {key:'titanic-belfast', name:'타이타닉 벨파스트', desc:'타이타닉이 건조된 조선소 부지의 세계 최대 박물관'},
       {key:'belfast-castle', name:'벨파스트 캐슬', desc:'케이브힐 산 중턱의 19세기 스코틀랜드식 성채'},
@@ -1077,7 +1077,7 @@ const TOURS = {
     ],
     variations:[{name:'A코스 — 벨파스트+타이타닉',spots:'Titanic Belfast → Belfast Castle → St George\'s Market',perPerson:{3:70,4:65,5:60}},{name:'B코스 — 벨파스트+코즈웨이',spots:'Belfast → Glenoe Falls → Causeway → Dark Hedges',perPerson:{3:80,4:75,5:70}}] },
 
-  waterford: { name:'워터포드 (Waterford)', km:340, time:10, perPerson:{3:70,4:65,5:60}, desc:'바이킹의 도시·크리스탈·코퍼 코스트', folder:'waterford',
+  waterford: { name:'워터포드 (Waterford)', km:410, time:10, perPerson:{3:70,4:65,5:60}, desc:'바이킹의 도시·크리스탈·코퍼 코스트', folder:'waterford',
     places:[
       {key:'copper-coast', name:'코퍼 코스트', desc:'유네스코 지질공원 · 구리광산 흔적 해안'},
       {key:'hook-lighthouse', name:'후크 등대', desc:'세계에서 가장 오래 운영중인 등대 (800년)'},
@@ -1089,7 +1089,7 @@ const TOURS = {
     ],
     variations:[{name:'A코스 — 카셸+리스모어+코퍼',spots:'Rock of Cashel → Lismore → Dungarvan → Copper Coast',perPerson:{3:75,4:70,5:65}},{name:'B코스 — 코퍼+후크 등대',spots:'Copper Coast → Mahon Falls → Hook Lighthouse',perPerson:{3:75,4:70,5:65}}] },
 
-  limerick: { name:'리머릭 (Limerick · Bunratty)', km:380, time:10, perPerson:{3:70,4:65,5:60}, desc:'번래티+아데어+카셸 — 중세 성과 작은 마을', folder:'limerick',
+  limerick: { name:'리머릭 (Limerick · Bunratty)', km:480, time:10, perPerson:{3:70,4:65,5:60}, desc:'번래티+아데어+카셸 — 중세 성과 작은 마을', folder:'limerick',
     places:[
       {key:'bunratty-castle', name:'번래티 캐슬 & 민속촌', desc:'15세기 성과 19세기 마을 재현 야외 박물관'},
       {key:'adare-village', name:'아데어 마을', desc:"초가집이 늘어선 '아일랜드에서 가장 예쁜 마을'"},
@@ -1100,7 +1100,7 @@ const TOURS = {
     ],
     variations:[{name:'A코스 — 번래티+아데어',spots:'Bunratty Castle → Adare Village → 리머릭 시내',perPerson:{3:72,4:67,5:62}},{name:'B코스 — 리머릭+카셸',spots:"King John's Castle → Hunt Museum → Rock of Cashel",perPerson:{3:78,4:72,5:67}}] },
 
-  kilkenny: { name:'킬케니 (Kilkenny)', km:230, time:8, perPerson:{3:62,4:57,5:52}, desc:'중세 도시 · 성과 양조장', folder:'kilkenny',
+  kilkenny: { name:'킬케니 (Kilkenny)', km:300, time:8, perPerson:{3:60,4:55,5:50}, desc:'중세 도시 · 성과 양조장', folder:'kilkenny',
     places:[
       {key:'kilkenny-castle', name:'킬케니 캐슬', desc:'12세기 노르만 성 · 정원과 함께 둘러보기 좋음'},
       {key:'smithwicks', name:'스미딕스 양조장', desc:'1710년 창업, 아일랜드에서 가장 오래된 에일'},
@@ -1112,7 +1112,7 @@ const TOURS = {
     ],
     variations:[{name:'A코스 — 킬케니 시내',spots:'Kilkenny Castle → 중세 거리 → Smithwick\'s → 성 카니스',perPerson:{3:62,4:57,5:52}},{name:'B코스 — 킬케니+위클로',spots:'글렌달록 → 킬케니 캐슬',perPerson:{3:62,4:57,5:52}}] },
 
-  sligo: { name:'슬라이고 (Sligo)', km:460, time:11, perPerson:{3:75,4:70,5:65}, desc:'예이츠 컨트리 · Benbulben 산', folder:'sligo',
+  sligo: { name:'슬라이고 (Sligo)', km:580, time:11, perPerson:{3:75,4:70,5:65}, desc:'예이츠 컨트리 · Benbulben 산', folder:'sligo',
     places:[
       {key:'drumcliffe', name:'드럼클리프 (예이츠 묘)', desc:'시인 W.B. 예이츠가 잠든 곳 · 벤불벤이 보이는 마당'},
       {key:'glencar-waterfall', name:'글렌카 폭포', desc:"예이츠의 시 'The Stolen Child' 무대"},
@@ -1127,7 +1127,7 @@ const TOURS = {
     ],
     variations:[{name:'A코스 — 예이츠+벤불벤',spots:'Drumcliffe → Glencar Waterfall → Benbulben → Mullaghmore',perPerson:{3:75,4:70,5:65}},{name:'B코스 — 슬라이고+다운패트릭',spots:'Sligo → Downpatrick Head',perPerson:{3:85,4:78,5:72}}] },
 
-  mullingar: { name:'멀링거 (Mullingar)', km:180, time:7, perPerson:{3:60,4:55,5:50}, desc:'호수와 평원의 미들랜즈', folder:'mullingar',
+  mullingar: { name:'멀링거 (Mullingar)', km:230, time:7, perPerson:{3:60,4:55,5:50}, desc:'호수와 평원의 미들랜즈', folder:'mullingar',
     places:[
       {key:'belvedere-house', name:'벨베디어 하우스', desc:'18세기 저택과 호숫가 정원'},
       {key:'mullingar-cathedral', name:'멀링거 대성당', desc:'1939년 완공된 멀링거의 랜드마크'},
@@ -1137,7 +1137,7 @@ const TOURS = {
     ],
     variations:[{name:'A코스 — 멀링거+호수',spots:'Lough Owel · Lough Ennell · Mullingar Cathedral',perPerson:{3:60,4:55,5:50}},{name:'B코스 — 멀링거+Belvedere',spots:'Belvedere House → Tullynally Castle + 정원',perPerson:{3:62,4:57,5:52}}] },
 
-  newgrange: { name:'뉴그레인지 + 드록헤다 (Newgrange + Drogheda)', km:120, time:7, perPerson:{3:55,4:50,5:45}, desc:'5,200년 신석기 유적 (유네스코)', folder:'newgrange',
+  newgrange: { name:'뉴그레인지 + 드록헤다 (Newgrange + Drogheda)', km:170, time:7, perPerson:{3:55,4:50,5:45}, desc:'5,200년 신석기 유적 (유네스코)', folder:'newgrange',
     places:[
       {key:'newgrange', name:'뉴그레인지', desc:'5,200년 신석기 통로 무덤 · 유네스코 세계문화유산'},
       {key:'knowth', name:'노스', desc:'유럽 최대 켈트 거석 예술 컬렉션'},

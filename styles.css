@@ -178,11 +178,11 @@ header.hero.subpage .sub {
   color: white;
   text-shadow: 0 2px 14px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.4);
 }
-/* services 폴더 안에서 photo1 경로 보정 */
+/* services 폴더 안에서도 동일 (CSS url()은 styles.css 기준) */
 .subpage-bg-fix header.hero.subpage::before {
   background:
     linear-gradient(135deg, rgba(26,41,66,0.55) 0%, rgba(44,64,96,0.45) 100%),
-    url('../photo1.jpg') center/cover no-repeat;
+    url('photo1.jpg') center/cover no-repeat;
 }
 
 /* ============================================================
@@ -214,7 +214,7 @@ body.page-contact header.hero.subpage::before {
 body.page-airport.subpage-bg-fix header.hero.subpage::before {
   background:
     linear-gradient(135deg, rgba(26,41,66,0.55) 0%, rgba(44,64,96,0.45) 100%),
-    url('../images/heroes/airport.jpg') center/cover no-repeat;
+    url('images/heroes/airport.jpg') center/cover no-repeat;
   background-color: #1a2942;
 }
 
@@ -222,14 +222,14 @@ body.page-airport.subpage-bg-fix header.hero.subpage::before {
 body.page-tours.subpage-bg-fix header.hero.subpage::before {
   background:
     linear-gradient(135deg, rgba(26,41,66,0.5) 0%, rgba(44,64,96,0.4) 100%),
-    url('../images/wicklow/glendalough.jpg') center/cover no-repeat;
+    url('images/wicklow/glendalough.jpg') center/cover no-repeat;
 }
 
 /* MOVING — services/moving.html */
 body.page-moving.subpage-bg-fix header.hero.subpage::before {
   background:
     linear-gradient(135deg, rgba(26,41,66,0.55) 0%, rgba(44,64,96,0.45) 100%),
-    url('../images/heroes/moving.jpg') center/cover no-repeat;
+    url('images/heroes/moving.jpg') center/cover no-repeat;
   background-color: #1a2942;
 }
 
@@ -237,7 +237,7 @@ body.page-moving.subpage-bg-fix header.hero.subpage::before {
 body.page-custom.subpage-bg-fix header.hero.subpage::before {
   background:
     linear-gradient(135deg, rgba(26,41,66,0.55) 0%, rgba(44,64,96,0.45) 100%),
-    url('../images/connemara/bog-road.jpg') center/cover no-repeat;
+    url('images/connemara/bog-road.jpg') center/cover no-repeat;
 }
 
 /* ============================================================
