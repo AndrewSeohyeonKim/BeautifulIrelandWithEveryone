@@ -461,47 +461,45 @@
       <p class="lead">A → B 거리 기준 정찰가 + 거리당 단가 공식</p>
     </div>
     <div class="price-table-wrap">
-      <table class="price-table stack-on-mobile">
+      <table class="price-table keep-table">
         <thead>
           <tr><th>항목</th><th style="text-align:right;">가격</th></tr>
         </thead>
         <tbody>
-          <tr><td colspan="2" style="background:var(--accent-soft); font-weight:800; color:var(--primary); font-size:13px;">🏠 소규모 이사 (한 번 이동) — 거리당 단가</td></tr>
-          <tr><td data-label="항목">0–10km 기본료 (최저가)</td><td data-label="가격" class="price">€35</td></tr>
-          <tr><td data-label="항목">10–50km 추가분</td><td data-label="가격" class="price">+€1.5/km</td></tr>
-          <tr><td data-label="항목">50km 초과분 (장거리)</td><td data-label="가격" class="price">+€0.8/km</td></tr>
+          <tr><td colspan="2" style="background:var(--accent-soft); font-weight:800; color:var(--primary);">🏠 소규모 이사 — 거리당 단가</td></tr>
+          <tr><td>0–10km 기본료</td><td class="price">€35</td></tr>
+          <tr><td>10–50km 추가분</td><td class="price">+€1.5/km</td></tr>
+          <tr><td>50km 초과 (장거리)</td><td class="price">+€0.8/km</td></tr>
 
-          <tr><td colspan="2" style="background:var(--accent-soft); font-weight:800; color:var(--primary); font-size:13px;">📍 거리별 정찰가 예시 (소규모 이사)</td></tr>
-          <tr><td data-label="거리">5km (시내 ↔ 시내)</td><td data-label="가격" class="price">€35</td></tr>
-          <tr><td data-label="거리">10km (시내권)</td><td data-label="가격" class="price">€35</td></tr>
-          <tr><td data-label="거리">20km (Blanchardstown 등)</td><td data-label="가격" class="price">€50</td></tr>
-          <tr><td data-label="거리">30km (Tallaght·Swords 외곽)</td><td data-label="가격" class="price">€65</td></tr>
-          <tr><td data-label="거리">50km (Drogheda·Maynooth)</td><td data-label="가격" class="price">€95</td></tr>
-          <tr><td data-label="거리">100km (Wicklow·Carlow 인근)</td><td data-label="가격" class="price">€135</td></tr>
-          <tr><td data-label="거리">250km (Dublin ↔ Cork·Galway)</td><td data-label="가격" class="price">€255</td></tr>
-          <tr><td data-label="옵션" style="padding-left:24px; color:var(--muted); font-size:13px;">↳ 가구 운반 도움 옵션</td><td data-label="가격" class="price">+€20</td></tr>
+          <tr><td colspan="2" style="background:var(--accent-soft); font-weight:800; color:var(--primary);">📍 거리별 정찰가 예시</td></tr>
+          <tr><td>5km (시내 ↔ 시내)</td><td class="price">€35</td></tr>
+          <tr><td>10km (시내권)</td><td class="price">€35</td></tr>
+          <tr><td>20km (Blanchardstown)</td><td class="price">€50</td></tr>
+          <tr><td>30km (Tallaght·Swords)</td><td class="price">€65</td></tr>
+          <tr><td>50km (Drogheda·Maynooth)</td><td class="price">€95</td></tr>
+          <tr><td>100km (Wicklow·Carlow)</td><td class="price">€135</td></tr>
+          <tr><td>250km (Dublin↔Cork·Galway)</td><td class="price">€255</td></tr>
+          <tr><td style="color:var(--muted); padding-left:18px !important;">↳ 가구 운반 도움 옵션</td><td class="price">+€20</td></tr>
 
-          <tr><td colspan="2" style="background:var(--accent-soft); font-weight:800; color:var(--primary); font-size:13px;">🔁 반복 이동 이사 (운반 도움 기본 포함)</td></tr>
-          <tr><td data-label="유형">2회 왕복 (1bed 자취집 등)</td><td data-label="가격" class="price">1회 이동가 × 2.5</td></tr>
-          <tr><td data-label="유형">3회+ 왕복 (큰 이사)</td><td data-label="가격" class="price">1회 이동가 × 3.5</td></tr>
-          <tr><td data-label="예시" style="padding-left:24px; color:var(--muted); font-size:13px;">20km 2회 왕복 → €50 × 2.5 = €125</td><td data-label="가격" class="price">—</td></tr>
-          <tr><td data-label="예시" style="padding-left:24px; color:var(--muted); font-size:13px;">30km 2회 왕복 → €65 × 2.5 ≈ €163</td><td data-label="가격" class="price">—</td></tr>
+          <tr><td colspan="2" style="background:var(--accent-soft); font-weight:800; color:var(--primary);">🔁 반복 이동 이사 (운반 도움 기본 포함)</td></tr>
+          <tr><td>2회 왕복 (1bed 자취집)</td><td class="price">× 2.5</td></tr>
+          <tr><td>3회+ 왕복 (큰 이사)</td><td class="price">× 3.5</td></tr>
+          <tr><td colspan="2" style="color:var(--muted); font-style:italic; padding:6px 8px !important; font-size:11px !important;">예: 20km 2회 왕복 → €50 × 2.5 = €125 · 30km 2회 → €65 × 2.5 ≈ €163</td></tr>
 
-          <tr><td colspan="2" style="background:#fef3c7; font-weight:800; color:#78350f; font-size:13px;">📞 권역 외 — 예상 가격 (별도 카톡 견적)</td></tr>
-          <tr><td data-label="구간">시내 ↔ Maynooth (35km)</td><td data-label="가격" class="price">~€73 + 톨비 실비</td></tr>
-          <tr><td data-label="구간">시내 ↔ Drogheda (50km)</td><td data-label="가격" class="price">~€95 + 톨비 실비</td></tr>
-          <tr><td data-label="구간">시내 ↔ Wicklow Town (50km)</td><td data-label="가격" class="price">~€95</td></tr>
-          <tr><td data-label="구간">Dublin ↔ Belfast (170km)</td><td data-label="가격" class="price">€350+ (별도 견적)</td></tr>
-          <tr><td data-label="구간">Dublin ↔ Galway (215km)</td><td data-label="가격" class="price">€420+ (별도 견적)</td></tr>
-          <tr><td data-label="구간">Dublin ↔ Cork (250km)</td><td data-label="가격" class="price">€480+ (별도 견적)</td></tr>
-          <tr><td data-label="안내" style="padding-left:24px; color:var(--muted); font-size:12.5px;">↳ 장거리는 왕복 deadhead·톨비·시간 반영. 짐 양·일정 따라 변동.</td><td data-label="" class="price">—</td></tr>
+          <tr><td colspan="2" style="background:#fef3c7; font-weight:800; color:#78350f;">📞 권역 외 — 별도 카톡 견적</td></tr>
+          <tr><td>시내 ↔ Maynooth (35km)</td><td class="price">~€73 +톨비</td></tr>
+          <tr><td>시내 ↔ Drogheda (50km)</td><td class="price">~€95 +톨비</td></tr>
+          <tr><td>시내 ↔ Wicklow Town (50km)</td><td class="price">~€95</td></tr>
+          <tr><td>Dublin ↔ Belfast (170km)</td><td class="price">€350+</td></tr>
+          <tr><td>Dublin ↔ Galway (215km)</td><td class="price">€420+</td></tr>
+          <tr><td>Dublin ↔ Cork (250km)</td><td class="price">€480+</td></tr>
+          <tr><td colspan="2" style="color:var(--muted); font-style:italic; padding:6px 8px !important; font-size:11px !important;">↳ 장거리는 왕복 deadhead·톨비·시간 반영. 짐 양·일정에 따라 변동.</td></tr>
 
-          <tr><td colspan="2" style="background:var(--accent-soft); font-weight:800; color:var(--primary); font-size:13px;">🛒 장보기 동행 — 거리당 단가 (이사와 동일)</td></tr>
-          <tr><td data-label="항목">거리 단가</td><td data-label="가격" class="price">€35 + €1.5/km (10km 초과)</td></tr>
-          <tr><td data-label="항목">기본 동행 시간 (1.5h · 1–2 매장 묶기 가능)</td><td data-label="가격" class="price">포함</td></tr>
-          <tr><td data-label="항목">동행 시간 연장</td><td data-label="가격" class="price">+€10/30분</td></tr>
-          <tr><td data-label="예시" style="padding-left:24px; color:var(--muted); font-size:13px;">10km 매장 1.5h 동행 → €35</td><td data-label="가격" class="price">—</td></tr>
-          <tr><td data-label="예시" style="padding-left:24px; color:var(--muted); font-size:13px;">20km 매장 2.5h 동행 → €50 + €20 = €70</td><td data-label="가격" class="price">—</td></tr>
+          <tr><td colspan="2" style="background:var(--accent-soft); font-weight:800; color:var(--primary);">🛒 장보기 동행 — 이사와 동일 단가</td></tr>
+          <tr><td>거리 단가</td><td class="price">€35 + €1.5/km</td></tr>
+          <tr><td>기본 동행 시간 (1.5h)</td><td class="price">포함</td></tr>
+          <tr><td>시간 연장</td><td class="price">+€10/30분</td></tr>
+          <tr><td colspan="2" style="color:var(--muted); font-style:italic; padding:6px 8px !important; font-size:11px !important;">예: 10km 1.5h → €35 · 20km 2.5h → €70</td></tr>
         </tbody>
       </table>
       <p style="font-size:12px; color:var(--muted); margin-top:14px; text-align:center;">
