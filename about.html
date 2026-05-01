@@ -33,6 +33,12 @@
     max-width:720px;
     box-shadow:0 4px 14px rgba(201,169,110,0.18);
   }
+  .vehicle-photo { max-width:520px; margin:0 auto; border-radius:14px; overflow:hidden; box-shadow:var(--shadow); }
+  .vehicle-specs { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:24px; max-width:760px; margin-left:auto; margin-right:auto; }
+  @media (max-width:600px){ .vehicle-specs { grid-template-columns:repeat(2,1fr); } }
+  .spec { background:white; border:1px solid var(--border); border-radius:10px; padding:14px; text-align:center; }
+  .spec .num { font-size:22px; font-weight:900; color:var(--accent); }
+  .spec .lbl { font-size:12px; color:var(--muted); }
 </style>
 </head>
 <body>
@@ -115,6 +121,33 @@
         <span class="cred-pill">🎵 Classical Music for Everyone</span>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- VEHICLE INFO -->
+<section style="background:var(--bg);">
+  <div class="container">
+    <div class="section-title">
+      <h2>🚐 함께하는 차량</h2>
+      <p class="lead">7인승 MPV — 픽업·여행·이사 모든 동행이 이 한 대에서 시작됩니다</p>
+    </div>
+    <div class="vehicle-photo">
+      <img src="photo2.jpg" alt="7인승 MPV 차량">
+    </div>
+    <div class="vehicle-specs">
+      <div class="spec"><div class="num">7</div><div class="lbl">탑승 좌석</div></div>
+      <div class="spec"><div class="num">1,800L</div><div class="lbl">최대 적재 (좌석 접음)</div></div>
+      <div class="spec"><div class="num">5–6</div><div class="lbl">30인치 캐리어</div></div>
+      <div class="spec"><div class="num">220cm</div><div class="lbl">최대 길이</div></div>
+      <div class="spec"><div class="num">120cm</div><div class="lbl">적재 폭</div></div>
+      <div class="spec"><div class="num">90cm</div><div class="lbl">적재 높이</div></div>
+    </div>
+    <p style="text-align:center; max-width:720px; margin:26px auto 0; font-size:14px; line-height:1.8; color:var(--text);">
+      이 차량은 <strong style="color:var(--primary);">여러분과 응원해주신 분들의 펀딩</strong>으로 마련되었습니다.
+      평소에는 공항 픽업·이사·여행 동행으로 운영되고, 주말·휴일에는
+      <strong style="color:var(--primary);">🎵 Classical Music for Everyone</strong> 봉사 프로젝트의
+      연주자·악기·장비를 싣고 음악이 필요한 곳으로 직접 찾아갑니다.
+    </p>
   </div>
 </section>
 
@@ -287,7 +320,7 @@
       <a href="tel:+[removed]">📞 [removed]</a>
       <a href="mailto:sby05034@gmail.com">✉️ Email</a>
     </div>
-    <p class="small">© 2026 🇮🇪 Beautiful Ireland with Everyone · Andrew Seohyeon Kim · Dublin, Ireland · 4년차 한인 운영<br>🎵 Classical Music for Everyone의 사회공헌 활동을 위한 운영</p>
+    <p class="small">© 2026 🇮🇪 Beautiful Ireland with Everyone · Andrew의 아일랜드 동행</p>
   </div>
 </footer>
 

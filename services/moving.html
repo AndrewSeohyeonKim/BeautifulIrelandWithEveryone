@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🏠 이사 · IKEA·장보기 동행 | Andrew의 아일랜드 동행</title>
-<meta name="description" content="더블린 이사·IKEA·가구 픽업·장보기 동행. 7인승 MPV 좌석 접으면 1,800L 적재. 짐 운송 €40부터, 이사 €130부터.">
+<meta name="description" content="더블린 이사·IKEA·가구 픽업·장보기 동행. 7인승 MPV 좌석 접으면 1,800L 적재. 1–2인 소규모 이사 €35부터 (거리당 정찰가), 반복 이동 이사·장보기 동행 가능.">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
 <script defer src="../scripts.js"></script>
@@ -47,8 +47,47 @@
   .result-panel .breakdown ul { list-style: none; font-size: 13.5px; }
   .result-panel .breakdown ul li { padding: 4px 0; display: flex; justify-content: space-between; }
 
-  .use-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; max-width:920px; margin:0 auto; }
-  @media (max-width:760px){ .use-grid { grid-template-columns:1fr; } }
+  .use-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; max-width:1100px; margin:0 auto; }
+  @media (max-width:920px){ .use-grid { grid-template-columns:1fr; max-width:560px; } }
+  .addon-options { background:var(--accent-soft); border:1.5px dashed var(--accent); border-radius:10px; padding:14px 16px; margin-top:6px; margin-bottom:12px; }
+  .addon-options .addon-row { display:flex; align-items:flex-start; gap:10px; padding:6px 0; cursor:pointer; }
+  .addon-options .addon-row input[type="checkbox"] { margin-top:3px; transform:scale(1.15); }
+  .addon-options .addon-row .addon-label { flex:1; font-size:13.5px; color:var(--primary); line-height:1.5; }
+  .addon-options .addon-row .addon-label .price-inline { color:var(--accent); font-weight:800; }
+  .included-banner { background:var(--accent-soft); border:1.5px solid var(--accent); border-radius:10px; padding:12px 14px; margin-top:6px; margin-bottom:12px; font-size:13px; color:var(--primary); }
+  .included-banner strong { color:var(--accent); }
+  .km-quick { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px; }
+  .km-quick button { padding:5px 12px; border:1.5px solid var(--border); border-radius:18px; background:white; cursor:pointer; font-family:inherit; font-size:13px; font-weight:600; color:var(--muted); transition:all 0.15s; }
+  .km-quick button:hover { border-color:var(--accent); color:var(--primary); background:var(--accent-soft); }
+  .km-quick button.active { border-color:var(--accent); color:white; background:var(--accent); }
+
+  .zone-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; max-width:900px; margin:0 auto; }
+  @media (max-width:760px){ .zone-grid { grid-template-columns:1fr; } }
+  .zone-card { background:white; border:1.5px solid var(--border); border-radius:14px; padding:22px 24px; }
+  .zone-card.zone-in { border-color:#22c55e; background:linear-gradient(180deg, #f0fdf4 0%, white 100%); }
+  .zone-card.zone-out { border-color:#f59e0b; background:linear-gradient(180deg, #fffbeb 0%, white 100%); }
+  .zone-card .zone-head { display:flex; align-items:center; gap:10px; margin-bottom:10px; flex-wrap:wrap; }
+  .zone-card .zone-head h4 { margin:0; font-size:18px; color:var(--primary); }
+  .zone-card .zone-icon { font-size:22px; }
+  .zone-card .zone-tag { margin-left:auto; font-size:11.5px; font-weight:700; padding:3px 10px; border-radius:999px; background:white; }
+  .zone-card.zone-in .zone-tag { color:#16a34a; border:1.5px solid #16a34a; }
+  .zone-card.zone-out .zone-tag { color:#d97706; border:1.5px solid #d97706; }
+  .zone-card .zone-desc { font-size:13px; color:var(--muted); margin-bottom:10px; line-height:1.6; }
+  .zone-card ul { list-style:none; padding:0; margin-bottom:12px; }
+  .zone-card ul li { font-size:13.5px; color:var(--text); padding:4px 0 4px 22px; line-height:1.55; position:relative; }
+  .zone-card.zone-in ul li::before { content:'✓'; position:absolute; left:0; color:#16a34a; font-weight:800; }
+  .zone-card.zone-out ul li::before { content:'•'; position:absolute; left:6px; color:#d97706; font-weight:800; }
+  .zone-card .zone-note { font-size:12px; color:var(--muted); padding-top:10px; border-top:1px dashed var(--border); line-height:1.6; }
+  .zone-extra { margin-top:18px; padding:14px 18px; background:#fef3c7; border:1px solid #fcd34d; border-radius:10px; font-size:13px; color:#78350f; line-height:1.7; max-width:900px; margin-left:auto; margin-right:auto; }
+  .zone-extra strong { color:#92400e; }
+  .long-warn { display:none; margin-top:12px; padding:12px 14px; background:#fef3c7; border:1.5px solid #fcd34d; border-radius:10px; font-size:13px; color:#78350f; line-height:1.6; }
+  .long-warn strong { color:#92400e; }
+  .price-note-inline { margin-top:12px; padding:10px 12px; background:rgba(255,255,255,0.7); border-radius:8px; font-size:12px; color:var(--primary); line-height:1.6; }
+  .rate-card { background:white; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-top:10px; margin-bottom:6px; }
+  .rate-card .rate-title { font-size:12.5px; font-weight:700; color:var(--primary); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px; }
+  .rate-card .rate-row { display:flex; justify-content:space-between; padding:3px 0; font-size:13px; color:var(--text); }
+  .rate-card .rate-row .rate-key { color:var(--muted); }
+  .rate-card .rate-row .rate-val { font-weight:700; color:var(--primary); }
   .use-card {
     background:white;
     border:1px solid var(--border);
@@ -141,54 +180,55 @@
   </div>
 </div>
 
-<!-- ANDREW STRIP -->
-<section style="background:var(--bg); padding:24px 20px;">
-  <a href="../about.html" class="andrew-strip">
-    <div class="avatar">👤</div>
-    <div class="info">
-      <div class="label">이 서비스를 운영하는 사람</div>
-      <strong>서현 Andrew</strong>
-      <p>더블린 4년차 · 유럽 운전 6년+ · 무료 워킹투어 운영자 · 🎵 Classical Music for Everyone</p>
-    </div>
-    <span class="more-btn">소개 더 보기 →</span>
-  </a>
-</section>
-
-<!-- TWO CATEGORIES -->
+<!-- THREE CATEGORIES -->
 <section style="background:white;">
   <div class="container">
     <div class="section-title">
-      <h2>🛎️ 두 가지 운송 동행</h2>
-      <p class="lead">크게 두 영역으로 나누어 운영합니다</p>
+      <h2>🛎️ 어떤 이사·운송이 필요하세요?</h2>
+      <p class="lead">짐 양 · 이동 거리 · 도움 여부에 따라 견적이 달라져요</p>
     </div>
     <div class="use-grid stagger-fade">
 
-      <div class="use-card" id="cat-moving">
+      <div class="use-card" id="cat-small-move" onclick="goToCalc('moving','single')" style="cursor:pointer;">
         <div class="ic">🏠</div>
-        <h4>이사</h4>
-        <p>방·자취집 이사부터 박스·짐 운송까지. 짐 양에 따라 1–2회 왕복 또는 한 번에 적재. 좌석 접으면 매트리스·소파도 가능합니다.</p>
+        <h4>소규모 이사 (한 번 이동)</h4>
+        <p>1–2인의 짐을 차 한 번에 실어 새 거주지로 이동. 거리당 정찰가, 최저가 €35부터. IKEA·중고가구 픽업도 같은 가격 체계.</p>
         <ul>
-          <li>방 이사 (1bed · 자취집)</li>
-          <li>짐·박스 단발 운송 (캐리어 포함)</li>
-          <li>큰 가구 이동 (소파·매트리스·책상)</li>
-          <li>시외 장거리 이사 (Cork·Galway 등)</li>
+          <li>1–2인 자취·학생·커플 이사</li>
+          <li>IKEA Ballymun 가구 픽업·운송</li>
+          <li>중고가구·매트리스 픽업</li>
+          <li>박스·캐리어 단발 운송</li>
         </ul>
-        <span class="price-tag">€40–€220</span>
-        <p style="font-size:12px; color:var(--muted); margin-top:10px;">* 짐 양·거리·인력 도움 여부에 따라 결정</p>
+        <span class="price-tag">€35부터 (거리당 정찰)</span>
+        <p style="font-size:12px; color:var(--muted); margin-top:10px;">* 클릭하면 가격 계산기로 이동</p>
       </div>
 
-      <div class="use-card" id="cat-ikea">
-        <div class="ic">🪑</div>
-        <h4>IKEA · 가구 · 장보기 동행</h4>
-        <p>차 없으면 가기 힘든 곳을 함께 다녀와요. IKEA에서 가구 픽업해 댁까지 운반, 대형마트·아시아마트 장보기 동행 모두 가능합니다.</p>
+      <div class="use-card" id="cat-multi-move" onclick="goToCalc('moving','double')" style="cursor:pointer;">
+        <div class="ic">🔁</div>
+        <h4>반복 이동 이사 (짐이 많은 경우)</h4>
+        <p>차에 한 번에 못 싣는 이사. 2–3회 왕복으로 짐 전체 이동. 짐 운반 도움이 기본 포함됩니다.</p>
         <ul>
-          <li>IKEA Ballymun 가구 픽업·운송</li>
-          <li>아시아마트 한국·중국·일본 식료품 장보기</li>
-          <li>Lidl·Aldi·Tesco Extra 대형마트</li>
-          <li>가구점 (Harvey Norman·DID 등) 픽업</li>
+          <li>1bed 자취집 전체 짐 이사</li>
+          <li>가구·매트리스·박스 한꺼번에</li>
+          <li>2bed 일부 (소형 가전 포함)</li>
+          <li>시외 장거리 이사 (Cork·Galway 등)</li>
         </ul>
-        <span class="price-tag">€40–€100</span>
-        <p style="font-size:12px; color:var(--muted); margin-top:10px;">* 거리·시간(1–1.5h 단위)으로 산정</p>
+        <span class="price-tag">1회 이동가 × 2.5–3.5배</span>
+        <p style="font-size:12px; color:var(--muted); margin-top:10px;">* 클릭하면 가격 계산기로 이동</p>
+      </div>
+
+      <div class="use-card" id="cat-shop" onclick="goToCalc('shop')" style="cursor:pointer;">
+        <div class="ic">🛒</div>
+        <h4>장보기 동행 (유동)</h4>
+        <p>차 없으면 가기 힘든 매장을 함께 다녀와요. 시간·매장 수·거리에 따라 유동적으로 조정합니다.</p>
+        <ul>
+          <li>아시아마트(한국·중국·일본·동남아)</li>
+          <li>Lidl·Aldi·Tesco Extra 대형마트</li>
+          <li>여러 매장 묶어서 한 번에</li>
+          <li>짐 운반(차 → 댁) 기본 포함</li>
+        </ul>
+        <span class="price-tag">€35부터 (거리·시간)</span>
+        <p style="font-size:12px; color:var(--muted); margin-top:10px;">* 클릭하면 가격 계산기로 이동</p>
       </div>
 
     </div>
@@ -216,8 +256,52 @@
   </div>
 </section>
 
-<!-- CALCULATOR (탭 2개로 단순화) -->
-<section id="calculator" style="background:white;">
+<!-- SERVICE ZONE INFO -->
+<section style="background:white;">
+  <div class="container" style="max-width:920px;">
+    <div class="section-title">
+      <h2>📍 서비스 권역 안내</h2>
+      <p class="lead">권역 내·외에 따라 추가 비용 발생 여부가 달라져요</p>
+    </div>
+
+    <div class="zone-grid">
+      <div class="zone-card zone-in">
+        <div class="zone-head">
+          <span class="zone-icon">✅</span>
+          <h4>권역 내</h4>
+          <span class="zone-tag">정찰가 그대로</span>
+        </div>
+        <p class="zone-desc">아래 두 조건 중 <strong>하나라도</strong> 충족하면 권역 내로 적용됩니다</p>
+        <ul>
+          <li><strong>Greater Dublin</strong> 권역 (시내·Blanchardstown·Tallaght·Swords·Dun Laoghaire·Bray·Lucan·Dundrum 등)</li>
+          <li>또는 <strong>Blanchardstown Shopping Centre(Dublin 15) 기준 반경 15km 이내</strong></li>
+        </ul>
+        <p class="zone-note">계산기 가격이 곧 최종 가격. 단, 톨비·유료 주차비 발생 시 실비 별도 (아래 안내 참고).</p>
+      </div>
+
+      <div class="zone-card zone-out">
+        <div class="zone-head">
+          <span class="zone-icon">📞</span>
+          <h4>권역 외</h4>
+          <span class="zone-tag">별도 카톡 견적</span>
+        </div>
+        <p class="zone-desc">아래 지역은 출장 거리·톨비 추가 발생 가능. 사전 견적 받아주세요</p>
+        <ul>
+          <li>외곽 근교: Maynooth·Drogheda·Wicklow Town·Naas·Navan 등</li>
+          <li>장거리: Cork·Galway·Belfast·Limerick·Killarney 등</li>
+        </ul>
+        <p class="zone-note">출장 거리 추가 + 톨로드(M1·M3·M4·M7·M8) 실비 별도. 계산기 가격은 참고용 베이스.</p>
+      </div>
+    </div>
+
+    <div class="zone-extra">
+      ⚠️ <strong>톨비·주차비 별도 청구 가능 (불포함):</strong> 대부분의 이사는 무료 도로 주차로 진행되어 추가 비용이 발생하지 않지만, 불가피하게 다음과 같은 경우 실비 별도 정산됩니다 — 시내 paid parking 구역(약 €2–5/시간), 공항 단기 주차, 톨로드(M50·M1·M3·M4·M7·M8 등) 통과. 발생 가능성이 있으면 작업 전 미리 카톡으로 안내드리고, 영수증 기준으로 정산합니다.
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator" style="background:var(--bg);">
   <div class="container">
     <div class="section-title">
       <h2>🧮 가격 계산</h2>
@@ -226,65 +310,118 @@
 
     <div class="calc-wrap">
       <div class="calc-tabs">
-        <button class="calc-tab active" data-tab="moving" onclick="selectMvTab('moving')">🏠 이사 (짐 운송)</button>
-        <button class="calc-tab" data-tab="ikea" onclick="selectMvTab('ikea')">🪑 IKEA·장보기 동행</button>
+        <button class="calc-tab active" data-tab="moving" onclick="selectMvTab('moving')">🏠 이사·운송</button>
+        <button class="calc-tab" data-tab="shop" onclick="selectMvTab('shop')">🛒 장보기 동행</button>
       </div>
 
       <div class="calc-body">
 
-        <!-- 이사 탭 -->
+        <!-- 이사·운송 탭 -->
         <div class="calc-content active" data-content="moving">
-          <div class="row">
+          <div class="row single">
             <div class="field">
-              <label>📦 운송 규모</label>
-              <select id="mv-type" onchange="calcMoving()">
-                <option value="luggage">시내 짐 운송 (캐리어/박스, 1h)</option>
-                <option value="moving-help">방 이사 (4h, 고객이 옆에서 도움)</option>
-                <option value="moving-solo">방 이사 (4h, Andrew 단독 운반)</option>
+              <label>🏠 이사 유형</label>
+              <select id="mv-trip" onchange="calcMoving()">
+                <option value="single" selected>🏠 소규모 이사 — 한 번 이동 (1–2인 짐, 차에 한 번에)</option>
+                <option value="double">🔁 반복 이동 — 2회 왕복 (1bed 자취집 전체 등)</option>
+                <option value="triple">🔁 반복 이동 — 3회+ 왕복 (큰 이사)</option>
               </select>
-            </div>
-            <div class="field">
-              <label>📍 거리 (편도, km)</label>
-              <input type="number" id="mv-km" value="15" min="0" max="200" step="1" oninput="calcMoving()">
-              <div class="hint" id="mv-hint">A ↔ B 사이 거리</div>
+              <div class="hint" id="mv-trip-hint">한 번에 실리는 양인지, 여러 번 왕복이 필요한지로 구분</div>
             </div>
           </div>
 
+          <div class="row single">
+            <div class="field">
+              <label>📍 A → B 거리 (편도, km)</label>
+              <div class="km-quick">
+                <button type="button" data-km="5" onclick="setMvKm(5)">5km</button>
+                <button type="button" data-km="10" onclick="setMvKm(10)">10km</button>
+                <button type="button" data-km="20" onclick="setMvKm(20)">20km</button>
+                <button type="button" data-km="30" onclick="setMvKm(30)">30km</button>
+                <button type="button" data-km="50" onclick="setMvKm(50)">50km</button>
+                <button type="button" data-km="100" onclick="setMvKm(100)">100km+ (별도 문의)</button>
+              </div>
+              <input type="number" id="mv-km" value="15" min="1" max="350" step="1" oninput="calcMoving()">
+              <div class="hint">예: Blanchardstown↔시내 12km · Blanchardstown↔Maynooth 25km · 더블린 시내권 대부분 5–20km</div>
+            </div>
+          </div>
+
+          <div class="rate-card">
+            <div class="rate-title">📐 거리당 단가 공식</div>
+            <div class="rate-row"><span class="rate-key">기본료 (10km 이내)</span><span class="rate-val">€35 (최저가)</span></div>
+            <div class="rate-row"><span class="rate-key">10–50km 추가분</span><span class="rate-val">+€1.5/km</span></div>
+            <div class="rate-row"><span class="rate-key">50km 초과분 (장거리)</span><span class="rate-val">+€0.8/km</span></div>
+          </div>
+
+          <div class="included-banner" id="mv-help-small" style="display:block;">
+            <strong>✓ 박스·캐리어·작은 가구 운반 도움 기본 포함</strong> — 일반적인 1–2인 이사 짐은 Andrew도 함께 운반합니다. 무거운 가구·매트리스 다수가 있을 정도면 보통 반복 이동 이사에 해당하니 카톡으로 사진 공유해주세요.
+          </div>
+
+          <div class="included-banner" id="mv-help-included" style="display:none;">
+            <strong>✓ 짐 운반 도움 기본 포함</strong> — 반복 이동 이사는 가구·매트리스·박스 등 모든 짐을 Andrew가 함께 운반합니다.
+          </div>
+
+          <div class="long-warn" id="mv-long-warn">
+            <strong>⚠️ 장거리 이사 안내:</strong> 100km 이상 이동은 권역 외 출장 거리 추가 + 톨로드 실비가 발생합니다. 아래 가격은 A↔B 거리 기준 베이스이며, <strong>최종 가격은 카톡 사전 견적</strong>으로 안내드릴게요.
+          </div>
+
           <div class="result-panel">
-            <div class="result-label">예상 요금 (편도 · 톨비 포함)</div>
-            <div class="result-price" id="mv-price">€40</div>
+            <div class="result-label" id="mv-result-label">예상 요금 (편도 · 권역 내 기준)</div>
+            <div class="result-price" id="mv-price">€43</div>
             <div class="breakdown">
+              <h5 style="font-size:12.5px; font-weight:700; color:var(--primary); margin-bottom:8px; text-transform:uppercase; letter-spacing:0.5px;">요금 구성</h5>
               <ul id="mv-breakdown"></ul>
+            </div>
+            <div class="price-note-inline">
+              ※ <strong>톨비·유료 주차비 별도 실비</strong> — 대부분의 이사는 무료 주차로 진행되어 추가 비용이 발생하지 않지만, 시내 paid parking·톨로드(M50·M1·M3·M4·M7·M8 등) 통과 시 실비 별도. 사전 안내 후 영수증 정산.
             </div>
           </div>
         </div>
 
-        <!-- IKEA·장보기 탭 -->
-        <div class="calc-content" data-content="ikea">
-          <div class="row">
+        <!-- 장보기 동행 탭 -->
+        <div class="calc-content" data-content="shop">
+          <div class="row single">
             <div class="field">
-              <label>🛒 동행 유형</label>
-              <select id="ik-type" onchange="calcIkea()">
-                <option value="ikea">🪑 IKEA Ballymun 가구 픽업</option>
-                <option value="grocery">🛒 대형마트·아시아마트 장보기</option>
-              </select>
-            </div>
-            <div class="field" id="ik-zone-field">
-              <label>📍 IKEA → 집까지 거리</label>
-              <select id="ik-zone" onchange="calcIkea()">
-                <option value="1">Zone 1 (0–10km)</option>
-                <option value="2" selected>Zone 2 (10–20km)</option>
-                <option value="3">Zone 3 (20–30km)</option>
-                <option value="4">Zone 4 (30–50km)</option>
-              </select>
+              <label>📍 매장까지 거리 (편도, km)</label>
+              <div class="km-quick">
+                <button type="button" data-km="5" onclick="setShKm(5)">5km</button>
+                <button type="button" data-km="10" onclick="setShKm(10)">10km</button>
+                <button type="button" data-km="20" onclick="setShKm(20)">20km</button>
+                <button type="button" data-km="30" onclick="setShKm(30)">30km</button>
+                <button type="button" data-km="50" onclick="setShKm(50)">50km</button>
+              </div>
+              <input type="number" id="sh-km" value="10" min="1" max="100" step="1" oninput="calcShop()">
+              <div class="hint">이사·운송과 동일한 거리당 단가 (€35 기본 + €1.5/km)</div>
             </div>
           </div>
 
+          <div class="row single">
+            <div class="field">
+              <label>⏱️ 동행 시간 (장보기 + 이동 포함)</label>
+              <select id="sh-hours" onchange="calcShop()">
+                <option value="1.5" selected>1.5시간 (기본 · 1–2개 매장)</option>
+                <option value="2">2시간</option>
+                <option value="2.5">2.5시간</option>
+                <option value="3">3시간</option>
+                <option value="4">4시간 (반나절)</option>
+              </select>
+              <div class="hint">매장 수·구매량에 따라 시간 조정 — 시간 안에 여러 매장 묶어서 가능</div>
+            </div>
+          </div>
+
+          <div class="included-banner">
+            <strong>✓ 짐 운반 기본 포함</strong> — 매장에서 차로, 차에서 댁 입구까지 운반 도움이 모두 포함됩니다.
+          </div>
+
           <div class="result-panel">
-            <div class="result-label">예상 요금 (편도 · 톨비 포함)</div>
-            <div class="result-price" id="ik-price">€60</div>
+            <div class="result-label">예상 요금</div>
+            <div class="result-price" id="sh-price">€35</div>
             <div class="breakdown">
-              <ul id="ik-breakdown"></ul>
+              <h5 style="font-size:12.5px; font-weight:700; color:var(--primary); margin-bottom:8px; text-transform:uppercase; letter-spacing:0.5px;">요금 구성</h5>
+              <ul id="sh-breakdown"></ul>
+            </div>
+            <div class="price-note-inline">
+              ※ 톨비·유료 주차비는 발생 시 별도 실비 청구 (대부분의 장보기는 미발생).
             </div>
           </div>
         </div>
@@ -294,20 +431,20 @@
         </div>
 
         <p style="font-size:12.5px; color:var(--muted); margin-top:18px; text-align:center; line-height:1.7;">
-          ※ 정확한 견적은 짐 사이즈/개수에 따라 달라집니다. 카톡으로 사진 한 장 보내주시면 확정 견적 드립니다.<br>
-          ※ "고객 도움"은 큰 가구 들 때 옆에서 한쪽을 잡아주시는 정도. "본인 단독"은 모든 운반을 Andrew가 단독으로.
+          ※ 정확한 견적은 짐 사이즈·개수·이동 경로에 따라 달라집니다. 카톡으로 짐 사진 한 장 보내주시면 확정 견적 드려요.<br>
+          ※ 풀이사는 짐 운반 도움이 기본 포함입니다. 단발 운송 시 큰 가구 도움이 필요하면 옵션을 선택해주세요.
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 전체 가격표 (원본 가격 동일하게) -->
-<section style="background:var(--bg);">
+<!-- 전체 가격표 -->
+<section style="background:white;">
   <div class="container" style="max-width:780px;">
     <div class="section-title">
       <h2>💰 전체 가격 가이드</h2>
-      <p class="lead">원본 운영 단가 그대로</p>
+      <p class="lead">A → B 거리 기준 정찰가 + 거리당 단가 공식</p>
     </div>
     <div style="overflow-x:auto;">
       <table class="price-table">
@@ -315,32 +452,90 @@
           <tr><th>항목</th><th style="text-align:right;">가격</th></tr>
         </thead>
         <tbody>
-          <tr><td>📦 시내 짐 운송 (캐리어·박스, 1h)</td><td class="price">€40</td></tr>
-          <tr><td>🛒 장보기 동행 (Lidl·Aldi·아시아마트, 1.5h)</td><td class="price">€40</td></tr>
-          <tr><td>🪑 IKEA Zone 1 (0–10km)</td><td class="price">€50</td></tr>
-          <tr><td>🪑 IKEA Zone 2 (10–20km)</td><td class="price">€60</td></tr>
-          <tr><td>🪑 IKEA Zone 3 (20–30km)</td><td class="price">€75</td></tr>
-          <tr><td>🪑 IKEA Zone 4 (30–50km)</td><td class="price">€100</td></tr>
-          <tr><td>🏠 방 이사 (4h, 고객 도움)</td><td class="price">€130–€150</td></tr>
-          <tr><td>🏠 방 이사 (4h, Andrew 단독)</td><td class="price">€180–€220</td></tr>
-          <tr><td>장거리 이사 추가 (30km 초과)</td><td class="price">+€0.50/km</td></tr>
+          <tr><td colspan="2" style="background:var(--accent-soft); font-weight:800; color:var(--primary); font-size:13px;">🏠 소규모 이사 (한 번 이동) — 거리당 단가</td></tr>
+          <tr><td>0–10km 기본료 (최저가)</td><td class="price">€35</td></tr>
+          <tr><td>10–50km 추가분</td><td class="price">+€1.5/km</td></tr>
+          <tr><td>50km 초과분 (장거리)</td><td class="price">+€0.8/km</td></tr>
+
+          <tr><td colspan="2" style="background:var(--accent-soft); font-weight:800; color:var(--primary); font-size:13px;">📍 거리별 정찰가 예시 (소규모 이사)</td></tr>
+          <tr><td>5km (시내 ↔ 시내)</td><td class="price">€35</td></tr>
+          <tr><td>10km (시내권)</td><td class="price">€35</td></tr>
+          <tr><td>20km (Blanchardstown 등)</td><td class="price">€50</td></tr>
+          <tr><td>30km (Tallaght·Swords 외곽)</td><td class="price">€65</td></tr>
+          <tr><td>50km (Drogheda·Maynooth)</td><td class="price">€95</td></tr>
+          <tr><td>100km (Wicklow·Carlow 인근)</td><td class="price">€135</td></tr>
+          <tr><td>250km (Dublin ↔ Cork·Galway)</td><td class="price">€255</td></tr>
+          <tr><td style="padding-left:24px; color:var(--muted); font-size:13px;">↳ 가구 운반 도움 옵션</td><td class="price">+€20</td></tr>
+
+          <tr><td colspan="2" style="background:var(--accent-soft); font-weight:800; color:var(--primary); font-size:13px;">🔁 반복 이동 이사 (운반 도움 기본 포함)</td></tr>
+          <tr><td>2회 왕복 (1bed 자취집 등)</td><td class="price">1회 이동가 × 2.5</td></tr>
+          <tr><td>3회+ 왕복 (큰 이사)</td><td class="price">1회 이동가 × 3.5</td></tr>
+          <tr><td style="padding-left:24px; color:var(--muted); font-size:13px;">예: 20km 2회 왕복 → €50 × 2.5 = €125</td><td class="price">—</td></tr>
+          <tr><td style="padding-left:24px; color:var(--muted); font-size:13px;">예: 30km 2회 왕복 → €65 × 2.5 ≈ €163</td><td class="price">—</td></tr>
+
+          <tr><td colspan="2" style="background:#fef3c7; font-weight:800; color:#78350f; font-size:13px;">📞 권역 외 — 예상 가격 (별도 카톡 견적)</td></tr>
+          <tr><td>시내 ↔ Maynooth (35km)</td><td class="price">~€73 + 톨비 실비</td></tr>
+          <tr><td>시내 ↔ Drogheda (50km)</td><td class="price">~€95 + 톨비 실비</td></tr>
+          <tr><td>시내 ↔ Wicklow Town (50km)</td><td class="price">~€95</td></tr>
+          <tr><td>Dublin ↔ Belfast (170km)</td><td class="price">€350+ (별도 견적)</td></tr>
+          <tr><td>Dublin ↔ Galway (215km)</td><td class="price">€420+ (별도 견적)</td></tr>
+          <tr><td>Dublin ↔ Cork (250km)</td><td class="price">€480+ (별도 견적)</td></tr>
+          <tr><td style="padding-left:24px; color:var(--muted); font-size:12.5px;">↳ 장거리는 왕복 deadhead·톨비·시간 반영. 짐 양·일정 따라 변동.</td><td class="price">—</td></tr>
+
+          <tr><td colspan="2" style="background:var(--accent-soft); font-weight:800; color:var(--primary); font-size:13px;">🛒 장보기 동행 — 거리당 단가 (이사와 동일)</td></tr>
+          <tr><td>거리 단가</td><td class="price">€35 + €1.5/km (10km 초과)</td></tr>
+          <tr><td>기본 동행 시간 (1.5h · 1–2 매장 묶기 가능)</td><td class="price">포함</td></tr>
+          <tr><td>동행 시간 연장</td><td class="price">+€10/30분</td></tr>
+          <tr><td style="padding-left:24px; color:var(--muted); font-size:13px;">예: 10km 매장 1.5h 동행 → €35</td><td class="price">—</td></tr>
+          <tr><td style="padding-left:24px; color:var(--muted); font-size:13px;">예: 20km 매장 2.5h 동행 → €50 + €20 = €70</td><td class="price">—</td></tr>
         </tbody>
       </table>
+      <p style="font-size:12px; color:var(--muted); margin-top:14px; text-align:center;">
+        ※ 최저가 €35부터 (공항 픽업과 동일).<br>
+        ※ <strong>톨비·유료 주차비는 발생 시 별도 실비 청구</strong> — 대부분의 이사·장보기는 무료 주차로 진행되어 추가 비용 없음.<br>
+        ※ 정확한 견적은 짐 사진 한 장 보내주시면 카톡으로 확정해 드립니다.
+      </p>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section style="background:white;">
+<section style="background:var(--bg);">
   <div class="container" style="max-width:800px;">
     <div class="section-title"><h2>이사·운송 자주 묻는 질문</h2></div>
 
     <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">소규모 이사와 반복 이동 이사의 차이는 뭔가요?</div>
+      <div class="faq-a">
+        핵심 기준은 <strong>"차에 한 번에 실리는가"</strong>입니다.<br><br>
+        <strong>🏠 소규모 이사 (한 번 이동):</strong> 1–2인의 자취·학생·커플 짐, IKEA 가구 1–2개, 매트리스, 박스·캐리어 등 차에 한 번에 들어가는 양. 거리 기준 정찰가 (최저 €35부터).<br><br>
+        <strong>🔁 반복 이동 이사:</strong> 1bed 자취집 전체 짐처럼 한 번에 못 싣는 양. 같은 거리를 2–3회 왕복. 1회 이동 정찰가 × 약 2.5–3.5배 (운반 도움 포함).<br><br>
+        잘 모르겠으면 짐 사진을 카톡으로 보내주세요 — 사진만 보고 어느 쪽이 적합한지 안내드립니다.
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">가격은 어떻게 산정되나요?</div>
+      <div class="faq-a">
+        <strong>A → B 사이 편도 거리</strong>를 기준으로 거리당 단가로 산정합니다.<br><br>
+        <strong>📐 거리당 단가 공식</strong><br>
+        · 0–10km: <strong>€35</strong> (기본료, 최저가)<br>
+        · 10–50km: <strong>+€1.5/km</strong> (10km 초과분)<br>
+        · 50km 초과: <strong>+€0.8/km</strong> (장거리)<br><br>
+        <strong>📍 예시 (소규모 이사 기준)</strong><br>
+        · 시내 ↔ Blanchardstown (12km): €38<br>
+        · 시내 ↔ Maynooth (35km): €73<br>
+        · Dublin ↔ Cork (250km): €255<br><br>
+        반복 이동 이사는 위 가격에 × 2.5(2회 왕복) 또는 × 3.5(3회+ 왕복)이 적용됩니다.
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="this.classList.toggle('open')">
       <div class="faq-q">짐 운반은 도와주시나요?</div>
       <div class="faq-a">
-        가벼운 박스·캐리어는 함께 들어드립니다. 무거운 가구·매트리스는 두 가지 옵션이 있어요:<br>
-        <strong>① 고객 도움 (€130–150)</strong> — 큰 가구 들 때 옆에서 한쪽을 잡아주세요.<br>
-        <strong>② Andrew 단독 (€180–220)</strong> — 도와주실 분이 없거나 무리이실 때.
+        <strong>가벼운 박스·캐리어:</strong> 옵션 없이도 기본 도움 포함입니다.<br><br>
+        <strong>큰 가구·매트리스 (소규모 이사 시):</strong> "가구 운반 도움" 옵션(+€20)을 선택하시면 Andrew가 함께 들어드립니다. 옵션 미선택 시에는 차량 운송만 진행됩니다.<br><br>
+        <strong>반복 이동 이사:</strong> 짐 운반 도움이 <strong>기본 포함</strong>됩니다. 가구·매트리스·박스 등 모든 짐을 함께 운반해 드려요.
       </div>
     </div>
 
@@ -348,21 +543,66 @@
       <div class="faq-q">큰 가구가 차에 들어갈지 모르겠어요</div>
       <div class="faq-a">
         가구 박스 사이즈(가로×세로×높이)를 카톡으로 알려주시거나 사진을 보내주세요. IKEA 모델명만 알려주셔도 됩니다.
-        대표적으로 <strong>BILLY 책장(80×202cm) + 박스 5–6개</strong>까지는 한 번에 적재 가능합니다.
+        대표적으로 <strong>BILLY 책장(80×202cm) + 박스 5–6개</strong>까지는 한 번에 적재 가능합니다. 그 이상은 반복 이동 이사로 안내드려요.
       </div>
     </div>
 
     <div class="faq-item" onclick="this.classList.toggle('open')">
       <div class="faq-q">엘리베이터 없는 건물도 가능한가요?</div>
       <div class="faq-a">
-        가능하지만 무거운 짐은 동승자분의 도움이 필요할 수 있어요. 사전에 건물 구조(층수, 엘리베이터 유무)를 알려주시면 미리 준비합니다.
+        가능하지만 무거운 짐의 경우 운반 시간이 더 걸려요. 사전에 건물 구조(층수, 엘리베이터 유무)를 알려주시면 미리 준비합니다.
+        소규모 이사에서 가구 도움 옵션을 선택하시거나 반복 이동 이사로 진행하시면 Andrew가 함께 운반해 드립니다.
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">서비스 권역 기준은 어떻게 되나요?</div>
+      <div class="faq-a">
+        <strong>✅ 권역 내</strong> — 둘 중 하나만 충족하면 권역 내 적용 (정찰가 그대로):
+        <ul style="margin:8px 0; padding-left:24px;">
+          <li><strong>Greater Dublin</strong> 권역 (시내·Blanchardstown·Tallaght·Swords·Dun Laoghaire·Bray·Lucan·Dundrum 등)</li>
+          <li>또는 <strong>Blanchardstown Shopping Centre(Dublin 15) 기준 반경 15km 이내</strong></li>
+        </ul>
+        → M50 톨비·일반 도로 주차 포함, 계산기 가격이 곧 최종 가격.<br><br>
+        <strong>📞 권역 외</strong> — 카톡 사전 견적:
+        <ul style="margin:8px 0; padding-left:24px;">
+          <li>외곽 근교: Maynooth·Drogheda·Wicklow Town·Naas·Navan</li>
+          <li>장거리: Cork·Galway·Belfast·Limerick·Killarney</li>
+        </ul>
+        → 출장 거리 추가 + 톨로드(M1·M3·M4·M7·M8) 실비 별도. 짐 양·일정·실주행 거리 종합해서 카톡으로 정확한 견적 안내드려요.
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">톨비·주차비는 어떻게 처리되나요?</div>
+      <div class="faq-a">
+        <strong>📌 톨비·유료 주차비는 별도 실비 청구입니다 (불포함).</strong> 다만 대부분의 이사·장보기는 무료 도로 주차로 진행되어 추가 비용이 발생하지 않습니다.<br><br>
+        <strong>실비 청구 가능 사항:</strong>
+        <ul style="margin:8px 0; padding-left:24px;">
+          <li><strong>시내 paid parking</strong> — 짐 하역 시 발생 가능 (€2–5/시간)</li>
+          <li><strong>톨로드</strong> — M50·M1·M3·M4·M7·M8 등 통과 시 (€2–5/회)</li>
+          <li>공항 단기 주차, 특수 시설 유료 주차 — 실비</li>
+        </ul>
+        발생 가능성이 있으면 작업 전 카톡으로 미리 안내드리고, 영수증 기준으로 정산합니다.
       </div>
     </div>
 
     <div class="faq-item" onclick="this.classList.toggle('open')">
       <div class="faq-q">멀리(시외) 이사도 가능한가요?</div>
       <div class="faq-a">
-        네. 더블린 ↔ Cork·Galway·Belfast 같은 장거리 이사도 가능합니다. 30km 초과부터 km당 €0.50 추가됩니다.
+        네, Cork·Galway·Belfast·Limerick 같은 장거리 이사도 가능합니다. 다만 <strong>장거리는 별도 카톡 견적</strong>으로 안내드려요. 이유는:
+        <ul style="margin:8px 0; padding-left:24px;">
+          <li>Andrew의 왕복 deadhead(빈 차) 주행이 길어짐</li>
+          <li>외곽 톨로드(M7·M8 등) 실비 발생</li>
+          <li>이사 일정 조율(전날/당일 출발) 필요</li>
+        </ul>
+        <strong>📞 예상 가격 가이드:</strong>
+        <ul style="margin:8px 0; padding-left:24px;">
+          <li>Dublin ↔ Belfast (170km): <strong>€350+</strong></li>
+          <li>Dublin ↔ Galway (215km): <strong>€420+</strong></li>
+          <li>Dublin ↔ Cork (250km): <strong>€480+</strong></li>
+        </ul>
+        짐 사진과 일정 알려주시면 카톡으로 확정 견적 드립니다.
       </div>
     </div>
 
@@ -376,7 +616,27 @@
     <div class="faq-item" onclick="this.classList.toggle('open')">
       <div class="faq-q">결제는 어떻게 하나요?</div>
       <div class="faq-a">
-        유로(Revolut) 또는 원화(한국 계좌이체). 작업 완료 후 일괄 결제하시면 됩니다.
+        <strong>📌 결제 방식:</strong>
+        <ul style="margin:8px 0; padding-left:24px;">
+          <li><strong>예약 시 — 50% 예약금</strong> (예약 확정 시점에 선결제)</li>
+          <li><strong>이사 완료 후 — 나머지 50% + 추가 발생 비용</strong> (주차비·톨비 등 실비 포함)</li>
+        </ul>
+        <strong>💳 결제 수단:</strong> 유로는 Revolut 송금, 원화는 한국 계좌이체. 카드 결제는 받지 않습니다.<br><br>
+        예약금 입금 후 일정·짐 사진 등 최종 확정해 드리고, 작업 완료 시점에 잔금과 발생 실비(영수증 기준)를 함께 정산합니다.
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">취소·환불 정책은 어떻게 되나요?</div>
+      <div class="faq-a">
+        예약금 기준 환불 정책입니다.
+        <ul style="margin:8px 0; padding-left:24px;">
+          <li><strong>이사 48시간 이전 취소</strong> → 예약금 <strong>전액 환불</strong></li>
+          <li><strong>이사 전날까지 취소</strong> (24–48시간 전) → 예약금의 <strong>50% 환불</strong></li>
+          <li><strong>이사 당일 취소</strong> → <strong>환불 불가</strong> (차량·일정 확보 완료 상태)</li>
+        </ul>
+        <strong>📌 불가피한 사정의 경우</strong> — 갑작스러운 질병, 가족 응급상황, 자연재해 등 불가항력 사유는 별도로 카톡으로 알려주세요. 상황 확인 후 함께 일정 조정 또는 합리적인 환불 방안을 안내해 드립니다.<br><br>
+        <strong>🔁 일정 변경</strong> — 취소 대신 일정 변경을 원하시면 가능한 한 무료로 조정해 드립니다(가능 일정 확인 필요). 가급적 일찍 카톡으로 공유해주세요.
       </div>
     </div>
   </div>
@@ -405,74 +665,209 @@
       <a href="tel:+[removed]">📞 [removed]</a>
       <a href="mailto:sby05034@gmail.com">✉️ Email</a>
     </div>
-    <p class="small">© 2026 🇮🇪 Beautiful Ireland with Everyone · Andrew Seohyeon Kim · Dublin, Ireland</p>
+    <p class="small">© 2026 🇮🇪 Beautiful Ireland with Everyone · Andrew의 아일랜드 동행</p>
   </div>
 </footer>
 
 <script>
-// 원본과 동일한 이사 가격 체계
-const MV_TYPES = {
-  'luggage': { base: 40, name: '시내 짐 운송 (1h)', perKm: 0, threshold: 0 },
-  'moving-help': { base: 140, name: '방 이사 (4h, 고객 도움)', perKm: 0.5, threshold: 30 },
-  'moving-solo': { base: 200, name: '방 이사 (4h, Andrew 단독)', perKm: 0.5, threshold: 30 }
+// =============================================
+// 이사·운송 가격 체계 (거리당 단가 기반)
+// =============================================
+// 1회 이동가:
+//   - 0–10km: €35 (기본료, 최저가)
+//   - 10–50km: +€1.5/km (10km 초과분)
+//   - 50km 초과: +€0.8/km (장거리)
+// 반복 이동 배수:
+//   - 2회 왕복: × 2.5
+//   - 3회+ 왕복: × 3.5
+// =============================================
+
+const TRIP_MULT = { 'single': 1.0, 'double': 2.5, 'triple': 3.5 };
+const TRIP_LABEL = {
+  'single': '소규모 이사 (한 번 이동)',
+  'double': '반복 이동 — 2회 왕복',
+  'triple': '반복 이동 — 3회+ 왕복'
 };
+
+// 거리(km) → 1회 이동 기본 가격 + 분해 정보
+function calcSinglePrice(km) {
+  km = Math.max(1, km);
+  if (km <= 10) {
+    return {
+      total: 35,
+      lines: [{ label: `기본료 (10km 이내, ${km}km)`, amount: 35 }]
+    };
+  }
+  if (km <= 50) {
+    const extraKm = km - 10;
+    const extraPrice = Math.round(extraKm * 1.5);
+    return {
+      total: 35 + extraPrice,
+      lines: [
+        { label: '기본료 (10km 이내)', amount: 35 },
+        { label: `추가 거리 (${extraKm}km × €1.5/km)`, amount: extraPrice }
+      ]
+    };
+  }
+  // 50km 초과
+  const tier1Km = 40; // 10–50km 구간
+  const tier1Price = Math.round(tier1Km * 1.5);
+  const tier2Km = km - 50;
+  const tier2Price = Math.round(tier2Km * 0.8);
+  return {
+    total: 35 + tier1Price + tier2Price,
+    lines: [
+      { label: '기본료 (10km 이내)', amount: 35 },
+      { label: '추가 거리 1구간 (40km × €1.5/km)', amount: tier1Price },
+      { label: `장거리 추가 (${tier2Km}km × €0.8/km)`, amount: tier2Price }
+    ]
+  };
+}
 
 function selectMvTab(tab) {
   document.querySelectorAll('.calc-tab').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
   document.querySelectorAll('.calc-content').forEach(c => c.classList.toggle('active', c.dataset.content === tab));
 }
 
-function calcMoving() {
-  const type = document.getElementById('mv-type').value;
-  const km = parseInt(document.getElementById('mv-km').value, 10) || 0;
-  const cfg = MV_TYPES[type];
-
-  let base = cfg.base;
-  let extras = 0;
-  const breakdown = [];
-  breakdown.push(`<li><span>${cfg.name}</span><span>€${base}</span></li>`);
-
-  if (cfg.perKm && km > cfg.threshold) {
-    const over = km - cfg.threshold;
-    const sur = Math.round(over * cfg.perKm);
-    if (sur > 0) {
-      extras += sur;
-      breakdown.push(`<li><span>장거리 추가 (${over}km × €${cfg.perKm})</span><span>+€${sur}</span></li>`);
+// 카드 클릭 시 가격 계산기로 스크롤 + 적합한 탭/유형 자동 선택
+function goToCalc(tab, tripType) {
+  selectMvTab(tab);
+  if (tab === 'moving' && tripType) {
+    const tripSel = document.getElementById('mv-trip');
+    if (tripSel) {
+      tripSel.value = tripType;
+      calcMoving();
     }
   }
-
-  const total = base + extras;
-  document.getElementById('mv-price').textContent = `€${total}`;
-  document.getElementById('mv-breakdown').innerHTML = breakdown.join('');
+  const calcEl = document.getElementById('calculator');
+  if (calcEl) calcEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// IKEA·장보기 가격
-const IKEA_ZONES = { '1': 50, '2': 60, '3': 75, '4': 100 };
+function setMvKm(km) {
+  document.getElementById('mv-km').value = km;
+  document.querySelectorAll('.km-quick button').forEach(b => {
+    b.classList.toggle('active', parseInt(b.dataset.km, 10) === km);
+  });
+  calcMoving();
+}
 
-function calcIkea() {
-  const type = document.getElementById('ik-type').value;
-  const zoneField = document.getElementById('ik-zone-field');
+function calcMoving() {
+  const tripType = document.getElementById('mv-trip').value;
+  const km = Math.max(1, parseInt(document.getElementById('mv-km').value, 10) || 1);
+
+  const helpSmall = document.getElementById('mv-help-small');
+  const helpIncluded = document.getElementById('mv-help-included');
+
+  // km preset 활성 표시 (100km+ 버튼은 km>=100이면 활성)
+  document.querySelectorAll('.km-quick button').forEach(b => {
+    const btnKm = parseInt(b.dataset.km, 10);
+    const isActive = (btnKm === 100) ? (km >= 100) : (btnKm === km);
+    b.classList.toggle('active', isActive);
+  });
+
+  // 1회 이동 가격 산출
+  const single = calcSinglePrice(km);
+  const mult = TRIP_MULT[tripType];
+
+  // 운반 도움 안내 배너 토글
+  if (tripType === 'single') {
+    helpSmall.style.display = '';
+    helpIncluded.style.display = 'none';
+  } else {
+    helpSmall.style.display = 'none';
+    helpIncluded.style.display = '';
+  }
+
+  // Breakdown 구성
   const breakdown = [];
   let total = 0;
 
-  if (type === 'ikea') {
-    zoneField.style.display = '';
-    const zone = document.getElementById('ik-zone').value;
-    total = IKEA_ZONES[zone];
-    const zoneLabel = ['', '0–10km', '10–20km', '20–30km', '30–50km'][parseInt(zone)];
-    breakdown.push(`<li><span>IKEA Zone ${zone} (${zoneLabel})</span><span>€${total}</span></li>`);
+  if (tripType === 'single') {
+    single.lines.forEach(line => {
+      breakdown.push(`<li><span>${line.label}</span><span>€${line.amount}</span></li>`);
+    });
+    total = single.total;
   } else {
-    zoneField.style.display = 'none';
-    total = 40;
-    breakdown.push(`<li><span>장보기 동행 (1.5h)</span><span>€${total}</span></li>`);
+    const multTotal = Math.round(single.total * mult);
+    breakdown.push(`<li><span>1회 이동 가격 (${km}km)</span><span>€${single.total}</span></li>`);
+    single.lines.forEach(line => {
+      breakdown.push(`<li><span style="font-size:12px; color:var(--muted);">↳ ${line.label}</span><span style="font-size:12px; color:var(--muted);">€${line.amount}</span></li>`);
+    });
+    breakdown.push(`<li style="border-top:1px solid var(--border); padding-top:8px; margin-top:6px;"><span>${TRIP_LABEL[tripType]} (× ${mult})</span><span>€${multTotal}</span></li>`);
+    breakdown.push(`<li><span style="font-size:12px; color:var(--muted);">↳ 짐 운반 도움 기본 포함</span><span></span></li>`);
+    total = multTotal;
   }
 
-  document.getElementById('ik-price').textContent = `€${total}`;
-  document.getElementById('ik-breakdown').innerHTML = breakdown.join('');
+  // 평균 단가
+  const avgPerKm = (total / km).toFixed(2);
+  breakdown.push(`<li style="border-top:1px solid var(--border); padding-top:8px; margin-top:6px;"><span>평균 단가</span><span>€${avgPerKm}/km · ${km}km 기준</span></li>`);
+
+  document.getElementById('mv-price').textContent = `€${total}`;
+  document.getElementById('mv-breakdown').innerHTML = breakdown.join('');
+  document.getElementById('mv-result-label').textContent =
+    (tripType === 'single' ? '예상 요금 (편도 · 권역 내 기준)' : '예상 요금 (왕복 전체 · 권역 내 기준)');
+
+  // 장거리 경고 (100km 이상)
+  const longWarn = document.getElementById('mv-long-warn');
+  if (km >= 100) {
+    longWarn.style.display = '';
+  } else {
+    longWarn.style.display = 'none';
+  }
+}
+
+// =============================================
+// 장보기 동행 가격 체계 (거리당 단가 — 이사와 동일)
+// =============================================
+// 거리 기준: 이사·운송과 동일한 공식
+//   - 0–10km: €35 (기본료)
+//   - 10–50km: +€1.5/km
+//   - 50km 초과: +€0.8/km
+// 시간 연장 (1.5h 초과): +€10/30분
+// =============================================
+
+function setShKm(km) {
+  document.getElementById('sh-km').value = km;
+  document.querySelectorAll('#calculator [data-content="shop"] .km-quick button').forEach(b => {
+    b.classList.toggle('active', parseInt(b.dataset.km, 10) === km);
+  });
+  calcShop();
+}
+
+function calcShop() {
+  const km = Math.max(1, parseInt(document.getElementById('sh-km').value, 10) || 1);
+  const hours = parseFloat(document.getElementById('sh-hours').value);
+
+  // km preset 활성 표시
+  document.querySelectorAll('#calculator [data-content="shop"] .km-quick button').forEach(b => {
+    b.classList.toggle('active', parseInt(b.dataset.km, 10) === km);
+  });
+
+  // 거리 기반 기본료 (이사와 동일 공식)
+  const dist = calcSinglePrice(km);
+
+  const breakdown = [];
+  dist.lines.forEach(line => {
+    breakdown.push(`<li><span>${line.label}</span><span>€${line.amount}</span></li>`);
+  });
+  let total = dist.total;
+
+  // 시간 연장 (1.5h 기본 포함)
+  if (hours > 1.5) {
+    const halfBlocks = Math.round((hours - 1.5) * 2);
+    const extra = halfBlocks * 10;
+    if (extra > 0) {
+      total += extra;
+      breakdown.push(`<li><span>동행 시간 연장 (+${(hours - 1.5).toFixed(1)}h · 30분당 €10)</span><span>+€${extra}</span></li>`);
+    }
+  }
+
+  document.getElementById('sh-price').textContent = `€${total}`;
+  document.getElementById('sh-breakdown').innerHTML = breakdown.join('');
 }
 
 calcMoving();
-calcIkea();
+calcShop();
 </script>
 
 </body>
