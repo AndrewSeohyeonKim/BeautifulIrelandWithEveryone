@@ -214,8 +214,8 @@ body.page-contact header.hero.subpage::before {
 body.page-airport.subpage-bg-fix header.hero.subpage::before {
   background:
     linear-gradient(135deg, rgba(26,41,66,0.55) 0%, rgba(44,64,96,0.45) 100%),
-    url('../images/heroes/airport.jpg') center/cover no-repeat,
-    #1a2942;
+    url('../images/heroes/airport.jpg') center/cover no-repeat;
+  background-color: #1a2942;
 }
 
 /* TOURS — services/tours.html */
@@ -229,8 +229,8 @@ body.page-tours.subpage-bg-fix header.hero.subpage::before {
 body.page-moving.subpage-bg-fix header.hero.subpage::before {
   background:
     linear-gradient(135deg, rgba(26,41,66,0.55) 0%, rgba(44,64,96,0.45) 100%),
-    url('../images/heroes/moving.jpg') center/cover no-repeat,
-    #1a2942;
+    url('../images/heroes/moving.jpg') center/cover no-repeat;
+  background-color: #1a2942;
 }
 
 /* CUSTOM — services/custom.html (탁트인 보그 로드 = 자유·여행) */
