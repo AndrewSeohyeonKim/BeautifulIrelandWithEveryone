@@ -208,60 +208,67 @@
           <div class="field">
             <label>📍 목적지 / 출발지 (Dublin Airport ↔ 어디?)</label>
             <select id="pk-area" onchange="calcPickup()">
-              <optgroup label="🟢 Zone 0 · 공항 0–10km (€35)">
-                <option value="7">Dublin 9 (D9) — Glasnevin · Drumcondra · Whitehall · Beaumont · Santry · 드럼콘드라</option>
-                <option value="7">Dublin 11 (D11) — Finglas · Dubber · 핑글래스</option>
-                <option value="6">Swords · 스워즈</option>
-                <option value="8">Dublin 3 (D3) — Clontarf · Ballybough · East Wall · 클론타프</option>
-                <option value="8">Dublin 17 (D17) — Coolock · Belcamp · Darndale · 쿨록</option>
-                <option value="9">Dublin 5 (D5) — Raheny · Artane · Killester · Donaghmede · 레이니</option>
-                <option value="9">Malahide · 말라하이드</option>
-                <option value="10" selected>Dublin 15 (D15) — Blanchardstown · Castleknock · Mulhuddart · Clonsilla · 블랜차즈타운</option>
-                <option value="10">Dublin 13 (D13) — Sutton · Howth 서부 · Bayside · Baldoyle · 서튼</option>
+              <optgroup label="🟢 Zone 0 · 0–10km (€35)">
+                <option value="7">Dublin 9</option>
+                <option value="7">Dublin 11</option>
+                <option value="6">Swords</option>
+                <option value="8">Dublin 3</option>
+                <option value="8">Dublin 17</option>
+                <option value="9">Dublin 5</option>
+                <option value="9">Malahide</option>
+                <option value="10" selected>Dublin 15 (Blanchardstown)</option>
+                <option value="10">Dublin 13</option>
               </optgroup>
-              <optgroup label="🟢 Zone 1 · 공항 10–13km (€40)">
-                <option value="11">Dublin 7 (D7) — Phibsborough · Cabra · Smithfield · Stoneybatter · 피브스보로</option>
-                <option value="12">Dublin 1 (D1) — O'Connell · Connolly · IFSC · 시티 센터 북부</option>
-                <option value="12">Howth · 호스</option>
-                <option value="13">Dublin 2 (D2) — Trinity · Temple Bar · Grafton · Grand Canal · 시티 센터 남부</option>
+              <optgroup label="🟢 Zone 1 · 10–13km (€40)">
+                <option value="11">Dublin 7</option>
+                <option value="12">Dublin 1</option>
+                <option value="12">Howth</option>
+                <option value="13">Dublin 2</option>
               </optgroup>
-              <optgroup label="🟢 Zone 2 · 공항 13–17km (€45)">
-                <option value="14">Dublin 4 (D4) — Ballsbridge · Sandymount · Donnybrook · Ringsend · 발스브리지</option>
-                <option value="14">Dublin 8 (D8) — Liberties · Inchicore · Kilmainham · Christ Church · 리버티스</option>
-                <option value="15">Dublin 6 (D6) — Rathmines · Rathgar · Ranelagh · Harold's Cross · 라스마인스</option>
-                <option value="15">Dublin 12 (D12) — Crumlin · Walkinstown · Drimnagh · 크럼린</option>
-                <option value="16">Dublin 6W (D6W) — Templeogue · Terenure · Kimmage · 테레뉴어</option>
-                <option value="16">Dublin 10 (D10) — Ballyfermot · Cherry Orchard · 발리퍼못</option>
-                <option value="17">Dublin 14 (D14) — Dundrum · Churchtown · Goatstown · Clonskeagh · 던드럼</option>
-                <option value="17">Dublin 20 (D20) — Palmerstown · Chapelizod · 팔머스타운</option>
-                <option value="17">Lucan · Leixlip · 루칸</option>
+              <optgroup label="🟢 Zone 2 · 13–17km (€45)">
+                <option value="14">Dublin 4</option>
+                <option value="14">Dublin 8</option>
+                <option value="15">Dublin 6</option>
+                <option value="15">Dublin 12</option>
+                <option value="16">Dublin 6W</option>
+                <option value="16">Dublin 10</option>
+                <option value="17">Dublin 14</option>
+                <option value="17">Dublin 20</option>
+                <option value="17">Lucan</option>
               </optgroup>
-              <optgroup label="🟡 Zone 3 · 공항 17–25km (€55)">
-                <option value="19">Dublin 16 (D16) — Ballinteer · Knocklyon · Rathfarnham 동부 · 노클리언</option>
-                <option value="20">Dublin 18 (D18) — Foxrock · Cabinteely · Sandyford · Stepaside · 샌디포드</option>
-                <option value="20">Dublin 22 (D22) — Clondalkin · Newcastle · Saggart · 클론돌킨</option>
-                <option value="22">Dublin 24 (D24) — Tallaght · Firhouse · 탤러트</option>
-                <option value="24">Dun Laoghaire · Dalkey · 던 레어리</option>
-                <option value="25">Maynooth · Celbridge · 메이누스</option>
+              <optgroup label="🟡 Zone 3 · 17–25km (€55)">
+                <option value="19">Dublin 16</option>
+                <option value="20">Dublin 18</option>
+                <option value="20">Dublin 22</option>
+                <option value="22">Dublin 24</option>
+                <option value="24">Dun Laoghaire</option>
+                <option value="25">Maynooth</option>
               </optgroup>
-              <optgroup label="🟠 Zone 4 · 그레이터 더블린 25–50km (€70~)">
-                <option value="28">Bray · 브레이 (~€73)</option>
-                <option value="32">Greystones · 그레이스톤스 (~€77)</option>
-                <option value="35">Naas · Newbridge · 나스 (~€80)</option>
-                <option value="40">Drogheda · 드로헤다 (~€85)</option>
-                <option value="45">Wicklow Town · 위클로 타운 (~€90)</option>
+              <optgroup label="🟠 Zone 4 · 25–50km (€70~)">
+                <option value="28">Bray</option>
+                <option value="32">Greystones</option>
+                <option value="35">Naas</option>
+                <option value="40">Drogheda</option>
+                <option value="45">Wicklow Town</option>
               </optgroup>
-              <optgroup label="🔴 Zone 5 · 지방 50km+ — 별도 견적">
-                <option value="110">Belfast · 벨파스트 (~€190)</option>
-                <option value="175">Limerick · 리머릭 (~€288)</option>
-                <option value="215">Galway · 골웨이 (~€348)</option>
-                <option value="260">Cork · 코크 (~€415)</option>
-                <option value="290">Killarney · 킬라니 (~€460)</option>
+              <optgroup label="🔴 Zone 5 · 50km+ (별도 견적)">
+                <option value="110">Belfast</option>
+                <option value="175">Limerick</option>
+                <option value="215">Galway</option>
+                <option value="260">Cork</option>
+                <option value="290">Killarney</option>
+              </optgroup>
+              <optgroup label="📮 Eircode로 찾기">
+                <option value="eircode">Eircode 입력 (예: D15 X8XX)</option>
               </optgroup>
               <optgroup label="기타">
                 <option value="other">다른 지역 — 거리 직접 입력</option>
               </optgroup>
             </select>
+            <div id="pk-eircode-row" style="display:none; margin-top:10px;">
+              <input type="text" id="pk-eircode-input" placeholder="예: D15 X8XX" maxlength="8" style="width:100%; padding:11px 13px; border:1.5px solid var(--border); border-radius:8px; font-size:14.5px; font-family:inherit; text-transform:uppercase;" oninput="onEircodeChange()">
+              <div class="hint" id="pk-eircode-hint" style="margin-top:6px;">우편번호 앞 3자리(라우팅 키)로 자동 매핑돼요. 예: <code>D15</code> = Blanchardstown(~10km)</div>
+            </div>
             <div class="hint" id="pk-distance-hint">선택한 지역까지 약 10km</div>
           </div>
         </div>
@@ -435,6 +442,93 @@
 </footer>
 
 <script>
+// =============================================
+// Eircode 라우팅 키(앞 3자리) → 공항까지 km 매핑
+// 아일랜드 139개 라우팅 키 전체 커버
+// =============================================
+const EIRCODE_KM = {
+  // Dublin 시내·외곽 (D01~D24, D6W)
+  'D01': 12, 'D02': 13, 'D03': 8,  'D04': 14, 'D05': 9,  'D06': 15, 'D6W': 16,
+  'D07': 11, 'D08': 14, 'D09': 7,  'D10': 16, 'D11': 7,  'D12': 15, 'D13': 10,
+  'D14': 17, 'D15': 10, 'D16': 19, 'D17': 8,  'D18': 20, 'D20': 17, 'D22': 20, 'D24': 22,
+  // Dublin 카운티 외곽 (K)
+  'K32': 22, 'K34': 32, 'K36': 28, 'K45': 22, 'K56': 80, 'K67': 28, 'K78': 30,
+  // Wicklow (A·Y)
+  'A94': 22, 'A96': 22, 'A98': 28, 'Y14': 50, 'Y21': 32, 'Y25': 75, 'Y34': 100, 'Y35': 115,
+  // Meath·Louth (A)
+  'A75': 70, 'A82': 50, 'A83': 50, 'A84': 65, 'A85': 50, 'A86': 50, 'A91': 50, 'A92': 55,
+  // Kildare (R·R5)
+  'R14': 35, 'R42': 50, 'R45': 35, 'R51': 65, 'R56': 75,
+  // Carlow·Kilkenny (R·W91)
+  'R32': 95, 'R35': 85, 'R93': 120, 'R95': 140, 'W91': 140,
+  // Wexford (X)
+  'X35': 145, 'X42': 95, 'X91': 160,
+  // Waterford (W)
+  'W12': 165, 'W23': 175, 'W34': 165,
+  // Cork (T·P)
+  'T12': 260, 'T23': 265, 'T34': 270, 'T45': 275, 'T56': 230,
+  'P14': 280, 'P17': 330, 'P24': 245, 'P25': 245, 'P31': 340, 'P32': 280,
+  'P36': 210, 'P43': 270, 'P47': 340, 'P51': 290,
+  // Kerry (V·P)
+  'V14': 290, 'V15': 305, 'V23': 285, 'V31': 245,
+  'P56': 305, 'P61': 310, 'P67': 290, 'P72': 285, 'P75': 350, 'P81': 360, 'P85': 340,
+  // Limerick·Clare (V)
+  'V35': 205, 'V42': 215, 'V92': 200, 'V93': 205, 'V94': 200, 'V95': 215,
+  // Tipperary (E)
+  'E25': 210, 'E32': 140, 'E34': 165, 'E45': 150, 'E53': 175, 'E91': 165,
+  // Offaly (A·N)
+  'A41': 80, 'A42': 95, 'A45': 135, 'A63': 80, 'N91': 140,
+  // Westmeath·Longford (N)
+  'N37': 85, 'N39': 85, 'N41': 135, 'A67': 95,
+  // Cavan·Monaghan (H)
+  'H12': 95, 'H14': 105, 'H16': 90, 'H18': 115, 'H23': 135,
+  // Roscommon·Galway (H·F)
+  'H53': 150, 'H54': 175, 'H62': 130, 'H65': 165, 'H71': 195, 'H91': 210,
+  'F26': 250, 'F28': 185, 'F31': 245, 'F35': 310, 'F42': 165, 'F45': 165,
+  // Sligo·Leitrim (C·F)
+  'C15': 165, 'F12': 205, 'F23': 175, 'F91': 215,
+  // Donegal (F)
+  'F52': 225, 'F56': 290, 'F92': 245, 'F93': 270, 'F94': 245
+};
+
+// Eircode 입력 → km 추출
+function getEircodeKm() {
+  const raw = (document.getElementById('pk-eircode-input').value || '').trim().toUpperCase().replace(/\s/g, '');
+  if (raw.length < 3) return null;
+  // D6W는 4자리 키지만 W로 끝나는 특별 케이스 — 앞 3자리는 'D6'+숫자가 아니라 'D6W'
+  if (raw.startsWith('D6W')) return EIRCODE_KM['D6W'];
+  const key = raw.substring(0, 3);
+  return EIRCODE_KM[key] !== undefined ? EIRCODE_KM[key] : null;
+}
+
+// Eircode 입력란 변경 시 힌트 업데이트
+function onEircodeChange() {
+  const raw = (document.getElementById('pk-eircode-input').value || '').trim().toUpperCase().replace(/\s/g, '');
+  const hint = document.getElementById('pk-eircode-hint');
+  if (!raw) {
+    hint.innerHTML = '우편번호 앞 3자리(라우팅 키)로 자동 매핑돼요. 예: <code>D15</code> = Blanchardstown(~10km)';
+    hint.style.color = '';
+    calcPickup();
+    return;
+  }
+  if (raw.length < 3) {
+    hint.innerHTML = '⏳ 처음 3자리를 입력해주세요…';
+    hint.style.color = '#7f8c8d';
+    return;
+  }
+  let key = raw.substring(0, 3);
+  if (raw.startsWith('D6W')) key = 'D6W';
+  const km = EIRCODE_KM[key];
+  if (km !== undefined) {
+    hint.innerHTML = `✓ <strong>${key}</strong> 인식됨 — 공항에서 약 <strong>${km}km</strong>`;
+    hint.style.color = '#16a34a';
+    calcPickup();
+  } else {
+    hint.innerHTML = `⚠️ <strong>${key}</strong> 라우팅 키를 못 찾았어요. 아래 "다른 지역"으로 km 직접 입력 부탁드려요.`;
+    hint.style.color = '#d97706';
+  }
+}
+
 // 거리 기반 Zone 자동 결정 + 가격 계산
 function getZoneAndBase(km) {
   if (km <= 10) return { zone: '0', base: 35 };
@@ -448,13 +542,20 @@ function getZoneAndBase(km) {
 function calcPickup() {
   const areaSel = document.getElementById('pk-area').value;
   const otherRow = document.getElementById('pk-other-row');
+  const eircodeRow = document.getElementById('pk-eircode-row');
   let km;
 
   if (areaSel === 'other') {
     otherRow.style.display = '';
+    if (eircodeRow) eircodeRow.style.display = 'none';
     km = parseInt(document.getElementById('pk-km-manual').value, 10) || 0;
+  } else if (areaSel === 'eircode') {
+    otherRow.style.display = 'none';
+    if (eircodeRow) eircodeRow.style.display = '';
+    km = getEircodeKm() || 0;
   } else {
     otherRow.style.display = 'none';
+    if (eircodeRow) eircodeRow.style.display = 'none';
     km = parseInt(areaSel, 10) || 0;
   }
 
