@@ -532,7 +532,7 @@ section.quick {
   color: var(--text);
   margin-bottom: 16px;
   line-height: 1.85;
-  text-align: left;
+  text-align: center;
   max-width: 680px;
   margin-left: auto;
   margin-right: auto;
@@ -1059,14 +1059,10 @@ body, p, li, td, th, span, h1, h2, h3, h4, h5, h6, a, button,
 }
 
 /* 브랜드 문구·고유명사·복합어 — 절대 줄을 끊지 않음
+   inline 으로 두어야 부모의 text-align(center 등)이 정상 동작함.
    사용 예: <span class="phrase">Classical Music for Everyone</span> */
 .phrase {
   white-space: nowrap;
-  display: inline-block;
-}
-/* 매우 좁은 화면 안전 그물: 그래도 화면 너비를 넘으면 phrase가 통째로 다음 줄로 가도록 */
-@media (max-width: 360px) {
-  .phrase { max-width: 100%; }
 }
 
 /* ============================================================
@@ -1229,3 +1225,30 @@ body, p, li, td, th, span, h1, h2, h3, h4, h5, h6, a, button,
 /* 모바일에서만 끊는 줄바꿈 헬퍼 — 큰 화면에선 줄을 끊지 않음 */
 br.brk-md { display: none; }
 @media (max-width: 480px) { br.brk-md { display: inline; } }
+
+/* ============================================================
+   📊 진짜 표 형태로 유지 (컴팩트) — 모바일에서도 표 그대로
+   tour-pricing-table / compare-table / .price-table.keep-table
+   ============================================================ */
+@media (max-width: 600px) {
+  /* tour-pricing-table — 4열 (지역 / 거리 / 시간 / 가격) */
+  .tour-pricing-table { font-size: 11.5px; }
+  .tour-pricing-table th { padding: 8px 4px !important; font-size: 10.5px !important; line-height: 1.3 !important; }
+  .tour-pricing-table td { padding: 9px 4px !important; line-height: 1.35 !important; font-size: 11.5px !important; }
+  .tour-pricing-table .name { font-size: 11.5px; font-weight: 700; }
+  .tour-pricing-table .num { font-size: 11px; white-space: nowrap; }
+  .tour-pricing-table-wrap { box-shadow: var(--shadow); border-radius: 12px; overflow: hidden; }
+
+  /* compare-table — 3열 (항목 / 투어버스 / Andrew) */
+  .compare-table { font-size: 12px; }
+  .compare-table th { padding: 9px 5px !important; font-size: 11px !important; line-height: 1.3 !important; }
+  .compare-table td { padding: 9px 5px !important; line-height: 1.4 !important; font-size: 12px !important; }
+  .compare-table td:first-child { font-weight: 700; }
+
+  /* airport price-table — 3열 (Zone / 대표 지역 / 가격) */
+  .price-table.keep-table { font-size: 11.5px; }
+  .price-table.keep-table th { padding: 8px 5px !important; font-size: 10.5px !important; line-height: 1.3 !important; text-align: left; }
+  .price-table.keep-table td { padding: 9px 5px !important; line-height: 1.4 !important; font-size: 11.5px !important; }
+  .price-table.keep-table td:first-child { font-weight: 700; white-space: nowrap; }
+  .price-table.keep-table td.price { font-weight: 800; color: var(--accent); white-space: nowrap; }
+}

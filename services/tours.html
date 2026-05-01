@@ -594,13 +594,13 @@
       <p class="lead">지역별 1인 가격 범위 · 행 클릭 시 인원별 상세 가격·코스 확인</p>
     </div>
     <div class="tour-pricing-table-wrap">
-      <table class="tour-pricing-table stack-on-mobile" id="pricing-table">
+      <table class="tour-pricing-table" id="pricing-table">
         <thead>
           <tr>
             <th>지역</th>
             <th style="text-align:center;">📏 거리</th>
             <th style="text-align:center;">⏱️ 시간</th>
-            <th style="text-align:center;">1인 가격 (5인 → 3인)</th>
+            <th style="text-align:center;">1인 가격 (5→3인)</th>
           </tr>
         </thead>
         <tbody id="pricing-tbody"></tbody>
@@ -676,20 +676,20 @@
     <div class="section-title">
       <h2>🚌 투어버스와 뭐가 달라요?</h2>
     </div>
-    <table class="compare-table stack-on-mobile">
+    <table class="compare-table">
       <thead>
         <tr>
           <th>항목</th>
-          <th>투어버스 (Paddywagon 등)</th>
-          <th>Andrew 동행</th>
+          <th>🚌 투어버스</th>
+          <th>🌟 Andrew</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td data-label="항목">언어</td><td data-label="🚌 투어버스">영어</td><td data-label="🌟 Andrew" class="andrew-cell"><strong>한국어</strong></td></tr>
-        <tr><td data-label="항목">탑승 인원</td><td data-label="🚌 투어버스">40+ 명</td><td data-label="🌟 Andrew" class="andrew-cell"><strong>최대 5–6명 (단독)</strong></td></tr>
-        <tr><td data-label="항목">코스 자유도</td><td data-label="🚌 투어버스">고정</td><td data-label="🌟 Andrew" class="andrew-cell"><strong>유연 조정</strong></td></tr>
-        <tr><td data-label="항목">픽업</td><td data-label="🚌 투어버스">시내 1–2곳 집결</td><td data-label="🌟 Andrew" class="andrew-cell"><strong>도어투도어 +€5/인</strong></td></tr>
-        <tr><td data-label="항목">5인 1인당 가격</td><td data-label="🚌 투어버스">€55–80</td><td data-label="🌟 Andrew" class="andrew-cell"><strong>€45–95</strong></td></tr>
+        <tr><td>언어</td><td>영어</td><td class="andrew-cell"><strong>한국어</strong></td></tr>
+        <tr><td>탑승 인원</td><td>40+ 명</td><td class="andrew-cell"><strong>5–6명 단독</strong></td></tr>
+        <tr><td>코스 자유도</td><td>고정</td><td class="andrew-cell"><strong>유연 조정</strong></td></tr>
+        <tr><td>픽업</td><td>시내 집결</td><td class="andrew-cell"><strong>도어투도어 +€5</strong></td></tr>
+        <tr><td>5인 1인당</td><td>€55–80</td><td class="andrew-cell"><strong>€45–95</strong></td></tr>
       </tbody>
     </table>
   </div>
@@ -871,7 +871,6 @@
     <p>날짜·인원·관심 코스를 카톡으로 알려주세요. 함께 일정 짜드립니다.</p>
     <div class="channels">
       <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" style="background:#fee500; color:#3c1e1e; border-color:#fee500; font-weight:800;">💬 카톡 오픈채팅</a>
-      <a href="https://wa.me/[removed]" target="_blank">💬 WhatsApp</a>
       <a href="tel:+[removed]">📞 [removed]</a>
       <a href="mailto:sby05034@gmail.com">✉️ Email</a>
     </div>
@@ -1252,10 +1251,10 @@ TOUR_ORDER.forEach(key => {
   tr.style.cursor = 'pointer';
   tr.onclick = () => openTour(key);
   tr.innerHTML = `
-    <td class="name" data-label="지역">${t.name}</td>
-    <td class="num" data-label="📏 거리">${t.km}km</td>
-    <td class="num" data-label="⏱️ 시간">${t.time}h</td>
-    <td class="num" data-label="💰 1인 (5→3인)">€${t.perPerson[5]}~€${t.perPerson[3]}</td>
+    <td class="name">${t.name}</td>
+    <td class="num">${t.km}km</td>
+    <td class="num">${t.time}h</td>
+    <td class="num">€${t.perPerson[5]}~€${t.perPerson[3]}</td>
   `;
   tbody.appendChild(tr);
 });
