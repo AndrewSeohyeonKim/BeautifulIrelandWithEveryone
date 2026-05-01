@@ -184,6 +184,88 @@ header.hero.subpage .sub {
     linear-gradient(135deg, rgba(26,41,66,0.55) 0%, rgba(44,64,96,0.45) 100%),
     url('../photo1.jpg') center/cover no-repeat;
 }
+
+/* ============================================================
+   PER-PAGE HERO BACKGROUNDS
+   각 페이지 <body>에 page-* 클래스를 부여하면 hero 배경이 바뀜
+   이미지 교체는 이 블록만 수정하면 됨
+   ============================================================ */
+
+/* HOME — index.html  (메인 풀-블리드 hero) */
+body.page-home header.hero::before {
+  background: url('images/wicklow/lough-tay.jpg') center/cover no-repeat;
+}
+
+/* ABOUT — about.html  (root level subpage) */
+body.page-about header.hero.subpage::before {
+  background:
+    linear-gradient(135deg, rgba(26,41,66,0.55) 0%, rgba(44,64,96,0.45) 100%),
+    url('photo1.jpg') center/cover no-repeat;
+}
+
+/* CONTACT — contact.html  (root level subpage) */
+body.page-contact header.hero.subpage::before {
+  background:
+    linear-gradient(135deg, rgba(26,41,66,0.55) 0%, rgba(44,64,96,0.45) 100%),
+    url('images/wicklow/avoca-mills.jpg') center/cover no-repeat;
+}
+
+/* AIRPORT — services/airport.html */
+body.page-airport.subpage-bg-fix header.hero.subpage::before {
+  background:
+    linear-gradient(135deg, rgba(26,41,66,0.55) 0%, rgba(44,64,96,0.45) 100%),
+    url('../images/heroes/airport.jpg') center/cover no-repeat,
+    #1a2942;
+}
+
+/* TOURS — services/tours.html */
+body.page-tours.subpage-bg-fix header.hero.subpage::before {
+  background:
+    linear-gradient(135deg, rgba(26,41,66,0.5) 0%, rgba(44,64,96,0.4) 100%),
+    url('../images/wicklow/glendalough.jpg') center/cover no-repeat;
+}
+
+/* MOVING — services/moving.html */
+body.page-moving.subpage-bg-fix header.hero.subpage::before {
+  background:
+    linear-gradient(135deg, rgba(26,41,66,0.55) 0%, rgba(44,64,96,0.45) 100%),
+    url('../images/heroes/moving.jpg') center/cover no-repeat,
+    #1a2942;
+}
+
+/* CUSTOM — services/custom.html (탁트인 보그 로드 = 자유·여행) */
+body.page-custom.subpage-bg-fix header.hero.subpage::before {
+  background:
+    linear-gradient(135deg, rgba(26,41,66,0.55) 0%, rgba(44,64,96,0.45) 100%),
+    url('../images/connemara/bog-road.jpg') center/cover no-repeat;
+}
+
+/* ============================================================
+   LOGO IN NAV — SVG 아이콘 + "Beautiful Ireland with Everyone"
+   ============================================================ */
+nav.topnav .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+nav.topnav .logo img.logo-img {
+  height: 32px;
+  width: auto;
+  display: inline-block;
+}
+nav.topnav .logo .logo-name {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+}
+@media (max-width: 600px) {
+  nav.topnav .logo img.logo-img { height: 28px; }
+  nav.topnav .logo .logo-name { font-size: 13.5px; }
+}
+@media (max-width: 380px) {
+  nav.topnav .logo .logo-name .with-everyone { display: none; }
+}
 header.hero .hero-content {
   position: relative;
   z-index: 3;

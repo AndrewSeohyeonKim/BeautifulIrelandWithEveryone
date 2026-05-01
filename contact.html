@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>💬 문의 & 예약 | Andrew의 아일랜드 동행</title>
 <meta name="description" content="더블린 한국어 차량 동행 서비스 문의. 카톡 오픈채팅·WhatsApp·전화·이메일 모든 채널 안내.">
+<meta property="og:title" content="💬 문의 & 예약 — 아일랜드 동행">
+<meta property="og:description" content="카톡 오픈채팅·WhatsApp·전화·이메일 모든 채널 안내.">
+<meta property="og:image" content="images/logo/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="images/logo/icon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <script defer src="scripts.js"></script>
@@ -45,11 +51,14 @@
   .info-block .label { font-size:12px; color:var(--accent); font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-top:18px; margin-bottom:6px; }
 </style>
 </head>
-<body>
+<body class="page-contact">
 
 <nav class="topnav">
   <div class="nav-inner">
-    <a href="index.html" class="logo">🇮🇪 <span class="accent">Beautiful Ireland</span> with Everyone</a>
+    <a href="index.html" class="logo">
+      <img src="images/logo/icon.svg" alt="아일랜드 동행" class="logo-img">
+      <span class="logo-name"><span class="accent">Beautiful Ireland</span> <span class="with-everyone">with Everyone</span></span>
+    </a>
     <button class="ham" onclick="document.querySelector('.menu').classList.toggle('open')">≡</button>
     <div class="menu">
       <a href="about.html">👤 소개</a>

@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>👤 Andrew 소개 · Classical Music for Everyone | 아일랜드 동행</title>
 <meta name="description" content="서현 Andrew · 더블린 4년차 거주, 유럽 운전 6년+, 무료 워킹투어 운영자. 음악 봉사 프로젝트 Classical Music for Everyone.">
+<meta property="og:title" content="👤 Andrew 소개 — 아일랜드 동행">
+<meta property="og:description" content="서현 Andrew · 더블린 4년차 거주, 유럽 운전 6년+, 무료 워킹투어 운영자.">
+<meta property="og:image" content="images/logo/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="images/logo/icon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <script defer src="scripts.js"></script>
@@ -41,11 +47,14 @@
   .spec .lbl { font-size:12px; color:var(--muted); }
 </style>
 </head>
-<body>
+<body class="page-about">
 
 <nav class="topnav">
   <div class="nav-inner">
-    <a href="index.html" class="logo">🇮🇪 <span class="accent">Beautiful Ireland</span> with Everyone</a>
+    <a href="index.html" class="logo">
+      <img src="images/logo/icon.svg" alt="아일랜드 동행" class="logo-img">
+      <span class="logo-name"><span class="accent">Beautiful Ireland</span> <span class="with-everyone">with Everyone</span></span>
+    </a>
     <button class="ham" onclick="document.querySelector('.menu').classList.toggle('open')">≡</button>
     <div class="menu">
       <a href="about.html" class="current">👤 소개</a>

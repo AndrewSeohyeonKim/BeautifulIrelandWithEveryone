@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🏠 이사 · IKEA·장보기 동행 | Andrew의 아일랜드 동행</title>
 <meta name="description" content="더블린 이사·IKEA·가구 픽업·장보기 동행. 7인승 MPV 좌석 접으면 1,800L 적재. 1–2인 소규모 이사 €35부터 (거리당 정찰가), 반복 이동 이사·장보기 동행 가능.">
+<meta property="og:title" content="🏠 이사·운송·IKEA — 아일랜드 동행">
+<meta property="og:description" content="더블린 이사·IKEA·가구 픽업·장보기 동행. €35부터.">
+<meta property="og:image" content="../images/logo/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="apple-touch-icon" href="../images/logo/icon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
 <script defer src="../scripts.js"></script>
@@ -135,11 +141,14 @@
   .price-table .price { color: var(--accent); font-weight:700; text-align:right; }
 </style>
 </head>
-<body class="subpage-bg-fix">
+<body class="subpage-bg-fix page-moving">
 
 <nav class="topnav">
   <div class="nav-inner">
-    <a href="../index.html" class="logo">🇮🇪 <span class="accent">Beautiful Ireland</span> with Everyone</a>
+    <a href="../index.html" class="logo">
+      <img src="../images/logo/icon.svg" alt="아일랜드 동행" class="logo-img">
+      <span class="logo-name"><span class="accent">Beautiful Ireland</span> <span class="with-everyone">with Everyone</span></span>
+    </a>
     <button class="ham" onclick="document.querySelector('.menu').classList.toggle('open')">≡</button>
     <div class="menu">
       <a href="../about.html">👤 소개</a>
@@ -339,7 +348,8 @@
                 <button type="button" data-km="20" onclick="setMvKm(20)">20km</button>
                 <button type="button" data-km="30" onclick="setMvKm(30)">30km</button>
                 <button type="button" data-km="50" onclick="setMvKm(50)">50km</button>
-                <button type="button" data-km="100" onclick="setMvKm(100)">100km+ (별도 문의)</button>
+                <button type="button" data-km="100" onclick="setMvKm(100)">100km</button>
+                <button type="button" data-km="101" onclick="setMvKm(150)">100km+ (별도 문의)</button>
               </div>
               <input type="number" id="mv-km" value="15" min="1" max="350" step="1" oninput="calcMoving()">
               <div class="hint">예: Blanchardstown↔시내 12km · Blanchardstown↔Maynooth 25km · 더블린 시내권 대부분 5–20km</div>
@@ -758,10 +768,20 @@ function calcMoving() {
   const helpSmall = document.getElementById('mv-help-small');
   const helpIncluded = document.getElementById('mv-help-included');
 
-  // km preset 활성 표시 (100km+ 버튼은 km>=100이면 활성)
-  document.querySelectorAll('.km-quick button').forEach(b => {
+  // km preset 활성 표시
+  //   - "100km" 버튼(data-km=100): km이 정확히 100일 때만 활성
+  //   - "100km+ (별도 문의)" 버튼(data-km=101): km > 100 일 때 활성
+  //   - 그 외 버튼: data-km과 km이 일치할 때 활성
+  document.querySelectorAll('#calculator [data-content="moving"] .km-quick button').forEach(b => {
     const btnKm = parseInt(b.dataset.km, 10);
-    const isActive = (btnKm === 100) ? (km >= 100) : (btnKm === km);
+    let isActive;
+    if (btnKm === 101) {
+      isActive = km > 100;
+    } else if (btnKm === 100) {
+      isActive = km === 100;
+    } else {
+      isActive = btnKm === km;
+    }
     b.classList.toggle('active', isActive);
   });
 
