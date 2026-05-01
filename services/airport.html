@@ -208,52 +208,58 @@
           <div class="field">
             <label>📍 목적지 / 출발지 (Dublin Airport ↔ 어디?)</label>
             <select id="pk-area" onchange="calcPickup()">
-              <optgroup label="Dublin 시내 (Zone 0 · €35)">
-                <option value="0|10">Dublin 1 (D1) — O'Connell · Connolly · IFSC 북쪽</option>
-                <option value="0|12">Dublin 2 (D2) — Trinity · Temple Bar · Grand Canal · Government</option>
-                <option value="0|10">Dublin 3 (D3) — Clontarf · Ballybough · East Wall</option>
-                <option value="0|14">Dublin 4 (D4) — Ballsbridge · Sandymount · Donnybrook · Ringsend</option>
-                <option value="0|10">Dublin 7 (D7) — Phibsborough · Cabra · Smithfield · Stoneybatter</option>
-                <option value="0|13">Dublin 8 (D8) — Liberties · Inchicore · Kilmainham · Christ Church</option>
+              <optgroup label="🟢 Zone 0 · 공항 0–10km (€35)">
+                <option value="7">Dublin 9 (D9) — Glasnevin · Drumcondra · Whitehall · Beaumont · Santry · 드럼콘드라</option>
+                <option value="7">Dublin 11 (D11) — Finglas · Dubber · 핑글래스</option>
+                <option value="6">Swords · 스워즈</option>
+                <option value="8">Dublin 3 (D3) — Clontarf · Ballybough · East Wall · 클론타프</option>
+                <option value="8">Dublin 17 (D17) — Coolock · Belcamp · Darndale · 쿨록</option>
+                <option value="9">Dublin 5 (D5) — Raheny · Artane · Killester · Donaghmede · 레이니</option>
+                <option value="9">Malahide · 말라하이드</option>
+                <option value="10" selected>Dublin 15 (D15) — Blanchardstown · Castleknock · Mulhuddart · Clonsilla · 블랜차즈타운</option>
+                <option value="10">Dublin 13 (D13) — Sutton · Howth 서부 · Bayside · Baldoyle · 서튼</option>
               </optgroup>
-              <optgroup label="Greater Dublin (Zone 1 · €50)">
-                <option value="1|15">Dublin 5 (D5) — Raheny · Artane · Killester · Donaghmede</option>
-                <option value="1|16">Dublin 6 (D6) — Rathmines · Rathgar · Terenure · Harold's Cross</option>
-                <option value="1|18">Dublin 6W (D6W) — Templeogue · Kimmage · Crumlin West</option>
-                <option value="1|8">Dublin 9 (D9) — Glasnevin · Drumcondra · Whitehall · Beaumont · Santry</option>
-                <option value="1|16">Dublin 10 (D10) — Ballyfermot · Cherry Orchard</option>
-                <option value="1|10">Dublin 11 (D11) — Finglas · Dubber</option>
-                <option value="1|15">Dublin 12 (D12) — Crumlin · Walkinstown · Drimnagh</option>
-                <option value="1|18">Dublin 13 (D13) — Sutton · Howth · Bayside · Baldoyle</option>
-                <option value="1|18">Dublin 14 (D14) — Dundrum · Churchtown · Goatstown · Clonskeagh</option>
-                <option value="1|15">Dublin 15 (D15) — Blanchardstown · Castleknock · Mulhuddart · Clonsilla</option>
-                <option value="1|22">Dublin 16 (D16) — Ballinteer · Knocklyon · Rathfarnham 동부</option>
-                <option value="1|10">Dublin 17 (D17) — Coolock · Belcamp · Darndale · Priorswood</option>
-                <option value="1|22">Dublin 18 (D18) — Foxrock · Cabinteely · Sandyford · Stepaside · Carrickmines</option>
-                <option value="1|15">Dublin 20 (D20) — Palmerstown · Chapelizod</option>
-                <option value="1|18">Dublin 22 (D22) — Clondalkin · Newcastle · Saggart</option>
-                <option value="1|22">Dublin 24 (D24) — Tallaght · Firhouse</option>
-                <option value="1|6">Swords · Malahide (북쪽 외곽)</option>
-                <option value="1|18">Lucan · Leixlip (서쪽 외곽)</option>
-                <option value="1|24">Dun Laoghaire · Dalkey (남쪽 해안)</option>
+              <optgroup label="🟢 Zone 1 · 공항 10–13km (€40)">
+                <option value="11">Dublin 7 (D7) — Phibsborough · Cabra · Smithfield · Stoneybatter · 피브스보로</option>
+                <option value="12">Dublin 1 (D1) — O'Connell · Connolly · IFSC · 시티 센터 북부</option>
+                <option value="12">Howth · 호스</option>
+                <option value="13">Dublin 2 (D2) — Trinity · Temple Bar · Grafton · Grand Canal · 시티 센터 남부</option>
               </optgroup>
-              <optgroup label="수도권 외곽 (Zone 2 · €75)">
-                <option value="2|28">Bray · Greystones (Wicklow 북부)</option>
-                <option value="2|30">Maynooth · Celbridge (Kildare 동부)</option>
-                <option value="2|45">Naas · Newbridge (Kildare)</option>
-                <option value="2|45">Drogheda (Louth)</option>
-                <option value="2|55">Navan · Trim (Meath)</option>
+              <optgroup label="🟢 Zone 2 · 공항 13–17km (€45)">
+                <option value="14">Dublin 4 (D4) — Ballsbridge · Sandymount · Donnybrook · Ringsend · 발스브리지</option>
+                <option value="14">Dublin 8 (D8) — Liberties · Inchicore · Kilmainham · Christ Church · 리버티스</option>
+                <option value="15">Dublin 6 (D6) — Rathmines · Rathgar · Ranelagh · Harold's Cross · 라스마인스</option>
+                <option value="15">Dublin 12 (D12) — Crumlin · Walkinstown · Drimnagh · 크럼린</option>
+                <option value="16">Dublin 6W (D6W) — Templeogue · Terenure · Kimmage · 테레뉴어</option>
+                <option value="16">Dublin 10 (D10) — Ballyfermot · Cherry Orchard · 발리퍼못</option>
+                <option value="17">Dublin 14 (D14) — Dundrum · Churchtown · Goatstown · Clonskeagh · 던드럼</option>
+                <option value="17">Dublin 20 (D20) — Palmerstown · Chapelizod · 팔머스타운</option>
+                <option value="17">Lucan · Leixlip · 루칸</option>
               </optgroup>
-              <optgroup label="장거리 (Zone 3 · €110~)">
-                <option value="3|58">Wicklow Town · Arklow</option>
-                <option value="3|110">Belfast (북아일랜드)</option>
-                <option value="3|175">Limerick</option>
-                <option value="3|210">Galway</option>
-                <option value="3|265">Cork</option>
-                <option value="3|290">Killarney (Kerry)</option>
+              <optgroup label="🟡 Zone 3 · 공항 17–25km (€55)">
+                <option value="19">Dublin 16 (D16) — Ballinteer · Knocklyon · Rathfarnham 동부 · 노클리언</option>
+                <option value="20">Dublin 18 (D18) — Foxrock · Cabinteely · Sandyford · Stepaside · 샌디포드</option>
+                <option value="20">Dublin 22 (D22) — Clondalkin · Newcastle · Saggart · 클론돌킨</option>
+                <option value="22">Dublin 24 (D24) — Tallaght · Firhouse · 탤러트</option>
+                <option value="24">Dun Laoghaire · Dalkey · 던 레어리</option>
+                <option value="25">Maynooth · Celbridge · 메이누스</option>
               </optgroup>
-              <optgroup label="기타 — 거리 직접 입력">
-                <option value="other|0">다른 지역 (수동 입력)</option>
+              <optgroup label="🟠 Zone 4 · 그레이터 더블린 25–50km (€70~)">
+                <option value="28">Bray · 브레이 (~€73)</option>
+                <option value="32">Greystones · 그레이스톤스 (~€77)</option>
+                <option value="35">Naas · Newbridge · 나스 (~€80)</option>
+                <option value="40">Drogheda · 드로헤다 (~€85)</option>
+                <option value="45">Wicklow Town · 위클로 타운 (~€90)</option>
+              </optgroup>
+              <optgroup label="🔴 Zone 5 · 지방 50km+ — 별도 견적">
+                <option value="110">Belfast · 벨파스트 (~€190)</option>
+                <option value="175">Limerick · 리머릭 (~€288)</option>
+                <option value="215">Galway · 골웨이 (~€348)</option>
+                <option value="260">Cork · 코크 (~€415)</option>
+                <option value="290">Killarney · 킬라니 (~€460)</option>
+              </optgroup>
+              <optgroup label="기타">
+                <option value="other">다른 지역 — 거리 직접 입력</option>
               </optgroup>
             </select>
             <div class="hint" id="pk-distance-hint">선택한 지역까지 약 10km</div>
@@ -334,13 +340,15 @@
     <div style="max-width:700px; margin:0 auto; overflow-x:auto;">
       <table class="price-table">
         <thead>
-          <tr><th>구간</th><th>1–4인</th><th>5–6인</th></tr>
+          <tr><th>Zone (공항 거리)</th><th>대표 지역</th><th>기본 가격</th></tr>
         </thead>
         <tbody>
-          <tr><td>Zone 0 — Dublin 시내</td><td>€35</td><td>€45</td></tr>
-          <tr><td>Zone 1 — Greater Dublin</td><td>€45–55</td><td>€55–65</td></tr>
-          <tr><td>Zone 2 — 50–80km권 (Drogheda·Maynooth 등)</td><td>€65–85</td><td>€75–95</td></tr>
-          <tr><td>Zone 3 — 100km+ (Wicklow·Carlow 등)</td><td>€95–130</td><td>€110–145</td></tr>
+          <tr><td>🟢 Zone 0 · 0–10 km</td><td>D15·D11·D9·D3·D5·D17·D13·Swords·Malahide·공항 인근</td><td>€35</td></tr>
+          <tr><td>🟢 Zone 1 · 10–13 km</td><td>D1·D2·D7·Howth·시내 중심부</td><td>€40</td></tr>
+          <tr><td>🟢 Zone 2 · 13–17 km</td><td>D4·D6·D6W·D8·D10·D12·D14·D20·Lucan</td><td>€45</td></tr>
+          <tr><td>🟡 Zone 3 · 17–25 km</td><td>D16·D18·D22·D24·Tallaght·Maynooth·Dun Laoghaire</td><td>€55</td></tr>
+          <tr><td>🟠 Zone 4 · 25–50 km</td><td>Bray·Greystones·Naas·Drogheda·Wicklow Town</td><td>€70 + (km−25)</td></tr>
+          <tr><td>🔴 Zone 5 · 50 km+</td><td>Belfast·Limerick·Galway·Cork·Killarney</td><td>€100 + (km−50)×1.5 (별도 견적)</td></tr>
         </tbody>
       </table>
       <p style="font-size:12px; color:var(--muted); margin-top:14px; text-align:center;">
@@ -427,24 +435,34 @@
 </footer>
 
 <script>
-const ZONE_BASE = { '0':35, '1':50, '2':75, '3':110 };
+// 거리 기반 Zone 자동 결정 + 가격 계산
+function getZoneAndBase(km) {
+  if (km <= 10) return { zone: '0', base: 35 };
+  if (km <= 13) return { zone: '1', base: 40 };
+  if (km <= 17) return { zone: '2', base: 45 };
+  if (km <= 25) return { zone: '3', base: 55 };
+  if (km <= 50) return { zone: '4', base: 70 + (km - 25) };
+  return { zone: '5', base: 100 + Math.round((km - 50) * 1.5) };
+}
 
 function calcPickup() {
   const areaSel = document.getElementById('pk-area').value;
-  const [zoneRaw, kmRaw] = areaSel.split('|');
   const otherRow = document.getElementById('pk-other-row');
-  let zone = zoneRaw, km = parseInt(kmRaw, 10);
+  let km;
 
-  if (zoneRaw === 'other') {
+  if (areaSel === 'other') {
     otherRow.style.display = '';
     km = parseInt(document.getElementById('pk-km-manual').value, 10) || 0;
-    if (km <= 15) zone = '0';
-    else if (km <= 35) zone = '1';
-    else if (km <= 80) zone = '2';
-    else zone = '3';
   } else {
     otherRow.style.display = 'none';
+    km = parseInt(areaSel, 10) || 0;
   }
+
+  // 거리 힌트 업데이트
+  const hintEl = document.getElementById('pk-distance-hint');
+  if (hintEl) hintEl.textContent = `공항에서 약 ${km}km`;
+
+  const { zone, base: baseVal } = getZoneAndBase(km);
 
   const direction = document.getElementById('pk-direction').value; // 'arrival' | 'departure'
   const people = parseInt(document.getElementById('pk-people').value, 10);
@@ -470,11 +488,11 @@ function calcPickup() {
     checkinChk.disabled = false;
   }
 
-  let base = ZONE_BASE[zone] || 35;
+  let base = baseVal;
   let extras = 0;
   const breakdown = [];
   const dirLabel = direction === 'arrival' ? '도착 픽업' : '출발 드랍';
-  breakdown.push(`<li><span>기본 (${dirLabel}, Zone ${zone}, ~${km}km)</span><span>€${base}</span></li>`);
+  breakdown.push(`<li><span>${dirLabel} · Zone ${zone} · ${km}km</span><span>€${base}</span></li>`);
 
   if (people >= 5) {
     extras += 10;
@@ -485,14 +503,9 @@ function calcPickup() {
     breakdown.push(`<li><span>캐리어 5+ 추가</span><span>+€5</span></li>`);
   }
 
-  // 거리 가산 (Zone 외 기타)
-  if (zone === '3' && km > 100) {
-    const over = Math.max(0, km - 100);
-    const surcharge = Math.round(over * 1.2);
-    if (surcharge > 0) {
-      extras += surcharge;
-      breakdown.push(`<li><span>장거리 추가 (€1.2/km × ${over}km)</span><span>+€${surcharge}</span></li>`);
-    }
+  // Zone 5 (50km+)는 별도 견적 안내
+  if (zone === '5') {
+    breakdown.push(`<li style="color:var(--accent); font-size:12.5px;"><span>※ 50km+ 장거리는 카톡으로 별도 협의</span><span></span></li>`);
   }
 
   // Add-on services
