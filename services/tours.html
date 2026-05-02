@@ -893,17 +893,32 @@ const OPEN_TRIPS = [
     id: 'trip-2026-05-03',
     date: '2026-05-03',                  // YYYY-MM-DD (지난 날짜는 자동 숨김)
     dateDisplay: '5월 3일 (일)',
-    course: '🌤️ 일기예보 기반 즉석 코스',
-    courseEn: 'Weather-based Spontaneous Tour',
-    description: '당일 아침 일기예보 확인 후 최적의 코스로 출발 — 맑으면 해안(모허·코즈웨이), 흐리면 산·유적(위클로·뉴그레인지) 코스로 유연하게 결정.',
+    course: '🌿 위클로 (Wicklow) 당일 동행',
+    courseEn: 'Wicklow Day Trip',
+    description: '아일랜드의 정원이라 불리는 위클로 — 글렌달록 호수·수도원 유적, 샐리 갭, 러프 테이 등 산악 드라이브와 빙하 호수 풍경을 함께 둘러봅니다.',
     capacity: 5,
-    booked: 2,
+    booked: 3,
     status: 'confirmed',
-    priceMin: 50,                        // 5인 만석 + 가까운 코스 기준
-    priceMax: 95,                        // 3인 + 먼 코스 기준
-    priceNote: '코스·인원에 따라 변동',
+    pricePerPerson: 40,                  // 1인당 €40 확정
+    priceNote: '확정 금액',
     meetingPoint: 'Blanchardstown SC',
-    meetingTime: '오전 6:30',
+    meetingTime: '오전 9:00',
+    extraNote: '도어투도어 픽업·드랍 각 +€5/인'
+  },
+  {
+    id: 'trip-2026-05-16',
+    date: '2026-05-16',                  // YYYY-MM-DD (지난 날짜는 자동 숨김)
+    dateDisplay: '5월 16일 (토)',
+    course: '⛪ 성모성월 성지순례',
+    courseEn: 'Marian Pilgrimage — Knock · Ballintubber · Galway · Kylemore',
+    description: '성모성월을 맞이하여 세계적인 성모발현 성지인 Knock(녹) Shrine, St.Patrick이 세운 성당이 있던 자리에 세워진 Ballintubber Abbey, 아일랜드에서 가장 큰 성당인 골웨이 대성당, 그리고 아름다운 호수 옆에 자리한 Kylemore Abbey를 돌고 오는 일정입니다.',
+    capacity: 5,
+    booked: 1,
+    status: 'recruiting',
+    pricePerPerson: 65,                  // 예상 참가비 €65
+    priceNote: '식비·입장료 제외',
+    meetingPoint: 'Blanchardstown SC',
+    meetingTime: '오전 6:00',
     extraNote: '도어투도어 픽업·드랍 각 +€5/인'
   }
 ];
