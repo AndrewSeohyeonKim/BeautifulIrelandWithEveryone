@@ -72,6 +72,7 @@ nav.topnav .logo .accent { color: var(--accent); }
 nav.topnav .menu {
   display: flex;
   gap: 22px;
+  align-items: center;
 }
 nav.topnav .menu a {
   color: rgba(255,255,255,0.85);
@@ -79,6 +80,9 @@ nav.topnav .menu a {
   font-size: 14px;
   font-weight: 500;
   transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
 }
 nav.topnav .menu a:hover,
 nav.topnav .menu a.current { color: var(--accent); }
