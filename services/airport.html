@@ -311,6 +311,17 @@
           </div>
         </div>
 
+        <div class="row single">
+          <div class="field">
+            <label>🕐 도착·출발 시간대</label>
+            <select id="pk-time" onchange="calcPickup()">
+              <option value="day" selected>주간 (06:00–23:00)</option>
+              <option value="night">야간 (23:00–06:00) · +€10 할증</option>
+            </select>
+            <div class="hint">야간(23시–06시) 운행은 €10 할증이 적용됩니다</div>
+          </div>
+        </div>
+
         <div class="addon-options">
           <div style="font-size:12.5px; font-weight:700; color:var(--primary); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px;">필요시 추가 서비스 (선택)</div>
           <label class="addon-row" id="pk-row-gate">
@@ -403,8 +414,22 @@
     <div class="faq-item" onclick="this.classList.toggle('open')">
       <div class="faq-q">결제는 어떻게 하나요?</div>
       <div class="faq-a">
-        <strong>유로:</strong> Revolut 송금 / <strong>원화:</strong> 한국 계좌이체. 카드 결제는 받지 않습니다.
-        예약 확정 시 50% 선결제 또는 도착 당일 일괄 결제 모두 가능합니다.
+        <strong>📌 결제 방식:</strong> 예약 시 50% 예약금(선결제), 서비스 완료 후 나머지 50%를 정산합니다.<br><br>
+        <strong>💳 결제 수단:</strong> 유로는 Revolut 송금, 원화는 한국 계좌이체. 카드 결제는 받지 않습니다.
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">취소·환불 정책은 어떻게 되나요?</div>
+      <div class="faq-a">
+        예약금 기준 환불 정책입니다.
+        <ul style="margin:8px 0; padding-left:24px;">
+          <li><strong>48시간 이전 취소</strong> → 예약금 <strong>전액 환불</strong></li>
+          <li><strong>전날 취소</strong> (24–48시간 전) → 예약금의 <strong>50% 환불</strong></li>
+          <li><strong>당일 취소</strong> → <strong>환불 불가</strong> (차량·일정 확보 완료 상태)</li>
+        </ul>
+        <strong>✈️ 비행 지연·취소</strong>는 위 정책과 별개로, 기존 항공편이 출발지에서 출발하기 전까지 알려주시면 무료 변경/취소 가능합니다.<br><br>
+        <strong>💸 환급 방식:</strong> 환불금은 받은 경로(Revolut·한국 계좌이체)로 영업일 기준 2–3일 내 반환해 드립니다.
       </div>
     </div>
 
@@ -607,6 +632,13 @@ function calcPickup() {
     breakdown.push(`<li><span>캐리어 5+ 추가</span><span>+€5</span></li>`);
   }
 
+  // 야간 할증 (23–06시)
+  const isNight = document.getElementById('pk-time').value === 'night';
+  if (isNight) {
+    extras += 10;
+    breakdown.push(`<li><span>🌙 야간 할증 (23–06시)</span><span>+€10</span></li>`);
+  }
+
   // Zone 5 (50km+)는 별도 견적 안내
   if (zone === '5') {
     breakdown.push(`<li style="color:var(--accent); font-size:12.5px;"><span>※ 50km+ 장거리는 카톡으로 별도 협의</span><span></span></li>`);
@@ -677,6 +709,7 @@ function inquirePickup() {
   const price = document.getElementById('pk-price').textContent;
   const gate = document.getElementById('pk-addon-gate').checked;
   const checkin = document.getElementById('pk-addon-checkin').checked;
+  const night = document.getElementById('pk-time').value === 'night';
 
   const lines = [
     '안녕하세요! 공항 픽업·드랍 문의드립니다.',
@@ -684,6 +717,7 @@ function inquirePickup() {
     `📍 ${dirLabel}: ${destText}`,
     `👥 인원: ${people}명 · 🧳 캐리어: ${bags}개`
   ];
+  if (night) lines.push('🌙 야간(23–06시) 운행 +€10');
   if (gate) lines.push('🛬 게이트 앞 마중·에스코트 포함');
   if (checkin) lines.push('🛫 체크인·보안검색 안내 포함');
   lines.push(`💰 예상 가격: ${price}`);
