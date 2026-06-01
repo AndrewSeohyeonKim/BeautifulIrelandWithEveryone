@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🌿 당일치기 로드트립 (16개 지역) | Andrew의 아일랜드 동행</title>
-<meta name="description" content="아일랜드 16개 지역 당일치기 로드트립. 모허·딩글·코네마라·자이언트 코즈웨이 등. 친구처럼 함께, 투어버스 가격대.">
+<meta name="description" content="아일랜드 16개 지역 당일치기 로드트립. 모허·딩글·코네마라·자이언트 코즈웨이 등. 친구처럼 함께, 차 한 대 단독 동행.">
 <meta property="og:title" content="🌿 당일치기 로드트립 — 아일랜드 동행">
 <meta property="og:description" content="아일랜드 16개 지역 1일 동행. 모허·딩글·코네마라·자이언트 코즈웨이.">
 <meta property="og:image" content="https://andrewseohyeonkim.github.io/BeutifulIrelandWithEveryone/images/logo/og-image.jpg?v=20260501">
@@ -503,7 +503,7 @@
     </div>
     <h1><span class="phrase">당일치기 로드트립</span></h1>
     <p class="tagline"><span class="phrase">아일랜드 자연·숨겨진 보물을</span> <span class="phrase">모두에게</span></p>
-    <p class="sub"><span class="phrase">투어버스 가격대로</span> <span class="phrase">친구와 함께 떠나는</span> <span class="phrase">자유로운 1일 여행</span></p>
+    <p class="sub"><span class="phrase">차 한 대 단독으로</span> <span class="phrase">친구와 함께 떠나는</span> <span class="phrase">자유로운 1일 여행</span></p>
     <div class="cta" style="margin-top:22px;">
       <a href="#ireland-map">🗺️ 코스 둘러보기</a>
       <a href="#calculator" class="outline">🧮 가격 계산하기</a>
@@ -595,23 +595,23 @@
   <div class="container">
     <div class="section-title">
       <h2>💰 한눈에 보는 가격 비교</h2>
-      <p class="lead">지역별 1인 가격 범위 · 행 클릭 시 인원별 상세 가격·코스 확인</p>
+      <p class="lead">투어별 고정 총액 + 1인 부담(4인 기준) · 행 클릭 시 인원별·코스 상세</p>
     </div>
     <div class="tour-pricing-table-wrap">
       <table class="tour-pricing-table" id="pricing-table">
         <thead>
           <tr>
-            <th>지역</th>
-            <th style="text-align:center;">📏 거리</th>
-            <th style="text-align:center;">⏱️ 시간</th>
-            <th style="text-align:center;">1인 가격 (5→3인)</th>
+            <th>코스</th>
+            <th style="text-align:center;">⏱️ 일정</th>
+            <th style="text-align:center;">투어 총액</th>
+            <th style="text-align:center;">1인 (4인 기준)</th>
           </tr>
         </thead>
         <tbody id="pricing-tbody"></tbody>
       </table>
     </div>
     <p style="font-size:12.5px; color:var(--muted); text-align:center; margin-top:14px;">
-      * 가격은 기본 코스 기준. 인원별 정확한 가격·변형 코스(B·C 등)는 행 클릭 시 모달에서 확인.
+      * 총액은 인원과 무관한 고정가예요 — 인원이 많을수록 1인 부담이 줄어듭니다. 변형 코스(B·C)·인원별 상세는 행 클릭.
     </p>
   </div>
 </section>
@@ -633,7 +633,7 @@
           </div>
           <div class="field">
             <label>👥 인원 (3–5인)</label>
-            <input type="number" id="tr-people" value="5" min="3" max="5" step="1" oninput="calcTour()">
+            <input type="number" id="tr-people" value="4" min="3" max="5" step="1" oninput="calcTour()">
             <div class="hint">인원이 많을수록 1인당 가격 ↓</div>
           </div>
         </div>
@@ -651,11 +651,12 @@
         </div>
 
         <div class="result-panel">
-          <div class="result-label">예상 1인 가격 <span style="font-weight:500; color:var(--muted); font-size:12px;">(코스 옵션별 최저 ~ 최고)</span></div>
-          <div class="result-price" id="tr-perperson">€45</div>
+          <div class="result-label">투어 총액 <span style="font-weight:500; color:var(--muted); font-size:12px;">(인원과 무관한 고정가)</span></div>
+          <div class="result-price" id="tr-total">€220</div>
           <div class="result-sub">
-            그룹 합계 <strong id="tr-total" style="color:var(--primary)">€225</strong>
+            1인 <strong id="tr-perperson" style="color:var(--primary)">€55</strong> <span style="color:var(--muted);">(<span id="tr-people-label">4</span>인 기준)</span>
           </div>
+          <div class="result-sub" id="tr-five-note" style="font-size:12.5px; color:var(--muted); margin-top:4px;"></div>
           <div class="breakdown">
             <ul id="tr-breakdown"></ul>
           </div>
@@ -693,7 +694,7 @@
         <tr><td>탑승 인원</td><td>40+ 명</td><td class="andrew-cell"><strong>5–6명 단독</strong></td></tr>
         <tr><td>코스 자유도</td><td>고정</td><td class="andrew-cell"><strong>유연 조정</strong></td></tr>
         <tr><td>픽업</td><td>시내 집결</td><td class="andrew-cell"><strong>도어투도어 +€5</strong></td></tr>
-        <tr><td>5인 1인당</td><td>€55–80</td><td class="andrew-cell"><strong>€45–95</strong></td></tr>
+        <tr><td>차량 점유</td><td>40+ 명 공유</td><td class="andrew-cell"><strong>우리 그룹만</strong></td></tr>
       </tbody>
     </table>
   </div>
@@ -856,7 +857,7 @@
 
     <div id="modal-places-section"></div>
 
-    <h5>💰 인원별 1인 가격 범위</h5>
+    <h5 id="modal-price-head">💰 인원별 1인 부담</h5>
     <div class="price-grid" id="modal-prices"></div>
 
     <div id="modal-variations-section">
@@ -917,7 +918,7 @@ const OPEN_TRIPS = [
     capacity: 4,
     booked: 4,
     status: 'confirmed',
-    pricePerPerson: 65,                  // 워터포드 4인 기준과 동일 (€65/인)
+    pricePerPerson: 90,                  // 워터포드 4인 기준과 동일 (€90/인)
     priceNote: '식비·보트비 별도',
     meetingPoint: 'Blanchardstown SC',
     meetingTime: '오전 7:00',
@@ -962,17 +963,18 @@ function inquireTour() {
   let n = parseInt(document.getElementById('tr-people').value, 10);
   if (isNaN(n) || n < 3) n = 3;
   if (n > 5) n = 5;
-  const basePp = t.perPerson[n] || t.perPerson[5];
+  const basePp = Math.round(t.total / n / 5) * 5;
   const pickup = (document.getElementById('tr-d2d-pickup') || {}).checked;
   const drop = (document.getElementById('tr-d2d-drop') || {}).checked;
-  const pp = basePp + (pickup ? 5 : 0) + (drop ? 5 : 0);
-  const total = pp * n;
+  const addon = (pickup ? 5 : 0) + (drop ? 5 : 0);
+  const pp = basePp + addon;
+  const total = addon ? pp * n : t.total;
 
   const lines = [
     '안녕하세요! 당일 로드트립 문의드립니다.',
-    `🌿 코스: ${t.name}`,
-    `👥 인원: ${n}명 · 📏 약 ${t.km}km · ⏱️ ${t.time}h`,
-    `💰 인당 €${pp} · 그룹 합계 €${total}`
+    `🌿 코스: ${t.name} (⏱️ 약 ${t.time}시간 일정)`,
+    `👥 인원: ${n}명`,
+    `💰 투어 총액 €${total} · 1인 €${pp}`
   ];
   const opts = [];
   if (pickup) opts.push('출발 시 도어투도어 픽업');
@@ -1048,7 +1050,7 @@ renderOpenTrips();
 
 // 전체 투어 데이터 — places의 key는 images/{folder}/{key}.jpg 와 매칭됨
 const TOURS = {
-  wicklow: { name:'위클로 (Wicklow)', km:230, time:8, perPerson:{3:55,4:50,5:45}, desc:'아일랜드 정원, 더블린 근교 / The Garden of Ireland', folder:'wicklow',
+  wicklow: { name:'위클로 (Wicklow)', km:230, time:8, total:220, perPerson:{3:75,4:55,5:45}, desc:'아일랜드 정원, 더블린 근교 / The Garden of Ireland', folder:'wicklow',
     places:[
       {key:'brittas-bay', name:'브리타스 베이', desc:'끝없이 펼쳐진 황금빛 모래사장 · 일몰 명소'},
       {key:'rapeseed', name:'유채꽃 들판', desc:'4~5월 한정, 위클로 언덕을 노랗게 물들이는 풍경'},
@@ -1062,9 +1064,9 @@ const TOURS = {
       {key:'glendalough-monastic', name:'글렌달록 수도원 유적', desc:'6세기에 세워진 수도원과 30m 라운드 타워 · 유적 입장 무료(주차 €4~5)'},
       {key:'johnnie-fox', name:'조니 폭스 펍', desc:'1798년 창업, 아일랜드에서 가장 높은 곳의 전통 펍'}
     ],
-    variations:[{name:'A코스 — 위클로 산 집중',spots:'샐리 갭 → 러프 테이 → 글렌달록 → 파워스코트',perPerson:{3:55,4:50,5:45}},{name:'B코스 — 바다+산',spots:'브리타스 베이 → 글렌달록 → 조니 폭스 펍',perPerson:{3:58,4:53,5:48}},{name:'C코스 — 위클로+킬케니',spots:'글렌달록 → 킬케니 캐슬·중세 거리',perPerson:{3:62,4:57,5:52}}] },
+    variations:[{name:'A코스 — 위클로 산 집중',spots:'샐리 갭 → 러프 테이 → 글렌달록 → 파워스코트',perPerson:{3:75,4:55,5:45}},{name:'B코스 — 바다+산',spots:'브리타스 베이 → 글렌달록 → 조니 폭스 펍',perPerson:{3:75,4:60,5:45}},{name:'C코스 — 위클로+킬케니',spots:'글렌달록 → 킬케니 캐슬·중세 거리',perPerson:{3:85,4:60,5:50}}] },
 
-  moher: { name:'모허의 절벽 (Cliffs of Moher)', km:600, time:13, perPerson:{3:80,4:75,5:70}, desc:'버렌 카르스트 + 모허 절벽 — 아일랜드 대표 명소', folder:'moher',
+  moher: { name:'모허의 절벽 (Cliffs of Moher)', km:600, time:13, total:490, perPerson:{3:165,4:120,5:100}, desc:'버렌 카르스트 + 모허 절벽 — 아일랜드 대표 명소', folder:'moher',
     places:[
       {key:'cliffs-of-moher', name:'모허 절벽', desc:'214m 높이 8km 이어지는 아일랜드 대표 명소 · 입장료 성인 €15·학생 €12(온라인 예약 할인)'},
       {key:'burren', name:'버렌', desc:'유네스코 지질공원 · 카르스트 회색 암석 평원'},
@@ -1073,9 +1075,9 @@ const TOURS = {
       {key:'karst-landscape', name:'버렌 카르스트 풍경', desc:'화강암 위에 자라는 희귀 야생화'},
       {key:'doolin-pier', name:'둘린 부두', desc:'아란 제도행 페리 출발점 · 모허를 바다에서 보는 길'}
     ],
-    variations:[{name:'A코스 — 모허+골웨이',spots:'Cliffs of Moher → Burren → Doolin → Galway',perPerson:{3:80,4:75,5:70}},{name:'B코스 — 모허+번래티/리머릭',spots:'Cliffs of Moher → Burren → Bunratty Castle → 리머릭',perPerson:{3:78,4:72,5:67}}] },
+    variations:[{name:'A코스 — 모허+골웨이',spots:'Cliffs of Moher → Burren → Doolin → Galway',perPerson:{3:165,4:120,5:100}},{name:'B코스 — 모허+번래티/리머릭',spots:'Cliffs of Moher → Burren → Bunratty Castle → 리머릭',perPerson:{3:155,4:120,5:95}}] },
 
-  causeway: { name:"자이언트 코즈웨이 (Giant's Causeway)", km:590, time:12, perPerson:{3:78,4:72,5:67}, desc:'세계 자연유산 · 4만 개 육각 현무암', folder:'causeway',
+  causeway: { name:"자이언트 코즈웨이 (Giant's Causeway)", km:590, time:12, total:480, perPerson:{3:160,4:120,5:95}, desc:'세계 자연유산 · 4만 개 육각 현무암', folder:'causeway',
     places:[
       {key:'giants-causeway', name:'자이언트 코즈웨이', desc:'4만 개 육각 현무암 기둥 · 유네스코 세계자연유산 · 비지터 체험 성인 £15(주차·가이드 포함)'},
       {key:'dark-hedges', name:'다크 헤지스', desc:"왕좌의 게임 '킹스로드' 촬영지 · 너도밤나무 터널"},
@@ -1084,9 +1086,9 @@ const TOURS = {
       {key:'bushmills', name:'부쉬밀스 양조장', desc:'1608년 면허 · 세계에서 가장 오래된 위스키 양조장 · 투어 성인 £15~20'},
       {key:'derry-walls', name:'데리 시티 월', desc:'유럽에서 가장 잘 보존된 17세기 성벽 도시'}
     ],
-    variations:[{name:'A코스 — 코즈웨이+다크헤지스+벨파스트',spots:"Giant's Causeway → Dark Hedges → Glenoe Falls → Belfast",perPerson:{3:80,4:75,5:70}},{name:'B코스 — 코즈웨이+데리',spots:'Causeway → Dark Hedges → Derry/Londonderry',perPerson:{3:82,4:76,5:71}}] },
+    variations:[{name:'A코스 — 코즈웨이+다크헤지스+벨파스트',spots:"Giant's Causeway → Dark Hedges → Glenoe Falls → Belfast",perPerson:{3:165,4:125,5:100}},{name:'B코스 — 코즈웨이+데리',spots:'Causeway → Dark Hedges → Derry/Londonderry',perPerson:{3:170,4:130,5:100}}] },
 
-  kerry: { name:'케리 (Kerry · Killarney+Dingle)', km:920, time:16, perPerson:{3:95,4:88,5:82}, desc:'아일랜드 풍경의 정점 · 링 오브 케리', folder:'kerry',
+  kerry: { name:'케리 (Kerry · Killarney+Dingle)', km:920, time:16, total:720, perPerson:{3:240,4:180,5:145}, desc:'아일랜드 풍경의 정점 · 링 오브 케리', folder:'kerry',
     places:[
       {key:'gap-of-dunloe', name:'갭 오브 던로', desc:'빙하가 깎아낸 11km 산악 협곡 · 마차 €35/인(선택, 마부에게 직접 지불)'},
       {key:'ross-castle', name:'로스 캐슬', desc:'러프 리네 호숫가의 15세기 탑 가옥 · 가이드 투어 성인 €5·학생 €3'},
@@ -1097,18 +1099,18 @@ const TOURS = {
       {key:'ring-of-kerry', name:'링 오브 케리', desc:'179km 환상 드라이브 코스 · 아일랜드 풍경의 정점'},
       {key:'molls-gap', name:'몰스 갭', desc:'링 오브 케리의 산악 전망대 · 데리쿠니히 교회'}
     ],
-    variations:[{name:'A코스 — 킬러니+딩글',spots:'Killarney N.P. → Gap of Dunloe → Dingle → Slea Head',perPerson:{3:95,4:88,5:82}},{name:'B코스 — 킬러니+구게인바라',spots:'Killarney → Gougane Barra → Ventry Beach',perPerson:{3:92,4:85,5:80}}] },
+    variations:[{name:'A코스 — 킬러니+딩글',spots:'Killarney N.P. → Gap of Dunloe → Dingle → Slea Head',perPerson:{3:240,4:180,5:145}},{name:'B코스 — 킬러니+구게인바라',spots:'Killarney → Gougane Barra → Ventry Beach',perPerson:{3:235,4:175,5:140}}] },
 
-  donegal: { name:'도니골 (Donegal)', km:650, time:14, perPerson:{3:90,4:83,5:77}, desc:'슬리브 리그 · 와일드 애틀랜틱 야생', folder:'donegal',
+  donegal: { name:'도니골 (Donegal)', km:650, time:14, total:530, perPerson:{3:175,4:130,5:105}, desc:'슬리브 리그 · 와일드 애틀랜틱 야생', folder:'donegal',
     places:[
       {key:'slieve-league', name:'슬리브 리그', desc:'유럽에서 가장 높은 해상 절벽 (601m) · 절벽 무료(셔틀 성인 €6·학생 €5)'},
       {key:'glenveagh', name:'글렌비 국립공원', desc:'호수와 빅토리아 캐슬을 품은 야생 공원 · 공원 무료, 성 투어 성인 €10·학생 €7'},
       {key:'fanad-head', name:'파나드 헤드 등대', desc:'세계에서 가장 아름다운 등대로 꼽히는 1817년 등대'},
       {key:'malin-head', name:'말린 헤드', desc:'아일랜드 최북단 · 와일드 애틀랜틱 웨이의 끝'}
     ],
-    variations:[{name:'A코스 — 슬리브 리그(남부)',spots:'Slieve League → Glenveagh National Park',perPerson:{3:85,4:78,5:72}},{name:'B코스 — 도니골 북부+데리',spots:'Fanad Head → Malin Head → Derry',perPerson:{3:92,4:85,5:80}}] },
+    variations:[{name:'A코스 — 슬리브 리그(남부)',spots:'Slieve League → Glenveagh National Park',perPerson:{3:165,4:125,5:100}},{name:'B코스 — 도니골 북부+데리',spots:'Fanad Head → Malin Head → Derry',perPerson:{3:185,4:140,5:110}}] },
 
-  connemara: { name:'코네마라 (Connemara)', km:650, time:12, perPerson:{3:80,4:74,5:69}, desc:'카일모어 수도원 · 호수와 산', folder:'connemara',
+  connemara: { name:'코네마라 (Connemara)', km:650, time:12, total:510, perPerson:{3:170,4:130,5:100}, desc:'카일모어 수도원 · 호수와 산', folder:'connemara',
     places:[
       {key:'kylemore-abbey', name:'카일모어 수도원', desc:'호숫가에 자리한 19세기 베네딕트회 수도원 · 입장료 성인 €18·학생 €15.5(온라인 할인)'},
       {key:'connemara-np', name:'코네마라 국립공원', desc:'다이아몬드 힐 트레일 · 트웰브 벤스 산맥 풍경'},
@@ -1116,9 +1118,9 @@ const TOURS = {
       {key:'bog-road', name:'보그 로드', desc:'코네마라의 광활한 피트랜드를 가로지르는 드라이브'},
       {key:'connemara-coast', name:'코네마라 해안', desc:'대서양과 만나는 코네마라의 거친 해안선'}
     ],
-    variations:[{name:'A코스 — 코네마라+골웨이',spots:'Galway → Bog Road → Kylemore Abbey → 코네마라 국립공원',perPerson:{3:80,4:75,5:70}},{name:'B코스 — 카일모어+녹+발린터버',spots:'Kylemore → Knock Shrine → Ballintubber Abbey',perPerson:{3:80,4:75,5:70}}] },
+    variations:[{name:'A코스 — 코네마라+골웨이',spots:'Galway → Bog Road → Kylemore Abbey → 코네마라 국립공원',perPerson:{3:175,4:130,5:105}},{name:'B코스 — 카일모어+녹+발린터버',spots:'Kylemore → Knock Shrine → Ballintubber Abbey',perPerson:{3:175,4:130,5:105}}] },
 
-  galway: { name:'골웨이 (Galway)', km:460, time:11, perPerson:{3:75,4:70,5:65}, desc:'아일랜드 서부의 보석 · 음악과 거리 공연', folder:'galway',
+  galway: { name:'골웨이 (Galway)', km:460, time:11, total:390, perPerson:{3:130,4:100,5:80}, desc:'아일랜드 서부의 보석 · 음악과 거리 공연', folder:'galway',
     places:[
       {key:'eyre-square', name:'아이어 스퀘어', desc:'골웨이의 중심 광장 · 케네디 기념 공원'},
       {key:'spanish-arch', name:'스패니시 아치', desc:'1584년 옛 성벽의 일부 · 코리브강 어귀'},
@@ -1126,9 +1128,9 @@ const TOURS = {
       {key:'salthill', name:'솔트힐 산책로', desc:'골웨이 만 따라 이어지는 2km 해안 산책로'},
       {key:'galway-cathedral', name:'골웨이 대성당', desc:'1965년 완공 · 르네상스풍 돔과 모자이크 · 입장 무료(기부 €3 권장)'}
     ],
-    variations:[{name:'A코스 — 골웨이 시티',spots:'Eyre Square → Spanish Arch → Latin Quarter → Salthill',perPerson:{3:75,4:70,5:65}},{name:'B코스 — 골웨이+모허',spots:'골웨이 → Doolin → Cliffs of Moher',perPerson:{3:80,4:75,5:70}},{name:'C코스 — 골웨이+아란 페리',spots:'Doolin 페리 → Inishmore 자전거 (페리비 별도)',perPerson:{3:78,4:72,5:67}}] },
+    variations:[{name:'A코스 — 골웨이 시티',spots:'Eyre Square → Spanish Arch → Latin Quarter → Salthill',perPerson:{3:130,4:100,5:80}},{name:'B코스 — 골웨이+모허',spots:'골웨이 → Doolin → Cliffs of Moher',perPerson:{3:140,4:105,5:85}},{name:'C코스 — 골웨이+아란 페리',spots:'Doolin 페리 → Inishmore 자전거 (페리비 별도)',perPerson:{3:135,4:100,5:80}}] },
 
-  cork: { name:'코크 (Cork · Cobh · Kinsale)', km:640, time:12, perPerson:{3:80,4:75,5:70}, desc:'제2의 도시 · 항구 마을 · 웨스트코크 야생', folder:'cork',
+  cork: { name:'코크 (Cork · Cobh · Kinsale)', km:640, time:12, total:510, perPerson:{3:170,4:130,5:100}, desc:'제2의 도시 · 항구 마을 · 웨스트코크 야생', folder:'cork',
     places:[
       {key:'cobh', name:'코브', desc:'타이타닉 마지막 기항지 · 컬러풀한 데크 오브 카드 · 타이타닉 체험관 성인 €12·학생 €10'},
       {key:'kinsale', name:'킨세일', desc:'미식과 색색의 집들이 어우러진 항구 마을'},
@@ -1136,9 +1138,9 @@ const TOURS = {
       {key:'gougane-barra', name:'구게인 바라', desc:'산속 호숫가의 아담한 예배당 · 인기 사진 명소'},
       {key:'mizen-head', name:'미즌 헤드', desc:'아일랜드 최남단 곶 · 절벽 위 시그널 스테이션 · 입장료 성인 €7.5·학생 €6'}
     ],
-    variations:[{name:'A코스 — 코크+코브+킨세일',spots:'Cork → Cobh → Kinsale',perPerson:{3:78,4:72,5:67}},{name:'B코스 — 코크+카셸',spots:'Cork → Cobh → Kinsale → Rock of Cashel',perPerson:{3:82,4:76,5:71}},{name:'C코스 — 웨스트코크',spots:'Gougane Barra → Mizen Head → Baltimore Beacon',perPerson:{3:88,4:80,5:75}}] },
+    variations:[{name:'A코스 — 코크+코브+킨세일',spots:'Cork → Cobh → Kinsale',perPerson:{3:165,4:120,5:100}},{name:'B코스 — 코크+카셸',spots:'Cork → Cobh → Kinsale → Rock of Cashel',perPerson:{3:175,4:130,5:105}},{name:'C코스 — 웨스트코크',spots:'Gougane Barra → Mizen Head → Baltimore Beacon',perPerson:{3:185,4:140,5:110}}] },
 
-  mayo: { name:'메이요 (Mayo · Achill)', km:670, time:13, perPerson:{3:80,4:75,5:70}, desc:'아킬·다운패트릭·녹 — 아일랜드 서부 끝 야생', folder:'mayo',
+  mayo: { name:'메이요 (Mayo · Achill)', km:670, time:13, total:540, perPerson:{3:180,4:135,5:110}, desc:'아킬·다운패트릭·녹 — 아일랜드 서부 끝 야생', folder:'mayo',
     places:[
       {key:'achill-island', name:'아킬 아일랜드', desc:'아일랜드 최대의 섬 · 킴 베이의 청록 바다'},
       {key:'downpatrick-head', name:'다운패트릭 헤드', desc:"바다에 솟은 거석 '둔 브리스테' 절벽"},
@@ -1147,9 +1149,9 @@ const TOURS = {
       {key:'portacloy', name:'포타클로이', desc:'북마요 절벽 사이의 외딴 어촌'},
       {key:'knock-shrine', name:'녹 성지', desc:'1879년 성모 발현지 · 4대 가톨릭 성지 · 입장 무료'}
     ],
-    variations:[{name:'A코스 — 아킬+다운패트릭',spots:'Achill (Keem Bay) → Downpatrick Head',perPerson:{3:80,4:75,5:70}},{name:'B코스 — 아킬+웨스트포트+녹',spots:'Achill → Westport → Ballintubber Abbey → Knock',perPerson:{3:80,4:75,5:70}}] },
+    variations:[{name:'A코스 — 아킬+다운패트릭',spots:'Achill (Keem Bay) → Downpatrick Head',perPerson:{3:180,4:135,5:110}},{name:'B코스 — 아킬+웨스트포트+녹',spots:'Achill → Westport → Ballintubber Abbey → Knock',perPerson:{3:180,4:135,5:110}}] },
 
-  belfast: { name:'벨파스트 (Belfast)', km:390, time:9, perPerson:{3:70,4:65,5:60}, desc:'타이타닉의 도시 · 북아일랜드 수도', folder:'belfast',
+  belfast: { name:'벨파스트 (Belfast)', km:390, time:9, total:330, perPerson:{3:110,4:80,5:65}, desc:'타이타닉의 도시 · 북아일랜드 수도', folder:'belfast',
     places:[
       {key:'titanic-belfast', name:'타이타닉 벨파스트', desc:'타이타닉이 건조된 조선소 부지의 세계 최대 박물관 · 입장료 성인 £24.95·학생 £21.95(온라인)'},
       {key:'belfast-castle', name:'벨파스트 캐슬', desc:'케이브힐 산 중턱의 19세기 스코틀랜드식 성채'},
@@ -1159,9 +1161,9 @@ const TOURS = {
       {key:'peace-walls', name:'피스 월', desc:'분쟁의 흔적 · 거대한 평화벽 + 벽화'},
       {key:'st-peters-cathedral', name:'세인트 피터스 캐넨드럴', desc:'더블 스파이어가 인상적인 19세기 가톨릭 대성당'}
     ],
-    variations:[{name:'A코스 — 벨파스트+타이타닉',spots:'Titanic Belfast → Belfast Castle → St George\'s Market',perPerson:{3:70,4:65,5:60}},{name:'B코스 — 벨파스트+코즈웨이',spots:'Belfast → Glenoe Falls → Causeway → Dark Hedges',perPerson:{3:80,4:75,5:70}}] },
+    variations:[{name:'A코스 — 벨파스트+타이타닉',spots:'Titanic Belfast → Belfast Castle → St George\'s Market',perPerson:{3:110,4:80,5:65}},{name:'B코스 — 벨파스트+코즈웨이',spots:'Belfast → Glenoe Falls → Causeway → Dark Hedges',perPerson:{3:125,4:95,5:75}}] },
 
-  waterford: { name:'워터포드 (Waterford)', km:410, time:10, perPerson:{3:70,4:65,5:60}, desc:'바이킹의 도시·크리스탈·코퍼 코스트', folder:'waterford',
+  waterford: { name:'워터포드 (Waterford)', km:410, time:10, total:350, perPerson:{3:115,4:90,5:70}, desc:'바이킹의 도시·크리스탈·코퍼 코스트', folder:'waterford',
     places:[
       {key:'copper-coast', name:'코퍼 코스트', desc:'유네스코 지질공원 · 구리광산 흔적 해안'},
       {key:'hook-lighthouse', name:'후크 등대', desc:'세계에서 가장 오래 운영중인 등대 (800년) · 타워 투어 성인 €12·학생 €10'},
@@ -1171,9 +1173,9 @@ const TOURS = {
       {key:'waterford-greenway', name:'워터포드 그린웨이', desc:'46km 자전거 트레일 · 비아덕트 풍경'},
       {key:'house-of-waterford', name:'하우스 오브 워터포드 크리스탈', desc:'세계적 크리스탈 공장 투어 · 공장 투어 성인 약 €20'}
     ],
-    variations:[{name:'A코스 — 카셸+리스모어+코퍼',spots:'Rock of Cashel → Lismore → Dungarvan → Copper Coast',perPerson:{3:70,4:65,5:60}},{name:'B코스 — 코퍼+후크 등대',spots:'Copper Coast → Mahon Falls → Hook Lighthouse',perPerson:{3:70,4:65,5:60}}] },
+    variations:[{name:'A코스 — 카셸+리스모어+코퍼',spots:'Rock of Cashel → Lismore → Dungarvan → Copper Coast',perPerson:{3:115,4:90,5:70}},{name:'B코스 — 코퍼+후크 등대',spots:'Copper Coast → Mahon Falls → Hook Lighthouse',perPerson:{3:115,4:90,5:70}}] },
 
-  limerick: { name:'리머릭 (Limerick · Bunratty)', km:480, time:10, perPerson:{3:70,4:65,5:60}, desc:'번래티+아데어+카셸 — 중세 성과 작은 마을', folder:'limerick',
+  limerick: { name:'리머릭 (Limerick · Bunratty)', km:480, time:10, total:390, perPerson:{3:130,4:100,5:80}, desc:'번래티+아데어+카셸 — 중세 성과 작은 마을', folder:'limerick',
     places:[
       {key:'bunratty-castle', name:'번래티 캐슬 & 민속촌', desc:'15세기 성과 19세기 마을 재현 야외 박물관 · 입장료 성인 €11.55·학생 €10.45'},
       {key:'adare-village', name:'아데어 마을', desc:"초가집이 늘어선 '아일랜드에서 가장 예쁜 마을'"},
@@ -1182,9 +1184,9 @@ const TOURS = {
       {key:'rock-of-cashel', name:'카셸 바위', desc:'4세기 먼스터 왕좌 · 라운드 타워와 코맥의 예배당 · 입장료 성인 €8·학생 €4'},
       {key:'glenstal-abbey', name:'글렌스탈 수도원', desc:'베네딕트회 수도원과 평화로운 숲길'}
     ],
-    variations:[{name:'A코스 — 번래티+아데어',spots:'Bunratty Castle → Adare Village → 리머릭 시내',perPerson:{3:72,4:67,5:62}},{name:'B코스 — 리머릭+카셸',spots:"King John's Castle → Hunt Museum → Rock of Cashel",perPerson:{3:78,4:72,5:67}}] },
+    variations:[{name:'A코스 — 번래티+아데어',spots:'Bunratty Castle → Adare Village → 리머릭 시내',perPerson:{3:135,4:100,5:80}},{name:'B코스 — 리머릭+카셸',spots:"King John's Castle → Hunt Museum → Rock of Cashel",perPerson:{3:145,4:110,5:90}}] },
 
-  kilkenny: { name:'킬케니 (Kilkenny)', km:300, time:8, perPerson:{3:60,4:55,5:50}, desc:'중세 도시 · 성과 양조장', folder:'kilkenny',
+  kilkenny: { name:'킬케니 (Kilkenny)', km:300, time:8, total:260, perPerson:{3:85,4:65,5:50}, desc:'중세 도시 · 성과 양조장', folder:'kilkenny',
     places:[
       {key:'kilkenny-castle', name:'킬케니 캐슬', desc:'12세기 노르만 성 · 정원과 함께 둘러보기 좋음 · 입장료 성인 €8·학생 €4'},
       {key:'smithwicks', name:'스미딕스 양조장', desc:'1710년 창업, 아일랜드에서 가장 오래된 에일 · 체험 투어 성인 약 €20'},
@@ -1194,9 +1196,9 @@ const TOURS = {
       {key:'dunmore-cave', name:'던모어 동굴', desc:'바이킹 시대 유물이 발견된 카르스트 동굴 · 입장료 성인 €5·학생 €3'},
       {key:'ducketts-grove', name:'더켓츠 그로브', desc:'유령 저택으로 알려진 19세기 폐허 + 정원'}
     ],
-    variations:[{name:'A코스 — 킬케니 시내',spots:'Kilkenny Castle → 중세 거리 → Smithwick\'s → 성 카니스',perPerson:{3:60,4:55,5:50}},{name:'B코스 — 킬케니+위클로',spots:'글렌달록 → 킬케니 캐슬',perPerson:{3:60,4:55,5:50}}] },
+    variations:[{name:'A코스 — 킬케니 시내',spots:'Kilkenny Castle → 중세 거리 → Smithwick\'s → 성 카니스',perPerson:{3:85,4:65,5:50}},{name:'B코스 — 킬케니+위클로',spots:'글렌달록 → 킬케니 캐슬',perPerson:{3:85,4:65,5:50}}] },
 
-  sligo: { name:'슬라이고 (Sligo)', km:580, time:11, perPerson:{3:75,4:70,5:65}, desc:'예이츠 컨트리 · Benbulben 산', folder:'sligo',
+  sligo: { name:'슬라이고 (Sligo)', km:580, time:11, total:460, perPerson:{3:155,4:115,5:90}, desc:'예이츠 컨트리 · Benbulben 산', folder:'sligo',
     places:[
       {key:'drumcliffe', name:'드럼클리프 (예이츠 묘)', desc:'시인 W.B. 예이츠가 잠든 곳 · 벤불벤이 보이는 마당'},
       {key:'glencar-waterfall', name:'글렌카 폭포', desc:"예이츠의 시 'The Stolen Child' 무대"},
@@ -1209,9 +1211,9 @@ const TOURS = {
       {key:'fairy-bridges', name:'페어리 브릿지스', desc:'대서양이 깎아낸 자연 아치들 (Bundoran)'},
       {key:'tullan-strand', name:'툴란 스트랜드', desc:'번도란의 광활한 모래 해변 · 서핑 핫스팟'}
     ],
-    variations:[{name:'A코스 — 예이츠+벤불벤',spots:'Drumcliffe → Glencar Waterfall → Benbulben → Mullaghmore',perPerson:{3:75,4:70,5:65}},{name:'B코스 — 슬라이고+다운패트릭',spots:'Sligo → Downpatrick Head',perPerson:{3:85,4:78,5:72}}] },
+    variations:[{name:'A코스 — 예이츠+벤불벤',spots:'Drumcliffe → Glencar Waterfall → Benbulben → Mullaghmore',perPerson:{3:155,4:115,5:90}},{name:'B코스 — 슬라이고+다운패트릭',spots:'Sligo → Downpatrick Head',perPerson:{3:170,4:130,5:100}}] },
 
-  mullingar: { name:'멀링거 (Mullingar)', km:230, time:7, perPerson:{3:60,4:55,5:50}, desc:'호수와 평원의 미들랜즈', folder:'mullingar',
+  mullingar: { name:'멀링거 (Mullingar)', km:230, time:7, total:210, perPerson:{3:70,4:50,5:40}, desc:'호수와 평원의 미들랜즈', folder:'mullingar',
     places:[
       {key:'belvedere-house', name:'벨베디어 하우스', desc:'18세기 저택과 호숫가 정원 · 입장료 성인 €8.75·학생 €6.25(2026 본관 보수중)'},
       {key:'mullingar-cathedral', name:'멀링거 대성당', desc:'1939년 완공된 멀링거의 랜드마크'},
@@ -1219,9 +1221,9 @@ const TOURS = {
       {key:'moore-abbey-wood', name:'무어 애비 숲', desc:'고요한 산책길과 청록빛 숲'},
       {key:'mullingar-activities', name:'멀링거 도심 풍경', desc:'미들랜즈의 작고 정겨운 시내'}
     ],
-    variations:[{name:'A코스 — 멀링거+호수',spots:'Lough Owel · Lough Ennell · Mullingar Cathedral',perPerson:{3:60,4:55,5:50}},{name:'B코스 — 멀링거+Belvedere',spots:'Belvedere House → Tullynally Castle + 정원',perPerson:{3:62,4:57,5:52}}] },
+    variations:[{name:'A코스 — 멀링거+호수',spots:'Lough Owel · Lough Ennell · Mullingar Cathedral',perPerson:{3:70,4:50,5:40}},{name:'B코스 — 멀링거+Belvedere',spots:'Belvedere House → Tullynally Castle + 정원',perPerson:{3:75,4:55,5:45}}] },
 
-  newgrange: { name:'뉴그레인지 + 드록헤다 (Newgrange + Drogheda)', km:170, time:7, perPerson:{3:55,4:50,5:45}, desc:'5,200년 신석기 유적 (유네스코)', folder:'newgrange',
+  newgrange: { name:'뉴그레인지 + 드록헤다 (Newgrange + Drogheda)', km:170, time:7, total:170, perPerson:{3:55,4:40,5:35}, desc:'5,200년 신석기 유적 (유네스코)', folder:'newgrange',
     places:[
       {key:'newgrange', name:'뉴그레인지', desc:'5,200년 신석기 통로 무덤 · 유네스코 세계문화유산 · Brú na Bóinne 투어 성인 €18(전시만 €5)'},
       {key:'knowth', name:'노스', desc:'유럽 최대 켈트 거석 예술 컬렉션'},
@@ -1231,7 +1233,7 @@ const TOURS = {
       {key:'skerries-mills', name:'스케리스 풍차', desc:'5세기 풍차·물레방아 복원 단지'},
       {key:'newbridge-house', name:'뉴브리지 하우스', desc:'18세기 조지안 저택과 역사 농장'}
     ],
-    variations:[{name:'A코스 — 뉴그레인지+모나스터보이스',spots:'Newgrange → Knowth → Monasterboice 켈트 십자가',perPerson:{3:55,4:50,5:45}},{name:'B코스 — 뉴그레인지+타라+드록헤다',spots:'Newgrange → Hill of Tara → Drogheda 시내',perPerson:{3:58,4:53,5:48}}] }
+    variations:[{name:'A코스 — 뉴그레인지+모나스터보이스',spots:'Newgrange → Knowth → Monasterboice 켈트 십자가',perPerson:{3:55,4:40,5:35}},{name:'B코스 — 뉴그레인지+타라+드록헤다',spots:'Newgrange → Hill of Tara → Drogheda 시내',perPerson:{3:60,4:45,5:35}}] }
 };
 
 // 카드 표시 순서 (인기 순)
@@ -1262,18 +1264,17 @@ TOUR_ORDER.forEach(key => {
   card.dataset.key = key;
   card.onclick = () => openTour(key);
   const folder = t.folder || key;
-  const r = getPriceRange(t);
-  const priceTxt = (r.lo === r.hi) ? `€${r.lo}` : `€${r.lo}~€${r.hi}`;
+  const pp4 = t.perPerson[4];
   card.innerHTML = `
     <div class="tour-img has-cover" style="background-image: url('../images/${folder}/cover.jpg');">
       <span class="placeholder">📷 ${t.name}</span>
     </div>
     <div class="tour-body">
       <div class="tour-name">${t.name}</div>
-      <div class="tour-meta">📏 ${t.km}km · ⏱️ ${t.time}h</div>
+      <div class="tour-meta">⏱️ ${t.time}시간 일정 · 차 한 대 단독</div>
       <div class="tour-prices" style="display:flex; align-items:baseline; justify-content:space-between; gap:8px;">
-        <span><span class="lbl">1인</span> ${priceTxt}</span>
-        <span style="color:var(--muted); font-weight:500; font-size:11.5px;">상세는 클릭 →</span>
+        <span><span class="lbl">투어</span> €${t.total} <span class="lbl">· 1인</span> €${pp4}<span style="color:var(--muted); font-weight:500; font-size:11px;"> (4인)</span></span>
+        <span style="color:var(--muted); font-weight:500; font-size:11.5px;">상세 →</span>
       </div>
     </div>
   `;
@@ -1288,13 +1289,11 @@ TOUR_ORDER.forEach(key => {
   const tr = document.createElement('tr');
   tr.style.cursor = 'pointer';
   tr.onclick = () => openTour(key);
-  const r = getPriceRange(t);
-  const priceTxt = (r.lo === r.hi) ? `€${r.lo}` : `€${r.lo}~€${r.hi}`;
   tr.innerHTML = `
     <td class="name">${t.name}</td>
-    <td class="num">${t.km}km</td>
     <td class="num">${t.time}h</td>
-    <td class="num">${priceTxt}</td>
+    <td class="num"><strong>€${t.total}</strong></td>
+    <td class="num">€${t.perPerson[4]}</td>
   `;
   tbody.appendChild(tr);
 });
@@ -1311,46 +1310,48 @@ TOUR_ORDER.forEach(key => {
 
 // 4) 계산 — 코스 옵션 전체의 최저~최고 범위로 표시
 function calcTour() {
+  const r5 = v => Math.round(v / 5) * 5;
   const key = document.getElementById('tr-dest').value;
   const t = TOURS[key];
   let n = parseInt(document.getElementById('tr-people').value, 10);
   if (isNaN(n) || n < 3) n = 3;
   if (n > 5) n = 5;
 
-  // 인원수 기준 코스 옵션 가격 범위 (variations에서 자동 산출)
-  const r = getPriceRangeBySize(t, n);
-
   const pickupEl = document.getElementById('tr-d2d-pickup');
   const dropEl = document.getElementById('tr-d2d-drop');
   const pickup = pickupEl && pickupEl.checked;
   const drop = dropEl && dropEl.checked;
-  const pickupFee = pickup ? 5 : 0;
-  const dropFee = drop ? 5 : 0;
+  const addon = (pickup ? 5 : 0) + (drop ? 5 : 0);
 
-  // 픽업·드랍 옵션은 인원당 고정 가산 → 범위에도 동일하게 더함
-  const ppLo = r.lo + pickupFee + dropFee;
-  const ppHi = r.hi + pickupFee + dropFee;
-  const totalLo = ppLo * n;
-  const totalHi = ppHi * n;
+  // 1인 부담 = 고정 총액 ÷ 인원 (+옵션은 인당 가산)
+  const pp = r5(t.total / n) + addon;
+  const total = addon ? pp * n : t.total;           // 옵션 없으면 고정 총액 그대로
+  const ppText = `€${pp}`;
+  const totalText = `€${total}`;
 
-  const ppText    = (ppLo === ppHi)       ? `€${ppLo}`    : `€${ppLo}~€${ppHi}`;
-  const totalText = (totalLo === totalHi) ? `€${totalLo}` : `€${totalLo}~€${totalHi}`;
-  const baseText  = (r.lo === r.hi)       ? `€${r.lo}/인` : `€${r.lo}~€${r.hi}/인`;
-
-  document.getElementById('tr-perperson').textContent = ppText;
   document.getElementById('tr-total').textContent = totalText;
+  document.getElementById('tr-perperson').textContent = ppText;
+  document.getElementById('tr-people-label').textContent = n;
+
+  // 5인 안내 (5인 미만 선택 시)
+  const note = document.getElementById('tr-five-note');
+  if (n < 5) {
+    const pp5 = r5(t.total / 5) + addon;
+    note.textContent = `👥 5인까지 모이면 1인 €${pp5}로 더 저렴해져요`;
+    note.style.display = '';
+  } else {
+    note.textContent = '';
+    note.style.display = 'none';
+  }
 
   const lines = [
-    `<li><span>${t.name}</span><span>${baseText}</span></li>`,
-    `<li><span>📏 ${t.km}km · ⏱️ ${t.time}h</span><span></span></li>`
+    `<li><span>${t.name}</span><span>⏱️ ${t.time}시간 일정</span></li>`,
+    `<li><span>투어 고정 총액</span><span>€${t.total}</span></li>`,
+    `<li><span>👥 ${n}인 → 1인 부담</span><span>${ppText}</span></li>`
   ];
-  if (pickup) {
-    lines.push(`<li><span>🚪 도어투도어 픽업 (출발 시)</span><span>+€5/인</span></li>`);
-  }
-  if (drop) {
-    lines.push(`<li><span>🏠 도어투도어 드랍 (귀가 시)</span><span>+€5/인</span></li>`);
-  }
-  lines.push(`<li><span>👥 ${n}인 그룹 합계</span><span><strong>${totalText}</strong></span></li>`);
+  if (pickup) lines.push(`<li><span>🚪 도어투도어 픽업 (출발 시)</span><span>+€5/인</span></li>`);
+  if (drop) lines.push(`<li><span>🏠 도어투도어 드랍 (귀가 시)</span><span>+€5/인</span></li>`);
+  if (addon) lines.push(`<li style="border-top:1px solid var(--border); padding-top:8px; margin-top:6px;"><span>👥 ${n}인 합계 (옵션 포함)</span><span><strong>${totalText}</strong></span></li>`);
   document.getElementById('tr-breakdown').innerHTML = lines.join('');
 }
 calcTour();
@@ -1365,8 +1366,10 @@ function openTour(key) {
   document.querySelectorAll('.ireland-marker').forEach(m => m.classList.toggle('active', m.dataset.tour === key));
 
   document.getElementById('modal-name').textContent = t.name;
-  document.getElementById('modal-meta').textContent = `📏 약 ${t.km}km · ⏱️ ${t.time}h`;
+  document.getElementById('modal-meta').textContent = `⏱️ 약 ${t.time}시간 일정 · 차 한 대 단독 동행`;
   document.getElementById('modal-desc').textContent = t.desc;
+  const headEl = document.getElementById('modal-price-head');
+  if (headEl) headEl.textContent = `💰 투어 총액 €${t.total} · 인원별 1인 부담 (많을수록 ↓)`;
 
   // Places — 슬라이드 갤러리 (사진 + 장소명·설명)
   const placesSection = document.getElementById('modal-places-section');
