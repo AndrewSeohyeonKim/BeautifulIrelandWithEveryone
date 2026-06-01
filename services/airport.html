@@ -240,7 +240,7 @@
                 <option value="17">Dublin 20</option>
                 <option value="17">Lucan</option>
               </optgroup>
-              <optgroup label="🟡 Zone 3 · 17–25km (€55)">
+              <optgroup label="🟡 Zone 3 · 17–25km (€65)">
                 <option value="19">Dublin 16</option>
                 <option value="20">Dublin 18</option>
                 <option value="20">Dublin 22</option>
@@ -248,7 +248,7 @@
                 <option value="24">Dun Laoghaire</option>
                 <option value="25">Maynooth</option>
               </optgroup>
-              <optgroup label="🟠 Zone 4 · 25–50km (€70~)">
+              <optgroup label="🟠 Zone 4 · 25–50km (€80~)">
                 <option value="28">Bray</option>
                 <option value="32">Greystones</option>
                 <option value="35">Naas</option>
@@ -368,8 +368,8 @@
           <tr><td>🟢 Zone 0<br><span style="font-size:10.5px; color:var(--muted); font-weight:500;">0–10 km</span></td><td>D15·D11·D9·D3·D5·D17·D13·Swords·Malahide</td><td class="price">€35</td></tr>
           <tr><td>🟢 Zone 1<br><span style="font-size:10.5px; color:var(--muted); font-weight:500;">10–13 km</span></td><td>D1·D2·D7·Howth·시내 중심부</td><td class="price">€40</td></tr>
           <tr><td>🟢 Zone 2<br><span style="font-size:10.5px; color:var(--muted); font-weight:500;">13–17 km</span></td><td>D4·D6·D6W·D8·D10·D12·D14·D20·Lucan</td><td class="price">€45</td></tr>
-          <tr><td>🟡 Zone 3<br><span style="font-size:10.5px; color:var(--muted); font-weight:500;">17–25 km</span></td><td>D16·D18·D22·D24·Tallaght·Maynooth·Dun&nbsp;Laoghaire</td><td class="price">€55</td></tr>
-          <tr><td>🟠 Zone 4<br><span style="font-size:10.5px; color:var(--muted); font-weight:500;">25–50 km</span></td><td>Bray·Greystones·Naas·Drogheda·Wicklow Town</td><td class="price">€70+<br><span style="font-size:10px; color:var(--muted); font-weight:500;">(km−25)</span></td></tr>
+          <tr><td>🟡 Zone 3<br><span style="font-size:10.5px; color:var(--muted); font-weight:500;">17–25 km</span></td><td>D16·D18·D22·D24·Tallaght·Maynooth·Dun&nbsp;Laoghaire</td><td class="price">€65</td></tr>
+          <tr><td>🟠 Zone 4<br><span style="font-size:10.5px; color:var(--muted); font-weight:500;">25–50 km</span></td><td>Bray·Greystones·Naas·Drogheda·Wicklow Town</td><td class="price">€80+<br><span style="font-size:10px; color:var(--muted); font-weight:500;">(km−25)</span></td></tr>
           <tr><td>🔴 Zone 5<br><span style="font-size:10.5px; color:var(--muted); font-weight:500;">50 km+</span></td><td>Belfast·Limerick·Galway·Cork·Killarney</td><td class="price">€100+<br><span style="font-size:10px; color:var(--muted); font-weight:500;">별도 견적</span></td></tr>
         </tbody>
       </table>
@@ -573,8 +573,8 @@ function getZoneAndBase(km) {
   if (km <= 10) return { zone: '0', base: 35 };
   if (km <= 13) return { zone: '1', base: 40 };
   if (km <= 17) return { zone: '2', base: 45 };
-  if (km <= 25) return { zone: '3', base: 55 };
-  if (km <= 50) return { zone: '4', base: 70 + (km - 25) };
+  if (km <= 25) return { zone: '3', base: 65 };
+  if (km <= 50) return { zone: '4', base: 80 + (km - 25) };
   return { zone: '5', base: 100 + Math.round((km - 50) * 1.5) };
 }
 
