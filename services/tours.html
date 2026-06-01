@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🌿 당일치기 로드트립 (16개 지역) | Andrew의 아일랜드 동행</title>
-<meta name="description" content="아일랜드 16개 지역 당일치기 로드트립. 모허·딩글·코네마라·자이언트 코즈웨이 등. 친구처럼 함께, 차 한 대 단독 동행.">
+<title>🌿 당일치기 로드트립 (운영 코스 22개) | Andrew의 아일랜드 동행</title>
+<meta name="description" content="아일랜드 당일치기 프라이빗 로드트립. 모허·딩글·코네마라·자이언트 코즈웨이·링오브케리 등 직접 운영해온 코스. 합리적인 프라이빗 — 버스보다 조금 더, 차원이 다른 자유.">
 <meta property="og:title" content="🌿 당일치기 로드트립 — 아일랜드 동행">
 <meta property="og:description" content="아일랜드 16개 지역 1일 동행. 모허·딩글·코네마라·자이언트 코즈웨이.">
 <meta property="og:image" content="https://andrewseohyeonkim.github.io/BeutifulIrelandWithEveryone/images/logo/og-image.jpg?v=20260501">
@@ -466,6 +466,22 @@
     border: 1.5px dashed var(--border);
   }
   .trip-empty strong { color: var(--primary); }
+
+  /* ===== ROUTE 카드/모달 (2026-06 재설계) ===== */
+  .route-card .route-region { font-size: 11.5px; font-weight: 700; color: var(--accent); letter-spacing: 0.3px; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+  .route-tag { background: var(--primary); color: #fff; font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 999px; letter-spacing: 0.5px; }
+  .route-card .route-stops-mini { font-size: 12px; color: var(--muted); line-height: 1.55; margin: 8px 0 12px; }
+  .route-stop-list { display: flex; flex-direction: column; gap: 4px; margin-bottom: 6px; }
+  .route-stop { display: flex; gap: 10px; align-items: flex-start; font-size: 13.5px; color: var(--text); line-height: 1.5; padding: 5px 0; border-bottom: 1px solid var(--border); }
+  .route-stop:last-child { border-bottom: none; }
+  .route-stop .rs-num { flex: 0 0 22px; height: 22px; border-radius: 50%; background: var(--accent-soft); color: var(--primary); font-size: 11.5px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+  .place-route-card { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 13px 15px; margin-bottom: 10px; cursor: pointer; transition: all 0.15s; }
+  .place-route-card:hover { border-color: var(--accent); box-shadow: var(--shadow); transform: translateY(-2px); }
+  .place-route-card .prc-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .place-route-card .prc-name { font-weight: 800; color: var(--primary); font-size: 14.5px; line-height: 1.3; }
+  .place-route-card .prc-price { font-weight: 900; color: var(--accent); font-size: 16px; white-space: nowrap; }
+  .place-route-card .prc-meta { font-size: 12px; color: var(--primary); margin: 5px 0 4px; font-weight: 600; }
+  .place-route-card .prc-stops { font-size: 11.5px; color: var(--muted); line-height: 1.5; }
 </style>
 </head>
 <body class="subpage-bg-fix page-tours">
@@ -499,7 +515,7 @@
   <div class="hero-content">
     <div class="hero-titles">
       <span class="phrase">🌿 Irish Nature for Everyone</span>
-      <span class="phrase">16개 지역 · 30+ 코스</span>
+      <span class="phrase">직접 운영해온 22개 코스 · 합리적 프라이빗</span>
     </div>
     <h1><span class="phrase">당일치기 로드트립</span></h1>
     <p class="tagline"><span class="phrase">아일랜드 자연·숨겨진 보물을</span> <span class="phrase">모두에게</span></p>
@@ -533,6 +549,13 @@
       ✓ <span class="phrase">미팅 포인트:</span> <span class="phrase">Blanchardstown Shopping Centre</span> · <span class="phrase">도어투도어 픽업·드랍</span> <span class="phrase">각 +€5/인 (편도)</span><br>
       ✓ <span class="phrase">포함:</span> <span class="phrase">주차·톨비·운전·가이딩·한국어 안내</span> / <span class="phrase">별도:</span> <span class="phrase">식비·입장료</span>
     </p>
+
+    <div style="margin-top:20px; text-align:left;">
+      <div style="background:#fff7e6; border:1px solid #fcd34d; border-radius:12px; padding:16px 18px;">
+        <div style="font-weight:800; color:#92400e; font-size:14px; margin-bottom:6px;">🙌 인원이 부족해도 괜찮아요</div>
+        <p style="font-size:13px; color:#78350f; line-height:1.65; margin:0;">1~2인이어도 OK. <strong>같은 관심사 동행을 함께 찾아드리고(모객), 일정을 오픈채팅·SNS에 올려 함께 채워드려요.</strong> 목록에 없는 코스·장소도 커스텀으로 설계 가능합니다.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -552,8 +575,8 @@
 <section id="ireland-map" style="background:var(--bg);">
   <div class="container">
     <div class="section-title">
-      <h2>🗺️ 아일랜드 지도에서 골라보세요</h2>
-      <p class="lead">지도의 마커를 클릭하면 해당 지역 코스로 이동해요</p>
+      <h2>🗺️ 지도에서 장소를 골라보세요</h2>
+      <p class="lead">장소를 클릭하면 그곳을 경유하는 코스·가격과 커스텀 옵션이 모두 나와요</p>
     </div>
 
     <div class="ireland-map-container reveal">
@@ -583,8 +606,8 @@
 <section style="background:white;">
   <div class="container">
     <div class="section-title">
-      <h2>📷 16개 지역 코스</h2>
-      <p class="lead">카드를 클릭하면 상세 장소·변형 코스·가격이 모두 나와요</p>
+      <h2>📷 Andrew가 직접 운영해온 코스</h2>
+      <p class="lead">카드를 클릭하면 정차지·가격·커스텀 안내가 모두 나와요 · 목록에 없는 코스도 커스텀 가능</p>
     </div>
     <div class="tour-grid" id="tour-cards"></div>
   </div>
@@ -865,12 +888,12 @@
       <div id="modal-variations"></div>
     </div>
 
-    <p style="font-size:12.5px; color:var(--muted); line-height:1.7; margin-top:14px;">
+    <p id="modal-note" style="font-size:12.5px; color:var(--muted); line-height:1.7; margin-top:14px;">
       ✓ 주차·톨비·운전·가이딩·한국어 안내 포함<br>
       ✗ 식비·입장료 별도<br>
       📍 미팅: Blanchardstown Shopping Centre · 도어투도어 픽업·드랍 각 +€5/인 (편도)
     </p>
-    <a href="javascript:void(0)" onclick="inquireTour()" class="btn btn-kakao" style="display:flex; justify-content:center; margin-top:18px;">💬 이 코스 카톡 문의</a>
+    <a id="modal-cta" href="javascript:void(0)" onclick="inquireTour()" class="btn btn-kakao" style="display:flex; justify-content:center; margin-top:18px;">💬 이 코스 카톡 문의</a>
   </div>
 </div>
 
@@ -955,36 +978,6 @@ function inquireTrip(tripId) {
   copyAndOpenKakao(message);
 }
 
-// 메인 계산기 — 선택한 코스 + 인원 + 픽업·드랍 옵션 + 총 가격
-function inquireTour() {
-  const key = document.getElementById('tr-dest').value;
-  const t = TOURS[key];
-  if (!t) { copyAndOpenKakao('안녕하세요! 당일 로드트립 문의드립니다 🙏'); return; }
-  let n = parseInt(document.getElementById('tr-people').value, 10);
-  if (isNaN(n) || n < 3) n = 3;
-  if (n > 5) n = 5;
-  const basePp = Math.round(t.total / n / 5) * 5;
-  const pickup = (document.getElementById('tr-d2d-pickup') || {}).checked;
-  const drop = (document.getElementById('tr-d2d-drop') || {}).checked;
-  const addon = (pickup ? 5 : 0) + (drop ? 5 : 0);
-  const pp = basePp + addon;
-  const total = addon ? pp * n : t.total;
-
-  const lines = [
-    '안녕하세요! 당일 로드트립 문의드립니다.',
-    `🌿 코스: ${t.name} (⏱️ 약 ${t.time}시간 일정)`,
-    `👥 인원: ${n}명`,
-    `💰 투어 총액 €${total} · 1인 €${pp}`
-  ];
-  const opts = [];
-  if (pickup) opts.push('출발 시 도어투도어 픽업');
-  if (drop) opts.push('귀가 시 도어투도어 드랍');
-  if (opts.length) lines.push(`🚪 옵션: ${opts.join(' + ')}`);
-  lines.push('가능한 날짜 안내 부탁드립니다 🙏');
-
-  copyAndOpenKakao(lines.join('\n'));
-}
-
 function renderOpenTrips() {
   const grid = document.getElementById('open-trips-grid');
   if (!grid) return;
@@ -1048,439 +1041,132 @@ function renderOpenTrips() {
 
 renderOpenTrips();
 
-// 전체 투어 데이터 — places의 key는 images/{folder}/{key}.jpg 와 매칭됨
-const TOURS = {
-  wicklow: { name:'위클로 (Wicklow)', km:230, time:8, total:220, perPerson:{3:75,4:55,5:45}, desc:'아일랜드 정원, 더블린 근교 / The Garden of Ireland', folder:'wicklow',
-    places:[
-      {key:'brittas-bay', name:'브리타스 베이', desc:'끝없이 펼쳐진 황금빛 모래사장 · 일몰 명소'},
-      {key:'rapeseed', name:'유채꽃 들판', desc:'4~5월 한정, 위클로 언덕을 노랗게 물들이는 풍경'},
-      {key:'kilmacurragh', name:'킬마커러 국립식물원', desc:'19세기 조성 식물원 · 봄철 진달래·동백이 절정'},
-      {key:'sally-gap', name:'샐리 갭', desc:'위클로 산맥을 가로지르는 환상적인 산악 드라이브'},
-      {key:'avoca-mills', name:'에이보카 밀', desc:"220년 전통 트위드 직조 공장 · BBC 'Ballykissangel' 촬영지"},
-      {key:'lough-tay', name:'러프 테이 전망대', desc:"'기네스 호수'로 불리는 명소 · Vikings 드라마 촬영지"},
-      {key:'powerscourt-waterfall', name:'파워스코트 폭포', desc:'아일랜드에서 가장 높은 폭포 (121m) · 입장료 성인 €7.5·학생 €6'},
-      {key:'powerscourt-estate', name:'파워스코트 정원', desc:'세계 3대 정원 중 하나로 꼽히는 18세기 대저택 · 입장료 성인 €10.5·학생 €9'},
-      {key:'glendalough', name:'글렌달록 호수', desc:'산 사이에 깊게 자리 잡은 두 개의 빙하 호수'},
-      {key:'glendalough-monastic', name:'글렌달록 수도원 유적', desc:'6세기에 세워진 수도원과 30m 라운드 타워 · 유적 입장 무료(주차 €4~5)'},
-      {key:'johnnie-fox', name:'조니 폭스 펍', desc:'1798년 창업, 아일랜드에서 가장 높은 곳의 전통 펍'}
-    ],
-    variations:[{name:'A코스 — 위클로 산 집중',spots:'샐리 갭 → 러프 테이 → 글렌달록 → 파워스코트',perPerson:{3:75,4:55,5:45}},{name:'B코스 — 바다+산',spots:'브리타스 베이 → 글렌달록 → 조니 폭스 펍',perPerson:{3:75,4:60,5:45}},{name:'C코스 — 위클로+킬케니',spots:'글렌달록 → 킬케니 캐슬·중세 거리',perPerson:{3:85,4:60,5:50}}] },
+// ===== ROUTE 중심 데이터 (2026-06 재설계) =====
+const ROUTES = [{"id": "r1", "name": "서부 성지순례 (Kylemore·Knock)", "region": "골웨이·메이요", "hours": 13, "total": 410, "pp": {"3": 135, "4": 100, "5": 80}, "pins": ["connemara", "mayo", "galway"], "tag": null, "stops": ["Kylemore Abbey", "아점", "발린터버 수도원 (Ballintubber Abbey)", "녹 성모성지 (Knock)", "골웨이 대성당", "저녁", "귀가"]}, {"id": "r2", "name": "메이요 북부 · 아킬 아일랜드", "region": "메이요", "hours": 14, "total": 460, "pp": {"3": 155, "4": 115, "5": 90}, "pins": ["mayo", "sligo"], "tag": null, "stops": ["아킬 아일랜드 (킴 비치 등)", "점심", "포르타클로이 절벽 루프워크", "다운패트릭 헤드", "저녁 (슬라이고 또는 복귀 중)", "귀가"]}, {"id": "r3", "name": "더니골 남부", "region": "도니골", "hours": 13, "total": 420, "pp": {"3": 140, "4": 105, "5": 85}, "pins": ["donegal"], "tag": null, "stops": ["슬리브리그 (Slieve League)", "Assaranca Waterfall", "점심 · Ardara (전통 털옷 구경)", "돌 형상지", "Fairy Bridge", "Enniskillen Castle 또는 Glencar Waterfall", "저녁 (복귀 중)", "귀가"]}, {"id": "r4", "name": "더니골 북부 — 산 (에리갈·글렌뷔)", "region": "도니골", "hours": 14, "total": 460, "pp": {"3": 155, "4": 115, "5": 90}, "pins": ["donegal"], "tag": null, "stops": ["슬리브리그", "Assaranca Waterfall", "점심 · Ardara", "에리갈 산 (Errigal)", "글렌뷔 캐슬 (Glenveagh)", "저녁 (레터케니 또는 데리)", "귀가"]}, {"id": "r5", "name": "더니골 북부 — 바다 (Fanad·Malin Head)", "region": "도니골", "hours": 15, "total": 480, "pp": {"3": 160, "4": 120, "5": 95}, "pins": ["donegal"], "tag": null, "stops": ["슬리브리그", "Assaranca Waterfall", "점심 · Ardara", "Fanad Head 또는 Malin Head", "저녁 (레터케니 또는 데리)", "귀가"]}, {"id": "r6", "name": "더니골 북부 집중 (Grianan~Malin)", "region": "도니골", "hours": 15, "total": 470, "pp": {"3": 155, "4": 120, "5": 95}, "pins": ["donegal"], "tag": null, "stops": ["Grianan of Aileach (Greenan)", "Inch Wildfowl Reserve", "에리갈 산", "글렌뷔 캐슬", "점심", "Fanad Head", "Malin Head", "저녁 (데리)", "귀가"]}, {"id": "r7", "name": "코네마라 · 골웨이", "region": "코네마라·골웨이", "hours": 13, "total": 410, "pp": {"3": 135, "4": 100, "5": 80}, "pins": ["connemara", "galway"], "tag": null, "stops": ["Kylemore Abbey", "아점", "코네마라 국립공원", "Seal Observatory", "라운드스톤 보그 경유", "골웨이 도심", "저녁", "귀가"]}, {"id": "r8", "name": "모허의 절벽 · 골웨이", "region": "골웨이·클레어", "hours": 12, "total": 360, "pp": {"3": 120, "4": 90, "5": 70}, "pins": ["moher", "galway"], "tag": null, "stops": ["모허의 절벽", "점심", "버렌 국립공원", "골웨이 시내", "저녁", "귀가"]}, {"id": "r9", "name": "모허의 절벽 · 리머릭 (번래티)", "region": "클레어·리머릭", "hours": 11, "total": 340, "pp": {"3": 115, "4": 85, "5": 70}, "pins": ["moher", "limerick"], "tag": null, "stops": ["버렌 국립공원", "모허의 절벽", "점심", "(에니스 경유)", "번래티 캐슬", "리머릭 도심", "저녁", "귀가"]}, {"id": "r10", "name": "카셸 · 리즈모어 · 워터포드", "region": "워터포드", "hours": 12, "total": 330, "pp": {"3": 110, "4": 80, "5": 65}, "pins": ["waterford", "kilkenny"], "tag": null, "stops": ["락 오브 카셸", "Vee Pass", "리즈모어 성", "던가반 점심", "Mahon Falls", "워터포드 그린웨이 맛보기", "Copper Coast 해안 드라이브", "워터포드 도심", "저녁 (옵션: 킬케니 경유)", "귀가"]}, {"id": "r11", "name": "케리 · 딩글 하루 맛보기", "region": "케리", "hours": 16, "total": 580, "pp": {"3": 195, "4": 145, "5": 115}, "pins": ["kerry"], "tag": null, "stops": ["Ross Castle", "Torc Waterfall", "Ladies View", "Gap of Dunloe", "딩글 (점심 · 머피 아이스크림)", "Dunmore Head", "Dunquin Pier", "Conor Pass", "저녁 (트랄리 또는 리머릭)", "귀가"]}, {"id": "r12", "name": "케리 집중 (Ring of Kerry)", "region": "케리", "hours": 16, "total": 570, "pp": {"3": 190, "4": 140, "5": 115}, "pins": ["kerry"], "tag": null, "stops": ["Ross Castle", "Torc Waterfall", "Ladies View", "Gap of Dunloe", "점심", "Cahergall Stone Fort", "Castlecove", "Kenmare", "저녁 (리머릭)", "귀가"]}, {"id": "r13", "name": "케리 · 구게인 바라 · 코크", "region": "케리·코크", "hours": 16, "total": 560, "pp": {"3": 185, "4": 140, "5": 110}, "pins": ["kerry", "cork"], "tag": null, "stops": ["Ross Castle", "Torc Waterfall", "Ladies View", "Gap of Dunloe", "구게인 바라 (Gougane Barra)", "점심 (밴트리)", "Mizen Head", "Baltimore Beacon", "(옵션: Timoleague·Drombeg 환상열석)", "저녁 (코크)", "귀가"]}, {"id": "r14", "name": "코크 (킨세일·블라니·코브)", "region": "코크", "hours": 13, "total": 420, "pp": {"3": 140, "4": 105, "5": 85}, "pins": ["cork"], "tag": null, "stops": ["킨세일 (James Fort · Charles Fort)", "점심", "블라니 캐슬 (언변의 돌) · 블랙락 캐슬", "코브 (Cobh)", "코크 시내", "저녁", "귀가"]}, {"id": "r15", "name": "아일랜드 중부 (멀링거·포트리셔)", "region": "중부", "hours": 9, "total": 230, "pp": {"3": 75, "4": 60, "5": 45}, "pins": ["mullingar"], "tag": null, "stops": ["멀링거 대성당", "릴리풋 (Lilliput)", "벨비디어 하우스 가든", "Emo Court", "Moore Abbey Woods", "킬데어 빌리지", "귀가"]}, {"id": "r16", "name": "위클로 — 하루 종일", "region": "위클로", "hours": 10, "total": 220, "pp": {"3": 75, "4": 55, "5": 45}, "pins": ["wicklow"], "tag": null, "stops": ["글렌달록 클리프 워크 (스핀크)", "브리타스 베이 또는 에네라일리 비치", "아보카 본점", "킬마커러 식물원", "글렌달록", "샐리 갭", "러프 테이 뷰포인트", "Ballinastoe Woods", "조니 폭스 펍", "귀가"]}, {"id": "r17", "name": "위클로 — 반나절 A", "region": "위클로", "hours": 6, "total": 170, "pp": {"3": 55, "4": 40, "5": 35}, "pins": ["wicklow"], "tag": "반나절", "stops": ["아보카 본점", "킬마커러 식물원", "글렌달록", "샐리 갭", "러프 테이 뷰포인트", "Ballinastoe Woods", "조니 폭스 펍", "귀가"]}, {"id": "r18", "name": "위클로 — 반나절 B (파워스코트)", "region": "위클로", "hours": 6, "total": 170, "pp": {"3": 55, "4": 40, "5": 35}, "pins": ["wicklow"], "tag": "반나절", "stops": ["파워스코트 하우스 또는 폭포", "글렌달록", "샐리 갭", "러프 테이 뷰포인트", "Ballinastoe Woods", "조니 폭스 펍", "귀가"]}, {"id": "r19", "name": "코즈웨이 1 (벨파스트 저녁)", "region": "북아일랜드", "hours": 13, "total": 410, "pp": {"3": 135, "4": 100, "5": 80}, "pins": ["causeway", "belfast"], "tag": null, "stops": ["Dunluce Castle", "자이언트 코즈웨이", "Ballintoy Harbour", "Carrick-a-Rede 전망", "점심", "The Dark Hedges", "Glenoe Waterfall", "저녁 (벨파스트 또는 Chick-fil-A)", "귀가"]}, {"id": "r20", "name": "코즈웨이 2 (런던데리 포함)", "region": "북아일랜드", "hours": 14, "total": 440, "pp": {"3": 145, "4": 110, "5": 90}, "pins": ["causeway", "belfast"], "tag": null, "stops": ["Dunluce Castle", "자이언트 코즈웨이", "Ballintoy Harbour", "Carrick-a-Rede 전망", "점심", "The Dark Hedges", "Gortmore 전망대", "런던데리 관광 · 저녁", "귀가"]}, {"id": "r21", "name": "뉴그레인지 · 드록헤다", "region": "미스·루스", "hours": 7, "total": 170, "pp": {"3": 55, "4": 40, "5": 35}, "pins": ["newgrange"], "tag": null, "stops": ["뉴그레인지", "Old Mellifont Abbey", "Clogherhead 절벽 워크", "드록헤다", "귀가"]}, {"id": "r22", "name": "뉴그레인지 · 나반 (Hill of Tara)", "region": "미스", "hours": 7, "total": 170, "pp": {"3": 55, "4": 40, "5": 35}, "pins": ["newgrange"], "tag": null, "stops": ["뉴그레인지", "Old Mellifont Abbey", "Dalgan Park", "Hill of Tara", "귀가"]}];
+const PIN_NAMES = {"donegal": "도니골", "causeway": "자이언트 코즈웨이", "belfast": "벨파스트", "sligo": "슬라이고", "mayo": "메이요", "newgrange": "뉴그레인지", "mullingar": "멀링거", "connemara": "코네마라", "galway": "골웨이", "moher": "모허의 절벽", "limerick": "리머릭", "wicklow": "위클로", "kilkenny": "킬케니", "waterford": "워터포드", "cork": "코크", "kerry": "케리"};
 
-  moher: { name:'모허의 절벽 (Cliffs of Moher)', km:600, time:13, total:490, perPerson:{3:165,4:120,5:100}, desc:'버렌 카르스트 + 모허 절벽 — 아일랜드 대표 명소', folder:'moher',
-    places:[
-      {key:'cliffs-of-moher', name:'모허 절벽', desc:'214m 높이 8km 이어지는 아일랜드 대표 명소 · 입장료 성인 €15·학생 €12(온라인 예약 할인)'},
-      {key:'burren', name:'버렌', desc:'유네스코 지질공원 · 카르스트 회색 암석 평원'},
-      {key:'doolin', name:'둘린 마을', desc:'아일랜드 전통 음악의 수도 · 매일 세션'},
-      {key:'aillwee-cave', name:'일위 동굴', desc:'2백만 년 형성된 종유석 동굴 · 입장료 성인 €25·학생 €23(맹금류쇼 포함)'},
-      {key:'karst-landscape', name:'버렌 카르스트 풍경', desc:'화강암 위에 자라는 희귀 야생화'},
-      {key:'doolin-pier', name:'둘린 부두', desc:'아란 제도행 페리 출발점 · 모허를 바다에서 보는 길'}
-    ],
-    variations:[{name:'A코스 — 모허+골웨이',spots:'Cliffs of Moher → Burren → Doolin → Galway',perPerson:{3:165,4:120,5:100}},{name:'B코스 — 모허+번래티/리머릭',spots:'Cliffs of Moher → Burren → Bunratty Castle → 리머릭',perPerson:{3:155,4:120,5:95}}] },
+const r5 = v => Math.round(v/5)*5;
 
-  causeway: { name:"자이언트 코즈웨이 (Giant's Causeway)", km:590, time:12, total:480, perPerson:{3:160,4:120,5:95}, desc:'세계 자연유산 · 4만 개 육각 현무암', folder:'causeway',
-    places:[
-      {key:'giants-causeway', name:'자이언트 코즈웨이', desc:'4만 개 육각 현무암 기둥 · 유네스코 세계자연유산 · 비지터 체험 성인 £15(주차·가이드 포함)'},
-      {key:'dark-hedges', name:'다크 헤지스', desc:"왕좌의 게임 '킹스로드' 촬영지 · 너도밤나무 터널"},
-      {key:'glenoe-falls', name:'글레노 폭포', desc:'고요한 숲속에 숨겨진 작은 보석 같은 폭포'},
-      {key:'carrick-a-rede', name:'캐릭어리드 밧줄다리', desc:'30m 절벽 위 흔들 다리 · 작은 섬으로 가는 길 · 입장료 성인 £15.5'},
-      {key:'bushmills', name:'부쉬밀스 양조장', desc:'1608년 면허 · 세계에서 가장 오래된 위스키 양조장 · 투어 성인 £15~20'},
-      {key:'derry-walls', name:'데리 시티 월', desc:'유럽에서 가장 잘 보존된 17세기 성벽 도시'}
-    ],
-    variations:[{name:'A코스 — 코즈웨이+다크헤지스+벨파스트',spots:"Giant's Causeway → Dark Hedges → Glenoe Falls → Belfast",perPerson:{3:165,4:125,5:100}},{name:'B코스 — 코즈웨이+데리',spots:'Causeway → Dark Hedges → Derry/Londonderry',perPerson:{3:170,4:130,5:100}}] },
-
-  kerry: { name:'케리 (Kerry · Killarney+Dingle)', km:920, time:16, total:720, perPerson:{3:240,4:180,5:145}, desc:'아일랜드 풍경의 정점 · 링 오브 케리', folder:'kerry',
-    places:[
-      {key:'gap-of-dunloe', name:'갭 오브 던로', desc:'빙하가 깎아낸 11km 산악 협곡 · 마차 €35/인(선택, 마부에게 직접 지불)'},
-      {key:'ross-castle', name:'로스 캐슬', desc:'러프 리네 호숫가의 15세기 탑 가옥 · 가이드 투어 성인 €5·학생 €3'},
-      {key:'dingle', name:'딩글', desc:'아일랜드어가 살아있는 색색의 항구 마을'},
-      {key:'dunquin-pier', name:'던퀸 부두', desc:'블래스킷 제도행 부두 · 양들이 지나는 명장면'},
-      {key:'gallarus-oratory', name:'갤러러스 오라토리', desc:'1,300년 된 돌배 모양 초기 기독교 예배당'},
-      {key:'conor-pass', name:'코너 패스', desc:'아일랜드에서 가장 높은 산악 도로 (456m)'},
-      {key:'ring-of-kerry', name:'링 오브 케리', desc:'179km 환상 드라이브 코스 · 아일랜드 풍경의 정점'},
-      {key:'molls-gap', name:'몰스 갭', desc:'링 오브 케리의 산악 전망대 · 데리쿠니히 교회'}
-    ],
-    variations:[{name:'A코스 — 킬러니+딩글',spots:'Killarney N.P. → Gap of Dunloe → Dingle → Slea Head',perPerson:{3:240,4:180,5:145}},{name:'B코스 — 킬러니+구게인바라',spots:'Killarney → Gougane Barra → Ventry Beach',perPerson:{3:235,4:175,5:140}}] },
-
-  donegal: { name:'도니골 (Donegal)', km:650, time:14, total:530, perPerson:{3:175,4:130,5:105}, desc:'슬리브 리그 · 와일드 애틀랜틱 야생', folder:'donegal',
-    places:[
-      {key:'slieve-league', name:'슬리브 리그', desc:'유럽에서 가장 높은 해상 절벽 (601m) · 절벽 무료(셔틀 성인 €6·학생 €5)'},
-      {key:'glenveagh', name:'글렌비 국립공원', desc:'호수와 빅토리아 캐슬을 품은 야생 공원 · 공원 무료, 성 투어 성인 €10·학생 €7'},
-      {key:'fanad-head', name:'파나드 헤드 등대', desc:'세계에서 가장 아름다운 등대로 꼽히는 1817년 등대'},
-      {key:'malin-head', name:'말린 헤드', desc:'아일랜드 최북단 · 와일드 애틀랜틱 웨이의 끝'}
-    ],
-    variations:[{name:'A코스 — 슬리브 리그(남부)',spots:'Slieve League → Glenveagh National Park',perPerson:{3:165,4:125,5:100}},{name:'B코스 — 도니골 북부+데리',spots:'Fanad Head → Malin Head → Derry',perPerson:{3:185,4:140,5:110}}] },
-
-  connemara: { name:'코네마라 (Connemara)', km:650, time:12, total:510, perPerson:{3:170,4:130,5:100}, desc:'카일모어 수도원 · 호수와 산', folder:'connemara',
-    places:[
-      {key:'kylemore-abbey', name:'카일모어 수도원', desc:'호숫가에 자리한 19세기 베네딕트회 수도원 · 입장료 성인 €18·학생 €15.5(온라인 할인)'},
-      {key:'connemara-np', name:'코네마라 국립공원', desc:'다이아몬드 힐 트레일 · 트웰브 벤스 산맥 풍경'},
-      {key:'ballintubber-abbey', name:'발린터버 수도원', desc:'800년간 미사가 끊긴 적 없는 13세기 수도원 · 입장 무료(기부 권장)'},
-      {key:'bog-road', name:'보그 로드', desc:'코네마라의 광활한 피트랜드를 가로지르는 드라이브'},
-      {key:'connemara-coast', name:'코네마라 해안', desc:'대서양과 만나는 코네마라의 거친 해안선'}
-    ],
-    variations:[{name:'A코스 — 코네마라+골웨이',spots:'Galway → Bog Road → Kylemore Abbey → 코네마라 국립공원',perPerson:{3:175,4:130,5:105}},{name:'B코스 — 카일모어+녹+발린터버',spots:'Kylemore → Knock Shrine → Ballintubber Abbey',perPerson:{3:175,4:130,5:105}}] },
-
-  galway: { name:'골웨이 (Galway)', km:460, time:11, total:390, perPerson:{3:130,4:100,5:80}, desc:'아일랜드 서부의 보석 · 음악과 거리 공연', folder:'galway',
-    places:[
-      {key:'eyre-square', name:'아이어 스퀘어', desc:'골웨이의 중심 광장 · 케네디 기념 공원'},
-      {key:'spanish-arch', name:'스패니시 아치', desc:'1584년 옛 성벽의 일부 · 코리브강 어귀'},
-      {key:'latin-quarter', name:'라틴 쿼터', desc:'쿠에이 스트리트 보행자 거리 · 펍과 거리 음악'},
-      {key:'salthill', name:'솔트힐 산책로', desc:'골웨이 만 따라 이어지는 2km 해안 산책로'},
-      {key:'galway-cathedral', name:'골웨이 대성당', desc:'1965년 완공 · 르네상스풍 돔과 모자이크 · 입장 무료(기부 €3 권장)'}
-    ],
-    variations:[{name:'A코스 — 골웨이 시티',spots:'Eyre Square → Spanish Arch → Latin Quarter → Salthill',perPerson:{3:130,4:100,5:80}},{name:'B코스 — 골웨이+모허',spots:'골웨이 → Doolin → Cliffs of Moher',perPerson:{3:140,4:105,5:85}},{name:'C코스 — 골웨이+아란 페리',spots:'Doolin 페리 → Inishmore 자전거 (페리비 별도)',perPerson:{3:135,4:100,5:80}}] },
-
-  cork: { name:'코크 (Cork · Cobh · Kinsale)', km:640, time:12, total:510, perPerson:{3:170,4:130,5:100}, desc:'제2의 도시 · 항구 마을 · 웨스트코크 야생', folder:'cork',
-    places:[
-      {key:'cobh', name:'코브', desc:'타이타닉 마지막 기항지 · 컬러풀한 데크 오브 카드 · 타이타닉 체험관 성인 €12·학생 €10'},
-      {key:'kinsale', name:'킨세일', desc:'미식과 색색의 집들이 어우러진 항구 마을'},
-      {key:'english-market', name:'잉글리시 마켓', desc:'1788년부터 이어진 코크 도심 전통 시장'},
-      {key:'gougane-barra', name:'구게인 바라', desc:'산속 호숫가의 아담한 예배당 · 인기 사진 명소'},
-      {key:'mizen-head', name:'미즌 헤드', desc:'아일랜드 최남단 곶 · 절벽 위 시그널 스테이션 · 입장료 성인 €7.5·학생 €6'}
-    ],
-    variations:[{name:'A코스 — 코크+코브+킨세일',spots:'Cork → Cobh → Kinsale',perPerson:{3:165,4:120,5:100}},{name:'B코스 — 코크+카셸',spots:'Cork → Cobh → Kinsale → Rock of Cashel',perPerson:{3:175,4:130,5:105}},{name:'C코스 — 웨스트코크',spots:'Gougane Barra → Mizen Head → Baltimore Beacon',perPerson:{3:185,4:140,5:110}}] },
-
-  mayo: { name:'메이요 (Mayo · Achill)', km:670, time:13, total:540, perPerson:{3:180,4:135,5:110}, desc:'아킬·다운패트릭·녹 — 아일랜드 서부 끝 야생', folder:'mayo',
-    places:[
-      {key:'achill-island', name:'아킬 아일랜드', desc:'아일랜드 최대의 섬 · 킴 베이의 청록 바다'},
-      {key:'downpatrick-head', name:'다운패트릭 헤드', desc:"바다에 솟은 거석 '둔 브리스테' 절벽"},
-      {key:'westport', name:'웨스트포트', desc:'클루 만 끝의 조지안 계획 도시 · 음악 펍'},
-      {key:'croagh-patrick', name:'크로 패트릭', desc:"성 패트릭이 40일 단식한 '아일랜드의 시나이산'"},
-      {key:'portacloy', name:'포타클로이', desc:'북마요 절벽 사이의 외딴 어촌'},
-      {key:'knock-shrine', name:'녹 성지', desc:'1879년 성모 발현지 · 4대 가톨릭 성지 · 입장 무료'}
-    ],
-    variations:[{name:'A코스 — 아킬+다운패트릭',spots:'Achill (Keem Bay) → Downpatrick Head',perPerson:{3:180,4:135,5:110}},{name:'B코스 — 아킬+웨스트포트+녹',spots:'Achill → Westport → Ballintubber Abbey → Knock',perPerson:{3:180,4:135,5:110}}] },
-
-  belfast: { name:'벨파스트 (Belfast)', km:390, time:9, total:330, perPerson:{3:110,4:80,5:65}, desc:'타이타닉의 도시 · 북아일랜드 수도', folder:'belfast',
-    places:[
-      {key:'titanic-belfast', name:'타이타닉 벨파스트', desc:'타이타닉이 건조된 조선소 부지의 세계 최대 박물관 · 입장료 성인 £24.95·학생 £21.95(온라인)'},
-      {key:'belfast-castle', name:'벨파스트 캐슬', desc:'케이브힐 산 중턱의 19세기 스코틀랜드식 성채'},
-      {key:'st-georges-market', name:'세인트 조지스 마켓', desc:'1604년부터 이어진 빅토리아풍 마켓홀'},
-      {key:'city-hall', name:'벨파스트 시청', desc:'에드워디안 바로크 건축의 도시 상징'},
-      {key:'crumlin-road-gaol', name:'크럼린 로드 감옥', desc:'1846~1996 운영된 빅토리아 시대 교도소 · 입장료 성인 £18.5·할인 £17'},
-      {key:'peace-walls', name:'피스 월', desc:'분쟁의 흔적 · 거대한 평화벽 + 벽화'},
-      {key:'st-peters-cathedral', name:'세인트 피터스 캐넨드럴', desc:'더블 스파이어가 인상적인 19세기 가톨릭 대성당'}
-    ],
-    variations:[{name:'A코스 — 벨파스트+타이타닉',spots:'Titanic Belfast → Belfast Castle → St George\'s Market',perPerson:{3:110,4:80,5:65}},{name:'B코스 — 벨파스트+코즈웨이',spots:'Belfast → Glenoe Falls → Causeway → Dark Hedges',perPerson:{3:125,4:95,5:75}}] },
-
-  waterford: { name:'워터포드 (Waterford)', km:410, time:10, total:350, perPerson:{3:115,4:90,5:70}, desc:'바이킹의 도시·크리스탈·코퍼 코스트', folder:'waterford',
-    places:[
-      {key:'copper-coast', name:'코퍼 코스트', desc:'유네스코 지질공원 · 구리광산 흔적 해안'},
-      {key:'hook-lighthouse', name:'후크 등대', desc:'세계에서 가장 오래 운영중인 등대 (800년) · 타워 투어 성인 €12·학생 €10'},
-      {key:'mahon-falls', name:'마혼 폭포', desc:'코마라 산맥에서 떨어지는 80m 폭포'},
-      {key:'lismore-castle', name:'리스모어 캐슬', desc:'블랙워터강 위 데번셔 공작가의 성 · 정원 입장 성인 €9'},
-      {key:'dungarvan', name:'던가반', desc:'그린웨이의 출발점, 색색의 항구 마을'},
-      {key:'waterford-greenway', name:'워터포드 그린웨이', desc:'46km 자전거 트레일 · 비아덕트 풍경'},
-      {key:'house-of-waterford', name:'하우스 오브 워터포드 크리스탈', desc:'세계적 크리스탈 공장 투어 · 공장 투어 성인 약 €20'}
-    ],
-    variations:[{name:'A코스 — 카셸+리스모어+코퍼',spots:'Rock of Cashel → Lismore → Dungarvan → Copper Coast',perPerson:{3:115,4:90,5:70}},{name:'B코스 — 코퍼+후크 등대',spots:'Copper Coast → Mahon Falls → Hook Lighthouse',perPerson:{3:115,4:90,5:70}}] },
-
-  limerick: { name:'리머릭 (Limerick · Bunratty)', km:480, time:10, total:390, perPerson:{3:130,4:100,5:80}, desc:'번래티+아데어+카셸 — 중세 성과 작은 마을', folder:'limerick',
-    places:[
-      {key:'bunratty-castle', name:'번래티 캐슬 & 민속촌', desc:'15세기 성과 19세기 마을 재현 야외 박물관 · 입장료 성인 €11.55·학생 €10.45'},
-      {key:'adare-village', name:'아데어 마을', desc:"초가집이 늘어선 '아일랜드에서 가장 예쁜 마을'"},
-      {key:'king-johns-castle', name:'킹 존스 캐슬', desc:'13세기 노르만 성 · 섀넌강 위 리머릭의 상징 · 입장료 성인 약 €15·학생 €10.5'},
-      {key:'hunt-museum', name:'헌트 박물관', desc:'아일랜드·이집트·중세 유물 컬렉션 · 입장료 성인 약 €10·학생 €5(일요일 무료)'},
-      {key:'rock-of-cashel', name:'카셸 바위', desc:'4세기 먼스터 왕좌 · 라운드 타워와 코맥의 예배당 · 입장료 성인 €8·학생 €4'},
-      {key:'glenstal-abbey', name:'글렌스탈 수도원', desc:'베네딕트회 수도원과 평화로운 숲길'}
-    ],
-    variations:[{name:'A코스 — 번래티+아데어',spots:'Bunratty Castle → Adare Village → 리머릭 시내',perPerson:{3:135,4:100,5:80}},{name:'B코스 — 리머릭+카셸',spots:"King John's Castle → Hunt Museum → Rock of Cashel",perPerson:{3:145,4:110,5:90}}] },
-
-  kilkenny: { name:'킬케니 (Kilkenny)', km:300, time:8, total:260, perPerson:{3:85,4:65,5:50}, desc:'중세 도시 · 성과 양조장', folder:'kilkenny',
-    places:[
-      {key:'kilkenny-castle', name:'킬케니 캐슬', desc:'12세기 노르만 성 · 정원과 함께 둘러보기 좋음 · 입장료 성인 €8·학생 €4'},
-      {key:'smithwicks', name:'스미딕스 양조장', desc:'1710년 창업, 아일랜드에서 가장 오래된 에일 · 체험 투어 성인 약 €20'},
-      {key:'black-abbey', name:'블랙 애비', desc:'1225년 도미니코회 수도원 · 흑색 가운'},
-      {key:'st-canices', name:'성 카니스 캐넨드럴', desc:'13세기 캐넨드럴과 9세기 라운드 타워 · 입장료 성인 €6.5~(라운드타워 별도)'},
-      {key:'kells-priory', name:'켈스 수도원 유적', desc:'아일랜드 최대의 중세 수도원 폐허'},
-      {key:'dunmore-cave', name:'던모어 동굴', desc:'바이킹 시대 유물이 발견된 카르스트 동굴 · 입장료 성인 €5·학생 €3'},
-      {key:'ducketts-grove', name:'더켓츠 그로브', desc:'유령 저택으로 알려진 19세기 폐허 + 정원'}
-    ],
-    variations:[{name:'A코스 — 킬케니 시내',spots:'Kilkenny Castle → 중세 거리 → Smithwick\'s → 성 카니스',perPerson:{3:85,4:65,5:50}},{name:'B코스 — 킬케니+위클로',spots:'글렌달록 → 킬케니 캐슬',perPerson:{3:85,4:65,5:50}}] },
-
-  sligo: { name:'슬라이고 (Sligo)', km:580, time:11, total:460, perPerson:{3:155,4:115,5:90}, desc:'예이츠 컨트리 · Benbulben 산', folder:'sligo',
-    places:[
-      {key:'drumcliffe', name:'드럼클리프 (예이츠 묘)', desc:'시인 W.B. 예이츠가 잠든 곳 · 벤불벤이 보이는 마당'},
-      {key:'glencar-waterfall', name:'글렌카 폭포', desc:"예이츠의 시 'The Stolen Child' 무대"},
-      {key:'mullaghmore', name:'멀라모어 헤드', desc:'대서양 서핑 명소 · 클래시바운 캐슬 전망'},
-      {key:'carrowmore', name:'카로모어 거석 묘지', desc:'5,500년 된 아일랜드 최대 거석 무덤군 · 입장료 성인 €5·학생 €3'},
-      {key:'sligo-abbey', name:'슬라이고 수도원', desc:'13세기 도미니코회 수도원 폐허 · 입장료 성인 €5·학생 €3'},
-      {key:'rosses-point', name:'로시즈 포인트', desc:'슬라이고 만의 황금빛 모래 해변'},
-      {key:'parkes-castle', name:'파크스 캐슬', desc:'길 호숫가에 자리한 17세기 플랜테이션 성 · 입장료 성인 €5·학생 €3'},
-      {key:'gleniff-horseshoe', name:'글레니프 호스슈', desc:'벤불벤 산맥을 도는 12km 환상 드라이브'},
-      {key:'fairy-bridges', name:'페어리 브릿지스', desc:'대서양이 깎아낸 자연 아치들 (Bundoran)'},
-      {key:'tullan-strand', name:'툴란 스트랜드', desc:'번도란의 광활한 모래 해변 · 서핑 핫스팟'}
-    ],
-    variations:[{name:'A코스 — 예이츠+벤불벤',spots:'Drumcliffe → Glencar Waterfall → Benbulben → Mullaghmore',perPerson:{3:155,4:115,5:90}},{name:'B코스 — 슬라이고+다운패트릭',spots:'Sligo → Downpatrick Head',perPerson:{3:170,4:130,5:100}}] },
-
-  mullingar: { name:'멀링거 (Mullingar)', km:230, time:7, total:210, perPerson:{3:70,4:50,5:40}, desc:'호수와 평원의 미들랜즈', folder:'mullingar',
-    places:[
-      {key:'belvedere-house', name:'벨베디어 하우스', desc:'18세기 저택과 호숫가 정원 · 입장료 성인 €8.75·학생 €6.25(2026 본관 보수중)'},
-      {key:'mullingar-cathedral', name:'멀링거 대성당', desc:'1939년 완공된 멀링거의 랜드마크'},
-      {key:'lough-ennell', name:'러프 에넬 호수', desc:'멀링거 남쪽의 평온한 미들랜즈 호수'},
-      {key:'moore-abbey-wood', name:'무어 애비 숲', desc:'고요한 산책길과 청록빛 숲'},
-      {key:'mullingar-activities', name:'멀링거 도심 풍경', desc:'미들랜즈의 작고 정겨운 시내'}
-    ],
-    variations:[{name:'A코스 — 멀링거+호수',spots:'Lough Owel · Lough Ennell · Mullingar Cathedral',perPerson:{3:70,4:50,5:40}},{name:'B코스 — 멀링거+Belvedere',spots:'Belvedere House → Tullynally Castle + 정원',perPerson:{3:75,4:55,5:45}}] },
-
-  newgrange: { name:'뉴그레인지 + 드록헤다 (Newgrange + Drogheda)', km:170, time:7, total:170, perPerson:{3:55,4:40,5:35}, desc:'5,200년 신석기 유적 (유네스코)', folder:'newgrange',
-    places:[
-      {key:'newgrange', name:'뉴그레인지', desc:'5,200년 신석기 통로 무덤 · 유네스코 세계문화유산 · Brú na Bóinne 투어 성인 €18(전시만 €5)'},
-      {key:'knowth', name:'노스', desc:'유럽 최대 켈트 거석 예술 컬렉션'},
-      {key:'hill-of-tara', name:'타라 언덕', desc:'고대 아일랜드 왕들의 즉위지 · 신화의 무대'},
-      {key:'mellifont-abbey', name:'멜리폰트 수도원', desc:'아일랜드 최초의 시토회 수도원 (1142년)'},
-      {key:'drogheda', name:'드록헤다', desc:'성 올리버 플런킷이 모셔진 보인강 항구'},
-      {key:'skerries-mills', name:'스케리스 풍차', desc:'5세기 풍차·물레방아 복원 단지'},
-      {key:'newbridge-house', name:'뉴브리지 하우스', desc:'18세기 조지안 저택과 역사 농장'}
-    ],
-    variations:[{name:'A코스 — 뉴그레인지+모나스터보이스',spots:'Newgrange → Knowth → Monasterboice 켈트 십자가',perPerson:{3:55,4:40,5:35}},{name:'B코스 — 뉴그레인지+타라+드록헤다',spots:'Newgrange → Hill of Tara → Drogheda 시내',perPerson:{3:60,4:45,5:35}}] }
-};
-
-// 카드 표시 순서 (인기 순)
-const TOUR_ORDER = ['wicklow','moher','causeway','kerry','donegal','connemara','galway','cork','mayo','belfast','waterford','limerick','kilkenny','sligo','mullingar','newgrange'];
-
-// 가격 범위 헬퍼 — 모든 코스 옵션을 포함한 실제 1인 가격 범위 산출
-// 5인일 때 가장 저렴, 3인일 때 가장 비싼 1/n 분담 원리
-function getPriceRange(t) {
-  const list = (t.variations && t.variations.length) ? t.variations : [{ perPerson: t.perPerson }];
-  const all5 = list.map(v => v.perPerson[5]).filter(x => typeof x === 'number');
-  const all3 = list.map(v => v.perPerson[3]).filter(x => typeof x === 'number');
-  return { lo: Math.min(...all5), hi: Math.max(...all3) };
-}
-// 인원별(3/4/5인) 가격 범위
-function getPriceRangeBySize(t, n) {
-  const list = (t.variations && t.variations.length) ? t.variations : [{ perPerson: t.perPerson }];
-  const arr = list.map(v => v.perPerson[n]).filter(x => typeof x === 'number');
-  return { lo: Math.min(...arr), hi: Math.max(...arr) };
-}
-
-// 1) 카드 렌더
-const grid = document.getElementById('tour-cards');
-TOUR_ORDER.forEach(key => {
-  const t = TOURS[key];
-  if (!t) return;
-  const card = document.createElement('div');
-  card.className = 'tour-card';
-  card.dataset.key = key;
-  card.onclick = () => openTour(key);
-  const folder = t.folder || key;
-  const pp4 = t.perPerson[4];
-  card.innerHTML = `
-    <div class="tour-img has-cover" style="background-image: url('../images/${folder}/cover.jpg');">
-      <span class="placeholder">📷 ${t.name}</span>
-    </div>
-    <div class="tour-body">
-      <div class="tour-name">${t.name}</div>
-      <div class="tour-meta">⏱️ ${t.time}시간 일정 · 차 한 대 단독</div>
-      <div class="tour-prices" style="display:flex; align-items:baseline; justify-content:space-between; gap:8px;">
-        <span><span class="lbl">투어</span> €${t.total} <span class="lbl">· 1인</span> €${pp4}<span style="color:var(--muted); font-weight:500; font-size:11px;"> (4인)</span></span>
-        <span style="color:var(--muted); font-weight:500; font-size:11.5px;">상세 →</span>
-      </div>
-    </div>
-  `;
-  grid.appendChild(card);
-});
-
-// 2) 가격 비교 표 렌더
-const tbody = document.getElementById('pricing-tbody');
-TOUR_ORDER.forEach(key => {
-  const t = TOURS[key];
-  if (!t) return;
-  const tr = document.createElement('tr');
-  tr.style.cursor = 'pointer';
-  tr.onclick = () => openTour(key);
-  tr.innerHTML = `
-    <td class="name">${t.name}</td>
-    <td class="num">${t.time}h</td>
-    <td class="num"><strong>€${t.total}</strong></td>
-    <td class="num">€${t.perPerson[4]}</td>
-  `;
-  tbody.appendChild(tr);
-});
-
-// 3) 계산기 옵션 채우기
-const trDest = document.getElementById('tr-dest');
-TOUR_ORDER.forEach(key => {
-  const t = TOURS[key];
-  const opt = document.createElement('option');
-  opt.value = key;
-  opt.textContent = t.name;
-  trDest.appendChild(opt);
-});
-
-// 4) 계산 — 코스 옵션 전체의 최저~최고 범위로 표시
-function calcTour() {
-  const r5 = v => Math.round(v / 5) * 5;
-  const key = document.getElementById('tr-dest').value;
-  const t = TOURS[key];
-  let n = parseInt(document.getElementById('tr-people').value, 10);
-  if (isNaN(n) || n < 3) n = 3;
-  if (n > 5) n = 5;
-
-  const pickupEl = document.getElementById('tr-d2d-pickup');
-  const dropEl = document.getElementById('tr-d2d-drop');
-  const pickup = pickupEl && pickupEl.checked;
-  const drop = dropEl && dropEl.checked;
-  const addon = (pickup ? 5 : 0) + (drop ? 5 : 0);
-
-  // 1인 부담 = 고정 총액 ÷ 인원 (+옵션은 인당 가산)
-  const pp = r5(t.total / n) + addon;
-  const total = addon ? pp * n : t.total;           // 옵션 없으면 고정 총액 그대로
-  const ppText = `€${pp}`;
-  const totalText = `€${total}`;
-
-  document.getElementById('tr-total').textContent = totalText;
-  document.getElementById('tr-perperson').textContent = ppText;
-  document.getElementById('tr-people-label').textContent = n;
-
-  // 5인 안내 (5인 미만 선택 시)
-  const note = document.getElementById('tr-five-note');
-  if (n < 5) {
-    const pp5 = r5(t.total / 5) + addon;
-    note.textContent = `👥 5인까지 모이면 1인 €${pp5}로 더 저렴해져요`;
-    note.style.display = '';
-  } else {
-    note.textContent = '';
-    note.style.display = 'none';
-  }
-
-  const lines = [
-    `<li><span>${t.name}</span><span>⏱️ ${t.time}시간 일정</span></li>`,
-    `<li><span>투어 고정 총액</span><span>€${t.total}</span></li>`,
-    `<li><span>👥 ${n}인 → 1인 부담</span><span>${ppText}</span></li>`
-  ];
-  if (pickup) lines.push(`<li><span>🚪 도어투도어 픽업 (출발 시)</span><span>+€5/인</span></li>`);
-  if (drop) lines.push(`<li><span>🏠 도어투도어 드랍 (귀가 시)</span><span>+€5/인</span></li>`);
-  if (addon) lines.push(`<li style="border-top:1px solid var(--border); padding-top:8px; margin-top:6px;"><span>👥 ${n}인 합계 (옵션 포함)</span><span><strong>${totalText}</strong></span></li>`);
-  document.getElementById('tr-breakdown').innerHTML = lines.join('');
-}
-calcTour();
-
-// 5) 모달 열기
-function openTour(key) {
-  const t = TOURS[key];
-  if (!t) return;
-
-  // 활성 카드 표시
-  document.querySelectorAll('.tour-card').forEach(c => c.classList.toggle('is-active', c.dataset.key === key));
-  document.querySelectorAll('.ireland-marker').forEach(m => m.classList.toggle('active', m.dataset.tour === key));
-
-  document.getElementById('modal-name').textContent = t.name;
-  document.getElementById('modal-meta').textContent = `⏱️ 약 ${t.time}시간 일정 · 차 한 대 단독 동행`;
-  document.getElementById('modal-desc').textContent = t.desc;
-  const headEl = document.getElementById('modal-price-head');
-  if (headEl) headEl.textContent = `💰 투어 총액 €${t.total} · 인원별 1인 부담 (많을수록 ↓)`;
-
-  // Places — 슬라이드 갤러리 (사진 + 장소명·설명)
-  const placesSection = document.getElementById('modal-places-section');
-  if (t.places && t.places.length > 0) {
-    const folder = t.folder || key;
-    const galleryId = `gallery-${key}`;
-    placesSection.innerHTML = `
-      <div class="gallery-header">
-        <h5>📍 대표 장소 (${t.places.length}곳)</h5>
-        <span class="gallery-note">← 좌우 스와이프 / 화살표 →</span>
-      </div>
-      <div class="places-gallery-wrap">
-        <button class="gallery-nav prev" onclick="scrollGallery('${galleryId}', -1)" aria-label="이전">‹</button>
-        <div class="places-gallery" id="${galleryId}">
-          ${t.places.map((p, idx) => {
-            const slug = p.key || (idx + 1);
-            return `
-            <div class="place-card-mini">
-              <div class="place-thumb">
-                <img src="../images/${folder}/${slug}.jpg"
-                     alt="${p.name}"
-                     loading="lazy"
-                     decoding="async"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                     onload="this.style.display='block'; this.nextElementSibling.style.display='none';">
-                <div class="needs-photo" style="display:flex;">
-                  📷 사진 준비 중
-                  <span class="filename">${folder}/${slug}.jpg</span>
-                </div>
-              </div>
-              <div class="place-info">
-                <div class="place-name-ko">${p.name}</div>
-                <div class="place-desc-mini">${p.desc}</div>
-              </div>
-            </div>
-          `;}).join('')}
+// 카드 렌더
+(function(){
+  const grid = document.getElementById('tour-cards');
+  ROUTES.forEach(rt => {
+    const card = document.createElement('div');
+    card.className = 'tour-card route-card';
+    card.onclick = () => openRoute(rt.id);
+    const tag = rt.tag ? `<span class="route-tag">${rt.tag}</span>` : '';
+    card.innerHTML = `
+      <div class="tour-body">
+        <div class="route-region">${rt.region}${tag}</div>
+        <div class="tour-name">${rt.name}</div>
+        <div class="tour-meta">⏱️ ${rt.hours}시간 일정 · 정차지 ${rt.stops.length}곳</div>
+        <div class="route-stops-mini">${rt.stops.slice(0,4).join(' · ')}${rt.stops.length>4?' …':''}</div>
+        <div class="tour-prices" style="display:flex; align-items:baseline; justify-content:space-between; gap:8px;">
+          <span><span class="lbl">투어</span> €${rt.total} <span class="lbl">· 1인</span> €${rt.pp[4]}<span style="color:var(--muted); font-size:11px;"> (4인)</span></span>
+          <span style="color:var(--muted); font-size:11.5px;">상세 →</span>
         </div>
-        <button class="gallery-nav next" onclick="scrollGallery('${galleryId}', 1)" aria-label="다음">›</button>
-      </div>
-    `;
-  } else {
-    placesSection.innerHTML = '';
-  }
+      </div>`;
+    grid.appendChild(card);
+  });
 
-  // Prices — 인원별 1인 가격 범위 (모든 코스 옵션 종합)
-  const pricesDiv = document.getElementById('modal-prices');
-  pricesDiv.innerHTML = [3,4,5].map(n => {
-    const r = getPriceRangeBySize(t, n);
-    const txt = (r.lo === r.hi) ? `€${r.lo}` : `€${r.lo}~€${r.hi}`;
-    return `
-    <div class="pricing-cell">
-      <div class="num">${txt}</div>
-      <div class="lbl">${n}인 1인당</div>
-    </div>
-    `;
-  }).join('');
+  // 가격 비교표
+  const tbody = document.getElementById('pricing-tbody');
+  ROUTES.forEach(rt => {
+    const tr = document.createElement('tr');
+    tr.style.cursor='pointer'; tr.onclick=()=>openRoute(rt.id);
+    tr.innerHTML = `<td class="name">${rt.name}</td><td class="num">${rt.hours}h</td><td class="num"><strong>€${rt.total}</strong></td><td class="num">€${rt.pp[4]}</td>`;
+    tbody.appendChild(tr);
+  });
 
-  // 코스 옵션 — variations 데이터 + "맞춤형 코스" 마지막 추가
-  const varSection = document.getElementById('modal-variations-section');
-  const varDiv = document.getElementById('modal-variations');
-  varSection.style.display = '';
-  const optionItems = (t.variations && t.variations.length)
-    ? t.variations.map(v => `
-      <div class="var-card">
-        <strong>${v.name}</strong><br>
-        <span style="color:var(--muted); font-size:12.5px;">${v.spots}</span><br>
-        <span style="color:var(--accent); font-weight:700; font-size:13px; margin-top:4px; display:inline-block;">5인 €${v.perPerson[5]} · 4인 €${v.perPerson[4]} · 3인 €${v.perPerson[3]} (1인당)</span>
-      </div>
-    `)
-    : [];
-  // 맞춤형 코스 — 모든 지역 공통, 마지막 옵션
-  optionItems.push(`
-    <div class="var-card" style="border:1.5px dashed var(--accent); background:var(--accent-soft);">
-      <strong>✏️ 맞춤형 코스</strong><br>
-      <span style="color:var(--muted); font-size:12.5px;">관심사·체력·동행 인원·시간에 맞춰 함께 만드는 코스</span><br>
-      <span style="color:var(--primary); font-weight:700; font-size:13px; margin-top:4px; display:inline-block;">💬 가격 문의 (카톡 상담)</span>
-    </div>
-  `);
-  varDiv.innerHTML = optionItems.join('');
-
-  document.getElementById('tour-modal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-
-  // 계산기에도 자동 반영
-  document.getElementById('tr-dest').value = key;
+  // 계산기 select
+  const trDest = document.getElementById('tr-dest');
+  ROUTES.forEach(rt => { const o=document.createElement('option'); o.value=rt.id; o.textContent=rt.name; trDest.appendChild(o); });
   calcTour();
+
+  // 지도 마커 → 장소 경유 루트
+  document.querySelectorAll('.ireland-marker[data-tour]').forEach(m => m.addEventListener('click', () => openPlace(m.dataset.tour)));
+})();
+
+function calcTour(){
+  const sel=document.getElementById('tr-dest'); const rt=ROUTES.find(r=>r.id===(sel&&sel.value)); if(!rt) return;
+  let n=parseInt(document.getElementById('tr-people').value,10); if(isNaN(n)||n<3)n=3; if(n>5)n=5;
+  const pickup=(document.getElementById('tr-d2d-pickup')||{}).checked;
+  const drop=(document.getElementById('tr-d2d-drop')||{}).checked;
+  const addon=(pickup?5:0)+(drop?5:0);
+  const pp=r5(rt.total/n)+addon; const total=addon?pp*n:rt.total;
+  document.getElementById('tr-total').textContent=`€${total}`;
+  document.getElementById('tr-perperson').textContent=`€${pp}`;
+  document.getElementById('tr-people-label').textContent=n;
+  const note=document.getElementById('tr-five-note');
+  if(n<5){ const pp5=r5(rt.total/5)+addon; note.textContent=`👥 5인까지 모이면 1인 €${pp5}로 더 저렴해져요`; note.style.display=''; }
+  else { note.textContent=''; note.style.display='none'; }
+  const lines=[`<li><span>${rt.name}</span><span>⏱️ ${rt.hours}시간</span></li>`,`<li><span>투어 고정 총액</span><span>€${rt.total}</span></li>`,`<li><span>👥 ${n}인 → 1인 부담</span><span>€${pp}</span></li>`];
+  if(pickup)lines.push(`<li><span>🚪 도어투도어 픽업</span><span>+€5/인</span></li>`);
+  if(drop)lines.push(`<li><span>🏠 도어투도어 드랍</span><span>+€5/인</span></li>`);
+  if(addon)lines.push(`<li style="border-top:1px solid var(--border); padding-top:8px; margin-top:6px;"><span>👥 ${n}인 합계 (옵션 포함)</span><span><strong>€${total}</strong></span></li>`);
+  document.getElementById('tr-breakdown').innerHTML=lines.join('');
 }
 
-function closeTourModal() {
-  document.getElementById('tour-modal').classList.remove('open');
-  document.body.style.overflow = '';
+function openModal(){ document.getElementById('tour-modal').classList.add('open'); document.body.style.overflow='hidden'; }
+function closeTourModal(){ document.getElementById('tour-modal').classList.remove('open'); document.body.style.overflow=''; }
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeTourModal(); });
+
+function openRoute(id){
+  const rt=ROUTES.find(r=>r.id===id); if(!rt) return;
+  document.querySelectorAll('.ireland-marker').forEach(m=>m.classList.toggle('active', rt.pins.includes(m.dataset.tour)));
+  document.getElementById('modal-name').textContent=rt.name;
+  document.getElementById('modal-meta').textContent=`⏱️ 약 ${rt.hours}시간 일정 · 차 한 대 단독 동행`;
+  document.getElementById('modal-desc').textContent=`${rt.region} · Andrew가 직접 운영해온 코스`;
+  document.getElementById('modal-places-section').innerHTML=`<h5>📍 정차지 (순서대로)</h5><div class="route-stop-list">`+
+    rt.stops.map((s,i)=>`<div class="route-stop"><span class="rs-num">${i+1}</span><span>${s}</span></div>`).join('')+`</div>`;
+  const head=document.getElementById('modal-price-head'); head.style.display=''; head.textContent=`💰 투어 총액 €${rt.total} · 인원별 1인 부담 (많을수록 ↓)`;
+  const pd=document.getElementById('modal-prices'); pd.style.display='';
+  pd.innerHTML=[3,4,5].map(n=>`<div class="pricing-cell"><div class="num">€${rt.pp[n]}</div><div class="lbl">${n}인 1인당</div></div>`).join('');
+  document.getElementById('modal-variations-section').style.display='';
+  document.getElementById('modal-variations').innerHTML=`<div class="var-card" style="border:1.5px dashed var(--accent); background:var(--accent-soft);"><strong>✏️ 이 코스도 자유롭게 커스텀</strong><br><span style="color:var(--muted); font-size:12.5px;">정차지 추가·생략·순서 조정, 점심 장소, 체력·관심사 반영 모두 가능. 목록에 없는 곳도 함께 갈 수 있어요.</span></div>`;
+  document.getElementById('modal-note').style.display='';
+  const cta=document.getElementById('modal-cta'); cta.style.display='flex'; cta.textContent='💬 이 코스 카톡 문의'; cta.onclick=inquireTour;
+  const sel=document.getElementById('tr-dest'); if(sel){ sel.value=rt.id; calcTour(); }
+  openModal();
 }
 
-// 갤러리 좌우 스크롤 (모달 내 ‹/› 버튼)
-function scrollGallery(id, dir) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  const card = el.querySelector('.place-card-mini');
-  const step = card ? card.offsetWidth + 10 : 175;
-  el.scrollBy({ left: dir * step, behavior: 'smooth' });
+function openPlace(pinKey){
+  const list=ROUTES.filter(r=>r.pins.includes(pinKey));
+  document.querySelectorAll('.ireland-marker').forEach(m=>m.classList.toggle('active', m.dataset.tour===pinKey));
+  const pinName=PIN_NAMES[pinKey]||pinKey;
+  document.getElementById('modal-name').textContent=`📍 ${pinName}`;
+  document.getElementById('modal-meta').textContent=`이 장소를 경유하는 운영 코스 ${list.length}개`;
+  document.getElementById('modal-desc').textContent='';
+  document.getElementById('modal-places-section').innerHTML = list.length
+    ? list.map(rt=>`<div class="place-route-card" onclick="openRoute('${rt.id}')"><div class="prc-top"><span class="prc-name">${rt.name}</span><span class="prc-price">€${rt.total}</span></div><div class="prc-meta">⏱️ ${rt.hours}h · 1인 €${rt.pp[4]} (4인) / €${rt.pp[5]} (5인)</div><div class="prc-stops">${rt.stops.slice(0,5).join(' · ')}${rt.stops.length>5?' …':''}</div></div>`).join('')
+    : '<p style="color:var(--muted); font-size:13.5px;">이 장소를 지나는 고정 코스는 아직 없지만, 커스텀으로 다녀올 수 있어요.</p>';
+  document.getElementById('modal-price-head').style.display='none';
+  const pd=document.getElementById('modal-prices'); pd.style.display='none'; pd.innerHTML='';
+  document.getElementById('modal-variations-section').style.display='';
+  document.getElementById('modal-variations').innerHTML=`<div class="var-card" style="border:1.5px dashed var(--accent); background:var(--accent-soft);"><strong>✏️ ${pinName} 포함 커스텀 예약</strong><br><span style="color:var(--muted); font-size:12.5px;">위 코스를 변형하거나, ${pinName} 중심으로 원하는 코스를 새로 설계할 수 있어요. 목록에 없는 장소도 가능해요.</span><br><button class="btn btn-kakao" style="margin-top:10px;" onclick="event.stopPropagation(); inquireCustom('${pinName}')">💬 ${pinName} 커스텀 문의</button></div>`;
+  document.getElementById('modal-note').style.display='none';
+  document.getElementById('modal-cta').style.display='none';
+  openModal();
 }
 
-// ESC로 모달 닫기
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeTourModal();
-});
+function inquireTour(){
+  const sel=document.getElementById('tr-dest'); const rt=ROUTES.find(r=>r.id===(sel&&sel.value));
+  if(!rt){ copyAndOpenKakao('안녕하세요! 당일 로드트립 문의드립니다 🙏'); return; }
+  let n=parseInt(document.getElementById('tr-people').value,10); if(isNaN(n)||n<3)n=3; if(n>5)n=5;
+  const pickup=(document.getElementById('tr-d2d-pickup')||{}).checked;
+  const drop=(document.getElementById('tr-d2d-drop')||{}).checked;
+  const addon=(pickup?5:0)+(drop?5:0);
+  const pp=r5(rt.total/n)+addon; const total=addon?pp*n:rt.total;
+  const lines=['안녕하세요! 당일 로드트립 문의드립니다.',`🌿 코스: ${rt.name} (⏱️ 약 ${rt.hours}시간)`,`👥 인원: ${n}명`,`💰 투어 총액 €${total} · 1인 €${pp}`];
+  const o=[]; if(pickup)o.push('출발 픽업'); if(drop)o.push('귀가 드랍'); if(o.length)lines.push(`🚪 옵션: ${o.join(' + ')}`);
+  lines.push('가능한 날짜 안내 부탁드립니다 🙏');
+  copyAndOpenKakao(lines.join('\n'));
+}
 
-// 6) 지도 마커 클릭 → 모달
-document.querySelectorAll('.ireland-marker[data-tour]').forEach(m => {
-  m.addEventListener('click', () => openTour(m.dataset.tour));
-});
+function inquireCustom(label){
+  copyAndOpenKakao(`안녕하세요! ${label} 포함한 커스텀 1일 여행을 문의드립니다. 원하는 장소·일정 함께 잡고 싶어요 🙏`);
+}
+
 </script>
 
 </body>
