@@ -230,7 +230,7 @@
           <li><span class="phrase">2bed 일부 (소형 가전 포함)</span></li>
           <li><span class="phrase">시외 장거리 이사 (Cork·Galway 등)</span></li>
         </ul>
-        <span class="price-tag"><span class="phrase">1회 이동가 × 2.5–3.5배</span></span>
+        <span class="price-tag"><span class="phrase">1회 이동가 × 1.8–2.5배</span></span>
         <p style="font-size:12px; color:var(--muted); margin-top:10px;"><span class="phrase">* 클릭하면 가격 계산기로 이동</span></p>
       </div>
 
@@ -485,9 +485,9 @@
           <tr><td>250km (Dublin↔Cork·Galway)</td><td class="price">€260</td></tr>
 
           <tr><td colspan="2" style="background:var(--accent-soft); font-weight:800; color:var(--primary);">🔁 반복 이동 이사 (운반 도움 기본 포함)</td></tr>
-          <tr><td>2회 왕복 (1bed 자취집)</td><td class="price">× 2.5</td></tr>
-          <tr><td>3회+ 왕복 (큰 이사)</td><td class="price">× 3.5</td></tr>
-          <tr><td colspan="2" style="color:var(--muted); font-style:italic; padding:6px 8px !important; font-size:11px !important;">예: 20km 2회 왕복 → €55 × 2.5 ≈ €138 · 30km 2회 → €70 × 2.5 ≈ €175</td></tr>
+          <tr><td>2회 왕복 (1bed 자취집)</td><td class="price">× 1.8</td></tr>
+          <tr><td>3회+ 왕복 (큰 이사)</td><td class="price">× 2.5</td></tr>
+          <tr><td colspan="2" style="color:var(--muted); font-style:italic; padding:6px 8px !important; font-size:11px !important;">예: 20km 2회 왕복 → €55 × 1.8 ≈ €99 · 30km 2회 → €70 × 1.8 ≈ €126</td></tr>
 
           <tr><td colspan="2" style="background:#fef3c7; font-weight:800; color:#78350f;">📞 권역 외 — 별도 카톡 견적</td></tr>
           <tr><td>시내 ↔ Maynooth (35km)</td><td class="price">~€78 +톨비</td></tr>
@@ -524,7 +524,7 @@
       <div class="faq-a">
         핵심 기준은 <strong>"차에 한 번에 실리는가"</strong>입니다.<br><br>
         <strong>🏠 소규모 이사 (한 번 이동):</strong> 1–2인의 자취·학생·커플 짐, IKEA 가구 1–2개, 매트리스, 박스·캐리어 등 차에 한 번에 들어가는 양. 거리 기준 정찰가 (최저 €40부터).<br><br>
-        <strong>🔁 반복 이동 이사:</strong> 1bed 자취집 전체 짐처럼 한 번에 못 싣는 양. 같은 거리를 2–3회 왕복. 1회 이동 정찰가 × 약 2.5–3.5배 (운반 도움 포함).<br><br>
+        <strong>🔁 반복 이동 이사:</strong> 1bed 자취집 전체 짐처럼 한 번에 못 싣는 양. 같은 거리를 2–3회 왕복. 1회 이동 정찰가 × 약 1.8–2.5배 (운반 도움 포함).<br><br>
         잘 모르겠으면 짐 사진을 카톡으로 보내주세요 — 사진만 보고 어느 쪽이 적합한지 안내드립니다.
       </div>
     </div>
@@ -541,7 +541,7 @@
         · 시내 ↔ Blanchardstown (12km): €43<br>
         · 시내 ↔ Maynooth (35km): €78<br>
         · Dublin ↔ Cork (250km): €260<br><br>
-        반복 이동 이사는 위 가격에 × 2.5(2회 왕복) 또는 × 3.5(3회+ 왕복)이 적용됩니다.
+        반복 이동 이사는 위 가격에 × 1.8(2회 왕복) 또는 × 2.5(3회+ 왕복)이 적용됩니다.
       </div>
     </div>
 
@@ -693,11 +693,11 @@
 //   - 10–50km: +€1.5/km (10km 초과분)
 //   - 50km 초과: +€0.8/km (장거리)
 // 반복 이동 배수:
-//   - 2회 왕복: × 2.5
-//   - 3회+ 왕복: × 3.5
+//   - 2회 왕복: × 1.8
+//   - 3회+ 왕복: × 2.5
 // =============================================
 
-const TRIP_MULT = { 'single': 1.0, 'double': 2.5, 'triple': 3.5 };
+const TRIP_MULT = { 'single': 1.0, 'double': 1.8, 'triple': 2.5 };
 const TRIP_LABEL = {
   'single': '소규모 이사 (한 번 이동)',
   'double': '반복 이동 — 2회 왕복',

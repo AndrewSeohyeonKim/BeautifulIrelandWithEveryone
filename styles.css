@@ -1068,6 +1068,11 @@ body, p, li, td, th, span, h1, h2, h3, h4, h5, h6, a, button,
 .phrase {
   white-space: nowrap;
 }
+/* 모바일: 긴 문구가 카드를 이탈하지 않도록 줄바꿈 허용
+   (word-break: keep-all 덕분에 한국어 단어는 유지된 채 띄어쓰기에서만 줄바꿈) */
+@media (max-width: 600px) {
+  .phrase { white-space: normal; }
+}
 
 /* ============================================================
    📊 표 → 모바일 카드뷰 변환
