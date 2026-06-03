@@ -328,6 +328,13 @@
   .trip-status.recruiting { background: #f59e0b; }
   .trip-status.almost-full { background: #dc2626; }
   .trip-status.new { background: #3b82f6; }
+  .trip-status.full { background: #6b7280; }
+
+  /* 마감된 일정 카드 */
+  .trip-card.is-full { border-color: var(--border); background: #f9fafb; }
+  .trip-card.is-full .trip-progress-fill { background: #9ca3af; }
+  .trip-card.is-full .trip-progress-label .seats .num { color: #6b7280; }
+  .trip-seats-full { color: #dc2626; font-weight: 800; }
 
   .trip-head-row {
     display: flex;
@@ -451,6 +458,16 @@
     background: #f5d800;
     transform: translateY(-1px);
     box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+  }
+  .trip-cta.is-full {
+    background: #e5e7eb;
+    color: #6b7280;
+    cursor: not-allowed;
+  }
+  .trip-cta.is-full:hover {
+    background: #e5e7eb;
+    transform: none;
+    box-shadow: none;
   }
 
   .trip-empty {
@@ -969,7 +986,7 @@
 // =============================================
 // 모집 중인 일정 (OPEN TRIPS)
 // 일정 추가/수정 시 이 배열만 편집하면 됩니다
-// status: 'confirmed' | 'recruiting' | 'almost-full' | 'new'
+// status: 'confirmed' | 'recruiting' | 'almost-full' | 'full' | 'new'
 // =============================================
 const OPEN_TRIPS = [
   {
@@ -981,7 +998,7 @@ const OPEN_TRIPS = [
     description: '여름 한정! 웩스포드(Wexford) 킬모어 키(Kilmore Quay)에서 보트를 타고 솔티 아일랜드(Saltee Islands)로 들어가, 퍼핀(puffin)과 가넷 등 바닷새 군락을 가까이서 만나는 당일 일정입니다. 아일랜드의 대표적인 바닷새 서식지에서 보내는 특별한 하루.',
     capacity: 4,
     booked: 4,
-    status: 'confirmed',
+    status: 'full',
     pricePerPerson: 90,                  // 워터포드 4인 기준과 동일 (€90/인)
     priceNote: '식비·보트비 별도',
     meetingPoint: 'Blanchardstown SC',
@@ -994,6 +1011,7 @@ const TRIP_STATUS = {
   'confirmed':   { label: '✅ 출발 확정', cls: 'confirmed' },
   'recruiting':  { label: '⏳ 모집 중',   cls: 'recruiting' },
   'almost-full': { label: '🔥 마감 임박', cls: 'almost-full' },
+  'full':        { label: '🚫 마감 (4/4)', cls: 'full' },
   'new':         { label: '🆕 신규 오픈', cls: 'new' }
 };
 
@@ -1041,12 +1059,19 @@ function renderOpenTrips() {
     const status = TRIP_STATUS[trip.status] || TRIP_STATUS.recruiting;
     const fillPercent = Math.min(100, (trip.booked / trip.capacity) * 100);
     const remaining = trip.capacity - trip.booked;
+    const isFull = trip.status === 'full' || remaining <= 0;
+    const seatsText = isFull
+      ? `<span class="num">${trip.booked}</span>/${trip.capacity}명 · <span class="trip-seats-full">마감</span>`
+      : `<span class="num">${trip.booked}</span>/${trip.capacity}명 · ${remaining}석 남음`;
+    const ctaHtml = isFull
+      ? `<button class="trip-cta is-full" disabled>🚫 마감되었습니다 (모집 완료)</button>`
+      : `<button class="trip-cta" onclick="inquireTrip('${trip.id}')">💬 합류 문의 (카톡)</button>`;
     // 가격 표시: 단일 또는 범위
     const priceDisplay = (trip.priceMin && trip.priceMax)
       ? `€${trip.priceMin}~€${trip.priceMax}`
       : `€${trip.pricePerPerson || trip.priceMin || trip.priceMax}`;
     return `
-      <div class="trip-card">
+      <div class="trip-card${isFull ? ' is-full' : ''}">
         <span class="trip-status ${status.cls}">${status.label}</span>
         <div class="trip-head-row">
           <span class="trip-date">📅 ${trip.dateDisplay}</span>
@@ -1058,7 +1083,7 @@ function renderOpenTrips() {
         <div class="trip-progress">
           <div class="trip-progress-label">
             <span>모집 현황</span>
-            <span class="seats"><span class="num">${trip.booked}</span>/${trip.capacity}명 · ${remaining}석 남음</span>
+            <span class="seats">${seatsText}</span>
           </div>
           <div class="trip-progress-bar">
             <div class="trip-progress-fill" style="width:${fillPercent}%"></div>
@@ -1074,7 +1099,7 @@ function renderOpenTrips() {
           <span class="trip-price-amount">${priceDisplay}</span>
         </div>
 
-        <button class="trip-cta" onclick="inquireTrip('${trip.id}')">💬 합류 문의 (카톡)</button>
+        ${ctaHtml}
       </div>
     `;
   }).join('');
