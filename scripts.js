@@ -30,6 +30,16 @@
   });
 })();
 
+// 1.5) 서비스 오픈 안내 배너 — 2026년 6월 17일이 되면 자동으로 사라짐
+//      .launch-notice 클래스가 붙은 요소는 17일 0시(기기 현지 시각)부터 제거됨.
+//      서비스 오픈 후 별도 코드 수정 없이 안내가 자동 종료되도록 설계.
+(function setupLaunchNotice() {
+  var LAUNCH_DATE = new Date(2026, 5, 17); // 2026-06-17 00:00 (월은 0부터: 5 = 6월)
+  if (new Date() >= LAUNCH_DATE) {
+    document.querySelectorAll('.launch-notice').forEach(function (el) { el.remove(); });
+  }
+})();
+
 // 2) Reveal-on-scroll — .reveal 클래스가 붙은 섹션을 화면 진입 시 페이드 인
 (function setupScrollReveal() {
   if (!('IntersectionObserver' in window)) {
