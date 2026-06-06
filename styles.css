@@ -1273,7 +1273,7 @@ br.brk-md { display: none; }
    서비스 오픈 안내 배너 — 2026-06-17이 되면 scripts.js가 자동 제거
    ============================================================ */
 .launch-notice {
-  margin-top: 60px; /* 고정 nav 높이만큼 내림 */
+  /* body의 padding-top이 이미 고정 nav 높이를 보정 → margin-top 두면 흰 여백 생김 (수정됨) */
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   color: #fff;
   text-align: center;
