@@ -1356,7 +1356,7 @@ function inquireWeather(){
    "name": "Andrew의 아일랜드 동행 (Beautiful Ireland with Everyone)",
    "description": "더블린 기반 한국어 프라이빗 투어·공항 픽업·이사 운송. 7인승 차량, 우리 그룹만 단독 동행.",
    "url": "https://andrewseohyeonkim.github.io/BeutifulIrelandWithEveryone/",
-   "sameAs": ["https://www.instagram.com/ireland.sosik/"],
+   "telephone": "+353-83-078-0635",
    "email": "sby05034@gmail.com",
    "areaServed": [
     {

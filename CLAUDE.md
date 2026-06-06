@@ -136,13 +136,16 @@
 
 ---
 
-## 📷 문의 채널 (2026-06 인스타그램 추가)
+## 📷 문의 채널 (2026-06 인스타그램 추가 · 전화번호 제거)
 
 - **메인 채널: 카카오톡 오픈채팅** (변함없음 — 항상 가장 추천으로 표기)
-- **인스타그램 DM 문의 가능: @ireland.sosik** (https://www.instagram.com/ireland.sosik/)
-  - contact.html 연락 채널 그리드에 카드로 추가 (카톡 다음 순서, 그리드 2×2)
-  - 모든 페이지(8개) footer `.channels`에 "📷 인스타 DM" 링크 포함
-- 채널 우선순위: 카톡 오픈채팅 > 인스타 DM > 전화(긴급) > 이메일(공식)
+- **인스타그램 DM: @ireland.sosik** (https://www.instagram.com/ireland.sosik/)
+- **⚠️ 전화번호(+353 83 078 0635)는 개인정보 보호를 위해 사이트 전체에서 제거됨 (2026-06). 다시 추가 금지.**
+  - float-cta·footer의 전화 자리 → 인스타 DM 링크로 교체 (8개 페이지 전체)
+  - contact.html 채널 카드: 카톡 / 인스타 DM / 이메일 3개 (그리드 3열)
+  - JSON-LD: `telephone` 삭제 → `sameAs`(인스타 URL)로 대체 (index·tours)
+  - llms.txt 연락처도 동일하게 수정됨
+- 채널 우선순위: 카톡 오픈채팅 > 인스타 DM > 이메일(공식)
 
 ---
 

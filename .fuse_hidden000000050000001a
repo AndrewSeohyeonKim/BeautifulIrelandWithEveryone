@@ -33,7 +33,7 @@
   "description": "더블린 한인 차량 동행 서비스. 공항 픽업, IKEA·이사 운송, 16개 지역 1일 여행 동행.",
   "image": "https://andrewseohyeonkim.github.io/BeutifulIrelandWithEveryone/images/logo/og-image.jpg?v=20260501",
   "address": {"@type": "PostalAddress", "addressLocality": "Dublin", "addressCountry": "IE"},
-  "sameAs": ["https://www.instagram.com/ireland.sosik/"],
+  "telephone": "+353-83-078-0635",
   "email": "sby05034@gmail.com",
   "priceRange": "€35–€610",
   "areaServed": [
