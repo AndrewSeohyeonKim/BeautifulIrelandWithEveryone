@@ -366,7 +366,26 @@
                 <button type="button" data-km="101" onclick="setMvKm(150)">100km+ (별도 문의)</button>
               </div>
               <input type="number" id="mv-km" value="15" min="1" max="350" step="1" oninput="calcMoving()">
-              <div class="hint">예: Blanchardstown↔시내 12km · Blanchardstown↔Maynooth 25km · 더블린 시내권 대부분 5–20km</div>
+              <div class="hint"><strong>차량 실주행거리(도로 거리) 기준</strong> — 직선거리가 아닙니다. 예: Blanchardstown↔시내 12km · Blanchardstown↔Maynooth 25km · 더블린 시내권 대부분 5–20km</div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label>📍 출발지 <span style="font-weight:400; color:var(--muted);">(선택)</span></label>
+              <input type="text" id="mv-from" placeholder="예: D09 X5R9 또는 동네 이름">
+            </div>
+            <div class="field">
+              <label>🎯 도착지 <span style="font-weight:400; color:var(--muted);">(선택)</span></label>
+              <input type="text" id="mv-to" placeholder="예: D6W PX32 또는 동네 이름">
+            </div>
+          </div>
+
+          <div class="row single">
+            <div class="field">
+              <label>🗓️ 희망 날짜·시간 <span style="font-weight:400; color:var(--muted);">(선택)</span></label>
+              <input type="text" id="mv-when" placeholder="예: 6월 20일 오후 4시">
+              <div class="hint">정해두신 날짜·시간이 있으면 적어주세요 — 비워두셔도 됩니다. 출발지·도착지는 EirCode로 적어주시면 견적이 더 정확해요.</div>
             </div>
           </div>
 
@@ -451,11 +470,11 @@
         </div>
 
         <div style="text-align:center; margin-top:24px;">
-          <a href="javascript:void(0)" onclick="inquireMoving()" class="btn btn-kakao">💬 짐 사진 한 장 보내고 확정 견적</a>
+          <a href="javascript:void(0)" onclick="inquireMoving()" class="btn btn-kakao">💬 이 내용으로 카톡 문의</a>
         </div>
 
         <p style="font-size:12.5px; color:var(--muted); margin-top:18px; text-align:center; line-height:1.7;">
-          ※ 정확한 견적은 짐 사이즈·개수·이동 경로에 따라 달라집니다. 카톡으로 짐 사진 한 장 보내주시면 확정 견적 드려요.<br>
+          ※ 거리는 <strong>차량 실주행거리(도로 거리) 기준</strong>이며 직선거리가 아닙니다. 정확한 견적은 짐 사이즈·개수·이동 경로에 따라 달라집니다.<br>
           ※ 소규모 이사·반복 이동 이사 모두 차량 적재 가능 범위 내에서 짐 운반 도움이 기본 포함입니다.
         </p>
       </div>
@@ -512,9 +531,9 @@
         </tbody>
       </table>
       <p style="font-size:12px; color:var(--muted); margin-top:14px; text-align:center;">
-        ※ 최저가 €40부터.<br>
+        ※ 최저가 €40부터. 거리는 <strong>차량 실주행거리(도로 거리) 기준</strong> — 직선거리가 아닙니다.<br>
         ※ <strong>톨비·유료 주차비는 발생 시 별도 실비 청구</strong> — 대부분의 이사·장보기는 무료 주차로 진행되어 추가 비용 없음.<br>
-        ※ 정확한 견적은 짐 사진 한 장 보내주시면 카톡으로 확정해 드립니다.
+        ※ 출발지·도착지·희망 날짜를 함께 알려주시면 카톡으로 확정해 드립니다.
       </p>
     </div>
   </div>
@@ -538,7 +557,7 @@
     <div class="faq-item" onclick="this.classList.toggle('open')">
       <div class="faq-q">가격은 어떻게 산정되나요?</div>
       <div class="faq-a">
-        <strong>A → B 사이 편도 거리</strong>를 기준으로 거리당 단가로 산정합니다.<br><br>
+        <strong>A → B 사이 편도 거리</strong>를 기준으로 거리당 단가로 산정합니다. 이때 거리는 <strong>실제 차량 주행거리(도로 거리)</strong>이며 직선거리가 아닙니다.<br><br>
         <strong>📐 거리당 단가 공식</strong><br>
         · 0–10km: <strong>€40</strong> (기본료, 최저가)<br>
         · 10–50km: <strong>+€1.5/km</strong> (10km 초과분)<br>
@@ -936,12 +955,18 @@ function inquireMoving() {
     const tripText = tripSel ? tripSel.options[tripSel.selectedIndex].text : '이사·운송';
     const km = document.getElementById('mv-km').value;
     const price = document.getElementById('mv-price').textContent;
+    const from = (document.getElementById('mv-from').value || '').trim();
+    const to = (document.getElementById('mv-to').value || '').trim();
+    const when = (document.getElementById('mv-when').value || '').trim();
     lines = [
       '안녕하세요! 이사·운송 문의드립니다.',
       `🏠 종류: ${tripText}`,
-      `📏 거리: 약 ${km}km`,
+      `📏 거리: 약 ${km}km (차량 실주행거리 기준)`,
       `💰 예상 가격: ${price}`,
-      '짐 사진 한 장 보내드릴 테니 확정 견적 부탁드립니다 🙏'
+      `📍 출발지: ${from || '(작성해주세요)'}`,
+      `🎯 도착지: ${to || '(작성해주세요)'}`,
+      `🗓️ 희망 날짜·시간: ${when || '(작성해주세요)'}`,
+      '확정 견적 부탁드립니다 🙏'
     ];
   }
 
