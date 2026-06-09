@@ -328,6 +328,18 @@
           </div>
         </div>
 
+        <div class="row">
+          <div class="field">
+            <label>🗓️ 희망 날짜·시간 <span style="font-weight:400; color:var(--muted);">(선택)</span></label>
+            <input type="text" id="pk-when" placeholder="예: 6월 24일 22:15 도착">
+          </div>
+          <div class="field">
+            <label>✈️ 항공편명 <span style="font-weight:400; color:var(--muted);">(권장)</span></label>
+            <input type="text" id="pk-flight" placeholder="예: LH982">
+            <div class="hint">도착/출발 항공편명을 적어주시면 시간에 맞춰 정확히 준비해 드려요.</div>
+          </div>
+        </div>
+
         <div class="addon-options">
           <div style="font-size:12.5px; font-weight:700; color:var(--primary); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px;">필요시 추가 서비스 (선택)</div>
           <label class="addon-row" id="pk-row-gate">
@@ -727,12 +739,16 @@ function inquirePickup() {
   const gate = document.getElementById('pk-addon-gate').checked;
   const checkin = document.getElementById('pk-addon-checkin').checked;
   const night = document.getElementById('pk-time').value === 'night';
+  const when = (document.getElementById('pk-when').value || '').trim();
+  const flight = (document.getElementById('pk-flight').value || '').trim();
 
   const lines = [
     '안녕하세요! 공항 픽업·드랍 문의드립니다.',
     `${dirEmoji}`,
     `📍 ${dirLabel}: ${destText}`,
-    `👥 인원: ${people}명 · 🧳 캐리어: ${bags}개`
+    `👥 인원: ${people}명 · 🧳 캐리어: ${bags}개`,
+    `🗓️ 희망 날짜·시간: ${when || '(작성해주세요)'}`,
+    `✈️ 항공편명: ${flight || '(작성해주세요)'}`
   ];
   if (night) lines.push('🌙 야간(23–06시) 운행 +€10');
   if (gate) lines.push('🛬 게이트 앞 마중·에스코트 포함');

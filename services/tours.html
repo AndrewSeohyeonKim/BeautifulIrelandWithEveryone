@@ -726,6 +726,14 @@
           </div>
         </div>
 
+        <div class="row single">
+          <div class="field">
+            <label>🗓️ 희망 날짜 <span style="font-weight:400; color:var(--muted);">(선택)</span></label>
+            <input type="text" id="tr-when" placeholder="예: 6월 30일 / 또는 6월 셋째 주 중">
+            <div class="hint">정해두신 날짜가 있으면 적어주세요 — 비워두셔도 됩니다.</div>
+          </div>
+        </div>
+
         <div class="tr-addon">
           <div class="tr-addon-title">필요시 추가 옵션 (각 €5/인 별도)</div>
           <label class="tr-addon-row">
@@ -1307,8 +1315,10 @@ function inquireTour(){
   const drop=(document.getElementById('tr-d2d-drop')||{}).checked;
   const addon=(pickup?5:0)+(drop?5:0);
   const pp=r5(rt.total/n)+(rt.perFee||0)+addon; const total=pp*n;
+  const when=(document.getElementById('tr-when')&&document.getElementById('tr-when').value||'').trim();
   const lines=['안녕하세요! 당일 로드트립 문의드립니다.',`🌿 코스: ${rt.name} (⏱️ 약 ${rt.hours}시간)`,`👥 인원: ${n}명`,`💰 투어 총액 €${total} · 1인 €${pp}${rt.perFee?` (${rt.perFeeLabel||'승선료'} 포함)`:''}`];
   const o=[]; if(pickup)o.push('출발 픽업'); if(drop)o.push('귀가 드랍'); if(o.length)lines.push(`🚪 옵션: ${o.join(' + ')}`);
+  lines.push(`🗓️ 희망 날짜: ${when || '(작성해주세요)'}`);
   lines.push('가능한 날짜 안내 부탁드립니다 🙏');
   copyAndOpenKakao(lines.join('\n'));
 }
