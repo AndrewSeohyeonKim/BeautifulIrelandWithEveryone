@@ -458,6 +458,43 @@
     letter-spacing: -0.5px;
   }
 
+  .trip-incl {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 12px;
+    padding: 9px 12px;
+    background: #f7f8f7;
+    border: 1px solid #e8eae8;
+    border-radius: 8px;
+    font-size: 11px;
+    line-height: 1.45;
+    color: var(--muted);
+  }
+  .trip-incl strong { color: var(--primary); margin-right: 4px; }
+  .trip-incl .incl strong { color: #1c7c54; }
+  .trip-incl .excl strong { color: #b45309; }
+  .trip-incl em { font-style: normal; color: #1c7c54; font-weight: 700; }
+
+  .trip-route-btn {
+    display: block; width: 100%; text-align: center; cursor: pointer;
+    background: #fff; color: #166534; border: 1.5px solid #166534;
+    border-radius: 8px; padding: 9px 14px; font-size: 12.5px; font-weight: 800;
+    font-family: inherit; margin-bottom: 8px; transition: all .15s;
+  }
+  .trip-route-btn:hover { background: #166534; color: #fff; transform: translateY(-1px); }
+
+  .trip-cta-row { display: flex; gap: 8px; }
+  .trip-cta-row .trip-cta { width: auto; flex: 1; }
+  .trip-cta-insta {
+    background: linear-gradient(45deg, #f09433, #e6683c 30%, #dc2743 60%, #cc2366 80%, #bc1888);
+    color: #fff;
+  }
+  .trip-cta-insta:hover {
+    filter: brightness(1.07);
+    background: linear-gradient(45deg, #f09433, #e6683c 30%, #dc2743 60%, #cc2366 80%, #bc1888);
+  }
+
   .trip-cta {
     display: block;
     text-align: center;
@@ -1061,11 +1098,28 @@ const OPEN_TRIPS = [
     capacity: 4,
     booked: 4,
     status: 'full',
-    pricePerPerson: 95,                  // 4인 기준
-    priceNote: '식비·입장료(약 €15/인) 별도',
-    meetingPoint: 'Drogheda (드록헤다)',
-    meetingTime: '오전 6:00',
-    extraNote: '드록헤다 출발 단독 일정'
+    pricePerPerson: 100,                 // 4인 기준 (드록헤다 출발 공차 왕복 반영 +€5/인)
+    priceNote: '드록헤다 출발가 · 식비·입장료(약 €15/인) 별도',
+    meetingPoint: 'Drogheda · A92 RP4F',
+    meetingTime: '오전 6:00 픽업',
+    extraNote: '드록헤다 픽업 단독 일정'
+  },
+  {
+    id: 'trip-2026-07-14',
+    date: '2026-07-14',                  // YYYY-MM-DD (지난 날짜는 자동 숨김)
+    dateDisplay: '7월 14일 (화)',
+    course: '🏔️ 케리 · 딩글 하루 맛보기',
+    courseEn: 'Kerry · Dingle Day Trip — Ring of Kerry & Dingle Peninsula',
+    description: '아일랜드 남서부의 절경을 하루에 담는 코스입니다. 킬라니 국립공원의 Ross Castle·Torc 폭포·Ladies View, 빙하가 깎아낸 Gap of Dunloe(차창 드라이브), 아일랜드어가 살아있는 색색의 항구 마을 딩글(Dingle, 머피 아이스크림), 양떼가 지나는 Dunquin Pier, 그리고 아일랜드에서 가장 높은 산악도로 Conor Pass까지. 돌아오는 길엔 트랄리 또는 리머릭에 들러 저녁 식사. 현재 1분이 신청해, 함께 떠날 동행 분들을 모집합니다.',
+    capacity: 4,
+    booked: 1,
+    status: 'recruiting',
+    pricePerPerson: 150,                 // 4인 기준 (3인 €205 · 5인 €120 — 인원별 상이)
+    priceNote: '4인 기준 · 식비·입장료 별도 (인원별 상이)',
+    meetingPoint: 'Blanchardstown Shopping Centre',
+    meetingTime: '인원 확정 후 카톡 안내',
+    extraNote: '도어투도어 픽업·드랍 각 +€5/인',
+    routeId: 'r11'
   }
 ];
 
@@ -1099,6 +1153,26 @@ function inquireTrip(tripId) {
   copyAndOpenKakao(message);
 }
 
+// 인스타그램 프로필(DM)로 합류 신청 — 메시지 복사 후 프로필 열기
+function copyAndOpenInsta(message) {
+  const url = 'https://www.instagram.com/ireland.sosik/';
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(message).then(() => {
+      alert(`📋 문의 메시지가 클립보드에 복사되었어요!\n\n인스타그램 @ireland.sosik 프로필에서 DM 창에 붙여넣기 해주세요.\n\n"${message}"`);
+      window.open(url, '_blank');
+    }).catch(() => { window.open(url, '_blank'); });
+  } else {
+    window.open(url, '_blank');
+  }
+}
+
+function inquireTripInsta(tripId) {
+  const trip = OPEN_TRIPS.find(t => t.id === tripId);
+  if (!trip) return;
+  const message = `안녕하세요! [${trip.dateDisplay}] ${trip.course} 동행에 합류하고 싶어 문의드립니다. 자리 가능할까요?`;
+  copyAndOpenInsta(message);
+}
+
 function renderOpenTrips() {
   const grid = document.getElementById('open-trips-grid');
   if (!grid) return;
@@ -1125,9 +1199,15 @@ function renderOpenTrips() {
     const seatsText = isFull
       ? `<span class="num">${trip.booked}</span>/${trip.capacity}명 · <span class="trip-seats-full">마감</span>`
       : `<span class="num">${trip.booked}</span>/${trip.capacity}명 · ${remaining}석 남음`;
+    const routeBtn = trip.routeId
+      ? `<button class="trip-route-btn" onclick="openRoute('${trip.routeId}')">🗺️ 코스(루트) 상세 보기 — 정차지·입장료·가격</button>`
+      : '';
     const ctaHtml = isFull
       ? `<button class="trip-cta is-full" disabled>🚫 마감되었습니다 (모집 완료)</button>`
-      : `<button class="trip-cta" onclick="inquireTrip('${trip.id}')">💬 합류 문의 (카톡)</button>`;
+      : `<div class="trip-cta-row">
+           <button class="trip-cta" onclick="inquireTrip('${trip.id}')">💬 카톡으로 합류 신청</button>
+           <button class="trip-cta trip-cta-insta" onclick="inquireTripInsta('${trip.id}')">📷 인스타 DM 신청</button>
+         </div>`;
     // 가격 표시: 단일 또는 범위
     const priceDisplay = (trip.priceMin && trip.priceMax)
       ? `€${trip.priceMin}~€${trip.priceMax}`
@@ -1161,6 +1241,12 @@ function renderOpenTrips() {
           <span class="trip-price-amount">${priceDisplay}</span>
         </div>
 
+        <div class="trip-incl">
+          <span class="incl"><strong>포함</strong> 차량·연료·주차·톨비·운전·가이딩</span>
+          <span class="excl"><strong>불포함</strong> 식비(€15~25/인)·입장료(코스별 상이)·개인 비용 <em>(가이드 식비는 가이드 부담)</em></span>
+        </div>
+
+        ${routeBtn}
         ${ctaHtml}
       </div>
     `;
