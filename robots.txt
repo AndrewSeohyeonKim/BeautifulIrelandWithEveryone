@@ -23,4 +23,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://andrewseohyeonkim.github.io/BeutifulIrelandWithEveryone/sitemap.xml
+Sitemap: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/sitemap.xml
