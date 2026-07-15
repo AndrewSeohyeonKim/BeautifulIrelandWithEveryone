@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7/14 케리·딩글 진행 체크리스트 (Andrew)</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --navy:#1b2a44; --navy2:#26395a; --gold:#c2a36b; --gold-soft:#f6efe1;
+  --green:#2f7d52; --green-soft:#e4f3ea; --rose:#bf5a3c; --rose-soft:#fbeae4;
+  --ink:#2b3440; --muted:#8a95a1; --line:#ece7dc; --paper:#fcfbf8;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;background:var(--paper);color:var(--ink);
+  word-break:keep-all;overflow-wrap:break-word;padding:18px 14px 80px;}
+.wrap{max-width:640px;margin:0 auto;}
+header{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border-radius:20px;padding:26px 24px;margin-bottom:14px;}
+header .kick{color:var(--gold);font-size:12px;font-weight:700;letter-spacing:.2em;margin-bottom:6px;}
+header h1{font-size:23px;font-weight:800;line-height:1.3;}
+header .sub{font-size:13.5px;color:#c8d2e2;margin-top:8px;line-height:1.6;}
+.totalbar{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 18px;margin-bottom:18px;position:sticky;top:8px;z-index:10;box-shadow:0 6px 18px rgba(27,42,68,.08);}
+.totalbar .row{display:flex;justify-content:space-between;align-items:center;font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:8px;}
+.totalbar .money{color:var(--rose);}
+.pbar{height:10px;background:var(--gold-soft);border-radius:99px;overflow:hidden;}
+.pbar>div{height:100%;width:0%;background:linear-gradient(90deg,var(--green),#4aa574);border-radius:99px;transition:width .3s;}
+section{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px 18px;margin-bottom:14px;}
+section h2{font-size:17px;font-weight:800;color:var(--navy);display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;}
+section h2 .cnt{font-size:12px;color:var(--muted);font-weight:600;}
+section .desc{font-size:12.5px;color:var(--muted);margin-bottom:12px;line-height:1.5;}
+label.item{display:flex;gap:12px;align-items:flex-start;padding:11px 10px;border-radius:12px;cursor:pointer;transition:background .15s;}
+label.item:hover{background:var(--gold-soft);}
+label.item input{width:21px;height:21px;accent-color:var(--green);flex-shrink:0;margin-top:1px;cursor:pointer;}
+label.item .tx{font-size:15px;font-weight:600;line-height:1.5;}
+label.item .tx small{display:block;font-size:12.5px;color:var(--muted);font-weight:500;margin-top:2px;}
+label.item.done .tx{color:var(--muted);text-decoration:line-through;}
+label.item .amt{margin-left:auto;font-weight:800;color:var(--rose);font-size:15px;flex-shrink:0;}
+.timechip{display:inline-block;background:var(--navy);color:#fff;font-size:12.5px;font-weight:700;padding:2px 9px;border-radius:99px;margin-right:6px;}
+.moneybox{background:var(--rose-soft);border-radius:12px;padding:12px 14px;font-size:14px;font-weight:700;color:var(--rose);margin-top:10px;text-align:center;}
+.note{background:var(--green-soft);border-radius:12px;padding:12px 14px;font-size:13px;color:#245f40;line-height:1.6;margin-top:10px;font-weight:500;}
+.warn{background:var(--gold-soft);border-radius:12px;padding:12px 14px;font-size:13px;color:#8a6d35;line-height:1.6;margin-top:10px;font-weight:500;}
+.reset{display:block;margin:26px auto 0;background:none;border:1px solid var(--line);color:var(--muted);font-size:13px;
+  padding:10px 22px;border-radius:99px;cursor:pointer;font-family:inherit;}
+.reset:hover{border-color:var(--rose);color:var(--rose);}
+footer{text-align:center;margin-top:24px;color:var(--muted);font-size:11.5px;letter-spacing:.08em;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kick">ORGANIZER CHECKLIST · ANDREW ONLY</div>
+  <h1>🏔️ 7/14 (화) 케리 · 딩글 진행 체크리스트</h1>
+  <div class="sub">5명 확정 (이소희 · 양주희 · 김선미 · 최진 · Yoon) · 집 05:00 출발 · 픽업 05:10~ · 약 16시간 · ☀️ 맑음 15~25℃ · 당일 수령 €250</div>
+</header>
+
+<div class="totalbar">
+  <div class="row"><span id="totTx">전체 진행 0%</span><span class="money" id="moneyTx">💶 수령 €0 / €250</span></div>
+  <div class="pbar"><div id="totBar"></div></div>
+</div>
+
+<section data-sec="s1">
+  <h2>📅 7/13 (월) 전날 준비 <span class="cnt"></span></h2>
+  <div class="desc">저녁까지 끝내고 일찍 자기 — 새벽 4시 기상!</div>
+  <label class="item"><input type="checkbox" data-id="s1a"><span class="tx">카톡방에 최종 안내 발송<small>공용 카드 12장 + 안내 메시지 + 각자에게 개인 픽업 카드 1장씩</small></span></label>
+  <label class="item"><input type="checkbox" data-id="s1b"><span class="tx">5명 전원 픽업 시간 확인 답장 받기<small>이소희 05:10 · 양주희 05:25 · 김선미 05:35 · 최진 06:00 · Yoon 06:15 (±5분 안내)</small></span></label>
+  <label class="item"><input type="checkbox" data-id="s1c"><span class="tx">주유 만땅 ⛽<small>왕복 약 750km — 중간 주유 1회 예상 (킬라니 또는 트랄리)</small></span></label>
+  <label class="item"><input type="checkbox" data-id="s1d"><span class="tx">차량 점검<small>타이어 공기압 · 워셔액 · 오일 경고등 · 와이퍼</small></span></label>
+  <label class="item"><input type="checkbox" data-id="s1e"><span class="tx">차내 정리 + 물·간식·멀미약 준비<small>물 6병 · 간식 · 멀미약 (산길 대비) · 쓰레기봉투 · 물티슈</small></span></label>
+  <label class="item"><input type="checkbox" data-id="s1f"><span class="tx">거스름돈 현금 준비 💶<small>€5 지폐 여러 장 + 동전 — 잔금 현금 수령 대비 · Revolut 로그인 확인</small></span></label>
+  <label class="item"><input type="checkbox" data-id="s1g"><span class="tx">폰 거치대 · 충전 케이블 3개+ · 보조배터리</span></label>
+  <label class="item"><input type="checkbox" data-id="s1h"><span class="tx">날씨 최종 확인 🌤️<small>현재 예보: 맑음 · 킬라니 15~25℃ · 딩글 14~24℃ · 강수 0mm — 변동 시 카톡 공지</small></span></label>
+  <label class="item"><input type="checkbox" data-id="s1i"><span class="tx">알람 04:00 · 05:00 집(D15) 출발 기준 취침 ⏰</span></label>
+</section>
+
+<section data-sec="s2">
+  <h2>🌅 새벽 픽업 런 <span class="cnt"></span></h2>
+  <div class="desc">±5분 도착 예상 · 각 픽업 5분 전 개인톡 "거의 도착했어요!" · 변동 생기면 개인톡으로 먼저 안내</div>
+  <label class="item"><input type="checkbox" data-id="s2a"><span class="tx"><span class="timechip">05:00</span>집(D15) 출발</span></label>
+  <label class="item"><input type="checkbox" data-id="s2b"><span class="tx"><span class="timechip">05:10</span>이소희 — Blanchardstown SC 정문</span></label>
+  <label class="item"><input type="checkbox" data-id="s2c"><span class="tx"><span class="timechip">05:25</span>양주희 — D07 C640 (Dublin 7)</span></label>
+  <label class="item"><input type="checkbox" data-id="s2d"><span class="tx"><span class="timechip">05:35</span>김선미 — D01 W7R9 (Dublin 1)</span></label>
+  <label class="item"><input type="checkbox" data-id="s2e"><span class="tx"><span class="timechip">06:00</span>최진 — D16 E978 (Dundrum, D16)</span></label>
+  <label class="item"><input type="checkbox" data-id="s2f"><span class="tx"><span class="timechip">06:15</span>Yoon — D24 KN8X (Tallaght, D24)</span></label>
+  <label class="item"><input type="checkbox" data-id="s2g"><span class="tx"><span class="timechip">06:25</span>N7 진입 — 케리로! 🚐</span></label>
+  <div class="warn">⚠️ 새벽 M50 공사 구간 확인 · 픽업 순서: Blanchardstown → D07 → D01 → D16 → D24 (백트래킹 최소 동선)</div>
+</section>
+
+<section data-sec="s3">
+  <h2>🚗 운행 · 현장 진행 <span class="cnt"></span></h2>
+  <div class="desc">주차·입장·안전 포인트 중심</div>
+  <label class="item"><input type="checkbox" data-id="s3a"><span class="tx">휴게소 1회 — M7 Barack Obama Plaza 추천<small>화장실 · 커피 · 아침 간단히 (~08:00)</small></span></label>
+  <label class="item"><input type="checkbox" data-id="s3b"><span class="tx"><span class="timechip">10:00</span>로스 캐슬 도착 (첫 목적지) — 주차 후 호숫가 포토<small>외관 무료 · 이번 코스는 입장료 있는 곳 없음 예상</small></span></label>
+  <label class="item"><input type="checkbox" data-id="s3c"><span class="tx">토크 폭포 — 숲길 5분 왕복<small>무료 · 주차장에서 가까운 입구 이용</small></span></label>
+  <label class="item"><input type="checkbox" data-id="s3d"><span class="tx"><span class="timechip">11:30</span>레이디스 뷰 → 갭 오브 던로 드라이브 &amp; 포토스팟 정차<small>좁은 협곡길 — 마차·자전거·양 주의 · 유료 투어 없음 (드라이브·사진만)</small></span></label>
+  <label class="item"><input type="checkbox" data-id="s3e"><span class="tx"><span class="timechip">13:00</span>딩글 — 주차 · 점심 · 머피 아이스크림 🍦<small>항구 주차장 · 점심 각자 €15~25</small></span></label>
+  <label class="item"><input type="checkbox" data-id="s3f"><span class="tx"><span class="timechip">15:00</span>슬레아 헤드 드라이브 — 던모어 헤드 · 던퀸 피어 🐑<small>시계방향 진행 관례 · 좁은 해안도로 대형버스 교행 주의</small></span></label>
+  <label class="item"><input type="checkbox" data-id="s3g"><span class="tx"><span class="timechip">16:30</span>코너 패스 정상 주차장 — 파노라마 📸<small>좁은 산악도로 · 낙석·양 주의 · 바람 강함(겉옷!)</small></span></label>
+  <label class="item"><input type="checkbox" data-id="s3h"><span class="tx"><span class="timechip">17:30</span>트랄리 저녁 (또는 리머릭)<small>저녁 후 중간 주유 · 출발 전 화장실</small></span></label>
+  <div class="note">☀️ 날씨 최고의 날 — 각 스팟에서 단체 사진 꼭! (후기·홍보용, 얼굴 노출 동의 확인)</div>
+</section>
+
+<section data-sec="s4">
+  <h2>💶 잔금 수령 <span class="cnt"></span></h2>
+  <div class="desc">현금 · Revolut · 원화이체 — 받은 즉시 체크</div>
+  <label class="item"><input type="checkbox" data-id="s4a" data-amt="45"><span class="tx">이소희</span><span class="amt">€45</span></label>
+  <label class="item"><input type="checkbox" data-id="s4b" data-amt="45"><span class="tx">양주희</span><span class="amt">€45</span></label>
+  <label class="item"><input type="checkbox" data-id="s4c" data-amt="45"><span class="tx">김선미</span><span class="amt">€45</span></label>
+  <label class="item"><input type="checkbox" data-id="s4d" data-amt="45"><span class="tx">Yoon</span><span class="amt">€45</span></label>
+  <label class="item"><input type="checkbox" data-id="s4e" data-amt="70"><span class="tx">최진 (지인 · 원가 · 예약금 없음)</span><span class="amt">€70</span></label>
+  <div class="moneybox" id="moneyBox">수령 €0 / €250</div>
+  <div class="note">예약금은 전원 입금 완료 ✅ (Yoon €85 · 양주희 €85 · 김선미 €85 · 이소희 €75 = €330 기수령)</div>
+</section>
+
+<section data-sec="s5">
+  <h2>🌙 귀가 드랍 (픽업 역순) <span class="cnt"></span></h2>
+  <div class="desc">트랄리 출발 후 더블린 도착 ~22:00 기준 예상</div>
+  <label class="item"><input type="checkbox" data-id="s5a"><span class="tx"><span class="timechip">~22:00</span>Yoon — D24 KN8X</span></label>
+  <label class="item"><input type="checkbox" data-id="s5b"><span class="tx"><span class="timechip">~22:15</span>최진 — D16 E978</span></label>
+  <label class="item"><input type="checkbox" data-id="s5c"><span class="tx"><span class="timechip">~22:35</span>김선미 — D01 W7R9</span></label>
+  <label class="item"><input type="checkbox" data-id="s5d"><span class="tx"><span class="timechip">~22:45</span>양주희 — D07 C640</span></label>
+  <label class="item"><input type="checkbox" data-id="s5e"><span class="tx"><span class="timechip">~23:00</span>이소희 — Blanchardstown SC</span></label>
+  <label class="item"><input type="checkbox" data-id="s5f"><span class="tx">전원 귀가 카톡 확인 · "오늘 감사했습니다" 인사 💬</span></label>
+</section>
+
+<section data-sec="s6">
+  <h2>✅ 여행 후 정산 · 마무리 <span class="cnt"></span></h2>
+  <div class="desc">다음날(7/15)까지 완료 — 수요일 위클로 반나절 일정 전에!</div>
+  <label class="item"><input type="checkbox" data-id="s6a"><span class="tx">Booking Manager — seed-11 상태 "완료" 처리<small>구글 캘린더 자동 반영 확인</small></span></label>
+  <label class="item"><input type="checkbox" data-id="s6b"><span class="tx">Finance Tracker 3분배 확인<small>운영비(연료·톨·주차·가이드식비) → 내 계좌 / 차량예비비 750km×€0.33 → 차량통장 / Classical Music 저축</small></span></label>
+  <label class="item"><input type="checkbox" data-id="s6c"><span class="tx">주행거리 · 실비 기록<small>연료 영수증 · 톨(M50 등) · 주차비 — 트래커 입력</small></span></label>
+  <label class="item"><input type="checkbox" data-id="s6d"><span class="tx">카톡방 사진 공유 + 후기 요청 📸</span></label>
+  <label class="item"><input type="checkbox" data-id="s6e"><span class="tx">인스타 @ireland.sosik 후기 게시 + 7/21 뉴그레인지·타라 홍보 한 줄 🌾</span></label>
+</section>
+
+<button class="reset" id="resetBtn">↺ 체크 전체 초기화</button>
+<footer>BEAUTIFUL IRELAND WITH EVERYONE · Andrew의 아일랜드 동행 · 2026-07-14 Kerry &amp; Dingle</footer>
+</div>
+
+<script>
+const KEY='kerry-0714-checklist';
+let mem={};
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||{};}catch(e){return mem;}}
+function save(st){try{localStorage.setItem(KEY,JSON.stringify(st));}catch(e){mem=st;}}
+const boxes=[...document.querySelectorAll('input[type=checkbox]')];
+const st=load();
+boxes.forEach(b=>{
+  if(st[b.dataset.id])b.checked=true;
+  sync(b);
+  b.addEventListener('change',()=>{const s=load();s[b.dataset.id]=b.checked;save(s);sync(b);update();});
+});
+function sync(b){b.closest('label').classList.toggle('done',b.checked);}
+function update(){
+  const done=boxes.filter(b=>b.checked).length;
+  const pct=Math.round(done/boxes.length*100);
+  document.getElementById('totBar').style.width=pct+'%';
+  document.getElementById('totTx').textContent=`전체 진행 ${pct}% (${done}/${boxes.length})`;
+  let got=0;
+  document.querySelectorAll('input[data-amt]').forEach(b=>{if(b.checked)got+=parseInt(b.dataset.amt);});
+  document.getElementById('moneyTx').textContent=`💶 수령 €${got} / €250`;
+  document.getElementById('moneyBox').textContent=got>=250?'🎉 잔금 €250 전액 수령 완료!':`수령 €${got} / €250`;
+  document.querySelectorAll('section[data-sec]').forEach(sec=>{
+    const bs=[...sec.querySelectorAll('input[type=checkbox]')];
+    const d=bs.filter(b=>b.checked).length;
+    sec.querySelector('.cnt').textContent=`${d}/${bs.length}`;
+  });
+}
+document.getElementById('resetBtn').addEventListener('click',()=>{
+  if(!confirm('모든 체크를 초기화할까요?'))return;
+  try{localStorage.removeItem(KEY);}catch(e){}
+  mem={};boxes.forEach(b=>{b.checked=false;sync(b);});update();
+});
+update();
+</script>
+</body>
+</html>
