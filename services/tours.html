@@ -1101,12 +1101,12 @@ const OPEN_TRIPS = [
     dateDisplay: '7월 25일 (토)',
     course: '🌊 모허의 절벽 · 골웨이',
     courseEn: 'Cliffs of Moher · Galway — Wild Atlantic Way Day Trip',
-    description: '아일랜드 대표 절경을 하루에 담는 서부 코스입니다. 대서양에서 214m 솟아 8km 이어지는 모허의 절벽(Cliffs of Moher), 달 표면 같은 카르스트 지형의 버렌 국립공원(The Burren), 그리고 거리 공연과 항구의 정취가 흐르는 골웨이 시내까지. 현재 3분이 신청하셔서 함께 갈 2분을 더 모집 중이에요 — 정원 5명이 채워지면 1인 €75로 출발합니다. (모허의 절벽 성인 입장료 €8~12는 개인 부담)',
+    description: '아일랜드 대표 절경을 하루에 담는 서부 코스입니다. 대서양에서 214m 솟아 8km 이어지는 모허의 절벽(Cliffs of Moher), 달 표면 같은 카르스트 지형의 버렌 국립공원(The Burren), 그리고 거리 공연과 항구의 정취가 흐르는 골웨이 시내까지. 정원 5명이 모두 채워져 출발이 확정된 마감 일정이에요. (모허의 절벽 성인 입장료 €8~12는 개인 부담)',
     capacity: 5,
-    booked: 3,
-    status: 'recruiting',
+    booked: 5,
+    status: 'full',
     pricePerPerson: 75,                  // 5인 정원 기준 (4인 €95 — 인원별 상이)
-    priceNote: '5인 정원 기준 1인 €75 · 딱 2자리 남음 · 모허 입장(성인 €8~12)·식비 별도',
+    priceNote: '5인 정원 기준 1인 €75 · 모집 마감 · 모허 입장(성인 €8~12)·식비 별도',
     meetingPoint: 'Blanchardstown Shopping Centre',
     meetingTime: '인원 확정 후 카톡 안내',
     extraNote: '도어투도어 픽업·드랍 각 +€5/인',
@@ -1118,7 +1118,7 @@ const TRIP_STATUS = {
   'confirmed':   { label: '✅ 출발 확정', cls: 'confirmed' },
   'recruiting':  { label: '⏳ 모집 중',   cls: 'recruiting' },
   'almost-full': { label: '🔥 마감 임박', cls: 'almost-full' },
-  'full':        { label: '🚫 마감 (4/4)', cls: 'full' },
+  'full':        { label: '🚫 마감', cls: 'full' },
   'new':         { label: '🆕 신규 오픈', cls: 'new' }
 };
 
