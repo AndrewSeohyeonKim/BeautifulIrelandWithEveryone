@@ -152,8 +152,8 @@
 
     <div class="rc-grid">
 
-      <!-- 7/25 모허·골웨이 (마감) -->
-      <article class="rc-card" style="border-color:var(--border); background:#f9fafb;">
+      <!-- 7/25 모허·골웨이 (마감) — data-trip-date 지난 날짜는 자동 숨김 -->
+      <article class="rc-card" data-trip-date="2026-07-25" style="border-color:var(--border); background:#f9fafb;">
         <span class="rc-status" style="background:#6b7280;">🚫 모집 마감</span>
         <span class="rc-date">📅 7월 25일 (토) · 약 12시간</span>
         <span class="rc-name">🌊 모허의 절벽 · 골웨이</span>
@@ -174,26 +174,25 @@
         </div>
       </article>
 
-      <!-- 7/21 뉴그레인지·힐오브타라 -->
-      <article class="rc-card">
-        <span class="rc-status">⏳ 모집 중</span>
-        <span class="rc-date">📅 7월 21일 (화) · 약 7시간</span>
-        <span class="rc-name">🌾 뉴그레인지 · 힐오브타라</span>
-        <div class="rc-sub">Newgrange · Hill of Tara — Boyne Valley</div>
-        <p class="rc-desc">5,200년 신석기 무덤 <strong>뉴그레인지</strong>(유네스코), <strong>Old Mellifont Abbey</strong>, 넓은 <strong>Dalgan Park</strong>, 고대 왕들의 언덕 <strong>힐오브타라</strong>까지 보인 밸리를 하루에.</p>
+      <!-- 7/28 모허·골웨이 (마감) — data-trip-date 지난 날짜는 자동 숨김 -->
+      <article class="rc-card" data-trip-date="2026-07-28" style="border-color:var(--border); background:#f9fafb;">
+        <span class="rc-status" style="background:#6b7280;">🚫 모집 마감</span>
+        <span class="rc-date">📅 7월 28일 (화) · 약 12시간</span>
+        <span class="rc-name">🌊 모허의 절벽 · 골웨이</span>
+        <div class="rc-sub">Cliffs of Moher · Galway — Wild Atlantic Way</div>
+        <p class="rc-desc">대서양에서 214m 솟은 <strong>모허의 절벽</strong>, 달 표면 같은 <strong>버렌 국립공원</strong>, 흥겨운 <strong>골웨이 시내</strong>까지 하루에. 차 한 대 단독 동행.</p>
         <div class="rc-progress">
-          <div class="rc-progress-top"><span>모집 현황</span><span class="rc-seats"><b>2</b>/5명 · 3석 남음</span></div>
-          <div class="rc-bar"><div class="rc-fill" style="width:40%"></div></div>
+          <div class="rc-progress-top"><span>모집 현황</span><span class="rc-seats"><b>4</b>/4명 · <span style="color:#dc2626;font-weight:800;">마감</span></span></div>
+          <div class="rc-bar"><div class="rc-fill" style="width:100%;background:#9ca3af;"></div></div>
         </div>
         <div class="rc-meta">📍 <strong>Blanchardstown Shopping Centre</strong> · ⏰ 인원 확정 후 카톡 안내</div>
         <div class="rc-price">
-          <span class="rc-price-label">1인 가격<small>5인 €35 · 4인 €40 (인원 확정 시) · 뉴그레인지 입장 €18·식비 별도</small></span>
-          <span class="rc-price-amt">€35~</span>
+          <span class="rc-price-label">1인 가격<small>4인 정원 기준 · 모허 입장(성인 €8~12)·식비 별도</small></span>
+          <span class="rc-price-amt">€95</span>
         </div>
-        <a class="rc-route" href="services/tours.html#route-r22">🗺️ 코스(루트)·정차지 상세 보기 →</a>
+        <a class="rc-route" href="services/tours.html#route-r8">🗺️ 코스(루트)·정차지 상세 보기 →</a>
         <div class="rc-cta-row">
-          <a class="rc-cta" href="https://open.kakao.com/o/suSTEFsi" target="_blank">💬 카톡 신청</a>
-          <a class="rc-cta rc-cta-insta" href="https://www.instagram.com/ireland.sosik/" target="_blank" rel="noopener">📷 인스타 DM</a>
+          <span class="rc-cta" style="background:#e5e7eb;color:#6b7280;cursor:default;">🚫 모집 마감 (4/4)</span>
         </div>
       </article>
 
@@ -201,6 +200,23 @@
 
     <a class="rc-alllink" href="services/tours.html#open-trips">🌿 로드트립 22개 코스·모집 일정 모두 보기 →</a>
   </div>
+
+  <!-- 지난 날짜 동행 카드는 자동으로 사라집니다. 카드에 data-trip-date="YYYY-MM-DD"만 넣으면 그날이 지나면 자동 숨김. 남은 카드가 없으면 이 섹션 전체가 숨겨집니다. -->
+  <script>
+  (function(){
+    var today = new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/Dublin' }); // YYYY-MM-DD (아일랜드 기준)
+    var section = document.getElementById('recruiting');
+    if (!section) return;
+    var cards = section.querySelectorAll('.rc-card[data-trip-date]');
+    var visible = 0;
+    cards.forEach(function(card){
+      var d = card.getAttribute('data-trip-date');
+      if (d && d < today) { card.remove(); } // 여행 당일까지는 노출, 다음 날부터 숨김
+      else { visible++; }
+    });
+    if (visible === 0) { section.style.display = 'none'; }
+  })();
+  </script>
 </section>
 
 <!-- ============================================================
