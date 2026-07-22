@@ -36,3 +36,8 @@ yarn-error.log*
 next-env.d.ts
 
 IMG_3210.JPG
+
+# 내부 자료 — 웹 공개 제외 (2026-07-22)
+_내부자료/
+CLAUDE.md
+.fuse_hidden*
