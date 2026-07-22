@@ -122,3 +122,27 @@ window.inquireMusic = function () {
     '함께 이야기 나누고 싶습니다 🙏'
   ].join('\n'));
 };
+
+
+// 7) 방문자 분석 — 카톡 문의 클릭 집계 (GoatCounter 이벤트)
+//    GoatCounter가 없거나 로드 전이면 아무 일도 하지 않음 — 사이트 동작에 영향 없음
+(function setupKakaoTracking() {
+  function track() {
+    try {
+      if (window.goatcounter && window.goatcounter.count) {
+        var page = location.pathname.split('/').pop() || 'index.html';
+        window.goatcounter.count({ path: 'kakao-click/' + page, title: '카톡 문의 클릭 — ' + page, event: true });
+      }
+    } catch (e) { /* 무시 */ }
+  }
+  // (a) 카톡 오픈채팅 직접 링크 클릭
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href*="open.kakao.com"]') : null;
+    if (a) track();
+  });
+  // (b) 문의 버튼(클립보드 복사형) — copyAndOpenKakao 호출 시 집계
+  var orig = window.copyAndOpenKakao;
+  if (typeof orig === 'function') {
+    window.copyAndOpenKakao = function (message) { track(); return orig(message); };
+  }
+})();
