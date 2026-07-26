@@ -1141,17 +1141,72 @@ const TRIP_STATUS = {
 };
 
 // 카톡 문의 공통 헬퍼 — 메시지 클립보드 복사 + 카톡 열기
-function copyAndOpenKakao(message) {
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(message).then(() => {
-      alert(`📋 문의 메시지가 클립보드에 복사되었어요!\n\n카톡 채팅창에 붙여넣기(Ctrl+V / 길게 누르기) 해주세요.\n\n"${message}"`);
-      window.open('https://open.kakao.com/o/suSTEFsi', '_blank');
-    }).catch(() => {
-      window.open('https://open.kakao.com/o/suSTEFsi', '_blank');
-    });
-  } else {
-    window.open('https://open.kakao.com/o/suSTEFsi', '_blank');
+// =============================================
+// 공통 유틸 — 클립보드 복사 · 링크 열기 · 토스트
+// 인앱 브라우저(카톡·인스타)와 사파리는 클릭 제스처가 끊기면
+// window.open()을 차단합니다. 그래서 alert()·프라미스 콜백 뒤가 아니라
+// 클릭과 같은 동기 흐름에서 바로 열고, 차단되면 현재 탭으로 이동합니다.
+// =============================================
+function copyTextSync(text) {
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text);
+      return true;
+    }
+  } catch (e) { /* 아래 폴백 */ }
+  try {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed; top:0; left:0; width:1px; height:1px; opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, ta.value.length);
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+function openLinkSafely(url) {
+  let win = null;
+  try { win = window.open(url, '_blank'); } catch (e) { win = null; }
+  if (!win) window.location.href = url;
+}
+
+function showToast(msg) {
+  let el = document.getElementById('site-toast');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'site-toast';
+    el.style.cssText = 'position:fixed; left:50%; bottom:28px; transform:translateX(-50%);'
+      + ' background:rgba(20,35,45,0.95); color:#fff; padding:13px 20px; border-radius:10px;'
+      + ' font-size:14px; font-weight:600; line-height:1.5; max-width:88vw; text-align:center;'
+      + ' box-shadow:0 8px 28px rgba(0,0,0,0.25); z-index:99999; opacity:0; transition:opacity .22s;';
+    document.body.appendChild(el);
   }
+  el.textContent = msg;
+  requestAnimationFrame(() => { el.style.opacity = '1'; });
+  clearTimeout(el._t);
+  el._t = setTimeout(() => { el.style.opacity = '0'; }, 3200);
+}
+
+function trackClick(path, title) {
+  try {
+    if (window.goatcounter && window.goatcounter.count) {
+      window.goatcounter.count({ path: path, title: title, event: true });
+    }
+  } catch (e) {}
+}
+
+// 카톡 문의 공통 헬퍼 — 메시지 복사 + 카톡 열기
+function copyAndOpenKakao(message) {
+  const copied = copyTextSync(message);
+  showToast(copied
+    ? '📋 문의 메시지를 복사했어요 — 카톡 채팅창에 붙여넣기 해주세요'
+    : '💬 카톡 채팅창을 여는 중이에요 — 문의 내용을 적어주세요');
+  trackClick('kakao-click/tours', '카톡 문의 클릭 (로드트립)');
+  openLinkSafely('https://open.kakao.com/o/suSTEFsi');
 }
 
 // 즉석 코스 합류 문의
@@ -1165,14 +1220,12 @@ function inquireTrip(tripId) {
 // 인스타그램 프로필(DM)로 합류 신청 — 메시지 복사 후 프로필 열기
 function copyAndOpenInsta(message) {
   const url = 'https://www.instagram.com/ireland.sosik/';
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(message).then(() => {
-      alert(`📋 문의 메시지가 클립보드에 복사되었어요!\n\n인스타그램 @ireland.sosik 프로필에서 DM 창에 붙여넣기 해주세요.\n\n"${message}"`);
-      window.open(url, '_blank');
-    }).catch(() => { window.open(url, '_blank'); });
-  } else {
-    window.open(url, '_blank');
-  }
+  const copied = copyTextSync(message);
+  showToast(copied
+    ? '📋 문의 메시지를 복사했어요 — @ireland.sosik DM 창에 붙여넣기 해주세요'
+    : '📷 인스타 프로필을 여는 중이에요 — DM으로 문의해주세요');
+  trackClick('insta-click/tours', '인스타 DM 클릭 (로드트립)');
+  openLinkSafely(url);
 }
 
 function inquireTripInsta(tripId) {
