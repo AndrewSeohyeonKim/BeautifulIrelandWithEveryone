@@ -348,15 +348,15 @@
             </div>
             <input type="number" id="pk-km" value="13" min="1" max="500" step="1" oninput="calcPickup()">
             <div class="hint"><strong>공항 출발 실주행거리(도로 거리) 기준</strong> — 직선거리가 아닙니다. 예: 시내·Blanchardstown 13km · Swords 6km · D12 24km · Bray 30km</div>
-            <a href="javascript:void(0)" onclick="openMapsDistance()" id="pk-maps-btn" style="display:inline-flex; align-items:center; gap:6px; margin-top:12px; padding:10px 15px; background:#fff; border:1.5px solid var(--accent); color:var(--primary); border-radius:8px; font-size:13.5px; font-weight:700; text-decoration:none; cursor:pointer;">🗺️ 구글지도에서 주행거리 확인하기</a>
-            <div class="hint" style="margin-top:6px;">더블린 공항 출발 기준, 목적지 주소·에어코드까지 <strong>실제 도로 주행거리</strong>를 구글지도 새 창에서 확인 → 나온 km를 위 칸에 넣으면 요금이 계산돼요.</div>
           </div>
         </div>
 
         <div class="row single">
           <div class="field">
             <label>📍 목적지 주소·에어코드 <span style="font-weight:400; color:var(--muted);">(선택)</span></label>
-            <input type="text" id="pk-dest" placeholder="예: D12 또는 Malahide">
+            <input type="text" id="pk-dest" placeholder="예: D12 또는 Malahide" oninput="updateMapsLink()">
+            <a href="https://www.google.com/maps/dir/?api=1&amp;origin=Dublin%20Airport%2C%20Ireland&amp;destination=&amp;travelmode=driving" target="_blank" rel="noopener" id="pk-maps-btn" style="display:inline-flex; align-items:center; gap:6px; margin-top:12px; padding:10px 15px; background:#fff; border:1.5px solid var(--accent); color:var(--primary); border-radius:8px; font-size:13.5px; font-weight:700; text-decoration:none; cursor:pointer;">🗺️ 구글지도에서 주행거리 확인하기</a>
+            <div class="hint" style="margin-top:6px;">위 칸에 <strong>목적지 주소·에어코드</strong>를 적고 누르면 구글지도가 새 창에서 열려요. 나온 <strong>실제 도로 주행거리</strong> km를 위 거리 칸에 넣으면 요금이 계산됩니다.</div>
           </div>
         </div>
 
@@ -698,36 +698,88 @@ function calcPickup() {
     warn.style.display = 'none';
   }
 
+  // 방향(도착/출발)이 바뀌면 구글지도 링크도 함께 갱신
+  updateMapsLink();
+}
+
+// =============================================
+// 공통 유틸 — 클립보드 복사 · 링크 열기 · 토스트
+// 인앱 브라우저(카톡·인스타)와 사파리는 클릭 제스처가 끊기면
+// window.open()을 차단합니다. 그래서 alert()·프라미스 콜백 뒤가 아니라
+// 클릭과 같은 동기 흐름에서 바로 열고, 차단되면 현재 탭으로 이동합니다.
+// =============================================
+function copyTextSync(text) {
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text);
+      return true;
+    }
+  } catch (e) { /* 아래 폴백 */ }
+  try {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed; top:0; left:0; width:1px; height:1px; opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, ta.value.length);
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+}
+
+function openLinkSafely(url) {
+  let win = null;
+  try { win = window.open(url, '_blank'); } catch (e) { win = null; }
+  if (!win) window.location.href = url;
+}
+
+function showToast(msg) {
+  let el = document.getElementById('site-toast');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'site-toast';
+    el.style.cssText = 'position:fixed; left:50%; bottom:28px; transform:translateX(-50%);'
+      + ' background:rgba(20,35,45,0.95); color:#fff; padding:13px 20px; border-radius:10px;'
+      + ' font-size:14px; font-weight:600; line-height:1.5; max-width:88vw; text-align:center;'
+      + ' box-shadow:0 8px 28px rgba(0,0,0,0.25); z-index:99999; opacity:0; transition:opacity .22s;';
+    document.body.appendChild(el);
+  }
+  el.textContent = msg;
+  requestAnimationFrame(() => { el.style.opacity = '1'; });
+  clearTimeout(el._t);
+  el._t = setTimeout(() => { el.style.opacity = '0'; }, 3200);
 }
 
 // 카톡 문의 메시지 자동 생성 + 클립보드 복사 + 카톡 열기
 function copyAndOpenKakao(message) {
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(message).then(() => {
-      alert(`📋 문의 메시지가 클립보드에 복사되었어요!\n\n카톡 채팅창에 붙여넣기(Ctrl+V / 길게 누르기) 해주세요.\n\n"${message}"`);
-      window.open('https://open.kakao.com/o/suSTEFsi', '_blank');
-    }).catch(() => {
-      window.open('https://open.kakao.com/o/suSTEFsi', '_blank');
-    });
-  } else {
-    window.open('https://open.kakao.com/o/suSTEFsi', '_blank');
-  }
+  const copied = copyTextSync(message);
+  showToast(copied
+    ? '📋 문의 메시지를 복사했어요 — 카톡 채팅창에 붙여넣기 해주세요'
+    : '💬 카톡 채팅창을 여는 중이에요 — 문의 내용을 적어주세요');
+  try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: 'kakao-click/airport', title: '카톡 문의 클릭 (공항)', event: true }); } catch (e) {}
+  openLinkSafely('https://open.kakao.com/o/suSTEFsi');
 }
 
-// 🗺️ 더블린 공항 출발 → 목적지 구글지도 길찾기(주행거리 확인)
-function openMapsDistance() {
-  // 목적지 필드에 값이 있으면 그대로 사용, 없으면 입력 요청
-  let dest = (document.getElementById('pk-dest').value || '').trim();
-  if (!dest) {
-    dest = (prompt('목적지 주소 또는 에어코드를 입력해주세요 (예: D12 또는 Malahide):') || '').trim();
-    if (!dest) return;
-    document.getElementById('pk-dest').value = dest;
-  }
-  const url = 'https://www.google.com/maps/dir/?api=1'
-    + '&origin=' + encodeURIComponent('Dublin Airport')
-    + '&destination=' + encodeURIComponent(dest + ', Ireland')
+// 🗺️ 구글지도 길찾기 링크를 목적지·방향에 맞춰 실시간 갱신
+// (prompt() + window.open() 방식은 인앱 브라우저·사파리에서 차단돼 동작하지 않아
+//  실제 <a href>로 바꿈 — 링크 클릭은 어떤 브라우저에서도 막히지 않음)
+function updateMapsLink() {
+  const btn = document.getElementById('pk-maps-btn');
+  if (!btn) return;
+  const destEl = document.getElementById('pk-dest');
+  const dirEl = document.getElementById('pk-direction');
+  const dest = (destEl && destEl.value || '').trim();
+  const direction = dirEl ? dirEl.value : 'arrival';
+  const airport = 'Dublin Airport, Ireland';
+  const other = dest ? dest + ', Ireland' : '';
+  const origin = (direction === 'arrival') ? airport : other;
+  const destination = (direction === 'arrival') ? other : airport;
+  btn.href = 'https://www.google.com/maps/dir/?api=1'
+    + '&origin=' + encodeURIComponent(origin)
+    + '&destination=' + encodeURIComponent(destination)
     + '&travelmode=driving';
-  window.open(url, '_blank');
 }
 
 function inquirePickup() {
