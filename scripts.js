@@ -17,6 +17,10 @@
     if (href.startsWith('http') && !href.includes(window.location.host)) return;
     if (href.startsWith('#')) return;
     if (href.startsWith('mailto:') || href.startsWith('tel:')) return;
+    // javascript: 링크·onclick 전용 버튼(카톡 문의 등)은 페이지 이동이 아님 → 가로채지 않음
+    if (href.toLowerCase().startsWith('javascript:')) return;
+    if (link.hasAttribute('onclick')) return;
+    if (link.hasAttribute('download')) return;
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
 
     e.preventDefault();
@@ -73,17 +77,61 @@ document.addEventListener('click', function (e) {
 
 // 5) 카톡 문의 헬퍼 — 메시지를 클립보드에 복사하고 카톡 오픈채팅을 새 탭으로 염
 //    페이지별 inquireXxx() 함수는 각 페이지 inline 스크립트에서 컨텍스트를 만들어 호출
-window.copyAndOpenKakao = function (message) {
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(message).then(function () {
-      alert('📋 문의 메시지가 클립보드에 복사되었어요!\n\n카톡 채팅창에 붙여넣기(Ctrl+V / 길게 누르기) 해주세요.\n\n"' + message + '"');
-      window.open('https://open.kakao.com/o/suSTEFsi', '_blank');
-    }).catch(function () {
-      window.open('https://open.kakao.com/o/suSTEFsi', '_blank');
-    });
-  } else {
-    window.open('https://open.kakao.com/o/suSTEFsi', '_blank');
+// 인앱 브라우저(카톡·인스타)와 사파리는 클릭 제스처가 끊기면 window.open()을 차단합니다.
+// 그래서 alert()·프라미스 콜백 뒤가 아니라, 클릭과 같은 동기 흐름에서 바로 열고
+// 차단되면 현재 탭으로 이동합니다. (서비스 페이지들과 동일한 방식)
+var KAKAO_OPENCHAT_URL = 'https://open.kakao.com/o/suSTEFsi';
+
+window.copyTextSync = function (text) {
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text);
+      return true;
+    }
+  } catch (e) { /* 아래 폴백 */ }
+  try {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed; top:0; left:0; width:1px; height:1px; opacity:0;';
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, ta.value.length);
+    var ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) { return false; }
+};
+
+window.openLinkSafely = function (url) {
+  var win = null;
+  try { win = window.open(url, '_blank'); } catch (e) { win = null; }
+  if (!win) window.location.href = url;
+};
+
+window.showToast = function (msg) {
+  var el = document.getElementById('site-toast');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'site-toast';
+    el.style.cssText = 'position:fixed; left:50%; bottom:28px; transform:translateX(-50%);'
+      + ' background:rgba(20,35,45,0.95); color:#fff; padding:13px 20px; border-radius:10px;'
+      + ' font-size:14px; font-weight:600; line-height:1.5; max-width:88vw; text-align:center;'
+      + ' box-shadow:0 8px 28px rgba(0,0,0,0.25); z-index:99999; opacity:0; transition:opacity .22s;';
+    document.body.appendChild(el);
   }
+  el.textContent = msg;
+  requestAnimationFrame(function () { el.style.opacity = '1'; });
+  clearTimeout(el._t);
+  el._t = setTimeout(function () { el.style.opacity = '0'; }, 3200);
+};
+
+window.copyAndOpenKakao = function (message) {
+  var copied = window.copyTextSync(message);
+  window.showToast(copied
+    ? '📋 문의 메시지를 복사했어요 — 카톡 채팅창에 붙여넣기 해주세요'
+    : '💬 카톡 채팅창을 여는 중이에요 — 문의 내용을 적어주세요');
+  window.openLinkSafely(KAKAO_OPENCHAT_URL);
 };
 
 // 6) 페이지별 컨텍스트 없는 일반 문의들 — 단순 메시지 → 클립보드 복사
