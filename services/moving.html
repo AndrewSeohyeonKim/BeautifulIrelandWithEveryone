@@ -977,24 +977,28 @@ calcMoving();
 // 클릭과 같은 동기 흐름에서 바로 열고, 차단되면 현재 탭으로 이동합니다.
 // =============================================
 function copyTextSync(text) {
+  // 1) 동기 폴백(execCommand)을 먼저 — 인앱 브라우저에서 가장 확실함
+  var ok = false;
   try {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text);
-      return true;
-    }
-  } catch (e) { /* 아래 폴백 */ }
-  try {
-    const ta = document.createElement('textarea');
+    var ta = document.createElement('textarea');
     ta.value = text;
     ta.setAttribute('readonly', '');
     ta.style.cssText = 'position:fixed; top:0; left:0; width:1px; height:1px; opacity:0;';
     document.body.appendChild(ta);
     ta.select();
     ta.setSelectionRange(0, ta.value.length);
-    const ok = document.execCommand('copy');
+    ok = document.execCommand('copy');
     document.body.removeChild(ta);
-    return ok;
-  } catch (e) { return false; }
+  } catch (e) { ok = false; }
+  // 2) 최신 클립보드 API도 시도 — 실패해도 조용히 무시(콘솔 오류 방지)
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      var pr = navigator.clipboard.writeText(text);
+      if (pr && pr.then) { pr.then(function () {}, function () {}); }
+      ok = true;
+    }
+  } catch (e) { /* 무시 */ }
+  return ok;
 }
 
 function openLinkSafely(url) {

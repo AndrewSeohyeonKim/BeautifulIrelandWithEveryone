@@ -83,12 +83,8 @@ document.addEventListener('click', function (e) {
 var KAKAO_OPENCHAT_URL = 'https://open.kakao.com/o/suSTEFsi';
 
 window.copyTextSync = function (text) {
-  try {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text);
-      return true;
-    }
-  } catch (e) { /* 아래 폴백 */ }
+  // 1) 동기 폴백(execCommand)을 먼저 — 인앱 브라우저에서 가장 확실함
+  var ok = false;
   try {
     var ta = document.createElement('textarea');
     ta.value = text;
@@ -97,10 +93,18 @@ window.copyTextSync = function (text) {
     document.body.appendChild(ta);
     ta.select();
     ta.setSelectionRange(0, ta.value.length);
-    var ok = document.execCommand('copy');
+    ok = document.execCommand('copy');
     document.body.removeChild(ta);
-    return ok;
-  } catch (e) { return false; }
+  } catch (e) { ok = false; }
+  // 2) 최신 클립보드 API도 시도 — 실패해도 조용히 무시(콘솔 오류 방지)
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      var pr = navigator.clipboard.writeText(text);
+      if (pr && pr.then) { pr.then(function () {}, function () {}); }
+      ok = true;
+    }
+  } catch (e) { /* 무시 */ }
+  return ok;
 };
 
 window.openLinkSafely = function (url) {
