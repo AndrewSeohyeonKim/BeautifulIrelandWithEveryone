@@ -387,6 +387,19 @@ header.hero .cta a.outline:hover { background: rgba(255,255,255,0.15); border-co
 section { padding: 60px 0; }
 section.alt { background: white; }
 section .section-title { margin-bottom: 32px; text-align: center; }
+
+/* 섹션 머리말(eyebrow) — 페이지마다 인라인으로 반복하던 스타일을 한 곳으로 */
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.eyebrow.accent { color: var(--accent); }
+.eyebrow.green  { color: var(--green); }
+.eyebrow.insta  { color: #d62976; }
 h1 { color: var(--primary); }
 h2 { font-size: 28px; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
 h2 + .lead { color: var(--muted); margin-top: 6px; font-size: 15px; }
@@ -735,31 +748,35 @@ header.hero .tagline, header.hero .sub { animation: heroRise 0.7s cubic-bezier(0
 header.hero .cta { animation: heroRise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 0.32s; }
 
 /* 섹션이 화면에 들어올 때 부드럽게 reveal */
-.reveal {
+html.js .reveal {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.reveal.in-view {
+html.js .reveal.in-view {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* 카드들에 staggered fade */
-.stagger-fade > * {
+/* 카드들에 staggered fade — 로드 시점이 아니라 화면에 들어올 때 발동 */
+html.js .stagger-fade > * {
   opacity: 0;
-  animation: heroRise 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transform: translateY(18px);
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.stagger-fade > *:nth-child(1) { animation-delay: 0.05s; }
-.stagger-fade > *:nth-child(2) { animation-delay: 0.12s; }
-.stagger-fade > *:nth-child(3) { animation-delay: 0.19s; }
-.stagger-fade > *:nth-child(4) { animation-delay: 0.26s; }
-.stagger-fade > *:nth-child(5) { animation-delay: 0.33s; }
-.stagger-fade > *:nth-child(6) { animation-delay: 0.4s; }
+html.js .stagger-fade.in-view > * { opacity: 1; transform: translateY(0); }
+html.js .stagger-fade.in-view > *:nth-child(1) { transition-delay: 0.04s; }
+html.js .stagger-fade.in-view > *:nth-child(2) { transition-delay: 0.10s; }
+html.js .stagger-fade.in-view > *:nth-child(3) { transition-delay: 0.16s; }
+html.js .stagger-fade.in-view > *:nth-child(4) { transition-delay: 0.22s; }
+html.js .stagger-fade.in-view > *:nth-child(5) { transition-delay: 0.28s; }
+html.js .stagger-fade.in-view > *:nth-child(6) { transition-delay: 0.34s; }
+html.js .stagger-fade.in-view > *:nth-child(n+7) { transition-delay: 0.40s; }
 
 /* prefers-reduced-motion 대응 */
 @media (prefers-reduced-motion: reduce) {
-  body, .hero-content, .reveal, .stagger-fade > * {
+  body, .hero-content, html.js .reveal, html.js .stagger-fade, html.js .stagger-fade > * {
     animation: none !important;
     transition: none !important;
     opacity: 1 !important;
@@ -1288,3 +1305,112 @@ br.brk-md { display: none; }
   .launch-notice { font-size: 13px; padding: 11px 14px; }
   .launch-notice .ln-sub { font-size: 12px; }
 }
+
+/* ============================================================
+   모금 현황 패널 — fund.json 을 읽어 채워집니다 (scripts.js)
+   숫자가 주인공이 되도록 장식은 최소로 둡니다.
+   ============================================================ */
+.fund-panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 26px 24px 20px;
+  margin: 26px auto 0;
+  max-width: 620px;
+  text-align: left;
+}
+.fund-panel[hidden] { display: none; }
+.fund-lede {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 14px;
+  letter-spacing: 0.2px;
+}
+.fund-amount {
+  font-size: 44px;
+  font-weight: 900;
+  color: var(--primary);
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  font-variant-numeric: tabular-nums;
+}
+.fund-amount span { font-size: 26px; font-weight: 700; color: var(--accent); margin-right: 3px; }
+.fund-meta {
+  font-size: 13.5px;
+  color: var(--text);
+  line-height: 1.7;
+  margin-top: 10px;
+}
+.fund-meta b { color: var(--primary); font-weight: 700; font-variant-numeric: tabular-nums; }
+.fund-split {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 18px;
+}
+.fund-split div { background: var(--card); padding: 12px 10px; text-align: center; }
+.fund-split dt { font-size: 11.5px; color: var(--muted); font-weight: 600; margin-bottom: 4px; }
+.fund-split dd { font-size: 16px; font-weight: 800; color: var(--primary); font-variant-numeric: tabular-nums; }
+.fund-note {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+@media (max-width: 560px) {
+  .fund-amount { font-size: 36px; }
+  .fund-split { grid-template-columns: 1fr; }
+}
+
+/* 적립 방식 설명 — about.html 음악 프로젝트 섹션 */
+.fund-method {
+  max-width: 620px;
+  margin: 20px auto 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 24px 18px;
+  text-align: left;
+}
+.fund-method h4 {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 0 0 14px;
+}
+.fund-method ol {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 10px;
+}
+.fund-method li {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--text);
+}
+.fund-method li b { color: var(--primary); font-weight: 700; }
+.fund-method li:last-child b { color: var(--accent); }
+.fund-method .fm-sub {
+  display: block;
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-top: 2px;
+}
+.fund-method .fm-note {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 16px 0 0;
+  padding-top: 13px;
+  border-top: 1px solid var(--border);
+}
+
