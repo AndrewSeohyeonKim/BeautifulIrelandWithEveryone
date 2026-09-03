@@ -25,14 +25,21 @@
   .story-block p { font-size:15.5px; line-height:1.9; color:var(--text); margin-bottom:18px; }
   .story-block p strong { color:var(--primary); background:var(--accent-soft); padding:2px 6px; border-radius:4px; }
   .story-block h3 { margin-top:30px; margin-bottom:14px; color:var(--primary); }
-  .mission-card-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:18px; margin-bottom:36px; }
+  /* 카드가 4장이므로 2×2로 고정 — auto-fit이면 3열이 되어 4번째가 혼자 남고,
+     한 줄 안에서 가장 짧은 카드가 큰 빈 공간을 떠안습니다. */
+  .mission-card-grid { display:grid; grid-template-columns:1fr; gap:18px; margin-bottom:36px; }
+  @media (min-width: 660px) { .mission-card-grid { grid-template-columns:1fr 1fr; } }
   .mission-card {
     background:white;
     border:1px solid var(--border);
     border-radius:14px;
     padding:24px 26px;
     box-shadow:0 2px 8px rgba(0,0,0,0.04);
+    display:flex;
+    flex-direction:column;
   }
+  /* 같은 줄에서 키를 맞추느라 생긴 여유 공간은 본문 아래로 몰아, 링크는 카드 바닥에 정렬 */
+  .mission-card p { flex:1 1 auto; }
   .mission-card .ic { font-size:30px; margin-bottom:10px; }
   .mission-card h4 { color:var(--primary); margin-bottom:10px; font-size:16px; }
   .mission-card p { font-size:14px; line-height:1.7; color:var(--text); }
