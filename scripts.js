@@ -44,22 +44,41 @@
   }
 })();
 
-// 2) Reveal-on-scroll — .reveal 클래스가 붙은 섹션을 화면 진입 시 페이드 인
+// 2) Reveal-on-scroll — .reveal 섹션과 .stagger-fade 그리드를 화면 진입 시 발동
+//    .reveal / .stagger-fade 를 감추는 CSS는 <html class="js">에만 걸려 있어서,
+//    JS가 꺼져 있거나 실패해도 콘텐츠는 그대로 보입니다. (index 등 <head> 인라인 스니펫 참고)
 (function setupScrollReveal() {
-  if (!('IntersectionObserver' in window)) {
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in-view'));
-    return;
-  }
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+  var targets = document.querySelectorAll('.reveal, .stagger-fade');
+  if (!targets.length) return;
 
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  function showAll() {
+    targets.forEach(function (el) { el.classList.add('in-view'); });
+  }
+
+  if (!('IntersectionObserver' in window)) { showAll(); return; }
+
+  var observerWorked = false;
+  var io = new IntersectionObserver(function (entries) {
+    observerWorked = true;
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('in-view');
+      io.unobserve(entry.target);
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+
+  targets.forEach(function (el) {
+    // 첫 화면에 이미 들어와 있는 요소는 관찰 없이 바로 표시 — 새로고침 시 깜빡임 방지
+    if (el.getBoundingClientRect().top < window.innerHeight * 0.9) {
+      el.classList.add('in-view');
+    } else {
+      io.observe(el);
+    }
+  });
+
+  // 안전장치 — 관찰자가 단 한 번도 콜백을 주지 않았을 때만 전부 표시.
+  // (정상 동작 중이라면 아무것도 하지 않는다 — 스크롤 리빌을 망치지 않도록)
+  setTimeout(function () { if (!observerWorked) showAll(); }, 3000);
 })();
 
 // 3) 햄버거 메뉴 토글은 inline onclick으로 이미 처리됨
@@ -174,6 +193,62 @@ window.inquireMusic = function () {
     '함께 이야기 나누고 싶습니다 🙏'
   ].join('\n'));
 };
+
+
+// 6.5) 모금 현황 패널 — fund.json 을 읽어 #fund-panel 을 채웁니다.
+//      숫자를 바꿀 때는 fund.json 한 파일만 고치면 모든 페이지에 반영됩니다.
+//      파일이 없거나 raised 값이 없으면 패널은 조용히 숨겨둡니다 (빈 칸이 보이지 않도록).
+(function setupFundPanel() {
+  var panel = document.getElementById('fund-panel');
+  if (!panel) return;
+
+  // 서브폴더(services/)에서도 루트의 fund.json 을 찾도록 경로를 맞춥니다
+  var base = location.pathname.indexOf('/services/') >= 0 ? '../' : './';
+
+  fetch(base + 'fund.json', { cache: 'no-cache' })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) {
+      if (!d || typeof d.raised !== 'number' || !(d.raised > 0)) return;
+
+      function euro(n) {
+        return n.toLocaleString('ko-KR', { minimumFractionDigits: 0, maximumFractionDigits: 1 });
+      }
+      function ymd(v) {
+        var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v || '');
+        return m ? (m[1] + '년 ' + (+m[2]) + '월 ' + (+m[3]) + '일') : null;
+      }
+
+      document.getElementById('fund-amount').textContent = euro(d.raised);
+
+      var meta = [];
+      var since = ymd(d.since);
+      if (since) meta.push(since + '부터');
+      if (typeof d.trips === 'number' && d.trips > 0) meta.push('정산을 마친 동행 <b>' + d.trips + '건</b>');
+      var metaEl = document.getElementById('fund-meta');
+      metaEl.innerHTML = meta.length
+        ? meta.join(' · ') + '에서 모였습니다.'
+        : '';
+
+      // 배분 내역 — gross·operating·vehicle 이 모두 있을 때만 보여줍니다
+      if (typeof d.gross === 'number' && typeof d.operating === 'number' && typeof d.vehicle === 'number') {
+        var split = document.getElementById('fund-split');
+        split.innerHTML =
+          '<div><dt>받은 금액</dt><dd>\u20ac' + euro(d.gross) + '</dd></div>' +
+          '<div><dt>운영 실비</dt><dd>\u20ac' + euro(d.operating) + '</dd></div>' +
+          '<div><dt>차량 예비비</dt><dd>\u20ac' + euro(d.vehicle) + '</dd></div>';
+        split.hidden = false;
+      }
+
+      var note = [];
+      if (d.note) note.push(d.note);
+      var upd = ymd(d.updated);
+      if (upd) note.push(upd + ' 기준 · 운영 장부에서 옮겨 적습니다.');
+      document.getElementById('fund-note').textContent = note.join(' ');
+
+      panel.hidden = false;
+    })
+    .catch(function () { /* 조용히 무시 — 패널은 숨겨진 채로 둡니다 */ });
+})();
 
 
 // 7) 방문자 분석 — 카톡 문의 클릭 집계 (GoatCounter 이벤트)

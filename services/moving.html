@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<script>document.documentElement.className+=" js";</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>아일랜드 이사·운송·IKEA 가구 픽업 — 더블린 한인 차량 | Andrew의 아일랜드 동행</title>
@@ -75,8 +76,8 @@
   .zone-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; max-width:900px; margin:0 auto; }
   @media (max-width:760px){ .zone-grid { grid-template-columns:1fr; } }
   .zone-card { background:white; border:1.5px solid var(--border); border-radius:14px; padding:22px 24px; }
-  .zone-card.zone-in { border-color:#22c55e; background:linear-gradient(180deg, #f0fdf4 0%, white 100%); }
-  .zone-card.zone-out { border-color:#f59e0b; background:linear-gradient(180deg, #fffbeb 0%, white 100%); }
+  .zone-card.zone-in { border-color:#22c55e; background:#f5fbf7; }
+  .zone-card.zone-out { border-color:#f59e0b; background:#fffbf0; }
   .zone-card .zone-head { display:flex; align-items:center; gap:10px; margin-bottom:10px; flex-wrap:wrap; }
   .zone-card .zone-head h4 { margin:0; font-size:18px; color:var(--primary); }
   .zone-card .zone-icon { font-size:22px; }
@@ -354,9 +355,9 @@
 
 <!-- THREE CATEGORIES -->
 <section style="background:white;">
-  <div class="container">
+  <div class="container reveal">
     <div class="section-title">
-      <h2>🛎️ 어떤 이사·운송이 필요하세요?</h2>
+      <h2>어떤 이사·운송이 필요하세요?</h2>
       <p class="lead">짐 양 · 이동 거리 · 도움 여부에 따라 견적이 달라져요</p>
     </div>
     <div class="use-grid stagger-fade">
@@ -396,9 +397,9 @@
 
 <!-- VEHICLE INFO -->
 <section style="background:var(--bg);">
-  <div class="container">
+  <div class="container reveal">
     <div class="section-title">
-      <h2>🚐 차량 정보</h2>
+      <h2>차량 정보</h2>
       <p class="lead">7인승 MPV — 좌석 접으면 진짜 많이 들어갑니다</p>
     </div>
     <div class="vehicle-photo">
@@ -417,9 +418,9 @@
 
 <!-- SERVICE ZONE INFO -->
 <section style="background:white;">
-  <div class="container" style="max-width:920px;">
+  <div class="container reveal" style="max-width:920px;">
     <div class="section-title">
-      <h2>📍 서비스 권역 안내</h2>
+      <h2>서비스 권역 안내</h2>
       <p class="lead">권역 내·외에 따라 추가 비용 발생 여부가 달라져요</p>
     </div>
 
@@ -461,9 +462,9 @@
 
 <!-- CALCULATOR -->
 <section id="calculator" style="background:var(--bg);">
-  <div class="container">
+  <div class="container reveal">
     <div class="section-title">
-      <h2>🧮 가격 계산</h2>
+      <h2>가격 계산</h2>
       <p class="lead">유형별로 빠르게 견적 확인</p>
     </div>
 
@@ -574,9 +575,9 @@
 
 <!-- 전체 가격표 -->
 <section style="background:white;">
-  <div class="container" style="max-width:780px;">
+  <div class="container reveal" style="max-width:780px;">
     <div class="section-title">
-      <h2>💰 전체 가격 가이드</h2>
+      <h2>전체 가격 가이드</h2>
       <p class="lead">A → B 거리 기준 정찰가 + 거리당 단가 공식</p>
     </div>
     <div class="price-table-wrap">
@@ -625,7 +626,7 @@
 
 <!-- FAQ -->
 <section style="background:var(--bg);">
-  <div class="container" style="max-width:800px;">
+  <div class="container reveal" style="max-width:800px;">
     <div class="section-title"><h2>이사·운송 자주 묻는 질문</h2></div>
 
     <div class="faq-item" onclick="this.classList.toggle('open')">
@@ -769,7 +770,7 @@
 
 <!-- OTHER SERVICES -->
 <section class="other-services">
-  <div class="container">
+  <div class="container reveal">
     <h3>다른 서비스도 보세요</h3>
     <div class="links">
       <a href="airport.html"><span class="icon">✈️</span>공항 픽업·드랍</a>
