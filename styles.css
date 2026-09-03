@@ -1297,25 +1297,7 @@ br.brk-md { display: none; }
   }
 }
 
-/* ============================================================
-   서비스 오픈 안내 배너 — 2026-06-17이 되면 scripts.js가 자동 제거
-   ============================================================ */
-.launch-notice {
-  /* body의 padding-top이 이미 고정 nav 높이를 보정 → margin-top 두면 흰 여백 생김 (수정됨) */
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-  color: #fff;
-  text-align: center;
-  padding: 13px 18px;
-  font-size: 14.5px;
-  line-height: 1.65;
-  border-bottom: 2px solid var(--accent);
-}
-.launch-notice strong { color: var(--accent); font-weight: 800; }
-.launch-notice .ln-sub { display: block; font-size: 13px; opacity: 0.88; }
-@media (max-width: 600px) {
-  .launch-notice { font-size: 13px; padding: 11px 14px; }
-  .launch-notice .ln-sub { font-size: 12px; }
-}
+
 
 /* ============================================================
    모금 현황 패널 — fund.json 을 읽어 채워집니다 (scripts.js)

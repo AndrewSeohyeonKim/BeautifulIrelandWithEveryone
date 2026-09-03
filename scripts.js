@@ -34,15 +34,6 @@
   });
 })();
 
-// 1.5) 서비스 오픈 안내 배너 — 2026년 6월 17일이 되면 자동으로 사라짐
-//      .launch-notice 클래스가 붙은 요소는 17일 0시(기기 현지 시각)부터 제거됨.
-//      서비스 오픈 후 별도 코드 수정 없이 안내가 자동 종료되도록 설계.
-(function setupLaunchNotice() {
-  var LAUNCH_DATE = new Date(2026, 5, 17); // 2026-06-17 00:00 (월은 0부터: 5 = 6월)
-  if (new Date() >= LAUNCH_DATE) {
-    document.querySelectorAll('.launch-notice').forEach(function (el) { el.remove(); });
-  }
-})();
 
 // 2) Reveal-on-scroll — .reveal 섹션과 .stagger-fade 그리드를 화면 진입 시 발동
 //    .reveal / .stagger-fade 를 감추는 CSS는 <html class="js">에만 걸려 있어서,
