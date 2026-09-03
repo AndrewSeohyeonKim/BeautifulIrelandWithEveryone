@@ -6,6 +6,51 @@
 - 언어: 한국어 / 차량: 7인승 MPV / 형태: 우리 그룹만 단독(프라이빗) + 도어투도어 + 코스 커스텀
 - 연락: 카카오톡 오픈채팅 https://open.kakao.com/o/suSTEFsi · 인스타그램 DM https://www.instagram.com/ireland.sosik/ · 이메일 sby05034@gmail.com
 - 사이트: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/
+- 전체 가격표(기계 판독용): https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/pricing.md
+- 최종 업데이트: 2026-09-04
+
+## 주요 페이지
+- 홈 · 자주 묻는 질문 10개: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/
+- 당일치기 로드트립 22코스 · 가격 계산기: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/services/tours.html
+- 더블린 공항 픽업·드랍 · 가격 계산기: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/services/airport.html
+- 이사·IKEA·가구 픽업 운송 · 가격 계산기: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/services/moving.html
+- 가톨릭 성지순례·피정 6개 프로그램: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/services/pilgrimage.html
+- 맞춤 여행·장기 여행·통역 동행: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/services/custom.html
+- 운영자 소개 (서현 Andrew): https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/about.html
+- 문의·예약 채널: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/contact.html
+- 이용약관 · 환불·책임 정책: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/terms.html
+
+## 공항 픽업 가격 (거리당 정찰, 톨비·공항 진입비 포함)
+- 0–10km €40 / 10–50km 구간 초과 1km당 €1.5 / 50km 초과분 1km당 €0.8
+- 예시: 13km ≈ €45 · 24km ≈ €61 · 30km ≈ €70 · 50km ≈ €100
+- 추가: 도착 픽업 공항 주차비 +€5(항상) · 야간 23–06시 +€10 · 5–6인 +€10 · 캐리어 5개 이상 +€5 · 도착 게이트 마중 +€5 · 출발 체크인 동행 +€10 · 시내권 경유지 1곳당 +€10
+- 최종 금액은 실제 주소 기준 구글맵 주행거리로 확정
+
+## 이사·운송 가격 (거리당 정찰, 톨비·주차 별도 실비)
+- 소규모 이사 1회 이동: 0–10km €40 / 10–50km 초과 1km당 €1.5 / 50km 초과분 1km당 €0.8
+- 반복 이동 이사: 2회 왕복 = 1회 이동가 × 1.8 / 3회 이상 왕복 = × 2.5 (운반 도움 기본 포함)
+- 정찰 권역: 그레이터 더블린(시내·Blanchardstown·Tallaght·Swords·Dun Laoghaire·Bray·Lucan·Dundrum 등) 또는 Dublin 15 기준 반경 15km 이내. 권역 밖은 별도 견적
+
+## 차량·정원
+- 7인승 MPV 1대, 최대 6인 탑승. 좌석을 접으면 적재 약 1,800L
+- 4인까지 캐리어를 실어도 좌석 여유. 5인부터 한 분이 3열 좌석(레그룸 다소 좁음)
+- 12시간 이상 장거리 코스는 4인 이하 권장. 카시트 미보유(가져오시면 설치 도움)
+
+## 결제·취소·환불
+- 예약 시 50% 예약금 → 완료 후 잔금 50% + 추가 실비(주차·톨·입장료 등)
+- 유로 Revolut 송금 또는 한국 계좌 원화 이체. 카드 결제 불가. 원화는 각 송금 시점 환율로 확정
+- 취소: 48시간 이전 전액 환불 / 24–48시간 전 50% 환불 / 당일 환불 불가
+- 불가항력(질병·재난·기상경보)은 별도 안내 후 조정. 환급은 받은 경로로 영업일 2–3일 내
+- 반려동물은 케이지 이용 시 동반 가능. 픽업 대기는 30분 무료, 이후 30분당 €10(항공편 지연은 예외)
+
+## 운영자 (E-E-A-T)
+- 서현 Andrew (Andrew Seohyeon Kim) · 더블린 4년차 거주 · 유럽 운전 경력 6년 이상
+- 더블린 무료 한국어 워킹투어 운영자
+- 대전교구 아일랜드 성지순례단 9일 일정 가이드
+- 레지오 마리애 본부 (Concilium, Legion of Mary) 한국어 통역 봉사
+- 아일랜드천주교한인공동체 청년회장 · 세계청년대회(WYD)·2025 청년 희년 국제 봉사자
+- 한국 기자단 더블린 안내 경력
+- 서비스 수익은 음악 봉사 프로젝트 Classical Music for Everyone 운영 자금으로 순환
 
 ## 서비스
 - 당일치기 한국어 프라이빗 로드트립 (22개 코스, 1인 €35부터)

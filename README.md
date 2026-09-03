@@ -1,71 +1,73 @@
-# 🇮🇪 Beautiful Ireland with Everyone
+# 🇮🇪 Beautiful Ireland with Everyone — Andrew의 아일랜드 동행
 
-**Andrew의 아일랜드 동행** — 친구처럼 함께하는 더블린·아일랜드
+**더블린 기반 한국어 프라이빗 차량·동행 서비스** 공식 웹사이트.
 
-[Live Site](https://andrew-ireland.netlify.app) (배포 후 URL 추가)
+🔗 **[andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone](https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/)**
 
-## 📋 서비스 안내
+---
 
-4가지 차량 동행 서비스를 운영합니다:
+## 📋 서비스
 
-- ✈️ **공항 픽업/샌딩** — 더블린 공항 ↔ 아일랜드 전역
-- 🏠 **이사·운송** — 1bed 이사, IKEA 운송, 짐 운송
-- 🌿 **당일치기 로드트립** ([Irish Nature for Everyone](#)) — 12개 지역 30+ 코스
-- ✏️ **커스텀 + 장기 여행** — 셋팅 외 코스, 2박+ 장기 여행
+| 서비스 | 페이지 | 시작 가격 |
+|---|---|---|
+| ✈️ 공항 픽업·드랍 | [services/airport.html](services/airport.html) | €40 (거리당 정찰·톨비 포함) |
+| 🌿 당일치기 로드트립 22코스 | [services/tours.html](services/tours.html) | 1인 €35 |
+| 🏠 이사·IKEA·가구 픽업 운송 | [services/moving.html](services/moving.html) | €40 (거리당 정찰) |
+| ⛪ 가톨릭 성지순례·피정 | [services/pilgrimage.html](services/pilgrimage.html) | 1:1 견적 |
+| ✏️ 맞춤 여행·장기·통역 동행 | [services/custom.html](services/custom.html) | 1:1 견적 |
+
+전체 가격표: **[pricing.md](pricing.md)**
+
+특징: 7인승 MPV 단독 이용(합승 없음) · 도어투도어 · 코스 커스텀 · 플랫폼 중개 수수료 없음.
 
 ## 👤 운영자
 
 **서현 Andrew** (Andrew Seohyeon Kim)
-- 더블린 4년차 거주
-- 유럽 운전 경력 6년+
-- 무료 워킹투어 운영자
+
+- 더블린 4년차 거주 · 유럽 운전 경력 6년 이상
+- 더블린 무료 한국어 워킹투어 운영자
+- 대전교구 아일랜드 성지순례단 9일 일정 가이드
+- 레지오 마리애 본부(Concilium) 한국어 통역 봉사
+- 아일랜드천주교한인공동체 청년회장
 - 한국 기자단 더블린 안내 경력
-- 단톡방·한인 커뮤니티 정보통
 
-## 🎯 사회봉사 순환 구조
-
-이 서비스 운영 수익은 두 자매 사회봉사 프로젝트의 운영 자금으로 사용됩니다:
-
-- 🎵 **Classical Music for Everyone** — 클래식 음악을 모두에게
-- 🌿 **Irish Nature for Everyone** — 아일랜드 자연을 모두에게
+서비스 운영 수익은 음악 봉사 프로젝트 **Classical Music for Everyone** 운영 자금으로 순환됩니다.
 
 ## 💬 문의
 
-- **카카오톡 ID**: `sby05034`
-- **WhatsApp**: +353 83 078 0635
-- **Email**: sby05034@gmail.com
-
-상시 연락 가능 · 빠른 시간 내 답장
+- **카카오톡 오픈채팅** (가장 빠름): https://open.kakao.com/o/suSTEFsi
+- **인스타그램 DM**: [@ireland.sosik](https://www.instagram.com/ireland.sosik/)
+- **이메일**: sby05034@gmail.com
 
 ## 🛠️ 기술 정보
 
-이 사이트는 정적 HTML로 만들어진 단일 페이지입니다.
-
-- 단일 HTML 파일 (`index.html`)
-- 인라인 CSS + JavaScript
-- 외부 의존: Google Fonts (Noto Sans KR)
-- 모바일 반응형
-- SEO 메타 태그 + Schema.org LocalBusiness 마크업
-- AI 크롤러 명시 허용 (GPT, Claude, Perplexity)
-
-## 📂 파일 구조
+빌드 도구·프레임워크 없는 정적 사이트. GitHub Pages에서 그대로 서빙됩니다.
 
 ```
-deploy/
-├── index.html       # 메인 페이지
-├── photo1.jpg       # Hero 이미지 (아일랜드 들판)
-├── photo2.jpg       # 트렁크 적재공간
-├── photo3.jpg       # 차량 측면
-├── robots.txt       # 크롤러 정책
-└── sitemap.xml      # 사이트맵
+├── index.html              # 홈 (서비스 개요 + FAQ 10문항)
+├── about.html              # 운영자 소개 + 차량 정보
+├── contact.html            # 문의 채널
+├── terms.html              # 이용약관 · 환불·책임 정책
+├── services/
+│   ├── airport.html        # 공항 픽업·드랍 (가격 계산기)
+│   ├── tours.html          # 로드트립 22코스 (지도·계산기·비교표)
+│   ├── moving.html         # 이사·IKEA·가구 픽업 (가격 계산기)
+│   ├── pilgrimage.html     # 성지순례·피정 6개 프로그램
+│   └── custom.html         # 맞춤 여행·장기·통역
+├── styles.css              # 전체 페이지 공용 스타일 (팔레트 정본)
+├── scripts.js              # 공용 스크립트
+├── images/                 # 코스·차량 사진
+├── robots.txt              # 검색엔진 + AI 크롤러 정책
+├── sitemap.xml             # 사이트맵
+├── llms.txt                # AI 검색용 사이트 컨텍스트
+└── pricing.md              # 기계 판독용 전체 가격표
 ```
 
-## 🚀 배포
-
-이 폴더는 정적 호스팅 서비스에 그대로 배포 가능합니다 — **Netlify, Cloudflare Pages, GitHub Pages, Vercel** 모두 지원.
-
-자세한 배포 방법은 `배포_가이드.md` 참조.
+- 폰트: Noto Sans KR 단일
+- 팔레트: 네이비 `#1a2942` + 금색 `#c9a96e` (정본은 `styles.css`의 `:root`)
+- 구조화 데이터: Schema.org — TravelAgency / LocalBusiness / Person / Service / Offer / TouristTrip / FAQPage / BreadcrumbList
+- AI 검색 크롤러(GPTBot, ClaudeBot, PerplexityBot, Google-Extended 등) 명시 허용
 
 ---
 
-© 2026 Andrew Seohyeon Kim · Dublin, Ireland
+© 2026 🇮🇪 Beautiful Ireland with Everyone · Andrew의 아일랜드 동행 · Dublin, Ireland
