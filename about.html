@@ -33,7 +33,7 @@
   .story-block { max-width:760px; margin:0 auto; }
   .story-block p { font-size:15.5px; line-height:1.9; color:var(--text); margin-bottom:18px; }
   .story-block p strong { color:var(--primary); background:var(--accent-soft); padding:2px 6px; border-radius:4px; }
-  .story-block h3 { margin-top:30px; margin-bottom:14px; color:var(--primary); }
+  .story-block h2 { font-size:19px; font-weight:700; margin-top:30px; margin-bottom:14px; color:var(--primary); }
   /* 카드가 4장이므로 2×2로 고정 — auto-fit이면 3열이 되어 4번째가 혼자 남고,
      한 줄 안에서 가장 짧은 카드가 큰 빈 공간을 떠안습니다. */
   .mission-card-grid { display:grid; grid-template-columns:1fr; gap:18px; margin-bottom:36px; }
@@ -50,7 +50,7 @@
   /* 같은 줄에서 키를 맞추느라 생긴 여유 공간은 본문 아래로 몰아, 링크는 카드 바닥에 정렬 */
   .mission-card p { flex:1 1 auto; }
   .mission-card .ic { font-size:30px; margin-bottom:10px; }
-  .mission-card h4 { color:var(--primary); margin-bottom:10px; font-size:16px; }
+  .mission-card h3 { color:var(--primary); margin-bottom:10px; font-size:16px; }
   .mission-card p { font-size:14px; line-height:1.7; color:var(--text); }
   .impact-box {
     background:white;
@@ -101,8 +101,7 @@
     "https://www.instagram.com/ireland.sosik/",
     "https://gofund.me/d0abe9090"
   ],
-  "url": "https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/about.html",
-  "dateModified": "2026-09-04"
+  "url": "https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/about.html"
 }
 </script>
 <script type="application/ld+json">
@@ -119,7 +118,7 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Andrew 소개",
+      "name": "소개",
       "item": "https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/about.html"
     }
   ]
@@ -152,7 +151,9 @@
   <a href="https://www.instagram.com/ireland.sosik/" target="_blank" rel="noopener">📷 인스타 DM</a>
 </div>
 
+<nav aria-label="상위 페이지">
 <a href="index.html" class="back-home">홈으로</a>
+</nav>
 
 <main id="main-content">
 <header class="hero subpage compact">
@@ -177,7 +178,7 @@
 <section style="background:white;">
   <div class="container reveal">
     <div class="story-block">
-      <h3><span class="phrase">더블린에 오게 된 이야기</span></h3>
+      <h2><span class="phrase">더블린에 오게 된 이야기</span></h2>
       <p>
         <span class="phrase">더블린에서</span> <strong class="phrase">4년 거주</strong>, <span class="phrase">유럽에서</span> <strong class="phrase">6년 이상 운전</strong><span class="phrase">하며 살아왔습니다.</span>
         <span class="phrase">그동안 단톡방·한인 커뮤니티에서</span> <span class="phrase">정보통으로,</span> <span class="phrase">무료 워킹투어 운영자로,</span>
@@ -189,7 +190,7 @@
         <span class="phrase">그 활동이 4년 쌓이면서</span> <span class="phrase">점점 더 많은 분들이</span> <span class="phrase">찾아주시기 시작했습니다.</span>
       </p>
 
-      <h3><span class="phrase">"가이드가 아니라 친구처럼"</span></h3>
+      <h2><span class="phrase">"가이드가 아니라 친구처럼"</span></h2>
       <p>
         <span class="phrase">제 동행은</span> <strong class="phrase">"가이드"가 아니라 "친구처럼 함께"</strong>입니다.
         <span class="phrase">투어 버스의 정해진 코스,</span> <span class="phrase">정해진 시간,</span> <span class="phrase">영어 안내가 아니라</span> —
@@ -268,23 +269,23 @@
     <div class="mission-card-grid">
       <div class="mission-card">
         <div class="ic">🎼</div>
-        <h4><span class="phrase">왜 시작했나요</span></h4>
+        <h3><span class="phrase">왜 시작했나요</span></h3>
         <p><span class="phrase">클래식 음악이</span> <span class="phrase">콘서트홀 안에만</span> <span class="phrase">머물지 않도록.</span> <span class="phrase">음악을 듣고 싶은 분들이</span> <span class="phrase">계신 곳이라면 어디든</span> — <span class="phrase">공연장 밖에서,</span> <span class="phrase">일상 가까이에서</span> <span class="phrase">함께하는 음악을 만듭니다.</span></p>
       </div>
       <div class="mission-card">
         <div class="ic">🚐</div>
-        <h4><span class="phrase">왜 이 차량인가요</span></h4>
+        <h3><span class="phrase">왜 이 차량인가요</span></h3>
         <p><span class="phrase">이 7인승 MPV는</span> <strong class="phrase">여러분과 응원해주신 분들의 펀딩</strong>으로 <span class="phrase">마련된 차량이에요.</span> <span class="phrase">연주자·악기·장비를 싣고</span> <span class="phrase">음악이 필요한 곳으로</span> <span class="phrase">직접 찾아가기 위한 차량입니다.</span></p>
         <a href="https://gofund.me/d0abe9090" target="_blank" rel="noopener" style="font-size:12.5px; color:var(--accent); font-weight:700; text-decoration:none; border-bottom:1px solid var(--accent);">펀딩 페이지 보기 →</a>
       </div>
       <div class="mission-card">
         <div class="ic">💝</div>
-        <h4><span class="phrase">여러분의 여행이 곧 후원</span></h4>
+        <h3><span class="phrase">여러분의 여행이 곧 후원</span></h3>
         <p><span class="phrase">픽업·여행·이사 서비스로</span> <span class="phrase">받은 금액은</span> <strong class="phrase">프로그램 운영비·차량 유지·관리비를 제외하고 100%</strong> <span class="phrase">이 프로젝트의 봉사활동 예산으로</span> <span class="phrase">쓰입니다.</span></p>
       </div>
       <div class="mission-card">
         <div class="ic">📍</div>
-        <h4><span class="phrase">어디로 찾아가나요</span></h4>
+        <h3><span class="phrase">어디로 찾아가나요</span></h3>
         <p><span class="phrase">요양원·병원·학교·지역 커뮤니티</span> 등 <strong class="phrase">음악이 일상에 닿기 어려웠던 곳</strong>으로 <span class="phrase">직접 찾아가</span> <span class="phrase">작은 음악회를 엽니다.</span> <span class="phrase">함께할 연주자·장소를</span> <span class="phrase">늘려가는 중이에요.</span></p>
       </div>
     </div>
@@ -301,7 +302,7 @@
 
     <!-- 적립 방식 — 건별 예상 금액을 제시하는 대신, 실제로 쓰는 계산 순서와 단가를 그대로 공개합니다. -->
     <div class="fund-method">
-      <h4><span class="phrase">어떻게 적립되나요</span></h4>
+      <h3><span class="phrase">어떻게 적립되나요</span></h3>
       <ol>
         <li>
           <b>받은 금액</b>에서 시작합니다.

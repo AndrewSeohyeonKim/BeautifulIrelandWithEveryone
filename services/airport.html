@@ -53,7 +53,7 @@
   .result-panel .result-label { font-size: 13px; color: var(--primary); font-weight: 600; margin-bottom: 4px; }
   .result-panel .result-price { font-size: 42px; font-weight: 900; color: var(--primary); letter-spacing: -2px; line-height: 1.1; margin-bottom: 14px; }
   .result-panel .breakdown { background: white; border-radius: 8px; padding: 14px; }
-  .result-panel .breakdown h5 { font-size: 12.5px; font-weight: 700; color: var(--primary); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .result-panel .breakdown h3 { font-size: 12.5px; font-weight: 700; color: var(--primary); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
   .result-panel .breakdown ul { list-style: none; font-size: 13.5px; }
   .result-panel .breakdown ul li { padding: 4px 0; display: flex; justify-content: space-between; }
   .feature-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; max-width:900px; margin:0 auto; }
@@ -88,10 +88,6 @@
     "@type": "Country",
     "name": "Ireland"
   },
-  "availableLanguage": [
-    "ko",
-    "en"
-  ],
   "offers": {
     "@type": "Offer",
     "priceCurrency": "EUR",
@@ -99,7 +95,15 @@
     "description": "€40부터 — 거리당 정찰제, 톨비·주차 포함"
   },
   "url": "https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/services/airport.html",
-  "dateModified": "2026-09-04"
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "name": "카카오톡 오픈채팅",
+    "serviceUrl": "https://open.kakao.com/o/suSTEFsi",
+    "availableLanguage": [
+      "ko",
+      "en"
+    ]
+  }
 }
 </script>
 <script type="application/ld+json">
@@ -216,7 +220,9 @@
   <a href="https://www.instagram.com/ireland.sosik/" target="_blank" rel="noopener">📷 인스타 DM</a>
 </div>
 
+<nav aria-label="상위 페이지">
 <a href="../index.html" class="back-home">홈으로</a>
+</nav>
 
 <!-- HERO -->
 <main id="main-content">
@@ -256,17 +262,17 @@
     <div class="feature-grid">
       <div class="feature-card">
         <div class="ic">🇰🇷</div>
-        <h4><span class="phrase">한국어 안내</span></h4>
+        <h3><span class="phrase">한국어 안내</span></h3>
         <p style="font-size:14px; color:var(--muted); line-height:1.7;"><span class="phrase">차량 탑승부터 목적지 도착까지</span> <span class="phrase">전 구간 한국어로 안내.</span> <span class="phrase">도로·교통 정보,</span> <span class="phrase">숙소 체크인 팁까지</span> <span class="phrase">자연스럽게 공유드려요.</span> <span class="phrase">처음 도착한 더블린,</span> <span class="phrase">짐 많은 가족·어르신에게</span> <span class="phrase">특히 든든합니다.</span></p>
       </div>
       <div class="feature-card">
         <div class="ic">🚐</div>
-        <h4><span class="phrase">7인승 MPV</span></h4>
+        <h3><span class="phrase">7인승 MPV</span></h3>
         <p style="font-size:14px; color:var(--muted); line-height:1.7;"><span class="phrase">최대 6인 + 30인치 캐리어 4–5개</span> <span class="phrase">동시 적재.</span> <span class="phrase">가족·친구 그룹이</span> <span class="phrase">차량 한 대로 이동.</span> <span class="phrase">우버 XL을 별도로</span> <span class="phrase">부를 필요 없어요.</span></p>
       </div>
       <div class="feature-card">
         <div class="ic">💰</div>
-        <h4><span class="phrase">투명한 거리당 정찰가</span></h4>
+        <h3><span class="phrase">투명한 거리당 정찰가</span></h3>
         <p style="font-size:14px; color:var(--muted); line-height:1.7;"><span class="phrase">주행거리(km)만 입력하면</span> <span class="phrase">자동 계산.</span> <span class="phrase">톨비·주차 포함.</span> <span class="phrase">도착 후 미터기</span> <span class="phrase">추가 청구 없이 끝.</span></p>
       </div>
     </div>
@@ -284,7 +290,7 @@
       <div class="feature-card addon-card">
         <div class="ic">🛬</div>
         <div class="addon-head">
-          <h4>도착 시 — 게이트 앞 마중·에스코트</h4>
+          <h3>도착 시 — 게이트 앞 마중·에스코트</h3>
           <span class="addon-price">+€5</span>
         </div>
         <p style="font-size:13.5px; color:var(--muted); line-height:1.7;">
@@ -295,7 +301,7 @@
       <div class="feature-card addon-card">
         <div class="ic">🛫</div>
         <div class="addon-head">
-          <h4>출발 시 — 체크인·보안검색 안내</h4>
+          <h3>출발 시 — 체크인·보안검색 안내</h3>
           <span class="addon-price">+€10</span>
         </div>
         <p style="font-size:13.5px; color:var(--muted); line-height:1.7;">
@@ -314,7 +320,7 @@
   .addon-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; max-width:820px; margin:0 auto; }
   @media (max-width:700px){ .addon-grid { grid-template-columns:1fr; } }
   .addon-card .addon-head { display:flex; align-items:flex-start; justify-content:space-between; gap:10px; margin-bottom:10px; }
-  .addon-card .addon-head h4 { margin:0; }
+  .addon-card .addon-head h3 { font-size:17px; margin:0; }
   .addon-card .addon-price { background:var(--accent-soft); color:var(--primary); border:1.5px solid var(--accent); border-radius:999px; padding:4px 12px; font-weight:800; font-size:14px; white-space:nowrap; }
   .addon-options { background:var(--accent-soft); border:1.5px dashed var(--accent); border-radius:10px; padding:14px 16px; margin-top:6px; }
   .addon-options .addon-row { display:flex; align-items:flex-start; gap:10px; padding:6px 0; cursor:pointer; }
@@ -322,6 +328,7 @@
   .addon-options .addon-row .addon-label { flex:1; font-size:13.5px; color:var(--primary); line-height:1.5; }
   .addon-options .addon-row .addon-label .price-tag { color:var(--accent); font-weight:800; }
   .addon-options .addon-row.disabled { opacity:0.45; cursor:not-allowed; }
+  .feature-card h3 { font-size:17px; font-weight:700; color:var(--primary); margin-bottom:6px; }
 </style>
 
 <!-- CALCULATOR -->
@@ -336,7 +343,7 @@
       <div class="calc-body">
         <div class="row single">
           <div class="field">
-            <label>🔁 서비스 방향</label>
+            <label for="pk-direction">🔁 서비스 방향</label>
             <select id="pk-direction" onchange="calcPickup()">
               <option value="arrival">🛬 도착 — 공항에서 픽업 (Dublin Airport → 목적지)</option>
               <option value="departure">🛫 출발 — 공항으로 드랍 (출발지 → Dublin Airport)</option>
@@ -346,7 +353,7 @@
 
         <div class="row single">
           <div class="field">
-            <label>📍 Dublin Airport ↔ 목적지 거리 (편도, km)</label>
+            <label for="pk-km">📍 Dublin Airport ↔ 목적지 거리 (편도, km)</label>
             <div class="km-quick">
               <button type="button" data-km="5" onclick="setPkKm(5)">5km</button>
               <button type="button" data-km="10" onclick="setPkKm(10)">10km</button>
@@ -362,7 +369,7 @@
 
         <div class="row single">
           <div class="field">
-            <label>📍 목적지 주소·에어코드 <span style="font-weight:400; color:var(--muted);">(선택)</span></label>
+            <label for="pk-dest">📍 목적지 주소·에어코드 <span style="font-weight:400; color:var(--muted);">(선택)</span></label>
             <input type="text" id="pk-dest" placeholder="예: D12 또는 Malahide" oninput="updateMapsLink()">
             <a href="https://www.google.com/maps/dir/?api=1&amp;origin=Dublin%20Airport%2C%20Ireland&amp;destination=&amp;travelmode=driving" target="_blank" rel="noopener" id="pk-maps-btn" style="display:inline-flex; align-items:center; gap:6px; margin-top:12px; padding:10px 15px; background:#fff; border:1.5px solid var(--accent); color:var(--primary); border-radius:8px; font-size:13.5px; font-weight:700; text-decoration:none; cursor:pointer;">🗺️ 구글지도에서 주행거리 확인하기</a>
             <div class="hint" style="margin-top:6px;">위 칸에 <strong>목적지 주소·에어코드</strong>를 적고 누르면 구글지도가 새 창에서 열려요. 나온 <strong>실제 도로 주행거리</strong> km를 위 거리 칸에 넣으면 요금이 계산됩니다.</div>
@@ -371,7 +378,7 @@
 
         <div class="row">
           <div class="field">
-            <label>👥 인원 수</label>
+            <label for="pk-people">👥 인원 수</label>
             <select id="pk-people" onchange="calcPickup()">
               <option value="1">1명</option>
               <option value="2">2명</option>
@@ -382,7 +389,7 @@
             </select>
           </div>
           <div class="field">
-            <label>🧳 캐리어 수 (대형 30인치 기준)</label>
+            <label for="pk-bags">🧳 캐리어 수 (대형 30인치 기준)</label>
             <select id="pk-bags" onchange="calcPickup()">
               <option value="0">0개</option>
               <option value="1">1개</option>
@@ -398,7 +405,7 @@
 
         <div class="row single">
           <div class="field">
-            <label>🕐 도착·출발 시간대</label>
+            <label for="pk-time">🕐 도착·출발 시간대</label>
             <select id="pk-time" onchange="calcPickup()">
               <option value="day" selected>주간 (06:00–23:00)</option>
               <option value="night">야간 (23:00–06:00) · +€10 할증</option>
@@ -409,11 +416,11 @@
 
         <div class="row">
           <div class="field">
-            <label>🗓️ 희망 날짜·시간 <span style="font-weight:400; color:var(--muted);">(선택)</span></label>
+            <label for="pk-when">🗓️ 희망 날짜·시간 <span style="font-weight:400; color:var(--muted);">(선택)</span></label>
             <input type="text" id="pk-when" placeholder="예: 6월 24일 22:15 도착">
           </div>
           <div class="field">
-            <label>✈️ 항공편명 <span style="font-weight:400; color:var(--muted);">(권장)</span></label>
+            <label for="pk-flight">✈️ 항공편명 <span style="font-weight:400; color:var(--muted);">(권장)</span></label>
             <input type="text" id="pk-flight" placeholder="예: LH982">
             <div class="hint">도착/출발 항공편명을 적어주시면 시간에 맞춰 정확히 준비해 드려요.</div>
           </div>
@@ -435,7 +442,7 @@
           <div class="result-label" id="pk-result-label">예상 요금 (편도 · 톨비·주차 포함)</div>
           <div class="result-price" id="pk-price">€40</div>
           <div class="breakdown">
-            <h5>요금 구성</h5>
+            <h3>요금 구성</h3>
             <ul id="pk-breakdown"></ul>
           </div>
           <div class="pk-distance-note" style="margin-top:12px; background:white; border:1.5px dashed var(--accent); border-radius:8px; padding:12px 14px; font-size:12.5px; color:var(--primary); line-height:1.6;">

@@ -88,7 +88,7 @@
   .zone-card.zone-in { border-color:#22c55e; background:#f5fbf7; }
   .zone-card.zone-out { border-color:#f59e0b; background:#fffbf0; }
   .zone-card .zone-head { display:flex; align-items:center; gap:10px; margin-bottom:10px; flex-wrap:wrap; }
-  .zone-card .zone-head h4 { margin:0; font-size:18px; color:var(--primary); }
+  .zone-card .zone-head h3 { margin:0; font-size:18px; color:var(--primary); }
   .zone-card .zone-icon { font-size:22px; }
   .zone-card .zone-tag { margin-left:auto; font-size:11.5px; font-weight:700; padding:3px 10px; border-radius:999px; background:white; }
   .zone-card.zone-in .zone-tag { color:#16a34a; border:1.5px solid #16a34a; }
@@ -127,7 +127,7 @@
   }
   .use-card:hover { border-color:var(--accent); box-shadow:var(--shadow-hover); transform:translateY(-3px); }
   .use-card .ic { font-size:42px; margin-bottom:14px; }
-  .use-card h4 { color:var(--primary); margin-bottom:10px; font-size:20px; }
+  .use-card h3 { color:var(--primary); margin-bottom:10px; font-size:20px; }
   .use-card p { font-size:14px; color:var(--muted); line-height:1.7; margin-bottom:14px; }
   .use-card ul { list-style:none; padding:0; margin-bottom:18px; }
   .use-card ul li { font-size:13.5px; color:var(--text); padding:5px 0; padding-left:20px; position:relative; line-height:1.6; }
@@ -174,10 +174,6 @@
     "@type": "City",
     "name": "Dublin"
   },
-  "availableLanguage": [
-    "ko",
-    "en"
-  ],
   "offers": {
     "@type": "Offer",
     "priceCurrency": "EUR",
@@ -185,7 +181,15 @@
     "description": "€40부터 — 거리당 정찰제"
   },
   "url": "https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/services/moving.html",
-  "dateModified": "2026-09-04"
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "name": "카카오톡 오픈채팅",
+    "serviceUrl": "https://open.kakao.com/o/suSTEFsi",
+    "availableLanguage": [
+      "ko",
+      "en"
+    ]
+  }
 }
 </script>
 <script type="application/ld+json">
@@ -202,7 +206,7 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "이사·IKEA·가구 픽업",
+      "name": "이사 · IKEA·가구 픽업",
       "item": "https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/services/moving.html"
     }
   ]
@@ -328,7 +332,9 @@
 </nav>
 
 
+<nav aria-label="상위 페이지">
 <a href="../index.html" class="back-home">홈으로</a>
+</nav>
 
 <div class="float-cta">
   <a class="kakao" href="https://open.kakao.com/o/suSTEFsi" target="_blank">💬 카톡 채팅 시작</a>
@@ -372,7 +378,7 @@
 
       <div class="use-card" id="cat-small-move" onclick="goToCalc('moving','single')" style="cursor:pointer;">
         <div class="ic">🏠</div>
-        <h4><span class="phrase">소규모 이사 (한 번 이동)</span></h4>
+        <h3><span class="phrase">소규모 이사 (한 번 이동)</span></h3>
         <p><span class="phrase">1–2인의 짐을</span> <span class="phrase">차 한 번에 실어</span> <span class="phrase">새 거주지로 이동.</span> <span class="phrase">거리당 정찰가,</span> <span class="phrase">최저가 €40부터.</span> <span class="phrase">IKEA·중고가구 픽업도</span> <span class="phrase">같은 가격 체계.</span></p>
         <ul>
           <li><span class="phrase">1–2인 자취·학생·커플 이사</span></li>
@@ -386,7 +392,7 @@
 
       <div class="use-card" id="cat-multi-move" onclick="goToCalc('moving','double')" style="cursor:pointer;">
         <div class="ic">🔁</div>
-        <h4><span class="phrase">반복 이동 이사 (짐이 많은 경우)</span></h4>
+        <h3><span class="phrase">반복 이동 이사 (짐이 많은 경우)</span></h3>
         <p><span class="phrase">차에 한 번에 못 싣는 이사.</span> <span class="phrase">2–3회 왕복으로</span> <span class="phrase">짐 전체 이동.</span> <span class="phrase">짐 운반 도움이</span> <span class="phrase">기본 포함됩니다.</span></p>
         <ul>
           <li><span class="phrase">1bed 자취집 전체 짐 이사</span></li>
@@ -436,7 +442,7 @@
       <div class="zone-card zone-in">
         <div class="zone-head">
           <span class="zone-icon">✅</span>
-          <h4>권역 내</h4>
+          <h3>권역 내</h3>
           <span class="zone-tag">정찰가 그대로</span>
         </div>
         <p class="zone-desc">아래 두 조건 중 <strong>하나라도</strong> 충족하면 권역 내로 적용됩니다</p>
@@ -450,7 +456,7 @@
       <div class="zone-card zone-out">
         <div class="zone-head">
           <span class="zone-icon">📞</span>
-          <h4>권역 외</h4>
+          <h3>권역 외</h3>
           <span class="zone-tag">별도 카톡 견적</span>
         </div>
         <p class="zone-desc">아래 지역은 출장 거리·톨비 추가 발생 가능. 사전 견적 받아주세요</p>
@@ -483,7 +489,7 @@
         <div class="calc-content active" data-content="moving">
           <div class="row single">
             <div class="field">
-              <label>🏠 이사 유형</label>
+              <label for="mv-trip">🏠 이사 유형</label>
               <select id="mv-trip" onchange="calcMoving()">
                 <option value="single" selected>🏠 소규모 이사 — 한 번 이동 (1–2인 짐, 차에 한 번에)</option>
                 <option value="double">🔁 반복 이동 — 2회 왕복 (1bed 자취집 전체 등)</option>
@@ -495,7 +501,7 @@
 
           <div class="row single">
             <div class="field">
-              <label>📍 A → B 거리 (편도, km)</label>
+              <label for="mv-km">📍 A → B 거리 (편도, km)</label>
               <div class="km-quick">
                 <button type="button" data-km="5" onclick="setMvKm(5)">5km</button>
                 <button type="button" data-km="10" onclick="setMvKm(10)">10km</button>
@@ -512,11 +518,11 @@
 
           <div class="row">
             <div class="field">
-              <label>📍 출발지 <span style="font-weight:400; color:var(--muted);">(선택)</span></label>
+              <label for="mv-from">📍 출발지 <span style="font-weight:400; color:var(--muted);">(선택)</span></label>
               <input type="text" id="mv-from" placeholder="예: D09 X5R9 또는 동네 이름" oninput="updateMovingMapsLink()">
             </div>
             <div class="field">
-              <label>🎯 도착지 <span style="font-weight:400; color:var(--muted);">(선택)</span></label>
+              <label for="mv-to">🎯 도착지 <span style="font-weight:400; color:var(--muted);">(선택)</span></label>
               <input type="text" id="mv-to" placeholder="예: D6W PX32 또는 동네 이름" oninput="updateMovingMapsLink()">
             </div>
           </div>
@@ -530,7 +536,7 @@
 
           <div class="row single">
             <div class="field">
-              <label>🗓️ 희망 날짜·시간 <span style="font-weight:400; color:var(--muted);">(선택)</span></label>
+              <label for="mv-when">🗓️ 희망 날짜·시간 <span style="font-weight:400; color:var(--muted);">(선택)</span></label>
               <input type="text" id="mv-when" placeholder="예: 6월 20일 오후 4시">
               <div class="hint">정해두신 날짜·시간이 있으면 적어주세요 — 비워두셔도 됩니다. 출발지·도착지는 EirCode로 적어주시면 견적이 더 정확해요.</div>
             </div>
@@ -559,7 +565,7 @@
             <div class="result-label" id="mv-result-label">예상 요금 (편도 · 권역 내 기준)</div>
             <div class="result-price" id="mv-price">€43</div>
             <div class="breakdown">
-              <h5 style="font-size:12.5px; font-weight:700; color:var(--primary); margin-bottom:8px; text-transform:uppercase; letter-spacing:0.5px;">요금 구성</h5>
+              <h3 style="font-size:12.5px; font-weight:700; color:var(--primary); margin-bottom:8px; text-transform:uppercase; letter-spacing:0.5px;">요금 구성</h3>
               <ul id="mv-breakdown"></ul>
             </div>
             <div class="price-note-inline">

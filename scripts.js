@@ -265,3 +265,68 @@ window.inquireMusic = function () {
     window.copyAndOpenKakao = function (message) { track(); return orig(message); };
   }
 })();
+
+// ============================================================
+// 6) 클릭 가능한 div의 키보드 접근성 (WCAG 2.1.1 / 4.1.2)
+//    onclick만 달린 div는 마우스로만 열립니다. 키보드 사용자와
+//    스크린리더, 그리고 접근성 트리를 읽는 AI 에이전트가 같은
+//    동작을 하도록 role/tabindex/aria를 붙이고 Enter·Space를 연결합니다.
+// ============================================================
+(function setupClickableA11y() {
+  // (a) FAQ 아코디언 — 펼침 상태를 aria-expanded로 노출
+  document.querySelectorAll('.faq-item').forEach(function (item) {
+    var q = item.querySelector('.faq-q');
+    var a = item.querySelector('.faq-a');
+    if (!q) return;
+    q.setAttribute('role', 'button');
+    q.setAttribute('tabindex', '0');
+    q.setAttribute('aria-expanded', item.classList.contains('open') ? 'true' : 'false');
+    if (a) {
+      if (!a.id) a.id = 'faq-a-' + Math.random().toString(36).slice(2, 9);
+      q.setAttribute('aria-controls', a.id);
+    }
+    q.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+        e.preventDefault();
+        item.classList.toggle('open');
+        q.setAttribute('aria-expanded', item.classList.contains('open') ? 'true' : 'false');
+      }
+    });
+    item.addEventListener('click', function () {
+      q.setAttribute('aria-expanded', item.classList.contains('open') ? 'true' : 'false');
+    });
+  });
+
+  // (b) 그 밖의 onclick div (코스 카드·서비스 카드 등)
+  document.querySelectorAll('div[onclick]').forEach(function (el) {
+    if (el.classList.contains('faq-item')) return;      // 위에서 처리
+    if (el.querySelector('a, button')) return;          // 내부에 진짜 버튼이 있으면 그쪽이 접근 경로
+    if (el.hasAttribute('tabindex')) return;
+    el.setAttribute('role', 'button');
+    el.setAttribute('tabindex', '0');
+    if (!el.hasAttribute('aria-label')) {
+      var t = (el.textContent || '').replace(/\s+/g, ' ').trim();
+      if (t) el.setAttribute('aria-label', t.slice(0, 80));
+    }
+    el.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') { e.preventDefault(); el.click(); }
+    });
+  });
+
+  // (c) 가로 스크롤 영역은 키보드로도 스크롤되어야 함 (axe: scrollable-region-focusable)
+  document.querySelectorAll('.tour-pricing-table-wrap, .places-gallery-wrap').forEach(function (el) {
+    if (!el.hasAttribute('tabindex')) {
+      el.setAttribute('tabindex', '0');
+      el.setAttribute('role', 'region');
+      if (!el.hasAttribute('aria-label')) el.setAttribute('aria-label', '가로로 스크롤되는 표');
+    }
+  });
+
+  // (d) 고정 문의 버튼 묶음을 랜드마크로 (axe: region)
+  document.querySelectorAll('.float-cta').forEach(function (el) {
+    if (!el.hasAttribute('role')) {
+      el.setAttribute('role', 'complementary');
+      el.setAttribute('aria-label', '빠른 문의');
+    }
+  });
+})();
