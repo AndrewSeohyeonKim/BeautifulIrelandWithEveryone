@@ -453,7 +453,7 @@ h4 { font-size: 17px; font-weight: 700; color: var(--primary); margin-bottom: 6p
 .service-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); border-color: var(--accent); }
 .service-card:hover::before { transform: scaleX(1); }
 .service-card .icon { font-size: 40px; margin-bottom: 14px; }
-.service-card h4 { font-size: 19px; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
+.service-card h3 { font-size: 19px; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
 .service-card .price { font-size: 14px; color: var(--accent); font-weight: 700; margin-bottom: 12px; }
 .service-card p { font-size: 14px; color: var(--muted); line-height: 1.65; flex-grow: 1; margin-bottom: 18px; }
 .service-card .more {
@@ -596,7 +596,7 @@ section.quick {
 }
 .diff-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
 .diff-card .diff-icon { font-size: 38px; margin-bottom: 10px; }
-.diff-card h4 { font-size: 16px; margin-bottom: 8px; color: var(--primary); }
+.diff-card h3 { font-size: 16px; margin-bottom: 8px; color: var(--primary); }
 .diff-card p { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
 
 /* ============================================================
@@ -1372,7 +1372,7 @@ br.brk-md { display: none; }
   padding: 22px 24px 18px;
   text-align: left;
 }
-.fund-method h4 {
+.fund-method h3 {
   font-size: 15px;
   font-weight: 800;
   color: var(--primary);
