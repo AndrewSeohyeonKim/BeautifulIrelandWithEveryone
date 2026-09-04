@@ -7,14 +7,15 @@
   --primary: #1a2942;
   --primary-light: #2c4060;
   --accent: #c9a96e;
+  --accent-ink: #8a6b2c;  /* 밝은 바탕 위 금색 "글자"용 — 흰 바탕 대비 5.0:1. 채움·테두리는 --accent 그대로 */
   --accent-soft: #f4ead4;
-  --green: #2e7d4f;
+  --green: #276b44;      /* green-soft 위 대비 5.0:1 (2026-09-04 #2e7d4f에서 조정) */
   --green-soft: #d5f4e6;
   --red-soft: #fadbd8;
   --bg: #fafbfc;
   --card: #ffffff;
   --text: #2c3e50;
-  --muted: #7f8c8d;
+  --muted: #697578;      /* 흰 바탕 대비 4.7:1 — WCAG AA (2026-09-04 #7f8c8d에서 조정) */
   --border: #e1e8ed;
   --shadow: 0 4px 12px rgba(26, 41, 66, 0.08);
   --shadow-hover: 0 8px 24px rgba(26, 41, 66, 0.15);
@@ -385,8 +386,8 @@ header.hero .cta a.outline:hover { background: rgba(255,255,255,0.15); border-co
 }
 .breadcrumb .container { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
 .breadcrumb a { color: var(--muted); text-decoration: none; }
-.breadcrumb a:hover { color: var(--accent); }
-.breadcrumb .sep { color: var(--border); }
+.breadcrumb a:hover { color: var(--accent-ink); }
+.breadcrumb .sep { color: var(--muted); opacity: 0.45; }
 .breadcrumb .current { color: var(--primary); font-weight: 600; }
 
 /* ============================================================
@@ -405,7 +406,7 @@ section .section-title { margin-bottom: 32px; text-align: center; }
   font-weight: 700;
   margin-bottom: 10px;
 }
-.eyebrow.accent { color: var(--accent); }
+.eyebrow.accent { color: var(--accent-ink); }
 .eyebrow.green  { color: var(--green); }
 .eyebrow.insta  { color: #d62976; }
 h1 { color: var(--primary); }
@@ -454,7 +455,7 @@ h4 { font-size: 17px; font-weight: 700; color: var(--primary); margin-bottom: 6p
 .service-card:hover::before { transform: scaleX(1); }
 .service-card .icon { font-size: 40px; margin-bottom: 14px; }
 .service-card h3 { font-size: 19px; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
-.service-card .price { font-size: 14px; color: var(--accent); font-weight: 700; margin-bottom: 12px; }
+.service-card .price { font-size: 14px; color: var(--accent-ink); font-weight: 700; margin-bottom: 12px; }
 .service-card p { font-size: 14px; color: var(--muted); line-height: 1.65; flex-grow: 1; margin-bottom: 18px; }
 .service-card .more {
   font-size: 13.5px;
@@ -553,7 +554,7 @@ section.quick {
    STORY / ABOUT BLOCK
    ============================================================ */
 .about-block { max-width: 780px; margin: 0 auto; text-align: center; }
-.about-block .greeting { font-size: 14px; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
+.about-block .greeting { font-size: 14px; color: var(--accent-ink); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
 .about-block h2 { font-size: 30px; color: var(--primary); margin-bottom: 24px; font-weight: 900; letter-spacing: -0.8px; }
 .about-block .intro-para {
   font-size: 15.5px;
@@ -626,7 +627,7 @@ section.quick {
   right: 20px; top: 50%;
   transform: translateY(-50%);
   font-size: 22px;
-  color: var(--accent);
+  color: var(--accent-ink);
   font-weight: 400;
   transition: transform 0.2s;
 }
@@ -955,7 +956,7 @@ html.js .stagger-fade.in-view > *:nth-child(n+7) { transition-delay: 0.40s; }
 .tour-card .tour-body { padding: 18px 20px; flex-grow: 1; display: flex; flex-direction: column; }
 .tour-card .tour-name { font-size: 17px; font-weight: 800; color: var(--primary); margin-bottom: 6px; line-height: 1.3; }
 .tour-card .tour-meta { font-size: 12.5px; color: var(--muted); margin-bottom: 10px; }
-.tour-card .tour-prices { font-size: 14px; font-weight: 700; color: var(--accent); margin-top: auto; padding-top: 10px; border-top: 1px dashed var(--border); }
+.tour-card .tour-prices { font-size: 14px; font-weight: 700; color: var(--accent-ink); margin-top: auto; padding-top: 10px; border-top: 1px dashed var(--border); }
 .tour-card .tour-prices .lbl { color: var(--muted); font-weight: 500; font-size: 12px; }
 .tour-card.is-active { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(201,169,110,0.25), var(--shadow-hover); }
 
@@ -1019,7 +1020,7 @@ html.js .stagger-fade.in-view > *:nth-child(n+7) { transition-delay: 0.40s; }
 .andrew-strip .info { flex-grow: 1; min-width: 0; }
 .andrew-strip .info .label {
   font-size: 11.5px;
-  color: var(--accent);
+  color: var(--accent-ink);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.2px;
@@ -1169,7 +1170,7 @@ body, p, li, td, th, span, h1, h2, h3, h4, h5, h6, a, button,
   /* 가격 셀 — 라벨 prefix 옆에 정렬 */
   .stack-on-mobile td.price,
   .stack-on-mobile td.num {
-    color: var(--accent);
+    color: var(--accent-ink);
     font-weight: 800;
   }
   /* wrap 박스의 overflow-x도 무력화 (이미 카드뷰니까 옆드래그 불필요) */
@@ -1287,7 +1288,7 @@ br.brk-md { display: none; }
   .price-table.keep-table th { padding: 8px 6px !important; font-size: 10.5px !important; line-height: 1.3 !important; }
   .price-table.keep-table td { padding: 8px 6px !important; line-height: 1.45 !important; font-size: 11.5px !important; vertical-align: top; }
   .price-table.keep-table td:first-child { font-weight: 700; }
-  .price-table.keep-table td.price { font-weight: 800; color: var(--accent); white-space: nowrap; text-align: right; }
+  .price-table.keep-table td.price { font-weight: 800; color: var(--accent-ink); white-space: nowrap; text-align: right; }
   /* 섹션 헤더 행 (colspan="2") — 표 안의 카테고리 분리선처럼 보이게 */
   .price-table.keep-table td[colspan] {
     padding: 7px 8px !important;
@@ -1328,7 +1329,7 @@ br.brk-md { display: none; }
   letter-spacing: -1.5px;
   font-variant-numeric: tabular-nums;
 }
-.fund-amount span { font-size: 26px; font-weight: 700; color: var(--accent); margin-right: 3px; }
+.fund-amount span { font-size: 26px; font-weight: 700; color: var(--accent-ink); margin-right: 3px; }
 .fund-meta {
   font-size: 13.5px;
   color: var(--text);
@@ -1390,7 +1391,7 @@ br.brk-md { display: none; }
   color: var(--text);
 }
 .fund-method li b { color: var(--primary); font-weight: 700; }
-.fund-method li:last-child b { color: var(--accent); }
+.fund-method li:last-child b { color: var(--accent-ink); }
 .fund-method .fm-sub {
   display: block;
   font-size: 12.5px;

@@ -326,7 +326,7 @@
   .addon-options .addon-row { display:flex; align-items:flex-start; gap:10px; padding:6px 0; cursor:pointer; }
   .addon-options .addon-row input[type="checkbox"] { margin-top:3px; transform:scale(1.15); }
   .addon-options .addon-row .addon-label { flex:1; font-size:13.5px; color:var(--primary); line-height:1.5; }
-  .addon-options .addon-row .addon-label .price-tag { color:var(--accent); font-weight:800; }
+  .addon-options .addon-row .addon-label .price-tag { color:var(--primary); font-weight:800; }
   .addon-options .addon-row.disabled { opacity:0.45; cursor:not-allowed; }
   .feature-card h3 { font-size:17px; font-weight:700; color:var(--primary); margin-bottom:6px; }
 </style>
@@ -430,11 +430,11 @@
           <div style="font-size:12.5px; font-weight:700; color:var(--primary); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px;">필요시 추가 서비스 (선택)</div>
           <label class="addon-row" id="pk-row-gate">
             <input type="checkbox" id="pk-addon-gate" onchange="calcPickup()">
-            <span class="addon-label">🛬 게이트 앞 마중·에스코트 <span class="price-tag">+€5</span><br><span style="font-size:12.5px; color:var(--muted); font-weight:400;">기본 픽업 핀포인트 대신, 도착 게이트 앞에서 한글 사인을 들고 마중·에스코트 (도착 시에만 적용)</span></span>
+            <span class="addon-label">🛬 게이트 앞 마중·에스코트 <span class="price-tag">+€5</span><br><span style="font-size:12.5px; color:var(--text); font-weight:400;">기본 픽업 핀포인트 대신, 도착 게이트 앞에서 한글 사인을 들고 마중·에스코트 (도착 시에만 적용)</span></span>
           </label>
           <label class="addon-row" id="pk-row-checkin">
             <input type="checkbox" id="pk-addon-checkin" onchange="calcPickup()">
-            <span class="addon-label">🛫 체크인·보안검색 안내 <span class="price-tag">+€10</span><br><span style="font-size:12.5px; color:var(--muted); font-weight:400;">공항 도착 후 체크인 카운터 동행 → 보안검색대 입구까지 안내 (출발 시에만 적용)</span></span>
+            <span class="addon-label">🛫 체크인·보안검색 안내 <span class="price-tag">+€10</span><br><span style="font-size:12.5px; color:var(--text); font-weight:400;">공항 도착 후 체크인 카운터 동행 → 보안검색대 입구까지 안내 (출발 시에만 적용)</span></span>
           </label>
         </div>
 
