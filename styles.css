@@ -307,11 +307,11 @@ header.hero.compact .hero-content { padding: 50px 20px 40px; }
   border: 1px solid rgba(201, 169, 110, 0.4);
 }
 header.hero h1 {
-  font-size: 40px;
+  font-size: 42px;
   font-weight: 900;
-  margin-bottom: 16px;
-  letter-spacing: -0.6px;
-  line-height: 1.25;
+  margin-bottom: 14px;
+  letter-spacing: -1px;
+  line-height: 1.2;
   color: white;
   text-shadow: 0 4px 20px rgba(0,0,0,0.65), 0 2px 6px rgba(0,0,0,0.5);
 }
@@ -375,6 +375,23 @@ header.hero .cta a.outline {
 }
 header.hero .cta a.outline:hover { background: rgba(255,255,255,0.15); border-color: white; }
 header.hero .cta a.kakao { background: #fee500; color: #3c1e1e; }
+/* 히어로 안 음악 프로젝트 한 줄 */
+header.hero .hero-note {
+  display: inline-block;
+  margin: 4px auto 0;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: rgba(201,169,110,0.16);
+  border: 1px solid rgba(201,169,110,0.45);
+  color: white;
+  font-size: 13.5px;
+  line-height: 1.5;
+  text-shadow: none;
+  animation: heroRise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.28s;
+}
+header.hero .hero-note strong { color: var(--accent); font-weight: 700; }
+@media (max-width: 600px) { header.hero .hero-note { font-size: 12.5px; padding: 7px 12px; } }
 header.hero .cta a.kakao:hover { background: #fae100; }
 
 @media (max-width: 600px) {
