@@ -88,11 +88,30 @@ window.copyTextSync = function (text) {
   return ok;
 };
 
+// 카톡·인스타 인앱 브라우저는 window.open()을 자주 막고, 막혔는지도 정확히 알려주지 않는다.
+// 그래서 (1) 인앱 브라우저면 새 창 시도 없이 바로 현재 탭에서 연다 (인앱이 open.kakao.com을 알아서 처리)
+//        (2) 일반 브라우저는 새 창 시도 후 실패하면 현재 탭으로.
+window.isInAppBrowser = function () {
+  var ua = navigator.userAgent || '';
+  return /KAKAOTALK|Instagram|FBAN|FBAV|Line\/|NAVER\(inapp|DaumApps|everytimeApp/i.test(ua);
+};
 window.openLinkSafely = function (url) {
+  if (window.isInAppBrowser()) { window.location.href = url; return; }
   var win = null;
   try { win = window.open(url, '_blank'); } catch (e) { win = null; }
   if (!win) window.location.href = url;
 };
+
+// 문의 버튼이 진짜 <a href="https://open.kakao.com/..." target="_blank">이면
+// 브라우저가 링크 이동을 직접 처리하게 두고(팝업 차단·인앱 문제 없음), JS는 메시지 복사만 한다.
+// 캡처 단계에서 "이 클릭은 카톡 링크에서 시작됐다"는 표시를 남기고, 같은 클릭 안에서만 유효하다.
+window.__kakaoNativeNav = false;
+document.addEventListener('click', function (e) {
+  var a = e.target && e.target.closest ? e.target.closest('a[href*="open.kakao.com"]') : null;
+  if (!a) return;
+  window.__kakaoNativeNav = true;
+  setTimeout(function () { window.__kakaoNativeNav = false; }, 0);
+}, true);
 
 window.showToast = function (msg) {
   var el = document.getElementById('site-toast');
@@ -114,8 +133,10 @@ window.showToast = function (msg) {
 window.copyAndOpenKakao = function (message) {
   var copied = window.copyTextSync(message);
   window.showToast(copied
-    ? '📋 문의 메시지를 복사했어요 — 카톡 채팅창에 붙여넣기 해주세요'
-    : '💬 카톡 채팅창을 여는 중이에요 — 문의 내용을 적어주세요');
+    ? '문의 메시지를 복사했습니다. 카톡 채팅창에 붙여넣기 해주세요.'
+    : '카톡 채팅창을 엽니다. 문의 내용을 적어주세요.');
+  // 카톡 링크(<a href>) 클릭에서 온 호출이면 브라우저가 링크를 열고 있으므로 여기서 또 열지 않는다
+  if (window.__kakaoNativeNav) return;
   window.openLinkSafely(KAKAO_OPENCHAT_URL);
 };
 
@@ -228,7 +249,7 @@ window.inquireMusic = function () {
   // (a) 카톡 오픈채팅 직접 링크 클릭
   document.addEventListener('click', function (e) {
     var a = e.target && e.target.closest ? e.target.closest('a[href*="open.kakao.com"]') : null;
-    if (a) track();
+    if (a && !a.onclick) track();   // onclick이 달린 버튼은 아래 래퍼에서 집계
   });
   // (b) 문의 버튼(클립보드 복사형) — copyAndOpenKakao 호출 시 집계
   var orig = window.copyAndOpenKakao;
