@@ -12,11 +12,13 @@
   --green: #276b44;      /* green-soft 위 대비 5.0:1 (2026-09-04 #2e7d4f에서 조정) */
   --green-soft: #d5f4e6;
   --red-soft: #fadbd8;
+  --red-ink: #a63d2f;    /* 경고·마감 글자용 붉은색 — 흰 바탕 5.6:1 */
   --bg: #fafbfc;
   --card: #ffffff;
   --text: #2c3e50;
   --muted: #697578;      /* 흰 바탕 대비 4.7:1 — WCAG AA (2026-09-04 #7f8c8d에서 조정) */
   --border: #e1e8ed;
+  --accent-tint: #faf6ec;  /* 따뜻한 섹션 바탕 — accent-soft보다 옅음. 페이지마다 #faf5ea·#fdf6e3 식으로 흩어져 있던 값을 통일 */
   --shadow: 0 4px 12px rgba(26, 41, 66, 0.08);
   --shadow-hover: 0 8px 24px rgba(26, 41, 66, 0.15);
 }
@@ -205,7 +207,7 @@ body.page-home header.hero::before {
 body.page-about header.hero.subpage::before {
   background:
     linear-gradient(135deg, rgba(26,41,66,0.55) 0%, rgba(44,64,96,0.45) 100%),
-    url('photo1.jpg') center/cover no-repeat;
+    url('images/wicklow/sally-gap.jpg') center/cover no-repeat;
 }
 
 /* CONTACT — contact.html  (root level subpage) */
@@ -305,11 +307,11 @@ header.hero.compact .hero-content { padding: 50px 20px 40px; }
   border: 1px solid rgba(201, 169, 110, 0.4);
 }
 header.hero h1 {
-  font-size: 42px;
+  font-size: 40px;
   font-weight: 900;
   margin-bottom: 16px;
-  letter-spacing: -1.5px;
-  line-height: 1.15;
+  letter-spacing: -0.6px;
+  line-height: 1.25;
   color: white;
   text-shadow: 0 4px 20px rgba(0,0,0,0.65), 0 2px 6px rgba(0,0,0,0.5);
 }
@@ -320,10 +322,29 @@ header.hero .sub {
 }
 header.hero.subpage h1 { font-size: 34px; }
 header.hero .tagline {
-  font-size: 18px;
+  font-size: 17px;
   opacity: 0.95;
   margin-bottom: 8px;
   font-weight: 500;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+/* 히어로 머리말 — 예전 .hero-titles(배지 여러 개) 대신 한 줄 */
+.hero-kicker {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 18px;
+  padding: 6px 14px;
+  border: 1px solid rgba(201,169,110,0.45);
+  border-radius: 20px;
+  background: rgba(26,41,66,0.35);
+  animation: heroRise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.05s;
 }
 header.hero .sub {
   font-size: 14px;
@@ -353,6 +374,8 @@ header.hero .cta a.outline {
   color: white;
 }
 header.hero .cta a.outline:hover { background: rgba(255,255,255,0.15); border-color: white; }
+header.hero .cta a.kakao { background: #fee500; color: #3c1e1e; }
+header.hero .cta a.kakao:hover { background: #fae100; }
 
 @media (max-width: 600px) {
   body { padding-top: 56px; }
@@ -408,7 +431,6 @@ section .section-title { margin-bottom: 32px; text-align: center; }
 }
 .eyebrow.accent { color: var(--accent-ink); }
 .eyebrow.green  { color: var(--green); }
-.eyebrow.insta  { color: #d62976; }
 h1 { color: var(--primary); }
 h2 { font-size: 28px; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
 h2 + .lead { color: var(--muted); margin-top: 6px; font-size: 15px; }
@@ -453,7 +475,13 @@ h4 { font-size: 17px; font-weight: 700; color: var(--primary); margin-bottom: 6p
 }
 .service-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); border-color: var(--accent); }
 .service-card:hover::before { transform: scaleX(1); }
-.service-card .icon { font-size: 40px; margin-bottom: 14px; }
+.service-card .icon { margin-bottom: 16px; }
+.service-card.wide { grid-column: 1 / -1; }
+@media (min-width: 701px) {
+  .service-card.wide { flex-direction: row; align-items: flex-start; gap: 26px; }
+  .service-card.wide .icon { margin-bottom: 0; }
+  .service-card.wide .card-body { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+}
 .service-card h3 { font-size: 19px; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
 .service-card .price { font-size: 14px; color: var(--accent-ink); font-weight: 700; margin-bottom: 12px; }
 .service-card p { font-size: 14px; color: var(--muted); line-height: 1.65; flex-grow: 1; margin-bottom: 18px; }
@@ -470,43 +498,14 @@ h4 { font-size: 17px; font-weight: 700; color: var(--primary); margin-bottom: 6p
 .service-card .more::after { content: '→'; }
 
 /* ============================================================
-   QUICK LINKS
+   TRUST STRIP — 히어로 바로 아래 4가지 사실
    ============================================================ */
-section.quick {
-  background: white;
-  padding: 24px 20px;
-  border-bottom: 1px solid var(--border);
-}
-.quick-grid {
-  max-width: 1020px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
-}
-@media (max-width: 900px) {
-  .quick-grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 560px) {
-  .quick-grid { grid-template-columns: repeat(2, 1fr); }
-}
-.quick-grid a {
-  background: var(--bg);
-  border: 1.5px solid var(--border);
-  border-radius: 10px;
-  padding: 14px 12px;
-  text-decoration: none;
-  color: var(--primary);
-  text-align: center;
-  transition: all 0.2s;
-}
-.quick-grid a:hover {
-  border-color: var(--accent);
-  background: var(--accent-soft);
-  transform: translateY(-2px);
-}
-.quick-grid a .qicon { font-size: 22px; display: block; margin-bottom: 4px; }
-.quick-grid a .qlabel { font-size: 12.5px; font-weight: 700; }
+.trust-strip { background: white; border-bottom: 1px solid var(--border); padding: 18px 20px; }
+.trust-strip ul { list-style: none; max-width: 1020px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px 20px; }
+.trust-strip li { display: flex; align-items: center; gap: 10px; font-size: 13.5px; font-weight: 600; color: var(--primary); line-height: 1.4; }
+.trust-strip li .ic { color: var(--accent-ink); width: 20px; height: 20px; }
+@media (max-width: 900px) { .trust-strip ul { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .trust-strip ul { grid-template-columns: 1fr; gap: 8px; } .trust-strip li { font-size: 13px; } }
 
 /* ============================================================
    BUTTONS
@@ -596,7 +595,8 @@ section.quick {
   transition: all 0.2s;
 }
 .diff-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
-.diff-card .diff-icon { font-size: 38px; margin-bottom: 10px; }
+.diff-card .diff-icon { margin: 0 auto 12px; }
+.diff-card p { text-align: left; }
 .diff-card h3 { font-size: 16px; margin-bottom: 8px; color: var(--primary); }
 .diff-card p { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
 
@@ -743,15 +743,8 @@ footer.contact .small {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
 }
-@keyframes pageOut {
-  to { opacity: 0; transform: translateY(-8px); }
-}
-
 body {
-  animation: pageFadeIn 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-}
-body.is-leaving {
-  animation: pageOut 0.25s ease forwards;
+  animation: pageFadeIn 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 header.hero .hero-content { animation: heroRise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
 header.hero .hero-titles { animation: heroRise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: 0.05s; }
@@ -1408,3 +1401,90 @@ br.brk-md { display: none; }
   border-top: 1px solid var(--border);
 }
 
+
+/* ============================================================
+   아이콘 — 인라인 SVG 스프라이트 (이모지 아이콘 대체)
+   각 페이지 <body> 첫 줄의 <svg class="icon-sprite"> 안 <symbol id="i-…">를
+   <svg class="ic"><use href="#i-…"></use></svg> 로 부른다.
+   ============================================================ */
+.icon-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.ic {
+  width: 1em; height: 1em;
+  fill: none; stroke: currentColor; stroke-width: 1.75;
+  stroke-linecap: round; stroke-linejoin: round;
+  vertical-align: -0.15em; flex-shrink: 0;
+}
+.ic-box {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: var(--accent-soft); color: var(--primary);
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.ic-box .ic { width: 24px; height: 24px; }
+.ic-box.on-dark { background: rgba(201,169,110,0.18); color: var(--accent); }
+.btn .ic { width: 18px; height: 18px; }
+
+/* ============================================================
+   예약 진행 단계 — index
+   ============================================================ */
+.howto { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 920px; margin: 0 auto; counter-reset: step; }
+.howto .step { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 26px 22px; }
+.howto .step::before {
+  counter-increment: step; content: counter(step);
+  display: flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--primary); color: var(--accent);
+  font-weight: 800; font-size: 15px; margin-bottom: 14px;
+}
+.howto .step h3 { font-size: 16px; margin-bottom: 8px; }
+.howto .step p { font-size: 13.5px; color: var(--text); line-height: 1.7; margin: 0; }
+.howto-note { text-align: center; font-size: 13px; color: var(--muted); margin-top: 18px; line-height: 1.7; }
+@media (max-width: 760px) { .howto { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   인스타그램 안내 카드 — 브랜드 팔레트 (그라데이션 없음)
+   ============================================================ */
+.ig-card {
+  background: white; border: 1px solid var(--border); border-radius: 18px;
+  padding: 32px 34px; max-width: 820px; margin: 0 auto;
+  display: flex; gap: 28px; align-items: center; box-shadow: var(--shadow);
+}
+.ig-card .ig-mark {
+  width: 84px; height: 84px; border-radius: 50%; flex-shrink: 0;
+  background: var(--primary); color: var(--accent);
+  display: flex; align-items: center; justify-content: center;
+}
+.ig-card .ig-mark .ic { width: 38px; height: 38px; }
+.ig-card h3 { font-size: 19px; margin-bottom: 6px; }
+.ig-card h3 .handle { color: var(--muted); font-weight: 600; font-size: 15px; margin-left: 6px; }
+.ig-card p { font-size: 14.5px; color: var(--text); line-height: 1.7; margin: 0 0 16px; }
+@media (max-width: 640px) { .ig-card { flex-direction: column; text-align: center; padding: 28px 22px; gap: 18px; } }
+
+/* 섹션 제목 아래 짧은 안내 — .lead 보다 한 단계 긴 문장용 */
+.section-title .lead { max-width: 680px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+
+/* 홈 FAQ·본문 링크 색 */
+.faq-a a, .intro-para a { color: var(--accent-ink); font-weight: 600; }
+
+/* 다른 서비스 링크 스트립 — 이모지 대신 SVG 아이콘 */
+.other-services .links a .icon .ic { width: 26px; height: 26px; color: var(--accent-ink); }
+.other-services .links a:hover .icon .ic { color: var(--primary); }
+
+/* ============================================================
+   비교표 — tours(투어버스 비교)·airport(공항 이동 수단 비교) 공용
+   ============================================================ */
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  font-size: 13.5px;
+}
+.compare-table thead tr { background: var(--primary); color: white; }
+.compare-table th { padding: 14px; font-weight: 700; font-size: 13.5px; text-align: center; }
+.compare-table th:first-child { text-align: left; }
+.compare-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); text-align: center; line-height: 1.5; }
+.compare-table td:first-child { text-align: left; font-weight: 600; color: var(--primary); white-space: nowrap; }
+.compare-table .andrew-cell { background: var(--accent-soft); }
+.compare-table tr:last-child td { border-bottom: none; }

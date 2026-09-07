@@ -4,9 +4,10 @@
 <script>document.documentElement.className+=" js";</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1a2942">
 <title>더블린 공항 픽업·샌딩 €40부터 — 아일랜드 한인 차량 서비스 | Andrew의 아일랜드 동행</title>
 <meta name="description" content="더블린 공항 ↔ 시내·전국 한국어 픽업·샌딩 서비스. 7인승 MPV, 캐리어 4–6개, €40부터 (거리당 정찰·톨비 포함). 자동 가격 계산.">
-<meta property="og:title" content="✈️ 공항 픽업·드랍 — 아일랜드 동행">
+<meta property="og:title" content="공항 픽업·드랍 — 아일랜드 동행">
 <meta property="og:description" content="더블린 공항 ↔ 시내·전국, 한국어로 편하게. 7인승 MPV.">
 <meta property="og:image" content="https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/images/logo/og-image.jpg?v=20260501">
 <meta property="og:image:width" content="1200">
@@ -17,7 +18,7 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta property="og:site_name" content="Andrew의 아일랜드 동행 — Beautiful Ireland with Everyone">
 <meta property="og:locale" content="ko_KR">
-<meta name="twitter:title" content="✈️ 공항 픽업·드랍 — 아일랜드 동행">
+<meta name="twitter:title" content="공항 픽업·드랍 — 아일랜드 동행">
 <meta name="twitter:description" content="더블린 공항 ↔ 시내·전국, 한국어로 편하게. 7인승 MPV.">
 <meta property="og:type" content="website">
 <meta name="author" content="Andrew Seohyeon Kim (서현 Andrew)">
@@ -26,6 +27,8 @@
 <link rel="canonical" href="https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/services/airport.html">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="apple-touch-icon" href="../images/logo/icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
 <script defer src="../scripts.js"></script>
@@ -59,7 +62,7 @@
   .feature-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; max-width:900px; margin:0 auto; }
   @media (max-width:700px){ .feature-grid { grid-template-columns:1fr; } }
   .feature-card { background:white; border:1px solid var(--border); border-radius:12px; padding:24px 22px; }
-  .feature-card .ic { font-size:32px; margin-bottom:10px; }
+  .feature-card .icon { margin-bottom:12px; }
   .price-table { width:100%; border-collapse:collapse; background:white; border-radius:10px; overflow:hidden; box-shadow:var(--shadow); }
   .price-table th, .price-table td { padding:12px 14px; text-align:left; border-bottom:1px solid var(--border); font-size:13.5px; }
   .price-table th { background:var(--primary); color:white; font-weight:700; }
@@ -136,7 +139,7 @@
       "name": "언제 어디서 만나나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "기본 (픽업): 공항 외부 지정 픽업 핀포인트(도보 약 2분)에서 만납니다. 짐을 다 찾고 입국심사를 마치신 뒤, 카톡으로 안내드린 위치로 나오시면 돼요. 장기 주차 비용 절감을 위해 공항 인근에서 대기하다가 도착 알림 받고 이동하는 방식입니다.\n\n\n 기본 (드랍): 약속한 출발지에서 픽업 → 공항 출발층 항공사 카운터 인근에 하차해 드립니다.\n\n\n 🅿️ 도착 픽업 공항 주차비 (+€5): 더블린 공항 드롭오프(Drop-off) 구역 단속 강화로, 도착 픽업은 정식 주차장에서 안전하게 모십니다. 이에 따라 도착 픽업에는 공항 주차비 €5가 기본요금에 더해집니다. (🛫 출발 드랍은 해당 없음)\n\n\n 추가 옵션 (+€5): 도착 게이트 앞에서 한글 사인을 들고 직접 마중·에스코트가 필요하시면 가격 계산기에서 옵션을 선택해주세요. (공항 주차비는 도착 픽업 기본요금에 이미 포함)\n\n\n 추가 옵션 (+€10): 출발 시 체크인 카운터 동행 + 보안검색대 입구까지 안내가 필요하시면 동일하게 옵션 선택 가능합니다."
+        "text": "기본 (픽업): 공항 외부 지정 픽업 핀포인트(도보 약 2분)에서 만납니다. 짐을 다 찾고 입국심사를 마치신 뒤, 카톡으로 안내드린 위치로 나오시면 돼요. 장기 주차 비용 절감을 위해 공항 인근에서 대기하다가 도착 알림 받고 이동하는 방식입니다.\n\n\n 기본 (드랍): 약속한 출발지에서 픽업 → 공항 출발층 항공사 카운터 인근에 하차해 드립니다.\n\n\n 도착 픽업 공항 주차비 (+€5): 더블린 공항 드롭오프(Drop-off) 구역 단속 강화로, 도착 픽업은 정식 주차장에서 안전하게 모십니다. 이에 따라 도착 픽업에는 공항 주차비 €5가 기본요금에 더해집니다. (출발 드랍은 해당 없음)\n\n\n 추가 옵션 (+€5): 도착 게이트 앞에서 한글 사인을 들고 직접 마중·에스코트가 필요하시면 가격 계산기에서 옵션을 선택해주세요. (공항 주차비는 도착 픽업 기본요금에 이미 포함)\n\n\n 추가 옵션 (+€10): 출발 시 체크인 카운터 동행 + 보안검색대 입구까지 안내가 필요하시면 동일하게 옵션 선택 가능합니다."
       }
     },
     {
@@ -160,7 +163,7 @@
       "name": "결제는 어떻게 하나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "📌 결제 방식: 예약 시 50% 예약금(선결제), 서비스 완료 후 나머지 50%를 정산합니다.\n\n\n 💳 결제 수단: 유로는 Revolut 송금, 원화는 한국 계좌이체. 카드 결제는 받지 않습니다.\n\n\n 💱 원화 결제 환율: 원화로 결제하시면 예약금과 잔금 모두 각 송금 시점의 환율을 기준으로 원화 금액이 정해집니다. 예약금·잔금은 송금일이 달라 적용 환율이 서로 다를 수 있어요."
+        "text": "결제 방식: 예약 시 50% 예약금(선결제), 서비스 완료 후 나머지 50%를 정산합니다.\n\n\n 결제 수단: 유로는 Revolut 송금, 원화는 한국 계좌이체. 카드 결제는 받지 않습니다.\n\n\n 원화 결제 환율: 원화로 결제하시면 예약금과 잔금 모두 각 송금 시점의 환율을 기준으로 원화 금액이 정해집니다. 예약금·잔금은 송금일이 달라 적용 환율이 서로 다를 수 있어요."
       }
     },
     {
@@ -168,7 +171,7 @@
       "name": "취소·환불 정책은 어떻게 되나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "예약금 기준 환불 정책입니다.\n \n 48시간 이전 취소 → 예약금 전액 환불\n 전날 취소 (24–48시간 전) → 예약금의 50% 환불\n 당일 취소 → 환불 불가 (차량·일정 확보 완료 상태)\n \n ✈️ 비행 지연·취소는 위 정책과 별개로, 기존 항공편이 출발지에서 출발하기 전까지 알려주시면 무료 변경/취소 가능합니다.\n\n\n 💸 환급 방식: 환불금은 받은 경로(Revolut·한국 계좌이체)로 영업일 기준 2–3일 내 반환해 드립니다."
+        "text": "예약금 기준 환불 정책입니다.\n \n 48시간 이전 취소 → 예약금 전액 환불\n 전날 취소 (24–48시간 전) → 예약금의 50% 환불\n 당일 취소 → 환불 불가 (차량·일정 확보 완료 상태)\n \n 비행 지연·취소는 위 정책과 별개로, 기존 항공편이 출발지에서 출발하기 전까지 알려주시면 무료 변경/취소 가능합니다.\n\n\n 환급 방식: 환불금은 받은 경로(Revolut·한국 계좌이체)로 영업일 기준 2–3일 내 반환해 드립니다."
       }
     },
     {
@@ -184,15 +187,45 @@
       "name": "반려동물 동반 / 여러 곳 드랍 / 픽업 대기는 어떻게 되나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "🐾 반려동물: 케이지(이동장) 이용 시 동반 가능합니다. 예약 시 종류·크기를 미리 알려주세요.\n\n\n 📍 다중 드랍(경유): 한 번의 이동에 들르는 곳이 여러 곳이면 시내권 경유지 1곳당 +€10이 추가됩니다 (거리·방향에 따라 조정).\n\n\n ⏱️ 픽업 대기: 항공편명을 미리 알려주시면 도착 시간을 실시간으로 확인해 그에 맞춰 나가며, 입국·수하물 상황을 카톡으로 꾸준히 연락하며 진행합니다. 항공편 지연은 변수가 있는 부분이라 추가 대기료 없이 유연하게 맞춰 드려요. (공항 외 일반 미팅 픽업은 30분까지 무료 대기)"
+        "text": "반려동물: 케이지(이동장) 이용 시 동반 가능합니다. 예약 시 종류·크기를 미리 알려주세요.\n\n\n 다중 드랍(경유): 한 번의 이동에 들르는 곳이 여러 곳이면 시내권 경유지 1곳당 +€10이 추가됩니다 (거리·방향에 따라 조정).\n\n\n 픽업 대기: 항공편명을 미리 알려주시면 도착 시간을 실시간으로 확인해 그에 맞춰 나가며, 입국·수하물 상황을 카톡으로 꾸준히 연락하며 진행합니다. 항공편 지연은 변수가 있는 부분이라 추가 대기료 없이 유연하게 맞춰 드려요. (공항 외 일반 미팅 픽업은 30분까지 무료 대기)"
       }
     }
   ],
-  "dateModified": "2026-09-04"
+  "dateModified": "2026-09-07"
 }
 </script>
 </head>
 <body class="subpage-bg-fix page-airport">
+
+<!-- 아이콘 스프라이트 — 이모지 대신 쓰는 선 아이콘. <svg class="ic"><use href="#i-…"></use></svg> 로 부른다 -->
+<svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-plane" viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></symbol>
+  <symbol id="i-church" viewBox="0 0 24 24"><path d="M12 2v5"/><path d="M9.5 4.5h5"/><path d="M6 21v-9l6-5 6 5v9"/><path d="M3 21h18"/><path d="M10 21v-4a2 2 0 0 1 4 0v4"/></symbol>
+  <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-repeat" viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></symbol>
+</svg>
 
 <!-- NAV -->
 <nav class="topnav">
@@ -201,23 +234,22 @@
       <img src="../images/logo/icon.svg" alt="아일랜드 동행" width="32" height="32" class="logo-img">
       <span class="logo-name"><span class="accent">Beautiful Ireland</span> <span class="with-everyone">with Everyone</span></span>
     </a>
-    <button class="ham" onclick="document.querySelector('.menu').classList.toggle('open')">≡</button>
+    <button class="ham" onclick="document.querySelector('.menu').classList.toggle('open')" aria-label="메뉴 열기">≡</button>
     <div class="menu">
-      <a href="../about.html">👤 소개</a>
-      <a href="airport.html" class="current">✈️ 공항 픽업</a>
-      <a href="tours.html">🌿 로드트립</a>
-      <a href="moving.html">🏠 이사·IKEA</a>
-      <a href="pilgrimage.html">⛪ 성지순례</a>
-      <a href="custom.html">✏️ 맞춤 여행</a>
-      <a href="../contact.html" class="cta-nav">💬 문의</a>
+      <a href="../about.html">소개</a>
+      <a href="airport.html" class="current">공항 픽업</a>
+      <a href="tours.html">로드트립</a>
+      <a href="moving.html">이사·IKEA</a>
+      <a href="pilgrimage.html">성지순례</a>
+      <a href="custom.html">맞춤 여행</a>
+      <a href="../contact.html" class="cta-nav">문의</a>
     </div>
   </div>
 </nav>
 
 
 <div class="float-cta">
-  <a class="kakao" href="https://open.kakao.com/o/suSTEFsi" target="_blank">💬 카톡 채팅 시작</a>
-  <a href="https://www.instagram.com/ireland.sosik/" target="_blank" rel="noopener">📷 인스타 DM</a>
+  <a class="kakao" href="https://open.kakao.com/o/suSTEFsi" target="_blank" rel="noopener"><svg class="ic"><use href="#i-chat"></use></svg> 카톡으로 문의</a>
 </div>
 
 <nav aria-label="상위 페이지">
@@ -228,15 +260,13 @@
 <main id="main-content">
 <header class="hero subpage compact">
   <div class="hero-content">
-    <div class="hero-titles">
-      <span class="phrase">✈️ Airport Pickup · Drop-off</span>
-    </div>
-    <h1><span class="phrase">더블린 공항</span> <span class="phrase">픽업·드랍</span></h1>
-    <p class="tagline"><span class="phrase">더블린 공항 ↔ 시내·전국,</span> <span class="phrase">한국어로 편하게</span></p>
-    <p class="sub"><span class="phrase">7인승 MPV</span> · <span class="phrase">캐리어 4–6개</span> · <span class="phrase">톨비·주차 포함</span> · <span class="phrase">€40부터</span></p>
+    <p class="hero-kicker">Airport Pickup · Drop-off</p>
+    <h1>더블린 공항 픽업·드랍</h1>
+    <p class="tagline">더블린 공항에서 숙소까지, 숙소에서 공항까지. 더블린에 사는 한국인이 직접 운전합니다.</p>
+    <p class="sub">7인승 MPV · 캐리어 4–6개 · 톨비·주차 포함 · €40부터</p>
     <div class="cta" style="margin-top:22px;">
-      <a href="#calculator">🧮 가격 계산하기</a>
-      <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" class="outline">💬 카톡 채팅 시작</a>
+      <a href="#calculator">가격 계산하기</a>
+      <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" class="outline">카톡 채팅 시작</a>
     </div>
   </div>
 </header>
@@ -252,61 +282,85 @@
   </div>
 </div>
 
-<!-- WHY THIS SERVICE -->
+<!-- COMPARE — 공항에서 숙소까지 가는 방법 비교 -->
 <section style="background:white;">
+  <div class="container reveal" style="max-width:880px;">
+    <div class="section-title">
+      <h2>더블린 공항에서 숙소까지, 어떻게 갈까</h2>
+      <p class="lead">택시, 공항버스, 이 서비스를 같은 기준으로 놓고 비교했습니다.</p>
+    </div>
+    <div class="tour-pricing-table-wrap" style="max-width:880px;">
+      <table class="compare-table">
+        <thead>
+          <tr><th>항목</th><th>택시·우버</th><th>공항버스</th><th>이 서비스</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>언어</td><td>영어</td><td>영어</td><td class="andrew-cell"><strong>한국어</strong></td></tr>
+          <tr><td>요금 방식</td><td>미터기, 야간·짐 추가 요금</td><td>1인 요금</td><td class="andrew-cell"><strong>거리당 정찰가, 톨비·주차 포함</strong></td></tr>
+          <tr><td>짐</td><td>차종에 따라 다름</td><td>정류장에서 숙소까지는 직접 들고 이동</td><td class="andrew-cell"><strong>캐리어 4~6개, 숙소 앞까지</strong></td></tr>
+          <tr><td>도착 후</td><td>승차장 대기줄</td><td>정류장까지 걸어서 이동</td><td class="andrew-cell"><strong>도착 알림 후 차로 이동</strong></td></tr>
+          <tr><td>항공편 지연</td><td>해당 없음</td><td>다음 버스 탑승</td><td class="andrew-cell"><strong>항공편에 맞춰 대기 시간 조정</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:13.5px; color:var(--muted); text-align:center; margin-top:16px; line-height:1.7;">혼자 짐 없이 시내로 간다면 공항버스가 가장 쌉니다. 이 서비스는 짐이 많거나 일행이 셋 이상이거나, 도착 직후 영어로 움직이는 것이 부담될 때 값을 합니다.</p>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section style="background:var(--bg);">
   <div class="container reveal">
     <div class="section-title">
-      <h2>왜 이 픽업 서비스인가</h2>
-      <p class="lead">택시·우버보다 안심되고, 가격은 비슷하거나 합리적이에요</p>
+      <h2>이 픽업이 다른 점</h2>
     </div>
     <div class="feature-grid">
       <div class="feature-card">
-        <div class="ic">🇰🇷</div>
-        <h3><span class="phrase">한국어 안내</span></h3>
-        <p style="font-size:14px; color:var(--muted); line-height:1.7;"><span class="phrase">차량 탑승부터 목적지 도착까지</span> <span class="phrase">전 구간 한국어로 안내.</span> <span class="phrase">도로·교통 정보,</span> <span class="phrase">숙소 체크인 팁까지</span> <span class="phrase">자연스럽게 공유드려요.</span> <span class="phrase">처음 도착한 더블린,</span> <span class="phrase">짐 많은 가족·어르신에게</span> <span class="phrase">특히 든든합니다.</span></p>
+        <div class="icon ic-box"><svg class="ic"><use href="#i-message"></use></svg></div>
+        <h3>한국어로 갑니다</h3>
+        <p style="font-size:14px; color:var(--muted); line-height:1.7;">공항에서 숙소까지 한국어로 이동합니다. 도로 사정, 숙소 체크인, 유심과 교통카드처럼 도착 첫날 생기는 질문에 답합니다.</p>
       </div>
       <div class="feature-card">
-        <div class="ic">🚐</div>
-        <h3><span class="phrase">7인승 MPV</span></h3>
-        <p style="font-size:14px; color:var(--muted); line-height:1.7;"><span class="phrase">최대 6인 + 30인치 캐리어 4–5개</span> <span class="phrase">동시 적재.</span> <span class="phrase">가족·친구 그룹이</span> <span class="phrase">차량 한 대로 이동.</span> <span class="phrase">우버 XL을 별도로</span> <span class="phrase">부를 필요 없어요.</span></p>
+        <div class="icon ic-box"><svg class="ic"><use href="#i-truck"></use></svg></div>
+        <h3>7인승 MPV 한 대</h3>
+        <p style="font-size:14px; color:var(--muted); line-height:1.7;">최대 6명과 30인치 캐리어 4~5개가 한 번에 실립니다. 가족이나 친구 일행이 차 두 대로 나뉘지 않습니다.</p>
       </div>
       <div class="feature-card">
-        <div class="ic">💰</div>
-        <h3><span class="phrase">투명한 거리당 정찰가</span></h3>
-        <p style="font-size:14px; color:var(--muted); line-height:1.7;"><span class="phrase">주행거리(km)만 입력하면</span> <span class="phrase">자동 계산.</span> <span class="phrase">톨비·주차 포함.</span> <span class="phrase">도착 후 미터기</span> <span class="phrase">추가 청구 없이 끝.</span></p>
+        <div class="icon ic-box"><svg class="ic"><use href="#i-tag"></use></svg></div>
+        <h3>거리당 정찰가</h3>
+        <p style="font-size:14px; color:var(--muted); line-height:1.7;">주행거리만 넣으면 요금이 나옵니다. 톨비와 주차비가 들어 있어 내릴 때 더 낼 것이 없습니다.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ADD-ON / OPTIONAL CARE SERVICES -->
-<section style="background:var(--bg);">
+<section style="background:white;">
   <div class="container reveal">
     <div class="section-title">
-      <h2>필요시 추가 서비스 <span style="color:var(--muted); font-size:18px; font-weight:600;">(선택)</span></h2>
-      <p class="lead">기본 픽업·드랍에 더해 게이트 동행이 필요하실 때</p>
+      <h2>필요하면 더하는 서비스 <span style="color:var(--muted); font-size:18px; font-weight:600;">(선택)</span></h2>
+      <p class="lead">기본 픽업·드랍에 게이트 동행이 필요할 때 계산기에서 선택합니다.</p>
     </div>
     <div class="addon-grid">
       <div class="feature-card addon-card">
-        <div class="ic">🛬</div>
+        <div class="icon ic-box"><svg class="ic"><use href="#i-plane"></use></svg></div>
         <div class="addon-head">
           <h3>도착 시 — 게이트 앞 마중·에스코트</h3>
           <span class="addon-price">+€5</span>
         </div>
         <p style="font-size:13.5px; color:var(--muted); line-height:1.7;">
           <strong style="color:var(--primary);">기본:</strong> 공항 외부 지정 픽업 핀포인트(도보 약 2분)에서 만나는 형태입니다.<br><br>
-          <strong style="color:var(--primary);">추가 옵션:</strong> 입국장 게이트 앞에서 한글 사인을 들고 마중나가, 짐 찾는 곳·차량까지 직접 에스코트해 드립니다. 처음 더블린에 오시는 분, 어르신·아이 동반 가족에게 추천드려요. <em style="color:var(--muted);">(공항 주차비는 도착 픽업 기본요금에 이미 포함)</em>
+          <strong style="color:var(--primary);">추가 옵션:</strong> 입국장 게이트 앞에서 한글 사인을 들고 마중나가, 짐 찾는 곳·차량까지 직접 에스코트해 드립니다. 더블린이 처음이거나 어르신·아이와 함께 오실 때 씁니다. <em style="color:var(--muted);">(공항 주차비는 도착 픽업 기본요금에 이미 포함)</em>
         </p>
       </div>
       <div class="feature-card addon-card">
-        <div class="ic">🛫</div>
+        <div class="icon ic-box"><svg class="ic"><use href="#i-plane"></use></svg></div>
         <div class="addon-head">
           <h3>출발 시 — 체크인·보안검색 안내</h3>
           <span class="addon-price">+€10</span>
         </div>
         <p style="font-size:13.5px; color:var(--muted); line-height:1.7;">
           <strong style="color:var(--primary);">기본:</strong> 공항 출발층 하차로 마무리됩니다.<br><br>
-          <strong style="color:var(--primary);">추가 옵션:</strong> 항공사 체크인 카운터까지 함께 가서 수속 도움 → 보안검색대 입구까지 한국어로 안내해 드립니다. 영어가 부담되거나 처음 출국하시는 분께 든든해요.
+          <strong style="color:var(--primary);">추가 옵션:</strong> 항공사 체크인 카운터까지 함께 가서 수속 도움 → 보안검색대 입구까지 한국어로 안내해 드립니다. 영어가 부담되거나 처음 출국하시는 분께 맞습니다.
         </p>
       </div>
     </div>
@@ -336,24 +390,24 @@
   <div class="container reveal">
     <div class="section-title">
       <h2>공항 픽업·드랍 가격 계산</h2>
-      <p class="lead">방향·주행거리(km)·인원·짐·추가 옵션을 입력하면 즉시 자동 산출 — 거리는 🗺️ 버튼으로 바로 확인</p>
+      <p class="lead">방향, 주행거리, 인원, 짐, 추가 옵션을 넣으면 요금이 바로 나옵니다. 거리는 지도 버튼으로 확인할 수 있습니다.</p>
     </div>
 
     <div class="calc-wrap">
       <div class="calc-body">
         <div class="row single">
           <div class="field">
-            <label for="pk-direction">🔁 서비스 방향</label>
+            <label for="pk-direction">서비스 방향</label>
             <select id="pk-direction" onchange="calcPickup()">
-              <option value="arrival">🛬 도착 — 공항에서 픽업 (Dublin Airport → 목적지)</option>
-              <option value="departure">🛫 출발 — 공항으로 드랍 (출발지 → Dublin Airport)</option>
+              <option value="arrival">도착 — 공항에서 픽업 (Dublin Airport → 목적지)</option>
+              <option value="departure">출발 — 공항으로 드랍 (출발지 → Dublin Airport)</option>
             </select>
           </div>
         </div>
 
         <div class="row single">
           <div class="field">
-            <label for="pk-km">📍 Dublin Airport ↔ 목적지 거리 (편도, km)</label>
+            <label for="pk-km">Dublin Airport ↔ 목적지 거리 (편도, km)</label>
             <div class="km-quick">
               <button type="button" data-km="5" onclick="setPkKm(5)">5km</button>
               <button type="button" data-km="10" onclick="setPkKm(10)">10km</button>
@@ -369,16 +423,16 @@
 
         <div class="row single">
           <div class="field">
-            <label for="pk-dest">📍 목적지 주소·에어코드 <span style="font-weight:400; color:var(--muted);">(선택)</span></label>
+            <label for="pk-dest">목적지 주소·에어코드 <span style="font-weight:400; color:var(--muted);">(선택)</span></label>
             <input type="text" id="pk-dest" placeholder="예: D12 또는 Malahide" oninput="updateMapsLink()">
-            <a href="https://www.google.com/maps/dir/?api=1&amp;origin=Dublin%20Airport%2C%20Ireland&amp;destination=&amp;travelmode=driving" target="_blank" rel="noopener" id="pk-maps-btn" style="display:inline-flex; align-items:center; gap:6px; margin-top:12px; padding:10px 15px; background:#fff; border:1.5px solid var(--accent); color:var(--primary); border-radius:8px; font-size:13.5px; font-weight:700; text-decoration:none; cursor:pointer;">🗺️ 구글지도에서 주행거리 확인하기</a>
+            <a href="https://www.google.com/maps/dir/?api=1&amp;origin=Dublin%20Airport%2C%20Ireland&amp;destination=&amp;travelmode=driving" target="_blank" rel="noopener" id="pk-maps-btn" style="display:inline-flex; align-items:center; gap:6px; margin-top:12px; padding:10px 15px; background:#fff; border:1.5px solid var(--accent); color:var(--primary); border-radius:8px; font-size:13.5px; font-weight:700; text-decoration:none; cursor:pointer;"><svg class="ic"><use href="#i-map"></use></svg> 구글지도에서 주행거리 확인하기</a>
             <div class="hint" style="margin-top:6px;">위 칸에 <strong>목적지 주소·에어코드</strong>를 적고 누르면 구글지도가 새 창에서 열려요. 나온 <strong>실제 도로 주행거리</strong> km를 위 거리 칸에 넣으면 요금이 계산됩니다.</div>
           </div>
         </div>
 
         <div class="row">
           <div class="field">
-            <label for="pk-people">👥 인원 수</label>
+            <label for="pk-people">인원 수</label>
             <select id="pk-people" onchange="calcPickup()">
               <option value="1">1명</option>
               <option value="2">2명</option>
@@ -389,7 +443,7 @@
             </select>
           </div>
           <div class="field">
-            <label for="pk-bags">🧳 캐리어 수 (대형 30인치 기준)</label>
+            <label for="pk-bags">캐리어 수 (대형 30인치 기준)</label>
             <select id="pk-bags" onchange="calcPickup()">
               <option value="0">0개</option>
               <option value="1">1개</option>
@@ -405,7 +459,7 @@
 
         <div class="row single">
           <div class="field">
-            <label for="pk-time">🕐 도착·출발 시간대</label>
+            <label for="pk-time">도착·출발 시간대</label>
             <select id="pk-time" onchange="calcPickup()">
               <option value="day" selected>주간 (06:00–23:00)</option>
               <option value="night">야간 (23:00–06:00) · +€10 할증</option>
@@ -416,25 +470,25 @@
 
         <div class="row">
           <div class="field">
-            <label for="pk-when">🗓️ 희망 날짜·시간 <span style="font-weight:400; color:var(--muted);">(선택)</span></label>
+            <label for="pk-when">희망 날짜·시간 <span style="font-weight:400; color:var(--muted);">(선택)</span></label>
             <input type="text" id="pk-when" placeholder="예: 6월 24일 22:15 도착">
           </div>
           <div class="field">
-            <label for="pk-flight">✈️ 항공편명 <span style="font-weight:400; color:var(--muted);">(권장)</span></label>
+            <label for="pk-flight">항공편명 <span style="font-weight:400; color:var(--muted);">(권장)</span></label>
             <input type="text" id="pk-flight" placeholder="예: LH982">
-            <div class="hint">도착/출발 항공편명을 적어주시면 시간에 맞춰 정확히 준비해 드려요.</div>
+            <div class="hint">항공편명을 적어 주시면 도착·출발 시간에 맞춰 준비합니다.</div>
           </div>
         </div>
 
         <div class="addon-options">
-          <div style="font-size:12.5px; font-weight:700; color:var(--primary); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px;">필요시 추가 서비스 (선택)</div>
+          <div style="font-size:12.5px; font-weight:700; color:var(--primary); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px;">추가 서비스 (선택)</div>
           <label class="addon-row" id="pk-row-gate">
             <input type="checkbox" id="pk-addon-gate" onchange="calcPickup()">
-            <span class="addon-label">🛬 게이트 앞 마중·에스코트 <span class="price-tag">+€5</span><br><span style="font-size:12.5px; color:var(--text); font-weight:400;">기본 픽업 핀포인트 대신, 도착 게이트 앞에서 한글 사인을 들고 마중·에스코트 (도착 시에만 적용)</span></span>
+            <span class="addon-label">게이트 앞 마중·에스코트 <span class="price-tag">+€5</span><br><span style="font-size:12.5px; color:var(--text); font-weight:400;">기본 픽업 핀포인트 대신, 도착 게이트 앞에서 한글 사인을 들고 마중·에스코트 (도착 시에만 적용)</span></span>
           </label>
           <label class="addon-row" id="pk-row-checkin">
             <input type="checkbox" id="pk-addon-checkin" onchange="calcPickup()">
-            <span class="addon-label">🛫 체크인·보안검색 안내 <span class="price-tag">+€10</span><br><span style="font-size:12.5px; color:var(--text); font-weight:400;">공항 도착 후 체크인 카운터 동행 → 보안검색대 입구까지 안내 (출발 시에만 적용)</span></span>
+            <span class="addon-label">체크인·보안검색 안내 <span class="price-tag">+€10</span><br><span style="font-size:12.5px; color:var(--text); font-weight:400;">공항 도착 후 체크인 카운터 동행 → 보안검색대 입구까지 안내 (출발 시에만 적용)</span></span>
           </label>
         </div>
 
@@ -446,13 +500,13 @@
             <ul id="pk-breakdown"></ul>
           </div>
           <div class="pk-distance-note" style="margin-top:12px; background:white; border:1.5px dashed var(--accent); border-radius:8px; padding:12px 14px; font-size:12.5px; color:var(--primary); line-height:1.6;">
-            📍 <strong>표시 금액은 대표 거리 기준 예상값이에요.</strong> 최종 요금은 실제 출발지·도착지 주소를 기준으로 한 <strong>구글맵 주행거리</strong>로 확정됩니다. 같은 우편번호라도 세부 위치·경로에 따라 거리가 달라질 수 있어요 (예: D12는 공항에서 남서쪽이라 실제 주행이 25km를 넘어 요금이 올라갈 수 있습니다). <strong>정확한 금액은 카톡으로 주소를 알려주시면 바로 확정해 드려요.</strong>
+            <strong>표시 금액은 입력한 거리 기준 예상값입니다.</strong> 최종 요금은 실제 출발지·도착지 주소를 기준으로 한 <strong>구글맵 주행거리</strong>로 확정됩니다. 같은 우편번호라도 세부 위치·경로에 따라 거리가 달라질 수 있어요 (예: D12는 공항에서 남서쪽이라 실제 주행이 25km를 넘을 수 있습니다). <strong>주소를 카톡으로 알려주시면 금액을 확정해 드립니다.</strong>
           </div>
-          <div id="pk-warn" style="display:none; margin-top:12px; background:var(--red-soft); border-radius:8px; padding:12px 14px; font-size:13px; color:#c0392b;"></div>
+          <div id="pk-warn" style="display:none; margin-top:12px; background:var(--red-soft); border-radius:8px; padding:12px 14px; font-size:13px; color:var(--red-ink);"></div>
         </div>
 
         <div style="text-align:center; margin-top:24px;">
-          <a href="javascript:void(0)" onclick="inquirePickup()" class="btn btn-kakao" id="pk-cta">💬 이 가격으로 카톡 문의</a>
+          <a href="javascript:void(0)" onclick="inquirePickup()" class="btn btn-kakao" id="pk-cta"><svg class="ic"><use href="#i-chat"></use></svg> 이 가격으로 카톡 문의</a>
         </div>
       </div>
     </div>
@@ -464,12 +518,12 @@
   <div class="container reveal">
     <div class="section-title">
       <h2>공항 픽업 가격표 <span style="color:var(--muted); font-size:18px; font-weight:600;">(주행거리 기준)</span></h2>
-      <p class="lead">이사·운송 서비스와 동일하게, 공항 ↔ 목적지 <strong>실제 구글맵 주행거리(도로 거리)</strong>에 거리당 단가를 적용합니다</p>
+      <p class="lead">이사·운송과 같은 방식으로, 공항과 목적지 사이 <strong>실제 구글맵 주행거리(도로 거리)</strong>에 거리당 단가를 적용합니다.</p>
     </div>
 
     <!-- 거리당 단가 공식 -->
     <div style="max-width:560px; margin:0 auto 22px; background:var(--accent-soft); border:1.5px solid var(--accent); border-radius:14px; padding:20px 24px;">
-      <div style="font-size:14px; font-weight:800; color:var(--primary); margin-bottom:12px;">📐 거리당 단가 공식 (편도 · 톨비·주차 포함)</div>
+      <div style="font-size:14px; font-weight:800; color:var(--primary); margin-bottom:12px;">거리당 단가 공식 (편도 · 톨비·주차 포함)</div>
       <div style="display:flex; justify-content:space-between; padding:7px 0; border-bottom:1px solid var(--border); font-size:14px;"><span style="color:var(--primary);">기본료 (0–10km)</span><strong style="color:var(--primary);">€40 (최저가)</strong></div>
       <div style="display:flex; justify-content:space-between; padding:7px 0; border-bottom:1px solid var(--border); font-size:14px;"><span style="color:var(--primary);">10–50km 추가분</span><strong style="color:var(--primary);">+€1.5/km</strong></div>
       <div style="display:flex; justify-content:space-between; padding:7px 0; font-size:14px;"><span style="color:var(--primary);">50km 초과분 (장거리)</span><strong style="color:var(--primary);">+€0.8/km</strong></div>
@@ -494,9 +548,9 @@
         </tbody>
       </table>
       <p style="font-size:12px; color:var(--muted); margin-top:14px; text-align:center;">
-        ※ 위 기본요금 위에 <strong>🛬 도착 픽업 공항 주차비 +€5</strong> (드롭오프 단속 강화로 정식 주차 · 도착 시 항상 적용) · 야간(23–06시) +€10 · 5–6인 +€10 · 게이트/체크인 안내 옵션이 가산됩니다. (🛫 출발 드랍은 주차비 없음)<br>
-        ※ 표의 거리·가격은 <strong>대표 예시</strong>이며, <strong>최종 요금은 실제 주소 기준 구글맵 주행거리로 확정</strong>됩니다. 아래 계산기의 <strong>🗺️ 주행거리 확인하기</strong> 버튼으로 실제 거리를 바로 확인할 수 있어요.<br>
-        ※ 정확한 견적은 위 계산기 또는 카톡으로 확인해주세요.
+        ※ 위 기본요금에 <strong>도착 픽업 공항 주차비 +€5</strong> (드롭오프 구역 단속 강화로 정식 주차장 이용 · 도착 픽업에 항상 적용) · 야간(23–06시) +€10 · 5–6인 +€10 · 게이트/체크인 안내 옵션이 더해집니다. 출발 드랍은 주차비가 없습니다.<br>
+        ※ 표의 거리·가격은 <strong>대표 예시</strong>이며, <strong>최종 요금은 실제 주소 기준 구글맵 주행거리로 확정</strong>됩니다. 위 계산기의 <strong>주행거리 확인하기</strong> 버튼으로 실제 거리를 확인할 수 있습니다.<br>
+        ※ 정확한 견적은 위 계산기 또는 카톡으로 확인해 주세요.
       </p>
     </div>
   </div>
@@ -512,7 +566,7 @@
       <div class="faq-a">
         <strong>기본 (픽업):</strong> 공항 외부 지정 픽업 핀포인트(도보 약 2분)에서 만납니다. 짐을 다 찾고 입국심사를 마치신 뒤, 카톡으로 안내드린 위치로 나오시면 돼요. 장기 주차 비용 절감을 위해 공항 인근에서 대기하다가 도착 알림 받고 이동하는 방식입니다.<br><br>
         <strong>기본 (드랍):</strong> 약속한 출발지에서 픽업 → 공항 출발층 항공사 카운터 인근에 하차해 드립니다.<br><br>
-        <strong>🅿️ 도착 픽업 공항 주차비 (+€5):</strong> 더블린 공항 드롭오프(Drop-off) 구역 단속 강화로, 도착 픽업은 정식 주차장에서 안전하게 모십니다. 이에 따라 <strong>도착 픽업</strong>에는 공항 주차비 €5가 기본요금에 더해집니다. (🛫 출발 드랍은 해당 없음)<br><br>
+        <strong>도착 픽업 공항 주차비 (+€5):</strong> 더블린 공항 드롭오프(Drop-off) 구역 단속 강화로, 도착 픽업은 정식 주차장에서 안전하게 모십니다. 이에 따라 <strong>도착 픽업</strong>에는 공항 주차비 €5가 기본요금에 더해집니다. (출발 드랍은 해당 없음)<br><br>
         <strong>추가 옵션 (+€5):</strong> 도착 게이트 앞에서 한글 사인을 들고 직접 마중·에스코트가 필요하시면 가격 계산기에서 옵션을 선택해주세요. (공항 주차비는 도착 픽업 기본요금에 이미 포함)<br><br>
         <strong>추가 옵션 (+€10):</strong> 출발 시 체크인 카운터 동행 + 보안검색대 입구까지 안내가 필요하시면 동일하게 옵션 선택 가능합니다.
       </div>
@@ -538,9 +592,9 @@
     <div class="faq-item" onclick="this.classList.toggle('open')">
       <div class="faq-q">결제는 어떻게 하나요?</div>
       <div class="faq-a">
-        <strong>📌 결제 방식:</strong> 예약 시 50% 예약금(선결제), 서비스 완료 후 나머지 50%를 정산합니다.<br><br>
-        <strong>💳 결제 수단:</strong> 유로는 Revolut 송금, 원화는 한국 계좌이체. 카드 결제는 받지 않습니다.<br><br>
-        <strong>💱 원화 결제 환율:</strong> 원화로 결제하시면 <strong>예약금과 잔금 모두 각 송금 시점의 환율</strong>을 기준으로 원화 금액이 정해집니다. 예약금·잔금은 송금일이 달라 적용 환율이 서로 다를 수 있어요.
+        <strong>결제 방식:</strong> 예약 시 50% 예약금(선결제), 서비스 완료 후 나머지 50%를 정산합니다.<br><br>
+        <strong>결제 수단:</strong> 유로는 Revolut 송금, 원화는 한국 계좌이체. 카드 결제는 받지 않습니다.<br><br>
+        <strong>원화 결제 환율:</strong> 원화로 결제하시면 <strong>예약금과 잔금 모두 각 송금 시점의 환율</strong>을 기준으로 원화 금액이 정해집니다. 예약금·잔금은 송금일이 달라 적용 환율이 서로 다를 수 있어요.
       </div>
     </div>
 
@@ -553,8 +607,8 @@
           <li><strong>전날 취소</strong> (24–48시간 전) → 예약금의 <strong>50% 환불</strong></li>
           <li><strong>당일 취소</strong> → <strong>환불 불가</strong> (차량·일정 확보 완료 상태)</li>
         </ul>
-        <strong>✈️ 비행 지연·취소</strong>는 위 정책과 별개로, 기존 항공편이 출발지에서 출발하기 전까지 알려주시면 무료 변경/취소 가능합니다.<br><br>
-        <strong>💸 환급 방식:</strong> 환불금은 받은 경로(Revolut·한국 계좌이체)로 영업일 기준 2–3일 내 반환해 드립니다.
+        <strong>비행 지연·취소</strong>는 위 정책과 별개로, 기존 항공편이 출발지에서 출발하기 전까지 알려주시면 무료 변경/취소 가능합니다.<br><br>
+        <strong>환급 방식:</strong> 환불금은 받은 경로(Revolut·한국 계좌이체)로 영업일 기준 2–3일 내 반환해 드립니다.
       </div>
     </div>
 
@@ -568,9 +622,9 @@
     <div class="faq-item" onclick="this.classList.toggle('open')">
       <div class="faq-q">반려동물 동반 / 여러 곳 드랍 / 픽업 대기는 어떻게 되나요?</div>
       <div class="faq-a">
-        <strong>🐾 반려동물:</strong> 케이지(이동장) 이용 시 동반 가능합니다. 예약 시 종류·크기를 미리 알려주세요.<br><br>
-        <strong>📍 다중 드랍(경유):</strong> 한 번의 이동에 들르는 곳이 여러 곳이면 시내권 경유지 1곳당 +€10이 추가됩니다 (거리·방향에 따라 조정).<br><br>
-        <strong>⏱️ 픽업 대기:</strong> 항공편명을 미리 알려주시면 도착 시간을 실시간으로 확인해 그에 맞춰 나가며, 입국·수하물 상황을 카톡으로 꾸준히 연락하며 진행합니다. 항공편 지연은 변수가 있는 부분이라 추가 대기료 없이 유연하게 맞춰 드려요. (공항 외 일반 미팅 픽업은 30분까지 무료 대기)
+        <strong>반려동물:</strong> 케이지(이동장) 이용 시 동반 가능합니다. 예약 시 종류·크기를 미리 알려주세요.<br><br>
+        <strong>다중 드랍(경유):</strong> 한 번의 이동에 들르는 곳이 여러 곳이면 시내권 경유지 1곳당 +€10이 추가됩니다 (거리·방향에 따라 조정).<br><br>
+        <strong>픽업 대기:</strong> 항공편명을 미리 알려주시면 도착 시간을 실시간으로 확인해 그에 맞춰 나가며, 입국·수하물 상황을 카톡으로 꾸준히 연락하며 진행합니다. 항공편 지연은 변수가 있는 부분이라 추가 대기료 없이 유연하게 맞춰 드려요. (공항 외 일반 미팅 픽업은 30분까지 무료 대기)
       </div>
     </div>
   </div>
@@ -581,11 +635,11 @@
   <div class="container reveal">
     <h3>다른 서비스도 보세요</h3>
     <div class="links">
-      <a href="tours.html"><span class="icon">🌿</span>당일 로드트립</a>
-      <a href="moving.html"><span class="icon">🏠</span>이사·IKEA·가구 픽업</a>
-      <a href="pilgrimage.html"><span class="icon">⛪</span>성지순례·피정</a>
-      <a href="custom.html"><span class="icon">✏️</span>맞춤 여행</a>
-      <a href="../about.html"><span class="icon">🎵</span>음악 프로젝트</a>
+      <a href="tours.html"><span class="icon"><svg class="ic"><use href="#i-map"></use></svg></span>당일 로드트립</a>
+      <a href="moving.html"><span class="icon"><svg class="ic"><use href="#i-truck"></use></svg></span>이사·IKEA·가구 픽업</a>
+      <a href="pilgrimage.html"><span class="icon"><svg class="ic"><use href="#i-church"></use></svg></span>성지순례·피정</a>
+      <a href="custom.html"><span class="icon"><svg class="ic"><use href="#i-pencil"></use></svg></span>맞춤 여행</a>
+      <a href="../about.html"><span class="icon"><svg class="ic"><use href="#i-music"></use></svg></span>음악 프로젝트</a>
     </div>
   </div>
 </section>
@@ -595,16 +649,16 @@
 
 <footer class="contact">
   <div class="container">
-    <h2>지금 문의해보세요</h2>
-    <p>공항 픽업은 도착 3–7일 전 예약 권장 · 확인하는 대로 답장드려요</p>
+    <h2>공항 픽업 문의</h2>
+    <p>공항 픽업은 도착 3~7일 전에 예약해 주세요. 확인하는 대로 답장합니다.</p>
     <div class="channels">
-      <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" style="background:#fee500; color:#3c1e1e; border-color:#fee500; font-weight:800;">💬 카톡 오픈채팅</a>
-      <a href="https://www.instagram.com/ireland.sosik/" target="_blank" rel="noopener">📷 인스타 DM</a>
-      <a href="mailto:sby05034@gmail.com">✉️ Email</a>
+      <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" rel="noopener" style="background:#fee500; color:#3c1e1e; border-color:#fee500; font-weight:800;">카톡 오픈채팅</a>
+      <a href="https://www.instagram.com/ireland.sosik/" target="_blank" rel="noopener">인스타그램 DM</a>
+      <a href="mailto:sby05034@gmail.com">이메일</a>
     </div>
-    <p class="small" style="margin-top:10px;"><a href="../terms.html" style="color:inherit; opacity:0.85; text-decoration:underline;">📋 이용약관 · 환불·책임 정책</a></p>
+    <p class="small" style="margin-top:10px;"><a href="../terms.html" style="color:inherit; opacity:0.85; text-decoration:underline;">이용약관 · 환불·책임 정책</a></p>
     <p class="small">© 2026 🇮🇪 Beautiful Ireland with Everyone · Andrew의 아일랜드 동행</p>
-    <p class="small" style="opacity:0.7;">최종 업데이트 <time datetime="2026-09-04">2026년 9월 4일</time></p>
+    <p class="small" style="opacity:0.7;">최종 업데이트 <time datetime="2026-09-07">2026년 9월 7일</time></p>
   </div>
 </footer>
 
@@ -666,7 +720,7 @@ function calcPickup() {
   // 도착 픽업 공항 주차비 (드롭오프 구역 단속 강화 → 도착 픽업은 공항 주차 진행). 드랍은 해당 없음.
   if (direction === 'arrival') {
     extras += 5;
-    breakdown.push(`<li><span>🅿️ 공항 주차비 (도착 픽업)</span><span>+€5</span></li>`);
+    breakdown.push(`<li><span>공항 주차비 (도착 픽업)</span><span>+€5</span></li>`);
   }
 
   if (people >= 5) {
@@ -682,7 +736,7 @@ function calcPickup() {
   const isNight = document.getElementById('pk-time').value === 'night';
   if (isNight) {
     extras += 10;
-    breakdown.push(`<li><span>🌙 야간 할증 (23–06시)</span><span>+€10</span></li>`);
+    breakdown.push(`<li><span>야간 할증 (23–06시)</span><span>+€10</span></li>`);
   }
 
   // 50km+ 장거리는 별도 견적 안내
@@ -693,11 +747,11 @@ function calcPickup() {
   // Add-on services
   if (direction === 'arrival' && gateChk.checked) {
     extras += 5;
-    breakdown.push(`<li><span>🛬 게이트 앞 마중·에스코트</span><span>+€5</span></li>`);
+    breakdown.push(`<li><span>게이트 앞 마중·에스코트</span><span>+€5</span></li>`);
   }
   if (direction === 'departure' && checkinChk.checked) {
     extras += 10;
-    breakdown.push(`<li><span>🛫 체크인·보안검색 안내</span><span>+€10</span></li>`);
+    breakdown.push(`<li><span>체크인·보안검색 안내</span><span>+€10</span></li>`);
   }
 
   const total = base + extras;
@@ -811,7 +865,7 @@ function inquirePickup() {
   const destInput = (document.getElementById('pk-dest').value || '').trim();
   const destText = destInput ? `${destInput} (약 ${km}km)` : `약 ${km}km`;
   const direction = document.getElementById('pk-direction').value;
-  const dirEmoji = direction === 'arrival' ? '🛬 도착 픽업' : '🛫 출발 드랍';
+  const dirEmoji = direction === 'arrival' ? '도착 픽업' : '출발 드랍';
   const dirLabel = direction === 'arrival' ? '목적지' : '출발지';
   const people = document.getElementById('pk-people').value;
   const bags = document.getElementById('pk-bags').value;
@@ -825,14 +879,14 @@ function inquirePickup() {
   const lines = [
     '안녕하세요! 공항 픽업·드랍 문의드립니다.',
     `${dirEmoji}`,
-    `📍 ${dirLabel}: ${destText}`,
+    `${dirLabel}: ${destText}`,
     `👥 인원: ${people}명 · 🧳 캐리어: ${bags}개`,
     `🗓️ 희망 날짜·시간: ${when || '(작성해주세요)'}`,
-    `✈️ 항공편명: ${flight || '(작성해주세요)'}`
+    `항공편명: ${flight || '(작성해주세요)'}`
   ];
   if (night) lines.push('🌙 야간(23–06시) 운행 +€10');
-  if (gate) lines.push('🛬 게이트 앞 마중·에스코트 포함');
-  if (checkin) lines.push('🛫 체크인·보안검색 안내 포함');
+  if (gate) lines.push('게이트 앞 마중·에스코트 포함');
+  if (checkin) lines.push('체크인·보안검색 안내 포함');
   lines.push(`💰 예상 가격: ${price}`);
   lines.push('가능한지 확인 부탁드립니다 🙏');
 

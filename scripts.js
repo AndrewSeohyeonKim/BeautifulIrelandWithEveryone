@@ -2,37 +2,8 @@
    🇮🇪 Beautiful Ireland with Everyone — Shared Scripts
    ============================================================ */
 
-// 1) 페이지 전환 — 같은 사이트 내부 링크 클릭 시 부드러운 페이드아웃 후 이동
-(function setupPageTransitions() {
-  // prefers-reduced-motion 사용자에겐 적용 안 함
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  document.addEventListener('click', function (e) {
-    const link = e.target.closest('a');
-    if (!link) return;
-    const href = link.getAttribute('href');
-    if (!href) return;
-    // 외부 링크/앵커/특수 프로토콜/타겟블랭크 제외
-    if (link.target === '_blank') return;
-    if (href.startsWith('http') && !href.includes(window.location.host)) return;
-    if (href.startsWith('#')) return;
-    if (href.startsWith('mailto:') || href.startsWith('tel:')) return;
-    // javascript: 링크·onclick 전용 버튼(카톡 문의 등)은 페이지 이동이 아님 → 가로채지 않음
-    if (href.toLowerCase().startsWith('javascript:')) return;
-    if (link.hasAttribute('onclick')) return;
-    if (link.hasAttribute('download')) return;
-    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-
-    e.preventDefault();
-    document.body.classList.add('is-leaving');
-    setTimeout(() => { window.location.href = link.href; }, 220);
-  });
-
-  // bfcache 복귀 시 fade-out 클래스 제거
-  window.addEventListener('pageshow', function () {
-    document.body.classList.remove('is-leaving');
-  });
-})();
+// 1) (제거됨 2026-09-06) 내부 링크 클릭 시 220ms 페이드아웃 후 이동하던 코드.
+//    모든 페이지 이동을 0.2초씩 늦춰 체감 속도만 깎았다. 진입 애니메이션(body pageFadeIn)만 남긴다.
 
 
 // 2) Reveal-on-scroll — .reveal 섹션과 .stagger-fade 그리드를 화면 진입 시 발동

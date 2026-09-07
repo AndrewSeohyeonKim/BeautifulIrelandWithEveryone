@@ -41,3 +41,7 @@ IMG_3210.JPG
 _내부자료/
 CLAUDE.md
 .fuse_hidden*
+
+# Claude Code 로컬 설정·임시 백업 (공개 금지)
+.claude/
+_to_delete/backup_*/

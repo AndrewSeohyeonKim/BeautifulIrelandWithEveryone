@@ -4,9 +4,10 @@
 <script>document.documentElement.className+=" js";</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1a2942">
 <title>아일랜드 맞춤 여행 — 한국어 동행 가이드 | Andrew의 아일랜드 동행</title>
 <meta name="description" content="아일랜드 맞춤 1일 코스 · 2박 3일 이상 장기 여행 플랜 · 통역·기자단 동행. 성지순례는 별도 페이지에서 안내합니다.">
-<meta property="og:title" content="✏️ 나만의 맞춤 여행 — 아일랜드 동행">
+<meta property="og:title" content="나만의 맞춤 여행 — 아일랜드 동행">
 <meta property="og:description" content="맞춤 1일 코스 + 2박 3일 이상 장기 여행 플랜 + 통역·현지 코디네이션.">
 <meta property="og:image" content="https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/images/logo/og-image.jpg?v=20260501">
 <meta property="og:image:width" content="1200">
@@ -17,7 +18,7 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta property="og:site_name" content="Andrew의 아일랜드 동행 — Beautiful Ireland with Everyone">
 <meta property="og:locale" content="ko_KR">
-<meta name="twitter:title" content="✏️ 나만의 맞춤 여행 — 아일랜드 동행">
+<meta name="twitter:title" content="나만의 맞춤 여행 — 아일랜드 동행">
 <meta name="twitter:description" content="맞춤 1일 코스 + 2박 3일 이상 장기 여행 플랜 + 통역·현지 코디네이션.">
 <meta property="og:type" content="website">
 <meta name="author" content="Andrew Seohyeon Kim (서현 Andrew)">
@@ -26,6 +27,8 @@
 <link rel="canonical" href="https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/services/custom.html">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="apple-touch-icon" href="../images/logo/icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
 <script defer src="../scripts.js"></script>
@@ -40,7 +43,7 @@
     transition:all 0.2s;
   }
   .package-card:hover { box-shadow:var(--shadow-hover); transform:translateY(-3px); border-color:var(--accent); }
-  .package-card .ic { font-size:42px; margin-bottom:14px; }
+  .package-card .icon { margin-bottom:16px; }
   .package-card h3 { font-size:20px; margin-bottom:10px; }
   .package-card p { font-size:14px; color:var(--muted); line-height:1.7; margin-bottom:14px; }
   .package-card ul { list-style:none; padding:0; margin-bottom:18px; }
@@ -161,7 +164,7 @@
   "@id": "https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/services/custom.html#faq",
   "inLanguage": "ko-KR",
   "url": "https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/services/custom.html",
-  "dateModified": "2026-09-03",
+  "dateModified": "2026-09-07",
   "mainEntity": [
     {
       "@type": "Question",
@@ -217,29 +220,58 @@
 </head>
 <body class="subpage-bg-fix page-custom">
 
+<!-- 아이콘 스프라이트 — 이모지 대신 쓰는 선 아이콘. <svg class="ic"><use href="#i-…"></use></svg> 로 부른다 -->
+<svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-plane" viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></symbol>
+  <symbol id="i-church" viewBox="0 0 24 24"><path d="M12 2v5"/><path d="M9.5 4.5h5"/><path d="M6 21v-9l6-5 6 5v9"/><path d="M3 21h18"/><path d="M10 21v-4a2 2 0 0 1 4 0v4"/></symbol>
+  <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-repeat" viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></symbol>
+</svg>
+
 <nav class="topnav">
   <div class="nav-inner">
     <a href="../index.html" class="logo">
       <img src="../images/logo/icon.svg" alt="아일랜드 동행" width="32" height="32" class="logo-img">
       <span class="logo-name"><span class="accent">Beautiful Ireland</span> <span class="with-everyone">with Everyone</span></span>
     </a>
-    <button class="ham" onclick="document.querySelector('.menu').classList.toggle('open')">≡</button>
+    <button class="ham" onclick="document.querySelector('.menu').classList.toggle('open')" aria-label="메뉴 열기">≡</button>
     <div class="menu">
-      <a href="../about.html">👤 소개</a>
-      <a href="airport.html">✈️ 공항 픽업</a>
-      <a href="tours.html">🌿 로드트립</a>
-      <a href="moving.html">🏠 이사·IKEA</a>
-      <a href="pilgrimage.html">⛪ 성지순례</a>
-      <a href="custom.html" class="current">✏️ 맞춤 여행</a>
-      <a href="../contact.html" class="cta-nav">💬 문의</a>
+      <a href="../about.html">소개</a>
+      <a href="airport.html">공항 픽업</a>
+      <a href="tours.html">로드트립</a>
+      <a href="moving.html">이사·IKEA</a>
+      <a href="pilgrimage.html">성지순례</a>
+      <a href="custom.html" class="current">맞춤 여행</a>
+      <a href="../contact.html" class="cta-nav">문의</a>
     </div>
   </div>
 </nav>
 
 
 <div class="float-cta">
-  <a class="kakao" href="https://open.kakao.com/o/suSTEFsi" target="_blank">💬 카톡 채팅 시작</a>
-  <a href="https://www.instagram.com/ireland.sosik/" target="_blank" rel="noopener">📷 인스타 DM</a>
+  <a class="kakao" href="https://open.kakao.com/o/suSTEFsi" target="_blank" rel="noopener"><svg class="ic"><use href="#i-chat"></use></svg> 카톡으로 문의</a>
 </div>
 
 <nav aria-label="상위 페이지">
@@ -249,15 +281,13 @@
 <main id="main-content">
 <header class="hero subpage compact">
   <div class="hero-content">
-    <div class="hero-titles">
-      <span class="phrase">✏️ Custom · Long-stay · Interpreting</span>
-    </div>
-    <h1><span class="phrase">아일랜드 맞춤 여행</span></h1>
-    <p class="tagline"><span class="phrase">정해진 코스가 아닌,</span> <span class="phrase">함께 만드는 여정</span></p>
-    <p class="sub"><span class="phrase">맞춤 코스</span> · <span class="phrase">2박 3일 이상 장기</span> · <span class="phrase">통역·현지 코디네이션</span></p>
+    <p class="hero-kicker">Custom · Long-stay · Interpreting</p>
+    <h1>아일랜드 맞춤 여행</h1>
+    <p class="tagline">정해진 코스가 아니라, 일정과 관심사에 맞춰 처음부터 짜는 여행입니다.</p>
+    <p class="sub">맞춤 1일 코스 · 2박 3일 이상 장기 · 통역·현지 코디네이션</p>
     <div class="cta" style="margin-top:22px;">
-      <a href="#trip-types">✏️ 여행 종류 보기</a>
-      <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" class="outline">💬 카톡 상담 시작</a>
+      <a href="#trip-types">여행 종류 보기</a>
+      <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" class="outline">카톡 상담 시작</a>
     </div>
   </div>
 </header>
@@ -276,60 +306,60 @@
 <section id="trip-types" style="background:white;">
   <div class="container reveal">
     <div class="section-title">
-      <h2>이런 여행 가능해요</h2>
-      <p class="lead">정해진 패키지가 아니라 1:1 카톡 상담으로 함께 만들어요</p>
+      <h2>이런 여행을 만듭니다</h2>
+      <p class="lead">정해진 패키지 대신, 카톡으로 상담하며 일정을 같이 짭니다.</p>
     </div>
     <div class="package-grid">
 
       <div class="package-card">
-        <div class="ic">✏️</div>
-        <h3><span class="phrase">맞춤 1일 코스</span></h3>
-        <p><span class="phrase">정해진 기본 코스에 없는 곳,</span> <span class="phrase">또는 여러 곳을 조합한</span> <span class="phrase">맞춤 1일 여행.</span> <span class="phrase">영화·드라마 촬영지,</span> <span class="phrase">위스키 증류소 투어,</span> <span class="phrase">어르신 동반 무리 없는 코스</span> 등.</p>
+        <div class="icon ic-box"><svg class="ic"><use href="#i-pencil"></use></svg></div>
+        <h3>맞춤 1일 코스</h3>
+        <p>정해진 기본 코스에 없는 곳, 또는 여러 곳을 조합한 맞춤 1일 여행. 영화·드라마 촬영지, 위스키 증류소 투어, 어르신 동반 무리 없는 코스 등.</p>
         <ul>
-          <li><span class="phrase">가족 구성 / 체력 / 관심사 반영</span></li>
-          <li><span class="phrase">아이·어르신 동반 시</span> <span class="phrase">동선 조정</span></li>
-          <li><span class="phrase">식당·카페 추천 함께</span></li>
+          <li>가족 구성 / 체력 / 관심사 반영</li>
+          <li>아이·어르신 동반 시 동선 조정</li>
+          <li>식당·카페 추천 함께</li>
         </ul>
-        <a href="javascript:void(0)" onclick="inquireCustomCard('oneday')" class="price-tag inquiry-tag">💬 이 코스 문의</a>
+        <a href="javascript:void(0)" onclick="inquireCustomCard('oneday')" class="price-tag inquiry-tag">이 코스 문의</a>
       </div>
 
       <div class="package-card">
-        <div class="ic">🗓️</div>
-        <h3><span class="phrase">2박 3일 ~ 장기 여행</span></h3>
-        <p><span class="phrase">아일랜드 전국 여행 플랜.</span> <span class="phrase">모허·딩글·코네마라·자이언트 코즈웨이</span>를 <span class="phrase">한 번에 도는 일정.</span> <span class="phrase">숙소·식당 추천까지.</span></p>
+        <div class="icon ic-box"><svg class="ic"><use href="#i-calendar"></use></svg></div>
+        <h3>2박 3일 ~ 장기 여행</h3>
+        <p>아일랜드 전국 여행 플랜. 모허·딩글·코네마라·자이언트 코즈웨이를 한 번에 도는 일정. 숙소·식당 추천까지.</p>
         <ul>
-          <li><span class="phrase">2박 3일 · 4박 5일 · 일주일 가능</span></li>
-          <li><span class="phrase">운전 + 가이딩 + 한국어 안내</span></li>
-          <li><span class="phrase">숙소 추천·예약 대행 가능</span></li>
+          <li>2박 3일 · 4박 5일 · 일주일 가능</li>
+          <li>운전 + 가이딩 + 한국어 안내</li>
+          <li>숙소 추천·예약 대행 가능</li>
         </ul>
-        <a href="javascript:void(0)" onclick="inquireCustomCard('long')" class="price-tag inquiry-tag">💬 장기 여행 문의</a>
+        <a href="javascript:void(0)" onclick="inquireCustomCard('long')" class="price-tag inquiry-tag">장기 여행 문의</a>
       </div>
 
       <div class="package-card">
-        <div class="ic">⛪</div>
-        <h3><span class="phrase">아일랜드 성지순례</span> <span class="phrase">· 피정</span></h3>
-        <p><span class="phrase">성지순례는 별도 페이지에서</span> <span class="phrase">6개 프로그램으로 정리해 두었어요.</span> <span class="phrase">대전교구 성지순례 가이드 경력으로</span> <span class="phrase">한국어 순례 동행을 맡습니다.</span></p>
+        <div class="icon ic-box"><svg class="ic"><use href="#i-church"></use></svg></div>
+        <h3>아일랜드 성지순례 · 피정</h3>
+        <p>성지순례는 별도 페이지에 6개 프로그램으로 정리해 두었습니다. 대전교구 성지순례단을 안내한 경험으로 한국어 순례 동행을 맡습니다.</p>
         <ul>
-          <li><span class="phrase">더블린 시티 도보 성지순례</span></li>
-          <li><span class="phrase">레지오 마리애 성지순례</span> <span class="phrase">(Legion of Mary)</span></li>
-          <li><span class="phrase">녹(Knock) 성모성지 순례</span></li>
-          <li><span class="phrase">아일랜드 서부 성지순례</span> <span class="phrase">(Kylemore·Knock)</span></li>
-          <li><span class="phrase">아일랜드 피정 프로그램</span></li>
-          <li><span class="phrase">1주일 아일랜드 성지순례</span></li>
+          <li>더블린 시티 도보 성지순례</li>
+          <li>레지오 마리애 성지순례 (Legion of Mary)</li>
+          <li>녹 성모성지 (Knock Shrine) 순례</li>
+          <li>아일랜드 서부 성지순례 (Kylemore·Knock)</li>
+          <li>아일랜드 피정 프로그램</li>
+          <li>맞춤형 성지순례 코스 구상 (3일·5일·9일)</li>
         </ul>
-        <a href="pilgrimage.html" class="price-tag inquiry-tag">⛪ 순례 프로그램 보기</a>
+        <a href="pilgrimage.html" class="price-tag inquiry-tag">순례 프로그램 보기</a>
       </div>
 
       <div class="package-card">
-        <div class="ic">📰</div>
-        <h3><span class="phrase">기자단·취재 동행</span></h3>
-        <p><span class="phrase">한국 언론사·기자단</span> <span class="phrase">더블린 안내 경험.</span> <span class="phrase">취재 동선 짜기,</span> <span class="phrase">인터뷰 통역 보조,</span> <span class="phrase">영상·사진 촬영 동행 가능.</span></p>
+        <div class="icon ic-box"><svg class="ic"><use href="#i-file"></use></svg></div>
+        <h3>기자단·취재 동행</h3>
+        <p>한국 언론사·기자단 더블린 안내 경험. 취재 동선 짜기, 인터뷰 통역 보조, 영상·사진 촬영 동행 가능.</p>
         <ul>
-          <li><span class="phrase">한국 기자단 안내 경력</span></li>
-          <li><span class="phrase">아일랜드 한인사회 네트워크</span></li>
-          <li><span class="phrase">현지 코디네이션</span></li>
+          <li>한국 기자단 안내 경력</li>
+          <li>아일랜드 한인사회 네트워크</li>
+          <li>현지 코디네이션</li>
         </ul>
-        <a href="javascript:void(0)" onclick="inquireCustomCard('press')" class="price-tag inquiry-tag">💬 취재 동행 문의</a>
+        <a href="javascript:void(0)" onclick="inquireCustomCard('press')" class="price-tag inquiry-tag">취재 동행 문의</a>
       </div>
 
     </div>
@@ -340,25 +370,24 @@
 <section style="background:var(--bg);">
   <div class="container reveal" style="max-width:760px;">
     <div style="background:white; border:1px solid var(--border); border-radius:14px; padding:28px 30px;">
-      <h3 style="color:var(--primary); margin-bottom:12px;">가격은 상황에 맞춰 1:1로 정해드려요</h3>
+      <h3 style="color:var(--primary); margin-bottom:12px;">가격은 조건에 맞춰 따로 정합니다</h3>
       <p style="font-size:14px; line-height:1.8; color:var(--text); margin-bottom:14px;">
-맞춤 여행은 정해진 정가가 없어요. <strong>통역·동행 범위, 이동 거리, 기간(일수), 인원, 코스 난이도</strong> 등
-        여러 조건에 맞춰 가격이 달라지기 때문에, 먼저 카톡으로 편하게 문의해 주시면 상황에 맞는 견적을 함께 만들어 드립니다.
-        정해진 게 없어도 괜찮아요 — "이런 걸 해보고 싶다" 한마디면 충분합니다.
+맞춤 여행에는 정가가 없습니다. <strong>통역·동행 범위, 이동 거리, 기간, 인원, 코스 난이도</strong>에 따라 금액이 달라지기 때문입니다.
+        카톡으로 조건을 알려주시면 견적을 만들어 드립니다. "이런 걸 해보고 싶다" 정도만 있어도 시작할 수 있습니다.
       </p>
       <div style="background:var(--accent-soft); border:1px solid var(--accent); border-radius:10px; padding:16px 18px; margin-bottom:14px;">
-        <div style="font-size:12.5px; font-weight:700; color:var(--primary); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px;">🤝 함께 제공 가능한 서비스</div>
+        <div style="font-size:12.5px; font-weight:700; color:var(--primary); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px;">함께 할 수 있는 일</div>
         <ul style="list-style:none; padding:0; margin:0; font-size:13.5px; line-height:1.7; color:var(--text);">
-          <li>🗣️ <strong>통역</strong> — 병원·관공서·미팅·인터뷰 등 한국어 ↔ 영어 동행 통역</li>
-          <li>🧭 <strong>현지 안내·코디네이션</strong> — 동선 설계, 예약·문의 대행, 현장 동행</li>
-          <li>🏨 <strong>숙소 예약 대행</strong> — 일정·예산에 맞는 숙소 추천 및 예약 진행</li>
-          <li>➕ <strong>그 외 맞춤 요청</strong> — 촬영 동행, 장보기, 공항 연계 등 자유롭게 문의</li>
+          <li><strong>통역</strong> — 병원·관공서·미팅·인터뷰 등 한국어 ↔ 영어 동행 통역</li>
+          <li><strong>현지 안내·코디네이션</strong> — 동선 설계, 예약·문의 대행, 현장 동행</li>
+          <li><strong>숙소 예약 대행</strong> — 일정·예산에 맞는 숙소 추천 및 예약 진행</li>
+          <li><strong>그 외 맞춤 요청</strong> — 촬영 동행, 장보기, 공항 연계 등 자유롭게 문의</li>
         </ul>
-        <p style="font-size:12.5px; color:var(--text); margin:10px 0 0;">각 서비스별 비용은 범위·시간·난이도에 따라 달라져요. <strong>카톡으로 문의</strong> 주시면 항목별로 견적 안내드립니다.</p>
+        <p style="font-size:12.5px; color:var(--text); margin:10px 0 0;">항목별 비용은 범위·시간·난이도에 따라 다릅니다. 카톡으로 문의하시면 항목별로 견적을 드립니다.</p>
       </div>
       <p style="font-size:13.5px; line-height:1.8; color:var(--muted); margin:0;">
-        📧 <strong>공문서·기관 협력·취재 등 공식 문의</strong>는 <a href="mailto:sby05034@gmail.com" style="color:var(--accent-ink); font-weight:700;">sby05034@gmail.com</a>으로 연락 주시면 더 빠르게 도와드릴 수 있어요.<br>
-        💳 결제·취소 정책은 일반 서비스 기준(예약 시 50% 예약금 · 48시간 기준 환불)을 따르며, 코스 확정 시 안내드립니다.
+        <strong>공문서·기관 협력·취재 등 공식 문의</strong>는 <a href="mailto:sby05034@gmail.com" style="color:var(--accent-ink); font-weight:700;">sby05034@gmail.com</a>으로 보내 주세요.<br>
+        결제·취소 정책은 일반 서비스 기준(예약 시 50% 예약금 · 48시간 기준 환불)을 따르며, 코스 확정 시 안내드립니다.
       </p>
     </div>
   </div>
@@ -369,28 +398,28 @@
   <div class="container reveal">
     <div class="section-title">
       <h2>어떻게 진행되나요</h2>
-      <p class="lead">카톡 한 번이면 시작</p>
+      <p class="lead">카톡 한 번으로 시작합니다.</p>
     </div>
     <div class="step-grid">
       <div class="step-card">
         <div class="num">1</div>
         <h3>카톡 상담</h3>
-        <p>날짜·인원·관심·예산을 편하게 알려주세요. 정해진 게 없어도 OK.</p>
+        <p>날짜·인원·관심사·예산을 알려주세요. 정해진 게 없어도 됩니다.</p>
       </div>
       <div class="step-card">
         <div class="num">2</div>
         <h3>코스 제안</h3>
-        <p>2–3가지 옵션을 만들어드려요. 시간·체력·예산에 맞게 조정.</p>
+        <p>2~3가지 옵션을 만들어 드립니다. 시간·체력·예산에 맞게 조정합니다.</p>
       </div>
       <div class="step-card">
         <div class="num">3</div>
         <h3>확정·예약</h3>
-        <p>코스·날짜 확정 후 50% 선결제. 변경·취소 정책 사전 안내.</p>
+        <p>코스와 날짜를 확정하고 예약금 50%를 보냅니다. 변경·취소 조건은 미리 안내합니다.</p>
       </div>
       <div class="step-card">
         <div class="num">4</div>
         <h3>당일 동행</h3>
-        <p>약속 장소에서 만나 함께 출발. 여유 있게, 친구처럼.</p>
+        <p>약속 장소에서 만나 출발합니다. 일정은 여유 있게 잡습니다.</p>
       </div>
     </div>
   </div>
@@ -441,10 +470,10 @@
 <section style="background:var(--bg); padding:60px 20px;">
   <div class="cta-band reveal">
     <h3>맞춤 여행 상담</h3>
-    <p>아직 어떻게 가야 할지 모르겠어도 괜찮아요.<br>"이런 사람들이랑 가요" "이런 거 해보고 싶어요" 한마디면 충분합니다.</p>
+    <p>어디를 어떻게 갈지 아직 모르셔도 됩니다.<br>"이런 사람들이랑 가요", "이런 걸 해보고 싶어요" 정도면 시작할 수 있습니다.</p>
     <div class="buttons">
-      <a href="javascript:void(0)" onclick="inquireCustom()" class="btn btn-kakao">💬 카톡으로 상담 시작</a>
-      <a href="mailto:sby05034@gmail.com" class="btn btn-accent">✉️ 이메일로 문의</a>
+      <a href="javascript:void(0)" onclick="inquireCustom()" class="btn btn-kakao"><svg class="ic"><use href="#i-chat"></use></svg> 카톡으로 상담 시작</a>
+      <a href="mailto:sby05034@gmail.com" class="btn btn-accent">이메일로 문의</a>
     </div>
   </div>
 </section>
@@ -454,11 +483,11 @@
   <div class="container reveal">
     <h3>다른 서비스도 보세요</h3>
     <div class="links">
-      <a href="airport.html"><span class="icon">✈️</span>공항 픽업·드랍</a>
-      <a href="tours.html"><span class="icon">🌿</span>당일 로드트립</a>
-      <a href="moving.html"><span class="icon">🏠</span>이사·IKEA·가구 픽업</a>
-      <a href="pilgrimage.html"><span class="icon">⛪</span>성지순례·피정</a>
-      <a href="../about.html"><span class="icon">🎵</span>음악 프로젝트</a>
+      <a href="airport.html"><span class="icon"><svg class="ic"><use href="#i-plane"></use></svg></span>공항 픽업·드랍</a>
+      <a href="tours.html"><span class="icon"><svg class="ic"><use href="#i-map"></use></svg></span>당일 로드트립</a>
+      <a href="moving.html"><span class="icon"><svg class="ic"><use href="#i-truck"></use></svg></span>이사·IKEA·가구 픽업</a>
+      <a href="pilgrimage.html"><span class="icon"><svg class="ic"><use href="#i-church"></use></svg></span>성지순례·피정</a>
+      <a href="../about.html"><span class="icon"><svg class="ic"><use href="#i-music"></use></svg></span>음악 프로젝트</a>
     </div>
   </div>
 </section>
@@ -467,16 +496,16 @@
 
 <footer class="contact">
   <div class="container">
-    <h2>맞춤 상담 문의</h2>
-    <p>날짜·인원·관심사를 카톡으로 알려주세요</p>
+    <h2>맞춤 여행 문의</h2>
+    <p>날짜·인원·관심사를 카톡으로 알려주세요.</p>
     <div class="channels">
-      <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" style="background:#fee500; color:#3c1e1e; border-color:#fee500; font-weight:800;">💬 카톡 오픈채팅</a>
-      <a href="https://www.instagram.com/ireland.sosik/" target="_blank" rel="noopener">📷 인스타 DM</a>
-      <a href="mailto:sby05034@gmail.com">✉️ Email</a>
+      <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" rel="noopener" style="background:#fee500; color:#3c1e1e; border-color:#fee500; font-weight:800;">카톡 오픈채팅</a>
+      <a href="https://www.instagram.com/ireland.sosik/" target="_blank" rel="noopener">인스타그램 DM</a>
+      <a href="mailto:sby05034@gmail.com">이메일</a>
     </div>
-    <p class="small" style="margin-top:10px;"><a href="../terms.html" style="color:inherit; opacity:0.85; text-decoration:underline;">📋 이용약관 · 환불·책임 정책</a></p>
+    <p class="small" style="margin-top:10px;"><a href="../terms.html" style="color:inherit; opacity:0.85; text-decoration:underline;">이용약관 · 환불·책임 정책</a></p>
     <p class="small">© 2026 🇮🇪 Beautiful Ireland with Everyone · Andrew의 아일랜드 동행</p>
-    <p class="small" style="opacity:0.7;">최종 업데이트 <time datetime="2026-09-04">2026년 9월 4일</time></p>
+    <p class="small" style="opacity:0.7;">최종 업데이트 <time datetime="2026-09-07">2026년 9월 7일</time></p>
   </div>
 </footer>
 
