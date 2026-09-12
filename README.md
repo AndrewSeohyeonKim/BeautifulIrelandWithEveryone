@@ -59,7 +59,8 @@
 ├── images/                 # 코스·차량 사진
 ├── robots.txt              # 검색엔진 + AI 크롤러 정책
 ├── sitemap.xml             # 사이트맵
-├── llms.txt                # AI 검색용 사이트 컨텍스트
+├── llms.txt                # AI 검색용 사이트 컨텍스트 (요약)
+├── llms-full.txt           # AI용 전문 (FAQ 전체·성지순례 상세·약관·가격표)
 └── pricing.md              # 기계 판독용 전체 가격표
 ```
 
