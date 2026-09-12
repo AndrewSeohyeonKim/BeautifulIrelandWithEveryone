@@ -54,7 +54,9 @@ nav.topnav {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
+nav.topnav.is-scrolled { background: rgba(26, 41, 66, 0.985); box-shadow: 0 6px 22px rgba(10, 18, 32, 0.28); }
 nav.topnav .nav-inner {
   max-width: 1100px;
   margin: 0 auto;
@@ -307,10 +309,10 @@ header.hero.compact .hero-content { padding: 50px 20px 40px; }
   border: 1px solid rgba(201, 169, 110, 0.4);
 }
 header.hero h1 {
-  font-size: 42px;
+  font-size: clamp(34px, 5.2vw, 54px);
   font-weight: 900;
   margin-bottom: 14px;
-  letter-spacing: -1px;
+  letter-spacing: -1.4px;
   line-height: 1.2;
   color: white;
   text-shadow: 0 4px 20px rgba(0,0,0,0.65), 0 2px 6px rgba(0,0,0,0.5);
@@ -449,7 +451,7 @@ section .section-title { margin-bottom: 32px; text-align: center; }
 .eyebrow.accent { color: var(--accent-ink); }
 .eyebrow.green  { color: var(--green); }
 h1 { color: var(--primary); }
-h2 { font-size: 28px; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
+h2 { font-size: clamp(26px, 3vw, 32px); font-weight: 800; color: var(--primary); letter-spacing: -0.6px; line-height: 1.25; }
 h2 + .lead { color: var(--muted); margin-top: 6px; font-size: 15px; }
 h3 { font-size: 19px; font-weight: 700; color: var(--primary); margin-bottom: 12px; }
 h4 { font-size: 17px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
@@ -772,12 +774,12 @@ header.hero .cta { animation: heroRise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 /* 섹션이 화면에 들어올 때 부드럽게 reveal */
 html.js .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(22px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 html.js .reveal.in-view {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 /* 카드들에 staggered fade — 로드 시점이 아니라 화면에 들어올 때 발동 */
@@ -787,7 +789,7 @@ html.js .stagger-fade > * {
   transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
               transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
-html.js .stagger-fade.in-view > * { opacity: 1; transform: translateY(0); }
+html.js .stagger-fade.in-view > * { opacity: 1; transform: none; }
 html.js .stagger-fade.in-view > *:nth-child(1) { transition-delay: 0.04s; }
 html.js .stagger-fade.in-view > *:nth-child(2) { transition-delay: 0.10s; }
 html.js .stagger-fade.in-view > *:nth-child(3) { transition-delay: 0.16s; }
@@ -798,12 +800,15 @@ html.js .stagger-fade.in-view > *:nth-child(n+7) { transition-delay: 0.40s; }
 
 /* prefers-reduced-motion 대응 */
 @media (prefers-reduced-motion: reduce) {
-  body, .hero-content, html.js .reveal, html.js .stagger-fade, html.js .stagger-fade > * {
+  body, .hero-content, html.js .reveal, html.js .stagger-fade, html.js .stagger-fade > *,
+  header.hero::before, .hero-route *, .hero-scroll-cue, .float-cta, .cta-band::before, .cta-band::after,
+  .howto .step::before, .eyebrow::before, .hero-rule, .hero-chips li {
     animation: none !important;
     transition: none !important;
     opacity: 1 !important;
     transform: none !important;
   }
+  .hero-route, .hero-scroll-cue { display: none !important; }
 }
 
 /* ============================================================
@@ -1505,3 +1510,339 @@ br.brk-md { display: none; }
 .compare-table td:first-child { text-align: left; font-weight: 600; color: var(--primary); white-space: nowrap; }
 .compare-table .andrew-cell { background: var(--accent-soft); }
 .compare-table tr:last-child td { border-bottom: none; }
+
+/* ============================================================
+   모션·디자인 강화 (2026-09-12)
+   — 전 페이지 공통: 내비 스크롤 상태·진행선, 히어로 켄번즈·패럴랙스,
+     섹션 머리말 금색 선, FAQ 높이 애니메이션, CTA 밴드 글로우, 플로팅 버튼 진입.
+   — 홈 전용: 히어로 서비스 칩·경로선, 사진 서비스 카드, 예약 단계 연결선, 어두운 "다른 점" 밴드.
+   모든 모션은 prefers-reduced-motion 에서 꺼진다 (위 블록 참고).
+   ============================================================ */
+
+/* --- 내비 진행선: 스크롤한 만큼 금색 선이 길어짐 (scripts.js가 --progress 갱신) --- */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 101;
+  background: linear-gradient(90deg, var(--accent) 0%, #e2cc9a 100%);
+  transform-origin: left; transform: scaleX(var(--progress, 0));
+  pointer-events: none;
+}
+/* --- 내비 링크: 밑줄이 왼쪽에서 자라남 --- */
+nav.topnav .menu a:not(.cta-nav) { position: relative; padding: 4px 0; }
+nav.topnav .menu a:not(.cta-nav)::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px;
+  background: var(--accent); transform: scaleX(0); transform-origin: left;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+nav.topnav .menu a:not(.cta-nav):hover::after,
+nav.topnav .menu a.current::after { transform: scaleX(1); }
+nav.topnav .menu a.cta-nav { transition: background-color 0.2s, color 0.2s, transform 0.2s; }
+nav.topnav .menu a.cta-nav:hover { transform: translateY(-1px); }
+@media (max-width: 900px) { nav.topnav .menu a:not(.cta-nav)::after { display: none; } }
+
+/* --- 히어로: 배경 켄번즈(천천히 줌아웃) + 아래쪽이 다음 섹션으로 녹아듦 --- */
+@keyframes heroKen { from { transform: scale(1.10); } to { transform: scale(1); } }
+header.hero::before {
+  transform-origin: center;
+  animation: heroKen 16s cubic-bezier(0.2, 0.6, 0.2, 1) both;
+  will-change: transform;
+}
+header.hero.subpage::before { animation-duration: 12s; }
+header.hero .hero-content { will-change: transform, opacity; }
+body.page-home header.hero { min-height: min(720px, 92vh); }
+body.page-home header.hero::after {
+  background:
+    linear-gradient(180deg, rgba(26,41,66,0.35) 0%, rgba(26,41,66,0.55) 55%, rgba(26,41,66,0.88) 100%);
+}
+body.page-home header.hero .hero-content { padding-bottom: 96px; }
+
+/* 히어로 안 금색 가는 선 — 태그라인 아래에서 가운데부터 벌어짐 */
+.hero-rule {
+  display: block; width: 64px; height: 2px; margin: 18px auto 20px;
+  background: var(--accent); border-radius: 2px;
+  transform: scaleX(0); animation: ruleGrow 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both;
+}
+@keyframes ruleGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* 히어로 서비스 칩 — 예전 한 줄 텍스트 대신 다섯 개 링크 */
+.hero-chips {
+  list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+  margin: 0 0 22px; padding: 0;
+}
+.hero-chips li {
+  animation: heroRise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero-chips li:nth-child(1) { animation-delay: 0.30s; }
+.hero-chips li:nth-child(2) { animation-delay: 0.36s; }
+.hero-chips li:nth-child(3) { animation-delay: 0.42s; }
+.hero-chips li:nth-child(4) { animation-delay: 0.48s; }
+.hero-chips li:nth-child(5) { animation-delay: 0.54s; }
+.hero-chips a {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600;
+  color: #fff; text-decoration: none; text-shadow: none;
+  background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.22);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
+}
+.hero-chips a .ic { width: 15px; height: 15px; color: var(--accent); }
+.hero-chips a:hover { background: rgba(201,169,110,0.22); border-color: var(--accent); transform: translateY(-2px); }
+@media (max-width: 480px) { .hero-chips a { font-size: 12px; padding: 7px 11px; } }
+
+/* 히어로 경로선 — 하단에 그려지는 점선 루트 + 지나가는 점 (홈 전용 모션 그래픽) */
+.hero-route {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; height: 120px; width: 100%;
+  pointer-events: none; overflow: visible;
+}
+.hero-route .route-path {
+  fill: none; stroke: var(--accent); stroke-width: 1.5; stroke-linecap: round;
+  stroke-dasharray: 6 8; opacity: 0.7; vector-effect: non-scaling-stroke;
+  clip-path: inset(0 100% 0 0); animation: routeDraw 2.6s cubic-bezier(0.4, 0, 0.2, 1) 0.6s both;
+}
+@keyframes routeDraw { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+.hero-route .route-stop {
+  fill: var(--primary); stroke: var(--accent); stroke-width: 2; vector-effect: non-scaling-stroke;
+  opacity: 0; transform-box: fill-box; transform-origin: center;
+  animation: stopPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.hero-route .route-stop:nth-of-type(1) { animation-delay: 1.0s; }
+.hero-route .route-stop:nth-of-type(2) { animation-delay: 1.6s; }
+.hero-route .route-stop:nth-of-type(3) { animation-delay: 2.2s; }
+.hero-route .route-stop:nth-of-type(4) { animation-delay: 2.8s; }
+@keyframes stopPop { from { opacity: 0; transform: scale(0.3); } to { opacity: 1; transform: scale(1); } }
+.hero-route .route-dot {
+  fill: var(--accent); filter: drop-shadow(0 0 6px rgba(201,169,110,0.9));
+  offset-path: path('M0,90 C180,20 300,120 480,70 S780,20 960,80 S1140,30 1200,60');
+  offset-distance: 0%; offset-rotate: 0deg;
+  animation: dotTravel 9s linear 3.2s infinite;
+}
+@keyframes dotTravel { from { offset-distance: 0%; } to { offset-distance: 100%; } }
+@supports not (offset-path: path('M0 0 L1 1')) { .hero-route .route-dot { display: none; } }
+@media (max-width: 600px) { .hero-route { height: 80px; } .hero-route .route-path { opacity: 0.4; } }
+
+/* 스크롤 안내 — 히어로 맨 아래 작은 선이 흘러내림 */
+.hero-scroll-cue {
+  position: absolute; left: 50%; bottom: 18px; z-index: 4; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  color: rgba(255,255,255,0.7); font-size: 11px; letter-spacing: 1.5px; text-decoration: none;
+  animation: heroRise 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.1s both;
+}
+.hero-scroll-cue span { text-transform: uppercase; }
+.hero-scroll-cue i {
+  display: block; width: 1px; height: 34px; overflow: hidden; position: relative;
+  background: rgba(255,255,255,0.18);
+}
+.hero-scroll-cue i::after {
+  content: ''; position: absolute; left: 0; top: 0; width: 1px; height: 14px;
+  background: var(--accent); animation: cueDrop 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+@keyframes cueDrop { 0% { transform: translateY(-16px); opacity: 0; } 30% { opacity: 1; } 100% { transform: translateY(36px); opacity: 0; } }
+.hero-scroll-cue:hover { color: #fff; }
+@media (max-height: 600px) { .hero-scroll-cue { display: none; } }
+
+/* --- 신뢰 스트립: 히어로 위로 살짝 올라와 겹치는 카드 --- */
+body.page-home .trust-strip {
+  position: relative; z-index: 5; max-width: 1060px; margin: -34px auto 0;
+  border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow-hover);
+  padding: 20px 26px;
+}
+body.page-home .trust-strip li .ic { width: 22px; height: 22px; }
+@media (max-width: 1100px) { body.page-home .trust-strip { margin-left: 20px; margin-right: 20px; } }
+@media (max-width: 480px) { body.page-home .trust-strip { margin: -24px 14px 0; padding: 16px 18px; } }
+
+/* --- 섹션 머리말: eyebrow 옆에 금색 짧은 선이 자라남 --- */
+.section-title .eyebrow { display: inline-flex; align-items: center; gap: 10px; }
+.section-title .eyebrow::before,
+.section-title .eyebrow::after {
+  content: ''; width: 22px; height: 1.5px; background: currentColor; opacity: 0.55;
+  transform: scaleX(0); transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+.section-title .eyebrow::before { transform-origin: right; }
+.section-title .eyebrow::after { transform-origin: left; }
+html:not(.js) .section-title .eyebrow::before, html:not(.js) .section-title .eyebrow::after,
+.reveal.in-view .section-title .eyebrow::before, .reveal.in-view .section-title .eyebrow::after,
+.section-title.in-view .eyebrow::before, .section-title.in-view .eyebrow::after { transform: scaleX(1); }
+section .section-title { margin-bottom: 38px; }
+
+/* --- 서비스 카드: 사진 머리 + 겹치는 아이콘 + 빛 스침 + 살짝 기울기 --- */
+.service-card { padding: 0; perspective: 900px; transform-style: preserve-3d; }
+.service-card::before { z-index: 3; }
+.service-card .card-media {
+  position: relative; height: 172px; overflow: hidden; background: var(--primary-light);
+}
+.service-card .card-media img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transform: scale(1.02); transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), filter 0.4s;
+}
+.service-card .card-media::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(26,41,66,0.05) 40%, rgba(26,41,66,0.55) 100%);
+}
+.service-card:hover .card-media img { transform: scale(1.08); }
+.service-card .card-body { padding: 0 28px 28px; display: flex; flex-direction: column; flex: 1; }
+.service-card .icon.ic-box {
+  position: relative; z-index: 2; margin: -24px 0 14px; width: 52px; height: 52px;
+  background: #fff; border: 1px solid var(--border); box-shadow: 0 6px 16px rgba(26,41,66,0.14);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.25s, color 0.25s;
+}
+.service-card:hover .icon.ic-box { transform: translateY(-3px) rotate(-6deg); background: var(--primary); color: var(--accent); border-color: var(--primary); }
+.service-card .price { display: inline-flex; align-items: center; gap: 6px; }
+.service-card .price::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+/* 빛 스침 */
+.service-card .sheen {
+  position: absolute; inset: 0; z-index: 4; pointer-events: none;
+  background: linear-gradient(115deg, transparent 35%, rgba(255,255,255,0.22) 50%, transparent 65%);
+  transform: translateX(-120%); transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.service-card:hover .sheen { transform: translateX(120%); }
+/* 기울기 — scripts.js 가 --rx/--ry 를 넣는다 (마우스 전용) */
+.service-card { transition: box-shadow 0.3s, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s; }
+.service-card:hover { transform: translateY(-5px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); }
+@media (min-width: 701px) {
+  .service-card.wide { flex-direction: row; align-items: stretch; gap: 0; }
+  .service-card.wide .card-media { width: 300px; height: auto; flex-shrink: 0; }
+  .service-card.wide .card-media::after { background: linear-gradient(90deg, rgba(26,41,66,0.05) 50%, rgba(26,41,66,0.4) 100%); }
+  .service-card.wide .card-body { padding: 28px 30px 28px 30px; }
+  .service-card.wide .icon.ic-box { margin: 0 0 14px; }
+}
+@media (max-width: 700px) { .service-card .card-media { height: 150px; } .service-card .card-body { padding: 0 22px 24px; } }
+
+/* --- 예약 단계: 번호가 통통 튀며 나타나고, 카드 사이에 금색 화살표 --- */
+.howto { position: relative; }
+.howto .step { position: relative; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; }
+.howto .step:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--accent); }
+@media (min-width: 761px) {
+  .howto .step:not(:last-child)::after {
+    content: ''; position: absolute; top: 38px; right: -14px; width: 9px; height: 9px;
+    border-top: 2px solid var(--accent); border-right: 2px solid var(--accent);
+    transform: rotate(45deg) scale(0); opacity: 0;
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s;
+  }
+  .howto .step:nth-child(1)::after { transition-delay: 0.55s; }
+  .howto .step:nth-child(2)::after { transition-delay: 0.85s; }
+  .reveal.in-view .howto .step::after, html:not(.js) .howto .step::after { transform: rotate(45deg) scale(1); opacity: 1; }
+}
+.howto .step::before {
+  position: relative; z-index: 1;
+  transform: scale(0.4); opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s;
+}
+.howto .step:nth-child(1)::before { transition-delay: 0.30s; }
+.howto .step:nth-child(2)::before { transition-delay: 0.60s; }
+.howto .step:nth-child(3)::before { transition-delay: 0.90s; }
+.reveal.in-view .howto .step::before, html:not(.js) .howto .step::before { transform: scale(1); opacity: 1; }
+
+/* --- 어두운 밴드: "다른 점" 섹션 (네이비 위 금색) --- */
+.section-dark {
+  position: relative; overflow: hidden;
+  background: linear-gradient(160deg, var(--primary) 0%, #16233a 60%, var(--primary-light) 100%);
+  color: rgba(255,255,255,0.86);
+}
+.section-dark::before {
+  content: ''; position: absolute; width: 520px; height: 520px; right: -160px; top: -200px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,169,110,0.20) 0%, rgba(201,169,110,0) 65%);
+  pointer-events: none;
+}
+.section-dark::after {
+  content: ''; position: absolute; width: 420px; height: 420px; left: -180px; bottom: -220px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,169,110,0.12) 0%, rgba(201,169,110,0) 65%);
+  pointer-events: none;
+}
+.section-dark .container { position: relative; z-index: 1; }
+.section-dark h2 { color: #fff; }
+.section-dark .eyebrow.accent { color: var(--accent); }
+.section-dark .diff-card {
+  background: rgba(255,255,255,0.045); border-color: rgba(255,255,255,0.12); backdrop-filter: blur(4px);
+}
+.section-dark .diff-card:hover { background: rgba(255,255,255,0.08); border-color: rgba(201,169,110,0.6); box-shadow: 0 12px 30px rgba(0,0,0,0.25); transform: translateY(-4px); }
+.section-dark .diff-card h3 { color: #fff; }
+.section-dark .diff-card p { color: rgba(255,255,255,0.72); }
+.section-dark .diff-card .diff-icon { background: rgba(201,169,110,0.16); color: var(--accent); transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.25s; }
+.section-dark .diff-card:hover .diff-icon { transform: scale(1.08) rotate(-4deg); background: var(--accent); color: var(--primary); }
+.diff-card .diff-icon { transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.diff-card:hover .diff-icon { transform: scale(1.08) rotate(-4deg); }
+
+/* --- 인스타 카드: 정차지 사진 세 장 --- */
+.ig-card { flex-wrap: wrap; }
+.ig-strip {
+  flex-basis: 100%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+  margin-top: 6px; padding-top: 22px; border-top: 1px solid var(--border);
+}
+.ig-strip a { position: relative; display: block; border-radius: 10px; overflow: hidden; aspect-ratio: 4 / 3; text-decoration: none; }
+.ig-strip img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.02); transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
+.ig-strip a:hover img { transform: scale(1.08); }
+.ig-strip span {
+  position: absolute; left: 10px; bottom: 8px; color: #fff; font-size: 12px; font-weight: 700;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.6);
+}
+.ig-strip a::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(26,41,66,0.55) 100%); }
+.ig-strip span { z-index: 1; }
+@media (max-width: 480px) { .ig-strip { gap: 6px; } .ig-strip span { font-size: 11px; left: 8px; bottom: 6px; } }
+
+/* --- 음악 프로젝트: 배경 워터마크 음표 --- */
+.music-band { position: relative; overflow: hidden; }
+.music-band .watermark {
+  position: absolute; right: -40px; top: 50%; width: 320px; height: 320px; transform: translateY(-50%) rotate(-8deg);
+  color: var(--accent); opacity: 0.09; pointer-events: none; stroke-width: 1;
+}
+.music-band .container { position: relative; z-index: 1; }
+.fund-amount b { display: inline-block; }
+
+/* --- FAQ: 답이 접히고 펼쳐지는 높이 애니메이션 (scripts.js 가 .faq-a-inner 로 감싼다) --- */
+html.js .faq-a {
+  display: grid; grid-template-rows: 0fr; visibility: hidden;
+  padding-top: 0; padding-bottom: 0; border-top-color: transparent;
+  transition: grid-template-rows 0.42s cubic-bezier(0.22, 1, 0.36, 1), padding 0.3s ease, border-color 0.3s ease, visibility 0s linear 0.42s;
+}
+html.js .faq-a-inner { min-height: 0; overflow: hidden; }
+html.js .faq-item.open .faq-a {
+  grid-template-rows: 1fr; visibility: visible;
+  padding-top: 16px; padding-bottom: 18px; border-top-color: var(--border);
+  transition: grid-template-rows 0.42s cubic-bezier(0.22, 1, 0.36, 1), padding 0.3s ease, border-color 0.3s ease, visibility 0s linear 0s;
+}
+.faq-item.open { border-color: var(--accent); box-shadow: 0 6px 18px rgba(26,41,66,0.07); }
+.faq-q::after { transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), color 0.2s; }
+.faq-item:hover .faq-q::after { color: var(--primary); }
+
+/* --- CTA 밴드: 천천히 움직이는 금색 빛 --- */
+.cta-band { position: relative; overflow: hidden; isolation: isolate; }
+.cta-band::before, .cta-band::after {
+  content: ''; position: absolute; border-radius: 50%; pointer-events: none; z-index: -1;
+  background: radial-gradient(circle, rgba(201,169,110,0.28) 0%, rgba(201,169,110,0) 62%);
+}
+.cta-band::before { width: 480px; height: 480px; left: -120px; top: -180px; animation: glowA 11s ease-in-out infinite alternate; }
+.cta-band::after  { width: 380px; height: 380px; right: -120px; bottom: -160px; animation: glowB 13s ease-in-out infinite alternate; }
+@keyframes glowA { from { transform: translate(0, 0) scale(1); } to { transform: translate(90px, 50px) scale(1.15); } }
+@keyframes glowB { from { transform: translate(0, 0) scale(1.1); } to { transform: translate(-80px, -50px) scale(0.95); } }
+
+/* --- 버튼 눌림감 --- */
+.btn:active, header.hero .cta a:active, .float-cta a:active { transform: translateY(0) scale(0.98); }
+.btn { position: relative; }
+
+/* --- 플로팅 카톡 버튼: 1초 뒤 아래에서 올라오고, 한 번 잔물결 --- */
+@keyframes floatIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes ripple { 0% { box-shadow: 0 0 0 0 rgba(254,229,0,0.55); } 100% { box-shadow: 0 0 0 16px rgba(254,229,0,0); } }
+.float-cta { animation: floatIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.9s both; }
+.float-cta a.kakao { animation: ripple 1.6s ease-out 1.8s 2; }
+
+/* --- 푸터 위 금색 머리선 --- */
+footer.contact { position: relative; }
+footer.contact::before {
+  content: ''; position: absolute; left: 0; right: 0; top: 0; height: 3px;
+  background: linear-gradient(90deg, transparent 0%, var(--accent) 50%, transparent 100%); opacity: 0.7;
+}
+
+/* --- 서브페이지 자동 리빌 (scripts.js 가 .reveal 을 붙인다) — 카드 그리드의 자식 stagger --- */
+html.js .auto-stagger > * {
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+html.js .auto-stagger.in-view > * { opacity: 1; transform: none; }
+html.js .auto-stagger.in-view > *:nth-child(1) { transition-delay: 0.04s; }
+html.js .auto-stagger.in-view > *:nth-child(2) { transition-delay: 0.10s; }
+html.js .auto-stagger.in-view > *:nth-child(3) { transition-delay: 0.16s; }
+html.js .auto-stagger.in-view > *:nth-child(4) { transition-delay: 0.22s; }
+html.js .auto-stagger.in-view > *:nth-child(5) { transition-delay: 0.28s; }
+html.js .auto-stagger.in-view > *:nth-child(n+6) { transition-delay: 0.34s; }
+@media (prefers-reduced-motion: reduce) {
+  html.js .auto-stagger > * { opacity: 1 !important; transform: none !important; transition: none !important; }
+}

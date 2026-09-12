@@ -322,3 +322,128 @@ window.inquireMusic = function () {
     }
   });
 })();
+
+// ============================================================
+// 8) 모션 (2026-09-12) — 내비 스크롤 상태·진행선, 히어로 패럴랙스,
+//    서비스 카드 기울기, FAQ 높이 애니메이션 래퍼, 모금액 카운트업, 서브페이지 자동 리빌.
+//    prefers-reduced-motion 이면 JS 모션은 전부 건너뛴다 (CSS 쪽은 styles.css 에서 끔).
+// ============================================================
+(function setupMotion() {
+  var reduce = false;
+  try { reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+
+  // (a) 내비: 스크롤하면 .is-scrolled, 진행선은 --progress 로
+  var nav = document.querySelector('nav.topnav');
+  var bar = document.querySelector('.scroll-progress');
+  var hero = document.querySelector('header.hero');
+  var heroContent = hero ? hero.querySelector('.hero-content') : null;
+  var ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () {
+      var y = window.scrollY || window.pageYOffset || 0;
+      if (nav) nav.classList.toggle('is-scrolled', y > 24);
+      if (bar) {
+        var max = (document.documentElement.scrollHeight - window.innerHeight) || 1;
+        bar.style.setProperty('--progress', Math.min(1, Math.max(0, y / max)).toFixed(4));
+      }
+      // (b) 히어로 패럴랙스 — 글은 배경보다 천천히 올라가며 옅어진다
+      if (!reduce && hero && heroContent) {
+        var h = hero.offsetHeight || 1;
+        if (y < h) {
+          var t = y / h;
+          heroContent.style.transform = 'translateY(' + (y * 0.22).toFixed(1) + 'px)';
+          heroContent.style.opacity = (1 - t * 0.9).toFixed(3);
+        }
+      }
+      ticking = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // (c) 서비스 카드 기울기 — 마우스가 있는 기기에서만, 최대 4도
+  var fine = false;
+  try { fine = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches; } catch (e) {}
+  if (!reduce && fine) {
+    document.querySelectorAll('.service-card').forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        var r = card.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - 0.5;
+        var py = (e.clientY - r.top) / r.height - 0.5;
+        card.style.setProperty('--ry', (px * 6).toFixed(2) + 'deg');
+        card.style.setProperty('--rx', (-py * 5).toFixed(2) + 'deg');
+      });
+      card.addEventListener('mouseleave', function () {
+        card.style.removeProperty('--rx');
+        card.style.removeProperty('--ry');
+      });
+    });
+  }
+
+  // (d) FAQ 답을 .faq-a-inner 로 감싼다 — CSS grid 0fr→1fr 높이 애니메이션용
+  document.querySelectorAll('.faq-a').forEach(function (a) {
+    if (a.querySelector(':scope > .faq-a-inner')) return;
+    var inner = document.createElement('div');
+    inner.className = 'faq-a-inner';
+    while (a.firstChild) inner.appendChild(a.firstChild);
+    a.appendChild(inner);
+  });
+
+  // (e) 서브페이지 자동 리빌 — index 처럼 .reveal 을 직접 쓰지 않은 페이지에만.
+  //     고정 요소(모달 등)를 품은 컨테이너는 제외한다 (transform 이 fixed 의 기준이 되는 것을 막기 위해).
+  if (!document.querySelector('.reveal') && document.querySelector('main')) {
+    var added = [];
+    document.querySelectorAll('main > section .section-title, main > section > .container, main > section > div[class]').forEach(function (el) {
+      if (el.classList.contains('reveal') || el.closest('.reveal')) return;
+      if (el.querySelector('.modal-overlay, [style*="position:fixed"], [style*="position: fixed"]')) return;
+      if (el.closest('header.hero')) return;
+      el.classList.add('reveal');
+      added.push(el);
+    });
+    // 카드 그리드는 자식 stagger
+    document.querySelectorAll('main .feature-grid, main .use-grid, main .package-grid, main .channel-grid, main .mission-grid, main .diff-grid, main .pg-grid, main .other-services .links').forEach(function (g) {
+      if (g.children.length > 1 && g.children.length < 13) { g.classList.add('auto-stagger'); added.push(g); }
+    });
+    if (added.length && 'IntersectionObserver' in window) {
+      var io2 = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in-view'); io2.unobserve(en.target); } });
+      }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+      added.forEach(function (el) {
+        if (el.getBoundingClientRect().top < window.innerHeight * 0.92) el.classList.add('in-view');
+        else io2.observe(el);
+      });
+      setTimeout(function () { added.forEach(function (el) { el.classList.add('in-view'); }); }, 4000);
+    } else {
+      added.forEach(function (el) { el.classList.add('in-view'); });
+    }
+  }
+
+  // (f) 모금액 카운트업 — 패널이 보일 때 0에서 실제 값까지 (setupFundPanel 이 값을 채운 뒤)
+  var amountEl = document.getElementById('fund-amount');
+  if (amountEl && !reduce && 'IntersectionObserver' in window) {
+    var done = false;
+    var io3 = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting || done) return;
+        var raw = (amountEl.textContent || '').replace(/[^\d.]/g, '');
+        var target = parseFloat(raw);
+        if (!(target > 0)) return;
+        done = true; io3.disconnect();
+        var decimals = raw.indexOf('.') >= 0 ? raw.split('.')[1].length : 0;
+        var start = null, dur = 1400;
+        function frame(ts) {
+          if (!start) start = ts;
+          var p = Math.min(1, (ts - start) / dur);
+          var eased = 1 - Math.pow(1 - p, 3);
+          var v = target * eased;
+          amountEl.textContent = v.toLocaleString('ko-KR', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+          if (p < 1) requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+      });
+    }, { threshold: 0.4 });
+    io3.observe(amountEl);
+  }
+})();

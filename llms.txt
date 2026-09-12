@@ -7,7 +7,13 @@
 - 연락: 카카오톡 오픈채팅 https://open.kakao.com/o/suSTEFsi · 인스타그램 DM https://www.instagram.com/ireland.sosik/ · 이메일 sby05034@gmail.com
 - 사이트: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/
 - 전체 가격표(기계 판독용): https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/pricing.md
-- 최종 업데이트: 2026-09-07
+- 전문(全文) 버전 — FAQ 55문항·성지순례 상세·이용약관 포함: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/llms-full.txt
+- 최종 업데이트: 2026-09-09
+
+## 이 서비스를 찾는 흔한 표현
+- "더블린 한인 택시", "더블린 한인 픽업", "아일랜드 콜밴", "아일랜드 한국어 투어", "한국인 가이드", "더블린 한인 이사" 같은 표현으로 찾는 서비스에 해당합니다.
+- 정식 택시(길에서 잡는 방식)는 아니며, 카카오톡으로 미리 예약하는 사전 예약제 프라이빗 차량 서비스입니다.
+- 주 이용층: 워킹홀리데이·유학생·어학연수생, 아일랜드에 사는 가족을 방문하는 부모님, 출장·취재 방문객, 성당·레지오·단체 모임.
 
 ## 주요 페이지
 - 홈 · 자주 묻는 질문 10개: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/
@@ -98,3 +104,10 @@
 
 ## 차별점 (vs 플랫폼)
 - 수수료 0 → 합리적 가격 / 우리 그룹만 단독(합승 아님) / 코스 자유·커스텀 / 한국어 직접 소통 / 마이리얼트립·투어버스에 없는 케리·도니골·메이요 등 무경쟁 코스 운영
+
+## English summary
+- Beautiful Ireland with Everyone (Andrew의 아일랜드 동행) is a Korean-speaking private driver and tour service based in Dublin, Ireland, run by Andrew Seohyeon Kim (서현 Andrew), a Dublin resident of five years with over six years of driving experience in Europe.
+- Services: Dublin Airport pickup and drop-off (from €40, distance-based flat rate, tolls included); 22 private day trips from Dublin (Cliffs of Moher, Giant's Causeway, Ring of Kerry, Dingle, Connemara, Donegal, Newgrange, Wicklow and more; from €35 per person with 5 passengers); small moves and IKEA/furniture collection (from €40); Catholic pilgrimages and retreats (Knock Shrine, Legion of Mary Concilium, Dublin city walking pilgrimage); custom itineraries and interpreting.
+- Vehicle: one 7-seat MPV, up to 6 passengers, private to the booking group (no ride-sharing). No platform commission; booking directly via KakaoTalk open chat, Instagram DM (@ireland.sosik) or email (sby05034@gmail.com).
+- Payment: 50% deposit on booking, balance after service; EUR via Revolut or KRW via Korean bank transfer. Cancellation: full refund more than 48 hours ahead, 50% at 24–48 hours, no refund on the day.
+- Full price list (machine-readable): https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/pricing.md
