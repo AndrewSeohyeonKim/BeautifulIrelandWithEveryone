@@ -191,7 +191,7 @@
       }
     }
   ],
-  "dateModified": "2026-09-12"
+  "dateModified": "2026-09-14"
 }
 </script>
 </head>
@@ -308,8 +308,44 @@
   </div>
 </section>
 
-<!-- FEATURES -->
+<!-- FLOW — 착륙부터 숙소까지 -->
 <section style="background:var(--bg);">
+  <div class="container reveal">
+    <div class="section-title">
+      <h2>착륙부터 숙소 앞까지</h2>
+      <p class="lead">도착 픽업은 이 순서로 진행됩니다. 출발 드랍은 반대 순서로 숙소 앞에서 출발층까지 갑니다.</p>
+    </div>
+    <ol class="timeline stagger-fade">
+      <li>
+        <div class="icon ic-box"><svg class="ic"><use href="#i-plane"></use></svg></div>
+        <h3>착륙</h3>
+        <p>예약 때 받은 항공편명으로 도착 시각을 확인하고 공항에서 기다립니다. 항공편이 늦어지면 추가 대기료 없이 시간을 맞춥니다.</p>
+        <span class="tl-tag">지연 시 추가 요금 없음</span>
+      </li>
+      <li>
+        <div class="icon ic-box"><svg class="ic"><use href="#i-message"></use></svg></div>
+        <h3>짐을 찾고 카톡</h3>
+        <p>수하물을 찾은 뒤 카톡을 보내 주시면 만나는 지점을 안내합니다. 기본은 터미널 밖 지정 픽업 지점이며 도보 약 2분입니다.</p>
+        <span class="tl-tag">게이트 마중 옵션 +€5</span>
+      </li>
+      <li>
+        <div class="icon ic-box"><svg class="ic"><use href="#i-truck"></use></svg></div>
+        <h3>차에 짐 싣기</h3>
+        <p>7인승 MPV에 30인치 캐리어 4~5개가 실립니다. 짐은 함께 싣고, 좌석은 인원에 맞춰 미리 정리해 둡니다.</p>
+        <span class="tl-tag">최대 6인 탑승</span>
+      </li>
+      <li>
+        <div class="icon ic-box"><svg class="ic"><use href="#i-home"></use></svg></div>
+        <h3>숙소 앞 도착</h3>
+        <p>이동 중에는 도로 사정이나 첫날 준비할 것을 한국어로 물어볼 수 있습니다. 숙소 앞에 내린 뒤 잔금을 정산합니다.</p>
+        <span class="tl-tag">톨비 · 주차비 포함</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section style="background:white;">
   <div class="container reveal">
     <div class="section-title">
       <h2>이 픽업이 다른 점</h2>
@@ -530,6 +566,14 @@
       <div style="display:flex; justify-content:space-between; padding:7px 0; font-size:14px;"><span style="color:var(--primary);">50km 초과분 (장거리)</span><strong style="color:var(--primary);">+€0.8/km</strong></div>
     </div>
 
+    <!-- 거리별 요금 그래프 -->
+    <div class="km-chart">
+      <h3>주행거리에 따라 요금이 이렇게 올라갑니다</h3>
+      <p class="km-sub">10km까지는 기본료 €40, 그 뒤로는 km당 €1.5, 50km를 넘으면 km당 €0.8입니다. 점 위에 마우스를 올리면 대표 지역이 보입니다.</p>
+      <svg viewBox="0 0 640 284" role="img" aria-labelledby="kmc-title" xmlns="http://www.w3.org/2000/svg"><title id="kmc-title">주행거리별 기본요금 그래프. 10km까지 €40, 50km €100, 이후 km당 €0.8 추가.</title><rect class="band" x="64.0" y="24" width="91.3" height="212"/><rect class="band" x="520.7" y="24" width="91.3" height="212"/><line class="grid" x1="64" y1="200.7" x2="612" y2="200.7"/><text x="56" y="204.7" text-anchor="end">€20</text><line class="grid" x1="64" y1="165.3" x2="612" y2="165.3"/><text x="56" y="169.3" text-anchor="end">€40</text><line class="grid" x1="64" y1="130.0" x2="612" y2="130.0"/><text x="56" y="134.0" text-anchor="end">€60</text><line class="grid" x1="64" y1="94.7" x2="612" y2="94.7"/><text x="56" y="98.7" text-anchor="end">€80</text><line class="grid" x1="64" y1="59.3" x2="612" y2="59.3"/><text x="56" y="63.3" text-anchor="end">€100</text><line class="axis" x1="64" y1="236" x2="612" y2="236"/><text x="64.0" y="254" text-anchor="middle">0</text><text x="155.3" y="254" text-anchor="middle">10</text><text x="246.7" y="254" text-anchor="middle">20</text><text x="338.0" y="254" text-anchor="middle">30</text><text x="429.3" y="254" text-anchor="middle">40</text><text x="520.7" y="254" text-anchor="middle">50</text><text x="612.0" y="254" text-anchor="middle">60</text><text x="338.0" y="280" text-anchor="middle">편도 주행거리 (km)</text><text class="band-lab" x="109.7" y="38" text-anchor="middle">기본료</text><text class="band-lab" x="338.0" y="38" text-anchor="middle">+€1.5/km</text><text class="band-lab" x="566.4" y="38" text-anchor="middle">+€0.8/km</text><path class="line" d="M64.0,165.3 L155.3,165.3 L520.7,59.3 L612.0,45.2"/><circle class="pt" cx="155.3" cy="165.3" r="5"><title>10km D9·Swords → €40</title></circle><circle class="pt" cx="182.7" cy="158.3" r="5"><title>13km D15·시내 → €44</title></circle><circle class="pt" cx="283.2" cy="128.2" r="5"><title>24km D12·Dun Laoghaire → €61</title></circle><circle class="pt" cx="338.0" cy="112.3" r="5"><title>30km Bray·Maynooth → €70</title></circle><circle class="pt" cx="520.7" cy="59.3" r="5"><title>50km Wicklow Town → €100</title></circle><text class="lab" x="155.3" y="189.3" text-anchor="middle">10km €40</text><text class="lab" x="346.0" y="136.3" text-anchor="start">30km €70</text><text class="lab" x="512.7" y="83.3" text-anchor="end">50km €100</text></svg>
+      <p class="km-foot">편도 기본요금 기준. 도착 픽업 주차비 +€5, 야간·인원·짐 추가 요금은 계산기에서 더해집니다.</p>
+    </div>
+
     <div class="price-table-wrap" style="max-width:640px; margin:0 auto;">
       <table class="price-table keep-table">
         <thead>
@@ -657,9 +701,9 @@
       <a href="https://www.instagram.com/ireland.sosik/" target="_blank" rel="noopener">인스타그램 DM</a>
       <a href="mailto:sby05034@gmail.com">이메일</a>
     </div>
-    <p class="small" style="margin-top:10px;"><a href="../terms.html" style="color:inherit; opacity:0.85; text-decoration:underline;">이용약관 · 환불·책임 정책</a></p>
+    <p class="small" style="margin-top:10px;"><a href="../terms.html" style="color:inherit; opacity:0.85; text-decoration:underline;">이용약관 · 환불·책임 정책</a> · <a href="../photo-credits.html" style="color:inherit; opacity:0.85; text-decoration:underline;">사진 출처</a></p>
     <p class="small">© 2026 🇮🇪 Beautiful Ireland with Everyone · Andrew의 아일랜드 동행</p>
-    <p class="small" style="opacity:0.7;">최종 업데이트 <time datetime="2026-09-12">2026년 9월 12일</time></p>
+    <p class="small" style="opacity:0.7;">최종 업데이트 <time datetime="2026-09-14">2026년 9월 14일</time></p>
   </div>
 </footer>
 
