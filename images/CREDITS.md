@@ -34,3 +34,4 @@
 | images/pilgrimage/st-teresas.jpg | Jcmurphy at English Wikipedia | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:The_Dead_Christ_St._teresa's_Dublin.jpg |
 | images/pilgrimage/whitefriar-street.jpg | Diliff | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Whitefriar_Street_Carmelite_Church_Nave,_Dublin,_Ireland_-_Diliff.jpg |
 | images/wicklow/avoca-mills.jpg | Eirian Evans | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Avoca_Mill_-_geograph.org.uk_-_6405181.jpg |
+| images/wicklow/sally-gap.jpg | Michael Dibb | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:The_road_to_Sally_Gap_-_geograph.org.uk_-_1927570.jpg |
