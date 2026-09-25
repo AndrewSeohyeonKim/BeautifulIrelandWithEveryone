@@ -78,6 +78,9 @@
   .addon-options .addon-row input[type="checkbox"] { margin-top:3px; transform:scale(1.15); }
   .addon-options .addon-row .addon-label { flex:1; font-size:13.5px; color:var(--primary); line-height:1.5; }
   .addon-options .addon-row .addon-label .price-inline { color:var(--accent-ink); font-weight:800; }
+  .crew-note { max-width:760px; margin:28px auto 0; background:#fff; border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:18px 20px; }
+  .crew-note h3 { font-size:16px; font-weight:800; color:var(--primary); margin:0 0 6px; }
+  .crew-note p { font-size:14px; color:var(--text); line-height:1.75; margin:0; }
   .included-banner { background:var(--accent-soft); border:1.5px solid var(--accent); border-radius:10px; padding:12px 14px; margin-top:6px; margin-bottom:12px; font-size:13px; color:var(--primary); }
   .included-banner strong { color:var(--primary); }
   .km-quick { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px; }
@@ -241,7 +244,15 @@
       "name": "짐 운반은 도와주시나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "가벼운 박스·캐리어: 기본 도움 포함입니다.\n\n\n 큰 가구·매트리스: 차량에 적재 가능한 범위 내에서 Andrew가 함께 들어드립니다 — 추가 비용 없이 기본 포함입니다. 적재 한도를 넘는 양은 반복 이동 이사로 안내드립니다.\n\n\n 반복 이동 이사: 짐 운반 도움이 기본 포함됩니다. 가구·매트리스·박스 등 모든 짐을 함께 운반해 드립니다."
+        "text": "가벼운 박스·캐리어: 기본 도움 포함입니다.\n\n\n 큰 가구·매트리스: 차량에 적재 가능한 범위 내에서 Andrew가 함께 들어드립니다 — 추가 비용 없이 기본 포함입니다. 적재 한도를 넘는 양은 반복 이동 이사로 안내드립니다.\n\n\n 반복 이동 이사: 짐 운반 도움이 기본 포함됩니다. 가구·매트리스·박스 등 모든 짐을 함께 운반해 드립니다.\n\n\n 두 사람이 필요한 이사: 운반 인력 1명을 추가한 2인 작업도 가능합니다. 요금은 이사 요금 × 1.5입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "두 명이 함께 옮겨 줄 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, 가능합니다. 무거운 가구나 계단이 많은 집처럼 두 사람이 필요한 이사는 운반 인력 1명을 추가해 2인이 함께 작업합니다.\n\n\n 2인 작업 요금: 이사 요금 × 1.5\n\n 거리당 정찰가로 계산한 요금(반복 이동 배수 포함)에 1.5배를 적용합니다.\n\n\n 예시 (편도 10km 이내 · 1회 이동 기본료 €40)\n\n · 한 번에 옮기는 경우: €40 × 1.5 = €60\n\n · 두 번 왕복하는 경우: €40 × 1.8 × 1.5 = €108\n\n · 세 번 이상 왕복하는 경우: €40 × 2.5 × 1.5 = €150\n\n\n 예약금과 최종금액: 짐 양에 따라 당일 이동 횟수가 달라질 수 있어, 예약금은 2인 작업 1회 이동 요금의 50%(위 예시에서 €30)를 받습니다. 당일 실제 이동 횟수로 최종금액이 정해지고, 잔금은 최종금액에서 예약금을 뺀 금액입니다.\n\n\n 2인 작업이 필요한지 모르겠으면 짐 사진과 건물 구조(층수, 엘리베이터 유무)를 카톡으로 보내 주세요."
       }
     },
     {
@@ -301,7 +312,7 @@
       }
     }
   ],
-  "dateModified": "2026-09-14"
+  "dateModified": "2026-09-25"
 }
 </script>
 </head>
@@ -428,6 +439,10 @@
       </div>
 
 
+    </div>
+    <div class="crew-note">
+      <h3>두 사람이 필요한 이사는 2인 작업으로</h3>
+      <p>무거운 가구가 있거나 계단이 많은 집은 운반 인력 1명을 추가해 두 사람이 함께 옮깁니다. 요금은 위 두 가지 이사 요금에 <strong>1.5배</strong>를 적용합니다. 예를 들어 편도 10km 이내라면 한 번에 옮길 때 €60, 두 번 왕복하면 €108입니다.</p>
     </div>
   </div>
 </section>
@@ -558,6 +573,17 @@
 
           <div class="row single">
             <div class="field">
+              <label for="mv-crew">작업 인원</label>
+              <select id="mv-crew" onchange="calcMoving()">
+                <option value="1" selected>1인 — Andrew 혼자 운반 (기본)</option>
+                <option value="2">2인 — 운반 인력 1명 추가 (요금 × 1.5)</option>
+              </select>
+              <div class="hint">무거운 가구가 있거나 계단이 많아 두 사람이 필요하면 2인을 선택하세요.</div>
+            </div>
+          </div>
+
+          <div class="row single">
+            <div class="field">
               <label for="mv-km">출발지 → 도착지 거리 (편도, km)</label>
               <div class="km-quick">
                 <button type="button" data-km="5" onclick="setMvKm(5)">5km</button>
@@ -604,6 +630,7 @@
             <div class="rate-row"><span class="rate-key">기본료 (10km 이내)</span><span class="rate-val">€40 (최저가)</span></div>
             <div class="rate-row"><span class="rate-key">10–50km 추가분</span><span class="rate-val">+€1.5/km</span></div>
             <div class="rate-row"><span class="rate-key">50km 초과분 (장거리)</span><span class="rate-val">+€0.8/km</span></div>
+            <div class="rate-row"><span class="rate-key">2인 작업 (운반 인력 1명 추가)</span><span class="rate-val">요금 × 1.5</span></div>
           </div>
 
           <div class="included-banner" id="mv-help-small" style="display:block;">
@@ -656,7 +683,7 @@
       <h3>주행거리에 따라 요금이 이렇게 올라갑니다</h3>
       <p class="km-sub">10km까지는 기본료 €40, 그 뒤로는 km당 €1.5, 50km를 넘으면 km당 €0.8입니다. 점선은 각 점이 가리키는 거리와 요금입니다.</p>
       <svg viewBox="0 0 640 284" role="img" aria-label="주행거리별 기본요금 그래프. 10km까지 €40, 20km €55, 30km €70, 40km €85, 50km €100, 이후 km당 €0.8 추가." xmlns="http://www.w3.org/2000/svg"><rect class="band" x="64.0" y="24" width="91.3" height="212"/><rect class="band" x="520.7" y="24" width="91.3" height="212"/><line class="grid" x1="64" y1="200.7" x2="612" y2="200.7"/><text x="56" y="204.7" text-anchor="end">€20</text><line class="grid" x1="64" y1="165.3" x2="612" y2="165.3"/><text x="56" y="169.3" text-anchor="end">€40</text><line class="grid" x1="64" y1="130.0" x2="612" y2="130.0"/><text x="56" y="134.0" text-anchor="end">€60</text><line class="grid" x1="64" y1="94.7" x2="612" y2="94.7"/><text x="56" y="98.7" text-anchor="end">€80</text><line class="grid" x1="64" y1="59.3" x2="612" y2="59.3"/><text x="56" y="63.3" text-anchor="end">€100</text><line class="axis" x1="64" y1="236" x2="612" y2="236"/><text x="64.0" y="254" text-anchor="middle">0</text><text x="155.3" y="254" text-anchor="middle">10</text><text x="246.7" y="254" text-anchor="middle">20</text><text x="338.0" y="254" text-anchor="middle">30</text><text x="429.3" y="254" text-anchor="middle">40</text><text x="520.7" y="254" text-anchor="middle">50</text><text x="612.0" y="254" text-anchor="middle">60</text><text x="338.0" y="280" text-anchor="middle">편도 주행거리 (km)</text><text class="band-lab" x="109.7" y="38" text-anchor="middle">기본료</text><text class="band-lab" x="338.0" y="38" text-anchor="middle">+€1.5/km</text><text class="band-lab" x="566.4" y="38" text-anchor="middle">+€0.8/km</text><line class="guide" x1="155.3" y1="165.3" x2="155.3" y2="236"/><line class="guide" x1="246.7" y1="138.8" x2="246.7" y2="236"/><line class="guide" x1="338.0" y1="112.3" x2="338.0" y2="236"/><line class="guide" x1="429.3" y1="85.8" x2="429.3" y2="236"/><line class="guide" x1="520.7" y1="59.3" x2="520.7" y2="236"/><path class="line" d="M64.0,165.3 L155.3,165.3 L520.7,59.3 L612.0,45.2"/><circle class="pt" cx="155.3" cy="165.3" r="5"><title>10km → €40</title></circle><circle class="pt" cx="246.7" cy="138.8" r="5"><title>20km → €55</title></circle><circle class="pt" cx="338.0" cy="112.3" r="5"><title>30km → €70</title></circle><circle class="pt" cx="429.3" cy="85.8" r="5"><title>40km → €85</title></circle><circle class="pt" cx="520.7" cy="59.3" r="5"><title>50km → €100</title></circle><text class="lab" x="155.3" y="153.3" text-anchor="middle">€40</text><text class="lab" x="246.7" y="126.8" text-anchor="middle">€55</text><text class="lab" x="338.0" y="100.3" text-anchor="middle">€70</text><text class="lab" x="429.3" y="73.8" text-anchor="middle">€85</text><text class="lab" x="518.3" y="91.3" text-anchor="middle">€100</text></svg>
-      <p class="km-foot">한 번 이동 기준. 반복 이동 이사는 이 금액에 1.8배 또는 2.5배를 곱하고, 톨비·유료 주차비는 발생 시 실비로 더합니다.</p>
+      <p class="km-foot">한 번 이동 기준. 반복 이동 이사는 이 금액에 1.8배 또는 2.5배를 곱하고, 2인 작업은 여기에 1.5배를 더 적용합니다. 톨비·유료 주차비는 발생 시 실비로 더합니다.</p>
     </div>
 
     <div class="price-table-wrap">
@@ -683,6 +710,13 @@
           <tr><td>2회 왕복 (1bed 자취집)</td><td class="price">× 1.8</td></tr>
           <tr><td>3회+ 왕복 (큰 이사)</td><td class="price">× 2.5</td></tr>
           <tr><td colspan="2" style="color:var(--muted); font-style:italic; padding:6px 8px !important; font-size:11px !important;">예: 20km 2회 왕복 → €55 × 1.8 ≈ €99 · 30km 2회 → €70 × 1.8 ≈ €126</td></tr>
+
+          <tr><td colspan="2" style="background:var(--accent-soft); font-weight:800; color:var(--primary);">2인 작업 (운반 인력 1명 추가)</td></tr>
+          <tr><td>이사 요금에 적용</td><td class="price">× 1.5</td></tr>
+          <tr><td>10km 이내 · 한 번에 옮기기</td><td class="price">€60</td></tr>
+          <tr><td>10km 이내 · 2회 왕복</td><td class="price">€108</td></tr>
+          <tr><td>10km 이내 · 3회+ 왕복</td><td class="price">€150</td></tr>
+          <tr><td colspan="2" style="color:var(--muted); font-style:italic; padding:6px 8px !important; font-size:11px !important;">예약금은 2인 작업 1회 이동 요금의 50%. 최종금액은 당일 실제 이동 횟수로 정해집니다.</td></tr>
 
           <tr><td colspan="2" style="background:var(--accent-tint); font-weight:800; color:var(--primary);">권역 외 — 별도 카톡 견적</td></tr>
           <tr><td>시내 ↔ Maynooth (35km)</td><td class="price">~€78 +톨비</td></tr>
@@ -739,7 +773,23 @@
       <div class="faq-a">
         <strong>가벼운 박스·캐리어:</strong> 기본 도움 포함입니다.<br><br>
         <strong>큰 가구·매트리스:</strong> 차량에 적재 가능한 범위 내에서 Andrew가 함께 들어드립니다 — 추가 비용 없이 기본 포함입니다. 적재 한도를 넘는 양은 반복 이동 이사로 안내드립니다.<br><br>
-        <strong>반복 이동 이사:</strong> 짐 운반 도움이 <strong>기본 포함</strong>됩니다. 가구·매트리스·박스 등 모든 짐을 함께 운반해 드립니다.
+        <strong>반복 이동 이사:</strong> 짐 운반 도움이 <strong>기본 포함</strong>됩니다. 가구·매트리스·박스 등 모든 짐을 함께 운반해 드립니다.<br><br>
+        <strong>두 사람이 필요한 이사:</strong> 운반 인력 1명을 추가한 2인 작업도 가능합니다. 요금은 이사 요금 × 1.5입니다.
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">두 명이 함께 옮겨 줄 수 있나요?</div>
+      <div class="faq-a">
+        네, 가능합니다. 무거운 가구나 계단이 많은 집처럼 두 사람이 필요한 이사는 운반 인력 1명을 추가해 <strong>2인이 함께 작업</strong>합니다.<br><br>
+        <strong>2인 작업 요금: 이사 요금 × 1.5</strong><br>
+        거리당 정찰가로 계산한 요금(반복 이동 배수 포함)에 1.5배를 적용합니다.<br><br>
+        <strong>예시 (편도 10km 이내 · 1회 이동 기본료 €40)</strong><br>
+        · 한 번에 옮기는 경우: €40 × 1.5 = <strong>€60</strong><br>
+        · 두 번 왕복하는 경우: €40 × 1.8 × 1.5 = <strong>€108</strong><br>
+        · 세 번 이상 왕복하는 경우: €40 × 2.5 × 1.5 = <strong>€150</strong><br><br>
+        <strong>예약금과 최종금액:</strong> 짐 양에 따라 당일 이동 횟수가 달라질 수 있어, 예약금은 <strong>2인 작업 1회 이동 요금의 50%</strong>(위 예시에서 €30)를 받습니다. <strong>당일 실제 이동 횟수로 최종금액이 정해지고</strong>, 잔금은 최종금액에서 예약금을 뺀 금액입니다.<br><br>
+        2인 작업이 필요한지 모르겠으면 짐 사진과 건물 구조(층수, 엘리베이터 유무)를 카톡으로 보내 주세요.
       </div>
     </div>
 
@@ -868,7 +918,7 @@
     </div>
     <p class="small" style="margin-top:10px;"><a href="../terms.html" style="color:inherit; opacity:0.85; text-decoration:underline;">이용약관 · 환불·책임 정책</a> · <a href="../photo-credits.html" style="color:inherit; opacity:0.85; text-decoration:underline;">사진 출처</a></p>
     <p class="small">© 2026 🇮🇪 Beautiful Ireland with Everyone · Andrew의 아일랜드 동행</p>
-    <p class="small" style="opacity:0.7;">최종 업데이트 <time datetime="2026-09-14">2026년 9월 14일</time></p>
+    <p class="small" style="opacity:0.7;">최종 업데이트 <time datetime="2026-09-25">2026년 9월 25일</time></p>
   </div>
 </footer>
 
@@ -883,9 +933,11 @@
 // 반복 이동 배수:
 //   - 2회 왕복: × 1.8
 //   - 3회+ 왕복: × 2.5
+// 2인 작업(운반 인력 1명 추가): 위 금액 × 1.5
 // =============================================
 
 const TRIP_MULT = { 'single': 1.0, 'double': 1.8, 'triple': 2.5 };
+const CREW_MULT = 1.5; // 2인 작업(운반 인력 1명 추가) 배수
 const TRIP_LABEL = {
   'single': '소규모 이사 (한 번 이동)',
   'double': '반복 이동 — 2회 왕복',
@@ -997,6 +1049,8 @@ function calcMoving() {
   // 1회 이동 가격 산출
   const single = calcSinglePrice(km);
   const mult = TRIP_MULT[tripType];
+  const crewEl = document.getElementById('mv-crew');
+  const crew2 = !!(crewEl && crewEl.value === '2');
 
   // 운반 도움 안내 배너 토글
   if (tripType === 'single') {
@@ -1025,6 +1079,13 @@ function calcMoving() {
     breakdown.push(`<li style="border-top:1px solid var(--border); padding-top:8px; margin-top:6px;"><span>${TRIP_LABEL[tripType]} (× ${mult})</span><span>€${multTotal}</span></li>`);
     breakdown.push(`<li><span style="font-size:12px; color:var(--muted);">↳ 짐 운반 도움 기본 포함</span><span></span></li>`);
     total = multTotal;
+  }
+
+  // 2인 작업 (운반 인력 1명 추가) → × 1.5
+  if (crew2) {
+    const crewTotal = Math.round(total * CREW_MULT);
+    breakdown.push(`<li style="border-top:1px solid var(--border); padding-top:8px; margin-top:6px;"><span>2인 작업 — 운반 인력 1명 추가 (× ${CREW_MULT})</span><span>€${crewTotal}</span></li>`);
+    total = crewTotal;
   }
 
   // 평균 단가
@@ -1132,6 +1193,7 @@ function inquireMoving() {
   const lines = [
     '안녕하세요! 이사·운송 문의드립니다.',
     `종류: ${tripText}`,
+    `작업 인원: ${(document.getElementById('mv-crew') && document.getElementById('mv-crew').value === '2') ? '2인 (운반 인력 1명 추가 · × 1.5)' : '1인'}`,
     `📏 거리: 약 ${km}km (차량 실주행거리 기준)`,
     `💰 예상 가격: ${price}`,
     `출발지: ${from || '(작성해주세요)'}`,
