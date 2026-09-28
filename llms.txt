@@ -19,7 +19,7 @@
 - 홈 · 자주 묻는 질문 10개: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/
 - 당일치기 로드트립 22코스 · 가격 계산기: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/services/tours.html
 - 더블린 공항 픽업·드랍 · 가격 계산기: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/services/airport.html
-- 이사·IKEA·가구 픽업 운송 · 가격 계산기: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/services/moving.html
+- 이사 (간단 이사·전체 이사) · 가격 계산기: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/services/moving.html
 - 가톨릭 성지순례·피정 6개 프로그램: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/services/pilgrimage.html
 - 맞춤 여행·장기 여행·통역 동행: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/services/custom.html
 - 운영자 소개 (서현 Andrew): https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/about.html
@@ -33,11 +33,11 @@
 - 최종 금액은 실제 주소 기준 구글맵 주행거리로 확정
 
 ## 이사·운송 가격 (거리당 정찰, 톨비·주차 별도 실비)
-- 소규모 이사 1회 이동: 0–10km €40 / 10–50km 초과 1km당 €1.5 / 50km 초과분 1km당 €0.8
-- 반복 이동 이사: 2회 왕복 = 1회 이동가 × 1.8 / 3회 이상 왕복 = × 2.5 (운반 도움 기본 포함)
+- 간단 이사(짐이 차 한 번에 실림, 1회 이동): 0–10km €40 / 10–50km 초과 1km당 €1.5 / 50km 초과분 1km당 €0.8
+- 전체 이사(방·집 전체 살림, 여러 번 왕복): 2회 왕복 = 1회 이동가 × 1.8 / 3회 이상 왕복 = × 2.5 (운반 도움 기본 포함)
 - 2인 작업(운반 인력 1명 추가): 이사 요금 + €40 (3회 이상 왕복은 +€60). 예: 10km 이내 한 번에 €80 / 2회 왕복 €112 / 3회 이상 €160. 예약금은 2인 1회 이동 요금의 50%
 - 포함 작업시간: 한 번 이동 1시간 / 2회 왕복 2시간 / 3회 이상 3시간. 초과 30분당 €15 (2인 €25)
-- 계단(엘리베이터 없음): 올라가는 층당 €10 (반복 이동 €15), 출발지·도착지 각각, 1st floor(한국식 2층) = 1개 층 · 차에서 현관까지 50m 이상 지점당 €10
+- 계단(엘리베이터 없음): 올라가는 층당 €10 (전체 이사 €15), 출발지·도착지 각각, 1st floor(한국식 2층) = 1개 층 · 차에서 현관까지 50m 이상 지점당 €10
 - 정찰 권역: 그레이터 더블린(시내·Blanchardstown·Tallaght·Swords·Dun Laoghaire·Bray·Lucan·Dundrum 등) 또는 Dublin 15 기준 반경 15km 이내. 권역 밖은 별도 견적
 
 ## 차량·정원
@@ -64,7 +64,7 @@
 ## 서비스
 - 당일치기 한국어 프라이빗 로드트립 (22개 코스, 5인 기준 1인 €35부터 · 4인 기준 €40부터)
 - 공항 픽업·드랍 (€40부터, 거리당 정찰·톨비·주차 포함)
-- 이사·IKEA·가구 픽업 운송 (€40부터, 거리당 정찰)
+- 이사: 간단 이사 €40부터 · 전체 이사 €72부터 (거리당 정찰). 가구 픽업·물건 운송도 문의 가능
 - 아일랜드 가톨릭 성지순례·피정 (6개 프로그램, 문의 · 1:1 견적)
 - 커스텀·장기 여행, 통역·현지 코디네이션, 기자단·취재 동행 (문의)
 
@@ -110,7 +110,7 @@
 
 ## English summary
 - Beautiful Ireland with Everyone (Andrew의 아일랜드 동행) is a Korean-speaking private driver and tour service based in Dublin, Ireland, run by Andrew Seohyeon Kim (서현 Andrew), a Dublin resident of five years with over six years of driving experience in Europe.
-- Services: Dublin Airport pickup and drop-off (from €40, distance-based flat rate, tolls included); 22 private day trips from Dublin (Cliffs of Moher, Giant's Causeway, Ring of Kerry, Dingle, Connemara, Donegal, Newgrange, Wicklow and more; from €35 per person with 5 passengers); small moves and IKEA/furniture collection (from €40); Catholic pilgrimages and retreats (Knock Shrine, Legion of Mary Concilium, Dublin city walking pilgrimage); custom itineraries and interpreting.
+- Services: Dublin Airport pickup and drop-off (from €40, distance-based flat rate, tolls included); 22 private day trips from Dublin (Cliffs of Moher, Giant's Causeway, Ring of Kerry, Dingle, Connemara, Donegal, Newgrange, Wicklow and more; from €35 per person with 5 passengers); moving help — small moves from €40 and full home moves from €72; Catholic pilgrimages and retreats (Knock Shrine, Legion of Mary Concilium, Dublin city walking pilgrimage); custom itineraries and interpreting.
 - Vehicle: one 7-seat MPV, up to 6 passengers, private to the booking group (no ride-sharing). No platform commission; booking directly via KakaoTalk open chat, Instagram DM (@ireland.sosik) or email (sby05034@gmail.com).
 - Payment: 50% deposit on booking, balance after service; EUR via Revolut or KRW via Korean bank transfer. Cancellation: full refund more than 48 hours ahead, 50% at 24–48 hours, no refund on the day.
 - Full price list (machine-readable): https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/pricing.md
