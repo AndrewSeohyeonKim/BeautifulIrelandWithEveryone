@@ -110,6 +110,22 @@
   .long-warn { display:none; margin-top:12px; padding:12px 14px; background:var(--accent-tint); border:1.5px solid var(--accent); border-radius:10px; font-size:13px; color:var(--text); line-height:1.6; }
   .long-warn strong { color:var(--primary); }
   .price-note-inline { margin-top:12px; padding:10px 12px; background:rgba(255,255,255,0.7); border-radius:8px; font-size:12px; color:var(--primary); line-height:1.6; }
+  .cond-panel { background:var(--accent-tint); border:1.5px solid var(--accent-soft); border-radius:12px; padding:16px 18px; margin:4px 0 18px; }
+  .cond-panel .cond-title { font-size:14px; font-weight:800; color:var(--primary); margin:0 0 4px; }
+  .cond-panel .cond-sub { font-size:12.5px; color:var(--text); margin:0 0 12px; line-height:1.6; }
+  .cond-panel .row { margin-bottom:10px; }
+  .cond-panel > .hint { font-size:12px; color:var(--muted); line-height:1.6; }
+  .cond-panel .cond-check { display:flex; align-items:flex-start; gap:10px; padding:5px 0; font-size:13.5px; color:var(--primary); cursor:pointer; line-height:1.5; }
+  .cond-panel .cond-check input { margin-top:3px; transform:scale(1.15); }
+  .cond-panel .cond-check .tag { font-weight:800; }
+  .rules-card { background:#fff; border:1px solid var(--border); border-radius:12px; padding:14px 16px; margin:10px 0 8px; }
+  .rules-card .rules-title { font-size:13px; font-weight:800; color:var(--primary); margin-bottom:8px; }
+  .rules-card .rules-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px 20px; }
+  @media (max-width:600px){ .rules-card .rules-grid { grid-template-columns:1fr; } }
+  .rules-card .rules-grid h4 { font-size:12.5px; font-weight:800; color:var(--accent-ink); margin:0 0 4px; }
+  .rules-card .rules-grid ul { list-style:none; margin:0; padding:0; }
+  .rules-card .rules-grid li { display:flex; justify-content:space-between; gap:10px; font-size:13px; padding:2px 0; color:var(--text); }
+  .rules-card .rules-grid li b { color:var(--primary); white-space:nowrap; }
   .rate-card { background:white; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-top:10px; margin-bottom:6px; }
   .rate-card .rate-title { font-size:12.5px; font-weight:700; color:var(--primary); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px; }
   .rate-card .rate-row { display:flex; justify-content:space-between; padding:3px 0; font-size:13px; color:var(--text); }
@@ -244,7 +260,7 @@
       "name": "짐 운반은 도와주시나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "가벼운 박스·캐리어: 기본 도움 포함입니다.\n\n\n 큰 가구·매트리스: 차량에 적재 가능한 범위 내에서 Andrew가 함께 들어드립니다 — 추가 비용 없이 기본 포함입니다. 적재 한도를 넘는 양은 반복 이동 이사로 안내드립니다.\n\n\n 반복 이동 이사: 짐 운반 도움이 기본 포함됩니다. 가구·매트리스·박스 등 모든 짐을 함께 운반해 드립니다.\n\n\n 두 사람이 필요한 이사: 운반 인력 1명을 추가한 2인 작업도 가능합니다. 요금은 이사 요금 × 1.5입니다."
+        "text": "가벼운 박스·캐리어: 기본 도움 포함입니다.\n\n\n 큰 가구·매트리스: 차량에 적재 가능한 범위 내에서 Andrew가 함께 들어드립니다 — 추가 비용 없이 기본 포함입니다. 적재 한도를 넘는 양은 반복 이동 이사로 안내드립니다.\n\n\n 반복 이동 이사: 짐 운반 도움이 기본 포함됩니다. 가구·매트리스·박스 등 모든 짐을 함께 운반해 드립니다.\n\n\n 두 사람이 필요한 이사: 운반 인력 1명을 추가한 2인 작업도 가능합니다. 이사 요금에 운반 인력 추가요금 €40(3회 이상 왕복은 €60)을 더합니다."
       }
     },
     {
@@ -252,7 +268,23 @@
       "name": "두 명이 함께 옮겨 줄 수 있나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "네, 가능합니다. 무거운 가구나 계단이 많은 집처럼 두 사람이 필요한 이사는 운반 인력 1명을 추가해 2인이 함께 작업합니다.\n\n\n 2인 작업 요금: 이사 요금 × 1.5\n\n 거리당 정찰가로 계산한 요금(반복 이동 배수 포함)에 1.5배를 적용합니다.\n\n\n 예시 (편도 10km 이내 · 1회 이동 기본료 €40)\n\n · 한 번에 옮기는 경우: €40 × 1.5 = €60\n\n · 두 번 왕복하는 경우: €40 × 1.8 × 1.5 = €108\n\n · 세 번 이상 왕복하는 경우: €40 × 2.5 × 1.5 = €150\n\n\n 예약금과 최종금액: 짐 양에 따라 당일 이동 횟수가 달라질 수 있어, 예약금은 2인 작업 1회 이동 요금의 50%(위 예시에서 €30)를 받습니다. 당일 실제 이동 횟수로 최종금액이 정해지고, 잔금은 최종금액에서 예약금을 뺀 금액입니다.\n\n\n 2인 작업이 필요한지 모르겠으면 짐 사진과 건물 구조(층수, 엘리베이터 유무)를 카톡으로 보내 주세요."
+        "text": "네, 가능합니다. 혼자 들 수 없는 가구가 있거나 엘리베이터 없는 집처럼 두 사람이 필요한 이사는 운반 인력 1명을 추가해 2인이 함께 작업합니다.\n\n\n 2인 작업 요금 = 이사 요금 + 운반 인력 추가요금\n\n · 한 번 이동·2회 왕복: +€40\n\n · 3회 이상 왕복: +€60\n\n\n 예시 (편도 10km 이내)\n\n · 한 번에 옮기는 경우: €40 + €40 = €80\n\n · 두 번 왕복하는 경우: €72 + €40 = €112\n\n · 세 번 이상 왕복하는 경우: €100 + €60 = €160\n\n\n 예약금과 최종금액: 예약금은 2인 작업 1회 이동 요금의 50%(위 예시에서 €40)입니다. 최종금액은 당일 실제 이동 횟수와 작업시간으로 정해지고, 잔금은 최종금액에서 예약금을 뺀 금액입니다.\n\n\n 운반 인력은 미리 예약하기 때문에, 당일 짐이 예상보다 적어도 2인 요금은 줄어들지 않습니다. 필요한지 모르겠으면 짐 사진과 건물 구조(층수, 엘리베이터 유무)를 카톡으로 보내 주세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "작업이 예상보다 길어지면 추가요금이 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "이사 요금에는 작업시간이 포함되어 있습니다. 한 번 이동은 1시간, 2회 왕복은 2시간, 3회 이상 왕복은 3시간입니다. 작업시간은 출발지 도착부터 도착지에서 마지막 짐을 내릴 때까지입니다.\n\n\n 포함 시간을 넘기면 30분마다 €15(2인 작업은 €25)가 추가됩니다. 15분 이내 초과는 받지 않습니다.\n\n\n 포장이나 가구 분해가 끝나지 않아 기다리는 시간도 작업시간에 들어가니, 미리 준비해 두시면 시간과 비용이 줄어듭니다. 도착과 종료 시각은 카톡으로 바로 알려드립니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "엘리베이터가 없거나 짐이 많으면 요금이 달라지나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "계단 (엘리베이터 없음): 계단으로 올라가는 층마다 €10, 반복 이동 이사는 층당 €15입니다. 아일랜드 1st floor(한국식 2층)는 1개 층, 2nd floor(한국식 3층)는 2개 층입니다. 출발지와 도착지를 각각 계산하고, 4th floor(한국식 5층) 이상은 별도 견적입니다.\n\n\n 짐이 많아 차에 한 번에 안 실리는 경우: 당일 실제 이동 횟수로 다시 계산합니다. 예를 들어 2회 왕복이 3회가 되면 3회 이상 왕복 요금과 포함 시간 3시간이 적용됩니다.\n\n\n 차에서 현관까지 50m 이상: 차를 가까이 댈 수 없어 걸어서 옮기는 거리가 멀면 지점당 €10입니다.\n\n\n 피아노, 대형 금고, 전문 설치가 필요한 가전, 가스통 같은 위험물은 운반하지 않습니다. 가격 계산기의 현장 조건에서 층과 거리를 선택하면 예상 금액을 바로 볼 수 있고, 짐 사진과 층수를 카톡으로 보내 주시면 예약 전에 확정 금액을 알려드립니다."
       }
     },
     {
@@ -312,7 +344,7 @@
       }
     }
   ],
-  "dateModified": "2026-09-25"
+  "dateModified": "2026-09-28"
 }
 </script>
 </head>
@@ -442,7 +474,7 @@
     </div>
     <div class="crew-note">
       <h3>두 사람이 필요한 이사는 2인 작업으로</h3>
-      <p>무거운 가구가 있거나 계단이 많은 집은 운반 인력 1명을 추가해 두 사람이 함께 옮깁니다. 요금은 위 두 가지 이사 요금에 <strong>1.5배</strong>를 적용합니다. 예를 들어 편도 10km 이내라면 한 번에 옮길 때 €60, 두 번 왕복하면 €108입니다.</p>
+      <p>무거운 가구가 있거나 엘리베이터 없는 집은 운반 인력 1명을 추가해 두 사람이 함께 옮깁니다. 이사 요금에 <strong>운반 인력 추가요금 €40</strong>(3회 이상 왕복은 €60)을 더합니다. 예를 들어 편도 10km 이내라면 한 번에 옮길 때 €80, 두 번 왕복하면 €112입니다. 포함 작업시간·계단 같은 조건은 아래 계산기에서 선택해 바로 확인할 수 있습니다.</p>
     </div>
   </div>
 </section>
@@ -576,9 +608,9 @@
               <label for="mv-crew">작업 인원</label>
               <select id="mv-crew" onchange="calcMoving()">
                 <option value="1" selected>1인 — Andrew 혼자 운반 (기본)</option>
-                <option value="2">2인 — 운반 인력 1명 추가 (요금 × 1.5)</option>
+                <option value="2">2인 — 운반 인력 1명 추가 (+€40부터)</option>
               </select>
-              <div class="hint">무거운 가구가 있거나 계단이 많아 두 사람이 필요하면 2인을 선택하세요.</div>
+              <div class="hint">혼자 들 수 없는 가구가 있거나 엘리베이터 없는 집이면 2인을 선택하세요.</div>
             </div>
           </div>
 
@@ -617,6 +649,49 @@
             </div>
           </div>
 
+          <div class="cond-panel" role="group" aria-labelledby="mv-cond-title">
+            <p class="cond-title" id="mv-cond-title">현장 조건 (해당하는 것만 선택)</p>
+            <p class="cond-sub">계단으로 옮기거나, 차를 가까이 댈 수 없거나, 작업이 길어질 것 같으면 선택하세요. 모르면 그대로 두셔도 됩니다. 최종 금액은 당일 실제 조건으로 정합니다.</p>
+            <div class="row">
+              <div class="field">
+                <label for="mv-st-from">출발지 층 (엘리베이터 없을 때)</label>
+                <select id="mv-st-from" onchange="calcMoving()">
+                  <option value="0" selected>Ground floor 또는 엘리베이터 있음</option>
+                  <option value="1">1st floor (한국식 2층) · 계단 1개 층</option>
+                  <option value="2">2nd floor (한국식 3층) · 계단 2개 층</option>
+                  <option value="3">3rd floor (한국식 4층) · 계단 3개 층</option>
+                  <option value="4">4th floor 이상 · 별도 견적</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="mv-st-to">도착지 층 (엘리베이터 없을 때)</label>
+                <select id="mv-st-to" onchange="calcMoving()">
+                  <option value="0" selected>Ground floor 또는 엘리베이터 있음</option>
+                  <option value="1">1st floor (한국식 2층) · 계단 1개 층</option>
+                  <option value="2">2nd floor (한국식 3층) · 계단 2개 층</option>
+                  <option value="3">3rd floor (한국식 4층) · 계단 3개 층</option>
+                  <option value="4">4th floor 이상 · 별도 견적</option>
+                </select>
+              </div>
+            </div>
+            <div class="hint" style="margin:-2px 0 10px;">계단으로 올라가는 층마다 €10 (반복 이동 이사는 €15). 아일랜드 1st floor가 한국식 2층입니다.</div>
+            <label class="cond-check"><input type="checkbox" id="mv-far-from" onchange="calcMoving()"><span>출발지 — 차에서 현관까지 50m 이상 걸어서 옮김 <span class="tag">+€10</span></span></label>
+            <label class="cond-check"><input type="checkbox" id="mv-far-to" onchange="calcMoving()"><span>도착지 — 차에서 현관까지 50m 이상 걸어서 옮김 <span class="tag">+€10</span></span></label>
+            <div class="row single" style="margin-top:10px; margin-bottom:0;">
+              <div class="field">
+                <label for="mv-extra-time">예상 작업시간</label>
+                <select id="mv-extra-time" onchange="calcMoving()">
+                  <option value="0" selected>포함 시간 안에 끝남 (기본)</option>
+                  <option value="1">포함 시간 + 30분</option>
+                  <option value="2">포함 시간 + 1시간</option>
+                  <option value="3">포함 시간 + 1시간 30분</option>
+                  <option value="4">포함 시간 + 2시간</option>
+                </select>
+                <div class="hint" id="mv-time-hint">한 번 이동은 작업시간 1시간이 포함됩니다. 넘으면 30분당 €15 (2인 €25).</div>
+              </div>
+            </div>
+          </div>
+
           <div class="row single">
             <div class="field">
               <label for="mv-when">희망 날짜·시간 <span style="font-weight:400; color:var(--muted);">(선택)</span></label>
@@ -625,12 +700,26 @@
             </div>
           </div>
 
-          <div class="rate-card">
-            <div class="rate-title">거리당 단가 공식</div>
-            <div class="rate-row"><span class="rate-key">기본료 (10km 이내)</span><span class="rate-val">€40 (최저가)</span></div>
-            <div class="rate-row"><span class="rate-key">10–50km 추가분</span><span class="rate-val">+€1.5/km</span></div>
-            <div class="rate-row"><span class="rate-key">50km 초과분 (장거리)</span><span class="rate-val">+€0.8/km</span></div>
-            <div class="rate-row"><span class="rate-key">2인 작업 (운반 인력 1명 추가)</span><span class="rate-val">요금 × 1.5</span></div>
+          <div class="rules-card">
+            <div class="rules-title">요금 조건 한눈에</div>
+            <div class="rules-grid">
+              <div><h4>거리 (편도 실주행)</h4><ul>
+                <li><span>10km 이내</span><b>€40</b></li>
+                <li><span>10–50km</span><b>+€1.5/km</b></li>
+                <li><span>50km 초과분</span><b>+€0.8/km</b></li></ul></div>
+              <div><h4>이동 횟수 · 포함 작업시간</h4><ul>
+                <li><span>한 번 이동 · 1시간</span><b>× 1</b></li>
+                <li><span>2회 왕복 · 2시간</span><b>× 1.8</b></li>
+                <li><span>3회+ 왕복 · 3시간</span><b>× 2.5</b></li></ul></div>
+              <div><h4>작업 인원 · 시간 초과</h4><ul>
+                <li><span>2인 (한 번 · 2회 왕복)</span><b>+€40</b></li>
+                <li><span>2인 (3회+ 왕복)</span><b>+€60</b></li>
+                <li><span>초과 30분당</span><b>€15 · 2인 €25</b></li></ul></div>
+              <div><h4>현장 조건</h4><ul>
+                <li><span>계단 층당 (1st floor부터)</span><b>€10</b></li>
+                <li><span>계단 층당 · 반복 이동</span><b>€15</b></li>
+                <li><span>현관까지 50m 이상</span><b>지점당 €10</b></li></ul></div>
+            </div>
           </div>
 
           <div class="included-banner" id="mv-help-small" style="display:block;">
@@ -683,7 +772,7 @@
       <h3>주행거리에 따라 요금이 이렇게 올라갑니다</h3>
       <p class="km-sub">10km까지는 기본료 €40, 그 뒤로는 km당 €1.5, 50km를 넘으면 km당 €0.8입니다. 점선은 각 점이 가리키는 거리와 요금입니다.</p>
       <svg viewBox="0 0 640 284" role="img" aria-label="주행거리별 기본요금 그래프. 10km까지 €40, 20km €55, 30km €70, 40km €85, 50km €100, 이후 km당 €0.8 추가." xmlns="http://www.w3.org/2000/svg"><rect class="band" x="64.0" y="24" width="91.3" height="212"/><rect class="band" x="520.7" y="24" width="91.3" height="212"/><line class="grid" x1="64" y1="200.7" x2="612" y2="200.7"/><text x="56" y="204.7" text-anchor="end">€20</text><line class="grid" x1="64" y1="165.3" x2="612" y2="165.3"/><text x="56" y="169.3" text-anchor="end">€40</text><line class="grid" x1="64" y1="130.0" x2="612" y2="130.0"/><text x="56" y="134.0" text-anchor="end">€60</text><line class="grid" x1="64" y1="94.7" x2="612" y2="94.7"/><text x="56" y="98.7" text-anchor="end">€80</text><line class="grid" x1="64" y1="59.3" x2="612" y2="59.3"/><text x="56" y="63.3" text-anchor="end">€100</text><line class="axis" x1="64" y1="236" x2="612" y2="236"/><text x="64.0" y="254" text-anchor="middle">0</text><text x="155.3" y="254" text-anchor="middle">10</text><text x="246.7" y="254" text-anchor="middle">20</text><text x="338.0" y="254" text-anchor="middle">30</text><text x="429.3" y="254" text-anchor="middle">40</text><text x="520.7" y="254" text-anchor="middle">50</text><text x="612.0" y="254" text-anchor="middle">60</text><text x="338.0" y="280" text-anchor="middle">편도 주행거리 (km)</text><text class="band-lab" x="109.7" y="38" text-anchor="middle">기본료</text><text class="band-lab" x="338.0" y="38" text-anchor="middle">+€1.5/km</text><text class="band-lab" x="566.4" y="38" text-anchor="middle">+€0.8/km</text><line class="guide" x1="155.3" y1="165.3" x2="155.3" y2="236"/><line class="guide" x1="246.7" y1="138.8" x2="246.7" y2="236"/><line class="guide" x1="338.0" y1="112.3" x2="338.0" y2="236"/><line class="guide" x1="429.3" y1="85.8" x2="429.3" y2="236"/><line class="guide" x1="520.7" y1="59.3" x2="520.7" y2="236"/><path class="line" d="M64.0,165.3 L155.3,165.3 L520.7,59.3 L612.0,45.2"/><circle class="pt" cx="155.3" cy="165.3" r="5"><title>10km → €40</title></circle><circle class="pt" cx="246.7" cy="138.8" r="5"><title>20km → €55</title></circle><circle class="pt" cx="338.0" cy="112.3" r="5"><title>30km → €70</title></circle><circle class="pt" cx="429.3" cy="85.8" r="5"><title>40km → €85</title></circle><circle class="pt" cx="520.7" cy="59.3" r="5"><title>50km → €100</title></circle><text class="lab" x="155.3" y="153.3" text-anchor="middle">€40</text><text class="lab" x="246.7" y="126.8" text-anchor="middle">€55</text><text class="lab" x="338.0" y="100.3" text-anchor="middle">€70</text><text class="lab" x="429.3" y="73.8" text-anchor="middle">€85</text><text class="lab" x="518.3" y="91.3" text-anchor="middle">€100</text></svg>
-      <p class="km-foot">한 번 이동 기준. 반복 이동 이사는 이 금액에 1.8배 또는 2.5배를 곱하고, 2인 작업은 여기에 1.5배를 더 적용합니다. 톨비·유료 주차비는 발생 시 실비로 더합니다.</p>
+      <p class="km-foot">한 번 이동 기준. 반복 이동 이사는 이 금액에 1.8배 또는 2.5배를 곱하고, 2인 작업은 운반 인력 추가요금을, 계단 등 현장 조건은 해당 금액을 더합니다. 톨비·유료 주차비는 발생 시 실비로 더합니다.</p>
     </div>
 
     <div class="price-table-wrap">
@@ -712,12 +801,26 @@
           <tr><td colspan="2" style="color:var(--muted); font-style:italic; padding:6px 8px !important; font-size:11px !important;">예: 20km 2회 왕복 → €55 × 1.8 ≈ €99 · 30km 2회 → €70 × 1.8 ≈ €126</td></tr>
 
           <tr><td colspan="2" style="background:var(--accent-soft); font-weight:800; color:var(--primary);">2인 작업 (운반 인력 1명 추가)</td></tr>
-          <tr><td>이사 요금에 적용</td><td class="price">× 1.5</td></tr>
-          <tr><td>10km 이내 · 한 번에 옮기기</td><td class="price">€60</td></tr>
-          <tr><td>10km 이내 · 2회 왕복</td><td class="price">€108</td></tr>
-          <tr><td>10km 이내 · 3회+ 왕복</td><td class="price">€150</td></tr>
-          <tr><td colspan="2" style="color:var(--muted); font-style:italic; padding:6px 8px !important; font-size:11px !important;">예약금은 2인 작업 1회 이동 요금의 50%. 최종금액은 당일 실제 이동 횟수로 정해집니다.</td></tr>
-
+          <tr><td>한 번 이동 · 2회 왕복</td><td class="price">+€40</td></tr>
+          <tr><td>3회+ 왕복</td><td class="price">+€60</td></tr>
+          <tr><td>10km 이내 · 한 번에 옮기기</td><td class="price">€80</td></tr>
+          <tr><td>10km 이내 · 2회 왕복</td><td class="price">€112</td></tr>
+          <tr><td>10km 이내 · 3회+ 왕복</td><td class="price">€160</td></tr>
+          <tr><td colspan="2" style="color:var(--muted); font-style:italic; padding:6px 8px !important; font-size:11px !important;">예약금은 2인 작업 1회 이동 요금의 50%(10km 이내 €40). 최종금액은 당일 실제 이동 횟수와 작업시간으로 정해집니다.</td></tr>
+          
+          <tr><td colspan="2" style="background:var(--accent-soft); font-weight:800; color:var(--primary);">포함 작업시간 (출발지 도착 ~ 마지막 하차)</td></tr>
+          <tr><td>한 번 이동</td><td class="price">1시간</td></tr>
+          <tr><td>2회 왕복</td><td class="price">2시간</td></tr>
+          <tr><td>3회+ 왕복</td><td class="price">3시간</td></tr>
+          <tr><td>초과 30분당 (1인 / 2인)</td><td class="price">€15 / €25</td></tr>
+          <tr><td colspan="2" style="color:var(--muted); font-style:italic; padding:6px 8px !important; font-size:11px !important;">15분 이내 초과는 받지 않습니다. 포장·분해를 기다리는 시간도 작업시간에 들어갑니다.</td></tr>
+          
+          <tr><td colspan="2" style="background:var(--accent-soft); font-weight:800; color:var(--primary);">현장 조건</td></tr>
+          <tr><td>계단 · 한 번 이동 (올라가는 층당)</td><td class="price">€10</td></tr>
+          <tr><td>계단 · 반복 이동 (올라가는 층당)</td><td class="price">€15</td></tr>
+          <tr><td>차에서 현관까지 50m 이상</td><td class="price">지점당 €10</td></tr>
+          <tr><td colspan="2" style="color:var(--muted); font-style:italic; padding:6px 8px !important; font-size:11px !important;">계단은 출발지·도착지 각각 계산합니다. 1st floor(한국식 2층) = 1개 층, 2nd floor = 2개 층. 4th floor 이상은 별도 견적.</td></tr>
+          
           <tr><td colspan="2" style="background:var(--accent-tint); font-weight:800; color:var(--primary);">권역 외 — 별도 카톡 견적</td></tr>
           <tr><td>시내 ↔ Maynooth (35km)</td><td class="price">~€78 +톨비</td></tr>
           <tr><td>시내 ↔ Drogheda (50km)</td><td class="price">~€100 +톨비</td></tr>
@@ -774,22 +877,42 @@
         <strong>가벼운 박스·캐리어:</strong> 기본 도움 포함입니다.<br><br>
         <strong>큰 가구·매트리스:</strong> 차량에 적재 가능한 범위 내에서 Andrew가 함께 들어드립니다 — 추가 비용 없이 기본 포함입니다. 적재 한도를 넘는 양은 반복 이동 이사로 안내드립니다.<br><br>
         <strong>반복 이동 이사:</strong> 짐 운반 도움이 <strong>기본 포함</strong>됩니다. 가구·매트리스·박스 등 모든 짐을 함께 운반해 드립니다.<br><br>
-        <strong>두 사람이 필요한 이사:</strong> 운반 인력 1명을 추가한 2인 작업도 가능합니다. 요금은 이사 요금 × 1.5입니다.
+        <strong>두 사람이 필요한 이사:</strong> 운반 인력 1명을 추가한 2인 작업도 가능합니다. 이사 요금에 운반 인력 추가요금 €40(3회 이상 왕복은 €60)을 더합니다.
       </div>
     </div>
 
     <div class="faq-item" onclick="this.classList.toggle('open')">
       <div class="faq-q">두 명이 함께 옮겨 줄 수 있나요?</div>
       <div class="faq-a">
-        네, 가능합니다. 무거운 가구나 계단이 많은 집처럼 두 사람이 필요한 이사는 운반 인력 1명을 추가해 <strong>2인이 함께 작업</strong>합니다.<br><br>
-        <strong>2인 작업 요금: 이사 요금 × 1.5</strong><br>
-        거리당 정찰가로 계산한 요금(반복 이동 배수 포함)에 1.5배를 적용합니다.<br><br>
-        <strong>예시 (편도 10km 이내 · 1회 이동 기본료 €40)</strong><br>
-        · 한 번에 옮기는 경우: €40 × 1.5 = <strong>€60</strong><br>
-        · 두 번 왕복하는 경우: €40 × 1.8 × 1.5 = <strong>€108</strong><br>
-        · 세 번 이상 왕복하는 경우: €40 × 2.5 × 1.5 = <strong>€150</strong><br><br>
-        <strong>예약금과 최종금액:</strong> 짐 양에 따라 당일 이동 횟수가 달라질 수 있어, 예약금은 <strong>2인 작업 1회 이동 요금의 50%</strong>(위 예시에서 €30)를 받습니다. <strong>당일 실제 이동 횟수로 최종금액이 정해지고</strong>, 잔금은 최종금액에서 예약금을 뺀 금액입니다.<br><br>
-        2인 작업이 필요한지 모르겠으면 짐 사진과 건물 구조(층수, 엘리베이터 유무)를 카톡으로 보내 주세요.
+        네, 가능합니다. 혼자 들 수 없는 가구가 있거나 엘리베이터 없는 집처럼 두 사람이 필요한 이사는 운반 인력 1명을 추가해 <strong>2인이 함께 작업</strong>합니다.<br><br>
+        <strong>2인 작업 요금 = 이사 요금 + 운반 인력 추가요금</strong><br>
+        · 한 번 이동·2회 왕복: +€40<br>
+        · 3회 이상 왕복: +€60<br><br>
+        <strong>예시 (편도 10km 이내)</strong><br>
+        · 한 번에 옮기는 경우: €40 + €40 = <strong>€80</strong><br>
+        · 두 번 왕복하는 경우: €72 + €40 = <strong>€112</strong><br>
+        · 세 번 이상 왕복하는 경우: €100 + €60 = <strong>€160</strong><br><br>
+        <strong>예약금과 최종금액:</strong> 예약금은 <strong>2인 작업 1회 이동 요금의 50%</strong>(위 예시에서 €40)입니다. 최종금액은 <strong>당일 실제 이동 횟수와 작업시간</strong>으로 정해지고, 잔금은 최종금액에서 예약금을 뺀 금액입니다.<br><br>
+        운반 인력은 미리 예약하기 때문에, 당일 짐이 예상보다 적어도 2인 요금은 줄어들지 않습니다. 필요한지 모르겠으면 짐 사진과 건물 구조(층수, 엘리베이터 유무)를 카톡으로 보내 주세요.
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">작업이 예상보다 길어지면 추가요금이 있나요?</div>
+      <div class="faq-a">
+        이사 요금에는 작업시간이 포함되어 있습니다. <strong>한 번 이동은 1시간, 2회 왕복은 2시간, 3회 이상 왕복은 3시간</strong>입니다. 작업시간은 출발지 도착부터 도착지에서 마지막 짐을 내릴 때까지입니다.<br><br>
+        포함 시간을 넘기면 <strong>30분마다 €15</strong>(2인 작업은 €25)가 추가됩니다. 15분 이내 초과는 받지 않습니다.<br><br>
+        포장이나 가구 분해가 끝나지 않아 기다리는 시간도 작업시간에 들어가니, 미리 준비해 두시면 시간과 비용이 줄어듭니다. 도착과 종료 시각은 카톡으로 바로 알려드립니다.
+      </div>
+    </div>
+
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">엘리베이터가 없거나 짐이 많으면 요금이 달라지나요?</div>
+      <div class="faq-a">
+        <strong>계단 (엘리베이터 없음):</strong> 계단으로 올라가는 층마다 €10, 반복 이동 이사는 층당 €15입니다. 아일랜드 1st floor(한국식 2층)는 1개 층, 2nd floor(한국식 3층)는 2개 층입니다. 출발지와 도착지를 각각 계산하고, 4th floor(한국식 5층) 이상은 별도 견적입니다.<br><br>
+        <strong>짐이 많아 차에 한 번에 안 실리는 경우:</strong> 당일 실제 이동 횟수로 다시 계산합니다. 예를 들어 2회 왕복이 3회가 되면 3회 이상 왕복 요금과 포함 시간 3시간이 적용됩니다.<br><br>
+        <strong>차에서 현관까지 50m 이상:</strong> 차를 가까이 댈 수 없어 걸어서 옮기는 거리가 멀면 지점당 €10입니다.<br><br>
+        피아노, 대형 금고, 전문 설치가 필요한 가전, 가스통 같은 위험물은 운반하지 않습니다. 가격 계산기의 <strong>현장 조건</strong>에서 층과 거리를 선택하면 예상 금액을 바로 볼 수 있고, 짐 사진과 층수를 카톡으로 보내 주시면 예약 전에 확정 금액을 알려드립니다.
       </div>
     </div>
 
@@ -918,7 +1041,7 @@
     </div>
     <p class="small" style="margin-top:10px;"><a href="../terms.html" style="color:inherit; opacity:0.85; text-decoration:underline;">이용약관 · 환불·책임 정책</a> · <a href="../photo-credits.html" style="color:inherit; opacity:0.85; text-decoration:underline;">사진 출처</a></p>
     <p class="small">© 2026 🇮🇪 Beautiful Ireland with Everyone · Andrew의 아일랜드 동행</p>
-    <p class="small" style="opacity:0.7;">최종 업데이트 <time datetime="2026-09-25">2026년 9월 25일</time></p>
+    <p class="small" style="opacity:0.7;">최종 업데이트 <time datetime="2026-09-28">2026년 9월 28일</time></p>
   </div>
 </footer>
 
@@ -933,11 +1056,17 @@
 // 반복 이동 배수:
 //   - 2회 왕복: × 1.8
 //   - 3회+ 왕복: × 2.5
-// 2인 작업(운반 인력 1명 추가): 위 금액 × 1.5
+// 2인 작업(운반 인력 1명 추가): + €40 (1회·2회) / + €60 (3회+)
+// 포함 작업시간: 1회 1h · 2회 2h · 3회+ 3h, 초과 30분당 €15 (2인 €25)
+// 계단(엘리베이터 없음): 올라가는 층당 €10 (반복 이동 €15), 출발지·도착지 각각 · 현관까지 50m 이상 지점당 €10
 // =============================================
 
 const TRIP_MULT = { 'single': 1.0, 'double': 1.8, 'triple': 2.5 };
-const CREW_MULT = 1.5; // 2인 작업(운반 인력 1명 추가) 배수
+const CREW_ADD = { 'single': 40, 'double': 40, 'triple': 60 }; // 2인 작업 운반 인력 추가요금
+const INCLUDED_H = { 'single': 1, 'double': 2, 'triple': 3 }; // 포함 작업시간
+const OT_RATE = { 1: 15, 2: 25 }; // 초과 30분당
+const STAIR_RATE = { 'single': 10, 'double': 15, 'triple': 15 }; // 계단 올라가는 층당 (지점별)
+const FAR_FEE = 10; // 차에서 현관까지 50m 이상 (지점당)
 const TRIP_LABEL = {
   'single': '소규모 이사 (한 번 이동)',
   'double': '반복 이동 — 2회 왕복',
@@ -1081,12 +1210,40 @@ function calcMoving() {
     total = multTotal;
   }
 
-  // 2인 작업 (운반 인력 1명 추가) → × 1.5
+  // 2인 작업 (운반 인력 1명 추가) → 고정 추가요금
   if (crew2) {
-    const crewTotal = Math.round(total * CREW_MULT);
-    breakdown.push(`<li style="border-top:1px solid var(--border); padding-top:8px; margin-top:6px;"><span>2인 작업 — 운반 인력 1명 추가 (× ${CREW_MULT})</span><span>€${crewTotal}</span></li>`);
-    total = crewTotal;
+    const add = CREW_ADD[tripType];
+    breakdown.push(`<li style="border-top:1px solid var(--border); padding-top:8px; margin-top:6px;"><span>2인 작업 — 운반 인력 1명 추가</span><span>+€${add}</span></li>`);
+    total += add;
   }
+
+  // 현장 조건 — 계단(출발지·도착지 각각), 먼 하차, 예상 초과 시간
+  const val = id => { const el = document.getElementById(id); return el ? parseInt(el.value, 10) || 0 : 0; };
+  const chk = id => { const el = document.getElementById(id); return !!(el && el.checked); };
+  let quoteNeeded = false;
+  [['mv-st-from', '출발지'], ['mv-st-to', '도착지']].forEach(([id, where]) => {
+    const f = val(id);
+    if (f > 0) {
+      const add = f * STAIR_RATE[tripType];
+      if (f >= 4) quoteNeeded = true;
+      breakdown.push(`<li><span>${where} 계단 ${f}개 층${f >= 4 ? ' 이상' : ''} (층당 €${STAIR_RATE[tripType]})</span><span>+€${add}</span></li>`);
+      total += add;
+    }
+  });
+  [['mv-far-from', '출발지'], ['mv-far-to', '도착지']].forEach(([id, where]) => {
+    if (chk(id)) { breakdown.push(`<li><span>${where} — 현관까지 50m 이상</span><span>+€${FAR_FEE}</span></li>`); total += FAR_FEE; }
+  });
+  const otRate = OT_RATE[crew2 ? 2 : 1];
+  const halfHours = val('mv-extra-time');
+  if (halfHours > 0) {
+    const ot = halfHours * otRate;
+    breakdown.push(`<li><span>예상 초과 작업 ${halfHours * 30}분 (30분당 €${otRate})</span><span>+€${ot}</span></li>`);
+    total += ot;
+  }
+  breakdown.push(`<li><span style="font-size:12px; color:var(--muted);">↳ 작업시간 ${INCLUDED_H[tripType]}시간 포함 · 초과 30분당 €${otRate} · 최종 금액은 당일 실제 시간 기준</span><span></span></li>`);
+  if (quoteNeeded) breakdown.push(`<li><span style="font-size:12px; color:var(--red-ink);">↳ 4th floor 이상 계단은 카톡으로 확정 견적을 드립니다</span><span></span></li>`);
+  const timeHint = document.getElementById('mv-time-hint');
+  if (timeHint) timeHint.textContent = `${TRIP_LABEL[tripType]}은 작업시간 ${INCLUDED_H[tripType]}시간이 포함됩니다. 넘으면 30분당 €${otRate}${crew2 ? ' (2인 작업)' : ` (2인 €${OT_RATE[2]})`}.`;
 
   // 평균 단가
   const avgPerKm = (total / km).toFixed(2);
@@ -1193,7 +1350,11 @@ function inquireMoving() {
   const lines = [
     '안녕하세요! 이사·운송 문의드립니다.',
     `종류: ${tripText}`,
-    `작업 인원: ${(document.getElementById('mv-crew') && document.getElementById('mv-crew').value === '2') ? '2인 (운반 인력 1명 추가 · × 1.5)' : '1인'}`,
+    `작업 인원: ${(document.getElementById('mv-crew') && document.getElementById('mv-crew').value === '2') ? '2인 (운반 인력 1명 추가)' : '1인'}`,
+    `출발지 층: ${document.getElementById('mv-st-from').options[document.getElementById('mv-st-from').selectedIndex].text}`,
+    `도착지 층: ${document.getElementById('mv-st-to').options[document.getElementById('mv-st-to').selectedIndex].text}`,
+    `현관까지 50m 이상: ${[document.getElementById('mv-far-from').checked ? '출발지' : '', document.getElementById('mv-far-to').checked ? '도착지' : ''].filter(Boolean).join('·') || '없음'}`,
+    `예상 작업시간: ${document.getElementById('mv-extra-time').options[document.getElementById('mv-extra-time').selectedIndex].text}`,
     `📏 거리: 약 ${km}km (차량 실주행거리 기준)`,
     `💰 예상 가격: ${price}`,
     `출발지: ${from || '(작성해주세요)'}`,
