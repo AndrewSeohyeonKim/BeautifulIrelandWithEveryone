@@ -12,7 +12,7 @@
 |---|---|---|
 | ✈️ 공항 픽업·드랍 | [services/airport.html](services/airport.html) | €40 (거리당 정찰·톨비 포함) |
 | 🌿 당일치기 로드트립 22코스 | [services/tours.html](services/tours.html) | 1인 €35 |
-| 🏠 이사·IKEA·가구 픽업 운송 | [services/moving.html](services/moving.html) | €40 (거리당 정찰) |
+| 🏠 이사 (간단 이사·전체 이사) | [services/moving.html](services/moving.html) | €40 (거리당 정찰) |
 | ⛪ 가톨릭 성지순례·피정 | [services/pilgrimage.html](services/pilgrimage.html) | 1:1 견적 |
 | ✏️ 맞춤 여행·장기·통역 동행 | [services/custom.html](services/custom.html) | 1:1 견적 |
 
@@ -51,7 +51,7 @@
 ├── services/
 │   ├── airport.html        # 공항 픽업·드랍 (가격 계산기)
 │   ├── tours.html          # 로드트립 22코스 (지도·계산기·비교표)
-│   ├── moving.html         # 이사·IKEA·가구 픽업 (가격 계산기)
+│   ├── moving.html         # 이사 — 간단 이사·전체 이사 (가격 계산기)
 │   ├── pilgrimage.html     # 성지순례·피정 6개 프로그램
 │   └── custom.html         # 맞춤 여행·장기·통역
 ├── styles.css              # 전체 페이지 공용 스타일 (팔레트 정본)
