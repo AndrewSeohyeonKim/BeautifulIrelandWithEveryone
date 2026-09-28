@@ -45,3 +45,6 @@ CLAUDE.md
 # Claude Code 로컬 설정·임시 백업 (공개 금지)
 .claude/
 _to_delete/backup_*/
+
+# Claude 세션이 옮겨 둔 git 잠금 파일
+_to_delete/*.lock.*
