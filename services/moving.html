@@ -110,6 +110,15 @@
   .long-warn { display:none; margin-top:12px; padding:12px 14px; background:var(--accent-tint); border:1.5px solid var(--accent); border-radius:10px; font-size:13px; color:var(--text); line-height:1.6; }
   .long-warn strong { color:var(--primary); }
   .price-note-inline { margin-top:12px; padding:10px 12px; background:rgba(255,255,255,0.7); border-radius:8px; font-size:12px; color:var(--primary); line-height:1.6; }
+  .mode-switch { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:18px; }
+  .mode-switch button { text-align:left; background:#fff; border:1.5px solid var(--border); border-radius:12px; padding:14px 16px; cursor:pointer; font-family:inherit; color:var(--text); display:flex; flex-direction:column; gap:3px; }
+  .mode-switch button strong { font-size:15.5px; font-weight:800; color:var(--primary); }
+  .mode-switch button span { font-size:12.5px; color:var(--muted); line-height:1.5; }
+  .mode-switch button em { font-style:normal; font-size:13px; font-weight:800; color:var(--accent-ink); margin-top:2px; }
+  .mode-switch button[aria-pressed="true"] { border-color:var(--accent); background:var(--accent-tint); box-shadow:0 0 0 2px var(--accent-soft); }
+  .mode-switch button:focus-visible { outline:2px solid var(--primary); outline-offset:2px; }
+  .extra-toggle { width:100%; text-align:left; background:#fff; border:1.5px dashed var(--accent); border-radius:10px; padding:12px 14px; font-family:inherit; font-size:13.5px; font-weight:700; color:var(--primary); cursor:pointer; margin:0 0 16px; }
+  .extra-toggle small { display:block; font-weight:400; color:var(--muted); font-size:12px; margin-top:2px; }
   .cond-panel { background:var(--accent-tint); border:1.5px solid var(--accent-soft); border-radius:12px; padding:16px 18px; margin:4px 0 18px; }
   .cond-panel .cond-title { font-size:14px; font-weight:800; color:var(--primary); margin:0 0 4px; }
   .cond-panel .cond-sub { font-size:12.5px; color:var(--text); margin:0 0 12px; line-height:1.6; }
@@ -583,7 +592,7 @@
   <div class="container reveal">
     <div class="section-title">
       <h2>가격 계산</h2>
-      <p class="lead">이사 유형과 거리를 넣으면 요금이 바로 나옵니다.</p>
+      <p class="lead">소규모 이사인지 반복 이동 이사인지 고르고, 거리를 넣으면 요금이 바로 나옵니다.</p>
     </div>
 
     <div class="calc-wrap">
@@ -591,26 +600,27 @@
 
         <!-- 이사·운송 탭 -->
         <div class="calc-content active" data-content="moving">
-          <div class="row single">
-            <div class="field">
-              <label for="mv-trip">이사 유형</label>
-              <select id="mv-trip" onchange="calcMoving()">
-                <option value="single" selected>소규모 이사 — 한 번 이동 (1–2인 짐, 차에 한 번에)</option>
-                <option value="double">반복 이동 — 2회 왕복 (1bed 자취집 전체 등)</option>
-                <option value="triple">반복 이동 — 3회+ 왕복 (큰 이사)</option>
-              </select>
-              <div class="hint" id="mv-trip-hint">한 번에 실리는 양인지, 여러 번 왕복이 필요한지로 구분</div>
-            </div>
+          <div class="mode-switch" role="group" aria-label="이사 종류 선택">
+            <button type="button" id="mv-mode-small" aria-pressed="true" onclick="setMvMode('small')">
+              <strong>소규모 이사</strong>
+              <span>캐리어·박스·작은 가구처럼 차에 한 번에 실리는 짐</span>
+              <em>€40부터 · 거리만 넣으면 끝</em>
+            </button>
+            <button type="button" id="mv-mode-repeat" aria-pressed="false" onclick="setMvMode('repeat')">
+              <strong>반복 이동 이사</strong>
+              <span>집 전체 짐처럼 여러 번 왕복해야 하는 이사</span>
+              <em>€72부터 · 횟수·현장 조건 선택</em>
+            </button>
           </div>
 
-          <div class="row single">
+          <div class="row single" id="mv-trip-row" style="display:none;">
             <div class="field">
-              <label for="mv-crew">작업 인원</label>
-              <select id="mv-crew" onchange="calcMoving()">
-                <option value="1" selected>1인 — Andrew 혼자 운반 (기본)</option>
-                <option value="2">2인 — 운반 인력 1명 추가 (+€40부터)</option>
+              <label for="mv-trip">왕복 횟수</label>
+              <select id="mv-trip" onchange="calcMoving()">
+                <option value="double" selected>2회 왕복 — 1bed 자취집 전체 등 (작업시간 2시간 포함)</option>
+                <option value="triple">3회 이상 왕복 — 큰 이사 (작업시간 3시간 포함)</option>
               </select>
-              <div class="hint">혼자 들 수 없는 가구가 있거나 엘리베이터 없는 집이면 2인을 선택하세요.</div>
+              <div class="hint">짐 사진을 보고 횟수를 함께 정합니다. 당일 실제 횟수로 최종 금액이 정해집니다.</div>
             </div>
           </div>
 
@@ -649,9 +659,25 @@
             </div>
           </div>
 
+          <button type="button" class="extra-toggle" id="mv-extra-toggle" aria-expanded="false" aria-controls="mv-extra" onclick="toggleMvExtra()">
+            <span id="mv-extra-toggle-text">+ 무거운 가구·계단·먼 하차가 있나요? (선택)</span>
+            <small>없으면 누르지 않으셔도 됩니다. 캐리어·박스 몇 개라면 위 거리 요금이 전부입니다.</small>
+          </button>
+
+          <div id="mv-extra">
           <div class="cond-panel" role="group" aria-labelledby="mv-cond-title">
             <p class="cond-title" id="mv-cond-title">현장 조건 (해당하는 것만 선택)</p>
-            <p class="cond-sub">계단으로 옮기거나, 차를 가까이 댈 수 없거나, 작업이 길어질 것 같으면 선택하세요. 모르면 그대로 두셔도 됩니다. 최종 금액은 당일 실제 조건으로 정합니다.</p>
+            <p class="cond-sub">두 사람이 필요하거나, 계단으로 옮기거나, 차를 가까이 댈 수 없으면 선택하세요. 모르면 그대로 두셔도 됩니다. 최종 금액은 당일 실제 조건으로 정합니다.</p>
+            <div class="row single">
+            <div class="field">
+              <label for="mv-crew">작업 인원</label>
+              <select id="mv-crew" onchange="calcMoving()">
+                <option value="1" selected>1인 — Andrew 혼자 운반 (기본)</option>
+                <option value="2">2인 — 운반 인력 1명 추가 (+€40부터)</option>
+              </select>
+              <div class="hint">혼자 들 수 없는 가구가 있거나 엘리베이터 없는 집이면 2인을 선택하세요.</div>
+            </div>
+          </div>
             <div class="row">
               <div class="field">
                 <label for="mv-st-from">출발지 층 (엘리베이터 없을 때)</label>
@@ -677,7 +703,7 @@
             <div class="hint" style="margin:-2px 0 10px;">계단으로 올라가는 층마다 €10 (반복 이동 이사는 €15). 아일랜드 1st floor가 한국식 2층입니다.</div>
             <label class="cond-check"><input type="checkbox" id="mv-far-from" onchange="calcMoving()"><span>출발지 — 차에서 현관까지 50m 이상 걸어서 옮김 <span class="tag">+€10</span></span></label>
             <label class="cond-check"><input type="checkbox" id="mv-far-to" onchange="calcMoving()"><span>도착지 — 차에서 현관까지 50m 이상 걸어서 옮김 <span class="tag">+€10</span></span></label>
-            <div class="row single" style="margin-top:10px; margin-bottom:0;">
+            <div class="row single" id="mv-time-row" style="margin-top:10px; margin-bottom:0;">
               <div class="field">
                 <label for="mv-extra-time">예상 작업시간</label>
                 <select id="mv-extra-time" onchange="calcMoving()">
@@ -691,6 +717,7 @@
               </div>
             </div>
           </div>
+          </div>
 
           <div class="row single">
             <div class="field">
@@ -700,7 +727,7 @@
             </div>
           </div>
 
-          <div class="rules-card">
+          <div class="rules-card" id="mv-rules">
             <div class="rules-title">요금 조건 한눈에</div>
             <div class="rules-grid">
               <div><h4>거리 (편도 실주행)</h4><ul>
@@ -1062,6 +1089,17 @@
 // =============================================
 
 const TRIP_MULT = { 'single': 1.0, 'double': 1.8, 'triple': 2.5 };
+let mvMode = 'small';      // 'small' 소규모 이사 | 'repeat' 반복 이동 이사
+let mvExtraOpen = false;   // 소규모 이사에서 추가 조건을 펼쳤는지
+
+function setMvMode(mode) {
+  mvMode = mode;
+  calcMoving();
+}
+function toggleMvExtra() {
+  mvExtraOpen = !mvExtraOpen;
+  calcMoving();
+}
 const CREW_ADD = { 'single': 40, 'double': 40, 'triple': 60 }; // 2인 작업 운반 인력 추가요금
 const INCLUDED_H = { 'single': 1, 'double': 2, 'triple': 3 }; // 포함 작업시간
 const OT_RATE = { 1: 15, 2: 25 }; // 초과 30분당
@@ -1117,11 +1155,14 @@ function selectMvTab(tab) {
 function goToCalc(tab, tripType) {
   selectMvTab(tab);
   if (tab === 'moving' && tripType) {
-    const tripSel = document.getElementById('mv-trip');
-    if (tripSel) {
-      tripSel.value = tripType;
-      calcMoving();
+    if (tripType === 'single') {
+      mvMode = 'small';
+    } else {
+      mvMode = 'repeat';
+      const tripSel = document.getElementById('mv-trip');
+      if (tripSel) tripSel.value = tripType;
     }
+    calcMoving();
   }
   const calcEl = document.getElementById('calculator');
   if (calcEl) calcEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1152,7 +1193,20 @@ function updateMovingMapsLink() {
 }
 
 function calcMoving() {
-  const tripType = document.getElementById('mv-trip').value;
+  const tripType = mvMode === 'small' ? 'single' : document.getElementById('mv-trip').value;
+  const extraOn = mvMode === 'repeat' || mvExtraOpen;
+  const show = (id, on) => { const el = document.getElementById(id); if (el) el.style.display = on ? '' : 'none'; };
+  show('mv-trip-row', mvMode === 'repeat');
+  show('mv-extra-toggle', mvMode === 'small');
+  show('mv-extra', extraOn);
+  show('mv-time-row', mvMode === 'repeat');
+  show('mv-rules', mvMode === 'repeat');
+  document.getElementById('mv-mode-small').setAttribute('aria-pressed', mvMode === 'small' ? 'true' : 'false');
+  document.getElementById('mv-mode-repeat').setAttribute('aria-pressed', mvMode === 'repeat' ? 'true' : 'false');
+  const tgl = document.getElementById('mv-extra-toggle');
+  if (tgl) tgl.setAttribute('aria-expanded', mvExtraOpen ? 'true' : 'false');
+  const tglText = document.getElementById('mv-extra-toggle-text');
+  if (tglText) tglText.textContent = mvExtraOpen ? '− 추가 조건 닫기 (선택한 조건은 요금에서 빠집니다)' : '+ 무거운 가구·계단·먼 하차가 있나요? (선택)';
   const km = Math.max(1, parseInt(document.getElementById('mv-km').value, 10) || 1);
 
   const helpSmall = document.getElementById('mv-help-small');
@@ -1179,7 +1233,7 @@ function calcMoving() {
   const single = calcSinglePrice(km);
   const mult = TRIP_MULT[tripType];
   const crewEl = document.getElementById('mv-crew');
-  const crew2 = !!(crewEl && crewEl.value === '2');
+  const crew2 = extraOn && !!(crewEl && crewEl.value === '2');
 
   // 운반 도움 안내 배너 토글
   if (tripType === 'single') {
@@ -1218,8 +1272,8 @@ function calcMoving() {
   }
 
   // 현장 조건 — 계단(출발지·도착지 각각), 먼 하차, 예상 초과 시간
-  const val = id => { const el = document.getElementById(id); return el ? parseInt(el.value, 10) || 0 : 0; };
-  const chk = id => { const el = document.getElementById(id); return !!(el && el.checked); };
+  const val = id => { if (!extraOn) return 0; const el = document.getElementById(id); return el ? parseInt(el.value, 10) || 0 : 0; };
+  const chk = id => { if (!extraOn) return false; const el = document.getElementById(id); return !!(el && el.checked); };
   let quoteNeeded = false;
   [['mv-st-from', '출발지'], ['mv-st-to', '도착지']].forEach(([id, where]) => {
     const f = val(id);
@@ -1234,7 +1288,7 @@ function calcMoving() {
     if (chk(id)) { breakdown.push(`<li><span>${where} — 현관까지 50m 이상</span><span>+€${FAR_FEE}</span></li>`); total += FAR_FEE; }
   });
   const otRate = OT_RATE[crew2 ? 2 : 1];
-  const halfHours = val('mv-extra-time');
+  const halfHours = mvMode === 'repeat' ? val('mv-extra-time') : 0;
   if (halfHours > 0) {
     const ot = halfHours * otRate;
     breakdown.push(`<li><span>예상 초과 작업 ${halfHours * 30}분 (30분당 €${otRate})</span><span>+€${ot}</span></li>`);
@@ -1341,7 +1395,15 @@ function copyAndOpenKakao(message) {
 // 이사·운송 — 카톡 문의 메시지 생성
 function inquireMoving() {
   const tripSel = document.getElementById('mv-trip');
-  const tripText = tripSel ? tripSel.options[tripSel.selectedIndex].text : '이사·운송';
+  const tripText = mvMode === 'small' ? '소규모 이사 — 한 번 이동' : '반복 이동 이사 — ' + tripSel.options[tripSel.selectedIndex].text;
+  const extraOn = mvMode === 'repeat' || mvExtraOpen;
+  const optText = id => document.getElementById(id).options[document.getElementById(id).selectedIndex].text;
+  const condLines = extraOn ? [
+    `작업 인원: ${document.getElementById('mv-crew').value === '2' ? '2인 (운반 인력 1명 추가)' : '1인'}`,
+    `출발지 층: ${optText('mv-st-from')}`,
+    `도착지 층: ${optText('mv-st-to')}`,
+    `현관까지 50m 이상: ${[document.getElementById('mv-far-from').checked ? '출발지' : '', document.getElementById('mv-far-to').checked ? '도착지' : ''].filter(Boolean).join('·') || '없음'}`
+  ].concat(mvMode === 'repeat' ? [`예상 작업시간: ${optText('mv-extra-time')}`] : []) : ['추가 조건: 없음 (1인·계단 없음)'];
   const km = document.getElementById('mv-km').value;
   const price = document.getElementById('mv-price').textContent;
   const from = (document.getElementById('mv-from').value || '').trim();
@@ -1350,11 +1412,7 @@ function inquireMoving() {
   const lines = [
     '안녕하세요! 이사·운송 문의드립니다.',
     `종류: ${tripText}`,
-    `작업 인원: ${(document.getElementById('mv-crew') && document.getElementById('mv-crew').value === '2') ? '2인 (운반 인력 1명 추가)' : '1인'}`,
-    `출발지 층: ${document.getElementById('mv-st-from').options[document.getElementById('mv-st-from').selectedIndex].text}`,
-    `도착지 층: ${document.getElementById('mv-st-to').options[document.getElementById('mv-st-to').selectedIndex].text}`,
-    `현관까지 50m 이상: ${[document.getElementById('mv-far-from').checked ? '출발지' : '', document.getElementById('mv-far-to').checked ? '도착지' : ''].filter(Boolean).join('·') || '없음'}`,
-    `예상 작업시간: ${document.getElementById('mv-extra-time').options[document.getElementById('mv-extra-time').selectedIndex].text}`,
+    ...condLines,
     `📏 거리: 약 ${km}km (차량 실주행거리 기준)`,
     `💰 예상 가격: ${price}`,
     `출발지: ${from || '(작성해주세요)'}`,
