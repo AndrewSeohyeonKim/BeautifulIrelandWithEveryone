@@ -1110,7 +1110,24 @@
 // status: 'confirmed' | 'recruiting' | 'almost-full' | 'full' | 'new'
 // =============================================
 const OPEN_TRIPS = [
-  // 현재 모집 중인 동행이 없습니다. (2026-08-11 지난 공고 정리)
+  {
+    id: 'trip-2026-10-06',
+    date: '2026-10-06',
+    dateDisplay: '10월 6일 (화)',
+    course: '더니골 남부',
+    courseEn: 'South Donegal · Slieve League',
+    description: '유럽에서 가장 높은 해상 절벽 슬리브리그(Slieve League)를 중심으로 아다라(Ardara)·슬라이고(Sligo)까지 도는 당일 코스입니다. 현재 2명 합류, 2자리 남았습니다.',
+    capacity: 4,
+    booked: 2,
+    status: 'recruiting',
+    pricePerPerson: 125,
+    priceNote: '4인 기준 1인 가격 · 입장료·식비 별도',
+    meetingPoint: 'Blanchardstown Shopping Centre',
+    meetingTime: '인원 확정 후 카톡 안내',
+    extraNote: '도어투도어 픽업·드랍 각 +€5/인',
+    routeId: 'r3'
+  },
+  // 아래는 복사용 템플릿입니다. (2026-08-11 지난 공고 정리)
   // 새 공고는 아래 템플릿을 복사해 이 배열에 추가하세요. date가 지나면 자동으로 숨겨집니다.
   // index.html 의 <section id="recruiting"> 카드에도 같은 내용을 수동으로 넣어야 합니다.
   /*
