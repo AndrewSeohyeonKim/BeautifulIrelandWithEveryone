@@ -10,7 +10,7 @@
 //    .reveal / .stagger-fade 를 감추는 CSS는 <html class="js">에만 걸려 있어서,
 //    JS가 꺼져 있거나 실패해도 콘텐츠는 그대로 보입니다. (index 등 <head> 인라인 스니펫 참고)
 (function setupScrollReveal() {
-  var targets = document.querySelectorAll('.reveal, .stagger-fade');
+  var targets = document.querySelectorAll('.reveal, .stagger-fade, .dt-map');
   if (!targets.length) return;
 
   function showAll() {
@@ -43,16 +43,31 @@
   setTimeout(function () { if (!observerWorked) showAll(); }, 3000);
 })();
 
-// 3) 햄버거 메뉴 토글은 inline onclick으로 이미 처리됨
-//    — 여기서는 외부 클릭 시 닫기만 추가
-document.addEventListener('click', function (e) {
-  const menu = document.querySelector('nav.topnav .menu');
-  const ham = document.querySelector('nav.topnav .ham');
-  if (!menu || !menu.classList.contains('open')) return;
-  if (e.target === ham || ham?.contains(e.target)) return;
-  if (e.target === menu || menu.contains(e.target)) return;
-  menu.classList.remove('open');
-});
+// 3) 햄버거 메뉴 — aria-expanded, 바깥 클릭·Esc·링크 클릭으로 닫힘, 열린 동안 뒤 페이지 스크롤 잠금
+(function setupMenu() {
+  var nav = document.querySelector('nav.topnav');
+  var ham = nav ? nav.querySelector('.ham') : null;
+  var menu = nav ? nav.querySelector('.menu') : null;
+  if (!ham || !menu) return;
+  var backdrop = document.createElement('div');
+  backdrop.className = 'menu-backdrop';
+  document.body.appendChild(backdrop);
+  function setOpen(open) {
+    menu.classList.toggle('open', open);
+    nav.classList.toggle('menu-open', open);
+    backdrop.classList.toggle('show', open);
+    document.body.classList.toggle('menu-locked', open);
+    ham.setAttribute('aria-expanded', open ? 'true' : 'false');
+    ham.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+  }
+  ham.addEventListener('click', function () { setOpen(!menu.classList.contains('open')); });
+  backdrop.addEventListener('click', function () { setOpen(false); });
+  menu.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && menu.classList.contains('open')) { setOpen(false); ham.focus(); }
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 960 && menu.classList.contains('open')) setOpen(false); });
+})();
 
 // 4) FAQ 토글이 이미 inline onclick으로 처리되므로 별도 처리 없음
 
@@ -118,11 +133,13 @@ window.showToast = function (msg) {
   if (!el) {
     el = document.createElement('div');
     el.id = 'site-toast';
-    el.style.cssText = 'position:fixed; left:50%; bottom:28px; transform:translateX(-50%);'
-      + ' background:rgba(20,35,45,0.95); color:#fff; padding:13px 20px; border-radius:10px;'
+    el.setAttribute('role', 'status');
+    el.setAttribute('aria-live', 'polite');
+    el.style.cssText = 'position:fixed; left:50%; bottom:calc(96px + env(safe-area-inset-bottom)); transform:translateX(-50%);'
+      + ' background:rgba(18,29,48,0.96); color:#fff; padding:14px 20px; border-radius:12px;'
       + ' font-size:14px; font-weight:600; line-height:1.5; max-width:88vw; text-align:center;'
       + ' box-shadow:0 8px 28px rgba(0,0,0,0.25); z-index:99999; opacity:0; transition:opacity .22s;';
-    document.body.appendChild(el);
+    (document.querySelector('main') || document.body).appendChild(el);
   }
   el.textContent = msg;
   requestAnimationFrame(function () { el.style.opacity = '1'; });
@@ -203,6 +220,9 @@ window.inquireMusic = function () {
       }
 
       document.getElementById('fund-amount').textContent = euro(d.raised);
+      var ft = document.getElementById('fact-trips'), fd = document.getElementById('fact-trips-date');
+      if (ft && typeof d.trips === 'number' && d.trips > 0) ft.textContent = d.trips + '건';
+      if (fd && ymd(d.updated)) fd.textContent = '(' + ymd(d.updated) + ' 기준)';
 
       var meta = [];
       var since = ymd(d.since);
@@ -324,19 +344,16 @@ window.inquireMusic = function () {
 })();
 
 // ============================================================
-// 8) 모션 (2026-09-12) — 내비 스크롤 상태·진행선, 히어로 패럴랙스,
-//    서비스 카드 기울기, FAQ 높이 애니메이션 래퍼, 모금액 카운트업, 서브페이지 자동 리빌.
-//    prefers-reduced-motion 이면 JS 모션은 전부 건너뛴다 (CSS 쪽은 styles.css 에서 끔).
+// 8) 모션·상호작용 (2026-10-11 정리) — 내비 스크롤 상태, FAQ 높이 애니메이션 래퍼,
+//    서브페이지 자동 리빌, 모금액 카운트업. 패럴랙스·카드 기울기·진행선은 2026-10-11에 뺐다.
+//    prefers-reduced-motion 이면 JS 모션은 건너뛴다 (CSS 쪽은 styles.css 에서 끔).
 // ============================================================
 (function setupMotion() {
   var reduce = false;
   try { reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
 
-  // (a) 내비: 스크롤하면 .is-scrolled, 진행선은 --progress 로
+  // (a) 내비: 스크롤하면 .is-scrolled (홈에서는 사진 위 투명 → 흰 바탕)
   var nav = document.querySelector('nav.topnav');
-  var bar = document.querySelector('.scroll-progress');
-  var hero = document.querySelector('header.hero');
-  var heroContent = hero ? hero.querySelector('.hero-content') : null;
   var ticking = false;
   function onScroll() {
     if (ticking) return;
@@ -344,43 +361,11 @@ window.inquireMusic = function () {
     requestAnimationFrame(function () {
       var y = window.scrollY || window.pageYOffset || 0;
       if (nav) nav.classList.toggle('is-scrolled', y > 24);
-      if (bar) {
-        var max = (document.documentElement.scrollHeight - window.innerHeight) || 1;
-        bar.style.setProperty('--progress', Math.min(1, Math.max(0, y / max)).toFixed(4));
-      }
-      // (b) 히어로 패럴랙스 — 글은 배경보다 천천히 올라가며 옅어진다
-      if (!reduce && hero && heroContent) {
-        var h = hero.offsetHeight || 1;
-        if (y < h) {
-          var t = y / h;
-          heroContent.style.transform = 'translateY(' + (y * 0.22).toFixed(1) + 'px)';
-          heroContent.style.opacity = (1 - t * 0.9).toFixed(3);
-        }
-      }
       ticking = false;
     });
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
-
-  // (c) 서비스 카드 기울기 — 마우스가 있는 기기에서만, 최대 4도
-  var fine = false;
-  try { fine = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches; } catch (e) {}
-  if (!reduce && fine) {
-    document.querySelectorAll('.service-card').forEach(function (card) {
-      card.addEventListener('mousemove', function (e) {
-        var r = card.getBoundingClientRect();
-        var px = (e.clientX - r.left) / r.width - 0.5;
-        var py = (e.clientY - r.top) / r.height - 0.5;
-        card.style.setProperty('--ry', (px * 6).toFixed(2) + 'deg');
-        card.style.setProperty('--rx', (-py * 5).toFixed(2) + 'deg');
-      });
-      card.addEventListener('mouseleave', function () {
-        card.style.removeProperty('--rx');
-        card.style.removeProperty('--ry');
-      });
-    });
-  }
 
   // (d) FAQ 답을 .faq-a-inner 로 감싼다 — CSS grid 0fr→1fr 높이 애니메이션용
   document.querySelectorAll('.faq-a').forEach(function (a) {
@@ -446,4 +431,150 @@ window.inquireMusic = function () {
     }, { threshold: 0.4 });
     io3.observe(amountEl);
   }
+})();
+
+// ============================================================
+// 9) 빠른 문의 막대(.dock) — 히어로의 문의 버튼이 보이는 동안·푸터가 보이는 동안 숨긴다.
+//    누르면 링크가 카톡을 열고, data-inquire 에 적힌 페이지별 함수가 문의 메시지를 복사한다.
+// ============================================================
+(function setupDock() {
+  var dock = document.querySelector('.dock');
+  if (!dock) return;
+  document.body.classList.add('has-dock');
+  // 문의 버튼이 이미 보이는 구역(히어로 버튼, 홈의 메시지 만들기 카드)과 푸터가 보이면 숨긴다
+  var zones = Array.prototype.slice.call(document.querySelectorAll('[data-dock-hide], header.hero .cta, footer.contact'));
+  var visible = new Set();
+  var scrolled = false;
+  function update() {
+    var show = scrolled && visible.size === 0;
+    dock.classList.toggle('is-hidden', !show);
+    dock.setAttribute('aria-hidden', show ? 'false' : 'true');
+    dock.tabIndex = show ? 0 : -1;
+  }
+  function onScroll() { scrolled = (window.scrollY || 0) > 320; update(); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  if ('IntersectionObserver' in window && zones.length) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) visible.add(en.target); else visible.delete(en.target); });
+      update();
+    }, { rootMargin: '0px 0px -60px 0px' });
+    zones.forEach(function (z) { io.observe(z); });
+  }
+  onScroll();
+  dock.addEventListener('click', function () {
+    var fn = window[dock.getAttribute('data-inquire') || 'inquireGeneral'];
+    try { (typeof fn === 'function' ? fn : window.inquireGeneral)(); } catch (e) { window.inquireGeneral && window.inquireGeneral(); }
+  });
+})();
+
+// ============================================================
+// 10) 홈 — 문의 메시지 만들기. 고른 값으로 카톡에 보낼 문장을 만들고, 보내기를 누르면 복사한다.
+// ============================================================
+(function setupComposer() {
+  var form = document.getElementById('ask-form');
+  if (!form) return;
+  var bubble = document.getElementById('ask-bubble');
+  var hint = document.getElementById('ask-hint');
+  var dateEl = document.getElementById('ask-date');
+  var out = document.getElementById('ask-people');
+  var minus = document.getElementById('ask-minus');
+  var plus = document.getElementById('ask-plus');
+  var label = document.getElementById('ask-people-label');
+  var people = 2;
+  var SVC = {
+    airport:    { name: '공항 픽업·드랍', unit: '인원', min: 1, max: 6, extra: '도착 픽업/출발 드랍: \n항공편명: \n숙소 주소: \n캐리어 수: ', hint: '도착 픽업인지 출발 드랍인지, 항공편명과 숙소 주소를 함께 보내 주시면 금액을 바로 안내합니다.' },
+    tour:       { name: '당일 로드트립', unit: '인원', min: 1, max: 6, extra: '가고 싶은 코스: ', hint: '가고 싶은 코스 이름을 함께 적어 주세요. 1~2인은 모집 일정 합류도 가능합니다.' },
+    moving:     { name: '이사', unit: '작업 인원', min: 1, max: 2, extra: '출발지: \n도착지: \n짐의 양: \n층수·엘리베이터: ', hint: '출발지와 도착지, 짐의 양(캐리어·박스 수, 가구), 층수와 엘리베이터 여부를 함께 적어 주세요.' },
+    pilgrimage: { name: '성지순례·피정', unit: '인원', min: 1, max: 6, extra: '가고 싶은 성지·미사 일정: ', hint: '가고 싶은 성지나 원하시는 미사 시간이 있으면 함께 적어 주세요.' },
+    custom:     { name: '맞춤 여행·통역 동행', unit: '인원', min: 1, max: 6, extra: '일정과 관심사: ', hint: '기간, 관심사, 예산을 아는 만큼 적어 주세요. 후보 일정을 먼저 보내 드립니다.' }
+  };
+  var today = new Date();
+  try { dateEl.min = today.toLocaleDateString('en-CA', { timeZone: 'Europe/Dublin' }); } catch (e) {}
+  function svcKey() { var c = form.querySelector('input[name="ask-svc"]:checked'); return c ? c.value : 'airport'; }
+  function fmtDate(v) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v || '');
+    if (!m) return '미정';
+    var d = new Date(+m[1], +m[2] - 1, +m[3]);
+    var w = ['일', '월', '화', '수', '목', '금', '토'][d.getDay()];
+    return (+m[1]) + '년 ' + (+m[2]) + '월 ' + (+m[3]) + '일 (' + w + ')';
+  }
+  function message(withExtra) {
+    var s = SVC[svcKey()];
+    var unitText = svcKey() === 'moving' ? (people === 2 ? '2인 작업 (운반 인력 추가)' : '1인 작업') : people + '명';
+    var lines = ['안녕하세요. 아일랜드 동행 문의드립니다.', '· 서비스: ' + s.name, '· 날짜: ' + fmtDate(dateEl.value), '· ' + s.unit + ': ' + unitText];
+    if (withExtra) lines.push('', s.extra.replace(/\\n/g, '\n'));
+    return lines.join('\n');
+  }
+  function render() {
+    var s = SVC[svcKey()];
+    people = Math.min(Math.max(people, s.min), s.max);
+    label.textContent = s.unit;
+    out.textContent = svcKey() === 'moving' ? (people === 2 ? '2인' : '1인') : people + '명';
+    minus.disabled = people <= s.min; plus.disabled = people >= s.max;
+    hint.textContent = s.hint;
+    // 말풍선: 고른 값만 굵게
+    var esc = function (t) { return String(t).replace(/[&<>]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]; }); };
+    var unitText = svcKey() === 'moving' ? (people === 2 ? '2인 작업 (운반 인력 추가)' : '1인 작업') : people + '명';
+    bubble.innerHTML = '안녕하세요. 아일랜드 동행 문의드립니다.\n· 서비스: <span class="b-filled">' + esc(s.name) + '</span>\n· 날짜: <span class="b-filled">' + esc(fmtDate(dateEl.value)) + '</span>\n· ' + esc(s.unit) + ': <span class="b-filled">' + esc(unitText) + '</span>';
+  }
+  var lastSvc = svcKey();
+  form.addEventListener('change', function () {
+    var k = svcKey();
+    if (k !== lastSvc) {
+      if (k === 'moving') people = 1;
+      else if (lastSvc === 'moving') people = 2;
+      lastSvc = k;
+    }
+    render();
+  });
+  dateEl.addEventListener('input', render);
+  minus.addEventListener('click', function () { people--; render(); });
+  plus.addEventListener('click', function () { people++; render(); });
+  if (!/^\d/.test(dateEl.value)) { /* 날짜를 비워 두면 "미정" */ }
+  render();
+  window.inquireComposer = function () { window.copyAndOpenKakao(message(true)); };
+})();
+
+// ============================================================
+// 11) 홈 — 당일 코스 지도: 목록에 마우스·키보드 초점을 두면 그 경로가 금색으로
+// ============================================================
+(function setupDayMap() {
+  var list = document.getElementById('dt-list');
+  var map = document.getElementById('dt-map');
+  if (!list || !map) return;
+  function on(key) {
+    map.querySelectorAll('[data-dest]').forEach(function (el) { el.classList.toggle('is-on', el.getAttribute('data-dest') === key); });
+    list.querySelectorAll('a[data-dest]').forEach(function (el) { el.classList.toggle('is-on', el.getAttribute('data-dest') === key); });
+  }
+  list.querySelectorAll('a[data-dest]').forEach(function (a) {
+    var k = a.getAttribute('data-dest');
+    a.addEventListener('mouseenter', function () { on(k); });
+    a.addEventListener('focus', function () { on(k); });
+  });
+  map.querySelectorAll('.dt-label[data-dest]').forEach(function (a) {
+    a.addEventListener('mouseenter', function () { on(a.getAttribute('data-dest')); });
+  });
+  list.addEventListener('mouseleave', function () { on(null); });
+  map.addEventListener('mouseleave', function () { on(null); });
+})();
+
+// ============================================================
+// 12) 홈 — 사진 줄 이전·다음 버튼
+// ============================================================
+(function setupRail() {
+  var rail = document.getElementById('jr-rail');
+  if (!rail) return;
+  var prev = document.querySelector('.jr-btn.prev');
+  var next = document.querySelector('.jr-btn.next');
+  function step() { var it = rail.querySelector('.jr-item'); return it ? it.getBoundingClientRect().width + 16 : 300; }
+  function sync() {
+    if (!prev || !next) return;
+    prev.disabled = rail.scrollLeft < 8;
+    next.disabled = rail.scrollLeft + rail.clientWidth > rail.scrollWidth - 8;
+  }
+  if (prev) prev.addEventListener('click', function () { rail.scrollBy({ left: -step() * 2, behavior: 'smooth' }); });
+  if (next) next.addEventListener('click', function () { rail.scrollBy({ left: step() * 2, behavior: 'smooth' }); });
+  rail.addEventListener('scroll', function () { window.requestAnimationFrame(sync); }, { passive: true });
+  window.addEventListener('resize', sync);
+  sync();
 })();

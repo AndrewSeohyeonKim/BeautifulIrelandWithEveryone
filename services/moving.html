@@ -3,18 +3,18 @@
 <head>
 <script>document.documentElement.className+=" js";</script>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#1a2942">
 <title>아일랜드 이사 (간단 이사·전체 이사) — 더블린 한인 차량 | Andrew의 아일랜드 동행</title>
 <meta name="description" content="더블린 한국어 이사. 짐이 차 한 번에 실리는 간단 이사 €40부터, 방·집 전체 살림을 2–3번 왕복하는 전체 이사 €80부터. 7인승 MPV 좌석을 접으면 1,800L, 운반도 함께 합니다.">
 <meta property="og:title" content="이사 (간단·전체) — 아일랜드 동행">
 <meta property="og:description" content="더블린 간단 이사 €40부터 · 전체 이사 €80부터.">
-<meta property="og:image" content="https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/images/logo/og-image.jpg?v=20260501">
+<meta property="og:image" content="https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/images/logo/og-image.jpg?v=20261011">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/services/moving.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/images/logo/og-image.jpg?v=20260501">
+<meta name="twitter:image" content="https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/images/logo/og-image.jpg?v=20261011">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta property="og:site_name" content="Andrew의 아일랜드 동행 — Beautiful Ireland with Everyone">
 <meta property="og:locale" content="ko_KR">
@@ -25,166 +25,180 @@
 <meta name="geo.region" content="IE-D">
 <meta name="geo.placename" content="Dublin, Ireland">
 <link rel="canonical" href="https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/services/moving.html">
-<link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<link rel="apple-touch-icon" href="../images/logo/icon.svg">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../images/logo/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../images/logo/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles.css">
-<script defer src="../scripts.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css?v=20261011">
+<script defer src="../scripts.js?v=20261011"></script>
 <style>
-  .calc-wrap { background: white; border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; max-width:760px; margin:0 auto; }
-  .calc-tabs { display: flex; background: var(--bg); border-bottom: 1px solid var(--border); }
-  .calc-tab {
-    flex: 1; padding: 16px 12px;
-    border: none; background: transparent; cursor: pointer;
-    font-family: inherit; font-size: 14px; font-weight: 600;
-    color: var(--muted); transition: all 0.2s;
-    border-bottom: 3px solid transparent;
-  }
-  .calc-tab:hover { color: var(--primary); background: rgba(0,0,0,0.02); }
-  .calc-tab.active { color: var(--primary); border-bottom-color: var(--accent); background: white; }
-  .calc-body { padding: 28px 24px; }
+  /* 이사 페이지 전용 — 토큰만 쓴다. 카드는 1px 선, 그림자·그라데이션·리본 없음 */
+  .h2-note { color: var(--muted); font-size: 0.55em; font-weight: 600; letter-spacing: 0; white-space: nowrap; }
+  .dot-list { list-style: none; margin: 0; padding: 0; }
+  .dot-list li { position: relative; padding: 4px 0 4px 16px; font-size: 15px; color: var(--text); line-height: 1.6; }
+  .dot-list li::before { content: ''; position: absolute; left: 0; top: 0.95em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+  /* 이사 종류 카드 */
+  .use-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 820px; margin: 0 auto; }
+  @media (max-width: 760px) { .use-grid { grid-template-columns: 1fr; } }
+  .use-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 26px 24px; display: flex; flex-direction: column; transition: border-color 0.2s; }
+  .use-card { cursor: pointer; }
+  .use-card:hover { border-color: var(--accent); }
+  .use-card .icon { margin-bottom: 16px; }
+  .use-card h3 { font-size: 21px; color: var(--primary); margin-bottom: 8px; }
+  .use-card > p { font-size: 15.5px; color: var(--text); line-height: 1.75; margin-bottom: 12px; }
+  .use-card .dot-list { margin-bottom: 18px; }
+  .use-card .price-tag { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); font-size: 16px; font-weight: 800; color: var(--primary); }
+  .use-card .card-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; font-size: 14px; font-weight: 600; color: var(--accent-ink); }
+  .use-card .card-link .ic { width: 16px; height: 16px; }
+  .crew-note { max-width: 820px; margin: 20px auto 0; background: var(--accent-tint); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; }
+  .crew-note h3 { font-size: 17px; font-weight: 800; color: var(--primary); margin: 0 0 6px; }
+  .crew-note p { font-size: 15.5px; color: var(--text); line-height: 1.75; margin: 0; }
+  .crew-note strong { color: var(--primary); }
+  .section-note { max-width: 760px; margin: 18px auto 0; font-size: 15px; color: var(--muted); line-height: 1.75; text-align: center; }
+
+  /* 차량 정보 */
+  .vehicle-photo { max-width: 560px; margin: 0 auto; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
+  .vehicle-photo img { width: 100%; height: auto; }
+  .vehicle-specs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 760px; margin: 22px auto 0; }
+  @media (max-width: 600px) { .vehicle-specs { grid-template-columns: repeat(2, 1fr); } }
+  .spec { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 16px 12px; text-align: center; }
+  .spec .num { font-size: 22px; font-weight: 800; color: var(--primary); letter-spacing: -0.02em; }
+  .spec .lbl { font-size: 13.5px; color: var(--muted); }
+
+  /* 서비스 권역 */
+  .zone-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 900px; margin: 0 auto; }
+  @media (max-width: 760px) { .zone-grid { grid-template-columns: 1fr; } }
+  .zone-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+  .zone-card .zone-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+  .zone-card .zone-head h3 { margin: 0; font-size: 19px; color: var(--primary); }
+  .zone-card .zone-tag { margin-left: auto; font-size: 13px; font-weight: 700; padding: 3px 11px; border-radius: 999px; background: var(--card); }
+  .zone-card.zone-in .zone-tag { color: var(--green); border: 1px solid var(--green); }
+  .zone-card.zone-out .zone-tag { color: var(--accent-ink); border: 1px solid var(--accent); }
+  .zone-card .zone-desc { font-size: 15px; color: var(--text); margin-bottom: 8px; line-height: 1.65; }
+  .zone-card .dot-list { margin-bottom: 12px; }
+  .zone-card.zone-in .dot-list li::before { background: var(--green); }
+  .zone-card .zone-note { font-size: 14px; color: var(--muted); padding-top: 12px; border-top: 1px solid var(--line); line-height: 1.65; margin: 0; }
+  .zone-extra { max-width: 900px; margin: 16px auto 0; padding: 16px 20px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-sm); font-size: 15px; color: var(--text); line-height: 1.75; }
+  .zone-extra strong { color: var(--primary); }
+
+  /* 가격 계산기 — 조용한 양식. 입력칸 48px · 1.5px 테두리 · 12px 모서리, 선택은 네이비 */
+  .calc-section { background: var(--accent-tint); }
+  .calc-wrap { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; max-width: 760px; margin: 0 auto; }
+  .calc-body { padding: 32px 28px; }
   .calc-content { display: none; }
   .calc-content.active { display: block; }
-  .calc-body .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+  .calc-body .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 22px; }
   .calc-body .row.single { grid-template-columns: 1fr; }
-  @media (max-width: 600px) { .calc-body .row { grid-template-columns: 1fr; } }
-  .field label { display: block; font-size: 13px; font-weight: 600; color: var(--primary); margin-bottom: 6px; }
+  @media (max-width: 600px) { .calc-body .row { grid-template-columns: 1fr; margin-bottom: 20px; } }
+  .field label { display: block; font-size: 15px; font-weight: 700; color: var(--primary); margin-bottom: 8px; line-height: 1.45; }
+  .field label .opt { font-size: 14px; font-weight: 400; color: var(--muted); }
   .field input, .field select {
-    width: 100%; padding: 11px 13px;
-    border: 1.5px solid var(--border); border-radius: 8px;
-    font-size: 14.5px; font-family: inherit; background: white;
+    width: 100%; min-height: 48px; padding: 11px 14px;
+    border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+    font-size: 16px; font-family: inherit; color: var(--text); background: var(--card);
+    transition: border-color 0.2s, box-shadow 0.2s;
   }
-  .field input:focus, .field select:focus { outline: none; border-color: var(--accent); }
-  .field .hint { font-size: 12px; color: var(--muted); margin-top: 4px; }
-  .result-panel {
-    margin-top: 22px;
-    background: var(--accent-soft);
-    border: 2px solid var(--accent);
-    border-radius: 12px;
-    padding: 22px;
-  }
-  .result-panel .result-label { font-size: 13px; color: var(--primary); font-weight: 600; margin-bottom: 4px; }
-  .result-panel .result-price { font-size: 42px; font-weight: 900; color: var(--primary); letter-spacing: -2px; line-height: 1.1; margin-bottom: 14px; }
-  .result-panel .breakdown { background: white; border-radius: 8px; padding: 14px; }
-  .result-panel .breakdown ul { list-style: none; font-size: 13.5px; }
-  .result-panel .breakdown ul li { padding: 4px 0; display: flex; justify-content: space-between; }
+  .field input::placeholder { color: var(--muted); opacity: 0.75; }
+  .field input:focus, .field select:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--line); }
+  .field .hint, .calc-body .hint { font-size: 14px; color: var(--muted); margin-top: 8px; line-height: 1.6; }
+  .field .hint strong { color: var(--text); font-weight: 600; }
+  .km-quick { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+  .km-quick button { min-height: 40px; padding: 0 14px; border: 1.5px solid var(--border); border-radius: 999px; background: var(--card); cursor: pointer; font-family: inherit; font-size: 14px; font-weight: 600; color: var(--text); transition: border-color 0.15s, background-color 0.15s, color 0.15s; }
+  .km-quick button:hover { border-color: var(--primary); }
+  .km-quick button.active { border-color: var(--primary); background: var(--primary); color: #fff; }
+  .maps-btn { width: 100%; min-height: 48px; padding: 10px 16px; font-size: 15px; white-space: normal; text-align: center; }
+  .mode-switch { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 24px; }
+  @media (max-width: 420px) { .mode-switch { grid-template-columns: 1fr; } }
+  .mode-switch button { text-align: left; background: var(--card); border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 16px 18px; cursor: pointer; font-family: inherit; color: var(--text); display: flex; flex-direction: column; gap: 4px; transition: border-color 0.15s, box-shadow 0.15s; }
+  .mode-switch button:hover { border-color: var(--primary); }
+  .mode-switch button strong { font-size: 17px; font-weight: 800; color: var(--primary); }
+  .mode-switch button span { font-size: 14px; color: var(--muted); line-height: 1.55; }
+  .mode-switch button em { font-style: normal; font-size: 14px; font-weight: 700; color: var(--accent-ink); margin-top: 2px; }
+  .mode-switch button[aria-pressed="true"] { border-color: var(--primary); box-shadow: inset 0 0 0 1px var(--primary); }
+  .mode-switch button[aria-pressed="true"] em { color: var(--primary); }
+  .mode-switch button:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+  .extra-toggle { width: 100%; text-align: left; background: var(--card); border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 14px 16px; font-family: inherit; font-size: 15px; font-weight: 700; color: var(--primary); cursor: pointer; margin: 0 0 18px; transition: border-color 0.15s; }
+  .extra-toggle:hover, .extra-toggle[aria-expanded="true"] { border-color: var(--primary); }
+  .extra-toggle small { display: block; font-weight: 400; color: var(--muted); font-size: 14px; margin-top: 3px; line-height: 1.55; }
+  .cond-panel { background: var(--accent-tint); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 18px 18px 14px; margin: 0 0 22px; }
+  .cond-panel .cond-title { font-size: 16px; font-weight: 800; color: var(--primary); margin: 0 0 4px; }
+  .cond-panel .cond-sub { font-size: 14.5px; color: var(--text); margin: 0 0 14px; line-height: 1.65; }
+  .cond-panel .row { margin-bottom: 14px; }
+  .cond-panel .field select { background: var(--card); }
+  .cond-panel .cond-check { display: flex; align-items: flex-start; gap: 12px; padding: 8px 0; font-size: 15px; color: var(--primary); cursor: pointer; line-height: 1.5; }
+  .cond-panel .cond-check input { width: 20px; height: 20px; margin-top: 1px; flex-shrink: 0; accent-color: var(--primary); }
+  .cond-panel .cond-check .tag { font-weight: 800; white-space: nowrap; }
+  .cond-panel .stair-hint { margin: -4px 0 10px; }
+  #mv-time-row { margin: 10px 0 0; }
+  .rules-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 16px 18px; margin: 4px 0 14px; }
+  .rules-card .rules-title { font-size: 15px; font-weight: 800; color: var(--primary); margin-bottom: 10px; }
+  .rules-card .rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; }
+  @media (max-width: 600px) { .rules-card .rules-grid { grid-template-columns: 1fr; } }
+  .rules-card .rules-grid h4 { font-size: 14px; font-weight: 800; color: var(--accent-ink); margin: 0 0 4px; }
+  .rules-card .rules-grid ul { list-style: none; margin: 0; padding: 0; }
+  .rules-card .rules-grid li { display: flex; justify-content: space-between; gap: 10px; font-size: 14.5px; padding: 3px 0; color: var(--text); }
+  .rules-card .rules-grid li b { color: var(--primary); white-space: nowrap; }
+  .included-banner { display: flex; gap: 10px; align-items: flex-start; background: var(--accent-tint); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 14px 16px; margin: 0 0 14px; font-size: 14.5px; color: var(--text); line-height: 1.65; }
+  .included-banner .ic { width: 20px; height: 20px; color: var(--green); margin-top: 2px; }
+  .included-banner strong { color: var(--primary); }
+  /* #mv-long-warn 은 인라인 display:none 을 JS가 켜고 끈다 — 여기서 display 를 정하지 않는다 */
+  .long-warn { margin: 0 0 14px; padding: 14px 16px; background: var(--card); border: 1px solid var(--accent); border-radius: var(--radius-sm); font-size: 14.5px; color: var(--text); line-height: 1.65; }
+  .long-warn strong { color: var(--primary); }
+  .result-panel { margin-top: 10px; background: var(--accent-tint); border: 1px solid var(--accent-soft); border-radius: var(--radius); padding: 24px; }
+  .result-panel .result-label { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+  .result-panel .result-price { font-size: 46px; font-weight: 900; color: var(--primary); letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 16px; font-variant-numeric: tabular-nums; }
+  .result-panel .breakdown { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 12px 18px; }
+  .result-panel .breakdown h3 { font-size: 14px; font-weight: 700; color: var(--muted); margin: 2px 0 2px; }
+  .result-panel .breakdown ul { list-style: none; margin: 0; padding: 0; }
+  .result-panel .breakdown ul li { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; padding: 8px 0; font-size: 15px; color: var(--text); line-height: 1.5; }
+  .result-panel .breakdown ul li > span:last-child { font-weight: 700; color: var(--primary); white-space: nowrap; }
+  .result-panel .breakdown ul li.sub { padding: 2px 0 2px 12px; font-size: 14px; color: var(--muted); }
+  .result-panel .breakdown ul li.sub > span:last-child { font-weight: 500; color: var(--muted); }
+  .result-panel .breakdown ul li.sep { border-top: 1px solid var(--line); margin-top: 6px; padding-top: 10px; }
+  .result-panel .breakdown ul li.warn, .result-panel .breakdown ul li.warn > span { color: var(--red-ink); }
+  .price-note-inline { margin: 14px 0 0; font-size: 14px; color: var(--text); line-height: 1.7; }
+  .price-note-inline strong { color: var(--primary); }
+  .calc-cta { text-align: center; margin-top: 24px; }
+  .calc-cta .btn { width: 100%; max-width: 380px; }
+  .calc-foot { list-style: none; margin: 18px 0 0; padding: 0; }
+  .calc-foot li { font-size: 14px; color: var(--muted); line-height: 1.7; text-align: center; }
 
-  .use-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; max-width:760px; margin:0 auto; }
-  @media (max-width:920px){ .use-grid { grid-template-columns:1fr; max-width:560px; } }
-  .addon-options { background:var(--accent-soft); border:1.5px dashed var(--accent); border-radius:10px; padding:14px 16px; margin-top:6px; margin-bottom:12px; }
-  .addon-options .addon-row { display:flex; align-items:flex-start; gap:10px; padding:6px 0; cursor:pointer; }
-  .addon-options .addon-row input[type="checkbox"] { margin-top:3px; transform:scale(1.15); }
-  .addon-options .addon-row .addon-label { flex:1; font-size:13.5px; color:var(--primary); line-height:1.5; }
-  .addon-options .addon-row .addon-label .price-inline { color:var(--accent-ink); font-weight:800; }
-  .crew-note { max-width:760px; margin:28px auto 0; background:#fff; border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:12px; padding:18px 20px; }
-  .crew-note h3 { font-size:16px; font-weight:800; color:var(--primary); margin:0 0 6px; }
-  .crew-note p { font-size:14px; color:var(--text); line-height:1.75; margin:0; }
-  .included-banner { background:var(--accent-soft); border:1.5px solid var(--accent); border-radius:10px; padding:12px 14px; margin-top:6px; margin-bottom:12px; font-size:13px; color:var(--primary); }
-  .included-banner strong { color:var(--primary); }
-  .km-quick { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px; }
-  .km-quick button { padding:5px 12px; border:1.5px solid var(--border); border-radius:18px; background:white; cursor:pointer; font-family:inherit; font-size:13px; font-weight:600; color:var(--muted); transition:all 0.15s; }
-  .km-quick button:hover { border-color:var(--accent); color:var(--primary); background:var(--accent-soft); }
-  .km-quick button.active { border-color:var(--accent); color:white; background:var(--accent); }
+  /* 전체 가격표 */
+  .price-table-wrap .price-table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-sm); overflow: hidden; }
+  .price-table-wrap .price-table th, .price-table-wrap .price-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); font-size: 15px; }
+  .price-table-wrap .price-table th { background: var(--primary); color: #fff; font-weight: 700; font-size: 14px; }
+  .price-table-wrap .price-table th.num { text-align: right; }
+  .price-table-wrap .price-table tr:last-child td { border-bottom: none; }
+  .price-table-wrap .price-table td.price { font-weight: 800; color: var(--primary); text-align: right; white-space: nowrap; }
+  .price-table-wrap .price-table tr.grp td { background: var(--accent-tint); font-weight: 800; color: var(--primary); font-size: 14.5px; padding-top: 14px; }
+  .price-table-wrap .price-table tr.note-row td { font-size: 13.5px; color: var(--muted); padding-top: 8px; line-height: 1.6; }
+  .table-notes { list-style: none; margin: 16px auto 0; padding: 0; }
+  .table-notes li { position: relative; padding-left: 14px; margin-top: 6px; font-size: 14px; color: var(--muted); line-height: 1.7; }
+  .table-notes li::before { content: ''; position: absolute; left: 0; top: 0.72em; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+  .faq-a ul { margin: 8px 0; padding-left: 22px; }
 
-  .zone-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; max-width:900px; margin:0 auto; }
-  @media (max-width:760px){ .zone-grid { grid-template-columns:1fr; } }
-  .zone-card { background:white; border:1.5px solid var(--border); border-radius:14px; padding:22px 24px; }
-  .zone-card.zone-in { border-color:var(--green); background:var(--bg); }
-  .zone-card.zone-out { border-color:var(--accent); background:var(--accent-tint); }
-  .zone-card .zone-head { display:flex; align-items:center; gap:10px; margin-bottom:10px; flex-wrap:wrap; }
-  .zone-card .zone-head h3 { margin:0; font-size:18px; color:var(--primary); }
-  .zone-card .zone-icon { font-size:22px; }
-  .zone-card .zone-tag { margin-left:auto; font-size:11.5px; font-weight:700; padding:3px 10px; border-radius:999px; background:white; }
-  .zone-card.zone-in .zone-tag { color:var(--green); border:1.5px solid var(--green); }
-  .zone-card.zone-out .zone-tag { color:var(--accent-ink); border:1.5px solid var(--accent); }
-  .zone-card .zone-desc { font-size:13px; color:var(--muted); margin-bottom:10px; line-height:1.6; }
-  .zone-card ul { list-style:none; padding:0; margin-bottom:12px; }
-  .zone-card ul li { font-size:13.5px; color:var(--text); padding:4px 0 4px 22px; line-height:1.55; position:relative; }
-  .zone-card.zone-in ul li::before { content:'✓'; position:absolute; left:0; color:var(--green); font-weight:800; }
-  .zone-card.zone-out ul li::before { content:'•'; position:absolute; left:6px; color:var(--accent-ink); font-weight:800; }
-  .zone-card .zone-note { font-size:12px; color:var(--muted); padding-top:10px; border-top:1px dashed var(--border); line-height:1.6; }
-  .zone-extra { margin-top:18px; padding:14px 18px; background:var(--accent-tint); border:1px solid var(--accent); border-radius:10px; font-size:13px; color:var(--text); line-height:1.7; max-width:900px; margin-left:auto; margin-right:auto; }
-  .zone-extra strong { color:var(--primary); }
-  .long-warn { display:none; margin-top:12px; padding:12px 14px; background:var(--accent-tint); border:1.5px solid var(--accent); border-radius:10px; font-size:13px; color:var(--text); line-height:1.6; }
-  .long-warn strong { color:var(--primary); }
-  .price-note-inline { margin-top:12px; padding:10px 12px; background:rgba(255,255,255,0.7); border-radius:8px; font-size:12px; color:var(--primary); line-height:1.6; }
-  .mode-switch { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:18px; }
-  .mode-switch button { text-align:left; background:#fff; border:1.5px solid var(--border); border-radius:12px; padding:14px 16px; cursor:pointer; font-family:inherit; color:var(--text); display:flex; flex-direction:column; gap:3px; }
-  .mode-switch button strong { font-size:15.5px; font-weight:800; color:var(--primary); }
-  .mode-switch button span { font-size:12.5px; color:var(--muted); line-height:1.5; }
-  .mode-switch button em { font-style:normal; font-size:13px; font-weight:800; color:var(--accent-ink); margin-top:2px; }
-  .mode-switch button[aria-pressed="true"] { border-color:var(--accent); background:var(--accent-tint); box-shadow:0 0 0 2px var(--accent-soft); }
-  .mode-switch button:focus-visible { outline:2px solid var(--primary); outline-offset:2px; }
-  .extra-toggle { width:100%; text-align:left; background:#fff; border:1.5px dashed var(--accent); border-radius:10px; padding:12px 14px; font-family:inherit; font-size:13.5px; font-weight:700; color:var(--primary); cursor:pointer; margin:0 0 16px; }
-  .extra-toggle small { display:block; font-weight:400; color:var(--muted); font-size:12px; margin-top:2px; }
-  .cond-panel { background:var(--accent-tint); border:1.5px solid var(--accent-soft); border-radius:12px; padding:16px 18px; margin:4px 0 18px; }
-  .cond-panel .cond-title { font-size:14px; font-weight:800; color:var(--primary); margin:0 0 4px; }
-  .cond-panel .cond-sub { font-size:12.5px; color:var(--text); margin:0 0 12px; line-height:1.6; }
-  .cond-panel .row { margin-bottom:10px; }
-  .cond-panel > .hint { font-size:12px; color:var(--muted); line-height:1.6; }
-  .cond-panel .cond-check { display:flex; align-items:flex-start; gap:10px; padding:5px 0; font-size:13.5px; color:var(--primary); cursor:pointer; line-height:1.5; }
-  .cond-panel .cond-check input { margin-top:3px; transform:scale(1.15); }
-  .cond-panel .cond-check .tag { font-weight:800; }
-  .rules-card { background:#fff; border:1px solid var(--border); border-radius:12px; padding:14px 16px; margin:10px 0 8px; }
-  .rules-card .rules-title { font-size:13px; font-weight:800; color:var(--primary); margin-bottom:8px; }
-  .rules-card .rules-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px 20px; }
-  @media (max-width:600px){ .rules-card .rules-grid { grid-template-columns:1fr; } }
-  .rules-card .rules-grid h4 { font-size:12.5px; font-weight:800; color:var(--accent-ink); margin:0 0 4px; }
-  .rules-card .rules-grid ul { list-style:none; margin:0; padding:0; }
-  .rules-card .rules-grid li { display:flex; justify-content:space-between; gap:10px; font-size:13px; padding:2px 0; color:var(--text); }
-  .rules-card .rules-grid li b { color:var(--primary); white-space:nowrap; }
-  .rate-card { background:white; border:1px solid var(--border); border-radius:10px; padding:14px 16px; margin-top:10px; margin-bottom:6px; }
-  .rate-card .rate-title { font-size:12.5px; font-weight:700; color:var(--primary); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px; }
-  .rate-card .rate-row { display:flex; justify-content:space-between; padding:3px 0; font-size:13px; color:var(--text); }
-  .rate-card .rate-row .rate-key { color:var(--muted); }
-  .rate-card .rate-row .rate-val { font-weight:700; color:var(--primary); }
-  .use-card {
-    background:white;
-    border:1px solid var(--border);
-    border-radius:16px;
-    padding:32px 28px;
-    transition:all 0.2s;
-    position:relative;
-    overflow:hidden;
+  /* 모바일 — styles.css 의 작은 글씨(!important) 보정: 입력 16px(iOS 확대 방지), 요금 구성 14.5px, 표 14px */
+  @media (max-width: 600px) {
+    .calc-wrap .field input, .calc-wrap .field select { font-size: 16px !important; padding: 11px 13px !important; }
+    .calc-wrap .km-quick { gap: 8px !important; }
+    .calc-wrap .km-quick button { font-size: 14px !important; padding: 0 13px !important; }
+    .calc-wrap .included-banner, .calc-wrap .long-warn { font-size: 14.5px !important; padding: 13px 14px !important; }
+    .calc-wrap .price-note-inline { font-size: 14px !important; padding: 0 !important; }
+    .calc-wrap .result-panel .result-price { font-size: 40px !important; letter-spacing: -0.03em !important; }
+    .calc-wrap .result-panel .breakdown { padding: 10px 14px !important; }
+    .calc-wrap .result-panel .breakdown ul li { font-size: 14.5px !important; }
+    .calc-wrap .result-panel .breakdown ul li.sub { font-size: 14px !important; }
+    .zone-extra { font-size: 15px !important; padding: 14px 16px !important; }
+    .price-table-wrap .price-table.keep-table th { font-size: 13px !important; padding: 10px !important; }
+    .price-table-wrap .price-table.keep-table td { font-size: 14px !important; padding: 11px 10px !important; }
+    .price-table-wrap .price-table.keep-table td.price { color: var(--primary); }
+    .price-table-wrap .price-table.keep-table tr.grp td { font-size: 14px !important; text-align: left !important; padding: 12px 10px 10px !important; }
+    .price-table-wrap .price-table.keep-table tr.note-row td { font-size: 13px !important; text-align: left !important; font-weight: 400; padding: 8px 10px !important; }
   }
-  .use-card::before {
-    content:'';
-    position:absolute;
-    top:0; left:0; right:0;
-    height:5px;
-    background:var(--accent);
-  }
-  .use-card:hover { border-color:var(--accent); box-shadow:var(--shadow-hover); transform:translateY(-3px); }
-  .use-card .icon { margin-bottom:16px; }
-  .use-card h3 { color:var(--primary); margin-bottom:10px; font-size:20px; }
-  .use-card p { font-size:14px; color:var(--muted); line-height:1.7; margin-bottom:14px; }
-  .use-card ul { list-style:none; padding:0; margin-bottom:18px; }
-  .use-card ul li { font-size:13.5px; color:var(--text); padding:5px 0; padding-left:20px; position:relative; line-height:1.6; }
-  .use-card ul li::before { content:'✓'; position:absolute; left:0; top:5px; color:var(--accent); font-weight:700; }
-  .use-card .price-tag {
-    display:inline-block;
-    background:var(--accent-soft);
-    color:var(--primary);
-    padding:6px 14px;
-    border-radius:20px;
-    font-size:13px;
-    font-weight:700;
-  }
-
-  .vehicle-photo { max-width:520px; margin:0 auto; border-radius:14px; overflow:hidden; box-shadow:var(--shadow); }
-  .vehicle-specs { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:24px; max-width:760px; margin-left:auto; margin-right:auto; }
-  @media (max-width:600px){ .vehicle-specs { grid-template-columns:repeat(2,1fr); } }
-  .spec { background:white; border:1px solid var(--border); border-radius:10px; padding:14px; text-align:center; }
-  .spec .num { font-size:22px; font-weight:900; color:var(--accent-ink); }
-  .spec .lbl { font-size:12px; color:var(--muted); }
-
-  .price-table { width:100%; border-collapse:collapse; background:white; border-radius:10px; overflow:hidden; box-shadow:var(--shadow); }
-  .price-table th, .price-table td { padding:12px 14px; text-align:left; border-bottom:1px solid var(--border); font-size:13.5px; }
-  .price-table th { background:var(--primary); color:white; font-weight:700; }
-  .price-table tr:last-child td { border-bottom:none; }
-  .price-table .price { color: var(--accent-ink); font-weight:700; text-align:right; }
 </style>
 <script type="application/ld+json">
 {
@@ -194,12 +208,7 @@
   "serviceType": "Moving and Delivery",
   "description": "짐이 차 한 번에 실리는 간단 이사(€40부터)와 방·집 전체 살림을 2–3번 왕복하는 전체 이사(€80부터). 7인승 MPV 좌석 접으면 1,800L 적재. 거리당 정찰가, 운반 도움 포함.",
   "provider": {
-    "@type": "LocalBusiness",
-    "name": "Beautiful Ireland with Everyone — 서현 Andrew",
-    "email": "sby05034@gmail.com",
-    "sameAs": [
-      "https://www.instagram.com/ireland.sosik/"
-    ]
+    "@id": "https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/#business"
   },
   "areaServed": {
     "@type": "City",
@@ -269,7 +278,7 @@
       "name": "짐 운반은 도와주시나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "가벼운 박스·캐리어: 기본 도움 포함입니다.\n\n\n 큰 가구·매트리스: 차량에 적재 가능한 범위 내에서 Andrew가 함께 들어드립니다 — 추가 비용 없이 기본 포함입니다. 적재 한도를 넘는 양은 전체 이사로 안내드립니다.\n\n\n 전체 이사: 짐 운반 도움이 기본 포함됩니다. 가구·매트리스·박스 등 모든 짐을 함께 운반해 드립니다.\n\n\n 두 사람이 필요한 이사: 운반 인력 1명을 추가한 2인 작업도 가능합니다. 이사 요금에 운반 인력 추가요금 €40(3회 이상 왕복은 €60)을 더합니다."
+        "text": "가벼운 박스·캐리어: 기본 도움 포함입니다.\n\n\n 큰 가구·매트리스: 차량에 적재 가능한 범위 내에서 Andrew가 함께 들어드립니다. 추가 비용 없이 기본 포함입니다. 적재 한도를 넘는 양은 전체 이사로 안내드립니다.\n\n\n 전체 이사: 짐 운반 도움이 기본 포함됩니다. 가구·매트리스·박스 등 모든 짐을 함께 운반해 드립니다.\n\n\n 두 사람이 필요한 이사: 운반 인력 1명을 추가한 2인 작업도 가능합니다. 이사 요금에 운반 인력 추가요금 €40(3회 이상 왕복은 €60)을 더합니다."
       }
     },
     {
@@ -317,7 +326,7 @@
       "name": "서비스 권역 기준은 어떻게 되나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "권역 내 — 둘 중 하나만 충족하면 권역 내 적용 (정찰가 그대로):\n \n Greater Dublin 권역 (시내·Blanchardstown·Tallaght·Swords·Dun Laoghaire·Bray·Lucan·Dundrum 등)\n 또는 Blanchardstown Shopping Centre(Dublin 15) 기준 반경 15km 이내\n \n → M50 톨비·일반 도로 주차 포함, 계산기 가격이 곧 최종 가격.\n\n\n 권역 외 — 카톡 사전 견적:\n \n 외곽 근교: Maynooth·Drogheda·Wicklow Town·Naas·Navan\n 장거리: Cork·Galway·Belfast·Limerick·Killarney\n \n → 출장 거리 추가 + 톨로드(M1·M3·M4·M7·M8) 실비 별도. 짐 양·일정·실주행 거리 종합해서 카톡으로 정확한 견적 안내드립니다."
+        "text": "권역 내: 둘 중 하나만 충족하면 권역 내로 보고 정찰가를 그대로 적용합니다.\n \n Greater Dublin 권역 (시내·Blanchardstown·Tallaght·Swords·Dun Laoghaire·Bray·Lucan·Dundrum 등)\n 또는 Blanchardstown Shopping Centre(Dublin 15) 기준 반경 15km 이내\n \n 계산기 가격이 곧 최종 가격입니다. 톨비·유료 주차비가 생기면 실비를 따로 받습니다.\n\n\n 권역 외: 카톡으로 미리 견적을 드립니다.\n \n 외곽 근교: Maynooth·Drogheda·Wicklow Town·Naas·Navan\n 장거리: Cork·Galway·Belfast·Limerick·Killarney\n \n 출장 거리가 더해지고 톨로드(M1·M3·M4·M7·M8) 실비는 따로 받습니다. 짐 양, 일정, 실주행 거리를 함께 보고 카톡으로 견적을 드립니다."
       }
     },
     {
@@ -325,7 +334,7 @@
       "name": "톨비·주차비는 어떻게 처리되나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "톨비·유료 주차비는 별도 실비 청구입니다 (불포함). 다만 대부분의 이사는 무료 도로 주차로 진행되어 추가 비용이 발생하지 않습니다.\n\n\n 실비 청구 가능 사항:\n \n 시내 paid parking — 짐 하역 시 발생 가능 (€2–5/시간)\n 톨로드 — M50·M1·M3·M4·M7·M8 등 통과 시 (€2–5/회)\n 공항 단기 주차, 특수 시설 유료 주차 — 실비\n \n 발생 가능성이 있으면 작업 전 카톡으로 미리 안내드리고, 영수증 기준으로 정산합니다."
+        "text": "톨비·유료 주차비는 별도 실비 청구입니다 (불포함). 다만 대부분의 이사는 무료 도로 주차로 진행되어 추가 비용이 발생하지 않습니다.\n\n\n 실비 청구 가능 사항:\n \n 시내 유료 주차(paid parking): 짐을 내릴 때 생길 수 있음 (€2–5/시간)\n 톨로드: M50·M1·M3·M4·M7·M8 등을 지날 때 (€2–5/회)\n 공항 단기 주차, 특수 시설 유료 주차: 실비\n \n 발생 가능성이 있으면 작업 전 카톡으로 미리 안내드리고, 영수증 기준으로 정산합니다."
       }
     },
     {
@@ -333,7 +342,7 @@
       "name": "멀리(시외) 이사도 가능한가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "네, Cork·Galway·Belfast·Limerick 같은 장거리 이사도 가능합니다. 다만 장거리는 별도 카톡 견적으로 안내드립니다. 이유는:\n \n Andrew의 왕복 deadhead(빈 차) 주행이 길어짐\n 외곽 톨로드(M7·M8 등) 실비 발생\n 이사 일정 조율(전날/당일 출발) 필요\n \n 예상 가격 가이드:\n \n Dublin ↔ Belfast (170km): €350+\n Dublin ↔ Galway (215km): €420+\n Dublin ↔ Cork (250km): €480+\n \n 짐 사진과 일정 알려주시면 카톡으로 확정 견적 드립니다."
+        "text": "네, Cork·Galway·Belfast·Limerick 같은 장거리 이사도 가능합니다. 다만 장거리는 별도 카톡 견적으로 안내드립니다. 이유는:\n \n Andrew가 빈 차로 오가는 거리가 길어짐\n 외곽 톨로드(M7·M8 등) 실비 발생\n 이사 일정 조율(전날/당일 출발) 필요\n \n 예상 가격 가이드:\n \n Dublin ↔ Belfast (170km): €350+\n Dublin ↔ Galway (215km): €420+\n Dublin ↔ Cork (250km): €480+\n \n 짐 사진과 일정 알려주시면 카톡으로 확정 견적 드립니다."
       }
     },
     {
@@ -341,7 +350,7 @@
       "name": "결제는 어떻게 하나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "결제 방식:\n \n 예약 시 — 50% 예약금 (예약 확정 시점에 선결제)\n 이사 완료 후 — 나머지 50% + 추가 발생 비용 (주차비·톨비 등 실비 포함)\n \n 결제 수단: 유로는 Revolut 송금, 원화는 한국 계좌이체. 카드 결제는 받지 않습니다.\n\n\n 원화 결제 환율: 원화로 결제하시면 예약금과 잔금 모두 각 송금 시점의 환율을 기준으로 원화 금액이 정해집니다. 예약금·잔금은 송금일이 달라 적용 환율이 서로 다를 수 있습니다.\n\n\n 예약금 입금 후 일정·짐 사진 등 최종 확정해 드리고, 작업 완료 시점에 잔금과 발생 실비(영수증 기준)를 함께 정산합니다."
+        "text": "결제 방식:\n \n 예약 시: 50% 예약금 (예약 확정 시점에 선결제)\n 이사 완료 후: 나머지 50%와 추가 발생 비용 (주차비·톨비 등 실비 포함)\n \n 결제 수단: 유로는 Revolut 송금, 원화는 한국 계좌이체. 카드 결제는 받지 않습니다.\n\n\n 원화 결제 환율: 원화로 결제하시면 예약금과 잔금 모두 각 송금 시점의 환율을 기준으로 원화 금액이 정해집니다. 예약금·잔금은 송금일이 달라 적용 환율이 서로 다를 수 있습니다.\n\n\n 예약금 입금 후 일정·짐 사진 등 최종 확정해 드리고, 작업 완료 시점에 잔금과 발생 실비(영수증 기준)를 함께 정산합니다."
       }
     },
     {
@@ -349,17 +358,18 @@
       "name": "취소·환불 정책은 어떻게 되나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "예약금 기준 환불 정책입니다.\n \n 이사 48시간 이전 취소 → 예약금 전액 환불\n 이사 전날까지 취소 (24–48시간 전) → 예약금의 50% 환불\n 이사 당일 취소 → 환불 불가 (차량·일정 확보 완료 상태)\n \n 불가피한 사정의 경우 — 갑작스러운 질병, 가족 응급상황, 자연재해 등 불가항력 사유는 별도로 카톡으로 알려주세요. 상황 확인 후 함께 일정 조정 또는 합리적인 환불 방안을 안내해 드립니다.\n\n\n 일정 변경 — 취소 대신 일정 변경을 원하시면 가능한 한 무료로 조정해 드립니다(가능 일정 확인 필요). 가급적 일찍 카톡으로 공유해주세요."
+        "text": "예약금 기준 환불 정책입니다.\n \n 이사 48시간 이전 취소 → 예약금 전액 환불\n 이사 전날까지 취소 (24–48시간 전) → 예약금의 50% 환불\n 이사 당일 취소 → 환불 불가 (차량·일정 확보 완료 상태)\n \n 불가피한 사정의 경우: 갑작스러운 질병, 가족 응급상황, 자연재해 등 불가항력 사유는 별도로 카톡으로 알려주세요. 상황 확인 후 함께 일정 조정 또는 합리적인 환불 방안을 안내해 드립니다.\n\n\n 일정 변경: 취소 대신 일정 변경을 원하시면 가능한 한 무료로 조정해 드립니다(가능 일정 확인 필요). 가급적 일찍 카톡으로 공유해주세요."
       }
     }
   ],
-  "dateModified": "2026-09-28"
+  "dateModified": "2026-10-11"
 }
 </script>
 </head>
 <body class="subpage-bg-fix page-moving">
+<a class="skip-link" href="#main-content">본문 바로가기</a>
 
-<!-- 아이콘 스프라이트 — 이모지 대신 쓰는 선 아이콘. <svg class="ic"><use href="#i-…"></use></svg> 로 부른다 -->
+<!-- 아이콘 스프라이트 — 정본은 _내부자료/스크립트/site_parts.py. <svg class="ic"><use href="#i-…"></use></svg> 로 부른다 -->
 <svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
   <symbol id="i-plane" viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></symbol>
   <symbol id="i-map" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></symbol>
@@ -387,36 +397,33 @@
   <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
   <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></symbol>
   <symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></symbol>
+  <symbol id="i-kakao" viewBox="0 0 24 24"><path d="M12 3.2C6.6 3.2 2.2 6.6 2.2 10.9c0 2.7 1.8 5.1 4.6 6.5l-1 3.6c-.1.3.3.6.6.4l4.3-2.8c.4 0 .9.1 1.3.1 5.4 0 9.8-3.4 9.8-7.7S17.4 3.2 12 3.2z"/></symbol>
+  <symbol id="logo-island" viewBox="-3 -3 82 106"><path fill="currentColor" d="M47.7 0C48.7 0.3 52.4 2.2 52.6 3.3C52.8 4.4 49.5 5.9 48.9 6.6C48.2 7.3 48.6 7.3 48.8 7.6C49 7.8 49.6 8.1 50.1 8.1C50.6 8.1 51.2 8.2 51.7 7.7C52.2 7.2 52.5 5.5 53.2 5C53.8 4.6 54.7 5.3 55.8 5.1C56.9 4.8 58.1 3.5 59.7 3.3C61.4 3.2 64.5 3.1 65.9 4.2C67.2 5.2 66.8 8 67.8 9.8C68.8 11.5 71.6 13.2 71.8 14.6C72 16.1 68.6 18 68.9 18.6C69.2 19.1 72.5 17.3 73.6 18C74.7 18.7 75.6 21 75.5 22.7C75.5 24.3 74.3 27.1 73.4 28.1C72.4 29.2 70.7 27.9 69.8 28.8C68.9 29.6 68.6 32.4 67.8 33.2C67 34 65.5 33.3 65 33.7C64.5 34 65.2 35.1 64.7 35.3C64.3 35.5 62.9 34.8 62.3 34.9C61.8 35 61.7 35.6 61.6 36.1C61.5 36.5 61.4 37.1 61.7 37.6C62 38.1 62.9 38.2 63.2 39.3C63.6 40.3 63.3 42.6 63.8 43.8C64.2 45 65.6 45.2 65.7 46.6C65.8 48 64.1 50.6 64.3 52.4C64.4 54.2 66 55.9 66.4 57.5C66.9 59 67.4 59.8 67 61.8C66.5 63.8 64.4 67.8 63.9 69.6C63.5 71.4 64.6 71.1 64 72.5C63.4 73.9 60.9 76.5 60.5 78C60.1 79.5 62.2 80.7 61.8 81.4C61.5 82 59.6 82 58.6 81.9C57.5 81.8 56.3 81 55.5 81C54.8 80.9 54.6 81.8 54.2 81.9C53.8 81.9 53.4 81 53 81.2C52.5 81.4 53 82.5 51.7 82.9C50.4 83.3 46.6 83.2 45.2 83.5C43.7 83.8 43.5 84.1 43 84.7C42.6 85.3 43.4 86.4 42.7 86.9C42.1 87.5 40.4 87.4 39.3 88.1C38.2 88.8 37 90.6 36.1 91.2C35.2 91.8 34.6 91.9 34.1 91.7C33.5 91.6 33.1 90.2 32.7 90.5C32.4 90.8 32.7 92.5 32 93.4C31.3 94.2 30.9 94.6 28.5 95.7C26 96.7 19.3 99.3 17.1 99.8C14.8 100.3 15.9 98.7 14.8 98.7C13.6 98.7 10.7 100 10.2 100C9.6 100 11.2 99.2 11.5 98.7C11.7 98.1 11.3 97.6 11.8 96.9C12.3 96.3 14.1 95.3 14.5 94.9C15 94.4 14.7 94.3 14.6 94.1C14.5 93.9 15.1 93.3 13.7 93.7C12.3 94.1 7.3 96.3 6 96.5C4.7 96.8 5.3 96.3 5.9 95.4C6.6 94.6 10.2 91.9 9.9 91.4C9.7 91 5.7 92.7 4.6 92.7C3.6 92.6 4.1 91.4 3.6 91C3 90.7 1.6 91 1.4 90.7C1.2 90.3 2.1 89.5 2.4 88.9C2.8 88.3 2.5 87.6 3.3 86.9C4.1 86.3 6.1 85.8 7.1 85.2C8.1 84.5 10.2 83.2 9.1 83C8 82.8 2 83.8 0.4 83.7C-1.1 83.7 -0.5 83.1 0 82.4C0.5 81.8 1.7 80.1 3.2 79.8C4.7 79.4 8.3 81 9.2 80.3C10.1 79.7 8.3 76.9 8.6 75.9C9 74.9 10.6 74.8 11.2 74.2C11.8 73.6 11.2 72.7 12.2 72.2C13.3 71.7 17.3 71.6 17.6 71.3C17.8 70.9 14.9 70.1 13.6 70.1C12.3 70.1 9.6 71.7 9.7 71.2C9.8 70.7 13.2 68.2 14.3 66.8C15.3 65.5 15.8 64.2 16 63.2C16.2 62.3 15.2 62.1 15.5 61.2C15.8 60.4 16.5 58.6 17.6 57.9C18.7 57.1 21.2 57.1 22.1 56.8C22.9 56.4 22.8 56.3 22.7 55.9C22.6 55.4 23.1 54.2 21.6 54C20.2 53.8 15.5 55.1 14 54.7C12.4 54.3 13.2 51.8 12.5 51.5C11.7 51.1 10.2 52.6 9.6 52.7C9 52.8 8.9 52.5 8.8 52.1C8.7 51.7 9.2 50.7 8.9 50.5C8.6 50.2 7.4 50.8 6.8 50.7C6.3 50.6 5.9 50.6 5.6 49.9C5.3 49.2 4.5 47.4 4.9 46.6C5.3 45.8 7.6 46 8.2 45.1C8.8 44.3 7.8 42.3 8.5 41.5C9.3 40.8 11.8 40.9 12.6 40.5C13.3 40 13.1 39.2 13.1 38.7C13 38.3 13 37.9 12.2 37.7C11.4 37.6 8.7 38.3 8.2 37.9C7.6 37.6 9.1 36.5 9.1 35.6C9 34.7 7.9 33.4 7.7 32.4C7.4 31.4 7.9 30 7.6 29.5C7.3 29 6.3 29.7 6 29.5C5.7 29.3 5.7 28.4 5.8 28.1C6 27.8 6.5 27.7 6.9 27.8C7.2 27.9 7.5 29.1 8 28.9C8.6 28.7 8.5 26.9 10 26.5C11.5 26.2 15.4 26.5 17 27C18.6 27.6 18.7 29.9 19.5 30C20.3 30.1 20.4 27.9 21.8 27.6C23.2 27.4 26.7 28.5 27.8 28.5C29 28.4 28.8 27.8 28.9 27.3C28.9 26.8 27.3 26.2 28 25.4C28.6 24.6 31.7 23.5 32.8 22.4C33.9 21.4 35.5 19.8 34.7 19.2C33.8 18.7 29.4 19.2 27.9 19C26.3 18.7 25.7 18 25.4 17.5C25.2 17 25.7 16.2 26.4 15.8C27.1 15.5 29.1 15.5 29.7 15.2C30.2 14.8 29.5 14.2 29.8 13.8C30.1 13.4 31.3 13.7 31.4 13C31.6 12.2 30.5 10.5 30.7 9.4C30.9 8.2 31.5 6.8 32.6 6C33.7 5.2 36 4.5 37.1 4.4C38.2 4.2 38.4 5.3 39.2 5C40 4.8 41.3 2.7 42.1 2.8C42.9 2.9 43.9 4.7 44 5.6C44.2 6.5 43.1 7.7 43.1 8.2C43.2 8.7 43.7 8.8 44.1 8.7C44.4 8.6 45.1 8.5 45.2 7.5C45.2 6.5 44.1 3.9 44.4 2.9C44.6 1.9 46.2 2 46.8 1.5C47.3 1 46.7 -0.3 47.7 0Z"/><circle cx="61" cy="51.5" r="7.5" fill="#c9a96e"/></symbol>
 </svg>
 
-<div class="scroll-progress" aria-hidden="true"></div>
-<nav class="topnav">
+<nav class="topnav" aria-label="주 메뉴">
   <div class="nav-inner">
-    <a href="../index.html" class="logo">
-      <img src="../images/logo/icon.svg" alt="아일랜드 동행" width="32" height="32" class="logo-img">
-      <span class="logo-name"><span class="accent">Beautiful Ireland</span> <span class="with-everyone">with Everyone</span></span>
+    <a href="../index.html" class="logo" aria-label="Andrew의 아일랜드 동행 홈">
+      <svg class="logo-mark" aria-hidden="true" focusable="false"><use href="#logo-island"></use></svg>
+      <span class="logo-text"><span class="logo-ko">아일랜드 동행</span><span class="logo-en">Beautiful Ireland with Everyone</span></span>
     </a>
-    <button class="ham" onclick="document.querySelector('.menu').classList.toggle('open')" aria-label="메뉴 열기">≡</button>
-    <div class="menu">
+    <button class="ham" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-menu"><span></span><span></span></button>
+    <div class="menu" id="site-menu">
       <a href="../about.html">소개</a>
-      <a href="airport.html">공항 픽업</a>
-      <a href="tours.html">로드트립</a>
-      <a href="moving.html" class="current">이사</a>
-      <a href="pilgrimage.html">성지순례</a>
-      <a href="custom.html">맞춤 여행</a>
-      <a href="../contact.html" class="cta-nav">문의</a>
+      <a href="../services/airport.html">공항 픽업</a>
+      <a href="../services/tours.html">로드트립</a>
+      <a href="../services/moving.html" class="current" aria-current="page">이사</a>
+      <a href="../services/pilgrimage.html">성지순례</a>
+      <a href="../services/custom.html">맞춤 여행</a>
+      <a href="../contact.html" class="cta-nav">문의하기</a>
+      <div class="menu-extra"><a href="https://www.instagram.com/ireland.sosik/" target="_blank" rel="noopener">인스타그램</a><a href="mailto:sby05034@gmail.com">이메일</a></div>
     </div>
   </div>
 </nav>
 
-
 <nav aria-label="상위 페이지">
 <a href="../index.html" class="back-home">홈으로</a>
 </nav>
-
-<div class="float-cta">
-  <a class="kakao" href="https://open.kakao.com/o/suSTEFsi" target="_blank" rel="noopener"><svg class="ic"><use href="#i-chat"></use></svg> 카톡으로 문의</a>
-</div>
 
 <main id="main-content">
 <header class="hero subpage compact">
@@ -425,9 +432,9 @@
     <h1>아일랜드 이사 · 간단 이사 · 전체 이사</h1>
     <p class="tagline">더블린에서 한국어로 부르는 용달. 짐 사진 한 장이면 견적이 나옵니다.</p>
     <p class="sub">7인승 MPV 좌석을 접으면 1,800L · 운반도 함께 · €40부터</p>
-    <div class="cta" style="margin-top:22px;">
-      <a href="#calculator">가격 계산하기</a>
-      <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" class="outline">카톡 채팅 시작</a>
+    <div class="cta">
+      <a class="btn btn-light" href="https://open.kakao.com/o/suSTEFsi" target="_blank" rel="noopener" onclick="inquireMoving()" data-cta="hero"><svg class="ic ic-kakao" aria-hidden="true"><use href="#i-kakao"></use></svg>카카오톡으로 문의</a>
+      <a class="btn btn-ghost-light outline" href="#calculator">가격 계산하기</a>
     </div>
   </div>
 </header>
@@ -443,7 +450,7 @@
 </div>
 
 <!-- THREE CATEGORIES -->
-<section style="background:white;">
+<section class="alt">
   <div class="container reveal">
     <div class="section-title">
       <h2>어떤 이사가 필요하세요?</h2>
@@ -451,44 +458,43 @@
     </div>
     <div class="use-grid stagger-fade">
 
-      <div class="use-card" id="cat-small-move" onclick="goToCalc('moving','single')" style="cursor:pointer;">
+      <div class="use-card" id="cat-small-move" onclick="goToCalc('moving','single')">
         <div class="icon ic-box"><svg class="ic"><use href="#i-home"></use></svg></div>
         <h3>간단 이사</h3>
         <p>짐이 차 한 번에 실리는 이사입니다. 캐리어·박스와 작은 가구 몇 점이면 여기에 해당합니다.</p>
-        <ul>
+        <ul class="dot-list">
           <li>캐리어·박스 합쳐 10개 안팎</li>
           <li>작은 가구 1–2점 (의자·싱글 매트리스·작은 책상 등)</li>
           <li>한 번 이동 · 작업시간 1시간 포함</li>
         </ul>
         <span class="price-tag">€40부터 (편도 10km 이내)</span>
-        <p style="font-size:12px; color:var(--muted); margin-top:10px;">누르면 가격 계산기로 이동합니다</p>
+        <span class="card-link">가격 계산기에서 보기 <svg class="ic" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
       </div>
 
-      <div class="use-card" id="cat-multi-move" onclick="goToCalc('moving','double')" style="cursor:pointer;">
+      <div class="use-card" id="cat-multi-move" onclick="goToCalc('moving','double')">
         <div class="icon ic-box"><svg class="ic"><use href="#i-repeat"></use></svg></div>
         <h3>전체 이사</h3>
         <p>방이나 집 전체 살림처럼 차에 한 번에 안 실리는 이사입니다. 2–3번 왕복해 옮기고, 운반도 함께 합니다.</p>
-        <ul>
-          <li>원룸·1bed 전체 짐 — 보통 2회 왕복 (작업시간 2시간 포함)</li>
-          <li>가구·가전이 많은 집 — 3회 이상 왕복 (3시간 포함)</li>
+        <ul class="dot-list">
+          <li>원룸·1bed 전체 짐: 보통 2회 왕복 (작업시간 2시간 포함)</li>
+          <li>가구·가전이 많은 집: 3회 이상 왕복 (3시간 포함)</li>
           <li>2인 작업·계단 등 현장 조건은 계산기에서 선택</li>
         </ul>
         <span class="price-tag">€80부터 (2회 왕복 · 10km 이내)</span>
-        <p style="font-size:12px; color:var(--muted); margin-top:10px;">누르면 가격 계산기로 이동합니다</p>
+        <span class="card-link">가격 계산기에서 보기 <svg class="ic" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
       </div>
-
 
     </div>
     <div class="crew-note">
       <h3>두 사람이 필요한 이사는 2인 작업으로</h3>
       <p>무거운 가구가 있거나 엘리베이터 없는 집은 운반 인력 1명을 추가해 두 사람이 함께 옮깁니다. 이사 요금에 <strong>운반 인력 추가요금 €40</strong>(3회 이상 왕복은 €60)을 더합니다. 예를 들어 편도 10km 이내라면 한 번에 옮길 때 €80, 두 번 왕복하면 €120입니다. 포함 작업시간·계단 같은 조건은 아래 계산기에서 선택해 바로 확인할 수 있습니다.</p>
     </div>
-    <p style="max-width:760px; margin:16px auto 0; font-size:13.5px; color:var(--muted); line-height:1.7; text-align:center;">가구 한두 점 픽업(IKEA·중고 거래 등)이나 물건만 옮기는 운송도 문의하실 수 있습니다. 물건 사진과 위치를 카톡으로 보내 주시면 견적을 드립니다.</p>
+    <p class="section-note">가구 한두 점 픽업(IKEA·중고 거래 등)이나 물건만 옮기는 운송도 문의하실 수 있습니다. 물건 사진과 위치를 카톡으로 보내 주시면 견적을 드립니다.</p>
   </div>
 </section>
 
 <!-- FLOW — 이사 진행 순서 -->
-<section style="background:var(--bg);">
+<section>
   <div class="container reveal">
     <div class="section-title">
       <h2>이사는 이 순서로 진행됩니다</h2>
@@ -524,14 +530,14 @@
 </section>
 
 <!-- VEHICLE INFO -->
-<section style="background:white;">
+<section class="alt">
   <div class="container reveal">
     <div class="section-title">
       <h2>차량 정보</h2>
       <p class="lead">7인승 MPV. 뒷좌석 두 줄을 접으면 1,800L가 실립니다.</p>
     </div>
     <div class="vehicle-photo">
-      <img src="../photo2.jpg" alt="이사용 7인승 MPV 적재공간 (약 1,800L)" loading="lazy" decoding="async">
+      <img src="../photo2.jpg" alt="뒷문을 연 7인승 MPV 짐칸. 3열 좌석을 접어 바닥을 평평하게 만든 모습" width="1200" height="900" loading="lazy" decoding="async">
     </div>
     <div class="vehicle-specs">
       <div class="spec"><div class="num">7</div><div class="lbl">탑승 좌석</div></div>
@@ -545,7 +551,7 @@
 </section>
 
 <!-- SERVICE ZONE INFO -->
-<section style="background:var(--bg);">
+<section>
   <div class="container reveal" style="max-width:920px;">
     <div class="section-title">
       <h2>서비스 권역 안내</h2>
@@ -558,12 +564,12 @@
           <h3>권역 내</h3>
           <span class="zone-tag">정찰가 그대로</span>
         </div>
-        <p class="zone-desc">아래 두 조건 중 <strong>하나라도</strong> 충족하면 권역 내로 적용됩니다</p>
-        <ul>
+        <p class="zone-desc">아래 두 조건 중 <strong>하나라도</strong> 충족하면 권역 내로 적용됩니다.</p>
+        <ul class="dot-list">
           <li><strong>Greater Dublin</strong> 권역 (시내·Blanchardstown·Tallaght·Swords·Dun Laoghaire·Bray·Lucan·Dundrum 등)</li>
           <li>또는 <strong>Blanchardstown Shopping Centre(Dublin 15) 기준 반경 15km 이내</strong></li>
         </ul>
-        <p class="zone-note">계산기 가격이 곧 최종 가격. 단, 톨비·유료 주차비 발생 시 실비 별도 (아래 안내 참고).</p>
+        <p class="zone-note">계산기 가격이 곧 최종 가격입니다. 톨비·유료 주차비가 생기면 실비를 따로 받습니다(아래 안내 참고).</p>
       </div>
 
       <div class="zone-card zone-out">
@@ -571,23 +577,23 @@
           <h3>권역 외</h3>
           <span class="zone-tag">별도 카톡 견적</span>
         </div>
-        <p class="zone-desc">아래 지역은 출장 거리·톨비 추가 발생 가능. 사전 견적 받아주세요</p>
-        <ul>
+        <p class="zone-desc">아래 지역은 출장 거리와 톨비가 더해질 수 있어 미리 견적을 드립니다.</p>
+        <ul class="dot-list">
           <li>외곽 근교: Maynooth·Drogheda·Wicklow Town·Naas·Navan 등</li>
           <li>장거리: Cork·Galway·Belfast·Limerick·Killarney 등</li>
         </ul>
-        <p class="zone-note">출장 거리 추가 + 톨로드(M1·M3·M4·M7·M8) 실비 별도. 계산기 가격은 참고용 베이스.</p>
+        <p class="zone-note">출장 거리가 더해지고 톨로드(M1·M3·M4·M7·M8) 실비는 따로 받습니다. 계산기 가격은 참고용 기준입니다.</p>
       </div>
     </div>
 
     <div class="zone-extra">
-      <strong>톨비·주차비는 별도 실비 (불포함):</strong> 대부분의 이사는 무료 도로 주차로 진행되어 추가 비용이 발생하지 않지만, 불가피하게 다음과 같은 경우 실비 별도 정산됩니다 — 시내 paid parking 구역(약 €2–5/시간), 공항 단기 주차, 톨로드(M50·M1·M3·M4·M7·M8 등) 통과. 발생 가능성이 있으면 작업 전 미리 카톡으로 안내드리고, 영수증 기준으로 정산합니다.
+      <strong>톨비·주차비는 별도 실비입니다(불포함).</strong> 대부분의 이사는 무료 도로 주차로 진행되어 추가 비용이 없습니다. 시내 유료 주차 구역(paid parking, 약 €2–5/시간), 공항 단기 주차, 톨로드(M50·M1·M3·M4·M7·M8 등)를 지날 때만 실비를 정산합니다. 발생할 것 같으면 작업 전에 카톡으로 미리 알리고, 영수증 기준으로 정산합니다.
     </div>
   </div>
 </section>
 
 <!-- CALCULATOR -->
-<section id="calculator" style="background:var(--bg);">
+<section id="calculator" class="calc-section">
   <div class="container reveal">
     <div class="section-title">
       <h2>가격 계산</h2>
@@ -603,7 +609,7 @@
             <button type="button" id="mv-mode-small" aria-pressed="true" onclick="setMvMode('small')">
               <strong>간단 이사</strong>
               <span>캐리어·박스 10개 안팎 + 작은 가구 1–2점, 차에 한 번에</span>
-              <em>€40부터 · 거리만 넣으면 끝</em>
+              <em>€40부터 · 거리만 넣으면 됩니다</em>
             </button>
             <button type="button" id="mv-mode-repeat" aria-pressed="false" onclick="setMvMode('repeat')">
               <strong>전체 이사</strong>
@@ -616,8 +622,8 @@
             <div class="field">
               <label for="mv-trip">왕복 횟수</label>
               <select id="mv-trip" onchange="calcMoving()">
-                <option value="double" selected>2회 왕복 — 원룸·1bed 전체 짐 (작업시간 2시간 포함)</option>
-                <option value="triple">3회 이상 왕복 — 가구·가전이 많은 집 (작업시간 3시간 포함)</option>
+                <option value="double" selected>2회 왕복: 원룸·1bed 전체 짐 (작업시간 2시간 포함)</option>
+                <option value="triple">3회 이상 왕복: 가구·가전이 많은 집 (작업시간 3시간 포함)</option>
               </select>
               <div class="hint">짐 사진을 보고 횟수를 함께 정합니다. 당일 실제 횟수로 최종 금액이 정해집니다.</div>
             </div>
@@ -636,25 +642,25 @@
                 <button type="button" data-km="101" onclick="setMvKm(150)">100km+ (별도 문의)</button>
               </div>
               <input type="number" id="mv-km" value="15" min="1" max="350" step="1" oninput="calcMoving()">
-              <div class="hint"><strong>차량 실주행거리(도로 거리) 기준</strong> — 직선거리가 아닙니다. 예: Blanchardstown↔시내 12km · Blanchardstown↔Maynooth 25km · 더블린 시내권 대부분 5–20km</div>
+              <div class="hint"><strong>실제 도로 주행거리</strong> 기준이며 직선거리가 아닙니다. 예: Blanchardstown↔시내 12km, Blanchardstown↔Maynooth 25km, 더블린 시내권 대부분 5–20km</div>
             </div>
           </div>
 
           <div class="row">
             <div class="field">
-              <label for="mv-from">출발지 <span style="font-weight:400; color:var(--muted);">(선택)</span></label>
+              <label for="mv-from">출발지 <span class="opt">(선택)</span></label>
               <input type="text" id="mv-from" placeholder="예: D09 X5R9 또는 동네 이름" oninput="updateMovingMapsLink()">
             </div>
             <div class="field">
-              <label for="mv-to">도착지 <span style="font-weight:400; color:var(--muted);">(선택)</span></label>
+              <label for="mv-to">도착지 <span class="opt">(선택)</span></label>
               <input type="text" id="mv-to" placeholder="예: D6W PX32 또는 동네 이름" oninput="updateMovingMapsLink()">
             </div>
           </div>
 
           <div class="row single">
             <div class="field">
-              <a href="https://www.google.com/maps/dir/?api=1&amp;origin=&amp;destination=&amp;travelmode=driving" target="_blank" rel="noopener" id="mv-maps-btn" style="display:inline-flex; align-items:center; gap:6px; padding:10px 15px; background:#fff; border:1.5px solid var(--accent); color:var(--primary); border-radius:8px; font-size:13.5px; font-weight:700; text-decoration:none; cursor:pointer;"><svg class="ic"><use href="#i-map"></use></svg> 구글지도에서 주행거리 확인하기</a>
-              <div class="hint" style="margin-top:6px;">위 <strong>출발지 → 도착지</strong>를 적고 누르면 구글지도가 새 창에서 열립니다. 나온 <strong>실제 도로 주행거리</strong> km를 거리 칸에 넣으면 요금이 계산됩니다.</div>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;origin=&amp;destination=&amp;travelmode=driving" target="_blank" rel="noopener" id="mv-maps-btn" class="btn btn-outline maps-btn"><svg class="ic" aria-hidden="true"><use href="#i-map"></use></svg>구글지도에서 주행거리 확인하기</a>
+              <div class="hint">위 출발지와 도착지를 적고 누르면 구글지도가 새 창에서 열립니다. 나온 실제 도로 주행거리(km)를 거리 칸에 넣으면 요금이 계산됩니다.</div>
             </div>
           </div>
 
@@ -671,8 +677,8 @@
             <div class="field">
               <label for="mv-crew">작업 인원</label>
               <select id="mv-crew" onchange="calcMoving()">
-                <option value="1" selected>1인 — Andrew 혼자 운반 (기본)</option>
-                <option value="2">2인 — 운반 인력 1명 추가 (+€40부터)</option>
+                <option value="1" selected>1인: Andrew 혼자 운반 (기본)</option>
+                <option value="2">2인: 운반 인력 1명 추가 (+€40부터)</option>
               </select>
               <div class="hint">혼자 들 수 없는 가구가 있거나 엘리베이터 없는 집이면 2인을 선택하세요.</div>
             </div>
@@ -699,10 +705,10 @@
                 </select>
               </div>
             </div>
-            <div class="hint" style="margin:-2px 0 10px;">계단으로 올라가는 층마다 €10 (전체 이사는 €15). 아일랜드 1st floor가 한국식 2층입니다.</div>
-            <label class="cond-check"><input type="checkbox" id="mv-far-from" onchange="calcMoving()"><span>출발지 — 차에서 현관까지 50m 이상 걸어서 옮김 <span class="tag">+€10</span></span></label>
-            <label class="cond-check"><input type="checkbox" id="mv-far-to" onchange="calcMoving()"><span>도착지 — 차에서 현관까지 50m 이상 걸어서 옮김 <span class="tag">+€10</span></span></label>
-            <div class="row single" id="mv-time-row" style="margin-top:10px; margin-bottom:0;">
+            <div class="hint stair-hint">계단으로 올라가는 층마다 €10 (전체 이사는 €15). 아일랜드 1st floor가 한국식 2층입니다.</div>
+            <label class="cond-check"><input type="checkbox" id="mv-far-from" onchange="calcMoving()"><span>출발지: 차에서 현관까지 50m 이상 걸어서 옮김 <span class="tag">+€10</span></span></label>
+            <label class="cond-check"><input type="checkbox" id="mv-far-to" onchange="calcMoving()"><span>도착지: 차에서 현관까지 50m 이상 걸어서 옮김 <span class="tag">+€10</span></span></label>
+            <div class="row single" id="mv-time-row">
               <div class="field">
                 <label for="mv-extra-time">예상 작업시간</label>
                 <select id="mv-extra-time" onchange="calcMoving()">
@@ -720,9 +726,9 @@
 
           <div class="row single">
             <div class="field">
-              <label for="mv-when">희망 날짜·시간 <span style="font-weight:400; color:var(--muted);">(선택)</span></label>
+              <label for="mv-when">희망 날짜·시간 <span class="opt">(선택)</span></label>
               <input type="text" id="mv-when" placeholder="예: 6월 20일 오후 4시">
-              <div class="hint">정해두신 날짜·시간이 있으면 적어주세요 — 비워두셔도 됩니다. 출발지·도착지는 EirCode로 적어주시면 견적이 더 정확합니다.</div>
+              <div class="hint">정한 날짜·시간이 있으면 적어 주세요. 비워 두어도 됩니다. 출발지·도착지를 에어코드(Eircode)로 적으면 견적이 더 정확합니다.</div>
             </div>
           </div>
 
@@ -748,46 +754,46 @@
             </div>
           </div>
 
-          <div class="included-banner" id="mv-help-small" style="display:block;">
-            <strong style="color:var(--primary);">✓ 박스·캐리어·작은 가구 운반 도움 기본 포함</strong> — 일반적인 1–2인 이사 짐은 Andrew도 함께 운반합니다. 무거운 가구·매트리스가 여러 개라 한 번에 안 실리면 전체 이사로 바꿔 계산해 보세요. 애매하면 카톡으로 짐 사진을 보내 주세요.
+          <div class="included-banner" id="mv-help-small">
+            <svg class="ic" aria-hidden="true"><use href="#i-check"></use></svg><span><strong>박스·캐리어·작은 가구 운반 도움 기본 포함.</strong> 일반적인 1–2인 이사 짐은 Andrew도 함께 운반합니다. 무거운 가구·매트리스가 여러 개라 한 번에 안 실리면 전체 이사로 바꿔 계산해 보세요. 애매하면 카톡으로 짐 사진을 보내 주세요.</span>
           </div>
 
           <div class="included-banner" id="mv-help-included" style="display:none;">
-            <strong>✓ 짐 운반 도움 기본 포함</strong> — 전체 이사는 가구·매트리스·박스 등 모든 짐을 Andrew가 함께 운반합니다.
+            <svg class="ic" aria-hidden="true"><use href="#i-check"></use></svg><span><strong>짐 운반 도움 기본 포함.</strong> 전체 이사는 가구·매트리스·박스 등 모든 짐을 Andrew가 함께 운반합니다.</span>
           </div>
 
-          <div class="long-warn" id="mv-long-warn">
-            <strong>장거리 이사 안내:</strong> 100km 이상 이동은 권역 외 출장 거리 추가 + 톨로드 실비가 발생합니다. 아래 가격은 A↔B 거리 기준 베이스이며, <strong>최종 가격은 카톡 사전 견적</strong>으로 안내드립니다.
+          <div class="long-warn" id="mv-long-warn" role="status" style="display:none;">
+            <strong>장거리 이사 안내:</strong> 100km 이상 이동은 권역 외 출장 거리와 톨로드 실비가 더해집니다. 아래 가격은 A↔B 거리 기준 참고값이고, 최종 가격은 카톡으로 미리 견적을 드립니다.
           </div>
 
           <div class="result-panel">
             <div class="result-label" id="mv-result-label">예상 요금 (편도 · 권역 내 기준)</div>
             <div class="result-price" id="mv-price">€43</div>
             <div class="breakdown">
-              <h3 style="font-size:12.5px; font-weight:700; color:var(--primary); margin-bottom:8px; text-transform:uppercase; letter-spacing:0.5px;">요금 구성</h3>
+              <h3>요금 구성</h3>
               <ul id="mv-breakdown"></ul>
             </div>
-            <div class="price-note-inline">
-              ※ <strong>톨비·유료 주차비 별도 실비</strong> — 대부분의 이사는 무료 주차로 진행되어 추가 비용이 발생하지 않지만, 시내 paid parking·톨로드(M50·M1·M3·M4·M7·M8 등) 통과 시 실비 별도. 사전 안내 후 영수증 정산.
-            </div>
+            <p class="price-note-inline">
+              <strong>톨비·유료 주차비는 별도 실비입니다.</strong> 대부분의 이사는 무료 주차로 진행되어 추가 비용이 없고, 시내 유료 주차나 톨로드(M50·M1·M3·M4·M7·M8 등)를 지날 때만 미리 알린 뒤 영수증 기준으로 정산합니다.
+            </p>
           </div>
         </div>
 
-        <div style="text-align:center; margin-top:24px;">
-          <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" rel="noopener" onclick="inquireMoving()" class="btn btn-kakao"><svg class="ic"><use href="#i-chat"></use></svg> 이 내용으로 카톡 문의</a>
+        <div class="calc-cta" data-dock-hide>
+          <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" rel="noopener" onclick="inquireMoving()" class="btn btn-kakao"><svg class="ic ic-kakao" aria-hidden="true"><use href="#i-kakao"></use></svg>이 내용으로 카톡 문의</a>
         </div>
 
-        <p style="font-size:12.5px; color:var(--muted); margin-top:18px; text-align:center; line-height:1.7;">
-          ※ 거리는 <strong>차량 실주행거리(도로 거리) 기준</strong>이며 직선거리가 아닙니다. 정확한 견적은 짐 사이즈·개수·이동 경로에 따라 달라집니다.<br>
-          ※ 간단 이사·전체 이사 모두 차량 적재 가능 범위 내에서 짐 운반 도움이 기본 포함입니다.
-        </p>
+        <ul class="calc-foot">
+          <li>거리는 차량 실주행거리(도로 거리) 기준이며 직선거리가 아닙니다. 정확한 견적은 짐 크기·개수·이동 경로에 따라 달라집니다.</li>
+          <li>간단 이사·전체 이사 모두 차량 적재 가능 범위 안에서 짐 운반 도움이 기본 포함입니다.</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
 <!-- 전체 가격표 -->
-<section style="background:white;">
+<section class="alt">
   <div class="container reveal" style="max-width:780px;">
     <div class="section-title">
       <h2>전체 가격 가이드</h2>
@@ -804,15 +810,15 @@
     <div class="price-table-wrap">
       <table class="price-table keep-table">
         <thead>
-          <tr><th>항목</th><th style="text-align:right;">가격</th></tr>
+          <tr><th>항목</th><th class="num">가격</th></tr>
         </thead>
         <tbody>
-          <tr><td colspan="2" style="background:var(--accent-soft); font-weight:800; color:var(--primary);">간단 이사 — 거리당 단가</td></tr>
+          <tr class="grp"><td colspan="2">간단 이사 · 거리당 단가</td></tr>
           <tr><td>0–10km 기본료</td><td class="price">€40</td></tr>
           <tr><td>10–50km 추가분</td><td class="price">+€1.5/km</td></tr>
           <tr><td>50km 초과 (장거리)</td><td class="price">+€0.8/km</td></tr>
 
-          <tr><td colspan="2" style="background:var(--accent-soft); font-weight:800; color:var(--primary);">거리별 정찰가 예시</td></tr>
+          <tr class="grp"><td colspan="2">거리별 정찰가 예시</td></tr>
           <tr><td>5km (시내 ↔ 시내)</td><td class="price">€40</td></tr>
           <tr><td>10km (시내권)</td><td class="price">€40</td></tr>
           <tr><td>20km (Blanchardstown)</td><td class="price">€55</td></tr>
@@ -821,53 +827,53 @@
           <tr><td>100km (Wicklow·Carlow)</td><td class="price">€140</td></tr>
           <tr><td>250km (Dublin↔Cork·Galway)</td><td class="price">€260</td></tr>
 
-          <tr><td colspan="2" style="background:var(--accent-soft); font-weight:800; color:var(--primary);">전체 이사 (운반 도움 기본 포함)</td></tr>
+          <tr class="grp"><td colspan="2">전체 이사 (운반 도움 기본 포함)</td></tr>
           <tr><td>2회 왕복 (1bed 자취집)</td><td class="price">× 2</td></tr>
           <tr><td>3회+ 왕복 (큰 이사)</td><td class="price">× 3</td></tr>
-          <tr><td colspan="2" style="color:var(--muted); font-style:italic; padding:6px 8px !important; font-size:11px !important;">예: 20km 2회 왕복 → €55 × 2 = €110 · 30km 2회 → €70 × 2 = €140</td></tr>
+          <tr class="note-row"><td colspan="2">예: 20km 2회 왕복 €55 × 2 = €110 · 30km 2회 왕복 €70 × 2 = €140</td></tr>
 
-          <tr><td colspan="2" style="background:var(--accent-soft); font-weight:800; color:var(--primary);">2인 작업 (운반 인력 1명 추가)</td></tr>
+          <tr class="grp"><td colspan="2">2인 작업 (운반 인력 1명 추가)</td></tr>
           <tr><td>한 번 이동 · 2회 왕복</td><td class="price">+€40</td></tr>
           <tr><td>3회+ 왕복</td><td class="price">+€60</td></tr>
           <tr><td>10km 이내 · 한 번에 옮기기</td><td class="price">€80</td></tr>
           <tr><td>10km 이내 · 2회 왕복</td><td class="price">€120</td></tr>
           <tr><td>10km 이내 · 3회+ 왕복</td><td class="price">€180</td></tr>
-          <tr><td colspan="2" style="color:var(--muted); font-style:italic; padding:6px 8px !important; font-size:11px !important;">예약금은 2인 작업 1회 이동 요금의 50%(10km 이내 €40). 최종금액은 당일 실제 이동 횟수와 작업시간으로 정해집니다.</td></tr>
-          
-          <tr><td colspan="2" style="background:var(--accent-soft); font-weight:800; color:var(--primary);">포함 작업시간 (출발지 도착 ~ 마지막 하차)</td></tr>
+          <tr class="note-row"><td colspan="2">예약금은 2인 작업 1회 이동 요금의 50%(10km 이내 €40). 최종금액은 당일 실제 이동 횟수와 작업시간으로 정해집니다.</td></tr>
+
+          <tr class="grp"><td colspan="2">포함 작업시간 (출발지 도착 ~ 마지막 하차)</td></tr>
           <tr><td>한 번 이동</td><td class="price">1시간</td></tr>
           <tr><td>2회 왕복</td><td class="price">2시간</td></tr>
           <tr><td>3회+ 왕복</td><td class="price">3시간</td></tr>
           <tr><td>초과 30분당 (1인 / 2인)</td><td class="price">€15 / €25</td></tr>
-          <tr><td colspan="2" style="color:var(--muted); font-style:italic; padding:6px 8px !important; font-size:11px !important;">15분 이내 초과는 받지 않습니다. 포장·분해를 기다리는 시간도 작업시간에 들어갑니다.</td></tr>
-          
-          <tr><td colspan="2" style="background:var(--accent-soft); font-weight:800; color:var(--primary);">현장 조건</td></tr>
+          <tr class="note-row"><td colspan="2">15분 이내 초과는 받지 않습니다. 포장·분해를 기다리는 시간도 작업시간에 들어갑니다.</td></tr>
+
+          <tr class="grp"><td colspan="2">현장 조건</td></tr>
           <tr><td>계단 · 한 번 이동 (올라가는 층당)</td><td class="price">€10</td></tr>
           <tr><td>계단 · 전체 이사 (올라가는 층당)</td><td class="price">€15</td></tr>
           <tr><td>차에서 현관까지 50m 이상</td><td class="price">지점당 €10</td></tr>
-          <tr><td colspan="2" style="color:var(--muted); font-style:italic; padding:6px 8px !important; font-size:11px !important;">계단은 출발지·도착지 각각 계산합니다. 1st floor(한국식 2층) = 1개 층, 2nd floor = 2개 층. 4th floor 이상은 별도 견적.</td></tr>
-          
-          <tr><td colspan="2" style="background:var(--accent-tint); font-weight:800; color:var(--primary);">권역 외 — 별도 카톡 견적</td></tr>
+          <tr class="note-row"><td colspan="2">계단은 출발지·도착지 각각 계산합니다. 1st floor(한국식 2층) = 1개 층, 2nd floor = 2개 층. 4th floor 이상은 별도 견적입니다.</td></tr>
+
+          <tr class="grp"><td colspan="2">권역 외 · 별도 카톡 견적</td></tr>
           <tr><td>시내 ↔ Maynooth (35km)</td><td class="price">~€78 +톨비</td></tr>
           <tr><td>시내 ↔ Drogheda (50km)</td><td class="price">~€100 +톨비</td></tr>
           <tr><td>시내 ↔ Wicklow Town (50km)</td><td class="price">~€100</td></tr>
           <tr><td>Dublin ↔ Belfast (170km)</td><td class="price">€350+</td></tr>
           <tr><td>Dublin ↔ Galway (215km)</td><td class="price">€420+</td></tr>
           <tr><td>Dublin ↔ Cork (250km)</td><td class="price">€480+</td></tr>
-          <tr><td colspan="2" style="color:var(--muted); font-style:italic; padding:6px 8px !important; font-size:11px !important;">↳ 장거리는 왕복 deadhead·톨비·시간 반영. 짐 양·일정에 따라 변동.</td></tr>
+          <tr class="note-row"><td colspan="2">장거리는 빈 차로 돌아오는 거리·톨비·시간을 반영하며, 짐 양과 일정에 따라 달라집니다.</td></tr>
         </tbody>
       </table>
-      <p style="font-size:12px; color:var(--muted); margin-top:14px; text-align:center;">
-        ※ 최저가 €40부터. 거리는 <strong>차량 실주행거리(도로 거리) 기준</strong> — 직선거리가 아닙니다.<br>
-        ※ <strong>톨비·유료 주차비는 발생 시 별도 실비 청구</strong> — 대부분의 이사는 무료 주차로 진행되어 추가 비용 없음.<br>
-        ※ 출발지·도착지·희망 날짜를 함께 알려주시면 카톡으로 확정해 드립니다.
-      </p>
+      <ul class="table-notes">
+        <li>최저가는 €40입니다. 거리는 차량 실주행거리(도로 거리) 기준이며 직선거리가 아닙니다.</li>
+        <li>톨비·유료 주차비는 발생할 때만 별도 실비로 받습니다. 대부분의 이사는 무료 주차로 진행되어 추가 비용이 없습니다.</li>
+        <li>출발지·도착지·희망 날짜를 함께 알려주시면 카톡으로 금액을 확정해 드립니다.</li>
+      </ul>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section style="background:var(--bg);">
+<section>
   <div class="container reveal" style="max-width:800px;">
     <div class="section-title"><h2>이사 자주 묻는 질문</h2></div>
 
@@ -901,7 +907,7 @@
       <div class="faq-q">짐 운반은 도와주시나요?</div>
       <div class="faq-a">
         <strong>가벼운 박스·캐리어:</strong> 기본 도움 포함입니다.<br><br>
-        <strong>큰 가구·매트리스:</strong> 차량에 적재 가능한 범위 내에서 Andrew가 함께 들어드립니다 — 추가 비용 없이 기본 포함입니다. 적재 한도를 넘는 양은 전체 이사로 안내드립니다.<br><br>
+        <strong>큰 가구·매트리스:</strong> 차량에 적재 가능한 범위 내에서 Andrew가 함께 들어드립니다. 추가 비용 없이 기본 포함입니다. 적재 한도를 넘는 양은 전체 이사로 안내드립니다.<br><br>
         <strong>전체 이사:</strong> 짐 운반 도움이 <strong>기본 포함</strong>됩니다. 가구·매트리스·박스 등 모든 짐을 함께 운반해 드립니다.<br><br>
         <strong>두 사람이 필요한 이사:</strong> 운반 인력 1명을 추가한 2인 작업도 가능합니다. 이사 요금에 운반 인력 추가요금 €40(3회 이상 왕복은 €60)을 더합니다.
       </div>
@@ -960,18 +966,18 @@
     <div class="faq-item" onclick="this.classList.toggle('open')">
       <div class="faq-q">서비스 권역 기준은 어떻게 되나요?</div>
       <div class="faq-a">
-        <strong>권역 내</strong> — 둘 중 하나만 충족하면 권역 내 적용 (정찰가 그대로):
-        <ul style="margin:8px 0; padding-left:24px;">
+        <strong>권역 내:</strong> 둘 중 하나만 충족하면 권역 내로 보고 정찰가를 그대로 적용합니다.
+        <ul>
           <li><strong>Greater Dublin</strong> 권역 (시내·Blanchardstown·Tallaght·Swords·Dun Laoghaire·Bray·Lucan·Dundrum 등)</li>
           <li>또는 <strong>Blanchardstown Shopping Centre(Dublin 15) 기준 반경 15km 이내</strong></li>
         </ul>
-        → M50 톨비·일반 도로 주차 포함, 계산기 가격이 곧 최종 가격.<br><br>
-        <strong>권역 외</strong> — 카톡 사전 견적:
-        <ul style="margin:8px 0; padding-left:24px;">
+        계산기 가격이 곧 최종 가격입니다. 톨비·유료 주차비가 생기면 실비를 따로 받습니다.<br><br>
+        <strong>권역 외:</strong> 카톡으로 미리 견적을 드립니다.
+        <ul>
           <li>외곽 근교: Maynooth·Drogheda·Wicklow Town·Naas·Navan</li>
           <li>장거리: Cork·Galway·Belfast·Limerick·Killarney</li>
         </ul>
-        → 출장 거리 추가 + 톨로드(M1·M3·M4·M7·M8) 실비 별도. 짐 양·일정·실주행 거리 종합해서 카톡으로 정확한 견적 안내드립니다.
+        출장 거리가 더해지고 톨로드(M1·M3·M4·M7·M8) 실비는 따로 받습니다. 짐 양, 일정, 실주행 거리를 함께 보고 카톡으로 견적을 드립니다.
       </div>
     </div>
 
@@ -980,10 +986,10 @@
       <div class="faq-a">
         <strong>톨비·유료 주차비는 별도 실비 청구입니다 (불포함).</strong> 다만 대부분의 이사는 무료 도로 주차로 진행되어 추가 비용이 발생하지 않습니다.<br><br>
         <strong>실비 청구 가능 사항:</strong>
-        <ul style="margin:8px 0; padding-left:24px;">
-          <li><strong>시내 paid parking</strong> — 짐 하역 시 발생 가능 (€2–5/시간)</li>
-          <li><strong>톨로드</strong> — M50·M1·M3·M4·M7·M8 등 통과 시 (€2–5/회)</li>
-          <li>공항 단기 주차, 특수 시설 유료 주차 — 실비</li>
+        <ul>
+          <li><strong>시내 유료 주차(paid parking):</strong> 짐을 내릴 때 생길 수 있음 (€2–5/시간)</li>
+          <li><strong>톨로드:</strong> M50·M1·M3·M4·M7·M8 등을 지날 때 (€2–5/회)</li>
+          <li>공항 단기 주차, 특수 시설 유료 주차: 실비</li>
         </ul>
         발생 가능성이 있으면 작업 전 카톡으로 미리 안내드리고, 영수증 기준으로 정산합니다.
       </div>
@@ -993,13 +999,13 @@
       <div class="faq-q">멀리(시외) 이사도 가능한가요?</div>
       <div class="faq-a">
         네, Cork·Galway·Belfast·Limerick 같은 장거리 이사도 가능합니다. 다만 <strong>장거리는 별도 카톡 견적</strong>으로 안내드립니다. 이유는:
-        <ul style="margin:8px 0; padding-left:24px;">
-          <li>Andrew의 왕복 deadhead(빈 차) 주행이 길어짐</li>
+        <ul>
+          <li>Andrew가 빈 차로 오가는 거리가 길어짐</li>
           <li>외곽 톨로드(M7·M8 등) 실비 발생</li>
           <li>이사 일정 조율(전날/당일 출발) 필요</li>
         </ul>
         <strong>예상 가격 가이드:</strong>
-        <ul style="margin:8px 0; padding-left:24px;">
+        <ul>
           <li>Dublin ↔ Belfast (170km): <strong>€350+</strong></li>
           <li>Dublin ↔ Galway (215km): <strong>€420+</strong></li>
           <li>Dublin ↔ Cork (250km): <strong>€480+</strong></li>
@@ -1008,14 +1014,13 @@
       </div>
     </div>
 
-
     <div class="faq-item" onclick="this.classList.toggle('open')">
       <div class="faq-q">결제는 어떻게 하나요?</div>
       <div class="faq-a">
         <strong>결제 방식:</strong>
-        <ul style="margin:8px 0; padding-left:24px;">
-          <li><strong>예약 시 — 50% 예약금</strong> (예약 확정 시점에 선결제)</li>
-          <li><strong>이사 완료 후 — 나머지 50% + 추가 발생 비용</strong> (주차비·톨비 등 실비 포함)</li>
+        <ul>
+          <li><strong>예약 시: 50% 예약금</strong> (예약 확정 시점에 선결제)</li>
+          <li><strong>이사 완료 후: 나머지 50%와 추가 발생 비용</strong> (주차비·톨비 등 실비 포함)</li>
         </ul>
         <strong>결제 수단:</strong> 유로는 Revolut 송금, 원화는 한국 계좌이체. 카드 결제는 받지 않습니다.<br><br>
         <strong>원화 결제 환율:</strong> 원화로 결제하시면 <strong>예약금과 잔금 모두 각 송금 시점의 환율</strong>을 기준으로 원화 금액이 정해집니다. 예약금·잔금은 송금일이 달라 적용 환율이 서로 다를 수 있습니다.<br><br>
@@ -1027,13 +1032,13 @@
       <div class="faq-q">취소·환불 정책은 어떻게 되나요?</div>
       <div class="faq-a">
         예약금 기준 환불 정책입니다.
-        <ul style="margin:8px 0; padding-left:24px;">
+        <ul>
           <li><strong>이사 48시간 이전 취소</strong> → 예약금 <strong>전액 환불</strong></li>
           <li><strong>이사 전날까지 취소</strong> (24–48시간 전) → 예약금의 <strong>50% 환불</strong></li>
           <li><strong>이사 당일 취소</strong> → <strong>환불 불가</strong> (차량·일정 확보 완료 상태)</li>
         </ul>
-        <strong>불가피한 사정의 경우</strong> — 갑작스러운 질병, 가족 응급상황, 자연재해 등 불가항력 사유는 별도로 카톡으로 알려주세요. 상황 확인 후 함께 일정 조정 또는 합리적인 환불 방안을 안내해 드립니다.<br><br>
-        <strong>일정 변경</strong> — 취소 대신 일정 변경을 원하시면 가능한 한 무료로 조정해 드립니다(가능 일정 확인 필요). 가급적 일찍 카톡으로 공유해주세요.
+        <strong>불가피한 사정의 경우:</strong> 갑작스러운 질병, 가족 응급상황, 자연재해 등 불가항력 사유는 별도로 카톡으로 알려주세요. 상황 확인 후 함께 일정 조정 또는 합리적인 환불 방안을 안내해 드립니다.<br><br>
+        <strong>일정 변경:</strong> 취소 대신 일정 변경을 원하시면 가능한 한 무료로 조정해 드립니다(가능 일정 확인 필요). 가급적 일찍 카톡으로 공유해주세요.
       </div>
     </div>
   </div>
@@ -1055,20 +1060,42 @@
 
 </main>
 
-<footer class="contact">
+<footer class="contact" id="contact">
   <div class="container">
-    <h2>이사 문의</h2>
-    <p>짐 사진 한 장과 출발지·도착지를 보내 주시면 견적을 드립니다.</p>
-    <div class="channels">
-      <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" rel="noopener" style="background:#fee500; color:#3c1e1e; border-color:#fee500; font-weight:800;">카톡 오픈채팅</a>
-      <a href="https://www.instagram.com/ireland.sosik/" target="_blank" rel="noopener">인스타그램 DM</a>
-      <a href="mailto:sby05034@gmail.com">이메일</a>
+    <div class="ft-top">
+      <div>
+        <h2>이사 문의</h2>
+        <p class="ft-lead">짐 사진 한 장과 출발지·도착지를 보내 주시면 견적을 드립니다.</p>
+      </div>
+      <div class="ft-channels">
+        <a class="btn btn-kakao" href="https://open.kakao.com/o/suSTEFsi" target="_blank" rel="noopener" data-cta="footer"><svg class="ic ic-kakao" aria-hidden="true"><use href="#i-kakao"></use></svg>카카오톡 오픈채팅</a>
+        <a class="btn btn-ghost-light" href="https://www.instagram.com/ireland.sosik/" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-instagram"></use></svg>인스타그램 DM</a>
+        <a class="btn btn-ghost-light" href="mailto:sby05034@gmail.com"><svg class="ic" aria-hidden="true"><use href="#i-mail"></use></svg>이메일</a>
+      </div>
     </div>
-    <p class="small" style="margin-top:10px;"><a href="../terms.html" style="color:inherit; opacity:0.85; text-decoration:underline;">이용약관 · 환불·책임 정책</a> · <a href="../photo-credits.html" style="color:inherit; opacity:0.85; text-decoration:underline;">사진 출처</a></p>
-    <p class="small">© 2026 🇮🇪 Beautiful Ireland with Everyone · Andrew의 아일랜드 동행</p>
-    <p class="small" style="opacity:0.7;">최종 업데이트 <time datetime="2026-09-28">2026년 9월 28일</time></p>
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <a class="ft-logo" href="../index.html"><svg aria-hidden="true" focusable="false"><use href="#logo-island"></use></svg><span><b>아일랜드 동행</b><small>Beautiful Ireland with Everyone</small></span></a>
+        <p>더블린에 사는 한국인 서현 Andrew가 직접 운전하고 안내하는 한국어 프라이빗 차량 서비스입니다. 수익은 음악 봉사 프로젝트 <span class="nw">Classical Music for Everyone</span>의 예산으로 쓰입니다.</p>
+      </div>
+      <nav class="ft-col" aria-label="서비스"><h3>서비스</h3><ul><li><a href="../services/airport.html">공항 픽업·드랍</a></li><li><a href="../services/tours.html">당일 로드트립 22코스</a></li><li><a href="../services/moving.html">이사 (간단·전체)</a></li><li><a href="../services/pilgrimage.html">성지순례·피정</a></li><li><a href="../services/custom.html">맞춤 여행·통역 동행</a></li></ul></nav>
+      <nav class="ft-col" aria-label="안내"><h3>안내</h3><ul><li><a href="../about.html">소개와 차량</a></li><li><a href="../contact.html">문의 채널</a></li><li><a href="../terms.html">이용약관·환불 정책</a></li><li><a href="../photo-credits.html">사진 출처</a></li></ul></nav>
+      <div class="ft-col"><h3>연락</h3><ul><li><a href="https://open.kakao.com/o/suSTEFsi" target="_blank" rel="noopener">카카오톡 오픈채팅</a></li><li><a href="https://www.instagram.com/ireland.sosik/" target="_blank" rel="noopener">인스타그램 @ireland.sosik</a></li><li><a href="mailto:sby05034@gmail.com">sby05034@gmail.com</a></li></ul></div>
+    </div>
+    <div class="ft-bottom">
+      <p>© 2026 🇮🇪 <span class="nw">Beautiful Ireland with Everyone</span> · <span class="nw">Andrew의 아일랜드 동행</span></p>
+      <p>최종 업데이트 <time datetime="2026-10-11">2026년 10월 11일</time></p>
+    </div>
   </div>
 </footer>
+
+<aside class="dock-wrap" aria-label="빠른 문의">
+  <a class="dock is-hidden" href="https://open.kakao.com/o/suSTEFsi" target="_blank" rel="noopener" data-cta="dock" data-inquire="inquireMoving">
+    <img class="dock-avatar" src="../images/andrew/avatar.jpg" alt="" width="40" height="40">
+    <span class="dock-text"><b>카카오톡으로 문의</b><small>Andrew가 직접 답장합니다</small></span>
+    <svg class="ic ic-kakao" aria-hidden="true"><use href="#i-kakao"></use></svg>
+  </a>
+</aside>
 
 <script>
 // =============================================
@@ -1105,8 +1132,8 @@ const STAIR_RATE = { 'single': 10, 'double': 15, 'triple': 15 }; // 계단 올�
 const FAR_FEE = 10; // 차에서 현관까지 50m 이상 (지점당)
 const TRIP_LABEL = {
   'single': '간단 이사 (한 번 이동)',
-  'double': '전체 이사 — 2회 왕복',
-  'triple': '전체 이사 — 3회+ 왕복'
+  'double': '전체 이사 · 2회 왕복',
+  'triple': '전체 이사 · 3회+ 왕복'
 };
 
 // 거리(km) → 1회 이동 기본 가격 + 분해 정보
@@ -1255,17 +1282,17 @@ function calcMoving() {
     const multTotal = Math.round(single.total * mult);
     breakdown.push(`<li><span>1회 이동 가격 (${km}km)</span><span>€${single.total}</span></li>`);
     single.lines.forEach(line => {
-      breakdown.push(`<li><span style="font-size:12px; color:var(--muted);">↳ ${line.label}</span><span style="font-size:12px; color:var(--muted);">€${line.amount}</span></li>`);
+      breakdown.push(`<li class="sub"><span>${line.label}</span><span>€${line.amount}</span></li>`);
     });
-    breakdown.push(`<li style="border-top:1px solid var(--border); padding-top:8px; margin-top:6px;"><span>${TRIP_LABEL[tripType]} (× ${mult})</span><span>€${multTotal}</span></li>`);
-    breakdown.push(`<li><span style="font-size:12px; color:var(--muted);">↳ 짐 운반 도움 기본 포함</span><span></span></li>`);
+    breakdown.push(`<li class="sep"><span>${TRIP_LABEL[tripType]} (× ${mult})</span><span>€${multTotal}</span></li>`);
+    breakdown.push(`<li class="sub"><span>짐 운반 도움 기본 포함</span><span></span></li>`);
     total = multTotal;
   }
 
   // 2인 작업 (운반 인력 1명 추가) → 고정 추가요금
   if (crew2) {
     const add = CREW_ADD[tripType];
-    breakdown.push(`<li style="border-top:1px solid var(--border); padding-top:8px; margin-top:6px;"><span>2인 작업 — 운반 인력 1명 추가</span><span>+€${add}</span></li>`);
+    breakdown.push(`<li class="sep"><span>2인 작업 · 운반 인력 1명 추가</span><span>+€${add}</span></li>`);
     total += add;
   }
 
@@ -1283,7 +1310,7 @@ function calcMoving() {
     }
   });
   [['mv-far-from', '출발지'], ['mv-far-to', '도착지']].forEach(([id, where]) => {
-    if (chk(id)) { breakdown.push(`<li><span>${where} — 현관까지 50m 이상</span><span>+€${FAR_FEE}</span></li>`); total += FAR_FEE; }
+    if (chk(id)) { breakdown.push(`<li><span>${where} · 현관까지 50m 이상</span><span>+€${FAR_FEE}</span></li>`); total += FAR_FEE; }
   });
   const otRate = OT_RATE[crew2 ? 2 : 1];
   const halfHours = mvMode === 'repeat' ? val('mv-extra-time') : 0;
@@ -1292,14 +1319,14 @@ function calcMoving() {
     breakdown.push(`<li><span>예상 초과 작업 ${halfHours * 30}분 (30분당 €${otRate})</span><span>+€${ot}</span></li>`);
     total += ot;
   }
-  breakdown.push(`<li><span style="font-size:12px; color:var(--muted);">↳ 작업시간 ${INCLUDED_H[tripType]}시간 포함 · 초과 30분당 €${otRate} · 최종 금액은 당일 실제 시간 기준</span><span></span></li>`);
-  if (quoteNeeded) breakdown.push(`<li><span style="font-size:12px; color:var(--red-ink);">↳ 4th floor 이상 계단은 카톡으로 확정 견적을 드립니다</span><span></span></li>`);
+  breakdown.push(`<li class="sub"><span>작업시간 ${INCLUDED_H[tripType]}시간 포함 · 초과 30분당 €${otRate} · 최종 금액은 당일 실제 시간 기준</span><span></span></li>`);
+  if (quoteNeeded) breakdown.push(`<li class="sub warn"><span>4th floor 이상 계단은 카톡으로 확정 견적을 드립니다</span><span></span></li>`);
   const timeHint = document.getElementById('mv-time-hint');
   if (timeHint) timeHint.textContent = `${TRIP_LABEL[tripType]}은 작업시간 ${INCLUDED_H[tripType]}시간이 포함됩니다. 넘으면 30분당 €${otRate}${crew2 ? ' (2인 작업)' : ` (2인 €${OT_RATE[2]})`}.`;
 
   // 평균 단가
   const avgPerKm = (total / km).toFixed(2);
-  breakdown.push(`<li style="border-top:1px solid var(--border); padding-top:8px; margin-top:6px;"><span>평균 단가</span><span>€${avgPerKm}/km · ${km}km 기준</span></li>`);
+  breakdown.push(`<li class="sep"><span>평균 단가</span><span>€${avgPerKm}/km · ${km}km 기준</span></li>`);
 
   document.getElementById('mv-price').textContent = `€${total}`;
   document.getElementById('mv-breakdown').innerHTML = breakdown.join('');
@@ -1384,8 +1411,8 @@ function trackClick(path, title) {
 function copyAndOpenKakao(message) {
   const copied = copyTextSync(message);
   showToast(copied
-    ? '📋 문의 메시지를 복사했습니다 — 카톡 채팅창에 붙여넣기 해주세요'
-    : '💬 카톡 채팅창을 여는 중입니다 — 문의 내용을 적어주세요');
+    ? '문의 메시지를 복사했습니다. 카톡 채팅창에 붙여넣기 해주세요.'
+    : '카톡 채팅창을 엽니다. 문의 내용을 적어주세요.');
   trackClick('kakao-click/moving', '카톡 문의 클릭 (이사)');
   openLinkSafely('https://open.kakao.com/o/suSTEFsi');
 }

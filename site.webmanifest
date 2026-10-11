@@ -1,0 +1,14 @@
+{
+  "name": "Andrew의 아일랜드 동행 — Beautiful Ireland with Everyone",
+  "short_name": "아일랜드 동행",
+  "lang": "ko",
+  "start_url": "./",
+  "scope": "./",
+  "display": "browser",
+  "background_color": "#fafbfc",
+  "theme_color": "#1a2942",
+  "icons": [
+    { "src": "images/logo/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "images/logo/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

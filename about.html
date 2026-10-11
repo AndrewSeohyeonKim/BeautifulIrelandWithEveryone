@@ -3,18 +3,18 @@
 <head>
 <script>document.documentElement.className+=" js";</script>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#1a2942">
 <title>아일랜드 한인 가이드 Andrew 소개 — 더블린 5년차·무료 워킹투어 | 아일랜드 동행</title>
 <meta name="description" content="서현 Andrew · 더블린 5년차 거주, 유럽 운전 6년+, 무료 워킹투어 운영자. 음악 봉사 프로젝트 Classical Music for Everyone.">
 <meta property="og:title" content="Andrew 소개 — 아일랜드 동행">
 <meta property="og:description" content="서현 Andrew · 더블린 5년차 거주, 유럽 운전 6년+, 무료 워킹투어 운영자.">
-<meta property="og:image" content="https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/images/logo/og-image.jpg?v=20260501">
+<meta property="og:image" content="https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/images/logo/og-image.jpg?v=20261011">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/about.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/images/logo/og-image.jpg?v=20260501">
+<meta name="twitter:image" content="https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/images/logo/og-image.jpg?v=20261011">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta property="og:site_name" content="Andrew의 아일랜드 동행 — Beautiful Ireland with Everyone">
 <meta property="og:locale" content="ko_KR">
@@ -25,57 +25,98 @@
 <meta name="geo.region" content="IE-D">
 <meta name="geo.placename" content="Dublin, Ireland">
 <link rel="canonical" href="https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/about.html">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="apple-touch-icon" href="images/logo/icon.svg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="images/logo/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<script defer src="scripts.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=20261011">
+<script defer src="scripts.js?v=20261011"></script>
 <style>
-  .story-block { max-width:760px; margin:0 auto; }
-  .story-block p { font-size:15.5px; line-height:1.9; color:var(--text); margin-bottom:18px; }
-  .story-block p strong { color:var(--primary); background:var(--accent-soft); padding:2px 6px; border-radius:4px; }
-  .story-block h2 { font-size:19px; font-weight:700; margin-top:30px; margin-bottom:14px; color:var(--primary); }
-  /* 카드가 4장이므로 2×2로 고정 — auto-fit이면 3열이 되어 4번째가 혼자 남고,
-     한 줄 안에서 가장 짧은 카드가 큰 빈 공간을 떠안습니다. */
-  .mission-card-grid { display:grid; grid-template-columns:1fr; gap:18px; margin-bottom:36px; }
-  @media (min-width: 660px) { .mission-card-grid { grid-template-columns:1fr 1fr; } }
-  .mission-card {
-    background:white;
-    border:1px solid var(--border);
-    border-radius:14px;
-    padding:24px 26px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.04);
-    display:flex;
-    flex-direction:column;
-  }
-  /* 같은 줄에서 키를 맞추느라 생긴 여유 공간은 본문 아래로 몰아, 링크는 카드 바닥에 정렬 */
-  .mission-card p { flex:1 1 auto; }
-  .mission-card .icon { margin-bottom:12px; }
-  .mission-card h3 { color:var(--primary); margin-bottom:10px; font-size:16px; }
-  .mission-card p { font-size:14px; line-height:1.7; color:var(--text); }
-  .impact-box {
-    background:white;
-    border:2px solid var(--accent);
-    border-radius:14px;
-    padding:26px 30px;
-    margin:26px auto;
-    max-width:720px;
-    box-shadow:0 4px 14px rgba(201,169,110,0.18);
-  }
-  .vehicle-photo { max-width:520px; margin:0 auto; border-radius:14px; overflow:hidden; box-shadow:var(--shadow); }
-  .vehicle-photos { display:grid; grid-template-columns:1fr 1fr; gap:16px; max-width:880px; margin:0 auto; align-items:start; }
-  @media (max-width:700px) { .vehicle-photos { grid-template-columns:1fr; max-width:520px; gap:14px; } }
-  .vehicle-photos figure { margin:0; border-radius:14px; overflow:hidden; box-shadow:var(--shadow); background:white; }
-  .vehicle-photos figure img { width:100%; height:auto; display:block; }
-  .vehicle-photos figcaption { font-size:12.5px; color:var(--muted); text-align:center; padding:8px 10px; font-weight:600; }
-  .vehicle-specs { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:24px; max-width:760px; margin-left:auto; margin-right:auto; }
-  @media (max-width:600px){ .vehicle-specs { grid-template-columns:repeat(2,1fr); } }
-  .spec { background:white; border:1px solid var(--border); border-radius:10px; padding:14px; text-align:center; }
-  .spec .num { font-size:22px; font-weight:900; color:var(--accent-ink); }
-  .spec .lbl { font-size:12px; color:var(--muted); }
+  /* about.html — 2026-10-11 편집형 개편. 그림자·상자 대신 여백과 옅은 선(--line), 토큰만 쓴다 */
+  .ab-intro-sec { background:#fff; }
+  .ab-intro, .ab-why { display:grid; grid-template-columns:minmax(0,0.8fr) minmax(0,1fr); gap:56px; }
+  .ab-intro { align-items:center; }
+  .ab-photo { margin:0; }
+  .ab-photo .ab-img { border-radius:20px; overflow:hidden; aspect-ratio:4 / 5; background:var(--accent-soft); }
+  .ab-photo img { width:100%; height:100%; object-fit:cover; object-position:center 18%; }
+  .ab-text h2 { margin-bottom:18px; }
+  .ab-text p { font-size:16.5px; line-height:1.85; color:var(--text); margin-bottom:14px; }
+  /* 경력은 알약 대신 정의 목록 — 줄마다 옅은 선 */
+  .ab-facts { display:grid; grid-template-columns:1fr 1fr; gap:0 28px; margin-top:26px; border-top:1px solid var(--line); }
+  .ab-facts div { padding:13px 0; border-bottom:1px solid var(--line); }
+  .ab-facts dt { font-size:13.5px; color:var(--muted); font-weight:600; }
+  .ab-facts dd { font-size:15.5px; color:var(--primary); font-weight:700; line-height:1.5; letter-spacing:-0.02em; }
 
+  .ab-why { align-items:start; }
+  .ab-why h2 { max-width:11em; }
+  .ab-why-body p { font-size:16.5px; line-height:1.85; color:var(--text); margin-bottom:16px; }
+  .ab-why-body p:last-child { margin-bottom:0; }
+  .ab-why-body a { color:var(--accent-ink); font-weight:600; text-underline-offset:3px; }
+
+  /* 차량 */
+  .ab-vphotos { display:grid; grid-template-columns:1fr 1fr; gap:16px; max-width:960px; margin:0 auto; }
+  .ab-vphotos figure { margin:0; }
+  .ab-vphotos img { width:100%; height:auto; aspect-ratio:4 / 3; object-fit:cover; border-radius:var(--radius); background:var(--accent-soft); }
+  .ab-vphotos figcaption { font-size:14px; color:var(--muted); margin-top:10px; }
+  .ab-specs { display:grid; grid-template-columns:repeat(3,1fr); gap:0 28px; max-width:960px; margin:36px auto 0; border-top:1px solid var(--line); }
+  .ab-specs div { display:flex; flex-direction:column-reverse; gap:2px; padding:18px 0; border-bottom:1px solid var(--line); }
+  .ab-specs dd { font-size:26px; font-weight:800; color:var(--primary); letter-spacing:-0.03em; line-height:1.2; font-variant-numeric:tabular-nums; }
+  .ab-specs dt { font-size:14px; color:var(--muted); font-weight:500; }
+  .ab-vnote { max-width:680px; margin:32px auto 0; font-size:16px; line-height:1.85; color:var(--text); text-align:center; }
+  .ab-vnote strong { color:var(--primary); font-weight:700; }
+
+  /* Classical Music for Everyone */
+  .ab-music { background:var(--accent-tint); border-top:1px solid var(--line); }
+  .ab-music-head { max-width:680px; margin:0 auto 40px; text-align:center; }
+  .ab-music-head h2 { margin-bottom:14px; }
+  .ab-music-head p { font-size:16.5px; line-height:1.8; color:var(--text); }
+  .ab-points { display:grid; grid-template-columns:1fr 1fr; gap:0 48px; max-width:920px; margin:0 auto 40px; }
+  .ab-point { padding:24px 0 26px; border-top:1px solid var(--line); }
+  .ab-point > .ic { width:22px; height:22px; color:var(--accent-ink); margin-bottom:12px; display:block; }
+  .ab-point h3 { font-size:18px; margin-bottom:8px; }
+  .ab-point p { font-size:16px; line-height:1.8; color:var(--text); }
+  .ab-point p strong { color:var(--primary); font-weight:700; }
+  .ab-link { display:inline-flex; align-items:center; gap:6px; margin-top:8px; min-height:44px; font-size:15px; font-weight:700; color:var(--accent-ink); text-decoration:none; }
+  .ab-link .ic { width:16px; height:16px; transition:transform 0.25s var(--ease); }
+  .ab-link:hover { text-decoration:underline; text-underline-offset:4px; }
+  .ab-link:hover .ic { transform:translateX(3px); }
+  /* 모금 현황·적립 방식 (공용 .fund-panel/.fund-method를 이 페이지에서 본문 크기로) */
+  .page-about .fund-panel, .page-about .fund-method { max-width:720px; border:1px solid var(--line); border-radius:var(--radius); }
+  .page-about .fund-panel { padding:28px 30px 22px; }
+  .page-about .fund-lede { font-size:14.5px; }
+  .page-about .fund-meta { font-size:15px; }
+  .page-about .fund-split { background:var(--line); border-color:var(--line); }
+  .page-about .fund-split[hidden] { display:none; } /* 공용 .fund-split의 display:grid가 hidden을 덮어 빈 줄이 보이던 문제 */
+  .page-about .fund-split dt { font-size:13px; }
+  .page-about .fund-note { font-size:13.5px; border-top-color:var(--line); }
+  .page-about .fund-method { margin-top:16px; padding:28px 30px 24px; }
+  .page-about .fund-method h3 { font-size:18px; margin-bottom:16px; }
+  .page-about .fund-method ol { gap:12px; }
+  .page-about .fund-method li { font-size:16px; line-height:1.75; }
+  .page-about .fund-method .fm-sub { font-size:14.5px; margin-top:4px; }
+  .page-about .fund-method .fm-note { font-size:14.5px; line-height:1.75; border-top-color:var(--line); }
+  .ab-cta { max-width:720px; margin:40px auto 0; text-align:center; }
+  .ab-cta p { font-size:16px; line-height:1.75; color:var(--text); margin-bottom:20px; }
+  .ab-cta-actions { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+
+  @media (max-width:860px) {
+    .ab-intro, .ab-why { grid-template-columns:1fr; gap:28px; }
+    .ab-photo { max-width:420px; order:2; }
+  }
+  @media (max-width:600px) {
+    .ab-text p, .ab-why-body p, .ab-music-head p { font-size:16px; }
+    .ab-facts { grid-template-columns:1fr; }
+    .ab-vphotos { grid-template-columns:1fr; gap:20px; }
+    .ab-specs { grid-template-columns:repeat(2,1fr); gap:0 20px; }
+    .ab-specs dd { font-size:23px; }
+    .ab-vnote, .ab-cta { text-align:left; }
+    .ab-points { grid-template-columns:1fr; }
+    .page-about .fund-panel, .page-about .fund-method { padding:22px 20px 18px; }
+    .ab-cta-actions .btn { flex:1 1 100%; }
+  }
 </style>
 <script type="application/ld+json">
 {
@@ -121,10 +162,28 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": "https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/about.html#webpage",
+  "url": "https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/about.html",
+  "name": "아일랜드 한인 가이드 Andrew 소개 — 더블린 5년차·무료 워킹투어",
+  "mainEntity": {
+    "@id": "https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/#andrew"
+  },
+  "isPartOf": {
+    "@id": "https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/#website"
+  },
+  "inLanguage": "ko-KR",
+  "dateModified": "2026-10-11"
+}
+</script>
 </head>
 <body class="page-about">
+<a class="skip-link" href="#main-content">본문 바로가기</a>
 
-<!-- 아이콘 스프라이트 — 이모지 대신 쓰는 선 아이콘. <svg class="ic"><use href="#i-…"></use></svg> 로 부른다 -->
+<!-- 아이콘 스프라이트 — 정본은 _내부자료/스크립트/site_parts.py. <svg class="ic"><use href="#i-…"></use></svg> 로 부른다 -->
 <svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
   <symbol id="i-plane" viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></symbol>
   <symbol id="i-map" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></symbol>
@@ -152,31 +211,29 @@
   <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
   <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></symbol>
   <symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></symbol>
+  <symbol id="i-kakao" viewBox="0 0 24 24"><path d="M12 3.2C6.6 3.2 2.2 6.6 2.2 10.9c0 2.7 1.8 5.1 4.6 6.5l-1 3.6c-.1.3.3.6.6.4l4.3-2.8c.4 0 .9.1 1.3.1 5.4 0 9.8-3.4 9.8-7.7S17.4 3.2 12 3.2z"/></symbol>
+  <symbol id="logo-island" viewBox="-3 -3 82 106"><path fill="currentColor" d="M47.7 0C48.7 0.3 52.4 2.2 52.6 3.3C52.8 4.4 49.5 5.9 48.9 6.6C48.2 7.3 48.6 7.3 48.8 7.6C49 7.8 49.6 8.1 50.1 8.1C50.6 8.1 51.2 8.2 51.7 7.7C52.2 7.2 52.5 5.5 53.2 5C53.8 4.6 54.7 5.3 55.8 5.1C56.9 4.8 58.1 3.5 59.7 3.3C61.4 3.2 64.5 3.1 65.9 4.2C67.2 5.2 66.8 8 67.8 9.8C68.8 11.5 71.6 13.2 71.8 14.6C72 16.1 68.6 18 68.9 18.6C69.2 19.1 72.5 17.3 73.6 18C74.7 18.7 75.6 21 75.5 22.7C75.5 24.3 74.3 27.1 73.4 28.1C72.4 29.2 70.7 27.9 69.8 28.8C68.9 29.6 68.6 32.4 67.8 33.2C67 34 65.5 33.3 65 33.7C64.5 34 65.2 35.1 64.7 35.3C64.3 35.5 62.9 34.8 62.3 34.9C61.8 35 61.7 35.6 61.6 36.1C61.5 36.5 61.4 37.1 61.7 37.6C62 38.1 62.9 38.2 63.2 39.3C63.6 40.3 63.3 42.6 63.8 43.8C64.2 45 65.6 45.2 65.7 46.6C65.8 48 64.1 50.6 64.3 52.4C64.4 54.2 66 55.9 66.4 57.5C66.9 59 67.4 59.8 67 61.8C66.5 63.8 64.4 67.8 63.9 69.6C63.5 71.4 64.6 71.1 64 72.5C63.4 73.9 60.9 76.5 60.5 78C60.1 79.5 62.2 80.7 61.8 81.4C61.5 82 59.6 82 58.6 81.9C57.5 81.8 56.3 81 55.5 81C54.8 80.9 54.6 81.8 54.2 81.9C53.8 81.9 53.4 81 53 81.2C52.5 81.4 53 82.5 51.7 82.9C50.4 83.3 46.6 83.2 45.2 83.5C43.7 83.8 43.5 84.1 43 84.7C42.6 85.3 43.4 86.4 42.7 86.9C42.1 87.5 40.4 87.4 39.3 88.1C38.2 88.8 37 90.6 36.1 91.2C35.2 91.8 34.6 91.9 34.1 91.7C33.5 91.6 33.1 90.2 32.7 90.5C32.4 90.8 32.7 92.5 32 93.4C31.3 94.2 30.9 94.6 28.5 95.7C26 96.7 19.3 99.3 17.1 99.8C14.8 100.3 15.9 98.7 14.8 98.7C13.6 98.7 10.7 100 10.2 100C9.6 100 11.2 99.2 11.5 98.7C11.7 98.1 11.3 97.6 11.8 96.9C12.3 96.3 14.1 95.3 14.5 94.9C15 94.4 14.7 94.3 14.6 94.1C14.5 93.9 15.1 93.3 13.7 93.7C12.3 94.1 7.3 96.3 6 96.5C4.7 96.8 5.3 96.3 5.9 95.4C6.6 94.6 10.2 91.9 9.9 91.4C9.7 91 5.7 92.7 4.6 92.7C3.6 92.6 4.1 91.4 3.6 91C3 90.7 1.6 91 1.4 90.7C1.2 90.3 2.1 89.5 2.4 88.9C2.8 88.3 2.5 87.6 3.3 86.9C4.1 86.3 6.1 85.8 7.1 85.2C8.1 84.5 10.2 83.2 9.1 83C8 82.8 2 83.8 0.4 83.7C-1.1 83.7 -0.5 83.1 0 82.4C0.5 81.8 1.7 80.1 3.2 79.8C4.7 79.4 8.3 81 9.2 80.3C10.1 79.7 8.3 76.9 8.6 75.9C9 74.9 10.6 74.8 11.2 74.2C11.8 73.6 11.2 72.7 12.2 72.2C13.3 71.7 17.3 71.6 17.6 71.3C17.8 70.9 14.9 70.1 13.6 70.1C12.3 70.1 9.6 71.7 9.7 71.2C9.8 70.7 13.2 68.2 14.3 66.8C15.3 65.5 15.8 64.2 16 63.2C16.2 62.3 15.2 62.1 15.5 61.2C15.8 60.4 16.5 58.6 17.6 57.9C18.7 57.1 21.2 57.1 22.1 56.8C22.9 56.4 22.8 56.3 22.7 55.9C22.6 55.4 23.1 54.2 21.6 54C20.2 53.8 15.5 55.1 14 54.7C12.4 54.3 13.2 51.8 12.5 51.5C11.7 51.1 10.2 52.6 9.6 52.7C9 52.8 8.9 52.5 8.8 52.1C8.7 51.7 9.2 50.7 8.9 50.5C8.6 50.2 7.4 50.8 6.8 50.7C6.3 50.6 5.9 50.6 5.6 49.9C5.3 49.2 4.5 47.4 4.9 46.6C5.3 45.8 7.6 46 8.2 45.1C8.8 44.3 7.8 42.3 8.5 41.5C9.3 40.8 11.8 40.9 12.6 40.5C13.3 40 13.1 39.2 13.1 38.7C13 38.3 13 37.9 12.2 37.7C11.4 37.6 8.7 38.3 8.2 37.9C7.6 37.6 9.1 36.5 9.1 35.6C9 34.7 7.9 33.4 7.7 32.4C7.4 31.4 7.9 30 7.6 29.5C7.3 29 6.3 29.7 6 29.5C5.7 29.3 5.7 28.4 5.8 28.1C6 27.8 6.5 27.7 6.9 27.8C7.2 27.9 7.5 29.1 8 28.9C8.6 28.7 8.5 26.9 10 26.5C11.5 26.2 15.4 26.5 17 27C18.6 27.6 18.7 29.9 19.5 30C20.3 30.1 20.4 27.9 21.8 27.6C23.2 27.4 26.7 28.5 27.8 28.5C29 28.4 28.8 27.8 28.9 27.3C28.9 26.8 27.3 26.2 28 25.4C28.6 24.6 31.7 23.5 32.8 22.4C33.9 21.4 35.5 19.8 34.7 19.2C33.8 18.7 29.4 19.2 27.9 19C26.3 18.7 25.7 18 25.4 17.5C25.2 17 25.7 16.2 26.4 15.8C27.1 15.5 29.1 15.5 29.7 15.2C30.2 14.8 29.5 14.2 29.8 13.8C30.1 13.4 31.3 13.7 31.4 13C31.6 12.2 30.5 10.5 30.7 9.4C30.9 8.2 31.5 6.8 32.6 6C33.7 5.2 36 4.5 37.1 4.4C38.2 4.2 38.4 5.3 39.2 5C40 4.8 41.3 2.7 42.1 2.8C42.9 2.9 43.9 4.7 44 5.6C44.2 6.5 43.1 7.7 43.1 8.2C43.2 8.7 43.7 8.8 44.1 8.7C44.4 8.6 45.1 8.5 45.2 7.5C45.2 6.5 44.1 3.9 44.4 2.9C44.6 1.9 46.2 2 46.8 1.5C47.3 1 46.7 -0.3 47.7 0Z"/><circle cx="61" cy="51.5" r="7.5" fill="#c9a96e"/></symbol>
 </svg>
 
-<div class="scroll-progress" aria-hidden="true"></div>
-<nav class="topnav">
+<nav class="topnav" aria-label="주 메뉴">
   <div class="nav-inner">
-    <a href="index.html" class="logo">
-      <img src="images/logo/icon.svg" alt="아일랜드 동행" width="32" height="32" class="logo-img">
-      <span class="logo-name"><span class="accent">Beautiful Ireland</span> <span class="with-everyone">with Everyone</span></span>
+    <a href="index.html" class="logo" aria-label="Andrew의 아일랜드 동행 홈">
+      <svg class="logo-mark" aria-hidden="true" focusable="false"><use href="#logo-island"></use></svg>
+      <span class="logo-text"><span class="logo-ko">아일랜드 동행</span><span class="logo-en">Beautiful Ireland with Everyone</span></span>
     </a>
-    <button class="ham" onclick="document.querySelector('.menu').classList.toggle('open')" aria-label="메뉴 열기">≡</button>
-    <div class="menu">
-      <a href="about.html" class="current">소개</a>
+    <button class="ham" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-menu"><span></span><span></span></button>
+    <div class="menu" id="site-menu">
+      <a href="about.html" class="current" aria-current="page">소개</a>
       <a href="services/airport.html">공항 픽업</a>
       <a href="services/tours.html">로드트립</a>
       <a href="services/moving.html">이사</a>
       <a href="services/pilgrimage.html">성지순례</a>
       <a href="services/custom.html">맞춤 여행</a>
-      <a href="contact.html" class="cta-nav">문의</a>
+      <a href="contact.html" class="cta-nav">문의하기</a>
+      <div class="menu-extra"><a href="https://www.instagram.com/ireland.sosik/" target="_blank" rel="noopener">인스타그램</a><a href="mailto:sby05034@gmail.com">이메일</a></div>
     </div>
   </div>
 </nav>
-
-<div class="float-cta">
-  <a class="kakao" href="https://open.kakao.com/o/suSTEFsi" target="_blank" rel="noopener"><svg class="ic"><use href="#i-chat"></use></svg> 카톡으로 문의</a>
-</div>
 
 <nav aria-label="상위 페이지">
 <a href="index.html" class="back-home">홈으로</a>
@@ -199,71 +256,78 @@
   </div>
 </div>
 
-<!-- STORY -->
-<section style="background:white;">
+<!-- 소개 — 사진 한 장 + 지금까지 해 온 일. 경력은 정의 목록으로 -->
+<section class="ab-intro-sec">
   <div class="container reveal">
-    <div class="story-block">
-      <h2>더블린에서 이 일을 하게 된 과정</h2>
-      <p>
-        더블린에서 <strong>5년째 살고 있고</strong>, 유럽에서 <strong>6년 넘게 운전</strong>했습니다.
-        처음에는 한인 단톡방에서 공항 픽업이나 이사를 부탁받아 도와드리던 일이었습니다. 부탁이 소개로 이어지고 소개가 쌓이면서, 지금은 공항 픽업·로드트립·이사·성지순례·맞춤 여행 다섯 가지를 한 대의 차로 운영합니다.
-      </p>
-      <p>
-        그 사이 더블린 무료 한국어 워킹투어를 정기적으로 열었고, 대전교구 아일랜드 성지순례단을 9일 일정으로 안내했고, 한국 기자단의 더블린 취재를 도왔습니다.
-        레지오 마리애 세계 본부(Concilium)에서는 한국어 통역 봉사를 하고 있습니다.
-      </p>
+    <div class="ab-intro">
+      <figure class="ab-photo">
+        <div class="ab-img"><img src="images/operator/andrew-speaking.jpg" alt="무대에서 마이크를 들고 이야기하는 서현 Andrew" loading="lazy" decoding="async" width="900" height="1200"></div>
+      </figure>
+      <div class="ab-text">
+        <p class="eyebrow accent">운영자</p>
+        <h2>더블린에서 이 일을 하게 된 과정</h2>
+        <p>더블린에서 5년째 살고 있고, 유럽에서 6년 넘게 운전했습니다. 처음에는 한인 단톡방에서 공항 픽업이나 이사를 부탁받아 도와드리던 일이었습니다. 부탁이 소개로 이어지고 소개가 쌓이면서, 지금은 공항 픽업·로드트립·이사·성지순례·맞춤 여행 다섯 가지를 한 대의 차로 운영합니다.</p>
+        <p>그 사이 더블린 무료 한국어 워킹투어를 정기적으로 열었고, 대전교구 아일랜드 성지순례단을 9일 일정으로 안내했고, 한국 기자단의 더블린 취재를 도왔습니다. 레지오 마리애 세계 본부(Concilium)에서는 한국어 통역 봉사를 하고 있습니다.</p>
+        <dl class="ab-facts">
+          <div><dt>거주</dt><dd>더블린 5년차</dd></div>
+          <div><dt>운전</dt><dd>유럽 6년 이상</dd></div>
+          <div><dt>워킹투어</dt><dd>더블린 무료 워킹투어 운영</dd></div>
+          <div><dt>성지순례</dt><dd>대전교구 아일랜드 성지순례단 가이드</dd></div>
+          <div><dt>취재 안내</dt><dd>한국 기자단 더블린 안내</dd></div>
+          <div><dt>통역 봉사</dt><dd>레지오 마리애 본부 (Concilium) 한국어 통역</dd></div>
+          <div><dt>공동체</dt><dd>아일랜드천주교한인공동체 청년회장</dd></div>
+          <div><dt>언어</dt><dd>한국어·영어</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <h2>투어가 아니라 동행이라고 부르는 이유</h2>
-      <p>
-        투어버스는 정해진 코스를 정해진 시간에 영어로 돕니다. 이 동행은 예약한 일행만 타는 차로 움직이고, 사진 찍고 싶은 곳에서 멈추고, 배고프면 같이 밥을 먹습니다.
-        길 위에서 궁금한 것을 그때그때 한국어로 물어볼 수 있는 여행을 만들고 싶었습니다.
-      </p>
-      <p>
-        이 일은 저의 본업이 아닙니다. 수익은 운영비와 차량 예비비를 뺀 전액이 음악 봉사 프로젝트 <strong class="phrase brand">Classical Music for Everyone</strong>의 예산으로 쌓입니다.
-        그래서 가격은 원가와 봉사 예산이 남는 선에서 정하고, 어떻게 계산하는지는 아래에 그대로 적어 두었습니다.
-      </p>
-
-      <div class="credentials" style="justify-content:center; margin:30px 0;">
-        <span class="cred-pill">더블린 거주 5년차</span>
-        <span class="cred-pill">유럽 운전 6년 이상</span>
-        <span class="cred-pill">더블린 무료 워킹투어 운영</span>
-        <span class="cred-pill">대전교구 아일랜드 성지순례단 가이드</span>
-        <span class="cred-pill">레지오 마리애 본부 (Concilium) 한국어 통역 봉사</span>
-        <span class="cred-pill">아일랜드천주교한인공동체 청년회장</span>
-        <span class="cred-pill">한국 기자단 더블린 안내</span>
+<!-- 동행이라고 부르는 이유 -->
+<section style="background:var(--bg);">
+  <div class="container reveal">
+    <div class="ab-why">
+      <div>
+        <p class="eyebrow accent">다른 점</p>
+        <h2>투어가 아니라 동행이라고 부르는 이유</h2>
+      </div>
+      <div class="ab-why-body">
+        <p>투어버스는 정해진 코스를 정해진 시간에 영어로 돕니다. 이 동행은 예약한 일행만 타는 차로 움직이고, 사진 찍고 싶은 곳에서 멈추고, 배고프면 같이 밥을 먹습니다. 길 위에서 궁금한 것을 그때그때 한국어로 물어볼 수 있는 여행을 만들고 싶었습니다.</p>
+        <p>이 일은 저의 본업이 아닙니다. 수익은 운영비와 차량 예비비를 뺀 전액이 음악 봉사 프로젝트 <strong class="phrase brand">Classical Music for Everyone</strong>의 예산으로 쌓입니다. 그래서 가격은 원가와 봉사 예산이 남는 선에서 정하고, 어떻게 계산하는지는 <a href="#music-project">아래</a>에 그대로 적어 두었습니다.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- VEHICLE INFO -->
-<section style="background:var(--bg);">
+<section style="background:#fff;">
   <div class="container reveal">
     <div class="section-title">
-      <h2>차량</h2>
-      <p class="lead">7인승 MPV 한 대로 픽업, 로드트립, 이사를 모두 합니다.</p>
+      <p class="eyebrow accent">차량</p>
+      <h2>7인승 MPV 한 대로 다닙니다</h2>
+      <p class="lead">픽업, 로드트립, 이사를 모두 이 차로 합니다.</p>
     </div>
-    <div class="vehicle-photos">
+    <div class="ab-vphotos">
       <figure>
-        <img src="photo3.jpg" alt="아일랜드 동행 서비스 차량 — 7인승 MPV 측면" loading="lazy" decoding="async">
+        <img src="photo3.jpg" alt="아일랜드 동행 서비스 차량, 7인승 MPV 측면" loading="lazy" decoding="async" width="1200" height="900">
         <figcaption>차량 외관</figcaption>
       </figure>
       <figure>
-        <img src="photo2.jpg" alt="7인승 MPV 적재공간 — 좌석을 접으면 약 1,800L" loading="lazy" decoding="async">
+        <img src="photo2.jpg" alt="7인승 MPV 적재공간. 좌석을 접으면 약 1,800L" loading="lazy" decoding="async" width="1200" height="900">
         <figcaption>적재공간 (좌석 접음)</figcaption>
       </figure>
     </div>
-    <div class="vehicle-specs">
-      <div class="spec"><div class="num">7</div><div class="lbl">탑승 좌석</div></div>
-      <div class="spec"><div class="num">1,800L</div><div class="lbl">최대 적재 (좌석 접음)</div></div>
-      <div class="spec"><div class="num">5–6</div><div class="lbl">30인치 캐리어</div></div>
-      <div class="spec"><div class="num">220cm</div><div class="lbl">최대 길이</div></div>
-      <div class="spec"><div class="num">120cm</div><div class="lbl">적재 폭</div></div>
-      <div class="spec"><div class="num">90cm</div><div class="lbl">적재 높이</div></div>
-    </div>
-    <p style="text-align:center; max-width:720px; margin:26px auto 0; font-size:14px; line-height:1.8; color:var(--text);">
-      이 차량은 <strong style="color:var(--primary);">응원해 주신 분들의 펀딩</strong>으로 마련했습니다.
-      평일에는 공항 픽업·이사·여행 동행으로 운영하고, 주말과 휴일에는 <strong class="phrase brand" style="color:var(--primary);">Classical Music for Everyone</strong>의 연주자와 악기를 싣고 음악이 필요한 곳으로 갑니다.
+    <dl class="ab-specs">
+      <div><dt>탑승 좌석</dt><dd>7</dd></div>
+      <div><dt>최대 적재 (좌석 접음)</dt><dd>1,800L</dd></div>
+      <div><dt>30인치 캐리어</dt><dd>5–6</dd></div>
+      <div><dt>최대 길이</dt><dd>220cm</dd></div>
+      <div><dt>적재 폭</dt><dd>120cm</dd></div>
+      <div><dt>적재 높이</dt><dd>90cm</dd></div>
+    </dl>
+    <p class="ab-vnote">
+      이 차량은 <strong>응원해 주신 분들의 펀딩</strong>으로 마련했습니다.
+      평일에는 공항 픽업·이사·여행 동행으로 운영하고, 주말과 휴일에는 <strong class="phrase brand">Classical Music for Everyone</strong>의 연주자와 악기를 싣고 음악이 필요한 곳으로 갑니다.
     </p>
   </div>
 </section>
@@ -271,35 +335,33 @@
 <!-- ============================================================
      CLASSICAL MUSIC FOR EVERYONE — 음악 프로젝트 풀버전
      ============================================================ -->
-<section id="music-project" style="background:var(--accent-tint); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
-  <div class="container reveal" style="max-width:920px;">
-    <div style="text-align:center; margin-bottom:36px;">
-      <div class="eyebrow accent">Classical Music for Everyone</div>
-      <h2 style="font-size:32px; font-weight:900; margin:0 0 14px; line-height:1.2; color:var(--primary);">음악이 필요한 곳으로 찾아가는 봉사 프로젝트</h2>
-      <p style="font-size:16px; line-height:1.7; margin:0; color:var(--text); max-width:640px; margin-left:auto; margin-right:auto;">
-        요양원, 병원, 학교, 지역 커뮤니티처럼 공연장에 오기 어려운 곳에서 작은 음악회를 엽니다. 이 동행 서비스는 그 예산을 만드는 수단입니다.
-      </p>
+<section id="music-project" class="ab-music">
+  <div class="container reveal">
+    <div class="ab-music-head">
+      <p class="eyebrow accent">Classical Music for Everyone</p>
+      <h2>음악이 필요한 곳으로 찾아가는 봉사 프로젝트</h2>
+      <p>공연장에 오기 어려운 분들을 찾아가 작은 음악회를 엽니다. 이 동행 서비스는 그 예산을 만드는 수단입니다.</p>
     </div>
 
-    <div class="mission-card-grid">
-      <div class="mission-card">
-        <div class="icon ic-box"><svg class="ic"><use href="#i-music"></use></svg></div>
+    <div class="ab-points">
+      <div class="ab-point">
+        <svg class="ic" aria-hidden="true"><use href="#i-music"></use></svg>
         <h3>왜 시작했나</h3>
         <p>클래식 음악이 콘서트홀 안에만 머물지 않게 하려고 시작했습니다. 듣고 싶은 사람이 있는 곳이면 공연장 밖 어디서든 연주합니다.</p>
       </div>
-      <div class="mission-card">
-        <div class="icon ic-box"><svg class="ic"><use href="#i-truck"></use></svg></div>
+      <div class="ab-point">
+        <svg class="ic" aria-hidden="true"><use href="#i-truck"></use></svg>
         <h3>왜 이 차량인가</h3>
         <p>이 7인승 MPV는 응원해 주신 분들의 펀딩으로 마련했습니다. 연주자와 악기, 장비를 싣고 음악이 필요한 곳으로 가기 위한 차입니다.</p>
-        <a href="https://gofund.me/d0abe9090" target="_blank" rel="noopener" style="font-size:12.5px; color:var(--accent-ink); font-weight:700; text-decoration:none; border-bottom:1px solid var(--accent);">펀딩 페이지 보기 →</a>
+        <a href="https://gofund.me/d0abe9090" target="_blank" rel="noopener" class="ab-link">펀딩 페이지 보기<svg class="ic" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
       </div>
-      <div class="mission-card">
-        <div class="icon ic-box"><svg class="ic"><use href="#i-heart"></use></svg></div>
+      <div class="ab-point">
+        <svg class="ic" aria-hidden="true"><use href="#i-heart"></use></svg>
         <h3>여행이 곧 후원이 되는 구조</h3>
         <p>픽업·여행·이사로 받은 금액은 <strong>운영 실비와 차량 예비비를 뺀 전액</strong>이 이 프로젝트의 봉사 예산으로 쌓입니다.</p>
       </div>
-      <div class="mission-card">
-        <div class="icon ic-box"><svg class="ic"><use href="#i-map"></use></svg></div>
+      <div class="ab-point">
+        <svg class="ic" aria-hidden="true"><use href="#i-map"></use></svg>
         <h3>어디로 찾아가나</h3>
         <p>요양원, 병원, 학교, 지역 커뮤니티처럼 <strong>음악이 일상에 닿기 어려운 곳</strong>으로 찾아가 작은 음악회를 엽니다. 함께할 연주자와 장소를 늘려 가는 중입니다.</p>
       </div>
@@ -324,10 +386,10 @@
           <span class="fm-sub">입장료처럼 대신 결제해 드린 돈은 애초에 제 몫이 아니라 여기서 빠집니다.</span>
         </li>
         <li>
-          <b>운영 실비</b>를 뺍니다 — 연료(주행 1km당 €0.15)·톨비·주차비, 그날 쓴 실비.
+          <b>운영 실비</b>를 뺍니다. 연료(주행 1km당 €0.15)·톨비·주차비 등 그날 쓴 실비입니다.
         </li>
         <li>
-          <b>차량 예비비</b>를 뺍니다 — 주행 1km당 €0.33. 정비·보험·타이어·감가를 미리 떼어 두는 몫입니다.
+          <b>차량 예비비</b>를 뺍니다. 주행 1km당 €0.33이며, 정비·보험·타이어·감가를 미리 떼어 두는 몫입니다.
         </li>
         <li>
           <b>남는 전부</b>가 음악 봉사 예산으로 적립됩니다. 정해진 비율이 아니라 말 그대로 나머지 전액입니다.
@@ -340,14 +402,12 @@
       </p>
     </div>
 
-    <div style="text-align:center; margin-top:34px;">
-      <p style="margin:0 0 18px; font-size:14.5px; color:var(--text); line-height:1.7;">
-        음악이 필요한 곳을 알고 계시거나, 후원·연주자 참여·협업을 생각하신다면 연락 주세요.
-      </p>
-      <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <a href="https://gofund.me/d0abe9090" target="_blank" rel="noopener" class="btn btn-primary">펀딩 페이지 보기</a>
-        <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" rel="noopener" onclick="inquireMusic()" class="btn btn-kakao"><svg class="ic"><use href="#i-chat"></use></svg> 프로젝트 카톡 문의</a>
-        <a href="mailto:sby05034@gmail.com?subject=Classical%20Music%20for%20Everyone%20%EB%AC%B8%EC%9D%98" class="btn btn-outline">이메일</a>
+    <div class="ab-cta">
+      <p>음악이 필요한 곳을 알고 계시거나, 후원·연주자 참여·협업을 생각하신다면 연락 주세요.</p>
+      <div class="ab-cta-actions">
+        <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" rel="noopener" onclick="inquireMusic()" class="btn btn-kakao"><svg class="ic ic-kakao" aria-hidden="true"><use href="#i-kakao"></use></svg>프로젝트 카톡 문의</a>
+        <a href="https://andrewseohyeonkim.github.io/classicalmusicforeveryone/" target="_blank" rel="noopener" class="btn btn-outline"><svg class="ic" aria-hidden="true"><use href="#i-globe"></use></svg>프로젝트 사이트</a>
+        <a href="mailto:sby05034@gmail.com?subject=Classical%20Music%20for%20Everyone%20%EB%AC%B8%EC%9D%98" class="btn btn-outline"><svg class="ic" aria-hidden="true"><use href="#i-mail"></use></svg>이메일</a>
       </div>
     </div>
   </div>
@@ -358,30 +418,53 @@
   <div class="container reveal">
     <h3>서비스 둘러보기</h3>
     <div class="links">
-      <a href="services/airport.html"><span class="icon"><svg class="ic"><use href="#i-plane"></use></svg></span>공항 픽업·드랍</a>
-      <a href="services/tours.html"><span class="icon"><svg class="ic"><use href="#i-map"></use></svg></span>당일 로드트립</a>
-      <a href="services/moving.html"><span class="icon"><svg class="ic"><use href="#i-truck"></use></svg></span>이사 (간단·전체)</a>
-      <a href="services/custom.html"><span class="icon"><svg class="ic"><use href="#i-pencil"></use></svg></span>맞춤 여행</a>
+      <a href="services/airport.html"><span class="icon"><svg class="ic" aria-hidden="true"><use href="#i-plane"></use></svg></span>공항 픽업·드랍</a>
+      <a href="services/tours.html"><span class="icon"><svg class="ic" aria-hidden="true"><use href="#i-map"></use></svg></span>당일 로드트립</a>
+      <a href="services/moving.html"><span class="icon"><svg class="ic" aria-hidden="true"><use href="#i-truck"></use></svg></span>이사 (간단·전체)</a>
+      <a href="services/pilgrimage.html"><span class="icon"><svg class="ic" aria-hidden="true"><use href="#i-church"></use></svg></span>성지순례·피정</a>
+      <a href="services/custom.html"><span class="icon"><svg class="ic" aria-hidden="true"><use href="#i-pencil"></use></svg></span>맞춤 여행</a>
     </div>
   </div>
 </section>
 
 </main>
 
-<footer class="contact">
+<footer class="contact" id="contact">
   <div class="container">
-    <h2>문의와 예약</h2>
-    <p>카카오톡 오픈채팅이 가장 빠릅니다. 확인하는 대로 답장합니다.</p>
-    <div class="channels">
-      <a href="https://open.kakao.com/o/suSTEFsi" target="_blank" rel="noopener" style="background:#fee500; color:#3c1e1e; border-color:#fee500; font-weight:800;">카톡 오픈채팅</a>
-      <a href="https://www.instagram.com/ireland.sosik/" target="_blank" rel="noopener">인스타그램 DM</a>
-      <a href="mailto:sby05034@gmail.com">이메일</a>
+    <div class="ft-top">
+      <div>
+        <h2>문의와 예약</h2>
+        <p class="ft-lead">카카오톡 오픈채팅이 가장 빠릅니다. 확인하는 대로 답장합니다.</p>
+      </div>
+      <div class="ft-channels">
+        <a class="btn btn-kakao" href="https://open.kakao.com/o/suSTEFsi" target="_blank" rel="noopener" data-cta="footer"><svg class="ic ic-kakao" aria-hidden="true"><use href="#i-kakao"></use></svg>카카오톡 오픈채팅</a>
+        <a class="btn btn-ghost-light" href="https://www.instagram.com/ireland.sosik/" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-instagram"></use></svg>인스타그램 DM</a>
+        <a class="btn btn-ghost-light" href="mailto:sby05034@gmail.com"><svg class="ic" aria-hidden="true"><use href="#i-mail"></use></svg>이메일</a>
+      </div>
     </div>
-    <p class="small" style="margin-top:10px;"><a href="terms.html" style="color:inherit; opacity:0.85; text-decoration:underline;">이용약관 · 환불·책임 정책</a> · <a href="photo-credits.html" style="color:inherit; opacity:0.85; text-decoration:underline;">사진 출처</a></p>
-    <p class="small">© 2026 🇮🇪 Beautiful Ireland with Everyone · Andrew의 아일랜드 동행</p>
-    <p class="small" style="opacity:0.7;">최종 업데이트 <time datetime="2026-09-14">2026년 9월 14일</time></p>
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <a class="ft-logo" href="index.html"><svg aria-hidden="true" focusable="false"><use href="#logo-island"></use></svg><span><b>아일랜드 동행</b><small>Beautiful Ireland with Everyone</small></span></a>
+        <p>더블린에 사는 한국인 서현 Andrew가 직접 운전하고 안내하는 한국어 프라이빗 차량 서비스입니다. 수익은 음악 봉사 프로젝트 <span class="nw">Classical Music for Everyone</span>의 예산으로 쓰입니다.</p>
+      </div>
+      <nav class="ft-col" aria-label="서비스"><h3>서비스</h3><ul><li><a href="services/airport.html">공항 픽업·드랍</a></li><li><a href="services/tours.html">당일 로드트립 22코스</a></li><li><a href="services/moving.html">이사 (간단·전체)</a></li><li><a href="services/pilgrimage.html">성지순례·피정</a></li><li><a href="services/custom.html">맞춤 여행·통역 동행</a></li></ul></nav>
+      <nav class="ft-col" aria-label="안내"><h3>안내</h3><ul><li><a href="about.html">소개와 차량</a></li><li><a href="contact.html">문의 채널</a></li><li><a href="terms.html">이용약관·환불 정책</a></li><li><a href="photo-credits.html">사진 출처</a></li></ul></nav>
+      <div class="ft-col"><h3>연락</h3><ul><li><a href="https://open.kakao.com/o/suSTEFsi" target="_blank" rel="noopener">카카오톡 오픈채팅</a></li><li><a href="https://www.instagram.com/ireland.sosik/" target="_blank" rel="noopener">인스타그램 @ireland.sosik</a></li><li><a href="mailto:sby05034@gmail.com">sby05034@gmail.com</a></li></ul></div>
+    </div>
+    <div class="ft-bottom">
+      <p>© 2026 🇮🇪 <span class="nw">Beautiful Ireland with Everyone</span> · <span class="nw">Andrew의 아일랜드 동행</span></p>
+      <p>최종 업데이트 <time datetime="2026-10-11">2026년 10월 11일</time></p>
+    </div>
   </div>
 </footer>
+
+<aside class="dock-wrap" aria-label="빠른 문의">
+  <a class="dock is-hidden" href="https://open.kakao.com/o/suSTEFsi" target="_blank" rel="noopener" data-cta="dock" data-inquire="inquireGeneral">
+    <img class="dock-avatar" src="images/andrew/avatar.jpg" alt="" width="40" height="40">
+    <span class="dock-text"><b>카카오톡으로 문의</b><small>Andrew가 직접 답장합니다</small></span>
+    <svg class="ic ic-kakao" aria-hidden="true"><use href="#i-kakao"></use></svg>
+  </a>
+</aside>
 
 <script data-goatcounter="https://andrewseohyeonkim.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
