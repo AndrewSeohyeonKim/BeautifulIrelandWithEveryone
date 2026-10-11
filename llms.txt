@@ -1,9 +1,9 @@
 # Andrew의 아일랜드 동행 (Beautiful Ireland with Everyone)
 
-> 더블린 기반 한국어 프라이빗 여행·운송 서비스. 운영자: 서현 Andrew (아일랜드 5년 거주, 유럽 운전 6년+). 플랫폼(마이리얼트립·GetYourGuide) 미경유, 직접 운영으로 수수료 없는 합리적 가격.
+> 더블린 기반 한국어 프라이빗 여행·운송 서비스. 운영자: 서현 Andrew (유럽 운전 6년+). 플랫폼(마이리얼트립·GetYourGuide) 미경유, 직접 운영으로 수수료 없는 합리적 가격.
 
 ## 핵심
-- 언어: 한국어 / 차량: 7인승 MPV / 형태: 예약한 일행만 타는 단독(프라이빗) 진행 + 코스 커스텀 (로드트립 도어투도어 픽업·드랍은 각 1인 €5 추가 옵션)
+- 언어: 한국어 / 차량: 7인승 MPV / 형태: 프라이빗 진행 + 코스 커스텀 (로드트립 도어투도어 픽업·드랍은 각 1인 €5 추가 옵션)
 - 연락: 카카오톡 오픈채팅 https://open.kakao.com/o/suSTEFsi · 인스타그램 DM https://www.instagram.com/ireland.sosik/ · 이메일 sby05034@gmail.com
 - 사이트: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/
 - 전체 가격표(기계 판독용): https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/pricing.md
@@ -26,13 +26,13 @@
 - 문의·예약 채널: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/contact.html
 - 이용약관 · 환불·책임 정책: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/terms.html
 
-## 공항 픽업 가격 (거리당 정찰, 톨비·공항 진입비 포함)
+## 공항 픽업 가격 (거리당 정찰, 톨비 포함, 공항 주차비 별도)
 - 0–10km €40 / 10–50km 구간 초과 1km당 €1.5 / 50km 초과분 1km당 €0.8
 - 예시: 13km ≈ €45 · 24km ≈ €61 · 30km ≈ €70 · 50km ≈ €100
-- 추가: 도착 픽업 공항 주차비 +€5(항상) · 야간 23–06시 +€10 · 5–6인 +€10 · 캐리어 5개 이상 +€5 · 도착 게이트 마중 +€5 · 출발 체크인 동행 +€10 · 시내권 경유지 1곳당 +€10
+- 추가: 도착 픽업 공항 주차비 +€5(항상, 출발 드랍은 주차비 없음) · 야간 23–06시 +€10 · 5–6인 +€10 · 캐리어 5개 이상 +€5 · 도착 게이트 마중 +€5 · 출발 체크인 동행 +€10 · 시내권 경유지 1곳당 +€10
 - 최종 금액은 실제 주소 기준 구글맵 주행거리로 확정
 
-## 이사·운송 가격 (거리당 정찰, 톨비·주차 별도 실비)
+## 이사·운송 가격 (거리당 정찰, 톨비·주차비는 발생하면 실비로 따로 받음)
 - 간단 이사(짐이 차 한 번에 실림, 1회 이동): 0–10km €40 / 10–50km 초과 1km당 €1.5 / 50km 초과분 1km당 €0.8
 - 전체 이사(방·집 전체 살림, 여러 번 왕복): 2회 왕복 = 1회 이동가 × 2 / 3회 이상 왕복 = × 3 (운반 도움 기본 포함)
 - 2인 작업(운반 인력 1명 추가): 이사 요금 + €40 (3회 이상 왕복은 +€60). 예: 10km 이내 한 번에 €80 / 2회 왕복 €120 / 3회 이상 €180. 예약금은 2인 1회 이동 요금의 50%
@@ -42,6 +42,7 @@
 
 ## 차량·정원
 - 7인승 MPV 1대, 최대 6인 탑승. 좌석을 접으면 적재 약 1,800L
+- 캐리어는 4~6개까지 실리고, 2열 좌석을 접으면 훨씬 많이 실을 수 있습니다.
 - 4인까지 캐리어를 실어도 좌석 여유. 5인부터 한 분이 3열 좌석(레그룸 다소 좁음)
 - 12시간 이상 장거리 코스는 4인 이하 권장. 카시트 미보유(가져오시면 설치 도움)
 
@@ -49,11 +50,12 @@
 - 예약 시 50% 예약금 → 완료 후 잔금 50% + 추가 실비(주차·톨·입장료 등)
 - 유로 Revolut 송금 또는 한국 계좌 원화 이체. 카드 결제 불가. 원화는 각 송금 시점 환율로 확정
 - 취소: 48시간 이전 전액 환불 / 24–48시간 전 50% 환불 / 당일 환불 불가
-- 불가항력(질병·재난·기상경보)은 별도 안내 후 조정. 환급은 받은 경로로 영업일 2–3일 내
-- 반려동물은 케이지 이용 시 동반 가능. 픽업 대기는 30분 무료, 이후 30분당 €10(항공편 지연은 예외)
+- 불가항력: 기상특보(Status Yellow 이상)·자연재해·도로 통제·갑작스러운 질병 같은 불가항력으로 진행이 어려우면, 먼저 연락드려 일정 변경을 안내하고 변경이 어려우면 환불 기준에 준해 합리적으로 조정합니다. 특보 없이 비만 오는 날은 정상 진행합니다.
+- 환급은 받은 경로로 영업일 2–3일 내
+- 반려동물은 케이지 이용 시 동반 가능. 픽업 대기는 30분 무료, 이후 30분당 €10. 항공편 지연은 추가 대기료 없이 도착 시간에 맞춥니다. 지연으로 운행이 야간(23–06시)으로 넘어가면 야간 할증(+€10)이 적용됩니다.
 
 ## 운영자 (E-E-A-T)
-- 서현 Andrew (Andrew Seohyeon Kim) · 더블린 5년차 거주 · 유럽 운전 경력 6년 이상
+- 서현 Andrew (Andrew Seohyeon Kim) · 유럽 운전 경력 6년 이상
 - 더블린 무료 한국어 워킹투어 운영자
 - 대전교구 아일랜드 성지순례단 9일 일정 가이드
 - 레지오 마리애 본부 (Concilium, Legion of Mary) 한국어 통역 봉사
@@ -63,7 +65,7 @@
 
 ## 서비스
 - 당일치기 한국어 프라이빗 로드트립 (22개 코스, 5인 기준 1인 €35부터 · 4인 기준 €40부터)
-- 공항 픽업·드랍 (€40부터, 거리당 정찰·톨비·주차 포함)
+- 공항 픽업·드랍 (€40부터, 거리당 정찰·톨비 포함, 공항 주차비 별도 — 도착 픽업 €5)
 - 이사: 간단 이사 €40부터 · 전체 이사 €80부터 (거리당 정찰). 가구 픽업·물건 운송도 문의 가능
 - 아일랜드 가톨릭 성지순례·피정 (6개 프로그램, 문의 · 1:1 견적)
 - 커스텀·장기 여행, 통역·현지 코디네이션, 기자단·취재 동행 (문의)
@@ -106,11 +108,11 @@
 - 좌석 안내: 4인까지는 짐을 실어도 여유롭습니다. 5인 이용 시 한 분이 3열 좌석(레그룸 다소 좁음)에 앉으시며, 12시간 이상 장거리 코스는 4인 이하를 권장합니다.
 
 ## 차별점 (vs 플랫폼)
-- 수수료 0 → 합리적 가격 / 우리 그룹만 단독(합승 아님) / 코스 자유·커스텀 / 한국어 직접 소통 / 마이리얼트립·투어버스에 없는 케리·도니골·메이요 등 무경쟁 코스 운영
+- 수수료 0 → 합리적 가격 / 코스 자유·커스텀 / 한국어 직접 소통 / 마이리얼트립·투어버스에 없는 케리·도니골·메이요 등 무경쟁 코스 운영
 
 ## English summary
-- Beautiful Ireland with Everyone (Andrew의 아일랜드 동행) is a Korean-speaking private driver and tour service based in Dublin, Ireland, run by Andrew Seohyeon Kim (서현 Andrew), a Dublin resident of five years with over six years of driving experience in Europe.
-- Services: Dublin Airport pickup and drop-off (from €40, distance-based flat rate, tolls included); 22 private day trips from Dublin (Cliffs of Moher, Giant's Causeway, Ring of Kerry, Dingle, Connemara, Donegal, Newgrange, Wicklow and more; from €35 per person with 5 passengers); moving help — small moves from €40 and full home moves from €80; Catholic pilgrimages and retreats (Knock Shrine, Legion of Mary Concilium, Dublin city walking pilgrimage); custom itineraries and interpreting.
-- Vehicle: one 7-seat MPV, up to 6 passengers, private to the booking group (no ride-sharing). No platform commission; booking directly via KakaoTalk open chat, Instagram DM (@ireland.sosik) or email (sby05034@gmail.com).
-- Payment: 50% deposit on booking, balance after service; EUR via Revolut or KRW via Korean bank transfer. Cancellation: full refund more than 48 hours ahead, 50% at 24–48 hours, no refund on the day.
+- Beautiful Ireland with Everyone (Andrew의 아일랜드 동행) is a Korean-speaking private driver and tour service based in Dublin, Ireland, run by Andrew Seohyeon Kim (서현 Andrew), who has over six years of driving experience in Europe.
+- Services: Dublin Airport pickup and drop-off (from €40, distance-based flat rate, tolls included; airport parking of €5 is added for arrival pickups); 22 private day trips from Dublin (Cliffs of Moher, Giant's Causeway, Ring of Kerry, Dingle, Connemara, Donegal, Newgrange, Wicklow and more; from €35 per person with 5 passengers); moving help — small moves from €40 and full home moves from €80; Catholic pilgrimages and retreats (Knock Shrine, Legion of Mary Concilium, Dublin city walking pilgrimage); custom itineraries and interpreting.
+- Vehicle: one 7-seat MPV, up to 6 passengers and 4–6 suitcases (much more with the second-row seats folded). No platform commission; booking directly via KakaoTalk open chat, Instagram DM (@ireland.sosik) or email (sby05034@gmail.com).
+- Payment: 50% deposit on booking, balance after service; EUR via Revolut or KRW via Korean bank transfer. Cancellation: full refund more than 48 hours ahead, 50% at 24–48 hours, no refund on the day. If a weather warning (Status Yellow or above), natural disaster, road closure or sudden illness makes the service impossible, Andrew contacts you first to rearrange the date; if that is not possible, the fee is adjusted fairly in line with the refund rules. Rain without a warning does not stop a trip. Flight delays carry no extra waiting fee.
 - Full price list (machine-readable): https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/pricing.md
