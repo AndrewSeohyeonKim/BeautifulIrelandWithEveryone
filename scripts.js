@@ -578,3 +578,46 @@ window.inquireMusic = function () {
   window.addEventListener('resize', sync);
   sync();
 })();
+
+// ============================================================
+// 13) 가운뎃점(·)이 줄 첫머리에 오지 않게 (2026-10-12)
+//     Chrome은 word-break:keep-all 이어도 한글과 U+00B7 사이에서 줄을 바꿔 "이사 / ·성지순례"처럼 된다.
+//     점 앞에만 보이지 않는 단어 결합자(U+2060)를 넣어 점이 앞 낱말에 붙게 한다 — 점 뒤에서는 그대로 줄이 바뀐다.
+//     원본 HTML(검색엔진·llms-full이 읽는 글)은 그대로이고, 나중에 JS가 그리는 카드·창에도 적용된다.
+// ============================================================
+(function setupDotJoin() {
+  var WJ = '\u2060', DOT = '\u00b7', NBSP = '\u00a0';
+  var RE = /(^|[^\s\u2060])\u00b7/g;      // 붙여 쓴 점: 앞에 단어 결합자
+  var RE_SPACED = / \u00b7(?=\s)/g;         // 띄어 쓴 "가 · 나": 점 앞 공백을 줄바꿈 없는 공백으로
+  var SKIP = { SCRIPT: 1, STYLE: 1, TEXTAREA: 1, OPTION: 1, SELECT: 1, INPUT: 1 };
+  function fix(root) {
+    if (!root || SKIP[root.nodeName]) return;
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        var p = n.parentNode;
+        if (!p || SKIP[p.nodeName] || n.nodeValue.indexOf(DOT) < 0) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var list = [], n;
+    while ((n = walker.nextNode())) list.push(n);
+    list.forEach(function (t) {
+      var v = t.nodeValue.replace(RE_SPACED, NBSP + DOT).replace(RE, '$1' + WJ + DOT);
+      if (v !== t.nodeValue) t.nodeValue = v;
+    });
+  }
+  function run() {
+    fix(document.body);
+    if (!('MutationObserver' in window)) return;
+    new MutationObserver(function (records) {
+      records.forEach(function (r) {
+        r.addedNodes.forEach(function (a) {
+          if (a.nodeType === 1) fix(a);
+          else if (a.nodeType === 3 && a.parentNode) fix(a.parentNode);
+        });
+      });
+    }).observe(document.body, { childList: true, subtree: true });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
+})();

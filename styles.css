@@ -415,7 +415,7 @@ header.hero .hero-content > *:nth-child(5) { animation-delay: 0.24s; }
    페이지별 히어로 사진 — <body class="page-*">
    Andrew가 찍은 사진은 images/andrew/, 출처 표기 사진은 photo-credits.html 참고
    ============================================================ */
-body.page-about header.hero::before { background-image: url('images/andrew/andrew-slieve-league-wide.jpg'); background-position: 70% 40%; }
+body.page-about header.hero::before { background-image: url('images/andrew/andrew-causeway-wide.jpg'); background-position: 72% 40%; }
 body.page-contact header.hero::before { background-image: url('images/andrew/moher-wide-2026-07.jpg'); background-position: center 60%; }
 body.page-terms header.hero::before { background-image: url('images/andrew/moher-2026-08.jpg'); }
 body.page-airport header.hero::before { background-image: url('images/heroes/airport.jpg'); }
@@ -1007,6 +1007,14 @@ body, p, li, td, th, span, h1, h2, h3, h4, h5, h6, a, button,
   line-break: strict;
 }
 
+/* 줄바꿈 다듬기 (2026-10-12, Andrew "줄 나뉨이 잘리고 단어가 갈라진다")
+   - 문단·목록: 마지막 줄에 한 단어만 남지 않게(text-wrap: pretty — 지원 브라우저만, 나머지는 그대로)
+   - 표 칸·라벨·짧은 설명: 두 줄이 되면 줄 길이를 고르게(balance)
+   - 가운뎃점(·)이 줄 첫머리에 오는 문제는 scripts.js setupDotJoin 이 처리 */
+p, li, dd, figcaption, blockquote, .faq-a { text-wrap: pretty; }
+td, th, dt, label, .btn, .tagline, .sub, .table-notes li, .dot-list li, .cl-stops, .wm-sub, .wr-tags { text-wrap: balance; }
+th { word-break: keep-all; }
+
 /* 브랜드 문구·고유명사·복합어 — 절대 줄을 끊지 않음
    inline 으로 두어야 부모의 text-align(center 등)이 정상 동작함.
    사용 예: <span class="phrase">Classical Music for Everyone</span> */
@@ -1175,6 +1183,11 @@ br.brk-md { display: none; }
   .compare-table th { padding: 10px 6px !important; font-size: 12.5px !important; line-height: 1.35 !important; }
   .compare-table td { padding: 10px 6px !important; line-height: 1.5 !important; font-size: 13px !important; }
   .compare-table td:first-child { font-weight: 700; }
+  /* 4열 비교표(공항): 항목 열을 줄이고 비교 열을 고르게 — "차종에 / 따라 / 다름"처럼 한 단어씩 떨어지지 않게 (2026-10-12) */
+  .compare-table.cmp-4 { table-layout: fixed; width: 100%; }
+  .compare-table.cmp-4 col.c-item { width: 21%; }
+  .compare-table.cmp-4 col.c-us { width: 31%; }
+  .compare-table.cmp-4 th, .compare-table.cmp-4 td { padding-left: 5px !important; padding-right: 5px !important; }
 
   /* price-table.keep-table — 2~3열 공통 컴팩트 표 (airport / moving 양쪽) */
   .price-table.keep-table { font-size: 13px; }
@@ -1853,8 +1866,8 @@ header.hero h1, header.hero .tagline, header.hero .sub, .section-title .lead, .l
   .steps { grid-template-columns: repeat(2, 1fr); gap: 28px; }
 }
 /* 히어로 사진 위치·밝기 */
-body.page-about header.hero::before { background-position: 70% 24%; }
-@media (max-width: 600px) { body.page-about header.hero::before { background-position: 82% 30%; } }
+body.page-about header.hero::before { background-position: 72% 40%; }
+@media (max-width: 600px) { body.page-about header.hero::before { background-position: 80% 40%; } }
 body.page-airport header.hero::after, body.page-moving header.hero::after {
   background: linear-gradient(180deg, rgba(26,41,66,0.55) 0%, rgba(26,41,66,0.62) 50%, rgba(26,41,66,0.85) 100%);
 }
