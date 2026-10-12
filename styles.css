@@ -1878,3 +1878,133 @@ body.page-airport header.hero::after, body.page-moving header.hero::after {
   .ireland-marker[data-tour="newgrange"] { top: 41.5% !important; }
   .ireland-marker[data-tour="mullingar"] { top: 49% !important; left: 57% !important; }
 }
+
+/* ============================================================
+   도식 공용 (2026-10-12) — Andrew: "도식·픽토그램을 더 적극적으로"
+   .cxl      취소 시점별 환불 막대 (홈 예약 순서 · 이용약관 2항 · 문의 페이지). 모바일은 세로
+   .payflow  결제 흐름 세 칸 (이용약관 1항)
+   .steps    예약 순서 픽토그램 + 위 선이 차례로 그려짐
+   .cmfe-logo Classical Music for Everyone 실제 로고 링크 (밝은 바탕 horizontal / 어두운 바탕 reversed)
+   모션은 .reveal → .in-view 때 한 번만. JS 없음·줄임 모션이면 처음부터 완성 상태
+   ============================================================ */
+.cxl { margin: 0; }
+.cxl-track { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1.25fr 1.15fr 0.9fr 1fr; gap: 0 4px; }
+.cxl-seg { position: relative; padding-top: 32px; min-width: 0; }
+.cxl-at { position: absolute; top: 0; left: 0; font-size: 12.5px; font-weight: 600; color: var(--muted); white-space: nowrap; }
+.cxl-at::after { content: ''; position: absolute; left: 0; top: 21px; width: 1px; height: 11px; background: var(--muted); opacity: 0.5; }
+.cxl-bar { display: block; height: 10px; border-radius: 2px; background: var(--c); transform-origin: left center; }
+.cxl-seg:first-child .cxl-bar { border-radius: 6px 2px 2px 6px; }
+.cxl-seg:last-child .cxl-bar { border-radius: 2px 6px 6px 2px; }
+.cxl-ic { display: block; width: 22px; height: 22px; margin-top: 14px; color: var(--c-ink); }
+.cxl-seg b { display: block; margin-top: 6px; font-size: 17px; font-weight: 700; line-height: 1.35; color: var(--c-ink); letter-spacing: -0.01em; }
+.cxl-desc { display: block; margin-top: 3px; font-size: 13.5px; line-height: 1.5; color: var(--muted); }
+.cxl-free { --c: var(--green); --c-ink: var(--green); }
+.cxl-half { --c: var(--accent); --c-ink: var(--accent-ink); }
+.cxl-none { --c: var(--red-ink); --c-ink: var(--red-ink); }
+.cxl-noshow { --c: var(--primary); --c-ink: var(--primary); }
+.cxl-noshow .cxl-bar { background: repeating-linear-gradient(135deg, var(--primary) 0 6px, var(--primary-light) 6px 12px); }
+@media (max-width: 600px) {
+  .cxl-track { grid-template-columns: 1fr; gap: 6px; }
+  .cxl-seg { display: grid; grid-template-columns: 10px 24px minmax(0, 1fr); column-gap: 12px; align-items: start; padding: 2px 0 10px; }
+  .cxl-bar { grid-column: 1; grid-row: 1 / span 3; width: 10px; height: auto; min-height: 64px; transform-origin: center top; }
+  .cxl-seg:first-child .cxl-bar { border-radius: 6px 6px 2px 2px; }
+  .cxl-seg:last-child .cxl-bar { border-radius: 2px 2px 6px 6px; }
+  .cxl-ic { grid-column: 2; grid-row: 1 / span 3; margin-top: 18px; }
+  .cxl-at { position: static; grid-column: 3; }
+  .cxl-at::after { display: none; }
+  .cxl-seg b { grid-column: 3; margin-top: 1px; }
+  .cxl-desc { grid-column: 3; }
+}
+html.js .cxl.reveal .cxl-bar { transform: scaleX(0); transition: transform 0.6s var(--ease); }
+html.js .cxl.reveal .cxl-ic, html.js .cxl.reveal .cxl-seg b, html.js .cxl.reveal .cxl-desc { opacity: 0; transition: opacity 0.45s ease; }
+html.js .cxl.reveal.in-view .cxl-bar { transform: none; }
+html.js .cxl.reveal.in-view .cxl-ic, html.js .cxl.reveal.in-view .cxl-seg b, html.js .cxl.reveal.in-view .cxl-desc { opacity: 1; }
+@media (max-width: 600px) { html.js .cxl.reveal .cxl-bar { transform: scaleY(0); } }
+.cxl-seg:nth-child(2) .cxl-bar { transition-delay: 0.22s; }
+.cxl-seg:nth-child(3) .cxl-bar { transition-delay: 0.44s; }
+.cxl-seg:nth-child(4) .cxl-bar { transition-delay: 0.66s; }
+.cxl-seg:nth-child(1) :is(.cxl-ic, b, .cxl-desc) { transition-delay: 0.2s; }
+.cxl-seg:nth-child(2) :is(.cxl-ic, b, .cxl-desc) { transition-delay: 0.42s; }
+.cxl-seg:nth-child(3) :is(.cxl-ic, b, .cxl-desc) { transition-delay: 0.64s; }
+.cxl-seg:nth-child(4) :is(.cxl-ic, b, .cxl-desc) { transition-delay: 0.86s; }
+
+/* 결제 흐름 — 세 칸을 잇는 선이 그려진다 */
+.payflow { margin: 18px 0 22px; }
+.payflow ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; position: relative; }
+.payflow li { position: relative; text-align: center; padding: 0 4px; }
+.payflow li:not(:last-child)::after { content: ''; position: absolute; top: 23px; left: calc(50% + 30px); right: calc(-50% + 30px); height: 2px; background: var(--accent); transform-origin: left center; }
+.payflow .pf-ic { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; margin: 0 auto 10px; border-radius: 50%; border: 1.5px solid var(--primary); color: var(--primary); background: var(--card); }
+.payflow .pf-ic .ic { width: 22px; height: 22px; }
+.payflow b { display: block; font-size: 15.5px; font-weight: 700; color: var(--primary); }
+.payflow span.pf-sub { display: block; margin-top: 2px; font-size: 13.5px; line-height: 1.5; color: var(--muted); }
+.payflow li.pf-key .pf-ic { background: var(--primary); color: #fff; }
+html.js .payflow.reveal li:not(:last-child)::after { transform: scaleX(0); transition: transform 0.6s var(--ease) 0.25s; }
+html.js .payflow.reveal li:nth-child(2)::after { transition-delay: 0.6s; }
+html.js .payflow.reveal.in-view li::after { transform: none; }
+
+/* 예약 순서 — 픽토그램 + 위 선이 차례로 그려짐 (border-top 대신 배경 선) */
+.steps li { position: relative; border-top: 0; background: linear-gradient(var(--primary), var(--primary)) left top / 100% 2px no-repeat; }
+.steps .st-ic { position: absolute; top: 16px; right: 0; width: 26px; height: 26px; color: var(--accent-ink); stroke-width: 1.6; }
+html.js .steps.reveal li { background-size: 0% 2px; transition: background-size 0.7s var(--ease); }
+html.js .steps.reveal.in-view li { background-size: 100% 2px; }
+.steps li:nth-child(2) { transition-delay: 0.25s; }
+.steps li:nth-child(3) { transition-delay: 0.5s; }
+.howto-cancel { max-width: 920px; margin: 48px auto 0; padding: 26px 28px 22px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-sm); }
+.howto-cancel .hc-title { font-size: 15.5px; font-weight: 700; color: var(--primary); margin: 0 0 18px; }
+.howto-cancel .hc-title span { font-weight: 500; color: var(--muted); font-size: 14px; }
+.howto-cancel .howto-note { margin-top: 18px; text-align: left; font-size: 14px; }
+@media (max-width: 600px) { .howto-cancel { padding: 20px 18px 16px; margin-top: 36px; } }
+
+/* Classical Music for Everyone 로고 — 늘이거나 색을 바꾸지 않는다(CMFE 브랜드 규칙) */
+.cmfe-logo { display: inline-block; line-height: 0; border-radius: 4px; }
+.cmfe-logo img { display: block; width: auto; height: 76px; }
+.cmfe-logo:hover img { opacity: 0.85; }
+@media (max-width: 600px) { .cmfe-logo img { height: 62px; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .cxl.reveal .cxl-bar, html.js .payflow.reveal li::after { transform: none; transition: none; }
+  html.js .cxl.reveal :is(.cxl-ic, b, .cxl-desc) { opacity: 1; transition: none; }
+  html.js .steps.reveal li { background-size: 100% 2px; transition: none; }
+}
+.ft-brand p a.ft-cmfe { color: #fff; font-weight: 600; text-decoration: underline; text-decoration-color: rgba(201,169,110,0.7); text-underline-offset: 3px; }
+.ft-brand p a.ft-cmfe:hover { color: var(--accent); }
+.section-dark .music-logo { margin-bottom: 18px; }
+.ab-music-logo { margin-bottom: 16px; }
+/* 도식 안의 목록은 페이지 목록 스타일(글머리·들여쓰기)을 받지 않는다 */
+.cxl .cxl-track > li, .payflow ol > li, .wm-rows > li { margin-left: 0; margin-right: 0; list-style: none; }
+.cxl .cxl-track > li { padding-left: 0; padding-right: 0; margin-bottom: 0; font-size: inherit; }
+.cxl .cxl-track > li::before, .cxl .cxl-track > li::marker, .payflow ol > li::marker { content: none; display: none; }
+
+/* 포함 / 따로 픽토그램 표 (.incl) — 공항·로드트립·이사·성지순례 공용 (2026-10-12) */
+.incl { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); max-width: 760px; margin: 0 auto; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-sm); text-align: left; }
+.incl-col { min-width: 0; padding: 20px 22px 12px; }
+.incl-col + .incl-col { border-left: 1px solid var(--line); }
+.incl-h { display: flex; align-items: center; gap: 8px; margin: 0 0 4px; font-size: 14.5px; font-weight: 700; color: var(--green); }
+.incl-h .ic { width: 18px; height: 18px; stroke-width: 2; }
+.incl-extra .incl-h { color: var(--accent-ink); }
+.incl-list { list-style: none; margin: 0; padding: 0; }
+.incl-list li { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); font-size: 15px; line-height: 1.45; color: var(--text); }
+.incl-list li:first-child { border-top: 0; }
+.incl-list li > .ic { width: 22px; height: 22px; color: var(--primary); stroke-width: 1.6; }
+.incl-list li > span { flex: 1; min-width: 0; }
+.incl-list small { display: block; margin-top: 1px; font-size: 13px; line-height: 1.45; color: var(--muted); }
+.incl-list b { flex-shrink: 0; padding-left: 8px; font-weight: 700; color: var(--primary); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.incl-foot { max-width: 760px; margin: 10px auto 0; font-size: 13.5px; line-height: 1.6; color: var(--muted); text-align: left; }
+@media (max-width: 640px) {
+  .incl { grid-template-columns: 1fr; }
+  .incl-col { padding: 16px 16px 6px; }
+  .incl-list li { padding: 8px 0; }
+  .incl-col + .incl-col { border-left: 0; border-top: 1px solid var(--line); }
+}
+
+/* 진행 순서 타임라인 (공항·이사) — 2026-10-12 예약 순서(.steps)와 같은 결로: 상자·알약 대신 위 선 + 번호 + 픽토그램 */
+.timeline { gap: 28px; }
+.timeline li { background: linear-gradient(var(--primary), var(--primary)) left top / 100% 2px no-repeat; border: 0; border-radius: 0; padding: 16px 0 0; }
+.timeline li::before { position: static; display: block; width: auto; height: auto; border-radius: 0; background: none; content: counter(tl, decimal-leading-zero); color: var(--accent-ink); font-size: 13px; font-weight: 700; letter-spacing: 0.04em; font-variant-numeric: tabular-nums; margin-bottom: 10px; }
+.timeline li .ic-box { position: absolute; top: 14px; right: 0; width: 26px; height: 26px; margin: 0; background: none; border-radius: 0; color: var(--accent-ink); }
+.timeline li .ic-box .ic { width: 24px; height: 24px; stroke-width: 1.6; }
+.timeline li h3 { font-size: 16.5px; margin: 0 0 6px; padding-right: 32px; }
+.timeline li p { font-size: 14.5px; }
+.timeline li .tl-tag { display: block; margin-top: 10px; padding: 0; background: none; border: 0; border-radius: 0; font-size: 13px; font-weight: 700; color: var(--accent-ink); }
+.timeline li .tl-tag::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-right: 7px; vertical-align: 2px; }
+@media (max-width: 520px) { .timeline { gap: 24px; } .timeline li { padding: 16px 0 0; } }

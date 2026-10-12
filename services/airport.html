@@ -9,12 +9,12 @@
 <meta name="description" content="더블린 공항 ↔ 시내·전국 한국어 픽업·샌딩 서비스. 7인승 MPV, 캐리어 4–6개, €40부터 (거리당 정찰·톨비 포함). 자동 가격 계산.">
 <meta property="og:title" content="공항 픽업·드랍 — 아일랜드 동행">
 <meta property="og:description" content="더블린 공항과 시내·전국을 잇는 한국어 픽업·드랍. 7인승 MPV, €40부터.">
-<meta property="og:image" content="https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/images/logo/og-image.jpg?v=2026101201c">
+<meta property="og:image" content="https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/images/logo/og-image.jpg?v=2026101203c">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/services/airport.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/images/logo/og-image.jpg?v=2026101201c">
+<meta name="twitter:image" content="https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/images/logo/og-image.jpg?v=2026101203c">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta property="og:site_name" content="Andrew의 아일랜드 동행 — Beautiful Ireland with Everyone">
 <meta property="og:locale" content="ko_KR">
@@ -32,8 +32,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles.css?v=2026101201">
-<script defer src="../scripts.js?v=2026101201"></script>
+<link rel="stylesheet" href="../styles.css?v=2026101203">
+<script defer src="../scripts.js?v=2026101203"></script>
 <style>
   /* 공항 픽업 페이지 전용 — 토큰만 쓴다. 카드는 1px 선, 그림자·그라데이션 없음 */
   .section-note { max-width: 680px; margin: 18px auto 0; font-size: 15px; color: var(--muted); text-align: center; line-height: 1.75; }
@@ -122,6 +122,11 @@
   .table-notes li { position: relative; padding-left: 14px; margin-top: 6px; font-size: 14px; color: var(--muted); line-height: 1.7; }
   .faq-a ul { margin: 8px 0; padding-left: 22px; }
   .table-notes li::before { content: ''; position: absolute; left: 0; top: 0.72em; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+
+  /* 포함 · 따로 픽토그램 (2026-10-12) — airport·tours·moving·pilgrimage 같은 블록 */
+  /* .incl(포함·따로 픽토그램 표)은 styles.css 공용 */
+  .price-incl { max-width: 640px; margin: 0 auto 26px; }
+  .price-incl .incl, .price-incl .incl-foot { max-width: none; }
 
   /* 모바일 — styles.css 의 작은 글씨(!important) 보정: 입력 16px(iOS 확대 방지), 요금 구성 14.5px, 표 14px */
   @media (max-width: 600px) {
@@ -232,7 +237,7 @@
       "name": "취소·환불 정책은 어떻게 되나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "예약금 기준 환불 정책입니다.\n \n 48시간 이전 취소 → 예약금 전액 환불\n 전날 취소 (24~48시간 전) → 예약금의 50% 환불\n 당일 취소 → 환불 불가 (차량·일정 확보 완료 상태)\n \n 비행 지연·취소는 위 정책과 별개로, 기존 항공편이 출발지에서 출발하기 전까지 알려 주시면 무료 변경/취소 가능합니다.\n\n\n 불가항력: 기상특보(Status Yellow 이상)·자연재해·도로 통제·갑작스러운 질병 같은 불가항력으로 진행이 어려우면, 먼저 연락드려 일정 변경을 안내하고 변경이 어려우면 환불 기준에 준해 합리적으로 조정합니다. 특보 없이 비만 오는 날은 정상 진행합니다.\n\n\n 환급 방식: 환불금은 받은 경로(Revolut·한국 계좌이체)로 영업일 기준 2~3일 내 반환해 드립니다."
+        "text": "환불은 예약금(총 요금의 50%) 기준입니다. 시간은 약속한 출발 시각(공항 도착 픽업은 항공편 도착 예정 시각)부터 거꾸로 셉니다.\n\n72시간 전까지 취소 → 무료 취소 (예약금 전액 환불)\n\n72~24시간 전 취소 → 예약금의 50% 환불\n\n24시간 이내 취소 → 환불 없음 (차량과 하루 일정을 비워 둔 상태)\n\n노쇼(연락 없이 나타나지 않음) → 총 요금 전액 (예약금은 돌려드리지 않고 잔금도 청구)\n\n비행 지연·취소는 위 정책과 별개로, 기존 항공편이 출발지에서 출발하기 전까지 알려 주시면 무료 변경/취소 가능합니다.\n\n불가항력: 기상특보(Status Yellow 이상)·자연재해·도로 통제·갑작스러운 질병 같은 불가항력으로 진행이 어려우면, 먼저 연락드려 일정 변경을 안내하고 변경이 어려우면 환불 기준에 준해 합리적으로 조정합니다. 특보 없이 비만 오는 날은 정상 진행합니다.\n\n환급 방식: 환불금은 받은 경로(Revolut·한국 계좌이체)로 영업일 기준 2~3일 내 반환해 드립니다."
       }
     },
     {
@@ -252,7 +257,7 @@
       }
     }
   ],
-  "dateModified": "2026-10-11"
+  "dateModified": "2026-10-12"
 }
 </script>
 </head>
@@ -261,7 +266,7 @@
 
 <!-- 아이콘 스프라이트 — 정본은 _내부자료/스크립트/site_parts.py. <svg class="ic"><use href="#i-…"></use></svg> 로 부른다 -->
 <svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-  <symbol id="i-plane" viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></symbol>
+  <symbol id="i-plane" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></symbol>
   <symbol id="i-map" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></symbol>
   <symbol id="i-truck" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></symbol>
   <symbol id="i-church" viewBox="0 0 24 24"><path d="M12 2v5"/><path d="M9.5 4.5h5"/><path d="M6 21v-9l6-5 6 5v9"/><path d="M3 21h18"/><path d="M10 21v-4a2 2 0 0 1 4 0v4"/></symbol>
@@ -287,6 +292,21 @@
   <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
   <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></symbol>
   <symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M20 12V8H6a2 2 0 0 1 0-4h12v4"/><path d="M4 6v12a2 2 0 0 0 2 2h14v-4"/><path d="M18 12a2 2 0 0 0 0 4h4v-4z"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M3 13l1.8-4.6A2 2 0 0 1 6.7 7h10.6a2 2 0 0 1 1.9 1.4L21 13"/><rect x="2" y="13" width="20" height="5" rx="1.5"/><circle cx="7" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-refund" viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></symbol>
+  <symbol id="i-x-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></symbol>
+  <symbol id="i-user-x" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="18" y1="8" x2="23" y2="13"/><line x1="23" y1="8" x2="18" y2="13"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></symbol>
+  <symbol id="i-meal" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></symbol>
+  <symbol id="i-luggage" viewBox="0 0 24 24"><rect x="5" y="7" width="14" height="13" rx="2"/><path d="M9 7V4.5A1.5 1.5 0 0 1 10.5 3h3A1.5 1.5 0 0 1 15 4.5V7"/><line x1="9" y1="11" x2="9" y2="16"/><line x1="15" y1="11" x2="15" y2="16"/><line x1="8" y1="20" x2="8" y2="22"/><line x1="16" y1="20" x2="16" y2="22"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+  <symbol id="i-parking" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></symbol>
+  <symbol id="i-road" viewBox="0 0 24 24"><path d="M8 3L4 21"/><path d="M16 3l4 18"/><line x1="12" y1="4" x2="12" y2="7"/><line x1="12" y1="10.5" x2="12" y2="13.5"/><line x1="12" y1="17" x2="12" y2="20"/></symbol>
+  <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 0 0-4z"/><line x1="14" y1="5" x2="14" y2="19" stroke-dasharray="2 2"/></symbol>
+  <symbol id="i-stairs" viewBox="0 0 24 24"><polyline points="3 20 8 20 8 15 13 15 13 10 18 10 18 5 21 5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
   <symbol id="i-kakao" viewBox="0 0 24 24"><path d="M12 3.2C6.6 3.2 2.2 6.6 2.2 10.9c0 2.7 1.8 5.1 4.6 6.5l-1 3.6c-.1.3.3.6.6.4l4.3-2.8c.4 0 .9.1 1.3.1 5.4 0 9.8-3.4 9.8-7.7S17.4 3.2 12 3.2z"/></symbol>
   <symbol id="logo-island" viewBox="-3 -3 82 106"><path fill="currentColor" d="M47.7 0C48.7 0.3 52.4 2.2 52.6 3.3C52.8 4.4 49.5 5.9 48.9 6.6C48.2 7.3 48.6 7.3 48.8 7.6C49 7.8 49.6 8.1 50.1 8.1C50.6 8.1 51.2 8.2 51.7 7.7C52.2 7.2 52.5 5.5 53.2 5C53.8 4.6 54.7 5.3 55.8 5.1C56.9 4.8 58.1 3.5 59.7 3.3C61.4 3.2 64.5 3.1 65.9 4.2C67.2 5.2 66.8 8 67.8 9.8C68.8 11.5 71.6 13.2 71.8 14.6C72 16.1 68.6 18 68.9 18.6C69.2 19.1 72.5 17.3 73.6 18C74.7 18.7 75.6 21 75.5 22.7C75.5 24.3 74.3 27.1 73.4 28.1C72.4 29.2 70.7 27.9 69.8 28.8C68.9 29.6 68.6 32.4 67.8 33.2C67 34 65.5 33.3 65 33.7C64.5 34 65.2 35.1 64.7 35.3C64.3 35.5 62.9 34.8 62.3 34.9C61.8 35 61.7 35.6 61.6 36.1C61.5 36.5 61.4 37.1 61.7 37.6C62 38.1 62.9 38.2 63.2 39.3C63.6 40.3 63.3 42.6 63.8 43.8C64.2 45 65.6 45.2 65.7 46.6C65.8 48 64.1 50.6 64.3 52.4C64.4 54.2 66 55.9 66.4 57.5C66.9 59 67.4 59.8 67 61.8C66.5 63.8 64.4 67.8 63.9 69.6C63.5 71.4 64.6 71.1 64 72.5C63.4 73.9 60.9 76.5 60.5 78C60.1 79.5 62.2 80.7 61.8 81.4C61.5 82 59.6 82 58.6 81.9C57.5 81.8 56.3 81 55.5 81C54.8 80.9 54.6 81.8 54.2 81.9C53.8 81.9 53.4 81 53 81.2C52.5 81.4 53 82.5 51.7 82.9C50.4 83.3 46.6 83.2 45.2 83.5C43.7 83.8 43.5 84.1 43 84.7C42.6 85.3 43.4 86.4 42.7 86.9C42.1 87.5 40.4 87.4 39.3 88.1C38.2 88.8 37 90.6 36.1 91.2C35.2 91.8 34.6 91.9 34.1 91.7C33.5 91.6 33.1 90.2 32.7 90.5C32.4 90.8 32.7 92.5 32 93.4C31.3 94.2 30.9 94.6 28.5 95.7C26 96.7 19.3 99.3 17.1 99.8C14.8 100.3 15.9 98.7 14.8 98.7C13.6 98.7 10.7 100 10.2 100C9.6 100 11.2 99.2 11.5 98.7C11.7 98.1 11.3 97.6 11.8 96.9C12.3 96.3 14.1 95.3 14.5 94.9C15 94.4 14.7 94.3 14.6 94.1C14.5 93.9 15.1 93.3 13.7 93.7C12.3 94.1 7.3 96.3 6 96.5C4.7 96.8 5.3 96.3 5.9 95.4C6.6 94.6 10.2 91.9 9.9 91.4C9.7 91 5.7 92.7 4.6 92.7C3.6 92.6 4.1 91.4 3.6 91C3 90.7 1.6 91 1.4 90.7C1.2 90.3 2.1 89.5 2.4 88.9C2.8 88.3 2.5 87.6 3.3 86.9C4.1 86.3 6.1 85.8 7.1 85.2C8.1 84.5 10.2 83.2 9.1 83C8 82.8 2 83.8 0.4 83.7C-1.1 83.7 -0.5 83.1 0 82.4C0.5 81.8 1.7 80.1 3.2 79.8C4.7 79.4 8.3 81 9.2 80.3C10.1 79.7 8.3 76.9 8.6 75.9C9 74.9 10.6 74.8 11.2 74.2C11.8 73.6 11.2 72.7 12.2 72.2C13.3 71.7 17.3 71.6 17.6 71.3C17.8 70.9 14.9 70.1 13.6 70.1C12.3 70.1 9.6 71.7 9.7 71.2C9.8 70.7 13.2 68.2 14.3 66.8C15.3 65.5 15.8 64.2 16 63.2C16.2 62.3 15.2 62.1 15.5 61.2C15.8 60.4 16.5 58.6 17.6 57.9C18.7 57.1 21.2 57.1 22.1 56.8C22.9 56.4 22.8 56.3 22.7 55.9C22.6 55.4 23.1 54.2 21.6 54C20.2 53.8 15.5 55.1 14 54.7C12.4 54.3 13.2 51.8 12.5 51.5C11.7 51.1 10.2 52.6 9.6 52.7C9 52.8 8.9 52.5 8.8 52.1C8.7 51.7 9.2 50.7 8.9 50.5C8.6 50.2 7.4 50.8 6.8 50.7C6.3 50.6 5.9 50.6 5.6 49.9C5.3 49.2 4.5 47.4 4.9 46.6C5.3 45.8 7.6 46 8.2 45.1C8.8 44.3 7.8 42.3 8.5 41.5C9.3 40.8 11.8 40.9 12.6 40.5C13.3 40 13.1 39.2 13.1 38.7C13 38.3 13 37.9 12.2 37.7C11.4 37.6 8.7 38.3 8.2 37.9C7.6 37.6 9.1 36.5 9.1 35.6C9 34.7 7.9 33.4 7.7 32.4C7.4 31.4 7.9 30 7.6 29.5C7.3 29 6.3 29.7 6 29.5C5.7 29.3 5.7 28.4 5.8 28.1C6 27.8 6.5 27.7 6.9 27.8C7.2 27.9 7.5 29.1 8 28.9C8.6 28.7 8.5 26.9 10 26.5C11.5 26.2 15.4 26.5 17 27C18.6 27.6 18.7 29.9 19.5 30C20.3 30.1 20.4 27.9 21.8 27.6C23.2 27.4 26.7 28.5 27.8 28.5C29 28.4 28.8 27.8 28.9 27.3C28.9 26.8 27.3 26.2 28 25.4C28.6 24.6 31.7 23.5 32.8 22.4C33.9 21.4 35.5 19.8 34.7 19.2C33.8 18.7 29.4 19.2 27.9 19C26.3 18.7 25.7 18 25.4 17.5C25.2 17 25.7 16.2 26.4 15.8C27.1 15.5 29.1 15.5 29.7 15.2C30.2 14.8 29.5 14.2 29.8 13.8C30.1 13.4 31.3 13.7 31.4 13C31.6 12.2 30.5 10.5 30.7 9.4C30.9 8.2 31.5 6.8 32.6 6C33.7 5.2 36 4.5 37.1 4.4C38.2 4.2 38.4 5.3 39.2 5C40 4.8 41.3 2.7 42.1 2.8C42.9 2.9 43.9 4.7 44 5.6C44.2 6.5 43.1 7.7 43.1 8.2C43.2 8.7 43.7 8.8 44.1 8.7C44.4 8.6 45.1 8.5 45.2 7.5C45.2 6.5 44.1 3.9 44.4 2.9C44.6 1.9 46.2 2 46.8 1.5C47.3 1 46.7 -0.3 47.7 0Z"/><circle cx="61" cy="51.5" r="7.5" fill="#c9a96e"/></symbol>
 </svg>
@@ -376,25 +396,25 @@
     </div>
     <ol class="timeline stagger-fade">
       <li>
-        <div class="icon ic-box"><svg class="ic"><use href="#i-plane"></use></svg></div>
+        <div class="icon ic-box"><svg class="ic" aria-hidden="true"><use href="#i-plane"></use></svg></div>
         <h3>착륙</h3>
         <p>예약 때 받은 항공편명으로 도착 시각을 확인하고 공항에서 기다립니다. 항공편 지연은 추가 대기료 없이 도착 시간에 맞춥니다.</p>
         <span class="tl-tag">지연 시 추가 요금 없음</span>
       </li>
       <li>
-        <div class="icon ic-box"><svg class="ic"><use href="#i-message"></use></svg></div>
+        <div class="icon ic-box"><svg class="ic" aria-hidden="true"><use href="#i-message"></use></svg></div>
         <h3>짐을 찾고 카톡</h3>
         <p>수하물을 찾은 뒤 카톡을 보내 주시면 만나는 지점을 안내합니다. 기본은 터미널 밖 지정 픽업 지점이며 도보 약 2분입니다.</p>
         <span class="tl-tag">게이트 마중 옵션 +€5</span>
       </li>
       <li>
-        <div class="icon ic-box"><svg class="ic"><use href="#i-truck"></use></svg></div>
+        <div class="icon ic-box"><svg class="ic" aria-hidden="true"><use href="#i-luggage"></use></svg></div>
         <h3>차에 짐 싣기</h3>
         <p>7인승 MPV에 캐리어 4~6개가 실립니다. 짐은 함께 싣고, 좌석은 인원에 맞춰 미리 정리해 둡니다.</p>
         <span class="tl-tag">최대 6인 탑승</span>
       </li>
       <li>
-        <div class="icon ic-box"><svg class="ic"><use href="#i-home"></use></svg></div>
+        <div class="icon ic-box"><svg class="ic" aria-hidden="true"><use href="#i-home"></use></svg></div>
         <h3>숙소 앞 도착</h3>
         <p>이동 중에는 도로 사정이나 첫날 준비할 것을 한국어로 물어볼 수 있습니다. 숙소 앞에 내린 뒤 잔금을 정산합니다.</p>
         <span class="tl-tag">톨비 포함</span>
@@ -416,7 +436,7 @@
         <p>공항에서 숙소까지 한국어로 안내합니다. 도로 사정, 숙소 체크인, 유심과 교통카드처럼 도착 첫날 생기는 질문에 답합니다.</p>
       </div>
       <div class="feature-card">
-        <div class="icon ic-box"><svg class="ic"><use href="#i-truck"></use></svg></div>
+        <div class="icon ic-box"><svg class="ic" aria-hidden="true"><use href="#i-car"></use></svg></div>
         <h3>7인승 MPV 한 대</h3>
         <p>최대 6명이 탑니다. 캐리어는 4~6개까지 실리고, 2열 좌석을 접으면 훨씬 많이 실을 수 있습니다. 가족이나 친구 일행이 차 두 대로 나뉘지 않습니다.</p>
       </div>
@@ -604,6 +624,34 @@
       <div class="formula-row"><span>50km 초과분 (장거리)</span><strong>+€0.8/km</strong></div>
     </div>
 
+    <!-- 요금에 포함된 것 · 따로 붙는 것 -->
+    <div class="price-incl">
+      <div class="incl stagger-fade">
+        <div class="incl-col">
+          <p class="incl-h" id="pk-incl-in"><svg class="ic" aria-hidden="true"><use href="#i-check"></use></svg>요금에 포함</p>
+          <ul class="incl-list" aria-labelledby="pk-incl-in">
+            <li><svg class="ic" aria-hidden="true"><use href="#i-car"></use></svg><span>차량·운전<small>7인승 MPV</small></span></li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-road"></use></svg><span>톨비</span></li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-message"></use></svg><span>한국어 안내</span></li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-clock"></use></svg><span>항공편 지연 대기<small>추가 대기료 없음</small></span></li>
+          </ul>
+        </div>
+        <div class="incl-col incl-extra">
+          <p class="incl-h" id="pk-incl-out"><svg class="ic" aria-hidden="true"><use href="#i-plus"></use></svg>따로 붙는 요금</p>
+          <ul class="incl-list" aria-labelledby="pk-incl-out">
+            <li><svg class="ic" aria-hidden="true"><use href="#i-parking"></use></svg><span>공항 주차비<small>도착 픽업</small></span><b>+€5</b></li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-moon"></use></svg><span>야간 운행<small>23~06시</small></span><b>+€10</b></li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-users"></use></svg><span>5~6인 탑승</span><b>+€10</b></li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-luggage"></use></svg><span>캐리어 5개 이상</span><b>+€5</b></li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-user"></use></svg><span>게이트 앞 마중<small>선택 · 도착 시</small></span><b>+€5</b></li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-plane"></use></svg><span>체크인·보안검색 안내<small>선택 · 출발 시</small></span><b>+€10</b></li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-pin"></use></svg><span>경유지 1곳당<small>시내권 · 거리·방향에 따라 조정</small></span><b>+€10</b></li>
+          </ul>
+        </div>
+      </div>
+      <p class="incl-foot">출발 드랍은 공항 주차비가 없습니다.</p>
+    </div>
+
     <!-- 거리별 요금 그래프 -->
     <div class="km-chart">
       <h3>주행거리에 따라 요금이 이렇게 올라갑니다</h3>
@@ -684,11 +732,12 @@
     <div class="faq-item" onclick="this.classList.toggle('open')">
       <div class="faq-q">취소·환불 정책은 어떻게 되나요?</div>
       <div class="faq-a">
-        예약금 기준 환불 정책입니다.
+        환불은 예약금(총 요금의 50%) 기준입니다. 시간은 약속한 출발 시각(공항 도착 픽업은 항공편 도착 예정 시각)부터 거꾸로 셉니다.
         <ul>
-          <li><strong>48시간 이전 취소</strong> → 예약금 <strong>전액 환불</strong></li>
-          <li><strong>전날 취소</strong> (24~48시간 전) → 예약금의 <strong>50% 환불</strong></li>
-          <li><strong>당일 취소</strong> → <strong>환불 불가</strong> (차량·일정 확보 완료 상태)</li>
+          <li><strong>72시간 전까지 취소</strong> → <strong>무료 취소</strong> (예약금 전액 환불)</li>
+          <li><strong>72~24시간 전 취소</strong> → 예약금의 <strong>50% 환불</strong></li>
+          <li><strong>24시간 이내 취소</strong> → <strong>환불 없음</strong> (차량과 하루 일정을 비워 둔 상태)</li>
+          <li><strong>노쇼</strong>(연락 없이 나타나지 않음) → <strong>총 요금 전액</strong> (예약금은 돌려드리지 않고 잔금도 청구)</li>
         </ul>
         <strong>비행 지연·취소</strong>는 위 정책과 별개로, 기존 항공편이 출발지에서 출발하기 전까지 알려 주시면 무료 변경/취소 가능합니다.<br><br>
         <strong>불가항력:</strong> 기상특보(Status Yellow 이상)·자연재해·도로 통제·갑작스러운 질병 같은 불가항력으로 진행이 어려우면, 먼저 연락드려 일정 변경을 안내하고 변경이 어려우면 환불 기준에 준해 합리적으로 조정합니다. 특보 없이 비만 오는 날은 정상 진행합니다.<br><br>
@@ -747,7 +796,7 @@
     <div class="ft-grid">
       <div class="ft-brand">
         <a class="ft-logo" href="../index.html"><svg aria-hidden="true" focusable="false"><use href="#logo-island"></use></svg><span><b><span class="accent">Beautiful Ireland</span> with Everyone</b><small>Andrew의 아일랜드 동행</small></span></a>
-        <p>서현 Andrew가 직접 운전하고 한국어로 안내합니다. 수익은 음악 봉사 프로젝트 <span class="nw">Classical Music for Everyone</span>의 예산으로 쓰입니다.</p>
+        <p>서현 Andrew가 직접 운전하고 한국어로 안내합니다. 수익은 음악 봉사 프로젝트 <a class="nw ft-cmfe" href="https://andrewseohyeonkim.github.io/classicalmusicforeveryone/" target="_blank" rel="noopener">Classical Music for Everyone</a>의 예산으로 쓰입니다.</p>
       </div>
       <nav class="ft-col" aria-label="서비스"><h3>서비스</h3><ul><li><a href="../services/airport.html">공항 픽업·드랍</a></li><li><a href="../services/tours.html">당일 로드트립 22코스</a></li><li><a href="../services/moving.html">이사 (간단·전체)</a></li><li><a href="../services/pilgrimage.html">성지순례·피정</a></li><li><a href="../services/custom.html">맞춤 여행·통역 동행</a></li></ul></nav>
       <nav class="ft-col" aria-label="안내"><h3>안내</h3><ul><li><a href="../about.html">소개와 차량</a></li><li><a href="../contact.html">문의 채널</a></li><li><a href="../terms.html">이용약관·환불 정책</a></li><li><a href="../photo-credits.html">사진 출처</a></li></ul></nav>
@@ -755,7 +804,7 @@
     </div>
     <div class="ft-bottom">
       <p>© 2026 🇮🇪 <span class="nw">Beautiful Ireland with Everyone</span> · <span class="nw">Andrew의 아일랜드 동행</span></p>
-      <p>최종 업데이트 <time datetime="2026-10-11">2026년 10월 11일</time></p>
+      <p>최종 업데이트 <time datetime="2026-10-12">2026년 10월 12일</time></p>
     </div>
   </div>
 </footer>
