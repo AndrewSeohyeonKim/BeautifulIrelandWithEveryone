@@ -160,13 +160,16 @@ window.copyAndOpenKakao = function (message) {
 // 6) 페이지별 컨텍스트 없는 일반 문의들 — 단순 메시지 → 클립보드 복사
 window.inquireCustom = function () {
   copyAndOpenKakao([
-    '안녕하세요! 맞춤 여행 상담드립니다.',
+    '안녕하세요! 맞춤 여행 문의드립니다.',
     '✏️ 관심 있는 종류:',
     '   ☐ 맞춤 1일 코스',
     '   ☐ 2박 3일 이상 장기 여행',
     '   ☐ 통역·현지 코디네이션',
     '   ☐ 기자단·취재 동행',
-    '👥 인원·일정·관심사 함께 알려주세요 🙏'
+    '🗓️ 희망 일정: ',
+    '👥 인원: ',
+    '🎯 관심사: ',
+    '확인 부탁드립니다 🙏'
   ].join('\n'));
 };
 
@@ -179,7 +182,9 @@ window.inquireGeneral = function () {
     '   ☐ 이사 (간단 이사·전체 이사)',
     '   ☐ 성지순례·피정',
     '   ☐ 맞춤 여행·장기 여행',
-    '간단히 일정·인원만 알려주시면 안내드릴게요 🙏'
+    '🗓️ 희망 날짜: ',
+    '👥 인원: ',
+    '확인 부탁드립니다 🙏'
   ].join('\n'));
 };
 
@@ -331,14 +336,6 @@ window.inquireMusic = function () {
       el.setAttribute('tabindex', '0');
       el.setAttribute('role', 'region');
       if (!el.hasAttribute('aria-label')) el.setAttribute('aria-label', '가로로 스크롤되는 표');
-    }
-  });
-
-  // (d) 고정 문의 버튼 묶음을 랜드마크로 (axe: region)
-  document.querySelectorAll('.float-cta').forEach(function (el) {
-    if (!el.hasAttribute('role')) {
-      el.setAttribute('role', 'complementary');
-      el.setAttribute('aria-label', '빠른 문의');
     }
   });
 })();
@@ -620,4 +617,121 @@ window.inquireMusic = function () {
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
   else run();
+})();
+
+// ============================================================
+// 14) 모션 강화 (2026-10-12) — 사진 액자 열기, 요금 그래프·진행 순서 선 그리기,
+//     계산기 금액 반응, 이사 짐칸 비교(빈 짐칸 → 가득 실은 날). CSS 는 styles.css "모션 강화".
+//     모두 화면에 들어올 때 한 번만. 줄임 모션이면 건너뛴다(짐칸 비교 버튼은 그대로 동작).
+// ============================================================
+(function setupMotion2() {
+  var reduce = false;
+  try { reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+  var hasIO = 'IntersectionObserver' in window;
+
+  function onceVisible(el, cb, opts) {
+    if (!hasIO) { cb(); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { io.disconnect(); cb(); } });
+    }, opts || { threshold: 0.2, rootMargin: '0px 0px -40px 0px' });
+    io.observe(el);
+  }
+
+  // (a) 사진 — 액자가 열리듯. 첫 화면에 이미 보이는 사진·창 안의 사진은 건드리지 않는다
+  if (!reduce && hasIO) {
+    var PHOTOS = '.svc-media img, .jr-img img, .op-img img, .mp-img img, .ab-vphotos img, .load-row img, .pg-media img';
+    var batch = 0, batchTimer = null;
+    document.querySelectorAll(PHOTOS).forEach(function (img) {
+      if (img.closest('.modal, .modal-overlay, [hidden]')) return;
+      var r = img.getBoundingClientRect();
+      if (r.width === 0 || r.top < window.innerHeight * 0.9) return;
+      img.classList.add('ph');
+      onceVisible(img, function () {
+        // 같은 순간 들어온 사진끼리는 0.09초씩 차례로
+        var delay = batch++ * 90;
+        clearTimeout(batchTimer); batchTimer = setTimeout(function () { batch = 0; }, 120);
+        setTimeout(function () {
+          img.classList.add('ph-in');
+          setTimeout(function () { img.classList.remove('ph', 'ph-in'); }, 1500);
+        }, delay);
+      }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+    });
+  }
+
+  // (b) 거리별 요금 그래프 — 선이 왼쪽부터 그어지고 점·금액이 차례로
+  document.querySelectorAll('.km-chart').forEach(function (chart) {
+    var line = chart.querySelector('.line');
+    if (reduce || !hasIO || !line || !line.getTotalLength) return;
+    var len = Math.ceil(line.getTotalLength());
+    line.style.strokeDasharray = len;
+    line.style.strokeDashoffset = len;
+    chart.classList.add('kc-pre');
+    var pts = chart.querySelectorAll('.pt'), labs = chart.querySelectorAll('.lab'), guides = chart.querySelectorAll('.guide');
+    [pts, labs, guides].forEach(function (list) {
+      list.forEach(function (el, i) { el.style.transitionDelay = (0.45 + i * 0.16) + 's'; });
+    });
+    onceVisible(chart, function () {
+      chart.classList.add('kc-in');
+      line.style.strokeDashoffset = 0;
+    }, { threshold: 0.35 });
+  });
+
+  // (c) 진행 순서(공항·이사) — 위 선이 차례로 그어진다
+  document.querySelectorAll('.timeline').forEach(function (tl) {
+    if (reduce || !hasIO) return;
+    if (tl.getBoundingClientRect().top < window.innerHeight * 0.85) return;
+    tl.classList.add('tl-pre');
+    onceVisible(tl, function () { tl.classList.add('tl-in'); }, { threshold: 0.25 });
+  });
+
+  // (d) 계산기 금액 — 숫자가 바뀌면 한 번 반응. 글자는 바로 최종값(문의 메시지가 이 값을 읽는다)
+  if (!reduce && 'MutationObserver' in window) {
+    document.querySelectorAll('.result-price').forEach(function (el) {
+      var last = el.textContent;
+      new MutationObserver(function () {
+        if (el.textContent === last) return;
+        last = el.textContent;
+        el.classList.remove('is-bumped');
+        void el.offsetWidth;
+        el.classList.add('is-bumped');
+      }).observe(el, { childList: true, characterData: true, subtree: true });
+      el.addEventListener('animationend', function () { el.classList.remove('is-bumped'); });
+    });
+  }
+
+  // (e) 이사 짐칸 비교 — 화면에 들어오면 빈 짐칸에서 가득 실은 날로 한 번 차오른다. 버튼으로 다시 볼 수 있다
+  document.querySelectorAll('[data-load-compare]').forEach(function (fig) {
+    var btns = fig.querySelectorAll('[data-show]');
+    var cap = fig.querySelector('.lc-cap');
+    var timer = null;
+    function set(state, animate) {
+      fig.setAttribute('data-state', state);
+      btns.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-show') === state ? 'true' : 'false'); });
+      if (cap && cap.getAttribute('data-' + state)) cap.textContent = cap.getAttribute('data-' + state);
+      if (animate && !reduce) {
+        fig.classList.add('is-moving');
+        clearTimeout(timer);
+        timer = setTimeout(function () { fig.classList.remove('is-moving'); }, 1300);
+      }
+    }
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () { set(b.getAttribute('data-show'), true); });
+    });
+    if (reduce || !hasIO) return;               // 처음부터 가득 실은 사진
+    if (fig.getBoundingClientRect().top < window.innerHeight * 0.6) return;  // 이미 보이는 자리면 그대로
+    fig.classList.add('lc-instant');           // 화면 밖에서 빈 짐칸으로 바꿀 때는 움직이지 않게
+    set('empty', false);
+    void fig.offsetWidth;
+    fig.classList.remove('lc-instant');
+    var imgs = fig.querySelectorAll('img');
+    onceVisible(fig, function () {
+      var ready = Array.prototype.map.call(imgs, function (im) {
+        im.loading = 'eager';
+        return (im.decode ? im.decode() : Promise.resolve()).catch(function () {});
+      });
+      Promise.all(ready).then(function () {
+        setTimeout(function () { if (fig.getAttribute('data-state') === 'empty') set('full', true); }, 650);
+      });
+    }, { threshold: 0.45 });
+  });
 })();

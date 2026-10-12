@@ -32,8 +32,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles.css?v=2026101203">
-<script defer src="../scripts.js?v=2026101203"></script>
+<link rel="stylesheet" href="../styles.css?v=2026101204">
+<script defer src="../scripts.js?v=2026101204"></script>
 <style>
   /* 2026-10-11 개편 — 그림자·알약 배지·금색 상단선 대신 옅은 선(--line)과 여백. 색은 styles.css 토큰만 쓴다 */
 
@@ -1047,7 +1047,8 @@ function inquirePilgrimage(type){
       '👥 인원: ',
       '⛪ 꼭 가보고 싶은 성당(있으면): ',
       '· 미사 참례 희망: ☐ 예  ☐ 아니오',
-      '· 본당·단체 여부를 함께 알려주시면 안내드릴게요 🙏'
+      '· 본당·단체 여부: ',
+      '확인 부탁드립니다 🙏'
     ],
     legion: [
       '안녕하세요! 📿 레지오 마리애 성지순례 문의드립니다.',
@@ -1056,7 +1057,7 @@ function inquirePilgrimage(type){
       '👥 인원: ',
       '📿 소속(꾸리아 Curia · 쁘레시디움 Praesidium 등): ',
       '· 미사 참례 희망: ☐ 예  ☐ 아니오',
-      '함께 준비해드릴게요 🙏'
+      '확인 부탁드립니다 🙏'
     ],
     knock: [
       '안녕하세요! 🌹 녹 성모성지 (Knock Shrine) 순례 문의드립니다.',
@@ -1065,7 +1066,7 @@ function inquirePilgrimage(type){
       '· 미사 참례 희망: ☐ 예(성지 미사 시간 맞춰 주세요)  ☐ 아니오',
       '· 희망 형태: ☐ 녹 집중(오래 머무름)  ☐ 서부 코스와 함께',
       '· 픽업 희망 장소: ',
-      '일정 확인 후 안내드릴게요 🙏'
+      '확인 부탁드립니다 🙏'
     ],
     west: [
       '안녕하세요! ⛪ 아일랜드 서부 성지순례 (Kylemore Abbey · Knock Shrine) 문의드립니다.',
@@ -1074,7 +1075,7 @@ function inquirePilgrimage(type){
       '👥 인원: ',
       '· 도어투도어 픽업·드랍 희망: ☐ 픽업만  ☐ 드랍만  ☐ 둘 다  ☐ 필요 없음',
       '· 미사 참례 희망: ☐ 예  ☐ 아니오',
-      '안내드릴게요 🙏'
+      '확인 부탁드립니다 🙏'
     ],
     retreat: [
       '안녕하세요! 🕯️ 아일랜드 피정 프로그램 문의드립니다.',
@@ -1083,7 +1084,7 @@ function inquirePilgrimage(type){
       '👥 인원: ',
       '· 형태: ☐ 개인 피정  ☐ 본당·단체 피정',
       '· 희망 장소(있으면): ☐ 글렌달록 (Glendalough)  ☐ 녹 (Knock Shrine)  ☐ 수도원 게스트하우스 (Monastery Guesthouse)  ☐ 추천 부탁드려요',
-      '가능한 곳부터 확인해서 안내드릴게요 🙏'
+      '가능한 곳 안내 부탁드립니다 🙏'
     ],
     custom: [
       '안녕하세요! 🗺️ 맞춤형 성지순례 코스 구상 문의드립니다.',
@@ -1093,17 +1094,17 @@ function inquirePilgrimage(type){
       '· 소속: ☐ 개인·가족  ☐ 본당·교구 단체  ☐ 레지오 꾸리아',
       '⛪ 꼭 가고 싶은 성지: ',
       '🏨 숙소 예약 대행 필요: ☐ 예  ☐ 아니오(직접 예약)',
-      '일자별 일정표를 만들어 드릴게요 🙏'
+      '일정 제안 부탁드립니다 🙏'
     ]
   };
-  var msg = messages[type] || ['안녕하세요! 아일랜드 성지순례 상담드립니다 🙏'];
+  var msg = messages[type] || ['안녕하세요! 아일랜드 성지순례 문의드립니다 🙏'];
   copyAndOpenKakao(msg.join('\n'));
 }
 
 // 프로그램을 정하지 않은 일반 순례 문의
 function inquirePilgrimageGeneral(){
   copyAndOpenKakao([
-    '안녕하세요! ⛪ 아일랜드 성지순례 상담드립니다.',
+    '안녕하세요! ⛪ 아일랜드 성지순례 문의드립니다.',
     '📿 관심 있는 프로그램:',
     '   ☐ 더블린 시티 도보 성지순례 (Dublin City Walking Pilgrimage)',
     '   ☐ 레지오 마리애 성지순례 (Legion of Mary)',
@@ -1114,7 +1115,8 @@ function inquirePilgrimageGeneral(){
     '   ☐ 아직 모르겠어요 — 추천 부탁드려요',
     '🗓️ 희망 일정: ',
     '👥 인원: ',
-    '· 본당·단체 여부를 함께 알려주시면 안내드릴게요 🙏'
+    '· 본당·단체 여부: ',
+    '확인 부탁드립니다 🙏'
   ].join('\n'));
 }
 </script>
