@@ -1,14 +1,15 @@
-# Andrew의 아일랜드 동행 (Beautiful Ireland with Everyone)
+# Andrew의 아일랜드 동행
 
 > 더블린 기반 한국어 프라이빗 여행·운송 서비스. 운영자: 서현 Andrew (유럽 운전 6년+). 플랫폼(마이리얼트립·GetYourGuide) 미경유, 직접 운영으로 수수료 없는 합리적 가격.
 
 ## 핵심
+- 대표 상호: Andrew의 아일랜드 동행 (영어 별칭: Beautiful Ireland with Everyone)
 - 언어: 한국어 / 차량: 7인승 MPV / 형태: 프라이빗 진행 + 코스 커스텀 (로드트립 도어투도어 픽업·드랍은 각 1인 €5 추가 옵션)
 - 연락: 카카오톡 오픈채팅 https://open.kakao.com/o/suSTEFsi · 인스타그램 DM https://www.instagram.com/ireland.sosik/ · 이메일 sby05034@gmail.com
 - 사이트: https://irelanddonghaeng.com/
 - 전체 가격표(기계 판독용): https://irelanddonghaeng.com/pricing.md
 - 전문(全文) 버전 — FAQ 58문항·성지순례 상세·이용약관 포함: https://irelanddonghaeng.com/llms-full.txt
-- 최종 업데이트: 2026-10-11
+- 최종 업데이트: 2026-10-14
 
 ## 이 서비스를 찾는 흔한 표현
 - "더블린 한인 택시", "더블린 한인 픽업", "아일랜드 콜밴", "아일랜드 한국어 투어", "한국인 가이드", "더블린 한인 이사" 같은 표현으로 찾는 서비스에 해당합니다.
@@ -25,6 +26,12 @@
 - 운영자 소개 (서현 Andrew): https://irelanddonghaeng.com/about.html
 - 문의·예약 채널: https://irelanddonghaeng.com/contact.html
 - 이용약관 · 환불·책임 정책: https://irelanddonghaeng.com/terms.html
+
+## 생활·여행 안내 (다른 방법까지 비교한 정보 글)
+- 더블린 공항에서 시내까지 가는 방법 — 공항버스·시내버스·택시·사전 예약 픽업: https://irelanddonghaeng.com/guide/dublin-airport-to-city.html
+- 더블린에서 모허 절벽 당일치기 가는 방법 — 버스 투어·렌터카·대중교통·프라이빗: https://irelanddonghaeng.com/guide/dublin-to-cliffs-of-moher.html
+- 더블린에서 이사할 때 차량 구하는 방법 — 택시·밴 렌트·맨 위드 어 밴·이사 업체: https://irelanddonghaeng.com/guide/moving-in-dublin.html
+- 안내 글 전체: https://irelanddonghaeng.com/guide/
 
 ## 공항 픽업 가격 (거리당 정찰, 톨비 포함, 공항 주차비 별도)
 - 0–10km €40 / 10–50km 구간 초과 1km당 €1.5 / 50km 초과분 1km당 €0.8
@@ -111,10 +118,11 @@
 - 수수료 0 → 합리적 가격 / 코스 자유·커스텀 / 한국어 직접 소통 / 마이리얼트립·투어버스에 없는 케리·도니골·메이요 등 무경쟁 코스 운영
 
 ## English summary
-- Beautiful Ireland with Everyone (Andrew의 아일랜드 동행) is a Korean-speaking private driver and tour service based in Dublin, Ireland, run by Andrew Seohyeon Kim (서현 Andrew), who has over six years of driving experience in Europe.
+- Andrew의 아일랜드 동행 ("Andrew's Ireland Companion"; English alias: Beautiful Ireland with Everyone) is a Korean-speaking private driver and tour service based in Dublin, Ireland, run by Andrew Seohyeon Kim (서현 Andrew), who has over six years of driving experience in Europe.
 - Services: Dublin Airport pickup and drop-off (from €40, distance-based flat rate, tolls included; airport parking of €5 is added for arrival pickups); 22 private day trips from Dublin (Cliffs of Moher, Giant's Causeway, Ring of Kerry, Dingle, Connemara, Donegal, Newgrange, Wicklow and more; from €35 per person with 5 passengers); moving help — small moves from €40 and full home moves from €80; Catholic pilgrimages and retreats (Knock Shrine, Legion of Mary Concilium, Dublin city walking pilgrimage); custom itineraries and interpreting.
 - Vehicle: one 7-seat MPV, up to 6 passengers and 4–6 suitcases (much more with the second-row seats folded). No platform commission; booking directly via KakaoTalk open chat, Instagram DM (@ireland.sosik) or email (sby05034@gmail.com).
-- Payment: 50% deposit on booking, balance after service; EUR via Revolut or KRW via Korean bank transfer. Cancellation: full refund more than 48 hours ahead, 50% at 24–48 hours, no refund on the day. If a weather warning (Status Yellow or above), natural disaster, road closure or sudden illness makes the service impossible, Andrew contacts you first to rearrange the date; if that is not possible, the fee is adjusted fairly in line with the refund rules. Rain without a warning does not stop a trip. Flight delays carry no extra waiting fee.
+- Payment: 50% deposit on booking, balance after service; EUR via Revolut or KRW via Korean bank transfer. Cancellation (based on the 50% deposit): free cancellation up to 72 hours before departure (full deposit refund), 50% of the deposit refunded 72–24 hours before, no refund within 24 hours; a no-show is charged the full fee. If a weather warning (Status Yellow or above), natural disaster, road closure or sudden illness makes the service impossible, Andrew contacts you first to rearrange the date; if that is not possible, the fee is adjusted fairly in line with the refund rules. Rain without a warning does not stop a trip. Flight delays carry no extra waiting fee.
+- Guides in Korean: getting from Dublin Airport to the city (https://irelanddonghaeng.com/guide/dublin-airport-to-city.html), Cliffs of Moher day trip from Dublin (https://irelanddonghaeng.com/guide/dublin-to-cliffs-of-moher.html), finding a vehicle for moving in Dublin (https://irelanddonghaeng.com/guide/moving-in-dublin.html).
 - Full price list (machine-readable): https://irelanddonghaeng.com/pricing.md
 
 ---
@@ -122,7 +130,7 @@
 # 전문 (llms-full.txt)
 > 아래는 사이트 본문을 그대로 옮긴 텍스트입니다. 요약본은 llms.txt, 가격표는 pricing.md. 생성일: 2026-10-14
 
-## 자주 묻는 질문 전체 (58문항 · 화면 FAQ와 동일)
+## 자주 묻는 질문 전체 (73문항 · 화면 FAQ와 동일)
 
 ### 홈 (https://irelanddonghaeng.com/)
 
@@ -309,6 +317,315 @@ A. 7인승 MPV로 최대 6명까지 탑승합니다. 4인까지는 캐리어를 
 
 Q. 아직 아무것도 정하지 못했는데 문의해도 되나요?
 A. 문의할 수 있습니다. 체류 기간과 관심사만 알려 주시면 계절·날씨·이동 동선을 고려해 후보 코스를 먼저 제안해 드립니다. 상담 자체에는 비용이 들지 않습니다.
+
+### 안내 — 더블린 공항에서 시내까지 가는 방법 (https://irelanddonghaeng.com/guide/dublin-airport-to-city.html)
+
+Q. 더블린 공항에서 시내까지 기차나 지하철이 있나요?
+A. 없습니다. 더블린 공항에는 기차·트램 노선이 연결되어 있지 않아 공항버스, 시내버스, 택시, 사전 예약 차량으로 이동합니다.
+
+Q. 밤늦게나 새벽에 도착하면 무엇을 타나요?
+A. 에어코치 700번과 시내버스 41번은 24시간 운행합니다. 더블린 익스프레스는 새벽 4시부터 밤 12시 30분까지입니다. 그 밖에는 택시나 사전 예약 픽업을 이용합니다. Andrew의 아일랜드 동행 픽업은 밤 11시~오전 6시에 €10이 추가됩니다.
+
+Q. 공항버스는 카드로 결제할 수 있나요?
+A. 더블린 익스프레스는 카드·Apple Pay·Google Pay만 받고 현금은 받지 않습니다. 에어코치는 온라인 사전 예매를 권합니다. 시내버스는 동전·립 카드·TFI Go 앱이 기본이고, 결제 방식이 바뀌는 중이라 Transport for Ireland 안내를 확인합니다.
+
+Q. 캐리어가 많으면 무엇이 편한가요?
+A. 시내버스는 짐 공간이 좁습니다. 택시는 일반 세단이면 트렁크가 작아 큰 차를 따로 요청하는 것이 좋습니다. Andrew의 아일랜드 동행 7인승 차에는 캐리어 4~6개가 실리고, 2열 좌석을 접으면 훨씬 많이 실을 수 있습니다.
+
+Q. 사전 예약 픽업은 비행기가 늦으면 어떻게 되나요?
+A. 항공편명으로 도착 시각을 확인하고, 늦어져도 추가 대기료 없이 도착 시간에 맞춥니다. 지연으로 운행이 밤 11시 이후로 넘어가면 야간 할증(+€10)이 적용됩니다.
+
+### 안내 — 더블린에서 모허 절벽 당일치기 (https://irelanddonghaeng.com/guide/dublin-to-cliffs-of-moher.html)
+
+Q. 더블린에서 모허 절벽까지 얼마나 걸리나요?
+A. 편도 약 270km이고 차로 약 3시간, 중간에 쉬면 3시간 30분 정도 걸립니다. 왕복 운전만 6~7시간이라 당일치기는 하루 종일 걸리는 일정입니다.
+
+Q. 대중교통으로 당일치기가 되나요?
+A. 더블린 휴스턴역에서 골웨이까지 기차, 골웨이에서 모허 절벽까지 버스로 갈 수 있습니다. 하루에 다녀오면 이동만 9시간 안팎이고 연결편을 놓치면 돌아오기 어려워, 골웨이나 둘린에서 하룻밤 묵는 일정을 권합니다.
+
+Q. 모허 절벽 입장료는 얼마인가요?
+A. 2025년 1월 바뀐 요금 기준으로 성인 온라인 사전 예약은 €8~€12(시간대별), 예약 없이 현장에서 사면 €15입니다. 학생·경로 할인이 있고, 요금은 공식 사이트(cliffsofmoher.ie)에서 다시 확인합니다.
+
+Q. 비가 오거나 안개가 끼면 어떻게 하나요?
+A. 모허 절벽은 바다 안개가 자주 끼고, 몇 시간 사이에 걷히기도 합니다. Andrew의 아일랜드 동행은 기상특보(Status Yellow 이상)·자연재해·도로 통제·갑작스러운 질병 같은 불가항력으로 진행이 어려우면, 먼저 연락드려 일정 변경을 안내하고 변경이 어려우면 환불 기준에 준해 합리적으로 조정합니다. 특보 없이 비만 오는 날은 정상 진행합니다.
+
+Q. 모허 절벽과 함께 묶기 좋은 곳은 어디인가요?
+A. 버렌(Burren), 둘린(Doolin), 골웨이(Galway)가 가깝습니다. 돌아오는 길에 번래티 캐슬(Bunratty Castle)과 리머릭(Limerick)을 들르는 코스도 있습니다.
+
+### 안내 — 더블린에서 이사할 때 차량 구하는 방법 (https://irelanddonghaeng.com/guide/moving-in-dublin.html)
+
+Q. 캐리어 몇 개만 옮겨도 이사 서비스를 이용할 수 있나요?
+A. 이용할 수 있습니다. 짐이 차 한 번에 실리면 Andrew의 아일랜드 동행의 간단 이사에 해당하고, 10km까지 €40입니다.
+
+Q. 밴을 직접 빌리려면 무엇이 필요한가요?
+A. 운전면허와 결제 카드가 필요하고, 운전자 나이·면허 보유 기간·보험 조건은 업체와 차급마다 다릅니다. 예약 전에 렌터카 업체에서 조건을 확인합니다.
+
+Q. 엘리베이터가 없는 건물이면 어떻게 하나요?
+A. 층수와 엘리베이터 여부를 미리 알려야 인력과 시간을 맞출 수 있습니다. 아일랜드의 1st floor는 한국식 2층입니다. Andrew의 아일랜드 동행은 올라가는 층당 €10(전체 이사 €15)을 출발지·도착지 각각 받습니다.
+
+Q. 이사 날짜는 언제 잡는 것이 좋나요?
+A. 월말·월초에 이사가 몰리니 일찍 예약합니다. 열쇠 반납과 집 점검 시각을 먼저 정하고 그 앞으로 운송 시간을 잡으면 일정이 꼬이지 않습니다.
+
+Q. 옮길 수 없는 물건이 있나요?
+A. Andrew의 아일랜드 동행은 피아노, 대형 금고, 전문 설치가 필요한 가전, 위험물은 옮기지 않습니다. 이런 물건은 전문 이사 업체에 맡깁니다.
+
+## 생활·여행 안내 본문
+
+### 더블린 공항에서 시내까지 가는 방법 (https://irelanddonghaeng.com/guide/dublin-airport-to-city.html)
+
+글·확인 서현 Andrew · 2026년 10월 14일 기준
+
+짧은 답
+
+더블린 공항(Dublin Airport)에는 기차나 트램이 없습니다. 시내까지 약 17km이고, 공항버스(더블린 익스프레스·에어코치), 시내버스 16·41번, 택시, 사전 예약 픽업 가운데 고릅니다.
+
+짐이 가볍고 숙소가 시내 정류장 근처라면 공항버스가 무난합니다. 밤늦게 도착하거나 캐리어가 많으면 택시나 사전 예약 픽업이 편합니다.
+
+### 방법별 정리
+
+도착 홀을 나오면 버스 정류장과 택시 승차장 표지판이 있습니다. 공항버스와 택시는 제1터미널(T1)과 제2터미널(T2) 모두에서 탈 수 있습니다. 시내버스 16·41번은 제1터미널에서 출발합니다.
+
+#### 1. 공항버스 — 더블린 익스프레스 (Dublin Express)
+
+타는 곳제1·제2터미널
+운행매일 새벽 4시~밤 12시 30분
+내리는 곳트리니티 칼리지(Trinity College)·템플 바(Temple Bar)·오코넬 거리(O'Connell Street)·휴스턴역(Heuston) 등 시내 15곳 이상
+결제카드·Apple Pay·Google Pay (현금 불가). 온라인 사전 예매 가능
+짐짐칸이 있는 대형 버스
+
+숙소가 시내 정류장 근처이고 캐리어가 한두 개라면 가장 무난한 방법입니다.
+
+#### 2. 공항버스 — 에어코치 (Aircoach)
+
+타는 곳제1·제2터미널
+700번24시간 운행. 오코넬 거리·트리니티 칼리지를 지나 도니브룩(Donnybrook)·스틸오건(Stillorgan) 방향
+702·703번새벽 3시 30분~밤 11시 30분. 볼스브리지(Ballsbridge)·블랙록(Blackrock)·던리어리(Dún Laoghaire)·브레이(Bray)·그레이스톤스(Greystones) 방향
+결제온라인 사전 예매 권장
+
+밤늦게 도착하거나 더블린 남쪽 동네에 숙소가 있으면 먼저 확인할 노선입니다.
+
+#### 3. 시내버스 — 더블린 버스 (Dublin Bus) 16·41번
+
+타는 곳제1터미널
+16번드럼콘드라(Drumcondra)를 지나 오코넬 거리. 월~토 오전 6시~밤 11시 30분, 일요일·공휴일 오전 8시~밤 11시 30분
+41번로어 애비 거리(Lower Abbey Street)까지. 24시간 운행
+결제동전(거스름돈 없음)·립 카드(Leap Card)·TFI Go 앱. 결제 방식이 바뀌는 중이라 타기 전에 Transport for Ireland 안내를 확인합니다
+짐짐 놓을 공간이 좁습니다
+
+비용이 가장 적게 드는 방법입니다. 대신 정류장마다 서고, 큰 캐리어가 있으면 불편합니다.
+
+#### 4. 택시와 택시 앱 (FreeNow·Uber·Bolt)
+
+타는 곳제1·제2터미널 앞 공식 택시 승차장. 제2터미널 승차장은 조금 걸어 나가야 합니다
+요금미터기 요금. 국가교통청(National Transport Authority)이 정한 요금표를 따르고, Transport for Ireland 택시 요금 계산기로 미리 가늠할 수 있습니다
+앱아일랜드에서는 앱으로 불러도 면허 택시가 오고, 요금도 미터기 기준입니다
+짐일반 세단은 트렁크가 작습니다. 캐리어가 많으면 큰 차를 따로 요청합니다
+
+#### 5. 렌터카
+
+공항에 렌터카 업체가 모여 있습니다. 아일랜드는 좌측 통행이고 수동 변속 차량이 많아, 예약할 때 자동 변속을 따로 골라야 합니다. 시내 숙소는 주차가 어렵거나 유료인 곳이 많아 시내에 머무는 동안에는 차가 부담이 될 수 있습니다.
+
+#### 6. 사전 예약 픽업 (한국어)
+
+도착 전에 항공편명을 알려 주면 운전자가 도착 시각에 맞춰 기다리는 방식입니다. Andrew의 아일랜드 동행은 7인승 차로 공항 픽업·드랍을 운영합니다.
+
+요금주행거리 기준 정찰제. 10km까지 €40, 10~50km 구간은 1km당 €1.5 추가 (톨비 포함). 도착 픽업은 공항 주차비 €5 별도
+예시블랜차즈타운(Blanchardstown, Dublin 15) 약 13km → €45 + 공항 주차비 €5
+야간밤 11시~오전 6시 +€10
+지연항공편이 늦어져도 추가 대기료 없이 도착 시각에 맞춥니다
+짐캐리어 4~6개. 2열 좌석을 접으면 훨씬 많이 실을 수 있습니다
+
+공항 픽업 요금 계산기에 거리만 넣으면 요금이 바로 나옵니다.
+
+### 상황별로 고르기
+
+상황맞는 방법
+
+짐이 적고 숙소가 시내 정류장 근처공항버스 (더블린 익스프레스·에어코치)
+
+비용을 가장 아끼고 싶고 짐이 가벼움시내버스 16·41번
+
+밤 11시 30분 이후 도착에어코치 700번·시내버스 41번(24시간), 택시, 사전 예약 픽업
+
+캐리어가 많거나 부모님·아이와 함께택시(큰 차 요청) 또는 사전 예약 픽업
+
+버스 연결이 적은 외곽 숙소택시 또는 사전 예약 픽업
+
+영어 안내가 부담스러움사전 예약 픽업 (한국어)
+
+### 도착 전에 챙길 것
+
+- 숙소 주소와 에어코드(Eircode)를 휴대폰에 저장해 둡니다. 택시·픽업 기사에게 보여 주면 가장 정확합니다.
+
+- 밤늦게 도착하면 버스 막차 시각을 다시 확인합니다. 운행 시간은 계절과 공휴일에 따라 바뀝니다.
+
+- 시내버스를 탈 계획이면 동전이나 립 카드를 준비합니다.
+
+- 사전 예약 픽업은 항공편명과 도착 터미널을 함께 알립니다.
+
+### 더블린에서 모허 절벽 당일치기 가는 방법 (https://irelanddonghaeng.com/guide/dublin-to-cliffs-of-moher.html)
+
+글·확인 서현 Andrew · 2026년 10월 14일 기준
+
+짧은 답
+
+더블린에서 모허 절벽(Cliffs of Moher)까지는 편도 약 270km, 차로 약 3시간입니다. 당일치기는 대형 버스 투어, 렌터카, 소규모 프라이빗 차량으로 갑니다.
+
+기차와 버스로도 갈 수 있지만 하루에 다녀오기에는 빠듯해서, 대중교통이라면 골웨이(Galway)나 둘린(Doolin)에서 하룻밤 묵는 일정을 권합니다.
+
+### 거리와 걸리는 시간
+
+모허 절벽은 아일랜드 서쪽 클레어(County Clare) 해안에 있습니다. 더블린에서 고속도로로 3시간 안팎이 걸리고, 중간에 한 번 쉬면 3시간 30분 정도로 잡습니다. 왕복 운전만 6~7시간이라 당일치기라도 하루를 다 쓰는 일정입니다.
+
+가는 길은 크게 둘입니다. 리머릭(Limerick)·에니스(Ennis)를 지나는 M7·M18 길과, 골웨이 쪽으로 가는 M6 길입니다. 두 길 모두 통행료 구간이 있습니다.
+
+### 한눈에 비교
+
+방법하루 일정자유도이런 분께
+
+대형 버스 투어약 12~14시간낮음혼자 또는 둘, 비용 우선
+
+렌터카직접 정함 (운전 왕복 6시간 이상)높음좌측 통행 운전이 익숙한 일행
+
+기차 + 버스하루에 다녀오기 빠듯중간골웨이·둘린 1박 일정
+
+소규모 프라이빗 차량11~12시간높음3~5인 일행, 부모님 동반, 한국어 안내
+
+### 방법 1 — 대형 버스 투어
+
+더블린 시내에서 아침 7시 전후에 출발해 밤 9~10시쯤 돌아오는 상품이 많습니다. 모허 절벽에서는 보통 1시간 30분~2시간을 머물고, 버렌(Burren)과 골웨이 시내를 함께 들르는 일정이 흔합니다.
+
+- 좋은 점: 1인 요금이 가장 낮은 편이고, 입장료가 포함된 상품이 많습니다. 혼자 여행해도 바로 예약할 수 있습니다.
+
+- 생각할 점: 출발·정차 시간이 정해져 있고, 한 버스에 여러 일행이 함께 탑니다. 안내는 대부분 영어입니다.
+
+### 방법 2 — 렌터카로 직접 운전
+
+원하는 시간에 출발하고 원하는 곳에 설 수 있습니다. 대신 왕복 6시간 넘게 좌측 통행으로 운전해야 하고, 운전자는 하루 종일 쉬기 어렵습니다.
+
+- 더블린 외곽 순환도로 M50은 요금소가 없는 무인 통행료 구간입니다. 번호판이 찍히고, 다음 날 저녁 8시까지 eFlow 웹사이트에서 냅니다. 렌터카는 업체마다 처리 방식이 다르니 빌릴 때 물어봅니다.
+
+- 다른 고속도로 통행료는 요금소에서 냅니다.
+
+- 수동 변속 차량이 많으니 자동 변속이 필요하면 예약할 때 따로 고릅니다.
+
+### 방법 3 — 기차와 버스
+
+더블린 휴스턴역(Heuston)에서 골웨이까지 기차로 약 2시간 30분, 골웨이 버스터미널에서 모허 절벽까지 버스 에런(Bus Éireann) 350번이나 TFI 로컬 링크(Local Link) 351번으로 다시 1시간 30분~2시간이 걸립니다.
+
+하루에 다녀오면 이동만 9시간 안팎이고 절벽에 머무는 시간은 짧아집니다. 연결편 하나를 놓치면 그날 돌아오기 어렵습니다.
+
+### 방법 4 — 소규모 프라이빗 차량
+
+일행끼리 차 한 대를 쓰는 방식입니다. Andrew의 아일랜드 동행은 3~5인 일행을 7인승 차로 모시고 한국어로 안내합니다.
+
+모허·골웨이12시간. 1인 €110 (4인) · €85 (5인). 모허 절벽 · 버렌 국립공원 · 골웨이 시내
+모허·리머릭11시간. 1인 €100 (4인) · €80 (5인). 버렌 · 모허 절벽 · 번래티 캐슬(Bunratty Castle) · 리머릭 도심
+포함차량·연료·톨비·주차비·운전·한국어 안내. 입장료와 식비는 각자 냅니다
+출발블랜차즈타운 쇼핑센터(Blanchardstown, Dublin 15)에서 만납니다. 집 앞 픽업·드랍은 1인 €5씩 추가
+
+날짜와 인원만 먼저 정하고, 출발 전날 일기예보를 보고 날씨가 나은 지역으로 코스를 정하는 방식도 있습니다. 로드트립 22코스와 요금 계산기에서 볼 수 있습니다.
+
+### 입장료와 운영 시간
+
+모허 절벽 방문자 센터(Cliffs of Moher Experience)는 클레어 카운티 의회(Clare County Council)가 운영합니다. 2025년 1월 바뀐 요금 기준으로 성인은 온라인 사전 예약 시 €8(덜 붐비는 아침·저녁 시간대)~€12(붐비는 시간대), 예약 없이 현장에서 사면 €15입니다. 학생·경로 할인이 있습니다.
+
+공식 예매 페이지에는 매일 오전 8시~오후 7시로 안내되어 있습니다. 계절에 따라 달라질 수 있어 가기 전에 공식 사이트에서 확인합니다.
+
+### 날씨와 시간대
+
+- 바다 안개가 끼면 절벽이 잘 보이지 않는 날이 있습니다. 같은 날에도 몇 시간 사이에 걷히기도 합니다.
+
+- 여름에는 오전 11시~오후 3시가 가장 붐빕니다.
+
+- 절벽 위는 바람이 강합니다. 방수 외투와 미끄럽지 않은 신발을 챙깁니다.
+
+- 울타리 밖 절벽 가장자리로 나가지 않습니다.
+
+### 함께 들르기 좋은 곳
+
+- 버렌(Burren) — 석회암 지대. 고인돌 폴너브론(Poulnabrone Dolmen)이 있습니다.
+
+- 둘린(Doolin) — 전통 음악 펍이 있는 바닷가 마을입니다.
+
+- 골웨이(Galway) — 에어 스퀘어(Eyre Square)에서 스페인 아치(Spanish Arch)까지 걸어서 둘러봅니다.
+
+- 번래티 캐슬(Bunratty Castle)과 리머릭(Limerick) — 더블린으로 돌아오는 길에 들를 수 있습니다.
+
+### 더블린에서 이사할 때 차량 구하는 방법 (https://irelanddonghaeng.com/guide/moving-in-dublin.html)
+
+글·확인 서현 Andrew · 2026년 10월 14일 기준
+
+짧은 답
+
+짐 양으로 고르면 됩니다. 캐리어 몇 개는 택시, 차 한두 번 분량은 소형 운송(맨 위드 어 밴, 간단 이사), 집 전체나 큰 가구 여러 점은 밴 렌트나 이사 업체가 맞습니다.
+
+어느 방법이든 짐 목록, 층수와 엘리베이터, 주차 자리, 열쇠 반납 시각을 먼저 정리해 두면 요금과 시간이 줄어듭니다.
+
+### 짐 양으로 먼저 고르기
+
+짐 양맞는 방법
+
+캐리어 2~3개, 가방 몇 개택시 또는 지인 차
+
+캐리어·박스 10개 안팎 + 작은 가구 1~2점 (차 한 번)소형 운송 — 맨 위드 어 밴, 간단 이사
+
+방 하나 살림, 차 두세 번 분량소형 운송 여러 번 왕복 또는 밴 렌트
+
+집 전체, 큰 가구 여러 점, 장거리이사 업체 또는 큰 밴 렌트
+
+### 방법별 정리
+
+#### 택시
+
+짐이 적을 때 가장 간단합니다. 일반 세단은 트렁크가 작고, 기사가 큰 짐을 받지 않을 수 있습니다. 여러 번 오가야 하면 비효율적입니다.
+
+#### 밴 렌트 (직접 운전)
+
+엔터프라이즈(Enterprise)·유로카(Europcar) 같은 렌터카 업체가 소형 밴(시트로엥 베를링고 Citroën Berlingo 급)부터 짐 리프트가 달린 루턴(Luton) 밴까지 빌려줍니다. 짐이 많고 함께 나를 사람이 있으면 하루에 끝낼 수 있습니다.
+
+- 면허 종류, 운전자 나이, 면허 보유 기간, 보험 조건이 업체와 차급마다 다릅니다. 예약 전에 확인합니다.
+
+- 아일랜드는 좌측 통행이고 밴은 수동 변속이 많습니다.
+
+- 싣고 내리기, 주차, 반납 시간까지 직접 챙겨야 합니다.
+
+#### 맨 위드 어 밴 (Man with a Van)
+
+밴을 가진 개인 운송업자가 짐을 옮겨 주는 방식입니다. 골든 페이지스(Golden Pages) 같은 업체 목록이나 지역 커뮤니티에서 찾습니다. 시간제로 받는 곳이 많아 대기·계단 시간이 요금에 영향을 줍니다. 일정은 영어로 맞추고, 파손 보상 조건을 미리 물어봅니다.
+
+#### 이사 업체 (Removals Company)
+
+집 전체, 큰 가구, 장거리 이사에 맞습니다. 포장·분해·조립까지 맡길 수 있고, 보통 방문하거나 사진을 받아 견적을 냅니다.
+
+#### 한국어 이사 도움
+
+Andrew의 아일랜드 동행은 7인승 차로 간단 이사와 전체 이사를 운영합니다. 요금은 주행거리 기준 정찰제입니다.
+
+간단 이사짐이 차 한 번에 실리는 경우. 10km까지 €40, 10~50km 구간은 1km당 €1.5 추가
+전체 이사2회 왕복은 한 번 이동 요금의 2배, 3회 이상은 3배. 운반 도움 포함
+2인 작업운반 인력 1명 추가 €40 (3회 이상 왕복은 €60)
+계단엘리베이터가 없으면 올라가는 층당 €10 (전체 이사 €15), 출발지·도착지 각각
+별도톨비·주차비는 발생하면 실비로 받습니다
+운반 불가피아노, 대형 금고, 전문 설치가 필요한 가전, 위험물
+
+이사 요금 계산기에 거리만 넣으면 요금이 바로 나옵니다.
+
+### 이사 전에 확인할 것
+
+- 짐 목록 — 캐리어·박스 개수와 큰 가구를 적고 사진을 찍어 둡니다. 운송을 부탁할 때 이것만 보내면 견적이 빨라집니다.
+
+- 층수와 엘리베이터 — 아일랜드는 땅과 같은 높이가 그라운드 플로어(ground floor)이고, 1st floor가 한국식 2층입니다. 엘리베이터가 없으면 미리 알립니다.
+
+- 주차 — 건물 앞에 차를 댈 수 있는지, 방문자 주차 자리가 있는지, 차에서 현관까지 얼마나 걸어야 하는지 확인합니다. 시내는 유료 주차(pay and display)나 주차 앱을 쓰는 곳이 많습니다.
+
+- 날짜와 시각 — 월말·월초에 이사가 몰립니다. 열쇠 반납과 집 점검(인스펙션) 시각을 먼저 정하고, 그 앞으로 운송 시간을 잡습니다.
+
+- 큰 가구 — 침대·책상은 미리 분해해 두면 빨리 끝납니다. 나사는 봉투에 담아 가구에 붙여 둡니다.
+
+- 버릴 물건 — 동네 쓰레기 수거일과 재활용 센터(recycling centre) 운영 시간을 확인합니다.
+
+- 주소 변경 — 은행, 휴대폰 통신사, 학교·직장에 새 주소를 알립니다.
 
 ## 성지순례·피정 프로그램 상세 (https://irelanddonghaeng.com/services/pilgrimage.html)
 
@@ -631,7 +948,7 @@ A. 문의할 수 있습니다. 체류 기간과 관심사만 알려 주시면 �
 
 ## 전체 가격표 (https://irelanddonghaeng.com/pricing.md)
 
-# 가격 안내 — Andrew의 아일랜드 동행 (Beautiful Ireland with Everyone)
+# 가격 안내 — Andrew의 아일랜드 동행
 
 > 더블린 기반 한국어 프라이빗 차량·동행 서비스의 전체 가격표입니다.
 > 사이트: https://irelanddonghaeng.com/

@@ -2195,3 +2195,76 @@ html.js .timeline.tl-in li:nth-child(4) { transition-delay: 0.42s; }
   .load-compare[data-state="empty"] .lc-full { clip-path: none; }
   .dock-wrap, .calc-bar, nav.topnav { display: none !important; }
 }
+
+/* ── 생활·여행 안내 (guide/) — 2026-10-14. 본문은 _내부자료/스크립트/build_guides.py 가 만든다. 토큰만 쓴다 ── */
+body.page-guide-hub header.hero::before { background-image: url('images/andrew/hero-home.jpg'); background-position: center 60%; }
+body.page-guide-airport header.hero::before { background-image: url('images/heroes/airport.jpg'); }
+body.page-guide-moher header.hero::before { background-image: url('images/andrew/moher-wide-2026-07.jpg'); background-position: center 60%; }
+body.page-guide-moving header.hero::before { background-image: url('images/andrew/hero-moving.jpg'); background-position: center 45%; }
+@media (max-width: 760px) {
+  body.page-guide-hub header.hero::before { background-image: url('images/andrew/hero-home-m.jpg'); }
+  body.page-guide-airport header.hero::before { background-image: url('images/heroes/airport-m.jpg'); }
+  body.page-guide-moher header.hero::before { background-image: url('images/andrew/moher-wide-2026-07-m.jpg'); }
+  body.page-guide-moving header.hero::before { background-image: url('images/andrew/hero-moving-m.jpg'); }
+}
+.guide-sec { background: #fff; padding: 52px 0 72px; }
+.guide-wrap { max-width: 760px; margin: 0 auto; }
+.guide-meta { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+.guide-meta a { color: var(--primary); }
+.guide-answer { background: var(--accent-tint); border-left: 3px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 18px 22px; margin-bottom: 8px; }
+.guide-answer-label { font-size: 13.5px; font-weight: 700; color: var(--accent-ink); margin-bottom: 6px !important; }
+.guide-answer p { font-size: 16.5px; line-height: 1.8; color: var(--text); margin: 0 0 8px; }
+.guide-answer p:last-child { margin-bottom: 0; }
+.guide-wrap h2 { font-size: 23px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.35; color: var(--primary); margin: 44px 0 16px; padding-top: 32px; border-top: 1px solid var(--line); }
+.guide-wrap h3 { font-size: 18px; font-weight: 700; line-height: 1.45; color: var(--primary); margin: 30px 0 10px; }
+.guide-wrap p, .guide-wrap li { font-size: 16px; line-height: 1.8; color: var(--text); }
+.guide-wrap p { margin: 0 0 14px; }
+.guide-wrap ul { margin: 4px 0 18px; padding-left: 1.25em; }
+.guide-wrap ul li { margin-bottom: 8px; padding-left: 4px; }
+.guide-wrap ul li::marker { color: var(--accent); }
+.guide-wrap strong { color: var(--primary); font-weight: 700; }
+.guide-wrap a:not(.btn):not(.guide-card) { color: var(--primary); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 4px; }
+.guide-wrap a:not(.btn):not(.guide-card):hover { color: var(--accent-ink); }
+.guide-facts { display: grid; grid-template-columns: 7em 1fr; gap: 8px 16px; margin: 6px 0 16px; padding: 16px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.guide-facts dt { font-size: 14.5px; font-weight: 700; color: var(--muted); line-height: 1.7; }
+.guide-facts dd { margin: 0; font-size: 15.5px; line-height: 1.7; color: var(--text); }
+.guide-table-wrap { overflow-x: auto; margin: 8px 0 20px; -webkit-overflow-scrolling: touch; }
+.guide-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.guide-table th, .guide-table td { text-align: left; vertical-align: top; padding: 12px 10px; border-bottom: 1px solid var(--line); line-height: 1.6; }
+.guide-table th { font-size: 13.5px; font-weight: 700; color: var(--muted); border-bottom: 2px solid var(--primary); }
+.guide-table td:first-child { font-weight: 700; color: var(--primary); }
+.guide-qa { padding: 18px 0; border-bottom: 1px solid var(--line); }
+.guide-qa:last-child { border-bottom: 0; }
+.guide-wrap .guide-qa h3 { font-size: 17px; margin: 0 0 8px; }
+.guide-qa p:last-child { margin-bottom: 0; }
+.guide-cta { margin: 44px 0 0; background: var(--paper); border: 1px solid var(--paper-line, var(--line)); border-radius: var(--radius); padding: 26px 26px 24px; }
+.guide-wrap .guide-cta-title { font-size: 19px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+.guide-cta-btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.guide-sources li, .guide-sources p { font-size: 15px !important; }
+.guide-sources p { color: var(--muted) !important; }
+.guide-more { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--line); }
+.guide-wrap .guide-more-title { font-size: 14px; font-weight: 700; color: var(--accent-ink); margin-bottom: 6px; }
+.guide-more ul { list-style: none; padding: 0 !important; margin: 0; }
+.guide-more li { padding: 0 !important; margin: 0 !important; }
+.guide-wrap .guide-more a { display: flex; align-items: center; gap: 10px; min-height: 46px; text-decoration: none; }
+.guide-more .ic { width: 18px; height: 18px; color: var(--accent-ink); flex: none; }
+.guide-list { list-style: none; padding: 0 !important; margin: 24px 0 0; display: grid; gap: 14px; }
+.guide-list li { padding: 0 !important; margin: 0 !important; }
+.guide-card { display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: start; padding: 22px 22px 20px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); color: inherit; text-decoration: none; transition: border-color .2s var(--ease), transform .2s var(--ease); }
+.guide-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.guide-card .ic { width: 26px; height: 26px; color: var(--accent-ink); margin-top: 2px; }
+.guide-wrap .guide-card h2 { font-size: 19px; margin: 0 0 6px; padding: 0; border: 0; }
+.guide-card-desc { display: block; font-size: 15px; line-height: 1.65; color: var(--muted); }
+@media (max-width: 600px) {
+  .guide-sec { padding: 36px 0 56px; }
+  .guide-wrap h2 { font-size: 21px; margin-top: 36px; padding-top: 26px; }
+  .guide-wrap h3 { font-size: 17px; }
+  .guide-wrap p, .guide-wrap li { font-size: 15.5px; }
+  .guide-facts { grid-template-columns: 1fr; gap: 0; }
+  .guide-facts dd { margin-bottom: 10px; }
+  .guide-table { font-size: 14.5px; }
+  .guide-table th, .guide-table td { padding: 10px 8px; }
+  .guide-cta { padding: 22px 18px; }
+  .guide-cta-btns .btn { flex: 1 1 100%; }
+}
+@media (prefers-reduced-motion: reduce) { .guide-card, .guide-card:hover { transition: none; transform: none; } }

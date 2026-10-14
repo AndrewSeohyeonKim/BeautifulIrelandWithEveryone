@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-  <title>Andrew의 아일랜드 동행 — Beautiful Ireland with Everyone</title>
+  <title>Andrew의 아일랜드 동행</title>
   <link>https://irelanddonghaeng.com/</link>
   <atom:link href="https://irelanddonghaeng.com/rss.xml" rel="self" type="application/rss+xml"/>
   <description>더블린 공항 픽업·당일치기 로드트립·이사·성지순례·맞춤 여행. 서현 Andrew가 7인승 차로 직접 운전하고 한국어로 안내합니다.</description>
   <language>ko</language>
   <lastBuildDate>Wed, 14 Oct 2026 09:00:00 +0000</lastBuildDate>
-  <image><url>https://irelanddonghaeng.com/images/logo/icon-512.png</url><title>Andrew의 아일랜드 동행 — Beautiful Ireland with Everyone</title><link>https://irelanddonghaeng.com/</link></image>
+  <image><url>https://irelanddonghaeng.com/images/logo/icon-512.png</url><title>Andrew의 아일랜드 동행</title><link>https://irelanddonghaeng.com/</link></image>
+  <item>
+    <title>더블린 한인 공항 픽업·당일 투어·이사 | Andrew의 아일랜드 동행</title>
+    <link>https://irelanddonghaeng.com/</link>
+    <guid isPermaLink="true">https://irelanddonghaeng.com/</guid>
+    <description>더블린 공항 픽업 €40부터, 당일치기 투어 22코스 1인 €35부터(5인 기준), 이사 €40부터. 서현 Andrew가 7인승 차로 직접 운전하고 한국어로 안내하는 프라이빗 서비스입니다.</description>
+    <pubDate>Wed, 14 Oct 2026 09:00:00 +0000</pubDate>
+  </item>
+  <item>
+    <title>더블린 출발 당일치기 투어 22코스 — 한국어 프라이빗 로드트립 | Andrew의 아일랜드 동행</title>
+    <link>https://irelanddonghaeng.com/services/tours.html</link>
+    <guid isPermaLink="true">https://irelanddonghaeng.com/services/tours.html</guid>
+    <description>더블린 출발 한국어 프라이빗 당일 투어 22개 코스. 모허 절벽·자이언트 코즈웨이·링오브케리·딩글·코네마라·도니골 등. 7인승 차량, 도어투도어, 수수료 없는 합리적 가격(플랫폼 미경유), 코스 커스텀 가능. 아일랜드 한인 가이드 서현 Andrew.</description>
+    <pubDate>Wed, 14 Oct 2026 09:00:00 +0000</pubDate>
+  </item>
   <item>
     <title>더블린 공항 픽업·샌딩 €40부터 — 아일랜드 한인 차량 서비스 | Andrew의 아일랜드 동행</title>
     <link>https://irelanddonghaeng.com/services/airport.html</link>
@@ -23,18 +37,32 @@
     <pubDate>Wed, 14 Oct 2026 09:00:00 +0000</pubDate>
   </item>
   <item>
-    <title>더블린 한인 공항 픽업·당일 투어·이사 | Andrew의 아일랜드 동행</title>
-    <link>https://irelanddonghaeng.com/</link>
-    <guid isPermaLink="true">https://irelanddonghaeng.com/</guid>
-    <description>더블린 공항 픽업 €40부터, 당일치기 투어 22코스 1인 €35부터(5인 기준), 이사 €40부터. 서현 Andrew가 7인승 차로 직접 운전하고 한국어로 안내하는 프라이빗 서비스입니다.</description>
-    <pubDate>Mon, 12 Oct 2026 09:00:00 +0000</pubDate>
+    <title>더블린 생활·여행 안내 — 공항·모허 절벽·이사 | Andrew의 아일랜드 동행</title>
+    <link>https://irelanddonghaeng.com/guide/</link>
+    <guid isPermaLink="true">https://irelanddonghaeng.com/guide/</guid>
+    <description>더블린 공항에서 시내 가는 방법, 더블린에서 모허 절벽 당일치기, 더블린에서 이사할 때 차량 구하는 방법을 정리한 안내 글 모음입니다.</description>
+    <pubDate>Wed, 14 Oct 2026 09:00:00 +0000</pubDate>
   </item>
   <item>
-    <title>더블린 출발 당일치기 투어 22코스 — 한국어 프라이빗 로드트립 | Andrew의 아일랜드 동행</title>
-    <link>https://irelanddonghaeng.com/services/tours.html</link>
-    <guid isPermaLink="true">https://irelanddonghaeng.com/services/tours.html</guid>
-    <description>더블린 출발 한국어 프라이빗 당일 투어 22개 코스. 모허 절벽·자이언트 코즈웨이·링오브케리·딩글·코네마라·도니골 등. 7인승 차량, 도어투도어, 수수료 없는 합리적 가격(플랫폼 미경유), 코스 커스텀 가능. 아일랜드 한인 가이드 서현 Andrew.</description>
-    <pubDate>Mon, 12 Oct 2026 09:00:00 +0000</pubDate>
+    <title>더블린 공항에서 시내 가는 방법 — 공항버스·시내버스·택시·픽업 비교 | Andrew의 아일랜드 동행</title>
+    <link>https://irelanddonghaeng.com/guide/dublin-airport-to-city.html</link>
+    <guid isPermaLink="true">https://irelanddonghaeng.com/guide/dublin-airport-to-city.html</guid>
+    <description>더블린 공항에서 시내·숙소까지 가는 방법을 정리했습니다. 더블린 익스프레스·에어코치·시내버스 16·41번·택시·사전 예약 픽업의 타는 곳, 운행 시간, 결제, 짐을 비교합니다.</description>
+    <pubDate>Wed, 14 Oct 2026 09:00:00 +0000</pubDate>
+  </item>
+  <item>
+    <title>더블린에서 모허 절벽 당일치기 가는 방법 — 버스 투어·렌터카·대중교통·프라이빗 | Andrew의 아일랜드 동행</title>
+    <link>https://irelanddonghaeng.com/guide/dublin-to-cliffs-of-moher.html</link>
+    <guid isPermaLink="true">https://irelanddonghaeng.com/guide/dublin-to-cliffs-of-moher.html</guid>
+    <description>더블린에서 모허 절벽까지 편도 약 270km, 차로 약 3시간. 버스 투어·렌터카·기차와 버스·프라이빗 차량으로 당일치기 하는 방법과 입장료, 날씨, 함께 들를 곳을 정리했습니다.</description>
+    <pubDate>Wed, 14 Oct 2026 09:00:00 +0000</pubDate>
+  </item>
+  <item>
+    <title>더블린에서 이사할 때 차량 구하는 방법 — 택시·밴 렌트·맨 위드 어 밴·이사 업체 | Andrew의 아일랜드 동행</title>
+    <link>https://irelanddonghaeng.com/guide/moving-in-dublin.html</link>
+    <guid isPermaLink="true">https://irelanddonghaeng.com/guide/moving-in-dublin.html</guid>
+    <description>더블린에서 이사할 때 짐 양에 맞는 차량 고르는 방법. 택시, 밴 렌트, 맨 위드 어 밴, 이사 업체, 한국어 이사 도움을 비교하고 층수·주차·날짜 체크리스트를 정리했습니다.</description>
+    <pubDate>Wed, 14 Oct 2026 09:00:00 +0000</pubDate>
   </item>
   <item>
     <title>아일랜드 성지순례 — 한국어 순례 동행 가이드 | Andrew의 아일랜드 동행</title>

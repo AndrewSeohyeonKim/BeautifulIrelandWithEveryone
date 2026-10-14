@@ -1,14 +1,15 @@
-# Andrew의 아일랜드 동행 (Beautiful Ireland with Everyone)
+# Andrew의 아일랜드 동행
 
 > 더블린 기반 한국어 프라이빗 여행·운송 서비스. 운영자: 서현 Andrew (유럽 운전 6년+). 플랫폼(마이리얼트립·GetYourGuide) 미경유, 직접 운영으로 수수료 없는 합리적 가격.
 
 ## 핵심
+- 대표 상호: Andrew의 아일랜드 동행 (영어 별칭: Beautiful Ireland with Everyone)
 - 언어: 한국어 / 차량: 7인승 MPV / 형태: 프라이빗 진행 + 코스 커스텀 (로드트립 도어투도어 픽업·드랍은 각 1인 €5 추가 옵션)
 - 연락: 카카오톡 오픈채팅 https://open.kakao.com/o/suSTEFsi · 인스타그램 DM https://www.instagram.com/ireland.sosik/ · 이메일 sby05034@gmail.com
 - 사이트: https://irelanddonghaeng.com/
 - 전체 가격표(기계 판독용): https://irelanddonghaeng.com/pricing.md
 - 전문(全文) 버전 — FAQ 58문항·성지순례 상세·이용약관 포함: https://irelanddonghaeng.com/llms-full.txt
-- 최종 업데이트: 2026-10-11
+- 최종 업데이트: 2026-10-14
 
 ## 이 서비스를 찾는 흔한 표현
 - "더블린 한인 택시", "더블린 한인 픽업", "아일랜드 콜밴", "아일랜드 한국어 투어", "한국인 가이드", "더블린 한인 이사" 같은 표현으로 찾는 서비스에 해당합니다.
@@ -25,6 +26,12 @@
 - 운영자 소개 (서현 Andrew): https://irelanddonghaeng.com/about.html
 - 문의·예약 채널: https://irelanddonghaeng.com/contact.html
 - 이용약관 · 환불·책임 정책: https://irelanddonghaeng.com/terms.html
+
+## 생활·여행 안내 (다른 방법까지 비교한 정보 글)
+- 더블린 공항에서 시내까지 가는 방법 — 공항버스·시내버스·택시·사전 예약 픽업: https://irelanddonghaeng.com/guide/dublin-airport-to-city.html
+- 더블린에서 모허 절벽 당일치기 가는 방법 — 버스 투어·렌터카·대중교통·프라이빗: https://irelanddonghaeng.com/guide/dublin-to-cliffs-of-moher.html
+- 더블린에서 이사할 때 차량 구하는 방법 — 택시·밴 렌트·맨 위드 어 밴·이사 업체: https://irelanddonghaeng.com/guide/moving-in-dublin.html
+- 안내 글 전체: https://irelanddonghaeng.com/guide/
 
 ## 공항 픽업 가격 (거리당 정찰, 톨비 포함, 공항 주차비 별도)
 - 0–10km €40 / 10–50km 구간 초과 1km당 €1.5 / 50km 초과분 1km당 €0.8
@@ -111,8 +118,9 @@
 - 수수료 0 → 합리적 가격 / 코스 자유·커스텀 / 한국어 직접 소통 / 마이리얼트립·투어버스에 없는 케리·도니골·메이요 등 무경쟁 코스 운영
 
 ## English summary
-- Beautiful Ireland with Everyone (Andrew의 아일랜드 동행) is a Korean-speaking private driver and tour service based in Dublin, Ireland, run by Andrew Seohyeon Kim (서현 Andrew), who has over six years of driving experience in Europe.
+- Andrew의 아일랜드 동행 ("Andrew's Ireland Companion"; English alias: Beautiful Ireland with Everyone) is a Korean-speaking private driver and tour service based in Dublin, Ireland, run by Andrew Seohyeon Kim (서현 Andrew), who has over six years of driving experience in Europe.
 - Services: Dublin Airport pickup and drop-off (from €40, distance-based flat rate, tolls included; airport parking of €5 is added for arrival pickups); 22 private day trips from Dublin (Cliffs of Moher, Giant's Causeway, Ring of Kerry, Dingle, Connemara, Donegal, Newgrange, Wicklow and more; from €35 per person with 5 passengers); moving help — small moves from €40 and full home moves from €80; Catholic pilgrimages and retreats (Knock Shrine, Legion of Mary Concilium, Dublin city walking pilgrimage); custom itineraries and interpreting.
 - Vehicle: one 7-seat MPV, up to 6 passengers and 4–6 suitcases (much more with the second-row seats folded). No platform commission; booking directly via KakaoTalk open chat, Instagram DM (@ireland.sosik) or email (sby05034@gmail.com).
-- Payment: 50% deposit on booking, balance after service; EUR via Revolut or KRW via Korean bank transfer. Cancellation: full refund more than 48 hours ahead, 50% at 24–48 hours, no refund on the day. If a weather warning (Status Yellow or above), natural disaster, road closure or sudden illness makes the service impossible, Andrew contacts you first to rearrange the date; if that is not possible, the fee is adjusted fairly in line with the refund rules. Rain without a warning does not stop a trip. Flight delays carry no extra waiting fee.
+- Payment: 50% deposit on booking, balance after service; EUR via Revolut or KRW via Korean bank transfer. Cancellation (based on the 50% deposit): free cancellation up to 72 hours before departure (full deposit refund), 50% of the deposit refunded 72–24 hours before, no refund within 24 hours; a no-show is charged the full fee. If a weather warning (Status Yellow or above), natural disaster, road closure or sudden illness makes the service impossible, Andrew contacts you first to rearrange the date; if that is not possible, the fee is adjusted fairly in line with the refund rules. Rain without a warning does not stop a trip. Flight delays carry no extra waiting fee.
+- Guides in Korean: getting from Dublin Airport to the city (https://irelanddonghaeng.com/guide/dublin-airport-to-city.html), Cliffs of Moher day trip from Dublin (https://irelanddonghaeng.com/guide/dublin-to-cliffs-of-moher.html), finding a vehicle for moving in Dublin (https://irelanddonghaeng.com/guide/moving-in-dublin.html).
 - Full price list (machine-readable): https://irelanddonghaeng.com/pricing.md
