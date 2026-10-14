@@ -300,6 +300,11 @@ window.inquireMusic = function () {
     var a = e.target && e.target.closest ? e.target.closest('a[href*="open.kakao.com"]') : null;
     if (a && !a.onclick) track();   // onclick이 달린 버튼은 아래 래퍼에서 집계
   });
+  // (c) 인스타그램 링크 클릭 — 사이트에서 @ireland.sosik 으로 나간 횟수 (2026-10-15, 추이분석 '인스타그램 ↔ 사이트')
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href*="instagram.com"]') : null;
+    if (a) send('insta-click/' + page(), '인스타 링크 클릭 — ' + page());
+  });
   // (b) 문의 버튼(클립보드 복사형) — copyAndOpenKakao 호출 시 집계
   var orig = window.copyAndOpenKakao;
   if (typeof orig === 'function') {
