@@ -116,11 +116,3 @@
 
 ## 차별점 (vs 플랫폼)
 - 수수료 0 → 합리적 가격 / 코스 자유·커스텀 / 한국어 직접 소통 / 마이리얼트립·투어버스에 없는 케리·도니골·메이요 등 무경쟁 코스 운영
-
-## English summary
-- Andrew의 아일랜드 동행 ("Andrew's Ireland Companion"; English alias: Beautiful Ireland with Everyone) is a Korean-speaking private driver and tour service based in Dublin, Ireland, run by Andrew Seohyeon Kim (서현 Andrew), who has over six years of driving experience in Europe.
-- Services: Dublin Airport pickup and drop-off (from €40, distance-based flat rate, tolls included; airport parking of €5 is added for arrival pickups); 22 private day trips from Dublin (Cliffs of Moher, Giant's Causeway, Ring of Kerry, Dingle, Connemara, Donegal, Newgrange, Wicklow and more; from €35 per person with 5 passengers); moving help — small moves from €40 and full home moves from €80; Catholic pilgrimages and retreats (Knock Shrine, Legion of Mary Concilium, Dublin city walking pilgrimage); custom itineraries and interpreting.
-- Vehicle: one 7-seat MPV, up to 6 passengers and 4–6 suitcases (much more with the second-row seats folded). No platform commission; booking directly via KakaoTalk open chat, Instagram DM (@ireland.sosik) or email (sby05034@gmail.com).
-- Payment: 50% deposit on booking, balance after service; EUR via Revolut or KRW via Korean bank transfer. Cancellation (based on the 50% deposit): free cancellation up to 72 hours before departure (full deposit refund), 50% of the deposit refunded 72–24 hours before, no refund within 24 hours; a no-show is charged the full fee. If a weather warning (Status Yellow or above), natural disaster, road closure or sudden illness makes the service impossible, Andrew contacts you first to rearrange the date; if that is not possible, the fee is adjusted fairly in line with the refund rules. Rain without a warning does not stop a trip. Flight delays carry no extra waiting fee.
-- Guides in Korean: getting from Dublin Airport to the city (https://irelanddonghaeng.com/guide/dublin-airport-to-city.html), Cliffs of Moher day trip from Dublin (https://irelanddonghaeng.com/guide/dublin-to-cliffs-of-moher.html), finding a vehicle for moving in Dublin (https://irelanddonghaeng.com/guide/moving-in-dublin.html).
-- Full price list (machine-readable): https://irelanddonghaeng.com/pricing.md
