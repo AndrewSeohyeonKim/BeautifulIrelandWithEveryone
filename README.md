@@ -44,7 +44,7 @@
 빌드 도구·프레임워크 없는 정적 사이트. GitHub Pages에서 그대로 서빙됩니다.
 
 ```
-├── index.html              # 홈 (서비스 개요 + FAQ 10문항)
+├── index.html              # 홈 (서비스 개요 + FAQ 11문항)
 ├── about.html              # 운영자 소개 + 차량 정보
 ├── contact.html            # 문의 채널
 ├── terms.html              # 이용약관 · 환불·책임 정책
@@ -57,6 +57,7 @@
 ├── styles.css              # 전체 페이지 공용 스타일 (팔레트 정본)
 ├── scripts.js              # 공용 스크립트
 ├── images/                 # 코스·차량 사진
+├── fonts/                  # Noto Sans KR (직접 제공, OFL)
 ├── robots.txt              # 검색엔진 + AI 크롤러 정책
 ├── sitemap.xml             # 사이트맵
 ├── llms.txt                # AI 검색용 사이트 컨텍스트 (요약)
@@ -69,6 +70,15 @@
 - 구조화 데이터: Schema.org — TravelAgency / LocalBusiness / Person / Service / Offer / TouristTrip / FAQPage / BreadcrumbList
 - AI 검색 크롤러(GPTBot, ClaudeBot, PerplexityBot, Google-Extended 등) 명시 허용
 
+## ©️ 저작권·이용 조건
+
+이 저장소는 사이트를 서빙하기 위해 공개되어 있을 뿐, 오픈소스가 아닙니다.
+
+- 글·가격표·코스 구성·도식·로고, 운영자가 찍은 사진의 저작권은 김서현(Andrew Seohyeon Kim)에게 있습니다. 허락 없이 복제·재배포할 수 없습니다. 자세한 조건은 [이용약관 9. 저작권·자료 이용](https://irelanddonghaeng.com/terms.html#t-copyright)에 있습니다.
+- Wikimedia Commons 사진은 각 작가의 저작물이며 [사진 출처](https://irelanddonghaeng.com/photo-credits.html)에 적은 라이선스를 따릅니다.
+- 글꼴 Noto Sans KR은 SIL Open Font License 1.1을 따릅니다 (`fonts/OFL.txt`).
+- 공식 사이트는 irelanddonghaeng.com 하나입니다. 예약금은 위의 공식 채널 대화에서만 요청합니다.
+
 ---
 
-© 2026 🇮🇪 Beautiful Ireland with Everyone · Andrew의 아일랜드 동행 · Dublin, Ireland
+© 2026 김서현 (Andrew Seohyeon Kim) · Andrew의 아일랜드 동행 · Dublin, Ireland. All rights reserved.

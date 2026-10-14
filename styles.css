@@ -733,6 +733,8 @@ footer.contact .ft-lead { color: rgba(255,255,255,0.78); line-height: 1.75; max-
 .ft-col ul { list-style: none; display: grid; gap: 2px; }
 .ft-col a { white-space: nowrap; display: inline-flex; align-items: center; min-height: 34px; font-size: 14.5px; color: rgba(255,255,255,0.78); text-decoration: none; }
 .ft-col a:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+.ft-col .ft-note { margin-top: 12px; max-width: 19em; font-size: 13px; line-height: 1.65; color: rgba(255,255,255,0.62); }
+.ft-col .ft-note a { display: inline; min-height: 0; white-space: nowrap; font-size: 13px; color: rgba(255,255,255,0.86); text-decoration: underline; text-underline-offset: 3px; }
 .ft-bottom {
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px;
   padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.12);
@@ -2198,7 +2200,7 @@ html.js .timeline.tl-in li:nth-child(4) { transition-delay: 0.42s; }
   .dock-wrap, .calc-bar, nav.topnav { display: none !important; }
 }
 
-/* ── 생활·여행 안내 (guide/) — 2026-10-14. 본문은 _내부자료/스크립트/build_guides.py 가 만든다. 토큰만 쓴다 ── */
+/* ── 생활·여행 안내 (guide/) — 2026-10-14. 본문은 빌드 스크립트가 만든다. 토큰만 쓴다 ── */
 body.page-guide-hub header.hero::before { background-image: url('images/andrew/hero-home.jpg'); background-position: center 60%; }
 body.page-guide-airport header.hero::before { background-image: url('images/heroes/airport.jpg'); }
 body.page-guide-moher header.hero::before { background-image: url('images/andrew/moher-wide-2026-07.jpg'); background-position: center 60%; }

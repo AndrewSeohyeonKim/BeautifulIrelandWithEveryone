@@ -2,6 +2,15 @@
    🇮🇪 Beautiful Ireland with Everyone — Shared Scripts
    ============================================================ */
 
+// 0) 다른 사이트가 이 페이지를 틀(iframe) 안에 띄우지 못하게 한다 (2026-10-14 보안 점검).
+//    가짜 사이트가 진짜 페이지를 액자처럼 띄워 놓고 옆에 다른 송금 계좌를 붙이는 사칭을 막는다.
+//    GitHub Pages는 frame-ancestors 헤더를 못 보내서 스크립트로 처리. 로컬 미리보기는 예외.
+(function frameGuard() {
+  if (window.top === window.self || /^(localhost|127\.0\.0\.1)$/.test(location.hostname)) return;
+  document.documentElement.style.display = 'none';
+  try { window.top.location.replace(location.href); } catch (e) { /* 막힌 틀이면 화면을 비운 채로 둔다 */ }
+})();
+
 // 1) (제거됨 2026-09-06) 내부 링크 클릭 시 220ms 페이드아웃 후 이동하던 코드.
 //    모든 페이지 이동을 0.2초씩 늦춰 체감 속도만 깎았다. 진입 애니메이션(body pageFadeIn)만 남긴다.
 
@@ -113,7 +122,7 @@ window.isInAppBrowser = function () {
 window.openLinkSafely = function (url) {
   if (window.isInAppBrowser()) { window.location.href = url; return; }
   var win = null;
-  try { win = window.open(url, '_blank'); } catch (e) { win = null; }
+  try { win = window.open(url, '_blank'); if (win) win.opener = null; } catch (e) { win = null; }
   if (!win) window.location.href = url;
 };
 
