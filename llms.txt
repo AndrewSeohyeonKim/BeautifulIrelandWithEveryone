@@ -5,9 +5,9 @@
 ## 핵심
 - 언어: 한국어 / 차량: 7인승 MPV / 형태: 프라이빗 진행 + 코스 커스텀 (로드트립 도어투도어 픽업·드랍은 각 1인 €5 추가 옵션)
 - 연락: 카카오톡 오픈채팅 https://open.kakao.com/o/suSTEFsi · 인스타그램 DM https://www.instagram.com/ireland.sosik/ · 이메일 sby05034@gmail.com
-- 사이트: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/
-- 전체 가격표(기계 판독용): https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/pricing.md
-- 전문(全文) 버전 — FAQ 58문항·성지순례 상세·이용약관 포함: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/llms-full.txt
+- 사이트: https://irelanddonghaeng.com/
+- 전체 가격표(기계 판독용): https://irelanddonghaeng.com/pricing.md
+- 전문(全文) 버전 — FAQ 58문항·성지순례 상세·이용약관 포함: https://irelanddonghaeng.com/llms-full.txt
 - 최종 업데이트: 2026-10-11
 
 ## 이 서비스를 찾는 흔한 표현
@@ -16,15 +16,15 @@
 - 주 이용층: 워킹홀리데이·유학생·어학연수생, 아일랜드에 사는 가족을 방문하는 부모님, 출장·취재 방문객, 성당·레지오·단체 모임.
 
 ## 주요 페이지
-- 홈 · 자주 묻는 질문 11개: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/
-- 당일치기 로드트립 22코스 · 가격 계산기: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/services/tours.html
-- 더블린 공항 픽업·드랍 · 가격 계산기: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/services/airport.html
-- 이사 (간단 이사·전체 이사) · 가격 계산기: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/services/moving.html
-- 가톨릭 성지순례·피정 6개 프로그램: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/services/pilgrimage.html
-- 맞춤 여행·장기 여행·통역 동행: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/services/custom.html
-- 운영자 소개 (서현 Andrew): https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/about.html
-- 문의·예약 채널: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/contact.html
-- 이용약관 · 환불·책임 정책: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/terms.html
+- 홈 · 자주 묻는 질문 11개: https://irelanddonghaeng.com/
+- 당일치기 로드트립 22코스 · 가격 계산기: https://irelanddonghaeng.com/services/tours.html
+- 더블린 공항 픽업·드랍 · 가격 계산기: https://irelanddonghaeng.com/services/airport.html
+- 이사 (간단 이사·전체 이사) · 가격 계산기: https://irelanddonghaeng.com/services/moving.html
+- 가톨릭 성지순례·피정 6개 프로그램: https://irelanddonghaeng.com/services/pilgrimage.html
+- 맞춤 여행·장기 여행·통역 동행: https://irelanddonghaeng.com/services/custom.html
+- 운영자 소개 (서현 Andrew): https://irelanddonghaeng.com/about.html
+- 문의·예약 채널: https://irelanddonghaeng.com/contact.html
+- 이용약관 · 환불·책임 정책: https://irelanddonghaeng.com/terms.html
 
 ## 공항 픽업 가격 (거리당 정찰, 톨비 포함, 공항 주차비 별도)
 - 0–10km €40 / 10–50km 구간 초과 1km당 €1.5 / 50km 초과분 1km당 €0.8
@@ -115,4 +115,4 @@
 - Services: Dublin Airport pickup and drop-off (from €40, distance-based flat rate, tolls included; airport parking of €5 is added for arrival pickups); 22 private day trips from Dublin (Cliffs of Moher, Giant's Causeway, Ring of Kerry, Dingle, Connemara, Donegal, Newgrange, Wicklow and more; from €35 per person with 5 passengers); moving help — small moves from €40 and full home moves from €80; Catholic pilgrimages and retreats (Knock Shrine, Legion of Mary Concilium, Dublin city walking pilgrimage); custom itineraries and interpreting.
 - Vehicle: one 7-seat MPV, up to 6 passengers and 4–6 suitcases (much more with the second-row seats folded). No platform commission; booking directly via KakaoTalk open chat, Instagram DM (@ireland.sosik) or email (sby05034@gmail.com).
 - Payment: 50% deposit on booking, balance after service; EUR via Revolut or KRW via Korean bank transfer. Cancellation: full refund more than 48 hours ahead, 50% at 24–48 hours, no refund on the day. If a weather warning (Status Yellow or above), natural disaster, road closure or sudden illness makes the service impossible, Andrew contacts you first to rearrange the date; if that is not possible, the fee is adjusted fairly in line with the refund rules. Rain without a warning does not stop a trip. Flight delays carry no extra waiting fee.
-- Full price list (machine-readable): https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/pricing.md
+- Full price list (machine-readable): https://irelanddonghaeng.com/pricing.md

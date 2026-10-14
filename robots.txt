@@ -1,4 +1,4 @@
-# https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/
+# https://irelanddonghaeng.com/
 # Andrew의 아일랜드 동행 (Beautiful Ireland with Everyone)
 
 User-agent: *
@@ -83,4 +83,4 @@ Allow: /
 Disallow: /_내부자료/
 Disallow: /_to_delete/
 
-Sitemap: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/sitemap.xml
+Sitemap: https://irelanddonghaeng.com/sitemap.xml

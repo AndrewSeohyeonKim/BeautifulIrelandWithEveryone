@@ -1,7 +1,7 @@
 # 가격 안내 — Andrew의 아일랜드 동행 (Beautiful Ireland with Everyone)
 
 > 더블린 기반 한국어 프라이빗 차량·동행 서비스의 전체 가격표입니다.
-> 사이트: https://andrewseohyeonkim.github.io/BeautifulIrelandWithEveryone/
+> 사이트: https://irelanddonghaeng.com/
 > 통화: EUR (€) · 원화 결제 시 각 송금 시점 환율 적용
 > 최종 업데이트: 2026-10-11
 
