@@ -103,6 +103,8 @@
   .pk-distance-note strong { color: var(--primary); }
   /* #pk-warn 은 인라인 display:none 을 JS가 켜고 끈다 — 여기서 display 를 정하지 않는다 */
   #pk-warn { margin-top: 12px; background: var(--red-soft); border-radius: var(--radius-sm); padding: 12px 14px; font-size: 14.5px; color: var(--red-ink); line-height: 1.6; }
+  .calc-body .row.pair { align-items: end; }
+  .calc-body .row.pair .pair-hint { grid-column: 1 / -1; margin-top: -8px; font-size: 14px; color: var(--muted); line-height: 1.6; }
   .calc-cta { text-align: center; margin-top: 24px; }
   .calc-cta .btn { width: 100%; max-width: 380px; }
 
@@ -132,7 +134,9 @@
   @media (max-width: 600px) {
     .calc-wrap .field input, .calc-wrap .field select { font-size: 16px !important; padding: 11px 13px !important; }
     .calc-wrap .km-quick { gap: 8px !important; }
-    .calc-wrap .km-quick button { font-size: 14px !important; padding: 0 13px !important; }
+    .calc-wrap .km-quick { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .calc-body .row.pair { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .calc-wrap .km-quick button { font-size: 14px !important; padding: 0 6px !important; }
     .calc-wrap .result-panel .result-price { font-size: 40px !important; letter-spacing: -0.03em !important; }
     .calc-wrap .result-panel .breakdown { padding: 10px 14px !important; }
     .calc-wrap .result-panel .breakdown ul li { font-size: 14.5px !important; }
@@ -376,8 +380,8 @@
           <div class="field">
             <label for="pk-direction">서비스 방향</label>
             <select id="pk-direction" onchange="calcPickup()">
-              <option value="arrival">도착: 공항에서 픽업 (Dublin Airport → 목적지)</option>
-              <option value="departure">출발: 공항으로 드랍 (출발지 → Dublin Airport)</option>
+              <option value="arrival">도착 픽업 (공항 → 목적지)</option>
+              <option value="departure">출발 드랍 (출발지 → 공항)</option>
             </select>
           </div>
         </div>
@@ -410,7 +414,7 @@
           </div>
         </details>
 
-        <div class="row">
+        <div class="row pair">
           <div class="field">
             <label for="pk-people">인원 수</label>
             <select id="pk-people" onchange="calcPickup()">
@@ -433,8 +437,8 @@
               <option value="5">5개</option>
               <option value="6">6개</option>
             </select>
-            <div class="hint" id="pk-bags-hint">캐리어 4~6개까지 실립니다. 5개부터 +€5, 5~6명 탑승 시 캐리어 한도가 줄어듭니다.</div>
           </div>
+          <div class="hint pair-hint" id="pk-bags-hint">캐리어 4~6개까지 실립니다. 5개부터 +€5, 5~6명 탑승 시 캐리어 한도가 줄어듭니다.</div>
         </div>
 
         <div class="row single">

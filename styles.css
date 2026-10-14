@@ -312,6 +312,7 @@ body:has(.modal-overlay.open) .dock-wrap, body.menu-locked .dock-wrap { display:
 .dock-calc .ic { width: 20px; height: 20px; }
 .dock-calc:hover { border-color: var(--primary); }
 .dock-calc.is-hidden { transform: translateY(calc(100% + 40px)); opacity: 0; }
+@media (min-width: 961px) { .dock-wrap.has-calc { display: none; } }
 @media (max-width: 760px) {
   .dock-wrap.has-calc { left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); }
   .dock-wrap.has-calc .dock { flex: 1; min-width: 0; }

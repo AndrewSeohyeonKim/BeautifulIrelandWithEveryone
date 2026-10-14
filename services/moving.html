@@ -184,7 +184,9 @@
   @media (max-width: 600px) {
     .calc-wrap .field input, .calc-wrap .field select { font-size: 16px !important; padding: 11px 13px !important; }
     .calc-wrap .km-quick { gap: 8px !important; }
-    .calc-wrap .km-quick button { font-size: 14px !important; padding: 0 13px !important; }
+    .calc-wrap .km-quick { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .calc-wrap .km-quick button { font-size: 14px !important; padding: 0 6px !important; }
+    .calc-wrap .km-quick button:last-child { grid-column: span 2; }
     .calc-wrap .included-banner, .calc-wrap .long-warn { font-size: 14.5px !important; padding: 13px 14px !important; }
     .calc-wrap .price-note-inline { font-size: 14px !important; padding: 0 !important; }
     .calc-wrap .result-panel .result-price { font-size: 40px !important; letter-spacing: -0.03em !important; }
