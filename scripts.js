@@ -263,14 +263,28 @@ window.inquireMusic = function () {
 // 7) 방문자 분석 — 카톡 문의 클릭 집계 (GoatCounter 이벤트)
 //    GoatCounter가 없거나 로드 전이면 아무 일도 하지 않음 — 사이트 동작에 영향 없음
 (function setupKakaoTracking() {
-  function track() {
+  var lastCta = '', counted = false;
+  function page() { return location.pathname.split('/').pop() || 'index.html'; }
+  function send(path, title) {
     try {
-      if (window.goatcounter && window.goatcounter.count) {
-        var page = location.pathname.split('/').pop() || 'index.html';
-        window.goatcounter.count({ path: 'kakao-click/' + page, title: '카톡 문의 클릭 — ' + page, event: true });
-      }
+      if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: path, title: title, event: true });
     } catch (e) { /* 무시 */ }
   }
+  function track() {
+    // 한 번의 클릭에서 (a)·(b)가 둘 다 불려도 한 번만 센다 (빠른 문의 막대가 두 번 집계되던 문제, 2026-10-14)
+    if (counted) return;
+    counted = true;
+    setTimeout(function () { counted = false; }, 0);
+    send('kakao-click/' + page(), '카톡 문의 클릭 — ' + page());
+    // 어느 버튼이었는지 — data-cta 가 붙은 버튼만 (hero·dock·calc-bar·composer 등)
+    if (lastCta) send('kakao-from/' + lastCta + '/' + page(), '카톡 문의 버튼 — ' + lastCta + ' — ' + page());
+  }
+  // 클릭이 어느 버튼에서 시작됐는지 먼저 적어 둔다. '요금 계산' 바로가기는 따로 센다
+  document.addEventListener('click', function (e) {
+    var el = e.target && e.target.closest ? e.target.closest('[data-cta]') : null;
+    lastCta = el ? el.getAttribute('data-cta') : '';
+    if (lastCta === 'dock-calc') send('calc-shortcut/' + page(), '요금 계산 바로가기 — ' + page());
+  }, true);
   // (a) 카톡 오픈채팅 직접 링크 클릭
   document.addEventListener('click', function (e) {
     var a = e.target && e.target.closest ? e.target.closest('a[href*="open.kakao.com"]') : null;
