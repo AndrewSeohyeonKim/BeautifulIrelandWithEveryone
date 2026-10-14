@@ -264,7 +264,8 @@ window.inquireMusic = function () {
 //    GoatCounter가 없거나 로드 전이면 아무 일도 하지 않음 — 사이트 동작에 영향 없음
 (function setupKakaoTracking() {
   var lastCta = '', counted = false;
-  function page() { return location.pathname.split('/').pop() || 'index.html'; }
+  // 확장자 없는 주소(/services/moving)로 들어와도 같은 이름으로 모이게 (2026-10-14)
+  function page() { var p = location.pathname.split('/').pop() || 'index.html'; return p.indexOf('.') < 0 ? p + '.html' : p; }
   function send(path, title) {
     try {
       if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: path, title: title, event: true });

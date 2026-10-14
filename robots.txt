@@ -79,8 +79,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-# ── 크롤 제외 (내부 자료) ──────────────────
-Disallow: /_내부자료/
-Disallow: /_to_delete/
-
 Sitemap: https://irelanddonghaeng.com/sitemap.xml

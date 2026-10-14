@@ -504,6 +504,17 @@ body.page-tours header.hero::before { background-image: url('images/andrew/sliev
 body.page-moving header.hero::before { background-image: url('images/andrew/hero-moving.jpg'); background-position: center 45%; }
 body.page-pilgrimage header.hero::before { background-image: url('images/andrew/kylemore-2025-12.jpg'); background-position: center 65%; }
 body.page-custom header.hero::before { background-image: url('images/andrew/dunquin-2025-02.jpg'); background-position: center 55%; }
+/* 휴대폰 히어로 — 사진 높이는 그대로 두고 가로만 4:5로 잘라 낸 사본(-m.jpg, 약 35% 가벼움). 각 페이지 head 의 preload 와 주소가 같아야 두 번 받지 않는다 (2026-10-14) */
+@media (max-width: 760px) {
+  body.page-about header.hero::before { background-image: url('images/andrew/andrew-causeway-wide-m.jpg'); }
+  body.page-contact header.hero::before { background-image: url('images/andrew/moher-wide-2026-07-m.jpg'); }
+  body.page-terms header.hero::before { background-image: url('images/andrew/moher-2026-08-m.jpg'); }
+  body.page-airport header.hero::before { background-image: url('images/heroes/airport-m.jpg'); }
+  body.page-tours header.hero::before { background-image: url('images/andrew/slieve-league-2026-10-m.jpg'); }
+  body.page-moving header.hero::before { background-image: url('images/andrew/hero-moving-m.jpg'); }
+  body.page-pilgrimage header.hero::before { background-image: url('images/andrew/kylemore-2025-12-m.jpg'); }
+  body.page-custom header.hero::before { background-image: url('images/andrew/dunquin-2025-02-m.jpg'); }
+}
 
 /* ============================================================
    브레드크럼
