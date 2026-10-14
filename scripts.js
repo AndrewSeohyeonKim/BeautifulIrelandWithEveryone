@@ -433,35 +433,116 @@ window.inquireMusic = function () {
 // ============================================================
 // 9) 빠른 문의 막대(.dock) — 히어로의 문의 버튼이 보이는 동안·푸터가 보이는 동안 숨긴다.
 //    누르면 링크가 카톡을 열고, data-inquire 에 적힌 페이지별 함수가 문의 메시지를 복사한다.
+//    계산기(#calculator)가 있는 페이지 (2026-10-14):
+//    - 계산기 밖에서는 빠른 문의 왼쪽에 '요금 계산' 바로가기(.dock-calc)를 같이 보인다.
+//    - 계산기 안에서는 빠른 문의 대신 요금 막대(.calc-bar)를 보인다 — 지금 요금 + 그 계산기의 카톡 문의 버튼.
+//      계산기의 요금 칸이 화면에 보이면 막대는 숨는다. 막대 금액은 요금 칸 글자를 그대로 옮겨 온다.
 // ============================================================
 (function setupDock() {
   var dock = document.querySelector('.dock');
   if (!dock) return;
   document.body.classList.add('has-dock');
-  // 문의 버튼이 이미 보이는 구역(히어로 버튼, 홈의 메시지 만들기 카드)과 푸터가 보이면 숨긴다
+  var calcLink = document.querySelector('.dock-calc');
+  var calcWrap = document.querySelector('#calculator .calc-wrap');
+  var bar = calcWrap ? buildCalcBar(calcWrap) : null;
+
+  // 문의 버튼이 이미 보이는 구역(히어로 버튼, 홈의 메시지 만들기 카드, 계산기 문의 버튼)과 푸터가 보이면 숨긴다
   var zones = Array.prototype.slice.call(document.querySelectorAll('[data-dock-hide], header.hero .cta, footer.contact'));
   var visible = new Set();
-  var scrolled = false;
+  var scrolled = false, inCalc = false, priceSeen = false;
+  function setShown(el, show) {
+    if (!el) return;
+    el.classList.toggle('is-hidden', !show);
+    el.setAttribute('aria-hidden', show ? 'false' : 'true');
+    el.tabIndex = show ? 0 : -1;
+  }
   function update() {
-    var show = scrolled && visible.size === 0;
-    dock.classList.toggle('is-hidden', !show);
-    dock.setAttribute('aria-hidden', show ? 'false' : 'true');
-    dock.tabIndex = show ? 0 : -1;
+    var free = scrolled && visible.size === 0;
+    setShown(dock, free && !(bar && inCalc));
+    setShown(calcLink, free && !inCalc);
+    if (bar) {
+      var showBar = inCalc && !priceSeen && visible.size === 0;
+      bar.classList.toggle('is-hidden', !showBar);
+      bar.setAttribute('aria-hidden', showBar ? 'false' : 'true');
+      bar.querySelectorAll('button, a').forEach(function (el) { el.tabIndex = showBar ? 0 : -1; });
+    }
   }
   function onScroll() { scrolled = (window.scrollY || 0) > 320; update(); }
   window.addEventListener('scroll', onScroll, { passive: true });
-  if ('IntersectionObserver' in window && zones.length) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { if (en.isIntersecting) visible.add(en.target); else visible.delete(en.target); });
-      update();
-    }, { rootMargin: '0px 0px -60px 0px' });
-    zones.forEach(function (z) { io.observe(z); });
+  if ('IntersectionObserver' in window) {
+    if (zones.length) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) visible.add(en.target); else visible.delete(en.target); });
+        update();
+      }, { rootMargin: '0px 0px -60px 0px' });
+      zones.forEach(function (z) { io.observe(z); });
+    }
+    if (calcWrap) {
+      // 계산기 카드가 화면 가운데 띠에 걸쳐 있으면 '계산기 안'
+      new IntersectionObserver(function (entries) {
+        inCalc = entries[0].isIntersecting; update();
+      }, { rootMargin: '-35% 0px -35% 0px' }).observe(calcWrap);
+      var priceEl = calcWrap.querySelector('.result-price');
+      if (priceEl) new IntersectionObserver(function (entries) {
+        priceSeen = entries[0].isIntersecting; update();
+      }, { rootMargin: '0px 0px -84px 0px' }).observe(priceEl);
+    }
   }
   onScroll();
   dock.addEventListener('click', function () {
     var fn = window[dock.getAttribute('data-inquire') || 'inquireGeneral'];
     try { (typeof fn === 'function' ? fn : window.inquireGeneral)(); } catch (e) { window.inquireGeneral && window.inquireGeneral(); }
   });
+
+  function buildCalcBar(wrap) {
+    var priceEl = wrap.querySelector('.result-price');
+    var labelEl = wrap.querySelector('.result-label');
+    var cta = wrap.querySelector('.calc-cta a');
+    if (!priceEl) return null;
+    var el = document.createElement('div');
+    el.className = 'calc-bar is-hidden';
+    el.setAttribute('role', 'region');
+    el.setAttribute('aria-label', '계산한 요금');
+    el.setAttribute('aria-hidden', 'true');
+    var sum = document.createElement('button');
+    sum.type = 'button';
+    sum.className = 'calc-bar-sum';
+    sum.innerHTML = '<small></small><span class="cb-row"><b></b><em>요금 구성 보기</em></span>';
+    sum.addEventListener('click', function () {
+      var panel = wrap.querySelector('.result-panel') || priceEl;
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      panel.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    });
+    el.appendChild(sum);
+    if (cta) {
+      var a = document.createElement('a');
+      a.className = 'calc-bar-cta';
+      a.href = cta.getAttribute('href');
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.setAttribute('data-cta', 'calc-bar');
+      var on = cta.getAttribute('onclick');
+      if (on) a.setAttribute('onclick', on);
+      a.innerHTML = '<svg class="ic ic-kakao" aria-hidden="true"><use href="#i-kakao"></use></svg>카톡 문의';
+      el.appendChild(a);
+    }
+    var small = sum.querySelector('small'), b = sum.querySelector('b');
+    function sync() {
+      var label = labelEl ? labelEl.textContent.replace(/\s+/g, ' ').trim() : '';
+      // '예상 요금 (편도 · 권역 내 기준)'처럼 긴 설명은 괄호 앞까지만
+      if (label.length > 14) label = label.split(' (')[0];
+      small.textContent = label || '예상 요금';
+      b.textContent = priceEl.textContent.trim();
+    }
+    sync();
+    if ('MutationObserver' in window) {
+      var mo = new MutationObserver(sync);
+      mo.observe(priceEl, { childList: true, characterData: true, subtree: true });
+      if (labelEl) mo.observe(labelEl, { childList: true, characterData: true, subtree: true });
+    }
+    document.body.appendChild(el);
+    return el;
+  }
 })();
 
 // ============================================================

@@ -294,6 +294,86 @@ body:has(.modal-overlay.open) .dock-wrap, body.menu-locked .dock-wrap { display:
   .dock .ic-kakao { margin-left: auto; width: 26px; height: 26px; }
 }
 
+/* 요금 계산 바로가기 — 계산기가 있는 페이지(공항·투어·이사)에서 빠른 문의 왼쪽 (2026-10-14)
+   두 버튼을 .dock-wrap 하나가 아래에 붙여 둔다. 숨은 버튼은 클릭을 받지 않는다 */
+.dock-wrap.has-calc { position: fixed; right: 24px; bottom: 24px; z-index: 90; display: flex; align-items: stretch; gap: 8px; pointer-events: none; }
+.dock-wrap.has-calc > * { pointer-events: auto; }
+.dock-wrap.has-calc > .is-hidden { pointer-events: none; }
+.dock-wrap.has-calc .dock { position: relative; inset: auto; }
+.dock-calc {
+  display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+  min-width: 72px; padding: 6px 8px;
+  background: var(--paper); color: var(--primary);
+  border: 1px solid var(--paper-line); border-radius: 16px;
+  box-shadow: 0 14px 34px rgba(26, 41, 66, 0.2);
+  font-size: 12.5px; font-weight: 700; line-height: 1.2; text-decoration: none; white-space: nowrap;
+  transition: transform 0.4s var(--ease), opacity 0.3s var(--ease), border-color 0.2s;
+}
+.dock-calc .ic { width: 20px; height: 20px; }
+.dock-calc:hover { border-color: var(--primary); }
+.dock-calc.is-hidden { transform: translateY(calc(100% + 40px)); opacity: 0; }
+@media (max-width: 760px) {
+  .dock-wrap.has-calc { left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); }
+  .dock-wrap.has-calc .dock { flex: 1; min-width: 0; }
+}
+
+/* 계산기 요금 막대 — 휴대폰·태블릿에서 계산기를 채우는 동안 화면 아래에 지금 요금과 문의 버튼 (scripts.js 9)
+   계산기 안의 요금 칸이 화면에 보이면 숨는다 — 같은 숫자를 두 번 보여 주지 않는다 */
+.calc-bar { display: none; }
+@media (max-width: 960px) {
+  .calc-bar {
+    position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); z-index: 91;
+    display: flex; align-items: center; gap: 10px;
+    max-width: 560px; margin: 0 auto;
+    min-height: 60px; padding: 7px 7px 7px 16px;
+    background: var(--primary); color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 16px;
+    box-shadow: 0 14px 34px rgba(26, 41, 66, 0.28);
+    transition: transform 0.4s var(--ease), opacity 0.3s var(--ease);
+  }
+  .calc-bar.is-hidden { transform: translateY(calc(100% + 40px)); opacity: 0; pointer-events: none; }
+}
+.calc-bar-sum {
+  flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 1px;
+  padding: 2px 0; background: none; border: 0; color: inherit; font-family: inherit; text-align: left; cursor: pointer;
+}
+.calc-bar-sum small { font-size: 12px; color: rgba(255, 255, 255, 0.74); line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.calc-bar-sum .cb-row { display: flex; align-items: baseline; gap: 8px; }
+.calc-bar-sum b { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; font-variant-numeric: tabular-nums; }
+.calc-bar-sum em { font-style: normal; font-size: 12.5px; color: rgba(255, 255, 255, 0.82); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
+.calc-bar-cta {
+  display: inline-flex; align-items: center; gap: 7px; flex-shrink: 0;
+  min-height: 46px; padding: 0 16px;
+  background: #fff; color: var(--primary); border-radius: 12px;
+  font-size: 15px; font-weight: 700; text-decoration: none; white-space: nowrap;
+}
+.calc-bar-cta .ic { width: 20px; height: 20px; }
+body:has(.modal-overlay.open) .calc-bar, body.menu-locked .calc-bar { display: none; }
+
+/* 계산기 — 접는 칸(주소로 주행거리 확인)과 요금 아래 문의용 칸. airport·moving 공용 (2026-10-14) */
+.calc-more { margin: 0 0 22px; background: var(--card); border: 1.5px solid var(--border); border-radius: var(--radius-sm); transition: border-color 0.15s; }
+.calc-more[open] { border-color: var(--primary); }
+.calc-more > summary {
+  position: relative; display: flex; align-items: center; gap: 10px;
+  min-height: 48px; padding: 10px 44px 10px 14px;
+  list-style: none; cursor: pointer;
+  font-size: 15px; font-weight: 700; color: var(--primary); line-height: 1.45;
+}
+.calc-more > summary::-webkit-details-marker { display: none; }
+.calc-more > summary .ic { width: 18px; height: 18px; flex-shrink: 0; }
+.calc-more > summary .opt { font-size: 14px; font-weight: 400; color: var(--muted); }
+.calc-more > summary::after {
+  content: ''; position: absolute; right: 18px; top: 50%; width: 8px; height: 8px;
+  border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+  transform: translateY(-70%) rotate(45deg); transition: transform 0.2s var(--ease);
+}
+.calc-more[open] > summary::after { transform: translateY(-25%) rotate(-135deg); }
+.calc-more > summary:hover { color: var(--primary-light); }
+.calc-more-body { padding: 2px 14px 16px; }
+.calc-more-body .row { margin-bottom: 12px !important; }
+.calc-more-body .maps-btn { margin-top: 12px; }
+.calc-body .calc-when { margin: 22px 0 0; }
+
 /* ============================================================
    서브페이지 히어로 — 사진 위 제목. 장식 없이, 글자는 그림자 대신 아래쪽 그라데이션으로 읽힌다
    ============================================================ */
@@ -511,7 +591,7 @@ h4 { font-size: 17px; font-weight: 700; color: var(--primary); margin-bottom: 6p
 .cta-band .btn-kakao:hover, .section-dark .btn-kakao:hover, footer.contact .btn-kakao:hover { background: var(--accent-soft); }
 /* 카카오톡 말풍선 — 버튼 안에서 노란색으로 */
 .ic.ic-kakao { fill: currentColor; stroke: none; }
-.hero-home .ic.ic-kakao, header.hero .ic.ic-kakao, .dock .ic.ic-kakao, .ask-send .ic.ic-kakao, footer.contact .ft-channels .ic.ic-kakao { fill: var(--kakao); }
+.hero-home .ic.ic-kakao, header.hero .ic.ic-kakao, .dock .ic.ic-kakao, .calc-bar .ic.ic-kakao, .ask-send .ic.ic-kakao, footer.contact .ft-channels .ic.ic-kakao { fill: var(--kakao); }
 .btn .ic.ic-kakao { width: 20px; height: 20px; }
 
 /* ============================================================
@@ -2101,5 +2181,5 @@ html.js .timeline.tl-in li:nth-child(4) { transition-delay: 0.42s; }
   html.js .km-chart.kc-pre .line { stroke-dashoffset: 0 !important; }
   html.js .km-chart.kc-pre :is(.pt, .lab, .guide) { opacity: 1; transform: none; }
   .load-compare[data-state="empty"] .lc-full { clip-path: none; }
-  .dock-wrap, nav.topnav { display: none !important; }
+  .dock-wrap, .calc-bar, nav.topnav { display: none !important; }
 }
