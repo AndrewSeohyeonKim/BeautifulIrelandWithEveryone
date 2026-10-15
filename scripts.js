@@ -687,6 +687,44 @@ window.inquireMusic = function () {
 })();
 
 // ============================================================
+// 12.5) 홈 — 인스타그램 최근 게시물 (2026-10-15)
+//     insta.json(GitHub Actions가 한 시간마다 갱신)을 읽어 사진 줄을 최신 게시물로 바꾼다.
+//     HTML 안의 목록은 첫 화면·검색엔진용 사본이다. 모양을 바꾸면 .github/scripts/insta_feed.py item_html()도 같이.
+// ============================================================
+(function setupInstaFeed() {
+  var rail = document.getElementById('jr-rail');
+  if (!rail || !rail.classList.contains('jr-insta') || !window.fetch) return;
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+  function md(iso) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || '');
+    return m ? (+m[2]) + '월 ' + (+m[3]) + '일' : '';
+  }
+  function item(p) {
+    var kind = { video: '릴스', album: '여러 장' }[p.kind];
+    return '<figure class="jr-item" data-id="' + esc(p.id) + '"><a class="jr-link" href="' + esc(p.url) + '" target="_blank" rel="noopener">' +
+      '<div class="jr-img"><img src="' + esc(p.img) + '" alt="' + esc(p.text || '인스타그램 게시물') + '" width="' + (p.w | 0) + '" height="' + (p.h | 0) + '" loading="lazy" decoding="async">' +
+      (kind ? '<span class="jr-kind">' + kind + '</span>' : '') + '</div>' +
+      '<figcaption><span class="jr-meta"><time datetime="' + esc(p.date) + '">' + md(p.date) + '</time>' + (p.cat ? ' · ' + esc(p.cat) : '') + '</span>' +
+      (p.text ? '<span class="jr-title">' + esc(p.text) + '</span>' : '') + '</figcaption></a></figure>';
+  }
+  fetch('insta.json', { cache: 'no-cache' })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) {
+      if (!d || !d.posts || !d.posts.length) return;
+      var shown = [].map.call(rail.querySelectorAll('.jr-item'), function (f) { return f.getAttribute('data-id'); }).join();
+      if (shown === d.posts.map(function (p) { return p.id; }).join()) return;   // 이미 최신이면 그대로
+      rail.innerHTML = d.posts.map(item).join('');
+      rail.scrollLeft = 0;
+      rail.dispatchEvent(new Event('scroll'));
+    })
+    .catch(function () { /* 못 읽으면 HTML 사본을 그대로 둔다 */ });
+})();
+
+// ============================================================
 // 13) 가운뎃점(·)이 줄 첫머리에 오지 않게 (2026-10-12)
 //     Chrome은 word-break:keep-all 이어도 한글과 U+00B7 사이에서 줄을 바꿔 "이사 / ·성지순례"처럼 된다.
 //     점 앞에만 보이지 않는 단어 결합자(U+2060)를 넣어 점이 앞 낱말에 붙게 한다 — 점 뒤에서는 그대로 줄이 바뀐다.

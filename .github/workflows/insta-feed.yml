@@ -1,0 +1,57 @@
+# 홈 '아일랜드 소식은 인스타그램에서' — @ireland.sosik 최근 게시물을 한 시간마다 받아 온다 (2026-10-15)
+# 바뀐 게 있을 때만 insta.json · images/insta/ 를 커밋한다 → GitHub Pages가 다시 배포한다.
+# 필요한 것: 저장소 Settings → Secrets and variables → Actions → INSTAGRAM_TOKEN (Instagram API 장기 토큰)
+name: 인스타 최근 게시물
+
+on:
+  schedule:
+    - cron: '17 * * * *'      # 매시 17분 (UTC). GitHub 사정으로 몇 분 늦을 수 있다
+  workflow_dispatch: {}        # Actions 탭에서 바로 돌리기
+
+permissions:
+  contents: write
+  pages: write        # 커밋 뒤 Pages 다시 배포 요청
+
+concurrency:
+  group: insta-feed
+  cancel-in-progress: false
+
+jobs:
+  feed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 사진 도구 설치
+        run: pip install --quiet pillow==11.0.0
+
+      - name: 게시물 받기
+        env:
+          INSTAGRAM_TOKEN: ${{ secrets.INSTAGRAM_TOKEN }}
+        run: |
+          # 토큰 연장은 하루 한 번(03시 UTC 회차)이면 충분하다
+          if [ "$(date -u +%H)" = "03" ]; then ARGS=--refresh; else ARGS=; fi
+          python .github/scripts/insta_feed.py $ARGS
+
+      - name: 바뀌었으면 커밋
+        run: |
+          git add insta.json images/insta
+          if git diff --cached --quiet; then echo "바뀐 게시물 없음"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "인스타 최근 게시물 갱신"
+          git push
+          echo "PUSHED=1" >> "$GITHUB_ENV"
+
+      - name: Pages 다시 배포 요청
+        if: env.PUSHED == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl -sS -X POST -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/pages/builds" -o /dev/null -w "Pages 빌드 요청: HTTP %{http_code}\n"

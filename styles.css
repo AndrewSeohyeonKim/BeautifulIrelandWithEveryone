@@ -1784,6 +1784,22 @@ html.js .dt-map.in-view .stop { opacity: 1; }
 .jr-foot p { font-size: 14.5px; color: var(--muted); margin: 0; }
 @media (max-width: 600px) { .jr-rail { grid-auto-columns: 74vw; gap: 12px; } .jr-controls { display: none; } }
 
+/* 인스타그램 최근 게시물 (2026-10-15) — 인스타 격자와 같은 3:4. 모양은 insta_feed.py item_html()·scripts.js 15)와 같이 */
+.jr-insta .jr-img { aspect-ratio: 3 / 4; position: relative; }
+.jr-link { display: block; color: inherit; text-decoration: none; }
+.jr-link:hover img { transform: scale(1.03); }
+.jr-kind {
+  position: absolute; top: 10px; right: 10px; padding: 3px 8px; border-radius: 6px;
+  background: rgba(26,41,66,0.72); color: #fff; font-size: 12px; font-weight: 700; line-height: 1.5;
+}
+.jr-insta figcaption { display: flex; flex-direction: column; gap: 3px; font-weight: 500; }
+.jr-meta { font-size: 12.5px; color: var(--muted); font-weight: 500; }
+.jr-title {
+  font-size: 14.5px; color: var(--primary); font-weight: 600; line-height: 1.5;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.jr-link:hover .jr-title { text-decoration: underline; text-underline-offset: 3px; }
+
 /* --- 예약 순서 --- */
 .steps { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; counter-reset: st; padding: 0; }
 .steps li { border-top: 2px solid var(--primary); padding-top: 18px; }
