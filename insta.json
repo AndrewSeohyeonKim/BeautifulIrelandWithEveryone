@@ -1,7 +1,18 @@
 {
- "updated": "2026-10-15T00:11:54+00:00",
+ "updated": "2026-10-15T15:02:13+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18130257976838747",
+   "url": "https://www.instagram.com/p/Deg5YrvDSAT/",
+   "kind": "album",
+   "date": "2026-10-15",
+   "cat": "정책, 노동",
+   "text": "아일랜드 공공부문 파업은 왜 일어났을까, 10월 21일 2차 파업은 어떻게 될까",
+   "img": "images/insta/18130257976838747.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "17912776659519375",
    "url": "https://www.instagram.com/p/Dee-2X7DWcv/",
@@ -100,17 +111,6 @@
    "img": "images/insta/18157521913516630.jpg",
    "w": 600,
    "h": 750
-  },
-  {
-   "id": "17886122409621286",
-   "url": "https://www.instagram.com/reel/DeTx_JANWpK/",
-   "kind": "video",
-   "date": "2026-10-10",
-   "cat": "여행",
-   "text": "더니골의 절벽, 폭포, 바다를 하루에",
-   "img": "images/insta/17886122409621286.jpg",
-   "w": 600,
-   "h": 1067
   }
  ]
 }
