@@ -1,7 +1,29 @@
 {
- "updated": "2026-10-16T12:26:23+00:00",
+ "updated": "2026-10-16T17:25:30+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18109275038350185",
+   "url": "https://www.instagram.com/p/Dej-TiSDcxJ/",
+   "kind": "album",
+   "date": "2026-10-16",
+   "cat": "교통",
+   "text": "루아스 레드라인 주말 운휴, 10월 17~18일 Heuston~Tallaght 대체버스 정류장 정리",
+   "img": "images/insta/18109275038350185.jpg",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "id": "18135162928735273",
+   "url": "https://www.instagram.com/p/DejkHH5DXm-/",
+   "kind": "album",
+   "date": "2026-10-16",
+   "cat": "꿀팁, 항공",
+   "text": "아일랜드 출발 Aer Lingus 북미 왕복 €100 할인, 10월 16일 금요일까지 예약",
+   "img": "images/insta/18135162928735273.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "17982795264121102",
    "url": "https://www.instagram.com/p/DejZPYsjVSH/",
@@ -87,28 +109,6 @@
    "cat": "리콜, 안전",
    "text": "SuperValu 훈제연어 회수, 소비기한 10월 17일 제품은 먹지 마세요",
    "img": "images/insta/17965440734979545.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18116790317003844",
-   "url": "https://www.instagram.com/reel/Deb2My_tzGV/",
-   "kind": "video",
-   "date": "2026-10-13",
-   "cat": "",
-   "text": "클래식 음악 무료 강좌 in Ireland",
-   "img": "images/insta/18116790317003844.jpg",
-   "w": 600,
-   "h": 1067
-  },
-  {
-   "id": "18487495864110119",
-   "url": "https://www.instagram.com/p/DeZeYf5jdVu/",
-   "kind": "album",
-   "date": "2026-10-12",
-   "cat": "뉴스, 자연",
-   "text": "오늘 밤 아일랜드 오로라 예보, 구름 걷힌 틈이 기회",
-   "img": "images/insta/18487495864110119.jpg",
    "w": 600,
    "h": 800
   }
