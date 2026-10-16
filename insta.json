@@ -1,7 +1,18 @@
 {
- "updated": "2026-10-16T21:10:16+00:00",
+ "updated": "2026-10-16T23:36:46+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "17889494823653848",
+   "url": "https://www.instagram.com/p/DekeN6ojRDH/",
+   "kind": "album",
+   "date": "2026-10-16",
+   "cat": "꿀팁, 통신",
+   "text": "아일랜드 Lidl Connect 월 €8.99 마감, 이제 새로 가입하면 €12.99입니다",
+   "img": "images/insta/17889494823653848.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "18005271533989439",
    "url": "https://www.instagram.com/p/DekPdkCjemu/",
@@ -98,17 +109,6 @@
    "cat": "",
    "text": "클래식 음악 무료 강좌 in Ireland",
    "img": "images/insta/17994186639012566.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "17896064676416612",
-   "url": "https://www.instagram.com/p/DeeRgI0jS_S/",
-   "kind": "album",
-   "date": "2026-10-14",
-   "cat": "축제, 이벤트",
-   "text": "이번 주말 더블린 RDS, 무료 채용 박람회 Jobs Expo와 Ideal Home Show",
-   "img": "images/insta/17896064676416612.jpg",
    "w": 600,
    "h": 800
   }
