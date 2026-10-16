@@ -1,7 +1,18 @@
 {
- "updated": "2026-10-16T17:25:30+00:00",
+ "updated": "2026-10-16T21:10:16+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18005271533989439",
+   "url": "https://www.instagram.com/p/DekPdkCjemu/",
+   "kind": "album",
+   "date": "2026-10-16",
+   "cat": "속보",
+   "text": "아일랜드 10월 21일 공공부문 2차 파업 유보, 준법투쟁은 계속됩니다",
+   "img": "images/insta/18005271533989439.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "18109275038350185",
    "url": "https://www.instagram.com/p/Dej-TiSDcxJ/",
@@ -98,17 +109,6 @@
    "cat": "축제, 이벤트",
    "text": "이번 주말 더블린 RDS, 무료 채용 박람회 Jobs Expo와 Ideal Home Show",
    "img": "images/insta/17896064676416612.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "17965440734979545",
-   "url": "https://www.instagram.com/p/DecbxicjcGM/",
-   "kind": "album",
-   "date": "2026-10-13",
-   "cat": "리콜, 안전",
-   "text": "SuperValu 훈제연어 회수, 소비기한 10월 17일 제품은 먹지 마세요",
-   "img": "images/insta/17965440734979545.jpg",
    "w": 600,
    "h": 800
   }
