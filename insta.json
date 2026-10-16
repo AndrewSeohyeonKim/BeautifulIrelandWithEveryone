@@ -1,7 +1,18 @@
 {
- "updated": "2026-10-15T22:20:02+00:00",
+ "updated": "2026-10-16T12:26:23+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "17982795264121102",
+   "url": "https://www.instagram.com/p/DejZPYsjVSH/",
+   "kind": "album",
+   "date": "2026-10-16",
+   "cat": "꿀팁",
+   "text": "더블린 남부 Ballyogan, 10월 17일 페인트·화학제품 무료 수거",
+   "img": "images/insta/17982795264121102.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "18160933015451140",
    "url": "https://www.instagram.com/p/DehuZrTjSAD/",
@@ -98,17 +109,6 @@
    "cat": "뉴스, 자연",
    "text": "오늘 밤 아일랜드 오로라 예보, 구름 걷힌 틈이 기회",
    "img": "images/insta/18487495864110119.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18073469492743905",
-   "url": "https://www.instagram.com/p/DeY86mxDbYu/",
-   "kind": "album",
-   "date": "2026-10-12",
-   "cat": "정책, 노동",
-   "text": "10월 14일 아일랜드 공공부문 파업, 멈추는 것과 계속되는 것",
-   "img": "images/insta/18073469492743905.jpg",
    "w": 600,
    "h": 800
   }
