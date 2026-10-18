@@ -1,7 +1,18 @@
 {
- "updated": "2026-10-17T13:43:53+00:00",
+ "updated": "2026-10-18T14:35:21+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "17907216894569396",
+   "url": "https://www.instagram.com/reel/Deo5pEmNzG9/",
+   "kind": "video",
+   "date": "2026-10-18",
+   "cat": "이모저모",
+   "text": "[10월 넷째 주] 아일랜드 이모저모",
+   "img": "images/insta/17907216894569396.jpg",
+   "w": 600,
+   "h": 1067
+  },
   {
    "id": "18134614936735209",
    "url": "https://www.instagram.com/p/DemL_gzEerI/",
@@ -98,17 +109,6 @@
    "cat": "축제, 건축",
    "text": "Open House Dublin 마지막 주말, 예약 없이 들어가는 무료 투어 시간표(10월 16~18일)",
    "img": "images/insta/18160933015451140.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18121572265734784",
-   "url": "https://www.instagram.com/p/DehRh9kEROP/",
-   "kind": "album",
-   "date": "2026-10-15",
-   "cat": "여행",
-   "text": "아일랜드 동행, 더블린 차량·여행 서비스",
-   "img": "images/insta/18121572265734784.jpg",
    "w": 600,
    "h": 800
   }
