@@ -1,14 +1,36 @@
 {
- "updated": "2026-10-20T11:38:52+00:00",
+ "updated": "2026-10-20T17:08:28+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18108588734247926",
+   "url": "https://www.instagram.com/p/DeuJB6BDYw9/",
+   "kind": "album",
+   "date": "2026-10-20",
+   "cat": "기상 특보",
+   "text": "더블린·위클로 오늘 밤 호우 노란색 경보, 목요일 밤엔 Storm Austen 전국 경보",
+   "img": "images/insta/18108588734247926.jpg",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "id": "17936524545393902",
+   "url": "https://www.instagram.com/p/DetxfcQje6s/",
+   "kind": "album",
+   "date": "2026-10-20",
+   "cat": "문화, 이벤트",
+   "text": "이창동 감독 가능한 사랑, 10월 23일 더블린 Light House Cinema 개봉",
+   "img": "images/insta/17936524545393902.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "17951385480321291",
    "url": "https://www.instagram.com/p/DetmZDqDUw2/",
    "kind": "album",
    "date": "2026-10-20",
    "cat": "속보, 금융",
-   "text": "아일랜드 Revolut 서비스 장애, 카드 결제·이체·ATM 출금이 오늘 아침부터 일부 안 돼요",
+   "text": "아일랜드 Revolut 서비스 장애, 카드 결제·이체·ATM 출금이 오늘 아침부터 일부 사용 장애.",
    "img": "images/insta/17951385480321291.jpg",
    "w": 600,
    "h": 800
@@ -87,28 +109,6 @@
    "cat": "꿀팁, 통신",
    "text": "아일랜드 Lidl Connect 월 €8.99 마감, 이제 새로 가입하면 €12.99입니다",
    "img": "images/insta/17889494823653848.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18005271533989439",
-   "url": "https://www.instagram.com/p/DekPdkCjemu/",
-   "kind": "album",
-   "date": "2026-10-16",
-   "cat": "속보",
-   "text": "아일랜드 10월 21일 공공부문 2차 파업 유보, 준법투쟁은 계속됩니다",
-   "img": "images/insta/18005271533989439.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18109275038350185",
-   "url": "https://www.instagram.com/p/Dej-TiSDcxJ/",
-   "kind": "album",
-   "date": "2026-10-16",
-   "cat": "교통",
-   "text": "루아스 레드라인 주말 운휴, 10월 17~18일 Heuston~Tallaght 대체버스 정류장 정리",
-   "img": "images/insta/18109275038350185.jpg",
    "w": 600,
    "h": 800
   }
