@@ -1,7 +1,18 @@
 {
- "updated": "2026-10-19T15:37:22+00:00",
+ "updated": "2026-10-20T11:38:52+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "17951385480321291",
+   "url": "https://www.instagram.com/p/DetmZDqDUw2/",
+   "kind": "album",
+   "date": "2026-10-20",
+   "cat": "속보, 금융",
+   "text": "아일랜드 Revolut 서비스 장애, 카드 결제·이체·ATM 출금이 오늘 아침부터 일부 안 돼요",
+   "img": "images/insta/17951385480321291.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "17996923584047522",
    "url": "https://www.instagram.com/p/Dere6AvjVfl/",
@@ -98,17 +109,6 @@
    "cat": "교통",
    "text": "루아스 레드라인 주말 운휴, 10월 17~18일 Heuston~Tallaght 대체버스 정류장 정리",
    "img": "images/insta/18109275038350185.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18135162928735273",
-   "url": "https://www.instagram.com/p/DejkHH5DXm-/",
-   "kind": "album",
-   "date": "2026-10-16",
-   "cat": "꿀팁, 항공",
-   "text": "아일랜드 출발 Aer Lingus 북미 왕복 €100 할인, 10월 16일 금요일까지 예약",
-   "img": "images/insta/18135162928735273.jpg",
    "w": 600,
    "h": 800
   }
