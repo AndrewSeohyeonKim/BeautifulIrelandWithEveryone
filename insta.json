@@ -1,7 +1,18 @@
 {
- "updated": "2026-10-21T15:15:55+00:00",
+ "updated": "2026-10-21T19:21:10+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "17964025593214923",
+   "url": "https://www.instagram.com/p/Dew_L7mmK_V/",
+   "kind": "album",
+   "date": "2026-10-21",
+   "cat": "정책, 항공",
+   "text": "인천~더블린 직항 지금 몇 단계? 운수권은 아직, 더블린 공항 3,200만 명 상한까지 한 번에 정리",
+   "img": "images/insta/17964025593214923.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "17943583077361310",
    "url": "https://www.instagram.com/p/Dewo4ORDbA1/",
@@ -100,17 +111,6 @@
    "img": "images/insta/18100015562546424.jpg",
    "w": 600,
    "h": 800
-  },
-  {
-   "id": "18170564626466998",
-   "url": "https://www.instagram.com/p/DelknMzDWo9/",
-   "kind": "album",
-   "date": "2026-10-17",
-   "cat": "꿀팁, 세금",
-   "text": "아일랜드 세금 환급, 렌트·의료비·학비 영수증으로 받습니다",
-   "img": "images/insta/18170564626466998.jpg",
-   "w": 600,
-   "h": 750
   }
  ]
 }
