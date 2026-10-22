@@ -1,7 +1,18 @@
 {
- "updated": "2026-10-21T19:21:10+00:00",
+ "updated": "2026-10-22T10:12:15+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "17921682075443045",
+   "url": "https://www.instagram.com/p/DeyfUaBDat1/",
+   "kind": "album",
+   "date": "2026-10-22",
+   "cat": "뉴스, 자연",
+   "text": "도니골 만에 북극 흰고래 벨루가, 따뜻해지는 아일랜드 바다와 물범 보는 곳까지",
+   "img": "images/insta/17921682075443045.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "17964025593214923",
    "url": "https://www.instagram.com/p/Dew_L7mmK_V/",
@@ -98,17 +109,6 @@
    "cat": "축제, 자연",
    "text": "더블린 Tallaght·Dodder, 10월 18일 일요일 아이와 가는 무료 자연 워크숍 두 곳",
    "img": "images/insta/18134614936735209.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18100015562546424",
-   "url": "https://www.instagram.com/p/Del6lRGjQd8/",
-   "kind": "album",
-   "date": "2026-10-17",
-   "cat": "축제, 이벤트",
-   "text": "더블린 핼러윈 나들이 세 곳, 18일 국립식물원·Skerries와 24~25일 Marlay Park 숲길",
-   "img": "images/insta/18100015562546424.jpg",
    "w": 600,
    "h": 800
   }
