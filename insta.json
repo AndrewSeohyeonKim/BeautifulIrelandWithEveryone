@@ -1,7 +1,18 @@
 {
- "updated": "2026-10-22T15:18:20+00:00",
+ "updated": "2026-10-22T20:07:38+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18114192068164840",
+   "url": "https://www.instagram.com/p/DezZHO_jXAl/",
+   "kind": "album",
+   "date": "2026-10-22",
+   "cat": "축제, 이벤트",
+   "text": "더블린 공연 티켓 10월 23일 금요일 아침 오픈, Toto·Kings of Leon·Lighthouse…",
+   "img": "images/insta/18114192068164840.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "18188117947412524",
    "url": "https://www.instagram.com/p/DezAuZDjdSr/",
@@ -100,17 +111,6 @@
    "img": "images/insta/18106647475978030.jpg",
    "w": 600,
    "h": 750
-  },
-  {
-   "id": "17907216894569396",
-   "url": "https://www.instagram.com/reel/Deo5pEmNzG9/",
-   "kind": "video",
-   "date": "2026-10-18",
-   "cat": "이모저모",
-   "text": "[10월 넷째 주] 아일랜드 이모저모",
-   "img": "images/insta/17907216894569396.jpg",
-   "w": 600,
-   "h": 1067
   }
  ]
 }
