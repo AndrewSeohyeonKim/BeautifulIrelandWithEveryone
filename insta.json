@@ -1,7 +1,29 @@
 {
- "updated": "2026-10-23T15:05:10+00:00",
+ "updated": "2026-10-23T19:14:39+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "17946962574347189",
+   "url": "https://www.instagram.com/p/De2EXi0jR0o/",
+   "kind": "album",
+   "date": "2026-10-23",
+   "cat": "리콜, 안전",
+   "text": "SuperValu·Centra 훈제연어 회수 확대, 소비기한과 상관없이 먹지 마세요",
+   "img": "images/insta/17946962574347189.jpg",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "id": "18098705021428650",
+   "url": "https://www.instagram.com/p/De2BFBvjQfS/",
+   "kind": "album",
+   "date": "2026-10-23",
+   "cat": "리콜, 안전",
+   "text": "아일랜드 Aldi 헤어드라이어 리콜, 약 5,400대 판매분 감전·화재 위험으로 사용을 멈추세요",
+   "img": "images/insta/18098705021428650.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "18082908749356687",
    "url": "https://www.instagram.com/p/De1jHTdjS6b/",
@@ -87,28 +109,6 @@
    "cat": "기상 특보",
    "text": "더블린·위클로 오늘 밤 호우 노란색 경보, 목요일 밤엔 Storm Austen 전국 경보",
    "img": "images/insta/18108588734247926.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "17936524545393902",
-   "url": "https://www.instagram.com/p/DetxfcQje6s/",
-   "kind": "album",
-   "date": "2026-10-20",
-   "cat": "문화, 이벤트",
-   "text": "이창동 감독 가능한 사랑, 10월 23일 더블린 Light House Cinema 개봉",
-   "img": "images/insta/17936524545393902.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "17951385480321291",
-   "url": "https://www.instagram.com/p/DetmZDqDUw2/",
-   "kind": "album",
-   "date": "2026-10-20",
-   "cat": "속보, 금융",
-   "text": "아일랜드 Revolut 서비스 장애, 카드 결제·이체·ATM 출금이 오늘 아침부터 일부 사용 장애.",
-   "img": "images/insta/17951385480321291.jpg",
    "w": 600,
    "h": 800
   }
