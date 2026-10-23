@@ -1,7 +1,18 @@
 {
- "updated": "2026-10-22T23:23:33+00:00",
+ "updated": "2026-10-23T15:05:10+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18082908749356687",
+   "url": "https://www.instagram.com/p/De1jHTdjS6b/",
+   "kind": "album",
+   "date": "2026-10-23",
+   "cat": "교통",
+   "text": "10월 연휴 주말 더블린 교통, DART 남쪽·Howth 사흘 운휴와 25일 마라톤 우회",
+   "img": "images/insta/18082908749356687.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "18117713810062686",
    "url": "https://www.instagram.com/p/Dez4Mw3DVnD/",
@@ -98,17 +109,6 @@
    "cat": "속보, 금융",
    "text": "아일랜드 Revolut 서비스 장애, 카드 결제·이체·ATM 출금이 오늘 아침부터 일부 사용 장애.",
    "img": "images/insta/17951385480321291.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "17996923584047522",
-   "url": "https://www.instagram.com/p/Dere6AvjVfl/",
-   "kind": "album",
-   "date": "2026-10-19",
-   "cat": "축제, 이벤트",
-   "text": "더블린 도서관 핼러윈, 중간방학 프로그램과 10월 20일부터 열리는 예약 일정",
-   "img": "images/insta/17996923584047522.jpg",
    "w": 600,
    "h": 800
   }
