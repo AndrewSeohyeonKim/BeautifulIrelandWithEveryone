@@ -1,7 +1,18 @@
 {
- "updated": "2026-10-24T11:02:41+00:00",
+ "updated": "2026-10-24T14:34:13+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "17975030328178369",
+   "url": "https://www.instagram.com/p/De4RNeoDesa/",
+   "kind": "album",
+   "date": "2026-10-24",
+   "cat": "기상 특보",
+   "text": "Storm Boelo 바람 경보, 아일랜드 서부 오렌지·더블린 포함 동부 옐로 10월 24일(토)~25일…",
+   "img": "images/insta/17975030328178369.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "17946461913357456",
    "url": "https://www.instagram.com/p/De39SEUDX11/",
@@ -98,17 +109,6 @@
    "cat": "뉴스, 자연",
    "text": "도니골 만에 북극 흰고래 벨루가, 따뜻해지는 아일랜드 바다와 물범 보는 곳까지",
    "img": "images/insta/17921682075443045.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "17964025593214923",
-   "url": "https://www.instagram.com/p/Dew_L7mmK_V/",
-   "kind": "album",
-   "date": "2026-10-21",
-   "cat": "정책, 항공",
-   "text": "인천~더블린 직항 지금 몇 단계? 운수권은 아직, 더블린 공항 3,200만 명 상한까지 한 번에 정리",
-   "img": "images/insta/17964025593214923.jpg",
    "w": 600,
    "h": 800
   }
