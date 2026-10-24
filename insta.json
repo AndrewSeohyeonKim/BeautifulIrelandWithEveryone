@@ -1,7 +1,29 @@
 {
- "updated": "2026-10-23T19:14:39+00:00",
+ "updated": "2026-10-24T11:02:41+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "17946461913357456",
+   "url": "https://www.instagram.com/p/De39SEUDX11/",
+   "kind": "album",
+   "date": "2026-10-24",
+   "cat": "교통",
+   "text": "10월 25일 더블린 마라톤, 도로 통제 시각과 버스·Luas·DART 변경 총정리",
+   "img": "images/insta/17946461913357456.jpg",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "id": "17891511756460217",
+   "url": "https://www.instagram.com/p/De34lpOjQX9/",
+   "kind": "album",
+   "date": "2026-10-24",
+   "cat": "축제, 이벤트",
+   "text": "Bram Stoker 축제 주말, 할인 코드 3개와 월요일 무료 Macnas 퍼레이드",
+   "img": "images/insta/17891511756460217.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "17946962574347189",
    "url": "https://www.instagram.com/p/De2EXi0jR0o/",
@@ -87,28 +109,6 @@
    "cat": "정책, 항공",
    "text": "인천~더블린 직항 지금 몇 단계? 운수권은 아직, 더블린 공항 3,200만 명 상한까지 한 번에 정리",
    "img": "images/insta/17964025593214923.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "17943583077361310",
-   "url": "https://www.instagram.com/p/Dewo4ORDbA1/",
-   "kind": "album",
-   "date": "2026-10-21",
-   "cat": "기상 특보",
-   "text": "Storm Austen 오렌지 호우 경보, 더블린·웩스퍼드·위클로 10월 23일(금) 02:00~08:00",
-   "img": "images/insta/17943583077361310.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18108588734247926",
-   "url": "https://www.instagram.com/p/DeuJB6BDYw9/",
-   "kind": "album",
-   "date": "2026-10-20",
-   "cat": "기상 특보",
-   "text": "더블린·위클로 오늘 밤 호우 노란색 경보, 목요일 밤엔 Storm Austen 전국 경보",
-   "img": "images/insta/18108588734247926.jpg",
    "w": 600,
    "h": 800
   }
