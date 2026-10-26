@@ -1,7 +1,18 @@
 {
- "updated": "2026-10-26T13:14:32+00:00",
+ "updated": "2026-10-26T19:22:11+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18036683987853770",
+   "url": "https://www.instagram.com/p/De956AcjX1T/",
+   "kind": "album",
+   "date": "2026-10-26",
+   "cat": "기상 특보",
+   "text": "강풍 옐로 경보, 코크·케리·골웨이 등 11개 주 10월 26일(월) 오후 5시부터",
+   "img": "images/insta/18036683987853770.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "17949303417068557",
    "url": "https://www.instagram.com/p/De9DRewjXlN/",
@@ -98,17 +109,6 @@
    "cat": "교통",
    "text": "10월 연휴 주말 더블린 교통, DART 남쪽·Howth 사흘 운휴와 25일 마라톤 우회",
    "img": "images/insta/18082908749356687.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18117713810062686",
-   "url": "https://www.instagram.com/p/Dez4Mw3DVnD/",
-   "kind": "album",
-   "date": "2026-10-22",
-   "cat": "꿀팁, 모기지",
-   "text": "아일랜드 AIB 4년 고정 모기지 금리 최대 0.35%p 인하, €25만 이상 대출부터",
-   "img": "images/insta/18117713810062686.jpg",
    "w": 600,
    "h": 800
   }
