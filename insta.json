@@ -1,7 +1,18 @@
 {
- "updated": "2026-10-26T19:22:11+00:00",
+ "updated": "2026-10-27T10:35:50+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "17953411797281721",
+   "url": "https://www.instagram.com/p/De_li5PDbhI/",
+   "kind": "album",
+   "date": "2026-10-27",
+   "cat": "심층, 인구",
+   "text": "아일랜드 인구 10년 +786,000명, 늘어난 몫의 3분의 2는 이민",
+   "img": "images/insta/17953411797281721.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "18036683987853770",
    "url": "https://www.instagram.com/p/De956AcjX1T/",
@@ -98,17 +109,6 @@
    "cat": "리콜, 안전",
    "text": "아일랜드 Aldi 헤어드라이어 리콜, 약 5,400대 판매분 감전·화재 위험으로 사용을 멈추세요",
    "img": "images/insta/18098705021428650.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18082908749356687",
-   "url": "https://www.instagram.com/p/De1jHTdjS6b/",
-   "kind": "album",
-   "date": "2026-10-23",
-   "cat": "교통",
-   "text": "10월 연휴 주말 더블린 교통, DART 남쪽·Howth 사흘 운휴와 25일 마라톤 우회",
-   "img": "images/insta/18082908749356687.jpg",
    "w": 600,
    "h": 800
   }
