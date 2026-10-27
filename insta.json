@@ -1,7 +1,18 @@
 {
- "updated": "2026-10-27T10:35:50+00:00",
+ "updated": "2026-10-27T16:40:40+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "17993673573055442",
+   "url": "https://www.instagram.com/p/DfAF0_VDX90/",
+   "kind": "album",
+   "date": "2026-10-27",
+   "cat": "꿀팁, 물가",
+   "text": "아일랜드 마트 장바구니 물가 4.69%, 이 속도면 주 €200 쓰는 집은 1년에 €500 가까이 더",
+   "img": "images/insta/17993673573055442.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "17953411797281721",
    "url": "https://www.instagram.com/p/De_li5PDbhI/",
@@ -98,17 +109,6 @@
    "cat": "리콜, 안전",
    "text": "SuperValu·Centra 훈제연어 회수 확대, 소비기한과 상관없이 먹지 마세요",
    "img": "images/insta/17946962574347189.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18098705021428650",
-   "url": "https://www.instagram.com/p/De2BFBvjQfS/",
-   "kind": "album",
-   "date": "2026-10-23",
-   "cat": "리콜, 안전",
-   "text": "아일랜드 Aldi 헤어드라이어 리콜, 약 5,400대 판매분 감전·화재 위험으로 사용을 멈추세요",
-   "img": "images/insta/18098705021428650.jpg",
    "w": 600,
    "h": 800
   }
