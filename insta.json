@@ -1,7 +1,29 @@
 {
- "updated": "2026-10-27T16:40:40+00:00",
+ "updated": "2026-10-28T16:03:59+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "17932442352162683",
+   "url": "https://www.instagram.com/p/DfCfLuIkZw6/",
+   "kind": "album",
+   "date": "2026-10-28",
+   "cat": "여행",
+   "text": "더블린 근교 핼러윈 축제 Púca, 10월 29일~11월 1일 Trim·Athboy 당일치기 정리",
+   "img": "images/insta/17932442352162683.jpg",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "id": "18108755549256417",
+   "url": "https://www.instagram.com/p/DfCBIjPDdx-/",
+   "kind": "album",
+   "date": "2026-10-28",
+   "cat": "정책, 비자",
+   "text": "숙련 인력 이민 절차 ‘단일 허가’ 시범, 내년 상반기 예정",
+   "img": "images/insta/18108755549256417.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "17993673573055442",
    "url": "https://www.instagram.com/p/DfAF0_VDX90/",
@@ -87,28 +109,6 @@
    "cat": "교통",
    "text": "10월 25일 더블린 마라톤, 도로 통제 시각과 버스·Luas·DART 변경 총정리",
    "img": "images/insta/17946461913357456.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "17891511756460217",
-   "url": "https://www.instagram.com/p/De34lpOjQX9/",
-   "kind": "album",
-   "date": "2026-10-24",
-   "cat": "축제, 이벤트",
-   "text": "Bram Stoker 축제 주말, 할인 코드 3개와 월요일 무료 Macnas 퍼레이드",
-   "img": "images/insta/17891511756460217.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "17946962574347189",
-   "url": "https://www.instagram.com/p/De2EXi0jR0o/",
-   "kind": "album",
-   "date": "2026-10-23",
-   "cat": "리콜, 안전",
-   "text": "SuperValu·Centra 훈제연어 회수 확대, 소비기한과 상관없이 먹지 마세요",
-   "img": "images/insta/17946962574347189.jpg",
    "w": 600,
    "h": 800
   }
