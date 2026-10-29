@@ -1,7 +1,29 @@
 {
- "updated": "2026-10-29T14:21:26+00:00",
+ "updated": "2026-10-29T20:19:16+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18098035097430166",
+   "url": "https://www.instagram.com/p/DfFoJdNDWjj/",
+   "kind": "album",
+   "date": "2026-10-29",
+   "cat": "생활, 머니",
+   "text": "PTSB 고정금리 인상, 승인서 있으면 1월 19일까지 옛 금리",
+   "img": "images/insta/18098035097430166.jpg",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "id": "18046492832820941",
+   "url": "https://www.instagram.com/p/DfFe5dGjeLb/",
+   "kind": "album",
+   "date": "2026-10-29",
+   "cat": "꿀팁, 해외직구",
+   "text": "해외직구, 11월부터 품목당 2유로 추가 수수료",
+   "img": "images/insta/18046492832820941.jpg",
+   "w": 600,
+   "h": 750
+  },
   {
    "id": "18193493392402222",
    "url": "https://www.instagram.com/p/DfE65q4keFy/",
@@ -87,28 +109,6 @@
    "cat": "축제, 이벤트",
    "text": "중간방학 더블린 무료 할로윈 예약 없이 가는 곳과 예약해야 하는 곳",
    "img": "images/insta/17949303417068557.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "17953498002335986",
-   "url": "https://www.instagram.com/reel/De6leYKtydj/",
-   "kind": "video",
-   "date": "2026-10-25",
-   "cat": "이모저모",
-   "text": "[10월 다섯째 주] 아일랜드 이모저모",
-   "img": "images/insta/17953498002335986.jpg",
-   "w": 600,
-   "h": 1067
-  },
-  {
-   "id": "18078959423406610",
-   "url": "https://www.instagram.com/p/De4atJmjT-0/",
-   "kind": "album",
-   "date": "2026-10-24",
-   "cat": "꿀팁, 생활",
-   "text": "10월 25일 일요일 서머타임 종료, 시계가 1시간 뒤로 갑니다",
-   "img": "images/insta/18078959423406610.jpg",
    "w": 600,
    "h": 800
   }
