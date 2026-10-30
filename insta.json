@@ -1,7 +1,18 @@
 {
- "updated": "2026-10-30T19:23:33+00:00",
+ "updated": "2026-10-30T23:47:55+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18133880227789333",
+   "url": "https://www.instagram.com/p/DfIhnE3jdmV/",
+   "kind": "album",
+   "date": "2026-10-30",
+   "cat": "뉴스, 교통",
+   "text": "이번 주말 기차·버스 바뀌는 곳 — Clonsilla~M3 Parkway 이틀 운휴 · 토요일 Heust…",
+   "img": "images/insta/18133880227789333.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "18032333267688505",
    "url": "https://www.instagram.com/p/DfIS15AjVYV/",
@@ -98,17 +109,6 @@
    "cat": "심층, 인구",
    "text": "아일랜드 인구 10년 +786,000명, 늘어난 몫의 3분의 2는 이민",
    "img": "images/insta/17953411797281721.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18036683987853770",
-   "url": "https://www.instagram.com/p/De956AcjX1T/",
-   "kind": "album",
-   "date": "2026-10-26",
-   "cat": "기상 특보",
-   "text": "강풍 옐로 경보, 코크·케리·골웨이 등 11개 주 10월 26일(월) 오후 5시부터",
-   "img": "images/insta/18036683987853770.jpg",
    "w": 600,
    "h": 800
   }
