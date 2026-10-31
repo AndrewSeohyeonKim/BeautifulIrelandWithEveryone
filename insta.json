@@ -1,7 +1,18 @@
 {
- "updated": "2026-10-30T23:47:55+00:00",
+ "updated": "2026-10-31T05:42:57+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18101596115536012",
+   "url": "https://www.instagram.com/p/DfI0Qa2jYrc/",
+   "kind": "album",
+   "date": "2026-10-30",
+   "cat": "뉴스, 비자",
+   "text": "아일랜드 고용허가 신청 사이트, 유출 의심 조사 속 11월 3일까지 중단",
+   "img": "images/insta/18101596115536012.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "18133880227789333",
    "url": "https://www.instagram.com/p/DfIhnE3jdmV/",
@@ -98,17 +109,6 @@
    "cat": "꿀팁, 물가",
    "text": "아일랜드 마트 장바구니 물가 4.69%, 이 속도면 주 €200 쓰는 집은 1년에 €500 가까이 더",
    "img": "images/insta/17993673573055442.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "17953411797281721",
-   "url": "https://www.instagram.com/p/De_li5PDbhI/",
-   "kind": "album",
-   "date": "2026-10-27",
-   "cat": "심층, 인구",
-   "text": "아일랜드 인구 10년 +786,000명, 늘어난 몫의 3분의 2는 이민",
-   "img": "images/insta/17953411797281721.jpg",
    "w": 600,
    "h": 800
   }
