@@ -1,7 +1,18 @@
 {
- "updated": "2026-10-31T17:44:56+00:00",
+ "updated": "2026-11-01T19:41:28+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "17907131985598118",
+   "url": "https://www.instagram.com/reel/DfNUUO-Nq__/",
+   "kind": "video",
+   "date": "2026-11-01",
+   "cat": "이모저모",
+   "text": "[11월 첫째 주] 아일랜드 이모저모",
+   "img": "images/insta/17907131985598118.jpg",
+   "w": 600,
+   "h": 1067
+  },
   {
    "id": "17971143519187933",
    "url": "https://www.instagram.com/p/DfKY0jFDVo-/",
@@ -98,17 +109,6 @@
    "cat": "여행",
    "text": "더블린 근교 핼러윈 축제 Púca, 10월 29일~11월 1일 Trim·Athboy 당일치기 정리",
    "img": "images/insta/17932442352162683.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18108755549256417",
-   "url": "https://www.instagram.com/p/DfCBIjPDdx-/",
-   "kind": "album",
-   "date": "2026-10-28",
-   "cat": "정책, 비자",
-   "text": "숙련 인력 이민 절차 ‘단일 허가’ 시범, 내년 상반기 예정",
-   "img": "images/insta/18108755549256417.jpg",
    "w": 600,
    "h": 800
   }
