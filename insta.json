@@ -1,7 +1,18 @@
 {
- "updated": "2026-11-01T19:41:28+00:00",
+ "updated": "2026-11-02T15:55:48+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "17964836562230074",
+   "url": "https://www.instagram.com/p/DfPTmLgDS9u/",
+   "kind": "album",
+   "date": "2026-11-02",
+   "cat": "뉴스, 교통",
+   "text": "11월 1일부터 더블린 불법주차 단속이 강화됐어요",
+   "img": "images/insta/17964836562230074.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "17907131985598118",
    "url": "https://www.instagram.com/reel/DfNUUO-Nq__/",
@@ -98,17 +109,6 @@
    "cat": "축제, 이벤트",
    "text": "국립도서관 열람실 저녁 무료 개방, 10월 29일 목요일 NLI Dublin By Dusk",
    "img": "images/insta/18143759140610404.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "17932442352162683",
-   "url": "https://www.instagram.com/p/DfCfLuIkZw6/",
-   "kind": "album",
-   "date": "2026-10-28",
-   "cat": "여행",
-   "text": "더블린 근교 핼러윈 축제 Púca, 10월 29일~11월 1일 Trim·Athboy 당일치기 정리",
-   "img": "images/insta/17932442352162683.jpg",
    "w": 600,
    "h": 800
   }
