@@ -1,7 +1,18 @@
 {
- "updated": "2026-11-03T15:09:08+00:00",
+ "updated": "2026-11-03T20:59:56+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18115912544328380",
+   "url": "https://www.instagram.com/p/DfSN0xajTdZ/",
+   "kind": "album",
+   "date": "2026-11-03",
+   "cat": "심층, 선거",
+   "text": "아일랜드 선거 ① 투표편, 한국 국적도 voter.ie에 등록하면 지방선거에 투표합니다",
+   "img": "images/insta/18115912544328380.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "18359879254247946",
    "url": "https://www.instagram.com/p/DfSEvPsjUj5/",
@@ -100,17 +111,6 @@
    "img": "images/insta/17907131985598118.jpg",
    "w": 600,
    "h": 1067
-  },
-  {
-   "id": "17971143519187933",
-   "url": "https://www.instagram.com/p/DfKY0jFDVo-/",
-   "kind": "album",
-   "date": "2026-10-31",
-   "cat": "축제, 이벤트",
-   "text": "11월 6일 Trinity에서 한국 현대문학제가 열립니다, 북토크와 자원봉사자 모집까지",
-   "img": "images/insta/17971143519187933.jpg",
-   "w": 600,
-   "h": 800
   }
  ]
 }
