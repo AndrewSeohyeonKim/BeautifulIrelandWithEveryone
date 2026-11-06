@@ -1,7 +1,51 @@
 {
- "updated": "2026-11-05T21:59:33+00:00",
+ "updated": "2026-11-06T17:58:13+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "17908531980668044",
+   "url": "https://www.instagram.com/p/DfZ7vLdDQMw/",
+   "kind": "album",
+   "date": "2026-11-06",
+   "cat": "교통, 이벤트",
+   "text": "11월 7일(토) Dublin by Night 날, 버스 17개 노선이 College Green을 돌아가요",
+   "img": "images/insta/17908531980668044.jpg",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "id": "18133071991890631",
+   "url": "https://www.instagram.com/p/DfZyzM-DaIe/",
+   "kind": "album",
+   "date": "2026-11-06",
+   "cat": "기상 특보",
+   "text": "더블린도 안개 경보, 렌스터·먼스터·골웨이 금 밤 10시~토 오전 10시",
+   "img": "images/insta/18133071991890631.jpg",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "id": "18059047910580945",
+   "url": "https://www.instagram.com/p/DfZpOr0DQE9/",
+   "kind": "album",
+   "date": "2026-11-06",
+   "cat": "이벤트, 과학",
+   "text": "내일(7일 토) Ballymun에서 무료 과학 축제가 열려요",
+   "img": "images/insta/18059047910580945.jpg",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "id": "17972478813179162",
+   "url": "https://www.instagram.com/p/DfZiFIKDeAF/",
+   "kind": "album",
+   "date": "2026-11-06",
+   "cat": "뉴스, 파업",
+   "text": "경찰 준법투쟁 11월 10~14일, EU 정상회의 주간에 같은 12일 공공부문 파업까지 겹쳐요",
+   "img": "images/insta/17972478813179162.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "18139583476632045",
    "url": "https://www.instagram.com/p/DfX6XLNGJQa/",
@@ -65,50 +109,6 @@
    "cat": "축제, 이벤트",
    "text": "더블린 도심 무료 밤 축제 Dublin By Night Fest, 11월 7일 토요일 18:00~22:00",
    "img": "images/insta/18052522862816386.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18195060733395198",
-   "url": "https://www.instagram.com/p/DfUtcNWDX8o/",
-   "kind": "album",
-   "date": "2026-11-04",
-   "cat": "문화, 축제",
-   "text": "Dublin Book Festival 20주년, 11월 4일(수)~8일(일)",
-   "img": "images/insta/18195060733395198.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18117356081110029",
-   "url": "https://www.instagram.com/p/DfUcTIjDe-N/",
-   "kind": "album",
-   "date": "2026-11-04",
-   "cat": "",
-   "text": "",
-   "img": "images/insta/18117356081110029.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18018794978745614",
-   "url": "https://www.instagram.com/p/DfULHjGjcHp/",
-   "kind": "album",
-   "date": "2026-11-04",
-   "cat": "꿀팁, 항공",
-   "text": "Ryanair 짐 맡기기 11월 10일부터 출발 60분 전 마감, 기내 가방 규격과 가방값 총정리",
-   "img": "images/insta/18018794978745614.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18115912544328380",
-   "url": "https://www.instagram.com/p/DfSN0xajTdZ/",
-   "kind": "album",
-   "date": "2026-11-03",
-   "cat": "심층, 선거",
-   "text": "아일랜드 선거 ① 투표편, 한국 국적도 voter.ie에 등록하면 지방선거에 투표합니다",
-   "img": "images/insta/18115912544328380.jpg",
    "w": 600,
    "h": 800
   }
