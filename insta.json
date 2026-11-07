@@ -1,7 +1,29 @@
 {
- "updated": "2026-11-06T23:09:53+00:00",
+ "updated": "2026-11-07T16:27:23+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18102247382094060",
+   "url": "https://www.instagram.com/p/DfcZ-EzjXoT/",
+   "kind": "album",
+   "date": "2026-11-07",
+   "cat": "여행, 축제",
+   "text": "2026 아일랜드 크리스마스 마켓, 언제·어디서 열리나 총정리",
+   "img": "images/insta/18102247382094060.jpg",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "id": "18131013109842126",
+   "url": "https://www.instagram.com/p/DfcS7GHjYEQ/",
+   "kind": "album",
+   "date": "2026-11-07",
+   "cat": "뉴스, 항공",
+   "text": "더블린→로마 Aer Lingus편, 폭탄 허위 위협으로 프랑스 공군 기지에 내렸어요",
+   "img": "images/insta/18131013109842126.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "18081932381386149",
    "url": "https://www.instagram.com/p/DfaQm2mDf6Y/",
@@ -87,28 +109,6 @@
    "cat": "생활 꿀팁",
    "text": "방까지 보여 주고 €1,400을 받아 간 더블린 렌트 사기, 송금 전에 확인할 것",
    "img": "images/insta/17912942286511050.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18083509118355982",
-   "url": "https://www.instagram.com/p/DfXDSnQDYmO/",
-   "kind": "album",
-   "date": "2026-11-05",
-   "cat": "공연, 이벤트",
-   "text": "더블린 새해 축제 NYF 2026 라인업 발표, 무료 공연 예약은 11월 5일(목) 10시",
-   "img": "images/insta/18083509118355982.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18473293183136900",
-   "url": "https://www.instagram.com/p/DfW59T0jedE/",
-   "kind": "album",
-   "date": "2026-11-05",
-   "cat": "꿀팁, 장보기",
-   "text": "큰 포장이 늘 싼 건 아니에요, 단위부터 보세요",
-   "img": "images/insta/18473293183136900.jpg",
    "w": 600,
    "h": 800
   }
