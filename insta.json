@@ -1,7 +1,18 @@
 {
- "updated": "2026-11-07T16:27:23+00:00",
+ "updated": "2026-11-07T20:53:51+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18025407971714520",
+   "url": "https://www.instagram.com/p/DfcyWKIjXGl/",
+   "kind": "album",
+   "date": "2026-11-07",
+   "cat": "뉴스, 생활비",
+   "text": "내년에 오를 수 있는 생활비 4가지: 교통·쓰레기·항공권·금리",
+   "img": "images/insta/18025407971714520.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "18102247382094060",
    "url": "https://www.instagram.com/p/DfcZ-EzjXoT/",
@@ -98,17 +109,6 @@
    "cat": "생활, 머니",
    "text": "더블린에 살면 골웨이보다 한 달 132유로 더 남습니다, 4개 도시 생활비 비교",
    "img": "images/insta/18128206252671552.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "17912942286511050",
-   "url": "https://www.instagram.com/p/DfXTmhqDUyc/",
-   "kind": "album",
-   "date": "2026-11-05",
-   "cat": "생활 꿀팁",
-   "text": "방까지 보여 주고 €1,400을 받아 간 더블린 렌트 사기, 송금 전에 확인할 것",
-   "img": "images/insta/17912942286511050.jpg",
    "w": 600,
    "h": 800
   }
