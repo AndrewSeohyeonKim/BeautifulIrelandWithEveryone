@@ -1,7 +1,18 @@
 {
- "updated": "2026-11-07T20:53:51+00:00",
+ "updated": "2026-11-08T19:43:29+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18077820662756691",
+   "url": "https://www.instagram.com/reel/DffeNu3SqGm/",
+   "kind": "video",
+   "date": "2026-11-08",
+   "cat": "이모저모",
+   "text": "[11월 둘째 주] 아일랜드 이모저모",
+   "img": "images/insta/18077820662756691.jpg",
+   "w": 600,
+   "h": 1065
+  },
   {
    "id": "18025407971714520",
    "url": "https://www.instagram.com/p/DfcyWKIjXGl/",
@@ -98,17 +109,6 @@
    "cat": "꿀팁, 생활",
    "text": "집에 온 비상 대비 책자, 핵심만 모았어요",
    "img": "images/insta/18139583476632045.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18128206252671552",
-   "url": "https://www.instagram.com/p/DfXiVLeDeFh/",
-   "kind": "album",
-   "date": "2026-11-05",
-   "cat": "생활, 머니",
-   "text": "더블린에 살면 골웨이보다 한 달 132유로 더 남습니다, 4개 도시 생활비 비교",
-   "img": "images/insta/18128206252671552.jpg",
    "w": 600,
    "h": 800
   }
