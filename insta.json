@@ -1,7 +1,40 @@
 {
- "updated": "2026-11-08T19:43:29+00:00",
+ "updated": "2026-11-09T17:30:15+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "17989001705886483",
+   "url": "https://www.instagram.com/p/Dfho2u5jY9W/",
+   "kind": "album",
+   "date": "2026-11-09",
+   "cat": "뉴스, 쇼핑",
+   "text": "Dealz 모회사 Poundland, 관리 절차 앞두고 Tesco가 최대 150곳 인수 협의",
+   "img": "images/insta/17989001705886483.jpg",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "id": "18093670136223460",
+   "url": "https://www.instagram.com/p/DfhRSUXkvmp/",
+   "kind": "album",
+   "date": "2026-11-09",
+   "cat": "뉴스, 교통",
+   "text": "내일(10일)부터 금요일까지 더블린 시내 통제, 12일에는 공공부문 파업도 겹칩니다",
+   "img": "images/insta/18093670136223460.jpg",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "id": "18449693131122142",
+   "url": "https://www.instagram.com/p/DfhHxvkEvgd/",
+   "kind": "album",
+   "date": "2026-11-09",
+   "cat": "뉴스, 병원",
+   "text": "10월 아일랜드 병원 과밀 집계 이래 최악, 1만 2,672명이 병상 없이 치료받았습니다",
+   "img": "images/insta/18449693131122142.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "18077820662756691",
    "url": "https://www.instagram.com/reel/DffeNu3SqGm/",
@@ -76,39 +109,6 @@
    "cat": "기상 특보",
    "text": "더블린도 안개 경보, 렌스터·먼스터·골웨이 금 밤 10시~토 오전 10시",
    "img": "images/insta/18133071991890631.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18059047910580945",
-   "url": "https://www.instagram.com/p/DfZpOr0DQE9/",
-   "kind": "album",
-   "date": "2026-11-06",
-   "cat": "이벤트, 과학",
-   "text": "내일(7일 토) Ballymun에서 무료 과학 축제가 열려요",
-   "img": "images/insta/18059047910580945.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "17972478813179162",
-   "url": "https://www.instagram.com/p/DfZiFIKDeAF/",
-   "kind": "album",
-   "date": "2026-11-06",
-   "cat": "뉴스, 파업",
-   "text": "경찰 준법투쟁 11월 10~14일, EU 정상회의 주간에 같은 12일 공공부문 파업까지 겹쳐요",
-   "img": "images/insta/17972478813179162.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18139583476632045",
-   "url": "https://www.instagram.com/p/DfX6XLNGJQa/",
-   "kind": "album",
-   "date": "2026-11-05",
-   "cat": "꿀팁, 생활",
-   "text": "집에 온 비상 대비 책자, 핵심만 모았어요",
-   "img": "images/insta/18139583476632045.jpg",
    "w": 600,
    "h": 800
   }
