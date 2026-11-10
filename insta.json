@@ -1,7 +1,18 @@
 {
- "updated": "2026-11-10T17:51:10+00:00",
+ "updated": "2026-11-10T23:23:39+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18119582606467723",
+   "url": "https://www.instagram.com/p/DfknxIVjbwq/",
+   "kind": "album",
+   "date": "2026-11-10",
+   "cat": "꿀팁, 소비자",
+   "text": "아일랜드 매장 상품권, 유효기간은 최소 5년입니다",
+   "img": "images/insta/18119582606467723.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "18000718452044888",
    "url": "https://www.instagram.com/p/DfkWhohjcOk/",
@@ -98,17 +109,6 @@
    "cat": "뉴스, 생활비",
    "text": "내년에 오를 수 있는 생활비 4가지: 교통·쓰레기·항공권·금리",
    "img": "images/insta/18025407971714520.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18102247382094060",
-   "url": "https://www.instagram.com/p/DfcZ-EzjXoT/",
-   "kind": "album",
-   "date": "2026-11-07",
-   "cat": "여행, 축제",
-   "text": "2026 아일랜드 크리스마스 마켓, 언제·어디서 열리나 총정리",
-   "img": "images/insta/18102247382094060.jpg",
    "w": 600,
    "h": 800
   }
