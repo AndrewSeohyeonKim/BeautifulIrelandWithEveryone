@@ -1,7 +1,40 @@
 {
- "updated": "2026-11-10T01:32:03+00:00",
+ "updated": "2026-11-10T17:51:10+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18000718452044888",
+   "url": "https://www.instagram.com/p/DfkWhohjcOk/",
+   "kind": "album",
+   "date": "2026-11-10",
+   "cat": "뉴스, 교통",
+   "text": "목·금 37·39·39A·70 시내→서쪽 우회, 수요일부터 15A·19·23·24·60 임시 종점",
+   "img": "images/insta/18000718452044888.jpg",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "id": "18455988058123449",
+   "url": "https://www.instagram.com/p/Dfj8_3ADbKj/",
+   "kind": "album",
+   "date": "2026-11-10",
+   "cat": "꿀팁, 새 매장",
+   "text": "Zara Home, 아일랜드 첫 단독 매장을 Dundrum에 열었습니다",
+   "img": "images/insta/18455988058123449.jpg",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "id": "18121088476985622",
+   "url": "https://www.instagram.com/p/DfjouyJjY72/",
+   "kind": "album",
+   "date": "2026-11-10",
+   "cat": "뉴스, 생활",
+   "text": "Royal Canal 산책로 더블린 구간, 11월 19일까지 막힙니다",
+   "img": "images/insta/18121088476985622.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "18111866729621698",
    "url": "https://www.instagram.com/p/DfiRg_8jZ_2/",
@@ -76,39 +109,6 @@
    "cat": "여행, 축제",
    "text": "2026 아일랜드 크리스마스 마켓, 언제·어디서 열리나 총정리",
    "img": "images/insta/18102247382094060.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18131013109842126",
-   "url": "https://www.instagram.com/p/DfcS7GHjYEQ/",
-   "kind": "album",
-   "date": "2026-11-07",
-   "cat": "뉴스, 항공",
-   "text": "더블린→로마 Aer Lingus편, 폭탄 허위 위협으로 프랑스 공군 기지에 내렸어요",
-   "img": "images/insta/18131013109842126.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18081932381386149",
-   "url": "https://www.instagram.com/p/DfaQm2mDf6Y/",
-   "kind": "album",
-   "date": "2026-11-06",
-   "cat": "뉴스, 스포츠",
-   "text": "이번 주 Aviva에서 두 경기 — 금 20:10 아일랜드 v 아르헨티나 · 일 15:00 FAI Cup…",
-   "img": "images/insta/18081932381386149.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "17908531980668044",
-   "url": "https://www.instagram.com/p/DfZ7vLdDQMw/",
-   "kind": "album",
-   "date": "2026-11-06",
-   "cat": "교통, 이벤트",
-   "text": "11월 7일(토) Dublin by Night 날, 버스 17개 노선이 College Green을 돌아가요",
-   "img": "images/insta/17908531980668044.jpg",
    "w": 600,
    "h": 800
   }
