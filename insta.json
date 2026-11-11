@@ -1,7 +1,29 @@
 {
- "updated": "2026-11-10T23:23:39+00:00",
+ "updated": "2026-11-11T15:13:41+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18116486663038822",
+   "url": "https://www.instagram.com/p/DfmppzfjZYO/",
+   "kind": "album",
+   "date": "2026-11-11",
+   "cat": "문화, 영화",
+   "text": "Cork 국제영화제, 목요일(11/12)부터 열하루 동안 열립니다",
+   "img": "images/insta/18116486663038822.jpg",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "id": "18123720028965884",
+   "url": "https://www.instagram.com/p/DfmNlQwjYxz/",
+   "kind": "album",
+   "date": "2026-11-11",
+   "cat": "뉴스, 노동",
+   "text": "내일(12일) 공공부문 파업은 없습니다. 노사가 새벽에 임금안에 잠정 합의했습니다",
+   "img": "images/insta/18123720028965884.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "18119582606467723",
    "url": "https://www.instagram.com/p/DfknxIVjbwq/",
@@ -87,28 +109,6 @@
    "cat": "뉴스, 병원",
    "text": "10월 아일랜드 병원 과밀 집계 이래 최악, 1만 2,672명이 병상 없이 치료받았습니다",
    "img": "images/insta/18449693131122142.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18077820662756691",
-   "url": "https://www.instagram.com/reel/DffeNu3SqGm/",
-   "kind": "video",
-   "date": "2026-11-08",
-   "cat": "이모저모",
-   "text": "[11월 둘째 주] 아일랜드 이모저모",
-   "img": "images/insta/18077820662756691.jpg",
-   "w": 600,
-   "h": 1065
-  },
-  {
-   "id": "18025407971714520",
-   "url": "https://www.instagram.com/p/DfcyWKIjXGl/",
-   "kind": "album",
-   "date": "2026-11-07",
-   "cat": "뉴스, 생활비",
-   "text": "내년에 오를 수 있는 생활비 4가지: 교통·쓰레기·항공권·금리",
-   "img": "images/insta/18025407971714520.jpg",
    "w": 600,
    "h": 800
   }
