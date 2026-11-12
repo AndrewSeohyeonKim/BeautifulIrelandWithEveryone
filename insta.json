@@ -1,7 +1,40 @@
 {
- "updated": "2026-11-11T15:13:41+00:00",
+ "updated": "2026-11-12T18:57:19+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18156135397531764",
+   "url": "https://www.instagram.com/p/DfpMZsWDRrs/",
+   "kind": "album",
+   "date": "2026-11-12",
+   "cat": "여행, 근교",
+   "text": "금요일엔 Waterford 점등식, 토요일엔 Belfast 크리스마스 마켓",
+   "img": "images/insta/18156135397531764.jpg",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "id": "18049764965821435",
+   "url": "https://www.instagram.com/p/DfpE6rvjWC1/",
+   "kind": "album",
+   "date": "2026-11-12",
+   "cat": "꿀팁, 통신",
+   "text": "휴대폰 요금 €10 안팎 경쟁, 무약정 무제한 요금제 어디가 얼마인가",
+   "img": "images/insta/18049764965821435.jpg",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "id": "18150166228564865",
+   "url": "https://www.instagram.com/p/Dfo7smEDbiZ/",
+   "kind": "album",
+   "date": "2026-11-12",
+   "cat": "축제, 이벤트",
+   "text": "더블린 겨울 빛 축제 두 곳, 11월 12일 같은 날 개막",
+   "img": "images/insta/18150166228564865.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "18116486663038822",
    "url": "https://www.instagram.com/p/DfmppzfjZYO/",
@@ -76,39 +109,6 @@
    "cat": "모임",
    "text": "무료 더블린 워킹투어 + 초기 정착 Q&A",
    "img": "images/insta/18111866729621698.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "17989001705886483",
-   "url": "https://www.instagram.com/p/Dfho2u5jY9W/",
-   "kind": "album",
-   "date": "2026-11-09",
-   "cat": "뉴스, 쇼핑",
-   "text": "Dealz 모회사 Poundland, 관리 절차 앞두고 Tesco가 최대 150곳 인수 협의",
-   "img": "images/insta/17989001705886483.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18093670136223460",
-   "url": "https://www.instagram.com/p/DfhRSUXkvmp/",
-   "kind": "album",
-   "date": "2026-11-09",
-   "cat": "뉴스, 교통",
-   "text": "내일(10일)부터 금요일까지 더블린 시내 통제, 12일에는 공공부문 파업도 겹칩니다",
-   "img": "images/insta/18093670136223460.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18449693131122142",
-   "url": "https://www.instagram.com/p/DfhHxvkEvgd/",
-   "kind": "album",
-   "date": "2026-11-09",
-   "cat": "뉴스, 병원",
-   "text": "10월 아일랜드 병원 과밀 집계 이래 최악, 1만 2,672명이 병상 없이 치료받았습니다",
-   "img": "images/insta/18449693131122142.jpg",
    "w": 600,
    "h": 800
   }
