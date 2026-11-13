@@ -1,7 +1,29 @@
 {
- "updated": "2026-11-12T18:57:19+00:00",
+ "updated": "2026-11-13T00:25:58+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "17967179199220284",
+   "url": "https://www.instagram.com/p/Dfp8Ao0DR8D/",
+   "kind": "album",
+   "date": "2026-11-12",
+   "cat": "이벤트, 전시",
+   "text": "아트페어 Art Source, 이번 주말 RDS에서 열립니다",
+   "img": "images/insta/17967179199220284.jpg",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "id": "18189674875411576",
+   "url": "https://www.instagram.com/p/DfpySSkjVoz/",
+   "kind": "album",
+   "date": "2026-11-12",
+   "cat": "뉴스, 교통",
+   "text": "13일(금) 연료 시위, 6개 도로 차량 행렬은 취소됐습니다. 더블린만 낮 12시 집회가 남았어요",
+   "img": "images/insta/18189674875411576.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "18156135397531764",
    "url": "https://www.instagram.com/p/DfpMZsWDRrs/",
@@ -87,28 +109,6 @@
    "cat": "꿀팁, 새 매장",
    "text": "Zara Home, 아일랜드 첫 단독 매장을 Dundrum에 열었습니다",
    "img": "images/insta/18455988058123449.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18121088476985622",
-   "url": "https://www.instagram.com/p/DfjouyJjY72/",
-   "kind": "album",
-   "date": "2026-11-10",
-   "cat": "뉴스, 생활",
-   "text": "Royal Canal 산책로 더블린 구간, 11월 19일까지 막힙니다",
-   "img": "images/insta/18121088476985622.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18111866729621698",
-   "url": "https://www.instagram.com/p/DfiRg_8jZ_2/",
-   "kind": "album",
-   "date": "2026-11-09",
-   "cat": "모임",
-   "text": "무료 더블린 워킹투어 + 초기 정착 Q&A",
-   "img": "images/insta/18111866729621698.jpg",
    "w": 600,
    "h": 800
   }
