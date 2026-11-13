@@ -1,7 +1,29 @@
 {
- "updated": "2026-11-13T16:25:51+00:00",
+ "updated": "2026-11-13T22:38:39+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18650343244044676",
+   "url": "https://www.instagram.com/p/DfsmPRDDcsN/",
+   "kind": "album",
+   "date": "2026-11-13",
+   "cat": "꿀팁, 생활비",
+   "text": "11월 기름값은 조금 내렸고, 전기차 공공 충전은 올랐습니다",
+   "img": "images/insta/18650343244044676.jpg",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "id": "18674616223016367",
+   "url": "https://www.instagram.com/p/DfsId95DdzJ/",
+   "kind": "album",
+   "date": "2026-11-13",
+   "cat": "이벤트, 체험",
+   "text": "아이리시 커피 직접 만들어 보기, Teeling 증류소 ‘Irish Coffee Academy’",
+   "img": "images/insta/18674616223016367.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "18115165928233491",
    "url": "https://www.instagram.com/p/Dfr5xlLjTFN/",
@@ -87,28 +109,6 @@
    "cat": "뉴스, 노동",
    "text": "내일(12일) 공공부문 파업은 없습니다. 노사가 새벽에 임금안에 잠정 합의했습니다",
    "img": "images/insta/18123720028965884.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18119582606467723",
-   "url": "https://www.instagram.com/p/DfknxIVjbwq/",
-   "kind": "album",
-   "date": "2026-11-10",
-   "cat": "꿀팁, 소비자",
-   "text": "아일랜드 매장 상품권, 유효기간은 최소 5년입니다",
-   "img": "images/insta/18119582606467723.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18000718452044888",
-   "url": "https://www.instagram.com/p/DfkWhohjcOk/",
-   "kind": "album",
-   "date": "2026-11-10",
-   "cat": "뉴스, 교통",
-   "text": "목·금 37·39·39A·70 시내→서쪽 우회, 수요일부터 15A·19·23·24·60 임시 종점",
-   "img": "images/insta/18000718452044888.jpg",
    "w": 600,
    "h": 800
   }
