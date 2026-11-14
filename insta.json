@@ -1,7 +1,18 @@
 {
- "updated": "2026-11-14T11:28:51+00:00",
+ "updated": "2026-11-14T18:03:24+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18499058683105262",
+   "url": "https://www.instagram.com/p/DfupCU9DThF/",
+   "kind": "album",
+   "date": "2026-11-14",
+   "cat": "추천, 맛집",
+   "text": "번쓴을 아시나요? 더블린 버거집 Bunsen, ‘세계 50대 버거’ 2위",
+   "img": "images/insta/18499058683105262.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "18121936729997385",
    "url": "https://www.instagram.com/p/Dft7L4qDYZ1/",
@@ -98,17 +109,6 @@
    "cat": "축제, 이벤트",
    "text": "더블린 겨울 빛 축제 두 곳, 11월 12일 같은 날 개막",
    "img": "images/insta/18150166228564865.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18116486663038822",
-   "url": "https://www.instagram.com/p/DfmppzfjZYO/",
-   "kind": "album",
-   "date": "2026-11-11",
-   "cat": "문화, 영화",
-   "text": "Cork 국제영화제, 목요일(11/12)부터 열하루 동안 열립니다",
-   "img": "images/insta/18116486663038822.jpg",
    "w": 600,
    "h": 800
   }
