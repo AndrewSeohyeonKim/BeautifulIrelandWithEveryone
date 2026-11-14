@@ -1,7 +1,18 @@
 {
- "updated": "2026-11-13T22:38:39+00:00",
+ "updated": "2026-11-14T11:28:51+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18121936729997385",
+   "url": "https://www.instagram.com/p/Dft7L4qDYZ1/",
+   "kind": "album",
+   "date": "2026-11-14",
+   "cat": "뉴스, 물가",
+   "text": "10월 물가가 4.3% 올랐습니다. 2023년 12월 이후 가장 높은 상승률이에요",
+   "img": "images/insta/18121936729997385.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "18650343244044676",
    "url": "https://www.instagram.com/p/DfsmPRDDcsN/",
@@ -98,17 +109,6 @@
    "cat": "문화, 영화",
    "text": "Cork 국제영화제, 목요일(11/12)부터 열하루 동안 열립니다",
    "img": "images/insta/18116486663038822.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18123720028965884",
-   "url": "https://www.instagram.com/p/DfmNlQwjYxz/",
-   "kind": "album",
-   "date": "2026-11-11",
-   "cat": "뉴스, 노동",
-   "text": "내일(12일) 공공부문 파업은 없습니다. 노사가 새벽에 임금안에 잠정 합의했습니다",
-   "img": "images/insta/18123720028965884.jpg",
    "w": 600,
    "h": 800
   }
