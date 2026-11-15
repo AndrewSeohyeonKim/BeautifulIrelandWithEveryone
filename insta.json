@@ -1,7 +1,18 @@
 {
- "updated": "2026-11-14T22:25:08+00:00",
+ "updated": "2026-11-15T17:42:47+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "17924129238448932",
+   "url": "https://www.instagram.com/p/DfwsRKTjUIw/",
+   "kind": "album",
+   "date": "2026-11-15",
+   "cat": "심층, 정치",
+   "text": "아일랜드 선거 ② 구성편, 국회 Oireachtas부터 시민의회 Citizens’ Assembly까지 한…",
+   "img": "images/insta/17924129238448932.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "17990055668880908",
    "url": "https://www.instagram.com/p/Dfu9xllDcef/",
@@ -98,17 +109,6 @@
    "cat": "뉴스, 교통",
    "text": "13일(금) 연료 시위, 6개 도로 차량 행렬은 취소됐습니다. 더블린만 낮 12시 집회가 남았어요",
    "img": "images/insta/18189674875411576.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18156135397531764",
-   "url": "https://www.instagram.com/p/DfpMZsWDRrs/",
-   "kind": "album",
-   "date": "2026-11-12",
-   "cat": "여행, 근교",
-   "text": "금요일엔 Waterford 점등식, 토요일엔 Belfast 크리스마스 마켓",
-   "img": "images/insta/18156135397531764.jpg",
    "w": 600,
    "h": 800
   }
