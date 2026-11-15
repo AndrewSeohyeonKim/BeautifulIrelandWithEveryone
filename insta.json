@@ -1,7 +1,29 @@
 {
- "updated": "2026-11-15T17:42:47+00:00",
+ "updated": "2026-11-15T22:49:02+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "17897912565618622",
+   "url": "https://www.instagram.com/p/DfxonDYDS3M/",
+   "kind": "album",
+   "date": "2026-11-15",
+   "cat": "이벤트, 공연",
+   "text": "더블린 Bord Gáis Energy Theatre 2027 새 공연 7편 예매 시작 · Back To…",
+   "img": "images/insta/17897912565618622.jpg",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "id": "18492496210111967",
+   "url": "https://www.instagram.com/reel/DfxZ_YxN7L4/",
+   "kind": "video",
+   "date": "2026-11-15",
+   "cat": "이모저모",
+   "text": "[11월 셋째 주] 아일랜드 이모저모",
+   "img": "images/insta/18492496210111967.jpg",
+   "w": 600,
+   "h": 1067
+  },
   {
    "id": "17924129238448932",
    "url": "https://www.instagram.com/p/DfwsRKTjUIw/",
@@ -87,28 +109,6 @@
    "cat": "이벤트, 청소년",
    "text": "오늘 밤 아일랜드 전국 청소년 클럽이 문을 엽니다 · Óiche na hÓige",
    "img": "images/insta/18115165928233491.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "17967179199220284",
-   "url": "https://www.instagram.com/p/Dfp8Ao0DR8D/",
-   "kind": "album",
-   "date": "2026-11-12",
-   "cat": "이벤트, 전시",
-   "text": "아트페어 Art Source, 이번 주말 RDS에서 열립니다",
-   "img": "images/insta/17967179199220284.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18189674875411576",
-   "url": "https://www.instagram.com/p/DfpySSkjVoz/",
-   "kind": "album",
-   "date": "2026-11-12",
-   "cat": "뉴스, 교통",
-   "text": "13일(금) 연료 시위, 6개 도로 차량 행렬은 취소됐습니다. 더블린만 낮 12시 집회가 남았어요",
-   "img": "images/insta/18189674875411576.jpg",
    "w": 600,
    "h": 800
   }
