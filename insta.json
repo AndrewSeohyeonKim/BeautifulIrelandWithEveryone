@@ -1,7 +1,18 @@
 {
- "updated": "2026-11-15T22:49:02+00:00",
+ "updated": "2026-11-16T11:20:10+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18144864385717931",
+   "url": "https://www.instagram.com/p/DfzI7V2IU5a/",
+   "kind": "album",
+   "date": "2026-11-16",
+   "cat": "뉴스, 한국",
+   "text": "이날치 더블린 공연(11월 24일 Whelan’s)취소",
+   "img": "images/insta/18144864385717931.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "17897912565618622",
    "url": "https://www.instagram.com/p/DfxonDYDS3M/",
@@ -98,17 +109,6 @@
    "cat": "이벤트, 체험",
    "text": "아이리시 커피 직접 만들어 보기, Teeling 증류소 ‘Irish Coffee Academy’",
    "img": "images/insta/18674616223016367.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18115165928233491",
-   "url": "https://www.instagram.com/p/Dfr5xlLjTFN/",
-   "kind": "album",
-   "date": "2026-11-13",
-   "cat": "이벤트, 청소년",
-   "text": "오늘 밤 아일랜드 전국 청소년 클럽이 문을 엽니다 · Óiche na hÓige",
-   "img": "images/insta/18115165928233491.jpg",
    "w": 600,
    "h": 800
   }
