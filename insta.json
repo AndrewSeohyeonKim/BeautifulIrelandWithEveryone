@@ -1,7 +1,29 @@
 {
- "updated": "2026-11-16T22:03:38+00:00",
+ "updated": "2026-11-17T14:25:51+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18135645865685621",
+   "url": "https://www.instagram.com/p/Df1-wAHjX89/",
+   "kind": "album",
+   "date": "2026-11-17",
+   "cat": "이벤트, 공모",
+   "text": "아이 그림이 더블린 시장의 크리스마스 카드가 될 수 있어요 · 11월 27일 마감",
+   "img": "images/insta/18135645865685621.jpg",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "id": "18079576904737694",
+   "url": "https://www.instagram.com/p/Df1tgwujQJD/",
+   "kind": "album",
+   "date": "2026-11-17",
+   "cat": "축제, 문학",
+   "text": "『걸리버 여행기』 300주년, 더블린 Jonathan Swift Festival 11월 18~28일 ·…",
+   "img": "images/insta/18079576904737694.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "18125400863317003",
    "url": "https://www.instagram.com/p/Dfzid4zDSjV/",
@@ -87,28 +109,6 @@
    "cat": "여행, 근교",
    "text": "Cork 크리스마스가 이번 일요일 저녁 퍼레이드로 시작해요",
    "img": "images/insta/18648682039016445.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18499058683105262",
-   "url": "https://www.instagram.com/p/DfupCU9DThF/",
-   "kind": "album",
-   "date": "2026-11-14",
-   "cat": "추천, 맛집",
-   "text": "번쓴을 아시나요? 더블린 버거집 Bunsen, ‘세계 50대 버거’ 2위",
-   "img": "images/insta/18499058683105262.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18121936729997385",
-   "url": "https://www.instagram.com/p/Dft7L4qDYZ1/",
-   "kind": "album",
-   "date": "2026-11-14",
-   "cat": "뉴스, 물가",
-   "text": "10월 물가가 4.3% 올랐습니다. 2023년 12월 이후 가장 높은 상승률이에요",
-   "img": "images/insta/18121936729997385.jpg",
    "w": 600,
    "h": 800
   }
