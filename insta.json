@@ -1,7 +1,18 @@
 {
- "updated": "2026-11-17T22:52:43+00:00",
+ "updated": "2026-11-18T13:59:26+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18100416548550372",
+   "url": "https://www.instagram.com/p/Df4Zmh_jd0C/",
+   "kind": "album",
+   "date": "2026-11-18",
+   "cat": "뉴스, 물가",
+   "text": "아일랜드 장바구니 물가 6% · 주 €200 쓰는 집은 1년에 €600 넘게 더",
+   "img": "images/insta/18100416548550372.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "17995322775059569",
    "url": "https://www.instagram.com/p/Df2e3ngku_i/",
@@ -100,17 +111,6 @@
    "img": "images/insta/18492496210111967.jpg",
    "w": 600,
    "h": 1067
-  },
-  {
-   "id": "17924129238448932",
-   "url": "https://www.instagram.com/p/DfwsRKTjUIw/",
-   "kind": "album",
-   "date": "2026-11-15",
-   "cat": "심층, 정치",
-   "text": "아일랜드 선거 ② 구성편, 국회 Oireachtas부터 시민의회 Citizens’ Assembly까지 한…",
-   "img": "images/insta/17924129238448932.jpg",
-   "w": 600,
-   "h": 800
   }
  ]
 }
