@@ -1,7 +1,51 @@
 {
- "updated": "2026-11-19T21:36:00+00:00",
+ "updated": "2026-11-20T20:22:21+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18135325480685459",
+   "url": "https://www.instagram.com/p/Df-cZSTjfYx/",
+   "kind": "album",
+   "date": "2026-11-20",
+   "cat": "뉴스, 한국",
+   "text": "한국제약바이오협회 대표단, 더블린 NIBRT 방문 · 바이오 인력 교육 협력 논의",
+   "img": "images/insta/18135325480685459.jpg",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "id": "18160999951450172",
+   "url": "https://www.instagram.com/p/Df-Va3Jjcym/",
+   "kind": "album",
+   "date": "2026-11-20",
+   "cat": "리콜, 안전",
+   "text": "Card Factory 캔디케인 리콜 · 금속 조각이 들어 있을 수 있습니다",
+   "img": "images/insta/18160999951450172.jpg",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "id": "17958551520290559",
+   "url": "https://www.instagram.com/p/Df-SUAijajg/",
+   "kind": "album",
+   "date": "2026-11-20",
+   "cat": "축제, 이벤트",
+   "text": "이번 주말 더블린 · 무료·기부제 행사와 토요일 럭비",
+   "img": "images/insta/17958551520290559.jpg",
+   "w": 600,
+   "h": 800
+  },
+  {
+   "id": "18198224248400746",
+   "url": "https://www.instagram.com/p/Df9xcr2DaGS/",
+   "kind": "album",
+   "date": "2026-11-20",
+   "cat": "교통, 정책",
+   "text": "더블린 시내 도로 97%를 시속 30km 이하로 · 20km/h 구역도 새로 생깁니다",
+   "img": "images/insta/18198224248400746.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "18647877292003020",
    "url": "https://www.instagram.com/p/Df7gcuUDYQd/",
@@ -65,50 +109,6 @@
    "cat": "문화, 영화",
    "text": "더블린 IFI 프랑스 영화제 11월 18~29일 · 장편 34편, 아일랜드 초연 25편",
    "img": "images/insta/17882227542632573.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18100416548550372",
-   "url": "https://www.instagram.com/p/Df4Zmh_jd0C/",
-   "kind": "album",
-   "date": "2026-11-18",
-   "cat": "뉴스, 물가",
-   "text": "아일랜드 장바구니 물가 6% · 주 €200 쓰는 집은 1년에 €600 넘게 더",
-   "img": "images/insta/18100416548550372.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "17995322775059569",
-   "url": "https://www.instagram.com/p/Df2e3ngku_i/",
-   "kind": "album",
-   "date": "2026-11-17",
-   "cat": "뉴스, 쇼핑",
-   "text": "Uniqlo 아일랜드 첫 매장, 더블린 College Green 옛 H&M 자리로 보도 · 개점일은 미발표",
-   "img": "images/insta/17995322775059569.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18448524070194048",
-   "url": "https://www.instagram.com/p/Df2M2nyjZRm/",
-   "kind": "album",
-   "date": "2026-11-17",
-   "cat": "이벤트, 한국",
-   "text": "케데헌 K-pop Demon Hunters, 2027년 10월 9일 더블린 3Arena 두 번 공연 ·…",
-   "img": "images/insta/18448524070194048.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18135645865685621",
-   "url": "https://www.instagram.com/p/Df1-wAHjX89/",
-   "kind": "album",
-   "date": "2026-11-17",
-   "cat": "이벤트, 공모",
-   "text": "아이 그림이 더블린 시장의 크리스마스 카드가 될 수 있어요 · 11월 27일 마감",
-   "img": "images/insta/18135645865685621.jpg",
    "w": 600,
    "h": 800
   }
