@@ -1,7 +1,18 @@
 {
- "updated": "2026-11-21T17:33:32+00:00",
+ "updated": "2026-11-22T21:45:53+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18112197514924441",
+   "url": "https://www.instagram.com/reel/DgDrZfCtQiy/",
+   "kind": "video",
+   "date": "2026-11-22",
+   "cat": "이모저모",
+   "text": "[11월 넷째 주] 아일랜드 이모저모",
+   "img": "images/insta/18112197514924441.jpg",
+   "w": 600,
+   "h": 1067
+  },
   {
    "id": "18133252732699524",
    "url": "https://www.instagram.com/p/DgAskeoDdsJ/",
@@ -98,17 +109,6 @@
    "cat": "꿀팁, 무료",
    "text": "더블린 Clondalkin 매주 금요일 무료 자전거 수리 · 12월 18일까지",
    "img": "images/insta/17971956149962750.jpg",
-   "w": 600,
-   "h": 800
-  },
-  {
-   "id": "18152323795562014",
-   "url": "https://www.instagram.com/p/Df64C8uFh0L/",
-   "kind": "album",
-   "date": "2026-11-19",
-   "cat": "꿀팁, 쇼핑",
-   "text": "2026 아일랜드 블랙프라이데이 11월 27일, 업체별 일정과 꼭 알아 둘 권리",
-   "img": "images/insta/18152323795562014.jpg",
    "w": 600,
    "h": 800
   }
