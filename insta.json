@@ -1,7 +1,18 @@
 {
- "updated": "2026-11-27T19:57:42+00:00",
+ "updated": "2026-11-28T11:46:33+00:00",
  "profile": "https://www.instagram.com/ireland.sosik/",
  "posts": [
+  {
+   "id": "18148477051607784",
+   "url": "https://www.instagram.com/p/DgSCqgPDVkR/",
+   "kind": "album",
+   "date": "2026-11-28",
+   "cat": "꿀팁, 교통",
+   "text": "11월 28~29일 주말, Luas 레드라인·남쪽 DART·M3 Parkway 운휴",
+   "img": "images/insta/18148477051607784.jpg",
+   "w": 600,
+   "h": 800
+  },
   {
    "id": "17993042658079371",
    "url": "https://www.instagram.com/p/DgQHtJYDa0g/",
@@ -100,17 +111,6 @@
    "img": "images/insta/18496986439129526.jpg",
    "w": 600,
    "h": 800
-  },
-  {
-   "id": "17958053826338189",
-   "url": "https://www.instagram.com/p/DgLnBVJtjOZ/",
-   "kind": "image",
-   "date": "2026-11-25",
-   "cat": "",
-   "text": "(번개)D15 블랜차즈타운 동네 생활 꿀팁 + Q&A 모임",
-   "img": "images/insta/17958053826338189.jpg",
-   "w": 600,
-   "h": 794
   }
  ]
 }
